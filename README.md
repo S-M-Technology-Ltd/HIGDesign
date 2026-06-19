@@ -133,6 +133,7 @@ Themes: **System** · **High Contrast** · **Brand accent** — each with light 
 | [Swift Package Index](https://swiftpackageindex.com/S-M-Technology-Ltd/HIGDesign) | Builds & API browser |
 | [CHANGELOG.md](CHANGELOG.md) | Release notes |
 | [ARCHITECTURE.md](Docs/ARCHITECTURE.md) | Module graph (for contributors) |
+| [Requirements](Requirements/README.md) | Per-module requirements |
 
 ## Contributing
 

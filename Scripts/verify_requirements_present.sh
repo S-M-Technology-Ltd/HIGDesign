@@ -31,17 +31,17 @@ for module in "${required_modules[@]}"; do
         continue
     fi
 
-    if ! rg -q '^## (All platforms|Requirements)' "$req_file"; then
+    if ! grep -Eq '^## (All platforms|Requirements)' "$req_file"; then
         missing+=("Requirements/$module/REQ.md (missing requirements section)")
     fi
 
-    if ! rg -q '^### (iOS|macOS|watchOS|tvOS|visionOS)' "$req_file"; then
+    if ! grep -Eq '^### (iOS|macOS|watchOS|tvOS|visionOS)' "$req_file"; then
         missing+=("Requirements/$module/REQ.md (missing platform section)")
     fi
 done
 
 readme_doc="$ROOT_DIR/README.md"
-if ! rg -q 'Requirements/' "$readme_doc"; then
+if ! grep -q 'Requirements/' "$readme_doc"; then
     echo "README.md must link Requirements/" >&2
     exit 1
 fi

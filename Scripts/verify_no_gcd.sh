@@ -6,7 +6,8 @@ cd "$ROOT"
 
 PATTERN='DispatchQueue|dispatch_async|dispatch_sync|dispatch_get_main_queue|DispatchGroup|DispatchSemaphore|DispatchWorkItem|DispatchSource|DispatchSpecificKey|DispatchTime'
 
-if rg -n "$PATTERN" Sources Tests; then
+if grep -rEn "$PATTERN" Sources Tests >/dev/null 2>&1; then
+    grep -rEn "$PATTERN" Sources Tests >&2
     echo "GCD guard failed: use Swift concurrency (Task, async/await, actors) instead of GCD." >&2
     exit 1
 fi

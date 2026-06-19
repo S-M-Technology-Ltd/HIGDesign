@@ -13,7 +13,7 @@ EXPECTED=(
 
 missing=()
 for component in "${EXPECTED[@]}"; do
-    if ! rg -q "case ${component}" Showcase/ShowcaseComponent.swift; then
+    if ! grep -q "case ${component}" Showcase/ShowcaseComponent.swift; then
         missing+=("$component")
     fi
 done
@@ -75,10 +75,14 @@ while IFS= read -r component; do
         echo "Showcase coverage guard failed: no mapping for ${component}." >&2
         exit 1
     fi
-    if ! rg -q "case ${showcase_key}" Showcase/ShowcaseComponent.swift; then
+    if ! grep -q "case ${showcase_key}" Showcase/ShowcaseComponent.swift; then
         echo "Showcase coverage guard failed: ${component} has no ShowcaseComponent case (${showcase_key})." >&2
         exit 1
     fi
-done < <(rg --no-filename -o 'public struct (HIG[A-Za-z]+).*: View( \{| where)' Sources/HIGComponents | sed -E 's/public struct (HIG[A-Za-z]+).*/\1/' | sort -u)
+done < <(
+    grep -rhoE 'public struct (HIG[A-Za-z]+).*: View( \{| where)' Sources/HIGComponents 2>/dev/null \
+        | sed -E 's/public struct (HIG[A-Za-z]+).*/\1/' \
+        | sort -u
+)
 
 echo "Showcase coverage guard passed: all public components are represented in Showcase."

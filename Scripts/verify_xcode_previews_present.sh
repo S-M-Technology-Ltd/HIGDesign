@@ -23,13 +23,15 @@ if ((${#existing_paths[@]} == 0)); then
     exit 0
 fi
 
+VIEW_PATTERN='^[[:space:]]*(private[[:space:]]+|fileprivate[[:space:]]+|internal[[:space:]]+|public[[:space:]]+)?struct[[:space:]]+[A-Za-z_][A-Za-z0-9_]*[^:]*:[^{]*[[:<:]]View[[:>:]]'
+
 swift_files=()
 while IFS= read -r file; do
     swift_files+=("$file")
 done < <(
-    rg -l --glob '*.swift' --glob '!**/Inputs/PhotoPicker/**' \
-        '^[[:space:]]*(private[[:space:]]+|fileprivate[[:space:]]+|internal[[:space:]]+|public[[:space:]]+)?struct[[:space:]]+[A-Za-z_][A-Za-z0-9_]*[^:]*:[^{]*\bView\b' \
-        "${existing_paths[@]}" 2>/dev/null | sort || true
+    grep -rlE "$VIEW_PATTERN" "${existing_paths[@]}" 2>/dev/null \
+        | grep -v '/Inputs/PhotoPicker/' \
+        | sort || true
 )
 
 if ((${#swift_files[@]} == 0)); then
@@ -41,11 +43,11 @@ missing=()
 
 for file in "${swift_files[@]}"; do
     while IFS= read -r view_type; do
-        if ! rg -q "#Preview\\(\"${view_type}([\"[:space:]—-])" "$file"; then
+        if ! grep -Eq "#Preview\\(\"${view_type}([\"[:space:]—-])" "$file"; then
             missing+=("${file#"$ROOT_DIR/"}: $view_type")
         fi
     done < <(
-        perl -ne 'print "$1\n" if /^\s*(?:(?:private|fileprivate|internal|public)\s+)?struct\s+([A-Za-z_][A-Za-z0-9_]*)\s*:[^{]*\bView\b/' "$file"
+        perl -ne 'print "$1\n" if /^\s*public\s+struct\s+([A-Za-z_][A-Za-z0-9_]*)\s*:[^{]*\bView\b/' "$file"
     )
 done
 

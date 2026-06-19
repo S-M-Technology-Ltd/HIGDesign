@@ -93,7 +93,7 @@ EXPECTED_SYMBOLS=(
 
 missing=()
 for symbol in "${EXPECTED_SYMBOLS[@]}"; do
-    if ! rg -q "${symbol}" "$DOCC_DIR"; then
+    if ! grep -rq "${symbol}" "$DOCC_DIR"; then
         missing+=("$symbol")
     fi
 done
