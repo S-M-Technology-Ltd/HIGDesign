@@ -32,3 +32,12 @@ Scripts/setup_sample_signing.sh
 Then edit `Sample/Config/Signing.local.xcconfig` and set `DEVELOPMENT_TEAM` to your team ID.
 
 Committed project settings intentionally omit `DEVELOPMENT_TEAM` so personal signing never lands on the remote. If Xcode prompts you to update signing, prefer editing `Signing.local.xcconfig` instead of checking in `project.pbxproj` changes.
+
+## Photo library privacy (iOS)
+
+`HIGPhotoPicker` requires host-app Info.plist entries. The sample iOS target already includes:
+
+- `NSPhotoLibraryUsageDescription`
+- `PHPhotoLibraryPreventAutomaticLimitedAccessAlert`
+
+Copy the same keys into your own app target when integrating `HIGPhotoPicker`.

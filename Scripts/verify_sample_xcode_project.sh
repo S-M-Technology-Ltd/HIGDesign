@@ -11,6 +11,16 @@ fi
 
 PROJECT="$ROOT/Sample/HIGDesignSample.xcodeproj"
 
+if ! rg -q 'INFOPLIST_KEY_NSPhotoLibraryUsageDescription' "$PROJECT/project.pbxproj"; then
+    echo "Sample Xcode project guard failed: iOS target is missing NSPhotoLibraryUsageDescription." >&2
+    exit 1
+fi
+
+if ! rg -q 'INFOPLIST_KEY_PHPhotoLibraryPreventAutomaticLimitedAccessAlert' "$PROJECT/project.pbxproj"; then
+    echo "Sample Xcode project guard failed: iOS target is missing PHPhotoLibraryPreventAutomaticLimitedAccessAlert." >&2
+    exit 1
+fi
+
 xcodebuild \
     -project "$PROJECT" \
     -scheme HIGDesignSampleMac \
