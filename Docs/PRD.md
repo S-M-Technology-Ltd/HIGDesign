@@ -70,30 +70,29 @@ HIGDesign synthesizes architecture and patterns from:
 | `HIGDesignPlatform` | Idiom and capability adapters |
 | `HIGDesignBridging` | Optional Cocoa bridges |
 
-## Current Milestone: Phase 12 Library Completion and v1.0.0
+## Current Milestone: Phase 13 Adoption and v1.0.0 Preparation
 
-Phase 12 completes the core component catalog and publishes the first stable release.
+Phase 12 delivered navigation components and snapshot fidelity at v0.12.0. v1.0.0 is not released yet.
 
-This milestone includes:
+Phase 13 prepares the first stable release:
+
+- API stability review and semver policy sign-off for v1.0.0
+- committed Xcode workspace and consumer integration guides
+- expanded `HIGBridging` helpers with documented platform fallbacks
+- performance and accessibility audit pass across the full component catalog
+
+Phase 12 (complete, v0.12.0) delivered:
 
 - `HIGNavigationBar` and `HIGToolbar` as composable `View` components alongside existing modifiers
-- API stability guide and semantic-versioning policy for v1.0.0
+- API stability guide (pre-1.0 policy)
 - showcase snapshot fidelity improvements with per-component labeling and no duplicate navigation chrome
-- thirty-two-component `HIGShowcase` catalog at v1.0.0
+- thirty-two-component `HIGShowcase` catalog
 
 This milestone does not include:
 
 - Cocoa/UIKit bridging implementations beyond scaffolding
 - remote third-party dependencies
 - production brand theme packs beyond scaffolding
-
-## Next Milestone: Phase 13 Adoption and Bridging Hardening
-
-The next milestone delivers:
-
-- expanded `HIGBridging` helpers with documented platform fallbacks
-- consumer integration guides and sample app wiring
-- performance and accessibility audit pass across the full component catalog
 
 ## Success Metrics
 

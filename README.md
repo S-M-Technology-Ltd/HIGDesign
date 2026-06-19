@@ -30,4 +30,18 @@ swift run HIGShowcase
 
 ## Status
 
-Phase 12: HIGNavigationBar, HIGToolbar, API stability guide, and v1.0.0 release.
+Phase 12: HIGNavigationBar, HIGToolbar, snapshot fidelity, and pre-1.0 API guide (v0.12.0).
+
+## Open in Xcode
+
+This repo is a Swift Package — there is no separate `.xcodeproj`. Open the package directly:
+
+```bash
+open Package.swift
+# or
+open HIGDesign.xcworkspace
+# or
+Scripts/open_xcode.sh
+```
+
+Select the **HIGShowcase** scheme to run the component gallery. Other schemes: `HIGSnapshotCapture`, `HIGDesign`, library products.

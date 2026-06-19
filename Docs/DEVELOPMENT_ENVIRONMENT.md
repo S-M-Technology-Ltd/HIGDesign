@@ -58,4 +58,8 @@ Scripts/build_all_platforms.sh
 
 ## Current Milestone
 
-Phase 12 v1.0.0 release. All platform builds, tests, showcase build, coverage guards, DocC coverage, automated snapshot capture (including brand theme variants), and snapshot diff verification are mandatory before merging UI changes.
+Phase 13 v1.0.0 preparation. All platform builds, tests, showcase build, coverage guards, DocC coverage, automated snapshot capture (including brand theme variants), and snapshot diff verification are mandatory before merging UI changes.
+
+## Xcode
+
+HIGDesign is SPM-first. Open `Package.swift` or `HIGDesign.xcworkspace` at the repository root. Xcode exposes package schemes (`HIGShowcase`, `HIGSnapshotCapture`, library targets). A standalone `.xcodeproj` is intentionally not checked in.

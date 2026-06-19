@@ -83,4 +83,4 @@ Phase 7 controls and inputs expansion builds on the Phase 1–6 foundation, whic
 
 Verification: `Scripts/build_all_platforms.sh`, `swift test`, and all governance guards (including `verify_no_uikit.sh`) pass locally.
 
-v1.0.0 shipped in Phase 12. Next phase: bridging hardening, adoption guides, and accessibility audit (Phase 13).
+Phase 12 shipped navigation components at v0.12.0. v1.0.0 is planned for Phase 13 after API stability sign-off.

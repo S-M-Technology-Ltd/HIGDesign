@@ -1,21 +1,27 @@
 # API Stability
 
-HIGDesign 1.0.0 marks the first stable public API for the core SwiftUI design system.
+HIGDesign is pre-1.0. Phase milestones use `0.x.y` versions while the public component catalog matures.
 
-## Stable Surfaces
+## Current Policy (pre-1.0)
 
-The following modules are covered by semantic versioning from v1.0.0 onward:
+- **Minor (`0.x.0`)** — new components, tokens, themes, or additive APIs.
+- **Patch (`0.x.y`)** — bug fixes, snapshot updates, and documentation corrections.
+- Breaking changes are allowed between minor milestones when documented in release notes.
+
+## Target v1.0.0 Policy
+
+When v1.0.0 ships, semantic versioning will apply to:
 
 - `HIGFoundations`, `HIGTokensRaw`, `HIGTokensSemantic`, `HIGTokensComponent`
 - `HIGThemesContract`, `HIGThemesSystem`
 - `HIGComponents`, `HIGModifiers`, `HIGPlatform`
 - Umbrella `HIGDesign` and `HIGDesignCore` / `HIGDesignComponents` products
 
-## Versioning Policy
+Planned rules at v1.0.0:
 
-- **Major** — breaking changes to public types, initializer signatures, or default behavior documented in release notes.
-- **Minor** — additive APIs such as new components, tokens, theme properties, or optional parameters with defaults.
-- **Patch** — bug fixes, snapshot updates, documentation corrections, and non-breaking internal improvements.
+- **Major** — breaking public API or documented default-behavior changes.
+- **Minor** — additive APIs with default-preserving parameters.
+- **Patch** — fixes and non-breaking internal improvements.
 
 ## Component API Shape
 
@@ -30,15 +36,11 @@ Navigation components ship as both views and modifiers:
 - ``HIGNavigationBar`` and ``higNavigationBar(_:displayMode:leading:trailing:)``
 - ``HIGToolbar`` and ``higToolbar(_:)``
 
-## Deprecation Process
+## Deprecation Process (from v1.0.0 onward)
 
 1. Mark APIs `@available(*, deprecated, message:)` in the release that introduces the replacement.
 2. Document the migration path in release notes and DocC.
 3. Remove deprecated APIs in the next major version only after at least one minor release with the deprecation present.
-
-## Pre-1.0 History
-
-Versions 0.1.0 through 0.11.0 were iterative delivery milestones. Breaking changes were permitted between those minor milestones while the component catalog and theme contract matured.
 
 ## Optional Bridging
 
