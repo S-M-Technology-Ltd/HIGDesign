@@ -30,4 +30,4 @@ swift run HIGShowcase
 
 ## Status
 
-Phase 6: alert banners, toast queueing, sidebar styling, composable navigation bar, and automated showcase snapshot capture (v0.6.0).
+Phase 7: checkbox, radio, segmented control, slider, secure/search fields, picker, and Dynamic Type showcase controls (v0.7.0).

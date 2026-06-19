@@ -1,10 +1,10 @@
 import Testing
 
 @Test
-func showcaseCatalogIncludesPhaseFiveComponents() {
-    #expect(ShowcaseCatalog.phaseFiveComponentCount == 17)
+func showcaseCatalogIncludesPhaseSevenComponents() {
+    #expect(ShowcaseCatalog.phaseSevenComponentCount == 24)
 }
 
 private enum ShowcaseCatalog {
-    static let phaseFiveComponentCount = 17
+    static let phaseSevenComponentCount = 24
 }

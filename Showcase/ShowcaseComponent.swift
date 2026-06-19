@@ -18,6 +18,13 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case activityIndicator
     case list
     case form
+    case checkbox
+    case radio
+    case segmentedControl
+    case slider
+    case secureField
+    case searchField
+    case picker
 
     public var id: String { rawValue }
 
@@ -40,6 +47,13 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .activityIndicator: "Activity Indicator"
         case .list: "List"
         case .form: "Form Section"
+        case .checkbox: "Checkbox"
+        case .radio: "Radio"
+        case .segmentedControl: "Segmented Control"
+        case .slider: "Slider"
+        case .secureField: "Secure Field"
+        case .searchField: "Search Field"
+        case .picker: "Picker"
         }
     }
 
@@ -62,6 +76,13 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .activityIndicator: "Loading"
         case .list: "Lists and Tables"
         case .form: "Settings"
+        case .checkbox: "Selection Controls"
+        case .radio: "Selection Controls"
+        case .segmentedControl: "Segmented Controls"
+        case .slider: "Sliders"
+        case .secureField: "Text Fields"
+        case .searchField: "Searching"
+        case .picker: "Pickers"
         }
     }
 
@@ -84,14 +105,26 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .activityIndicator: "Indeterminate loading spinners."
         case .list: "Grouped rows with themed backgrounds."
         case .form: "Sectioned form groups with headers and footers."
+        case .checkbox: "Multi-select settings with checkbox styling."
+        case .radio: "Mutually exclusive choices with radio affordances."
+        case .segmentedControl: "Compact filters across a few related views."
+        case .slider: "Bounded value selection with live value readout."
+        case .secureField: "Masked entry for passwords and sensitive text."
+        case .searchField: "Search input with icon affordance and clear labeling."
+        case .picker: "Menu pickers for choosing one value from a list."
         }
     }
 
     var platforms: String {
         switch self {
         case .button, .textField, .toggle, .divider, .progressView, .card, .toolbar,
-             .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .list, .form:
+             .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .list, .form,
+             .checkbox, .radio, .secureField, .searchField, .picker:
             "iOS, iPadOS, macOS, visionOS, tvOS, watchOS"
+        case .slider:
+            "iOS, iPadOS, macOS, visionOS"
+        case .segmentedControl:
+            "iOS, iPadOS, macOS, visionOS, tvOS"
         case .tabBar:
             "iOS, iPadOS, macOS, visionOS, tvOS"
         case .sidebar:

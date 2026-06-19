@@ -4,6 +4,7 @@ struct ShowcaseCatalogView: View {
     @Binding var selection: ShowcaseComponent?
     @Binding var themeChoice: ShowcaseThemeChoice
     @Binding var colorScheme: ColorScheme?
+    @Binding var dynamicTypeSizeChoice: ShowcaseDynamicTypeSizeChoice
 
     var body: some View {
         #if os(watchOS)
@@ -27,7 +28,11 @@ struct ShowcaseCatalogView: View {
             }
             .navigationTitle("Components")
             .safeAreaInset(edge: .bottom) {
-                ShowcaseSettingsView(themeChoice: $themeChoice, colorScheme: $colorScheme)
+                ShowcaseSettingsView(
+                    themeChoice: $themeChoice,
+                    colorScheme: $colorScheme,
+                    dynamicTypeSizeChoice: $dynamicTypeSizeChoice
+                )
                     .padding()
                     .background(.regularMaterial)
             }
@@ -88,6 +93,20 @@ struct ShowcaseCatalogView: View {
             ShowcaseListView()
         case .form:
             ShowcaseFormView()
+        case .checkbox:
+            ShowcaseCheckboxView()
+        case .radio:
+            ShowcaseRadioView()
+        case .segmentedControl:
+            ShowcaseSegmentedControlView()
+        case .slider:
+            ShowcaseSliderView()
+        case .secureField:
+            ShowcaseSecureFieldView()
+        case .searchField:
+            ShowcaseSearchFieldView()
+        case .picker:
+            ShowcasePickerView()
         }
     }
 }
@@ -97,7 +116,8 @@ struct ShowcaseCatalogView: View {
     ShowcaseCatalogView(
         selection: .constant(.button),
         themeChoice: .constant(.system),
-        colorScheme: .constant(nil)
+        colorScheme: .constant(nil),
+        dynamicTypeSizeChoice: .constant(.system)
     )
 }
 #endif

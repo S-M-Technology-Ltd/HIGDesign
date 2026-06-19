@@ -9,6 +9,11 @@ public protocol HIGTheme: Sendable {
     var button: any HIGButtonTokens { get }
     var textField: any HIGTextFieldTokens { get }
     var toggle: any HIGToggleTokens { get }
+    var checkbox: any HIGCheckboxTokens { get }
+    var radio: any HIGRadioTokens { get }
+    var segmentedControl: any HIGSegmentedControlTokens { get }
+    var slider: any HIGSliderTokens { get }
+    var picker: any HIGPickerTokens { get }
     var card: any HIGCardTokens { get }
     var progress: any HIGProgressTokens { get }
     var alert: any HIGAlertTokens { get }

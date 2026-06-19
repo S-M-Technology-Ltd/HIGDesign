@@ -7,6 +7,7 @@ cd "$ROOT"
 EXPECTED=(
     button textField toggle divider progressView card tabBar toolbar
     alert toast sidebar navigationBar label badge activityIndicator list form
+    checkbox radio segmentedControl slider secureField searchField picker
 )
 
 missing=()
@@ -27,6 +28,13 @@ showcase_key_for() {
         HIGButton) echo button ;;
         HIGTextField) echo textField ;;
         HIGToggle) echo toggle ;;
+        HIGCheckbox) echo checkbox ;;
+        HIGRadio) echo radio ;;
+        HIGSegmentedControl) echo segmentedControl ;;
+        HIGSlider) echo slider ;;
+        HIGSecureField) echo secureField ;;
+        HIGSearchField) echo searchField ;;
+        HIGPicker) echo picker ;;
         HIGDivider) echo divider ;;
         HIGProgressView) echo progressView ;;
         HIGCard) echo card ;;

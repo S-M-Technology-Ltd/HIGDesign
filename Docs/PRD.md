@@ -70,16 +70,16 @@ HIGDesign synthesizes architecture and patterns from:
 | `HIGDesignPlatform` | Idiom and capability adapters |
 | `HIGDesignBridging` | Optional Cocoa bridges |
 
-## Current Milestone: Phase 6 Navigation and Feedback Expansion
+## Current Milestone: Phase 7 Controls and Inputs Expansion
 
-Phase 6 polishes navigation and feedback APIs and automates showcase snapshot capture.
+Phase 7 extends controls and inputs and expands showcase accessibility states.
 
 This milestone includes:
 
-- `HIGAlertBanner` inline variant and `HIGToastQueue` sequential presentation
-- `HIGSidebar` list styling via `HIGSidebarTokens` on `HIGTheme`
-- composable `higNavigationBar` API with leading and trailing actions
-- automated PNG snapshot capture (`capture_showcase_snapshots.sh`, `HIGSnapshotCapture`)
+- `HIGCheckbox`, `HIGRadio`, `HIGSegmentedControl`, `HIGSlider`, `HIGSecureField`, `HIGSearchField`, and `HIGPicker`
+- checkbox, radio, segmented-control, slider, and picker token protocols on `HIGTheme`
+- twenty-four-component `HIGShowcase` catalog
+- Dynamic Type size controls in showcase settings
 
 This milestone does not include:
 
@@ -88,13 +88,13 @@ This milestone does not include:
 - remote third-party dependencies
 - custom brand themes beyond system defaults
 
-## Next Milestone: Phase 7 Controls and Inputs Expansion
+## Next Milestone: Phase 8 Content and Media Components
 
 The next milestone delivers:
 
-- `HIGCheckbox`, `HIGRadio`, `HIGSegmentedControl`, and `HIGSlider`
-- `HIGSecureField`, `HIGSearchField`, and `HIGPicker`
-- expanded accessibility and Dynamic Type showcase states
+- `HIGIcon`, `HIGAvatar`, `HIGLink`, and `HIGBulletList`
+- `HIGTextEditor` and `HIGStepper`
+- snapshot diff verification in CI
 
 ## Success Metrics
 

@@ -28,6 +28,14 @@ HIGDesign packages a layered token architecture, environment-driven themes, and 
 - ``HIGButtonSize``
 - ``HIGTextField``
 - ``HIGToggle``
+- ``HIGCheckbox``
+- ``HIGRadio``
+- ``HIGRadioOption``
+- ``HIGSegmentedControl``
+- ``HIGSlider``
+- ``HIGSecureField``
+- ``HIGSearchField``
+- ``HIGPicker``
 - ``HIGDivider``
 - ``HIGProgressView``
 - ``HIGCard``

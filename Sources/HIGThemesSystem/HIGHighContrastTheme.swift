@@ -11,6 +11,11 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
     public let button: any HIGButtonTokens
     public let textField: any HIGTextFieldTokens
     public let toggle: any HIGToggleTokens
+    public let checkbox: any HIGCheckboxTokens
+    public let radio: any HIGRadioTokens
+    public let segmentedControl: any HIGSegmentedControlTokens
+    public let slider: any HIGSliderTokens
+    public let picker: any HIGPickerTokens
     public let card: any HIGCardTokens
     public let progress: any HIGProgressTokens
     public let alert: any HIGAlertTokens
@@ -36,6 +41,11 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
         self.button = base.button
         self.textField = base.textField
         self.toggle = base.toggle
+        self.checkbox = base.checkbox
+        self.radio = base.radio
+        self.segmentedControl = base.segmentedControl
+        self.slider = base.slider
+        self.picker = base.picker
         self.card = base.card
         self.progress = base.progress
         self.alert = base.alert

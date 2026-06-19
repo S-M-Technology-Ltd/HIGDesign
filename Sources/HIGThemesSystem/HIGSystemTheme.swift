@@ -10,6 +10,11 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let button: any HIGButtonTokens
     public let textField: any HIGTextFieldTokens
     public let toggle: any HIGToggleTokens
+    public let checkbox: any HIGCheckboxTokens
+    public let radio: any HIGRadioTokens
+    public let segmentedControl: any HIGSegmentedControlTokens
+    public let slider: any HIGSliderTokens
+    public let picker: any HIGPickerTokens
     public let card: any HIGCardTokens
     public let progress: any HIGProgressTokens
     public let alert: any HIGAlertTokens
@@ -25,6 +30,11 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         button: any HIGButtonTokens = HIGSystemButtonTokens(),
         textField: any HIGTextFieldTokens = HIGSystemTextFieldTokens(),
         toggle: any HIGToggleTokens = HIGSystemToggleTokens(),
+        checkbox: any HIGCheckboxTokens = HIGSystemCheckboxTokens(),
+        radio: any HIGRadioTokens = HIGSystemRadioTokens(),
+        segmentedControl: any HIGSegmentedControlTokens = HIGSystemSegmentedControlTokens(),
+        slider: any HIGSliderTokens = HIGSystemSliderTokens(),
+        picker: any HIGPickerTokens = HIGSystemPickerTokens(),
         card: any HIGCardTokens = HIGSystemCardTokens(),
         progress: any HIGProgressTokens = HIGSystemProgressTokens(),
         alert: any HIGAlertTokens = HIGSystemAlertTokens(),
@@ -39,6 +49,11 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.button = button
         self.textField = textField
         self.toggle = toggle
+        self.checkbox = checkbox
+        self.radio = radio
+        self.segmentedControl = segmentedControl
+        self.slider = slider
+        self.picker = picker
         self.card = card
         self.progress = progress
         self.alert = alert

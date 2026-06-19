@@ -57,4 +57,4 @@ Scripts/build_all_platforms.sh
 
 ## Current Milestone
 
-Phase 6 navigation and feedback expansion. All platform builds, tests, showcase build, coverage guards, DocC coverage, and automated snapshot capture are mandatory before merging UI changes.
+Phase 7 controls and inputs expansion. All platform builds, tests, showcase build, coverage guards, DocC coverage, and automated snapshot capture are mandatory before merging UI changes.

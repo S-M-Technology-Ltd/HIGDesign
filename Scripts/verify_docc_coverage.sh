@@ -20,6 +20,14 @@ EXPECTED_SYMBOLS=(
     HIGButtonSize
     HIGTextField
     HIGToggle
+    HIGCheckbox
+    HIGRadio
+    HIGRadioOption
+    HIGSegmentedControl
+    HIGSlider
+    HIGSecureField
+    HIGSearchField
+    HIGPicker
     HIGDivider
     HIGProgressView
     HIGCard

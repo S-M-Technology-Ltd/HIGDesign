@@ -53,6 +53,20 @@ public struct ShowcaseSnapshotView: View {
             ShowcaseListView()
         case .form:
             ShowcaseFormView()
+        case .checkbox:
+            ShowcaseCheckboxView()
+        case .radio:
+            ShowcaseRadioView()
+        case .segmentedControl:
+            ShowcaseSegmentedControlView()
+        case .slider:
+            ShowcaseSliderView()
+        case .secureField:
+            ShowcaseSecureFieldView()
+        case .searchField:
+            ShowcaseSearchFieldView()
+        case .picker:
+            ShowcasePickerView()
         }
     }
 }

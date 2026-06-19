@@ -63,7 +63,7 @@ Shared platform checks live in `HIGPlatform` so components do not accumulate cop
 
 ## Current State
 
-Phase 6 navigation and feedback expansion builds on the Phase 1–5 foundation, which compiles on all six platforms (macOS, iOS, tvOS, watchOS, visionOS).
+Phase 7 controls and inputs expansion builds on the Phase 1–6 foundation, which compiles on all six platforms (macOS, iOS, tvOS, watchOS, visionOS).
 
 | Module | Status |
 |--------|--------|
@@ -83,4 +83,4 @@ Phase 6 navigation and feedback expansion builds on the Phase 1–5 foundation, 
 
 Verification: `Scripts/build_all_platforms.sh`, `swift test`, and all governance guards (including `verify_no_uikit.sh`) pass locally.
 
-Next phase: controls and inputs expansion (`HIGCheckbox`, `HIGSlider`, `HIGSearchField`), accessibility showcase states, and optional SwiftUI bridging helpers.
+Next phase: content and media components (`HIGIcon`, `HIGAvatar`, `HIGLink`), text editor and stepper controls, snapshot diff verification, and optional SwiftUI bridging helpers.
