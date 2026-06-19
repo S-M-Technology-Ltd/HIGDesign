@@ -15,6 +15,7 @@ These rules apply to automated and human-assisted coding agents working in this 
 - Public API names use the `HIG` prefix.
 - Theme injection must go through `HIGThemeableView` and `@Environment(\.higTheme)`.
 - Components must resolve visual values from tokens and themes, not hardcoded constants.
+- All UI dimensions, colors, opacity, padding, width, height, corner radius, and spacing must come from design tokens (`HIGTokensRaw` → `HIGTokensSemantic` → `HIGTokensComponent` → `HIGTheme`).
 - Platform-specific behavior belongs in `HIGPlatform` or narrowly scoped adapters.
 
 ## Package Boundaries

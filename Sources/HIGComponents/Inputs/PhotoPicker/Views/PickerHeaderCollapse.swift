@@ -1,4 +1,5 @@
 #if os(iOS)
+import HIGThemesContract
 import SwiftUI
 
 enum PickerHeaderSwipeDirection {
@@ -13,22 +14,27 @@ struct PickerCollapsibleHeader<Preview: View, Banner: View>: View {
     let collapseProgress: CGFloat
     let localization: any HIGPhotoLocalizationProviding
     let onCollapseSwipe: (PickerHeaderSwipeDirection) -> Void
-    @ViewBuilder let preview: (_ side: CGFloat) -> Preview
+    @ViewBuilder let preview: (_ height: CGFloat) -> Preview
     @ViewBuilder let banner: () -> Banner
 
-    private var grabberHeight: CGFloat { PickerDesign.headerGrabberHeight }
-    private var toggleHeight: CGFloat { showsBanner ? PickerDesign.limitedBannerToggleHeight : 0 }
+    @Environment(\.higTheme) private var theme
+
+    private var tokens: any HIGPhotoPickerTokens { theme.photoPicker }
+    private var layout: PickerLayout { PickerLayout(tokens: tokens) }
+
+    private var grabberHeight: CGFloat { tokens.headerGrabberHeight }
+    private var toggleHeight: CGFloat { showsBanner ? tokens.limitedBannerToggleHeight : 0 }
     private var detailsHeight: CGFloat {
-        showsBanner && isBannerExpanded ? PickerDesign.limitedBannerDetailsHeight : 0
+        showsBanner && isBannerExpanded ? tokens.limitedBannerDetailsHeight : 0
     }
 
     private var bannerDetailsSpacing: CGFloat {
-        showsBanner && isBannerExpanded ? PickerDesign.limitedBannerExpandedSpacing : 0
+        showsBanner && isBannerExpanded ? tokens.limitedBannerExpandedSpacing : 0
     }
 
     private var bannerDetailsReveal: CGFloat {
         guard showsBanner else { return 0 }
-        return PickerDesign.limitedBannerDetailsReveal(
+        return layout.limitedBannerDetailsReveal(
             isExpanded: isBannerExpanded,
             headerCollapseProgress: collapseProgress
         )
@@ -38,14 +44,14 @@ struct PickerCollapsibleHeader<Preview: View, Banner: View>: View {
         toggleHeight + (detailsHeight + bannerDetailsSpacing) * bannerDetailsReveal
     }
 
-    private var minPreviewSide: CGFloat { containerWidth * PickerDesign.minPreviewScale }
+    private var minPreviewSide: CGFloat { containerWidth * tokens.minPreviewScale }
 
     private var currentPreviewSide: CGFloat {
         containerWidth + (minPreviewSide - containerWidth) * collapseProgress
     }
 
     private var visibleHeight: CGFloat {
-        PickerDesign.collapsibleHeaderHeight(
+        layout.collapsibleHeaderHeight(
             containerWidth: containerWidth,
             showsBanner: showsBanner,
             isBannerExpanded: isBannerExpanded,
@@ -54,34 +60,33 @@ struct PickerCollapsibleHeader<Preview: View, Banner: View>: View {
     }
 
     var body: some View {
-        VStack(spacing: 0) {
+        VStack(spacing: tokens.stackSpacingNone) {
             preview(currentPreviewSide)
-                .frame(width: currentPreviewSide, height: currentPreviewSide)
                 .frame(maxWidth: .infinity)
                 .frame(height: currentPreviewSide, alignment: .top)
                 .clipped()
-                .contentShape(Rectangle())
-                .gesture(collapseSwipeGesture)
 
             if showsBanner {
                 banner()
-                    .frame(height: bannerHeight, alignment: .top)
+                    .frame(maxWidth: .infinity, minHeight: bannerHeight, alignment: .top)
             }
 
             headerGrabber
-                .gesture(collapseSwipeGesture)
         }
+        .frame(maxWidth: .infinity)
         .frame(height: visibleHeight, alignment: .top)
+        .contentShape(Rectangle())
+        .pickerHeaderCollapseSwipe(tokens: tokens, onSwipe: onCollapseSwipe)
         .clipped()
     }
 
     private var headerGrabber: some View {
-        VStack(spacing: 0) {
+        VStack(spacing: tokens.stackSpacingNone) {
             Capsule()
-                .fill(Color.secondary.opacity(0.35))
-                .frame(width: 32, height: 4)
-                .padding(.top, 6)
-                .padding(.bottom, 6)
+                .fill(theme.colors.labelSecondary.opacity(tokens.grabberOpacity))
+                .frame(width: tokens.headerGrabberWidth, height: tokens.headerGrabberThickness)
+                .padding(.top, tokens.headerGrabberVerticalPadding)
+                .padding(.bottom, tokens.headerGrabberVerticalPadding)
         }
         .frame(maxWidth: .infinity)
         .frame(height: grabberHeight)
@@ -90,18 +95,5 @@ struct PickerCollapsibleHeader<Preview: View, Banner: View>: View {
         .accessibilityLabel(localization.pickerCollapseHeaderAccessibilityLabel())
         .accessibilityHint(localization.pickerCollapseHeaderAccessibilityHint(isCollapsed: collapseProgress > 0.5))
     }
-
-    private var collapseSwipeGesture: some Gesture {
-        DragGesture(minimumDistance: 24)
-            .onEnded { value in
-                let vertical = value.translation.height
-                guard abs(vertical) > abs(value.translation.width) else { return }
-
-                if vertical < -40 {
-                    onCollapseSwipe(.up)
-                } else if vertical > 40 {
-                    onCollapseSwipe(.down)
-                }
-            }
-    }
-}#endif
+}
+#endif

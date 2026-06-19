@@ -35,6 +35,7 @@ public struct HIGBrandTheme: HIGTheme, Sendable {
     public let activityIndicator: any HIGActivityIndicatorTokens
     public let list: any HIGListTokens
     public let sidebar: any HIGSidebarTokens
+    public let photoPicker: any HIGPhotoPickerTokens
 
     public init(
         name: String,
@@ -81,5 +82,6 @@ public struct HIGBrandTheme: HIGTheme, Sendable {
         self.activityIndicator = base.activityIndicator
         self.list = base.list
         self.sidebar = base.sidebar
+        self.photoPicker = base.photoPicker
     }
 }

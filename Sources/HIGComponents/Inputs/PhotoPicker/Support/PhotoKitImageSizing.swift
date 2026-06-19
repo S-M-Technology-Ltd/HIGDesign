@@ -1,11 +1,14 @@
 #if os(iOS)
 import CoreGraphics
+import HIGTokensComponent
 import Photos
 
 enum PhotoKitImageSizing {
     static let maxImageDimension: CGFloat = 4096
 
-    static func displayScale(fallback: CGFloat = PickerDesign.defaultDisplayScale) -> CGFloat {
+    static func displayScale(
+        fallback: CGFloat = HIGSystemPhotoPickerTokens().defaultDisplayScale
+    ) -> CGFloat {
         fallback
     }
 
@@ -35,9 +38,13 @@ enum PhotoKitImageSizing {
         )
     }
 
-    static func gridCellPointSize(containerWidth: CGFloat? = nil) -> CGSize {
-        let width = containerWidth ?? PickerDesign.fallbackContainerWidth
-        let side = PickerDesign.gridCellSideLength(containerWidth: width)
+    static func gridCellPointSize(
+        containerWidth: CGFloat? = nil,
+        tokens: any HIGPhotoPickerTokens = HIGSystemPhotoPickerTokens()
+    ) -> CGSize {
+        let width = containerWidth ?? tokens.fallbackLayoutWidth
+        let layout = PickerLayout(tokens: tokens)
+        let side = layout.gridCellSideLength(containerWidth: width)
         guard side > 0 else {
             return CGSize(width: 120, height: 120)
         }

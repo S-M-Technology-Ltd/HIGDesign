@@ -33,6 +33,7 @@ public struct HIGComponentPreviewTheme: HIGTheme {
     public let activityIndicator: any HIGActivityIndicatorTokens = HIGSystemActivityIndicatorTokens()
     public let list: any HIGListTokens = HIGSystemListTokens()
     public let sidebar: any HIGSidebarTokens = HIGSystemSidebarTokens()
+    public let photoPicker: any HIGPhotoPickerTokens = HIGSystemPhotoPickerTokens()
 
     public init() {}
 }

@@ -1,4 +1,5 @@
 #if os(iOS)
+import HIGThemesContract
 import SwiftUI
 
 private struct ContainerWidthPreferenceKey: PreferenceKey {
@@ -13,13 +14,16 @@ private struct ContainerWidthPreferenceKey: PreferenceKey {
 struct ContainerWidthReaderView: View {
     @Binding var width: CGFloat
     @Environment(\.displayScale) private var displayScale
+    @Environment(\.higTheme) private var theme
+
+    private var layout: PickerLayout { PickerLayout(tokens: theme.photoPicker) }
 
     var body: some View {
         GeometryReader { geometry in
             Color.clear
                 .preference(
                     key: ContainerWidthPreferenceKey.self,
-                    value: PickerDesign.pixelAlignedLength(geometry.size.width, scale: displayScale)
+                    value: layout.pixelAlignedLength(geometry.size.width, scale: displayScale)
                 )
         }
     }

@@ -1,4 +1,5 @@
 #if os(iOS)
+import HIGThemesContract
 import SwiftUI
 
 struct PermissionView: View {
@@ -8,37 +9,41 @@ struct PermissionView: View {
     let onManageLimitedAccess: () -> Void
     let onOpenSettings: () -> Void
 
+    @Environment(\.higTheme) private var theme
+
+    private var tokens: any HIGPhotoPickerTokens { theme.photoPicker }
+
     var body: some View {
-        VStack(spacing: 24) {
+        VStack(spacing: tokens.permissionSectionSpacing) {
             Image(systemName: iconName)
-                .font(.system(size: 56, weight: .light))
+                .font(.system(size: tokens.permissionIconSize, weight: .light))
                 .symbolRenderingMode(.hierarchical)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(theme.colors.labelSecondary)
                 .accessibilityHidden(true)
 
-            VStack(spacing: 8) {
+            VStack(spacing: tokens.permissionItemSpacing) {
                 Text(title)
                     .font(.title2.weight(.semibold))
                     .multilineTextAlignment(.center)
 
                 Text(message)
                     .font(.body)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(theme.colors.labelSecondary)
                     .multilineTextAlignment(.center)
             }
-            .padding(.horizontal, 32)
+            .padding(.horizontal, tokens.permissionHorizontalPadding)
 
             actionButtons
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(PickerDesign.chromeBackground)
+        .background(tokens.chromeBackground)
     }
 
     @ViewBuilder
     private var actionButtons: some View {
         switch status {
         case .limited:
-            VStack(spacing: 12) {
+            VStack(spacing: tokens.albumListRowSpacing) {
                 Button(localization.pickerAddingImageAccessButtonText()) {
                     onManageLimitedAccess()
                 }

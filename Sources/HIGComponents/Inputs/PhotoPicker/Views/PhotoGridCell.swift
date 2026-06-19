@@ -1,5 +1,6 @@
 #if os(iOS)
 import CoreGraphics
+import HIGThemesContract
 import SwiftUI
 
 struct PhotoGridCellView: View {
@@ -10,7 +11,10 @@ struct PhotoGridCellView: View {
     let imageLoader: ImageLoadingClient
     let onTap: () -> Void
 
+    @Environment(\.higTheme) private var theme
     @Environment(\.displayScale) private var displayScale
+
+    private var tokens: any HIGPhotoPickerTokens { theme.photoPicker }
 
     @State private var thumbnail: CGImage?
     @State private var isInCloud = false
@@ -31,30 +35,30 @@ struct PhotoGridCellView: View {
                         .resizable()
                         .scaledToFill()
                 } else {
-                    PickerDesign.placeholderFill
+                    tokens.placeholderFill
                 }
             }
             .frame(width: cellSide, height: cellSide)
             .clipped()
 
             if isSelected {
-                Color.primary.opacity(0.15)
+                theme.colors.labelPrimary.opacity(tokens.selectionOverlayOpacity)
             }
 
             if isInCloud {
                 Image(systemName: "icloud.and.arrow.down")
                     .font(.caption2.weight(.semibold))
-                    .foregroundStyle(.primary)
-                    .padding(5)
+                    .foregroundStyle(theme.colors.labelPrimary)
+                    .padding(tokens.iCloudBadgeInnerPadding)
                     .background(.ultraThinMaterial, in: Circle())
-                    .padding(PickerDesign.selectionBadgePadding)
+                    .padding(tokens.selectionBadgePadding)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
                     .accessibilityLabel("Stored in iCloud")
             }
 
             if isSelected {
                 selectionBadge
-                    .padding(PickerDesign.selectionBadgePadding)
+                    .padding(tokens.selectionBadgePadding)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
             }
         }
@@ -76,20 +80,24 @@ struct PhotoGridCellView: View {
     private var selectionBadge: some View {
         ZStack {
             Circle()
-                .fill(Color.primary)
-                .frame(width: PickerDesign.selectionBadgeSize, height: PickerDesign.selectionBadgeSize)
+                .fill(theme.colors.labelPrimary)
+                .frame(width: tokens.selectionBadgeSize, height: tokens.selectionBadgeSize)
 
             if showsSelectionOrder, let selectionIndex {
                 Text("\(selectionIndex + 1)")
                     .font(.caption2.weight(.bold))
-                    .foregroundStyle(Color(.systemBackground))
+                    .foregroundStyle(tokens.gridBackground)
             } else {
                 Image(systemName: "checkmark")
                     .font(.caption2.weight(.bold))
-                    .foregroundStyle(Color(.systemBackground))
+                    .foregroundStyle(tokens.gridBackground)
             }
         }
-        .shadow(color: .black.opacity(0.2), radius: 1, y: 1)
+        .shadow(
+            color: theme.colors.labelPrimary.opacity(tokens.badgeShadowOpacity),
+            radius: tokens.badgeShadowRadius,
+            y: tokens.badgeShadowYOffset
+        )
     }
 
     private func reloadThumbnailIfNeeded() {

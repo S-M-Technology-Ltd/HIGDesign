@@ -120,6 +120,7 @@ HIGFoundations
 * Public module products must stay separable so consumers can import only tokens, only components, or the umbrella library.
 * Theme resolution belongs in `HIGThemesContract` and theme implementations, not in individual components.
 * Components must read design values from `@Environment(\.higTheme)` or component token providers.
+* All UI dimensions, colors, opacity, padding, width, height, corner radius, and spacing must come from design tokens — never hardcoded literals in component view code.
 * Do not hardcode brand colors, custom font families, or non-system spacing inside components.
 * Platform differences belong in `HIGPlatform` or component-specific adapters, not scattered `#if os()` blocks.
 * Keep PRs small and module-focused.
@@ -256,6 +257,10 @@ Scripts/verify_xcode_previews_present.sh
 View naming guard:
 
 Scripts/verify_view_naming.sh
+
+Photo picker design token guard:
+
+Scripts/verify_photo_picker_token_usage.sh
 
 Swift package build:
 

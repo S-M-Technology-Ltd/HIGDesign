@@ -1,5 +1,6 @@
 #if os(iOS)
 import CoreGraphics
+import HIGThemesContract
 import SwiftUI
 
 struct AlbumListView: View {
@@ -11,6 +12,10 @@ struct AlbumListView: View {
     let configuration: HIGPhotoPickerConfiguration
     let onSelect: (HIGPhotoAlbum) -> Void
 
+    @Environment(\.higTheme) private var theme
+
+    private var tokens: any HIGPhotoPickerTokens { theme.photoPicker }
+
     var body: some View {
         Group {
             if albums.isEmpty {
@@ -19,7 +24,7 @@ struct AlbumListView: View {
                 albumList
             }
         }
-        .background(PickerDesign.chromeBackground)
+        .background(tokens.chromeBackground)
         .navigationTitle(localization.albumNavigationTitle())
         .navigationBarTitleDisplayMode(.large)
         .toolbarBackground(.visible, for: .navigationBar)
@@ -56,11 +61,11 @@ struct AlbumListView: View {
                 Text(localization.albumEmptyMessage())
             }
         } else {
-            VStack(spacing: 12) {
+            VStack(spacing: tokens.albumListRowSpacing) {
                 Image(systemName: "photo.on.rectangle.angled")
-                    .font(.system(size: 44, weight: .light))
+                    .font(.system(size: tokens.albumListEmptyIconSize, weight: .light))
                     .symbolRenderingMode(.hierarchical)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(theme.colors.labelSecondary)
                     .accessibilityHidden(true)
 
                 Text(localization.albumEmptyTitle())
@@ -68,9 +73,9 @@ struct AlbumListView: View {
 
                 Text(localization.albumEmptyMessage())
                     .font(.body)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(theme.colors.labelSecondary)
                     .multilineTextAlignment(.center)
-                    .padding(.horizontal, 32)
+                    .padding(.horizontal, tokens.albumListEmptyStatePadding)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
@@ -87,6 +92,10 @@ private struct AlbumListRowButtonView: View {
     let imageLoader: ImageLoadingClient
     let onSelect: (HIGPhotoAlbum) -> Void
 
+    @Environment(\.higTheme) private var theme
+
+    private var tokens: any HIGPhotoPickerTokens { theme.photoPicker }
+
     var body: some View {
         Button {
             onSelect(album)
@@ -101,7 +110,14 @@ private struct AlbumListRowButtonView: View {
             )
         }
         .buttonStyle(.plain)
-        .listRowInsets(PickerDesign.albumListRowInsets)
+        .listRowInsets(
+            EdgeInsets(
+                top: tokens.albumListRowInsetVertical,
+                leading: tokens.albumListRowInsetHorizontal,
+                bottom: tokens.albumListRowInsetVertical,
+                trailing: tokens.albumListRowInsetHorizontal
+            )
+        )
         .accessibilityLabel("\(album.name), \(localization.albumPhotoCountText(album.assetCount))")
         .accessibilityAddTraits(isSelected ? .isSelected : AccessibilityTraits())
     }
@@ -115,8 +131,12 @@ private struct AlbumListRowView: View {
     let libraryClient: any PhotosLibraryClientProtocol
     let imageLoader: ImageLoadingClient
 
+    @Environment(\.higTheme) private var theme
+
+    private var tokens: any HIGPhotoPickerTokens { theme.photoPicker }
+
     var body: some View {
-        HStack(spacing: PickerDesign.albumListRowSpacing) {
+        HStack(spacing: tokens.albumListRowSpacing) {
             AlbumThumbnailView(
                 album: album,
                 configuration: configuration,
@@ -124,25 +144,25 @@ private struct AlbumListRowView: View {
                 imageLoader: imageLoader
             )
             .frame(
-                width: PickerDesign.albumThumbnailSize,
-                height: PickerDesign.albumThumbnailSize
+                width: tokens.albumThumbnailSize,
+                height: tokens.albumThumbnailSize
             )
             .clipShape(
                 RoundedRectangle(
-                    cornerRadius: PickerDesign.albumThumbnailCornerRadius,
+                    cornerRadius: tokens.albumThumbnailCornerRadius,
                     style: .continuous
                 )
             )
 
-            VStack(alignment: .leading, spacing: 2) {
+            VStack(alignment: .leading, spacing: tokens.albumListSubtitleSpacing) {
                 Text(album.name)
                     .font(.body)
-                    .foregroundStyle(.primary)
+                    .foregroundStyle(theme.colors.labelPrimary)
                     .lineLimit(1)
 
                 Text(localization.albumPhotoCountText(album.assetCount))
                     .font(.subheadline)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(theme.colors.labelSecondary)
                     .monospacedDigit()
             }
 
@@ -151,11 +171,11 @@ private struct AlbumListRowView: View {
             if isSelected {
                 Image(systemName: "checkmark")
                     .font(.body.weight(.semibold))
-                    .foregroundStyle(Color.accentColor)
+                    .foregroundStyle(theme.colors.accent)
                     .accessibilityHidden(true)
             }
         }
-        .frame(minHeight: PickerDesign.albumListRowMinHeight)
+        .frame(minHeight: tokens.albumListRowMinHeight)
         .contentShape(Rectangle())
     }
 }
@@ -166,11 +186,15 @@ private struct AlbumThumbnailView: View {
     let libraryClient: any PhotosLibraryClientProtocol
     let imageLoader: ImageLoadingClient
 
+    @Environment(\.higTheme) private var theme
+
+    private var tokens: any HIGPhotoPickerTokens { theme.photoPicker }
+
     @State private var thumbnail: CGImage?
 
     var body: some View {
         ZStack {
-            PickerDesign.placeholderFill
+            tokens.placeholderFill
 
             if let thumbnail {
                 Image(decorative: thumbnail, scale: 1, orientation: .up)
@@ -195,8 +219,8 @@ private struct AlbumThumbnailView: View {
             }
 
             let thumbnailSize = CGSize(
-                width: PickerDesign.albumThumbnailSize * 2,
-                height: PickerDesign.albumThumbnailSize * 2
+                width: tokens.albumThumbnailSize * 2,
+                height: tokens.albumThumbnailSize * 2
             )
             if let result = try? await imageLoader.loadThumbnail(for: first, targetSize: thumbnailSize) {
                 thumbnail = result.cgImage

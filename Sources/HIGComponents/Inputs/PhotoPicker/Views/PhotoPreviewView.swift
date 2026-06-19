@@ -1,10 +1,11 @@
 #if os(iOS)
 import CoreGraphics
+import HIGThemesContract
 import SwiftUI
 
 struct PhotoPreviewView: View {
     let asset: HIGPhotoAsset?
-    var layoutSide: CGFloat?
+    var layoutHeight: CGFloat?
     let configuration: HIGPhotoPickerConfiguration
     let imageLoader: ImageLoadingClient
     let onPreviewCropChanged: (HIGPhotoPreviewCrop) -> Void
@@ -21,34 +22,44 @@ struct PhotoPreviewView: View {
     @State private var previewSide: CGFloat = 0
     @State private var loadedAssetID: String?
 
+    @Environment(\.higTheme) private var theme
+
+    private var tokens: any HIGPhotoPickerTokens { theme.photoPicker }
+
     var body: some View {
-        Group {
-            if let layoutSide, layoutSide > 0 {
-                previewContent(side: layoutSide)
-            } else {
-                GeometryReader { geometry in
-                    previewContent(side: min(geometry.size.width, geometry.size.height))
-                }
-                .aspectRatio(1, contentMode: .fit)
-            }
+        GeometryReader { geometry in
+            let width = geometry.size.width
+            let height = resolvedLayoutHeight(width: width)
+            previewContent(width: width, height: height)
+                .frame(width: width, height: height, alignment: .top)
         }
+        .frame(maxWidth: .infinity)
         .onDisappear {
             loadTask?.cancel()
             loadTask = nil
         }
     }
 
+    private func resolvedLayoutHeight(width: CGFloat) -> CGFloat {
+        if let layoutHeight, layoutHeight > 0 {
+            return layoutHeight
+        }
+        return width
+    }
+
     @ViewBuilder
-    private func previewContent(side: CGFloat) -> some View {
-        let previewSize = CGSize(width: side, height: side)
+    private func previewContent(width: CGFloat, height: CGFloat) -> some View {
+        let previewSize = CGSize(width: width, height: height)
+        let cropSide = min(width, height)
 
         ZStack {
-            PickerDesign.previewBackground
+            tokens.previewBackground
 
             if let previewImage {
                 ZoomableSwiftUIImageView(
                     cgImage: previewImage,
                     previewSize: previewSize,
+                    maximumZoomScale: tokens.previewMaximumZoomScale,
                     zoomScale: $zoomScale,
                     lastZoomScale: $lastZoomScale,
                     contentOffset: $contentOffset,
@@ -62,9 +73,8 @@ struct PhotoPreviewView: View {
             }
 
             if showsCropMask {
-                Rectangle()
-                    .strokeBorder(Color.primary.opacity(0.2), lineWidth: 1)
-                    .allowsHitTesting(false)
+                PreviewCompositionGridOverlay()
+                    .frame(width: width, height: height)
             }
 
             if configuration.showsProgress, isDownloading {
@@ -74,27 +84,37 @@ struct PhotoPreviewView: View {
                 )
             }
         }
-        .frame(width: previewSize.width, height: previewSize.height)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .frame(width: width, height: height, alignment: .top)
         .clipped()
         .transaction { transaction in
             transaction.animation = nil
         }
         .onAppear {
-            updatePreviewSideIfNeeded(side)
+            updatePreviewDimensionsIfNeeded(width: width, height: height, cropSide: cropSide)
         }
-        .onChange(of: side) { newSide in
-            updatePreviewSideIfNeeded(newSide)
+        .onChange(of: width) { newWidth in
+            updatePreviewDimensionsIfNeeded(
+                width: newWidth,
+                height: height,
+                cropSide: min(newWidth, height)
+            )
+        }
+        .onChange(of: height) { newHeight in
+            updatePreviewDimensionsIfNeeded(
+                width: width,
+                height: newHeight,
+                cropSide: min(width, newHeight)
+            )
         }
     }
 
-    private func updatePreviewSideIfNeeded(_ side: CGFloat) {
-        guard side > 0 else { return }
-        guard abs(side - previewSide) > 1 else { return }
+    private func updatePreviewDimensionsIfNeeded(width: CGFloat, height: CGFloat, cropSide: CGFloat) {
+        guard width > 0, height > 0, cropSide > 0 else { return }
+        guard abs(cropSide - previewSide) > 1 else { return }
 
-        previewSide = side
+        previewSide = cropSide
         publishPreviewCrop()
-        reloadImage(using: side)
+        reloadImage(using: max(width, height))
     }
 
     private func publishPreviewCrop() {
@@ -132,10 +152,10 @@ struct PhotoPreviewView: View {
         lastContentOffset = .zero
         publishPreviewCrop()
 
-        let resolvedSide = max(side ?? previewSide, 320)
+        let resolvedSide = max(side ?? previewSide, tokens.previewMinimumLoadSide)
         let previewPointSize = CGSize(
-            width: resolvedSide * PickerDesign.previewZoomHeadroom,
-            height: resolvedSide * PickerDesign.previewZoomHeadroom
+            width: resolvedSide * tokens.previewZoomHeadroom,
+            height: resolvedSide * tokens.previewZoomHeadroom
         )
         let allowsNetwork = configuration.iCloudNetworkAccessAllowed
         let gridCacheKey = ImageCacheKey.thumbnail(
@@ -248,15 +268,56 @@ struct PhotoPreviewView: View {
     }
 }
 
+private struct PreviewCompositionGridOverlay: View {
+    @Environment(\.higTheme) private var theme
+
+    private var tokens: any HIGPhotoPickerTokens { theme.photoPicker }
+
+    var body: some View {
+        let lineColor = theme.colors.labelPrimary.opacity(tokens.compositionGridLineOpacity)
+        let lineWidth = tokens.compositionGridLineWidth
+
+        Canvas { context, size in
+            let stroke = StrokeStyle(lineWidth: lineWidth)
+
+            context.stroke(
+                Path(CGRect(origin: .zero, size: size)),
+                with: .color(lineColor),
+                style: stroke
+            )
+
+            let thirdWidth = size.width / 3
+            let thirdHeight = size.height / 3
+
+            var grid = Path()
+            grid.move(to: CGPoint(x: thirdWidth, y: 0))
+            grid.addLine(to: CGPoint(x: thirdWidth, y: size.height))
+            grid.move(to: CGPoint(x: thirdWidth * 2, y: 0))
+            grid.addLine(to: CGPoint(x: thirdWidth * 2, y: size.height))
+            grid.move(to: CGPoint(x: 0, y: thirdHeight))
+            grid.addLine(to: CGPoint(x: size.width, y: thirdHeight))
+            grid.move(to: CGPoint(x: 0, y: thirdHeight * 2))
+            grid.addLine(to: CGPoint(x: size.width, y: thirdHeight * 2))
+
+            context.stroke(grid, with: .color(lineColor), style: stroke)
+        }
+        .allowsHitTesting(false)
+    }
+}
+
 private struct ZoomableSwiftUIImageView: View {
     let cgImage: CGImage
     let previewSize: CGSize
+    let maximumZoomScale: CGFloat
     @Binding var zoomScale: CGFloat
     @Binding var lastZoomScale: CGFloat
     @Binding var contentOffset: CGSize
     @Binding var lastContentOffset: CGSize
     @Binding var isInteracting: Bool
     let onCropChanged: () -> Void
+
+    @State private var isDragging = false
+    @State private var isZooming = false
 
     var body: some View {
         Image(decorative: cgImage, scale: 1, orientation: .up)
@@ -275,7 +336,8 @@ private struct ZoomableSwiftUIImageView: View {
     private var dragGesture: some Gesture {
         DragGesture()
             .onChanged { value in
-                isInteracting = true
+                isDragging = true
+                updateInteractionState()
                 contentOffset = CGSize(
                     width: lastContentOffset.width + value.translation.width,
                     height: lastContentOffset.height + value.translation.height
@@ -283,7 +345,8 @@ private struct ZoomableSwiftUIImageView: View {
                 onCropChanged()
             }
             .onEnded { _ in
-                isInteracting = false
+                isDragging = false
+                updateInteractionState()
                 lastContentOffset = contentOffset
                 onCropChanged()
             }
@@ -292,15 +355,21 @@ private struct ZoomableSwiftUIImageView: View {
     private var zoomGesture: some Gesture {
         MagnificationGesture()
             .onChanged { value in
-                isInteracting = true
-                zoomScale = min(max(lastZoomScale * value, 1), 4)
+                isZooming = true
+                updateInteractionState()
+                zoomScale = min(max(lastZoomScale * value, 1), maximumZoomScale)
                 onCropChanged()
             }
             .onEnded { _ in
-                isInteracting = false
+                isZooming = false
+                updateInteractionState()
                 lastZoomScale = zoomScale
                 onCropChanged()
             }
+    }
+
+    private func updateInteractionState() {
+        isInteracting = isDragging || isZooming
     }
 }
 
@@ -320,6 +389,15 @@ private struct ZoomableSwiftUIImageView: View {
         imageLoader: ImageLoadingClient.preview,
         onPreviewCropChanged: { _ in }
     )
+}
+
+#Preview("Composition Grid") {
+    let tokens = HIGSystemPhotoPickerTokens()
+    ZStack {
+        tokens.previewBackground
+        PreviewCompositionGridOverlay()
+    }
+    .frame(width: tokens.fallbackLayoutWidth * 0.75, height: tokens.fallbackLayoutWidth * 0.75)
 }
 #endif
 #endif

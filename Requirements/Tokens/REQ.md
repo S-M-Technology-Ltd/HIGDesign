@@ -26,6 +26,7 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - Component tokens belong to one component family only.
 - Examples include button height, field padding, badge radius, and card elevation.
 - Component tokens consume semantic tokens; they must not reach into unrelated component families.
+- Component view code must not hardcode UI dimensions, colors, opacity, padding, width, height, corner radius, or spacing literals. Resolve those values from `theme.<component>` or semantic tokens.
 
 ### Naming and API
 

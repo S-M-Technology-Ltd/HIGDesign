@@ -34,6 +34,7 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
     public let activityIndicator: any HIGActivityIndicatorTokens
     public let list: any HIGListTokens
     public let sidebar: any HIGSidebarTokens
+    public let photoPicker: any HIGPhotoPickerTokens
 
     public init(base: HIGSystemTheme = HIGSystemTheme()) {
         let baseColors = base.colors
@@ -75,5 +76,6 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
         self.activityIndicator = base.activityIndicator
         self.list = base.list
         self.sidebar = base.sidebar
+        self.photoPicker = base.photoPicker
     }
 }

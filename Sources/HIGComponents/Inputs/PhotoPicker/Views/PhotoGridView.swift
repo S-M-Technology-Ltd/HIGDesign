@@ -1,4 +1,5 @@
 #if os(iOS)
+import HIGThemesContract
 import SwiftUI
 
 struct PhotoGridSelectionSnapshot: Equatable {
@@ -27,46 +28,57 @@ struct PhotoGridSelectionSnapshot: Equatable {
 
 struct PhotoGridView: View {
     let assets: [HIGPhotoAsset]
-    let cellSide: CGFloat
     let configuration: HIGPhotoPickerConfiguration
     @ObservedObject var selection: HIGPhotoPickerSelection
     let imageLoader: ImageLoadingClient
     let onAssetFocused: (HIGPhotoAsset) -> Void
 
+    @Environment(\.higTheme) private var theme
+
+    private var tokens: any HIGPhotoPickerTokens { theme.photoPicker }
+    private var layout: PickerLayout { PickerLayout(tokens: tokens) }
+
     private var selectionSnapshot: PhotoGridSelectionSnapshot {
         PhotoGridSelectionSnapshot(selection: selection)
     }
 
-    private var columns: [GridItem] {
-        Array(
-            repeating: GridItem(.flexible(), spacing: PickerDesign.gridSpacing),
-            count: PickerDesign.gridColumnCount
-        )
-    }
-
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: columns, spacing: PickerDesign.gridSpacing) {
-                ForEach(Array(assets.enumerated()), id: \.element.id) { index, asset in
-                    PhotoGridCellView(
-                        asset: asset,
-                        cellSide: cellSide,
-                        selectionIndex: selectionSnapshot.selectionIndex(for: asset.id),
-                        showsSelectionOrder: selectionSnapshot.showsSelectionOrder,
-                        imageLoader: imageLoader,
-                        onTap: {
-                            handleToggleSelection(asset)
-                            onAssetFocused(asset)
+        GeometryReader { geometry in
+            let containerWidth = geometry.size.width
+            let cellSide = layout.gridCellSideLength(containerWidth: containerWidth)
+            let columns = Array(
+                repeating: GridItem(.fixed(cellSide), spacing: tokens.gridSpacing),
+                count: tokens.gridColumnCount
+            )
+            let horizontalAlignmentInset = layout.gridHorizontalAlignmentInset(
+                containerWidth: containerWidth,
+                cellSide: cellSide
+            )
+
+            ScrollView {
+                LazyVGrid(columns: columns, spacing: tokens.gridSpacing) {
+                    ForEach(Array(assets.enumerated()), id: \.element.id) { index, asset in
+                        PhotoGridCellView(
+                            asset: asset,
+                            cellSide: cellSide,
+                            selectionIndex: selectionSnapshot.selectionIndex(for: asset.id),
+                            showsSelectionOrder: selectionSnapshot.showsSelectionOrder,
+                            imageLoader: imageLoader,
+                            onTap: {
+                                handleToggleSelection(asset)
+                                onAssetFocused(asset)
+                            }
+                        )
+                        .onAppear {
+                            prefetch(around: index, cellSide: cellSide)
                         }
-                    )
-                    .onAppear {
-                        prefetch(around: index)
                     }
                 }
+                .padding(.horizontal, horizontalAlignmentInset)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(PickerDesign.gridBackground)
+        .background(tokens.gridBackground)
     }
 
     private func handleToggleSelection(_ asset: HIGPhotoAsset) {
@@ -77,7 +89,7 @@ struct PhotoGridView: View {
         }
     }
 
-    private func prefetch(around index: Int) {
+    private func prefetch(around index: Int, cellSide: CGFloat) {
         guard cellSide > 0, !assets.isEmpty else { return }
 
         let start = max(0, index - 6)

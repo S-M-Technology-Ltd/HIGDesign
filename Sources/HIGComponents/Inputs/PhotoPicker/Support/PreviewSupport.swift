@@ -1,6 +1,7 @@
 #if os(iOS)
 #if DEBUG
 import CoreGraphics
+import HIGThemesContract
 import Photos
 import SwiftUI
 
@@ -124,19 +125,25 @@ struct PreviewPhotosLibraryClient: PhotosLibraryClientProtocol {
 
 @MainActor
 enum HIGPhotoPreviewHostFactory {
+    private static func previewHost<Content: View>(@ViewBuilder content: () -> Content) -> some View {
+        HIGThemeableView(theme: HIGComponentPreviewTheme(), content: content)
+    }
+
     static func photoGrid(selection: HIGPhotoPickerSelection) -> some View {
-        PhotoGridView(
+        previewHost {
+            PhotoGridView(
             assets: HIGPhotoPreviewData.assets,
-            cellSide: 120,
             configuration: HIGPhotoPreviewData.configuration,
             selection: selection,
             imageLoader: ImageLoadingClient.preview,
             onAssetFocused: { _ in }
-        )
+            )
+        }
     }
 
     static func albumList() -> some View {
-        NavigationStack {
+        previewHost {
+            NavigationStack {
             AlbumListView(
                 albums: HIGPhotoPreviewData.albums,
                 selectedAlbumID: HIGPhotoPreviewData.selectedAlbum.id,
@@ -146,35 +153,43 @@ enum HIGPhotoPreviewHostFactory {
                 configuration: HIGPhotoPreviewData.configuration,
                 onSelect: { _ in }
             )
+            }
         }
     }
 
     static func photoPreview(asset: HIGPhotoAsset? = HIGPhotoPreviewData.assets.first) -> some View {
-        PhotoPreviewView(
+        previewHost {
+            PhotoPreviewView(
             asset: asset,
             configuration: HIGPhotoPreviewData.configuration,
             imageLoader: ImageLoadingClient.preview,
             onPreviewCropChanged: { _ in }
-        )
+            )
+        }
     }
 
     static func pickerRoot(state: PickerPreviewState) -> some View {
-        PickerRootView(previewState: state)
+        previewHost {
+            PickerRootView(previewState: state)
+        }
     }
 
     static func limitedAccessBanner(
         isExpanded: Bool = false,
         headerCollapseProgress: CGFloat = 0
     ) -> some View {
-        LimitedAccessBannerView(
+        previewHost {
+            LimitedAccessBannerView(
             title: HIGPhotoPreviewData.configuration.localizationProvider.photosLimitedAccessTitle(),
             description: HIGPhotoPreviewData.configuration.localizationProvider.photosLimitedAccessModeText(),
             actionTitle: HIGPhotoPreviewData.configuration.localizationProvider.pickerAddingImageAccessButtonText(),
             isExpanded: isExpanded,
             headerCollapseProgress: headerCollapseProgress,
             onToggle: {},
-            onManageAccess: {}
-        )
+            onManageAccess: {},
+            onHeaderCollapseSwipe: { _ in }
+            )
+        }
     }
 }
 #endif

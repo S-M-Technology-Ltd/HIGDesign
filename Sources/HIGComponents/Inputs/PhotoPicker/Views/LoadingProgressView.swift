@@ -1,22 +1,30 @@
 #if os(iOS)
+import HIGThemesContract
 import SwiftUI
 
 struct LoadingProgressView: View {
     let progress: Double
     let label: String
 
+    @Environment(\.higTheme) private var theme
+
+    private var tokens: any HIGPhotoPickerTokens { theme.photoPicker }
+
     var body: some View {
-        VStack(spacing: 12) {
+        VStack(spacing: tokens.loadingProgressSpacing) {
             ProgressView(value: progress)
                 .progressViewStyle(.linear)
-                .tint(.primary)
+                .tint(theme.colors.labelPrimary)
             Text(label)
                 .font(.footnote)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(theme.colors.labelSecondary)
         }
-        .padding(16)
-        .frame(maxWidth: 240)
-        .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .padding(tokens.loadingProgressPadding)
+        .frame(maxWidth: tokens.loadingProgressMaxWidth)
+        .background(
+            .regularMaterial,
+            in: RoundedRectangle(cornerRadius: tokens.loadingProgressCornerRadius, style: .continuous)
+        )
         .accessibilityElement(children: .combine)
         .accessibilityLabel(label)
         .accessibilityValue("\(Int(progress * 100)) percent")
@@ -25,15 +33,17 @@ struct LoadingProgressView: View {
 
 #if DEBUG
 #Preview("Downloading") {
+    let tokens = HIGSystemPhotoPickerTokens()
     ZStack {
-        PickerDesign.previewBackground
+        tokens.previewBackground
         LoadingProgressView(progress: 0.42, label: "Downloading from iCloud…")
     }
 }
 
 #Preview("Complete") {
+    let tokens = HIGSystemPhotoPickerTokens()
     ZStack {
-        PickerDesign.previewBackground
+        tokens.previewBackground
         LoadingProgressView(progress: 1, label: "Downloading from iCloud…")
     }
 }

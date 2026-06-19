@@ -1,4 +1,5 @@
 #if os(iOS)
+import HIGThemesContract
 import SwiftUI
 
 struct LimitedAccessBannerView: View {
@@ -9,65 +10,74 @@ struct LimitedAccessBannerView: View {
     let headerCollapseProgress: CGFloat
     let onToggle: () -> Void
     let onManageAccess: () -> Void
+    let onHeaderCollapseSwipe: (PickerHeaderSwipeDirection) -> Void
+
+    @Environment(\.higTheme) private var theme
+
+    private var tokens: any HIGPhotoPickerTokens { theme.photoPicker }
+    private var layout: PickerLayout { PickerLayout(tokens: tokens) }
 
     private var detailsRevealProgress: CGFloat {
-        PickerDesign.limitedBannerDetailsReveal(
+        layout.limitedBannerDetailsReveal(
             isExpanded: isExpanded,
             headerCollapseProgress: headerCollapseProgress
         )
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
+        VStack(alignment: .leading, spacing: tokens.stackSpacingNone) {
             toggleRow
 
             if detailsRevealProgress > 0.001 {
                 expandedDetails
-                    .padding(.top, PickerDesign.limitedBannerExpandedSpacing)
+                    .padding(.top, tokens.limitedBannerExpandedSpacing)
                     .opacity(detailsRevealProgress)
                     .frame(
-                        height: PickerDesign.limitedBannerDetailsHeight * detailsRevealProgress,
+                        height: tokens.limitedBannerDetailsHeight * detailsRevealProgress,
                         alignment: .top
                     )
             }
         }
-        .padding(.horizontal, PickerDesign.limitedBannerHorizontalInset)
-        .padding(.vertical, PickerDesign.limitedBannerExpandedVerticalPadding)
-        .frame(maxWidth: .infinity, alignment: .topLeading)
+        .padding(.horizontal, tokens.limitedBannerHorizontalInset)
+        .padding(.vertical, tokens.limitedBannerExpandedVerticalPadding)
+        .frame(maxWidth: .infinity, minHeight: tokens.limitedBannerToggleHeight, alignment: .topLeading)
         .background(bannerBackground)
+        .background(Color.clear)
+        .contentShape(Rectangle())
+        .pickerHeaderCollapseSwipe(tokens: tokens, onSwipe: onHeaderCollapseSwipe)
     }
 
     private var toggleRow: some View {
-        HStack(alignment: .center, spacing: 8) {
+        HStack(alignment: .center, spacing: tokens.limitedBannerTitleActionSpacing) {
             Text(title)
                 .font(.footnote.weight(.semibold))
-                .foregroundStyle(.primary)
+                .foregroundStyle(theme.colors.labelPrimary)
                 .lineLimit(1)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
             toggleButton
         }
-        .frame(height: PickerDesign.limitedBannerChromeButtonHeight, alignment: .center)
+        .frame(height: tokens.limitedBannerChromeButtonHeight, alignment: .center)
     }
 
     private var expandedDetails: some View {
-        VStack(alignment: .leading, spacing: PickerDesign.limitedBannerActionSpacing) {
+        VStack(alignment: .leading, spacing: tokens.limitedBannerActionSpacing) {
             Text(description)
                 .font(.caption)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(theme.colors.labelSecondary)
                 .fixedSize(horizontal: false, vertical: true)
 
             manageAccessButton
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.top, 8.0)
+                .padding(.top, tokens.limitedBannerManageAccessTopPadding)
         }
     }
 
     @ViewBuilder
     private var bannerBackground: some View {
         if detailsRevealProgress > 0.001 {
-            RoundedRectangle(cornerRadius: PickerDesign.limitedBannerCornerRadius, style: .continuous)
-                .fill(Color(.secondarySystemGroupedBackground))
+            RoundedRectangle(cornerRadius: tokens.limitedBannerCornerRadius, style: .continuous)
+                .fill(tokens.limitedBannerPanelBackground)
                 .opacity(detailsRevealProgress)
         }
     }
@@ -83,8 +93,8 @@ struct LimitedAccessBannerView: View {
             action: onToggle
         )
         .frame(
-            width: PickerDesign.limitedBannerChromeButtonHeight,
-            height: PickerDesign.limitedBannerChromeButtonHeight
+            width: tokens.limitedBannerChromeButtonHeight,
+            height: tokens.limitedBannerChromeButtonHeight
         )
     }
 
@@ -96,7 +106,7 @@ struct LimitedAccessBannerView: View {
             sizing: .banner,
             action: onManageAccess
         )
-        .frame(height: PickerDesign.limitedBannerChromeButtonHeight)
+        .frame(height: tokens.limitedBannerChromeButtonHeight)
     }
 }
 
@@ -109,9 +119,10 @@ struct LimitedAccessBannerView: View {
         isExpanded: false,
         headerCollapseProgress: 0,
         onToggle: {},
-        onManageAccess: {}
+        onManageAccess: {},
+        onHeaderCollapseSwipe: { _ in }
     )
-    .background(PickerDesign.chromeBackground)
+    .background(HIGSystemPhotoPickerTokens().chromeBackground)
 }
 
 #Preview("Expanded") {
@@ -122,9 +133,10 @@ struct LimitedAccessBannerView: View {
         isExpanded: true,
         headerCollapseProgress: 0,
         onToggle: {},
-        onManageAccess: {}
+        onManageAccess: {},
+        onHeaderCollapseSwipe: { _ in }
     )
-    .background(PickerDesign.chromeBackground)
+    .background(HIGSystemPhotoPickerTokens().chromeBackground)
 }
 
 #Preview("Collapsed Header Expanded Banner") {
@@ -135,12 +147,14 @@ struct LimitedAccessBannerView: View {
         isExpanded: true,
         headerCollapseProgress: 1,
         onToggle: {},
-        onManageAccess: {}
+        onManageAccess: {},
+        onHeaderCollapseSwipe: { _ in }
     )
-    .background(PickerDesign.chromeBackground)
+    .background(HIGSystemPhotoPickerTokens().chromeBackground)
 }
 
 #Preview("Collapsing Header") {
+    let tokens = HIGSystemPhotoPickerTokens()
     LimitedAccessBannerView(
         title: "Limited Access",
         description: "You've granted access to only a subset of your photo library. Choose additional photos and albums that can be used in this app.",
@@ -148,11 +162,12 @@ struct LimitedAccessBannerView: View {
         isExpanded: true,
         headerCollapseProgress: 0.35,
         onToggle: {},
-        onManageAccess: {}
+        onManageAccess: {},
+        onHeaderCollapseSwipe: { _ in }
     )
-    .frame(height: PickerDesign.limitedBannerToggleHeight + PickerDesign.limitedBannerDetailsHeight * 0.4)
+    .frame(height: tokens.limitedBannerToggleHeight + tokens.limitedBannerDetailsHeight * 0.4)
     .clipped()
-    .background(PickerDesign.chromeBackground)
+    .background(tokens.chromeBackground)
 }
 #endif
 #endif

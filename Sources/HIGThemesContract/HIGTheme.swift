@@ -32,4 +32,5 @@ public protocol HIGTheme: Sendable {
     var activityIndicator: any HIGActivityIndicatorTokens { get }
     var list: any HIGListTokens { get }
     var sidebar: any HIGSidebarTokens { get }
+    var photoPicker: any HIGPhotoPickerTokens { get }
 }

@@ -1,4 +1,5 @@
 #if os(iOS)
+import HIGThemesContract
 import Photos
 import SwiftUI
 
@@ -16,10 +17,12 @@ struct PickerRootView: View {
     @State private var showsAlbumList = false
     @State private var libraryChangeObserver: PhotoLibraryChangeObserver?
     @State private var libraryReloadTask: Task<Void, Never>?
-    @State private var containerWidth: CGFloat = PickerDesign.fallbackContainerWidth
-
+    @Environment(\.higTheme) private var theme
     @Environment(\.openURL) private var openURL
     @Environment(\.scenePhase) private var scenePhase
+
+    private var tokens: any HIGPhotoPickerTokens { theme.photoPicker }
+    private var layout: PickerLayout { PickerLayout(tokens: tokens) }
 
     private let authorizationClient = PhotosAuthorizationClient()
     private let libraryClient: any PhotosLibraryClientProtocol
@@ -98,7 +101,8 @@ struct PickerRootView: View {
                     )
                 }
             }
-            .background(PickerDesign.chromeBackground)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(tokens.chromeBackground)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -183,46 +187,48 @@ struct PickerRootView: View {
 
     @ViewBuilder
     private var pickerContent: some View {
-        let gridCellSide = PickerDesign.gridCellSideLength(containerWidth: containerWidth)
-        let headerHeight = PickerDesign.collapsibleHeaderHeight(
-            containerWidth: containerWidth,
-            showsBanner: authorizationStatus == .limited,
-            isBannerExpanded: isLimitedBannerExpanded,
-            collapseProgress: headerCollapseProgress
-        )
-
-        VStack(spacing: 0) {
-            pickerHeader(containerWidth: containerWidth)
-                .frame(height: headerHeight, alignment: .top)
-                .clipped()
-
-            PhotoGridView(
-                assets: assets,
-                cellSide: gridCellSide,
-                configuration: configuration,
-                selection: pickerSelection,
-                imageLoader: imageLoader,
-                onAssetFocused: handleAssetFocused
+        GeometryReader { geometry in
+            let layoutWidth = geometry.size.width
+            let headerHeight = layout.collapsibleHeaderHeight(
+                containerWidth: layoutWidth,
+                showsBanner: authorizationStatus == .limited,
+                isBannerExpanded: isLimitedBannerExpanded,
+                collapseProgress: headerCollapseProgress
             )
+
+            VStack(spacing: tokens.stackSpacingNone) {
+                pickerHeader(layoutWidth: layoutWidth)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: headerHeight, alignment: .top)
+                    .clipped()
+
+                PhotoGridView(
+                    assets: assets,
+                    configuration: configuration,
+                    selection: pickerSelection,
+                    imageLoader: imageLoader,
+                    onAssetFocused: handleAssetFocused
+                )
+            }
+            .frame(width: layoutWidth, height: geometry.size.height, alignment: .top)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(PickerDesign.gridBackground)
-        .onContainerWidthChange($containerWidth)
-        .animation(nil, value: containerWidth)
+        .background(tokens.gridBackground)
+        .animation(nil, value: headerCollapseProgress)
     }
 
-    private func pickerHeader(containerWidth: CGFloat) -> some View {
+    private func pickerHeader(layoutWidth: CGFloat) -> some View {
         PickerCollapsibleHeader(
-            containerWidth: containerWidth,
+            containerWidth: layoutWidth,
             showsBanner: authorizationStatus == .limited,
             isBannerExpanded: isLimitedBannerExpanded,
             collapseProgress: headerCollapseProgress,
             localization: configuration.localizationProvider,
             onCollapseSwipe: handleHeaderSwipe
-        ) { previewSideLength in
+        ) { previewHeight in
             PhotoPreviewContainerView(
                 asset: pickerSelection.focusedAsset,
-                layoutSide: previewSideLength,
+                layoutHeight: previewHeight,
                 configuration: configuration,
                 imageLoader: imageLoader,
                 onPreviewCropChanged: { crop in
@@ -235,7 +241,8 @@ struct PickerRootView: View {
                 }
             )
             .id(pickerSelection.focusedAsset?.id ?? "preview-empty")
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .frame(maxWidth: .infinity)
+            .frame(height: previewHeight)
             .clipped()
         } banner: {
             limitedAccessBanner
@@ -322,7 +329,7 @@ struct PickerRootView: View {
         Button {
             showsAlbumList = true
         } label: {
-            HStack(spacing: 4) {
+            HStack(spacing: tokens.navigationTitleSpacing) {
                 Text(principalNavigationTitle)
                     .font(.headline)
                     .foregroundStyle(canSwitchAlbums ? .primary : .secondary)
@@ -355,7 +362,8 @@ struct PickerRootView: View {
             isExpanded: isLimitedBannerExpanded,
             headerCollapseProgress: headerCollapseProgress,
             onToggle: toggleLimitedBanner,
-            onManageAccess: manageLimitedLibraryAccess
+            onManageAccess: manageLimitedLibraryAccess,
+            onHeaderCollapseSwipe: handleHeaderSwipe
         )
     }
 
@@ -492,7 +500,7 @@ struct PickerRootView: View {
 
 private struct PhotoPreviewContainerView: View {
     let asset: HIGPhotoAsset?
-    let layoutSide: CGFloat
+    let layoutHeight: CGFloat
     let configuration: HIGPhotoPickerConfiguration
     let imageLoader: ImageLoadingClient
     let onPreviewCropChanged: (HIGPhotoPreviewCrop) -> Void
@@ -500,7 +508,7 @@ private struct PhotoPreviewContainerView: View {
     var body: some View {
         PhotoPreviewView(
             asset: asset,
-            layoutSide: layoutSide,
+            layoutHeight: layoutHeight,
             configuration: configuration,
             imageLoader: imageLoader,
             onPreviewCropChanged: onPreviewCropChanged

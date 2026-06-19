@@ -33,6 +33,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let activityIndicator: any HIGActivityIndicatorTokens
     public let list: any HIGListTokens
     public let sidebar: any HIGSidebarTokens
+    public let photoPicker: any HIGPhotoPickerTokens
 
     public init(
         colors: any HIGColorSemanticTokens = HIGSystemColorSemanticTokens(),
@@ -63,7 +64,8 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         toolbar: any HIGToolbarTokens = HIGSystemToolbarTokens(),
         activityIndicator: any HIGActivityIndicatorTokens = HIGSystemActivityIndicatorTokens(),
         list: any HIGListTokens = HIGSystemListTokens(),
-        sidebar: any HIGSidebarTokens = HIGSystemSidebarTokens()
+        sidebar: any HIGSidebarTokens = HIGSystemSidebarTokens(),
+        photoPicker: any HIGPhotoPickerTokens = HIGSystemPhotoPickerTokens()
     ) {
         self.colors = colors
         self.typography = typography
@@ -94,5 +96,6 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.activityIndicator = activityIndicator
         self.list = list
         self.sidebar = sidebar
+        self.photoPicker = photoPicker
     }
 }
