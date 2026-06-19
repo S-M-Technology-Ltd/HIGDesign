@@ -1,6 +1,7 @@
 #if os(iOS)
 import CoreGraphics
 import HIGThemesContract
+import HIGTokensComponent
 import SwiftUI
 
 struct PhotoGridCellView: View {

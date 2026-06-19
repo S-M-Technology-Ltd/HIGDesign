@@ -125,7 +125,7 @@ struct PreviewPhotosLibraryClient: PhotosLibraryClientProtocol {
 
 @MainActor
 enum HIGPhotoPreviewHostFactory {
-    private static func previewHost<Content: View>(@ViewBuilder content: () -> Content) -> some View {
+    private static func previewHost<Content: View>(@ViewBuilder content: @escaping () -> Content) -> some View {
         HIGThemeableView(theme: HIGComponentPreviewTheme(), content: content)
     }
 

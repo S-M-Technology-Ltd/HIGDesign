@@ -1,5 +1,6 @@
 #if os(iOS)
 import HIGThemesContract
+import HIGTokensComponent
 import SwiftUI
 
 struct PhotoGridSelectionSnapshot: Equatable {
