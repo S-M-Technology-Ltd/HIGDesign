@@ -2,8 +2,8 @@ import HIGComponents
 import Testing
 
 @Test
-func instagramPhotosPickerConfigurationHonorsSingleSelectionLimit() {
-    let configuration = HIGInstagramPhotosPickerConfiguration(
+func photoPickerConfigurationHonorsSingleSelectionLimit() {
+    let configuration = HIGPhotoPickerConfiguration(
         selectionLimit: 10,
         allowsMultipleSelection: false
     )
@@ -12,8 +12,8 @@ func instagramPhotosPickerConfigurationHonorsSingleSelectionLimit() {
 }
 
 @Test
-func instagramPhotosPickerConfigurationHonorsMultipleSelectionLimit() {
-    let configuration = HIGInstagramPhotosPickerConfiguration(
+func photoPickerConfigurationHonorsMultipleSelectionLimit() {
+    let configuration = HIGPhotoPickerConfiguration(
         selectionLimit: 4,
         allowsMultipleSelection: true
     )

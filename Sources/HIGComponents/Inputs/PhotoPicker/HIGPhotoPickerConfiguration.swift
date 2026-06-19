@@ -1,12 +1,14 @@
+#if os(iOS)
 import CoreGraphics
+import Photos
 
-/// Configuration for ``HIGInstagramPhotosPicker``.
-public struct HIGInstagramPhotosPickerConfiguration: Sendable {
+/// Configuration options for ``HIGPhotoPicker``.
+public struct HIGPhotoPickerConfiguration: Sendable {
     /// Maximum number of assets that can be selected. `0` means no limit.
     public var selectionLimit: Int
 
-    /// Media types shown in the picker.
-    public var allowedMediaTypes: Set<HIGInstagramPhotosMediaType>
+    /// Media types shown in the picker. Defaults to images only.
+    public var allowedMediaTypes: Set<PHAssetMediaType>
 
     /// Whether the user can select more than one asset.
     public var allowsMultipleSelection: Bool
@@ -27,18 +29,24 @@ public struct HIGInstagramPhotosPickerConfiguration: Sendable {
     public var showsProgress: Bool
 
     /// Requests the system photo permission dialog automatically when the picker opens.
+    /// When `false`, users tap Allow Access on the permission screen instead.
+    /// Keep this `false` when the host app already requests photo access to avoid duplicate prompts.
     public var automaticallyRequestsPhotoAccess: Bool
+
+    /// Localization strings provider.
+    public var localizationProvider: any HIGPhotoLocalizationProviding
 
     public init(
         selectionLimit: Int = 1,
-        allowedMediaTypes: Set<HIGInstagramPhotosMediaType> = [.image],
+        allowedMediaTypes: Set<PHAssetMediaType> = [.image],
         allowsMultipleSelection: Bool = false,
         showsSelectionModeToggle: Bool = true,
         thumbnailSize: CGSize = CGSize(width: 300, height: 300),
         preferredAlbumIdentifier: String? = nil,
         iCloudNetworkAccessAllowed: Bool = true,
         showsProgress: Bool = true,
-        automaticallyRequestsPhotoAccess: Bool = false
+        automaticallyRequestsPhotoAccess: Bool = false,
+        localizationProvider: any HIGPhotoLocalizationProviding = HIGPhotoEnglishLocalizationProvider()
     ) {
         self.selectionLimit = selectionLimit
         self.allowedMediaTypes = allowedMediaTypes
@@ -49,6 +57,7 @@ public struct HIGInstagramPhotosPickerConfiguration: Sendable {
         self.iCloudNetworkAccessAllowed = iCloudNetworkAccessAllowed
         self.showsProgress = showsProgress
         self.automaticallyRequestsPhotoAccess = automaticallyRequestsPhotoAccess
+        self.localizationProvider = localizationProvider
     }
 
     /// Effective selection limit accounting for single-selection mode.
@@ -58,4 +67,9 @@ public struct HIGInstagramPhotosPickerConfiguration: Sendable {
         }
         return 1
     }
-}
+
+    /// Returns `true` when another asset may be added to the current selection.
+    public func canSelectAdditional(count: Int) -> Bool {
+        count < effectiveSelectionLimit
+    }
+}#endif

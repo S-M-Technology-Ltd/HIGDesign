@@ -37,7 +37,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 - `HIGSearchField`
 - `HIGTextEditor`
 - `HIGPicker`
-- `HIGInstagramPhotosPicker`
+- `HIGPhotoPicker`
 
 #### Indicators and feedback
 

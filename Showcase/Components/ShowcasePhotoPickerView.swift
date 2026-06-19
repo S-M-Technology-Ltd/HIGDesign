@@ -1,15 +1,15 @@
 import HIGDesign
 import SwiftUI
 
-struct ShowcaseInstagramPhotosPickerView: View {
+struct ShowcasePhotoPickerView: View {
     @State private var isPickerPresented = false
-    @State private var selection: [HIGInstagramPhotosAsset] = []
+    @State private var selection: [HIGPhotoAsset] = []
     @State private var statusMessage: String?
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
-                ShowcaseMetadataView(component: .instagramPhotosPicker)
+                ShowcaseMetadataView(component: .photoPicker)
 
                 if selection.isEmpty {
                     ContentUnavailableView(
@@ -43,9 +43,9 @@ struct ShowcaseInstagramPhotosPickerView: View {
             }
             .higPadding(.screenEdge)
         }
-        .navigationTitle("Instagram Photos Picker")
+        .navigationTitle("Photo Picker")
         .sheet(isPresented: $isPickerPresented) {
-            HIGInstagramPhotosPicker(
+            HIGPhotoPicker(
                 selection: $selection,
                 configuration: .init(
                     selectionLimit: 10,
@@ -61,9 +61,9 @@ struct ShowcaseInstagramPhotosPickerView: View {
 }
 
 #if DEBUG
-#Preview("ShowcaseInstagramPhotosPickerView") {
+#Preview("ShowcasePhotoPickerView") {
     NavigationStack {
-        ShowcaseInstagramPhotosPickerView()
+        ShowcasePhotoPickerView()
     }
 }
 #endif

@@ -31,9 +31,6 @@ let package = Package(
         .executable(name: "HIGShowcaseApp", targets: ["HIGShowcaseApp"]),
         .executable(name: "HIGSnapshotCapture", targets: ["HIGSnapshotCapture"]),
     ],
-    dependencies: [
-        .package(path: "../InstagramPhotos"),
-    ],
     targets: [
         .target(name: "HIGFoundations", path: "Sources/HIGFoundations"),
         .target(name: "HIGTokensRaw", dependencies: ["HIGFoundations"], path: "Sources/HIGTokensRaw"),
@@ -69,9 +66,15 @@ let package = Package(
                 "HIGPlatform",
                 "HIGTokensSemantic",
                 "HIGTokensComponent",
-                .product(name: "InstagramPhotos", package: "InstagramPhotos", condition: .when(platforms: [.iOS])),
             ],
-            path: "Sources/HIGComponents"
+            path: "Sources/HIGComponents",
+            linkerSettings: [
+                .linkedFramework("Photos", .when(platforms: [.iOS])),
+                .linkedFramework("PhotosUI", .when(platforms: [.iOS])),
+                .linkedFramework("ImageIO", .when(platforms: [.iOS])),
+                .linkedFramework("CoreGraphics", .when(platforms: [.iOS])),
+                .linkedFramework("UIKit", .when(platforms: [.iOS])),
+            ]
         ),
         .target(
             name: "HIGModifiers",

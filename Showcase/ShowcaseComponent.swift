@@ -33,7 +33,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case stepper
     case menuButton
     case tag
-    case instagramPhotosPicker
+    case photoPicker
 
     public var id: String { rawValue }
 
@@ -71,7 +71,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .stepper: "Stepper"
         case .menuButton: "Menu Button"
         case .tag: "Tag"
-        case .instagramPhotosPicker: "Instagram Photos Picker"
+        case .photoPicker: "Photo Picker"
         }
     }
 
@@ -109,7 +109,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .stepper: "Steppers"
         case .menuButton: "Buttons"
         case .tag: "Labels"
-        case .instagramPhotosPicker: "Photo Picker"
+        case .photoPicker: "Photo Picker"
         }
     }
 
@@ -147,7 +147,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .stepper: "Integer steppers with labeled captions and bounded ranges."
         case .menuButton: "Secondary-styled buttons that present action menus."
         case .tag: "Pill-shaped chips for categories, filters, and metadata."
-        case .instagramPhotosPicker: "Instagram-style photo library picker with album browsing and iCloud support."
+        case .photoPicker: "Photo library picker with album browsing, preview crop, and iCloud support."
         }
     }
 
@@ -166,7 +166,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
             "iOS, iPadOS, macOS, visionOS, tvOS"
         case .sidebar:
             "iOS, iPadOS, macOS, visionOS"
-        case .instagramPhotosPicker:
+        case .photoPicker:
             "iOS"
         }
     }

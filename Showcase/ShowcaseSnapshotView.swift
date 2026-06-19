@@ -90,8 +90,8 @@ public struct ShowcaseSnapshotView: View {
             ShowcaseMenuButtonView()
         case .tag:
             ShowcaseTagView()
-        case .instagramPhotosPicker:
-            ShowcaseInstagramPhotosPickerView()
+        case .photoPicker:
+            ShowcasePhotoPickerView()
         }
     }
 }

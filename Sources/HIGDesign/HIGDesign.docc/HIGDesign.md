@@ -44,8 +44,8 @@ HIGDesign packages a layered token architecture, environment-driven themes, and 
 - ``HIGSearchField``
 - ``HIGTextEditor``
 - ``HIGPicker``
-- ``HIGInstagramPhotosPicker``
-- ``HIGInstagramPhotosPickerConfiguration``
+- ``HIGPhotoPicker``
+- ``HIGPhotoPickerConfiguration``
 - ``HIGDivider``
 - ``HIGProgressView``
 - ``HIGCard``

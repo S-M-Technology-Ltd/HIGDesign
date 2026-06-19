@@ -86,7 +86,7 @@ Phase 12 (complete, v0.12.0) delivered:
 - `HIGNavigationBar` and `HIGToolbar` as composable `View` components alongside existing modifiers
 - API stability guide (pre-1.0 policy)
 - showcase snapshot fidelity improvements with per-component labeling and no duplicate navigation chrome
-- thirty-three-component `HIGShowcase` catalog (including `HIGInstagramPhotosPicker` on iOS)
+- thirty-three-component `HIGShowcase` catalog (including `HIGPhotoPicker` on iOS)
 
 This milestone does not include:
 

@@ -398,42 +398,6 @@
       "file": "snapshots/icon-brand-dark.png"
     },
     {
-      "component": "instagramPhotosPicker",
-      "theme": "system",
-      "colorScheme": "light",
-      "file": "snapshots/instagramPhotosPicker-system-light.png"
-    },
-    {
-      "component": "instagramPhotosPicker",
-      "theme": "system",
-      "colorScheme": "dark",
-      "file": "snapshots/instagramPhotosPicker-system-dark.png"
-    },
-    {
-      "component": "instagramPhotosPicker",
-      "theme": "highContrast",
-      "colorScheme": "light",
-      "file": "snapshots/instagramPhotosPicker-highContrast-light.png"
-    },
-    {
-      "component": "instagramPhotosPicker",
-      "theme": "highContrast",
-      "colorScheme": "dark",
-      "file": "snapshots/instagramPhotosPicker-highContrast-dark.png"
-    },
-    {
-      "component": "instagramPhotosPicker",
-      "theme": "brand",
-      "colorScheme": "light",
-      "file": "snapshots/instagramPhotosPicker-brand-light.png"
-    },
-    {
-      "component": "instagramPhotosPicker",
-      "theme": "brand",
-      "colorScheme": "dark",
-      "file": "snapshots/instagramPhotosPicker-brand-dark.png"
-    },
-    {
       "component": "label",
       "theme": "system",
       "colorScheme": "light",
@@ -612,6 +576,42 @@
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/navigationBar-brand-dark.png"
+    },
+    {
+      "component": "photoPicker",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/photoPicker-system-light.png"
+    },
+    {
+      "component": "photoPicker",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/photoPicker-system-dark.png"
+    },
+    {
+      "component": "photoPicker",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/photoPicker-highContrast-light.png"
+    },
+    {
+      "component": "photoPicker",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/photoPicker-highContrast-dark.png"
+    },
+    {
+      "component": "photoPicker",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/photoPicker-brand-light.png"
+    },
+    {
+      "component": "photoPicker",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/photoPicker-brand-dark.png"
     },
     {
       "component": "picker",

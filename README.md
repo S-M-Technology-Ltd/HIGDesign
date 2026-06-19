@@ -30,7 +30,7 @@ swift run HIGShowcaseApp
 
 ## Status
 
-Phase 13: HIGInstagramPhotosPicker integration and sample Xcode project (v0.13.0).
+Phase 13: HIGPhotoPicker component and sample Xcode project (v0.13.0).
 
 ## Open in Xcode
 
@@ -51,4 +51,3 @@ The sample links the local `HIGShowcase` package product. See [Sample/README.md]
 
 Package-only workflows (`open Package.swift`, `HIGDesign.xcworkspace`) remain available for library development and `HIGSnapshotCapture`.
 
-`HIGInstagramPhotosPicker` requires the [InstagramPhotos](https://github.com/S-M-Technology-Ltd/InstagramPhotos) package checked out as a sibling at `../InstagramPhotos`.
