@@ -1,0 +1,413 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "component": "activityIndicator",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/activityIndicator-system-light.png"
+    },
+    {
+      "component": "activityIndicator",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/activityIndicator-system-dark.png"
+    },
+    {
+      "component": "activityIndicator",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/activityIndicator-highContrast-light.png"
+    },
+    {
+      "component": "activityIndicator",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/activityIndicator-highContrast-dark.png"
+    },
+    {
+      "component": "alert",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/alert-system-light.png"
+    },
+    {
+      "component": "alert",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/alert-system-dark.png"
+    },
+    {
+      "component": "alert",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/alert-highContrast-light.png"
+    },
+    {
+      "component": "alert",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/alert-highContrast-dark.png"
+    },
+    {
+      "component": "badge",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/badge-system-light.png"
+    },
+    {
+      "component": "badge",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/badge-system-dark.png"
+    },
+    {
+      "component": "badge",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/badge-highContrast-light.png"
+    },
+    {
+      "component": "badge",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/badge-highContrast-dark.png"
+    },
+    {
+      "component": "button",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/button-system-light.png"
+    },
+    {
+      "component": "button",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/button-system-dark.png"
+    },
+    {
+      "component": "button",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/button-highContrast-light.png"
+    },
+    {
+      "component": "button",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/button-highContrast-dark.png"
+    },
+    {
+      "component": "card",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/card-system-light.png"
+    },
+    {
+      "component": "card",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/card-system-dark.png"
+    },
+    {
+      "component": "card",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/card-highContrast-light.png"
+    },
+    {
+      "component": "card",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/card-highContrast-dark.png"
+    },
+    {
+      "component": "divider",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/divider-system-light.png"
+    },
+    {
+      "component": "divider",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/divider-system-dark.png"
+    },
+    {
+      "component": "divider",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/divider-highContrast-light.png"
+    },
+    {
+      "component": "divider",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/divider-highContrast-dark.png"
+    },
+    {
+      "component": "form",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/form-system-light.png"
+    },
+    {
+      "component": "form",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/form-system-dark.png"
+    },
+    {
+      "component": "form",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/form-highContrast-light.png"
+    },
+    {
+      "component": "form",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/form-highContrast-dark.png"
+    },
+    {
+      "component": "label",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/label-system-light.png"
+    },
+    {
+      "component": "label",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/label-system-dark.png"
+    },
+    {
+      "component": "label",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/label-highContrast-light.png"
+    },
+    {
+      "component": "label",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/label-highContrast-dark.png"
+    },
+    {
+      "component": "list",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/list-system-light.png"
+    },
+    {
+      "component": "list",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/list-system-dark.png"
+    },
+    {
+      "component": "list",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/list-highContrast-light.png"
+    },
+    {
+      "component": "list",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/list-highContrast-dark.png"
+    },
+    {
+      "component": "navigationBar",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/navigationBar-system-light.png"
+    },
+    {
+      "component": "navigationBar",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/navigationBar-system-dark.png"
+    },
+    {
+      "component": "navigationBar",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/navigationBar-highContrast-light.png"
+    },
+    {
+      "component": "navigationBar",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/navigationBar-highContrast-dark.png"
+    },
+    {
+      "component": "progressView",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/progressView-system-light.png"
+    },
+    {
+      "component": "progressView",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/progressView-system-dark.png"
+    },
+    {
+      "component": "progressView",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/progressView-highContrast-light.png"
+    },
+    {
+      "component": "progressView",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/progressView-highContrast-dark.png"
+    },
+    {
+      "component": "sidebar",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/sidebar-system-light.png"
+    },
+    {
+      "component": "sidebar",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/sidebar-system-dark.png"
+    },
+    {
+      "component": "sidebar",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/sidebar-highContrast-light.png"
+    },
+    {
+      "component": "sidebar",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/sidebar-highContrast-dark.png"
+    },
+    {
+      "component": "tabBar",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/tabBar-system-light.png"
+    },
+    {
+      "component": "tabBar",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/tabBar-system-dark.png"
+    },
+    {
+      "component": "tabBar",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/tabBar-highContrast-light.png"
+    },
+    {
+      "component": "tabBar",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/tabBar-highContrast-dark.png"
+    },
+    {
+      "component": "textField",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/textField-system-light.png"
+    },
+    {
+      "component": "textField",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/textField-system-dark.png"
+    },
+    {
+      "component": "textField",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/textField-highContrast-light.png"
+    },
+    {
+      "component": "textField",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/textField-highContrast-dark.png"
+    },
+    {
+      "component": "toast",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/toast-system-light.png"
+    },
+    {
+      "component": "toast",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/toast-system-dark.png"
+    },
+    {
+      "component": "toast",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/toast-highContrast-light.png"
+    },
+    {
+      "component": "toast",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/toast-highContrast-dark.png"
+    },
+    {
+      "component": "toggle",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/toggle-system-light.png"
+    },
+    {
+      "component": "toggle",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/toggle-system-dark.png"
+    },
+    {
+      "component": "toggle",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/toggle-highContrast-light.png"
+    },
+    {
+      "component": "toggle",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/toggle-highContrast-dark.png"
+    },
+    {
+      "component": "toolbar",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/toolbar-system-light.png"
+    },
+    {
+      "component": "toolbar",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/toolbar-system-dark.png"
+    },
+    {
+      "component": "toolbar",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/toolbar-highContrast-light.png"
+    },
+    {
+      "component": "toolbar",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/toolbar-highContrast-dark.png"
+    }
+  ]
+}

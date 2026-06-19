@@ -9,5 +9,5 @@
 @_exported import HIGTokensSemantic
 
 public enum HIGDesign {
-    public static let version = "0.4.0"
+    public static let version = "0.5.0"
 }

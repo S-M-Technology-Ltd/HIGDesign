@@ -78,6 +78,16 @@ struct ShowcaseCatalogView: View {
             ShowcaseSidebarView()
         case .navigationBar:
             ShowcaseNavigationBarView()
+        case .label:
+            ShowcaseLabelView()
+        case .badge:
+            ShowcaseBadgeView()
+        case .activityIndicator:
+            ShowcaseActivityIndicatorView()
+        case .list:
+            ShowcaseListView()
+        case .form:
+            ShowcaseFormView()
         }
     }
 }

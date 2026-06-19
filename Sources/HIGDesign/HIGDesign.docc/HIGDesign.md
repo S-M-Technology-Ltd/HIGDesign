@@ -37,6 +37,14 @@ HIGDesign packages a layered token architecture, environment-driven themes, and 
 - ``HIGSidebar``
 - ``HIGSidebarItem``
 - ``HIGAlertButtonRole``
+- ``HIGLabel``
+- ``HIGLabelStyle``
+- ``HIGBadge``
+- ``HIGBadgeStyle``
+- ``HIGActivityIndicator``
+- ``HIGActivityIndicatorSize``
+- ``HIGList``
+- ``HIGFormSection``
 
 ### Modifiers
 

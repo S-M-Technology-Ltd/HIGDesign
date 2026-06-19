@@ -14,6 +14,8 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let progress: any HIGProgressTokens
     public let alert: any HIGAlertTokens
     public let toast: any HIGToastTokens
+    public let badge: any HIGBadgeTokens
+    public let list: any HIGListTokens
 
     public init(
         colors: any HIGColorSemanticTokens = HIGSystemColorSemanticTokens(),
@@ -25,7 +27,9 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         card: any HIGCardTokens = HIGSystemCardTokens(),
         progress: any HIGProgressTokens = HIGSystemProgressTokens(),
         alert: any HIGAlertTokens = HIGSystemAlertTokens(),
-        toast: any HIGToastTokens = HIGSystemToastTokens()
+        toast: any HIGToastTokens = HIGSystemToastTokens(),
+        badge: any HIGBadgeTokens = HIGSystemBadgeTokens(),
+        list: any HIGListTokens = HIGSystemListTokens()
     ) {
         self.colors = colors
         self.typography = typography
@@ -37,5 +41,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.progress = progress
         self.alert = alert
         self.toast = toast
+        self.badge = badge
+        self.list = list
     }
 }

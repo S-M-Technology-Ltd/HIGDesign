@@ -15,6 +15,8 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
     public let progress: any HIGProgressTokens
     public let alert: any HIGAlertTokens
     public let toast: any HIGToastTokens
+    public let badge: any HIGBadgeTokens
+    public let list: any HIGListTokens
 
     public init(base: HIGSystemTheme = HIGSystemTheme()) {
         let baseColors = base.colors
@@ -37,5 +39,7 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
         self.progress = base.progress
         self.alert = base.alert
         self.toast = base.toast
+        self.badge = base.badge
+        self.list = base.list
     }
 }

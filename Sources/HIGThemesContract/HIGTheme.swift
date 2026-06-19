@@ -13,4 +13,6 @@ public protocol HIGTheme: Sendable {
     var progress: any HIGProgressTokens { get }
     var alert: any HIGAlertTokens { get }
     var toast: any HIGToastTokens { get }
+    var badge: any HIGBadgeTokens { get }
+    var list: any HIGListTokens { get }
 }

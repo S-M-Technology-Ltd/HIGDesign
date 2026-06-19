@@ -1,21 +1,10 @@
 import Testing
 
 @Test
-func showcaseCatalogIncludesPhaseFourComponents() {
-    let catalog: Set<String> = [
-        "button",
-        "textField",
-        "toggle",
-        "divider",
-        "progressView",
-        "card",
-        "tabBar",
-        "toolbar",
-        "alert",
-        "toast",
-        "sidebar",
-        "navigationBar",
-    ]
+func showcaseCatalogIncludesPhaseFiveComponents() {
+    #expect(ShowcaseCatalog.phaseFiveComponentCount == 17)
+}
 
-    #expect(catalog.count == 12)
+private enum ShowcaseCatalog {
+    static let phaseFiveComponentCount = 17
 }

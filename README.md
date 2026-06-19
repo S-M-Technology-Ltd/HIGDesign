@@ -30,4 +30,4 @@ swift run HIGShowcase
 
 ## Status
 
-Phase 4: twelve showcase screens, feedback/navigation APIs (`higAlert`, `HIGToast`, `HIGSidebar`, `higNavigationBarTitle`), and DocC coverage guards (v0.4.0).
+Phase 5: seventeen showcase screens, content/layout APIs (`HIGLabel`, `HIGBadge`, `HIGList`, `HIGFormSection`), and snapshot manifest workflow (v0.5.0).

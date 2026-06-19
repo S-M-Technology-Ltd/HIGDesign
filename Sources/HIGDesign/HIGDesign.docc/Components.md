@@ -12,6 +12,13 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 
 - ``HIGToggle``
 
+## Content
+
+- ``HIGLabel``
+- ``HIGLabelStyle``
+- ``HIGBadge``
+- ``HIGBadgeStyle``
+
 ## Inputs
 
 - ``HIGTextField``
@@ -19,6 +26,8 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 ## Feedback
 
 - ``HIGProgressView``
+- ``HIGActivityIndicator``
+- ``HIGActivityIndicatorSize``
 - ``HIGAlertButtonRole``
 - ``higAlert(_:isPresented:message:primaryButtonTitle:primaryButtonRole:primaryAction:secondaryButtonTitle:secondaryButtonRole:secondaryAction:)``
 - ``HIGToast``
@@ -28,6 +37,8 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 
 - ``HIGCard``
 - ``HIGDivider``
+- ``HIGList``
+- ``HIGFormSection``
 
 ## Navigation
 

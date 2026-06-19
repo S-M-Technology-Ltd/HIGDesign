@@ -63,7 +63,7 @@ Shared platform checks live in `HIGPlatform` so components do not accumulate cop
 
 ## Current State
 
-Phase 4 feedback and navigation builds on the Phase 1–3 foundation, which compiles on all six platforms (macOS, iOS, tvOS, watchOS, visionOS).
+Phase 5 content and indicators builds on the Phase 1–4 foundation, which compiles on all six platforms (macOS, iOS, tvOS, watchOS, visionOS).
 
 | Module | Status |
 |--------|--------|
@@ -83,4 +83,4 @@ Phase 4 feedback and navigation builds on the Phase 1–3 foundation, which comp
 
 Verification: `Scripts/build_all_platforms.sh`, `swift test`, and all governance guards (including `verify_no_uikit.sh`) pass locally.
 
-Next phase: content and indicator components (`HIGLabel`, `HIGBadge`, `HIGList`), Showcase snapshot publishing, and optional SwiftUI bridging helpers.
+Next phase: navigation polish (`HIGNavigationBar`), feedback expansion (`HIGAlert` banners), automated PNG snapshot capture, and optional SwiftUI bridging helpers.

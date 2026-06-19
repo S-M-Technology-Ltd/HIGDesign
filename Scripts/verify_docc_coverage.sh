@@ -36,6 +36,14 @@ EXPECTED_SYMBOLS=(
     higAlert
     higToast
     higNavigationBarTitle
+    HIGLabel
+    HIGLabelStyle
+    HIGBadge
+    HIGBadgeStyle
+    HIGActivityIndicator
+    HIGActivityIndicatorSize
+    HIGList
+    HIGFormSection
 )
 
 missing=()

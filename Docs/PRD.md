@@ -70,32 +70,32 @@ HIGDesign synthesizes architecture and patterns from:
 | `HIGDesignPlatform` | Idiom and capability adapters |
 | `HIGDesignBridging` | Optional Cocoa bridges |
 
-## Current Milestone: Phase 4 Feedback and Navigation
+## Current Milestone: Phase 5 Content and Indicators
 
-Phase 4 adds feedback and navigation components, full DocC coverage, and expanded showcase verification.
+Phase 5 adds content and layout primitives, list/form components, and showcase snapshot publishing.
 
 This milestone includes:
 
-- `higAlert`, `HIGToast`, `HIGSidebar`, and `higNavigationBarTitle`
-- alert and toast token protocols on `HIGTheme`
-- twelve-component `HIGShowcase` catalog
-- DocC components article and `verify_docc_coverage.sh`
+- `HIGLabel`, `HIGBadge`, `HIGActivityIndicator`, `HIGList`, and `HIGFormSection`
+- badge and list token protocols on `HIGTheme`
+- seventeen-component `HIGShowcase` catalog
+- snapshot manifest workflow (`publish_showcase_snapshots.sh`, `verify_showcase_snapshots_present.sh`)
 
 This milestone does not include:
 
 - full component library delivery
-- automated screenshot publishing to CI artifacts
+- committed PNG snapshot artifacts in CI
 - bridging implementations
 - remote third-party dependencies
 - custom brand themes beyond system defaults
 
-## Next Milestone: Phase 5 Content and Indicators
+## Next Milestone: Phase 6 Navigation and Feedback Expansion
 
 The next milestone delivers:
 
-- `HIGLabel`, `HIGBadge`, and `HIGActivityIndicator`
-- `HIGList` and form layout primitives
-- Showcase snapshot publishing workflow
+- `HIGAlert` banner variant, `HIGToast` queueing, and `HIGSidebar` list styling
+- `HIGNavigationBar` composable API
+- automated PNG snapshot capture in CI
 
 ## Success Metrics
 
