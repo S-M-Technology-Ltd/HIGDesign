@@ -125,6 +125,15 @@ HIGFoundations
 * Platform differences belong in `HIGPlatform` or component-specific adapters, not scattered `#if os()` blocks.
 * Keep PRs small and module-focused.
 
+Git Workflow (required)
+
+* **Never push directly to `develop` or `main`.** All changes land through pull requests.
+* Branch from `develop`: `feature/…`, `fix/…`, `chore/…`, or `docs/…`.
+* Push your branch and open a PR targeting `develop`.
+* Wait for CI (`Build and Test`) to pass before merge.
+* Squash-merge or merge via GitHub UI after review. Do not fast-forward push to `develop` from a local checkout.
+* Release tags (`v*`) are cut from `develop` only after the release PR is merged.
+
 Swift Concurrency Rules
 
 * Use Swift 6 strict concurrency.
