@@ -41,7 +41,7 @@ public enum ShowcaseSnapshotCapture {
                 content
             }
 
-            guard let pngData = renderPNG(from: wrapped, size: canvasSize) else {
+            guard let pngData = renderPNG(from: wrapped, size: canvasSize, colorScheme: colorScheme) else {
                 fputs("Failed to render \(entry.file)\n", stderr)
                 exit(1)
             }
@@ -73,17 +73,77 @@ public enum ShowcaseSnapshotCapture {
         return root.appendingPathComponent("Design/Showcase")
     }
 
-    private static func renderPNG<Content: View>(from content: Content, size: CGSize) -> Data? {
-        let renderer = ImageRenderer(content: content)
-        renderer.proposedSize = ProposedViewSize(size)
-        renderer.scale = 2
-        guard let image = renderer.nsImage,
-              let tiff = image.tiffRepresentation,
-              let bitmap = NSBitmapImageRep(data: tiff),
-              let png = bitmap.representation(using: .png, properties: [:]) else {
+    private static func renderPNG<Content: View>(
+        from content: Content,
+        size: CGSize,
+        colorScheme: ColorScheme
+    ) -> Data? {
+        let scale: CGFloat = 2
+        let hostingView = NSHostingView(rootView: content)
+        hostingView.frame = CGRect(origin: .zero, size: size)
+        hostingView.appearance = NSAppearance(named: colorScheme == .dark ? .darkAqua : .aqua)
+
+        let window = NSWindow(
+            contentRect: CGRect(origin: .zero, size: size),
+            styleMask: [.borderless],
+            backing: .buffered,
+            defer: false
+        )
+        window.appearance = hostingView.appearance
+        window.contentView = hostingView
+        window.setFrameOrigin(NSPoint(x: -20_000, y: -20_000))
+        window.makeKeyAndOrderFront(nil)
+        window.displayIfNeeded()
+        hostingView.layoutSubtreeIfNeeded()
+        drainMainRunLoop()
+
+        guard let rep = hostingView.bitmapImageRepForCachingDisplay(in: hostingView.bounds) else {
+            return nil
+        }
+        rep.size = CGSize(width: size.width * scale, height: size.height * scale)
+        hostingView.cacheDisplay(in: hostingView.bounds, to: rep)
+
+        guard let png = rep.representation(using: .png, properties: [:]),
+              pngContainsVisiblePixels(png, minimumOpaquePixels: 1_000) else {
             return nil
         }
         return png
+    }
+
+    private static func drainMainRunLoop() {
+        let deadline = Date().addingTimeInterval(0.2)
+        while Date() < deadline {
+            RunLoop.current.run(mode: .default, before: Date().addingTimeInterval(0.01))
+        }
+    }
+
+    private static func pngContainsVisiblePixels(_ data: Data, minimumOpaquePixels: Int) -> Bool {
+        guard let rep = NSBitmapImageRep(data: data) else { return false }
+
+        let width = rep.pixelsWide
+        let height = rep.pixelsHigh
+        guard width > 0, height > 0, let bitmap = rep.bitmapData else { return false }
+
+        let bytesPerPixel = rep.bitsPerPixel / rep.bitsPerSample
+        guard bytesPerPixel >= 4 else { return false }
+
+        let stride = width * bytesPerPixel
+        var opaqueCount = 0
+        let yStride = max(1, height / 80)
+        let xStride = max(1, width / 80)
+
+        for y in Swift.stride(from: 0, to: height, by: yStride) {
+            for x in Swift.stride(from: 0, to: width, by: xStride) {
+                let offset = y * stride + x * bytesPerPixel
+                if bitmap[offset + 3] > 0 {
+                    opaqueCount += 1
+                    if opaqueCount >= minimumOpaquePixels {
+                        return true
+                    }
+                }
+            }
+        }
+        return false
     }
 }
 

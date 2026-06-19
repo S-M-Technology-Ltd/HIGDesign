@@ -1,8 +1,11 @@
+import HIGThemesContract
 import SwiftUI
 
 /// Renders a single showcase component for snapshot capture.
 public struct ShowcaseSnapshotView: View {
     public let component: ShowcaseComponent
+
+    @Environment(\.higTheme) private var theme
 
     public init(component: ShowcaseComponent) {
         self.component = component
@@ -20,7 +23,7 @@ public struct ShowcaseSnapshotView: View {
             snapshotContent
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         }
-        .background(.background)
+        .background(theme.colors.backgroundPrimary)
     }
 
     @ViewBuilder
