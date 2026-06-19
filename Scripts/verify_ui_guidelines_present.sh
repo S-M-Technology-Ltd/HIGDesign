@@ -21,21 +21,21 @@ FULL_REFERENCE="$ROOT_DIR/Design/hig/index.html"
 [[ -f "$STANDARDS" ]] || fail "CODING_STANDARDS.md is missing."
 [[ -f "$AGENT_RULES" ]] || fail "Docs/AGENT_RULES.md is missing."
 
-rg -q "Apple HIG UI Rule" "$AGENTS" || fail "AGENTS.md must mention Apple HIG UI Rule."
-rg -q "Apple HIG" "$STANDARDS" || fail "CODING_STANDARDS.md must mention Apple HIG."
-rg -q "Apple Human Interface Guidelines" "$AGENT_RULES" || fail "Docs/AGENT_RULES.md must reference Apple Human Interface Guidelines."
-rg -q "^## Mandatory Apple HIG Rule" "$GUIDELINES" || fail "Docs/UI_DESIGN_GUIDELINES.md must include the mandatory Apple HIG rule."
-rg -q "PR Checklist" "$GUIDELINES" || fail "Docs/UI_DESIGN_GUIDELINES.md must include a PR checklist."
-rg -q "Accessibility Checklist" "$GUIDELINES" || fail "Docs/UI_DESIGN_GUIDELINES.md must include an accessibility checklist."
+grep -q "Apple HIG UI Rule" "$AGENTS" || fail "AGENTS.md must mention Apple HIG UI Rule."
+grep -q "Apple HIG" "$STANDARDS" || fail "CODING_STANDARDS.md must mention Apple HIG."
+grep -q "Apple Human Interface Guidelines" "$AGENT_RULES" || fail "Docs/AGENT_RULES.md must reference Apple Human Interface Guidelines."
+grep -Eq '^## Mandatory Apple HIG Rule' "$GUIDELINES" || fail "Docs/UI_DESIGN_GUIDELINES.md must include the mandatory Apple HIG rule."
+grep -q "PR Checklist" "$GUIDELINES" || fail "Docs/UI_DESIGN_GUIDELINES.md must include a PR checklist."
+grep -q "Accessibility Checklist" "$GUIDELINES" || fail "Docs/UI_DESIGN_GUIDELINES.md must include an accessibility checklist."
 
 [[ -f "$DESIGN_LIBRARY" ]] || fail "Design/hig-design-system.html is missing."
 [[ -f "$FULL_REFERENCE" ]] || fail "Design/hig/index.html is missing."
 
-rg -q "HIGDesign HIG Design System" "$DESIGN_LIBRARY" || fail "Design/hig-design-system.html must include the HIGDesign HIG Design System."
-rg -q "Apple Human Interface Guidelines" "$DESIGN_LIBRARY" || fail "Design/hig-design-system.html must reference Apple Human Interface Guidelines."
+grep -q "HIGDesign HIG Design System" "$DESIGN_LIBRARY" || fail "Design/hig-design-system.html must include the HIGDesign HIG Design System."
+grep -q "Apple Human Interface Guidelines" "$DESIGN_LIBRARY" || fail "Design/hig-design-system.html must reference Apple Human Interface Guidelines."
 
-rg -q "HIGDesign HIG Full Reference" "$FULL_REFERENCE" || fail "Design/hig/index.html must include the HIGDesign HIG Full Reference."
-rg -q "Design principles by HIG subpage" "$FULL_REFERENCE" || fail "Design/hig/index.html must be separated by HIG subpage."
+grep -q "HIGDesign HIG Full Reference" "$FULL_REFERENCE" || fail "Design/hig/index.html must include the HIGDesign HIG Full Reference."
+grep -q "Design principles by HIG subpage" "$FULL_REFERENCE" || fail "Design/hig/index.html must be separated by HIG subpage."
 
 page_count=$(find "$ROOT_DIR/Design/hig/pages" -type f -name "*.html" 2>/dev/null | wc -l | tr -d " ")
 snapshot_count=$(find "$ROOT_DIR/Design/hig/snapshots" -type f -name "*.svg" 2>/dev/null | wc -l | tr -d " ")
