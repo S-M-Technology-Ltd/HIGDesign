@@ -12,13 +12,14 @@ private struct ContainerWidthPreferenceKey: PreferenceKey {
 /// Reads container width once per meaningful layout change to avoid GeometryReader feedback loops.
 struct ContainerWidthReaderView: View {
     @Binding var width: CGFloat
+    @Environment(\.displayScale) private var displayScale
 
     var body: some View {
         GeometryReader { geometry in
             Color.clear
                 .preference(
                     key: ContainerWidthPreferenceKey.self,
-                    value: PickerDesign.pixelAlignedLength(geometry.size.width)
+                    value: PickerDesign.pixelAlignedLength(geometry.size.width, scale: displayScale)
                 )
         }
     }
@@ -33,4 +34,5 @@ extension View {
                 width.wrappedValue = newWidth
             }
     }
-}#endif
+}
+#endif

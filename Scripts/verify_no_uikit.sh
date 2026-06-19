@@ -6,7 +6,7 @@ cd "$ROOT"
 
 PATTERN='import UIKit|import UIKit\.|UIColor\.|UIAccessibility\.|UIViewRepresentable|UIViewControllerRepresentable'
 
-if rg -n "$PATTERN" Sources Tests --glob '!**/Inputs/PhotoPicker/**'; then
+if rg -n "$PATTERN" Sources Tests; then
     echo "UIKit guard failed: HIGDesign sources must use SwiftUI only." >&2
     exit 1
 fi

@@ -73,7 +73,6 @@ let package = Package(
                 .linkedFramework("PhotosUI", .when(platforms: [.iOS])),
                 .linkedFramework("ImageIO", .when(platforms: [.iOS])),
                 .linkedFramework("CoreGraphics", .when(platforms: [.iOS])),
-                .linkedFramework("UIKit", .when(platforms: [.iOS])),
             ]
         ),
         .target(

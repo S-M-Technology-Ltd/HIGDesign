@@ -1,9 +1,6 @@
 #if os(iOS)
 import Photos
 import SwiftUI
-#if canImport(UIKit)
-import UIKit
-#endif
 
 struct PickerRootView: View {
     @Binding var selection: [HIGPhotoAsset]
@@ -22,6 +19,7 @@ struct PickerRootView: View {
     @State private var containerWidth: CGFloat = PickerDesign.fallbackContainerWidth
 
     @Environment(\.openURL) private var openURL
+    @Environment(\.scenePhase) private var scenePhase
 
     private let authorizationClient = PhotosAuthorizationClient()
     private let libraryClient: any PhotosLibraryClientProtocol
@@ -171,11 +169,13 @@ struct PickerRootView: View {
             libraryChangeObserver?.unregister()
             libraryChangeObserver = nil
         }
-        #if canImport(UIKit)
-        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+        .onChange(of: scenePhase) { _, newPhase in
+            guard newPhase == .active else { return }
             refreshAuthorizationStatus()
+            if authorizationStatus.canBrowseLibrary {
+                reloadLibrary()
+            }
         }
-        #endif
         .onChange(of: pickerSelection.assets) { newValue in
             selection = newValue
         }
@@ -360,13 +360,7 @@ struct PickerRootView: View {
     }
 
     private func manageLimitedLibraryAccess() {
-        #if canImport(UIKit)
-        LimitedLibraryPickerPresenter.present {
-            reloadLibrary()
-        }
-        #else
         openApplicationSettings()
-        #endif
     }
 
     private func bootstrap() async {

@@ -1,20 +1,14 @@
 #if os(iOS)
 import SwiftUI
-#if canImport(UIKit)
-import UIKit
-#endif
 
 enum PickerDesign {
     static let gridColumnCount = 3
     static let gridSpacing: CGFloat = 1
+    static let defaultDisplayScale: CGFloat = 3
+    static let fallbackContainerWidth: CGFloat = 390
 
-    static func pixelAlignedLength(_ value: CGFloat) -> CGFloat {
+    static func pixelAlignedLength(_ value: CGFloat, scale: CGFloat = defaultDisplayScale) -> CGFloat {
         guard value > 0 else { return 0 }
-        #if canImport(UIKit)
-        let scale = UIScreen.main.scale
-        #else
-        let scale: CGFloat = 2
-        #endif
         return floor(value * scale) / scale
     }
 
@@ -37,14 +31,6 @@ enum PickerDesign {
             let slice = Array(assets[start..<min(start + columnCount, assets.count)])
             return PhotoGridRowModel(id: slice[0].id, assets: slice)
         }
-    }
-
-    static var fallbackContainerWidth: CGFloat {
-        #if canImport(UIKit)
-        pixelAlignedLength(UIScreen.main.bounds.width)
-        #else
-        390
-        #endif
     }
 
     static let albumThumbnailSize: CGFloat = 56

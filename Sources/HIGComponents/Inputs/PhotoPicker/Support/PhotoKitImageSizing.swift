@@ -1,22 +1,12 @@
 #if os(iOS)
 import CoreGraphics
 import Photos
-#if canImport(UIKit)
-import UIKit
-#endif
 
 enum PhotoKitImageSizing {
     static let maxImageDimension: CGFloat = 4096
 
-    static func displayScale() -> CGFloat {
-        #if canImport(UIKit)
-        if Thread.isMainThread {
-            return UIScreen.main.scale
-        }
-        return 3
-        #else
-        return 2
-        #endif
+    static func displayScale(fallback: CGFloat = PickerDesign.defaultDisplayScale) -> CGFloat {
+        fallback
     }
 
     static func pixelSize(for pointSize: CGSize, scale: CGFloat) -> CGSize {
@@ -46,11 +36,7 @@ enum PhotoKitImageSizing {
     }
 
     static func gridCellPointSize(containerWidth: CGFloat? = nil) -> CGSize {
-        #if canImport(UIKit)
-        let width = containerWidth ?? UIScreen.main.bounds.width
-        #else
-        let width = containerWidth ?? 390
-        #endif
+        let width = containerWidth ?? PickerDesign.fallbackContainerWidth
         let side = PickerDesign.gridCellSideLength(containerWidth: width)
         guard side > 0 else {
             return CGSize(width: 120, height: 120)
@@ -66,5 +52,5 @@ enum PhotoKitImageSizing {
             CGSize(width: asset.pixelWidth, height: asset.pixelHeight)
         )
     }
-
-}#endif
+}
+#endif
