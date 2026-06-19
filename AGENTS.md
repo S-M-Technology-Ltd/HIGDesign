@@ -202,7 +202,8 @@ Design Rules
 * Check `Docs/UI_DESIGN_GUIDELINES.md` before changing public components or modifiers.
 * Prefer system colors, SF Pro text styles, SF Symbols, and native SwiftUI controls.
 * Do not introduce custom brand themes unless they are implemented as explicit `HIGTheme` conformances.
-* Design references may live under `Design/` when added; keep them local and renderable.
+* Renderable design references live under `Design/`.
+* Start UI work from `Design/hig-design-system.html` or the matching page in `Design/hig/pages/`.
 
 Xcode Preview Rules
 

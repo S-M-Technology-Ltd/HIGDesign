@@ -8,6 +8,8 @@ Every new or changed public component, modifier, or themed visual must be review
 
 Xcode preview and view-naming rules live in [`XCODE_PREVIEWS.md`](XCODE_PREVIEWS.md).
 
+Renderable HTML reference libraries for these rules live at `Design/hig-design-system.html` and `Design/hig/index.html`.
+
 ## Mandatory Apple HIG Rule
 
 HIGDesign is an Apple-only design system. Public UI must follow Apple Human Interface Guidelines, use native SwiftUI patterns first, and adapt across Apple platforms without web-style or cross-platform layout assumptions.

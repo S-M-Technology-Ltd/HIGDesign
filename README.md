@@ -10,6 +10,7 @@ A comprehensive SwiftUI design system that strictly follows Apple Human Interfac
 | Architecture | [Docs/ARCHITECTURE.md](Docs/ARCHITECTURE.md) |
 | BA requirements | [Requirements/](Requirements/README.md) |
 | UI guidelines | [Docs/UI_DESIGN_GUIDELINES.md](Docs/UI_DESIGN_GUIDELINES.md) |
+| HTML design references | [Design/index.html](Design/index.html) |
 | Agent rules | [AGENTS.md](AGENTS.md) |
 | Coding standards | [CODING_STANDARDS.md](CODING_STANDARDS.md) |
 

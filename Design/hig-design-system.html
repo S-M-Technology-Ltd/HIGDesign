@@ -1,0 +1,1296 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HIGDesign HIG Design System</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: Canvas;
+      --text: CanvasText;
+      --muted: color-mix(in srgb, CanvasText 64%, Canvas 36%);
+      --quiet: color-mix(in srgb, CanvasText 48%, Canvas 52%);
+      --line: color-mix(in srgb, CanvasText 18%, Canvas 82%);
+      --surface: color-mix(in srgb, CanvasText 5%, Canvas 95%);
+      --surface-strong: color-mix(in srgb, CanvasText 9%, Canvas 91%);
+      --blue: #0a84ff;
+      --green: #30d158;
+      --red: #ff453a;
+      --orange: #ff9f0a;
+      --purple: #bf5af2;
+      --teal: #64d2ff;
+      --radius: 8px;
+      --shadow: 0 1px 2px color-mix(in srgb, CanvasText 12%, transparent);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      line-height: 1.45;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .shell {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      min-height: 100vh;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: auto;
+      border-right: 1px solid var(--line);
+      background: color-mix(in srgb, CanvasText 3%, Canvas 97%);
+      padding: 24px 18px;
+    }
+
+    nav h1 {
+      margin: 0 0 8px;
+      font-size: 22px;
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    nav p {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .nav-list {
+      display: grid;
+      gap: 6px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-list a {
+      display: block;
+      padding: 7px 9px;
+      border-radius: 7px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .nav-list a:hover,
+    .nav-list a:focus {
+      background: var(--surface-strong);
+      outline: none;
+    }
+
+    main {
+      min-width: 0;
+      padding: 32px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+      gap: 28px;
+      align-items: center;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 32px;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 22px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    h4 {
+      margin: 0 0 6px;
+      font-size: 15px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .hero-copy {
+      max-width: 820px;
+    }
+
+    .hero-copy h2 {
+      font-size: clamp(38px, 7vw, 76px);
+      max-width: 900px;
+    }
+
+    .hero-copy p {
+      max-width: 760px;
+      font-size: 18px;
+    }
+
+    .platform-panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      padding: 16px;
+    }
+
+    .platform-screen {
+      display: grid;
+      grid-template-columns: 84px minmax(0, 1fr);
+      gap: 12px;
+      min-height: 260px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: Canvas;
+      padding: 10px;
+    }
+
+    .sidebar-rail,
+    .detail-pane {
+      display: grid;
+      align-content: start;
+      gap: 8px;
+    }
+
+    .rail-item,
+    .pane-row {
+      height: 28px;
+      border-radius: 6px;
+      background: var(--surface-strong);
+    }
+
+    .rail-item:nth-child(1) {
+      background: color-mix(in srgb, var(--blue) 26%, Canvas 74%);
+    }
+
+    .pane-row:nth-child(1) {
+      width: 62%;
+      background: color-mix(in srgb, var(--green) 20%, Canvas 80%);
+    }
+
+    .pane-row:nth-child(2) {
+      width: 82%;
+    }
+
+    .pane-row:nth-child(3) {
+      width: 74%;
+    }
+
+    section {
+      padding: 34px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(260px, 1fr);
+      gap: 24px;
+      margin-bottom: 18px;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin: 18px 0;
+    }
+
+    .search {
+      min-width: min(100%, 320px);
+      flex: 1;
+      height: 36px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: Canvas;
+      color: var(--text);
+      padding: 0 12px;
+      font: inherit;
+    }
+
+    .filter {
+      height: 36px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: var(--surface);
+      color: var(--text);
+      padding: 0 11px;
+      font: inherit;
+    }
+
+    .filter[aria-pressed="true"] {
+      border-color: color-mix(in srgb, var(--blue) 60%, var(--line) 40%);
+      background: color-mix(in srgb, var(--blue) 18%, Canvas 82%);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+    }
+
+    .wide-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      min-height: 168px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: Canvas;
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .card p {
+      font-size: 14px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 2px 8px;
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .priority {
+      border-color: color-mix(in srgb, var(--orange) 48%, var(--line) 52%);
+      color: color-mix(in srgb, var(--orange) 78%, var(--text) 22%);
+    }
+
+    .token-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 10px;
+    }
+
+    .token {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 12px;
+      background: Canvas;
+    }
+
+    .swatch {
+      height: 46px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      margin-bottom: 10px;
+      background: var(--swatch);
+    }
+
+    .example-window {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: Canvas;
+    }
+
+    .window-titlebar {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      height: 38px;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface);
+      padding: 0 12px;
+    }
+
+    .traffic {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
+
+    .traffic.red { background: #ff5f57; }
+    .traffic.yellow { background: #febc2e; }
+    .traffic.green { background: #28c840; }
+
+    .window-body {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      min-height: 260px;
+    }
+
+    .window-sidebar {
+      border-right: 1px solid var(--line);
+      background: var(--surface);
+      padding: 12px;
+    }
+
+    .window-content {
+      padding: 14px;
+    }
+
+    .list-row {
+      display: grid;
+      gap: 4px;
+      border-radius: 7px;
+      padding: 9px;
+    }
+
+    .list-row.active {
+      background: color-mix(in srgb, var(--blue) 18%, Canvas 82%);
+    }
+
+    .line {
+      height: 9px;
+      border-radius: 999px;
+      background: var(--surface-strong);
+    }
+
+    .line.short { width: 44%; }
+    .line.medium { width: 68%; }
+    .line.long { width: 88%; }
+
+    .sample-form {
+      display: grid;
+      gap: 12px;
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+    }
+
+    .field label {
+      font-weight: 650;
+      font-size: 13px;
+    }
+
+    .fake-input {
+      min-height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: Canvas;
+      padding: 9px 10px;
+      color: var(--quiet);
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .button {
+      min-height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: var(--surface);
+      color: var(--text);
+      padding: 7px 12px;
+      font-weight: 600;
+    }
+
+    .button.primary {
+      border-color: var(--blue);
+      background: var(--blue);
+      color: white;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 9px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .checklist li {
+      display: grid;
+      grid-template-columns: 22px minmax(0, 1fr);
+      gap: 8px;
+      align-items: start;
+      color: var(--muted);
+    }
+
+    .checkmark {
+      display: inline-grid;
+      place-items: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: color-mix(in srgb, var(--green) 26%, Canvas 74%);
+      color: color-mix(in srgb, var(--green) 78%, var(--text) 22%);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    code {
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      background: var(--surface);
+      padding: 1px 5px;
+      font-family: "SF Mono", Menlo, monospace;
+      font-size: 0.92em;
+    }
+
+    footer {
+      padding: 30px 0 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 920px) {
+      .shell {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        position: static;
+        height: auto;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav-list {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+
+      main {
+        padding: 22px;
+      }
+
+      .hero,
+      .section-head,
+      .window-body {
+        grid-template-columns: 1fr;
+      }
+
+      .window-sidebar {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <nav aria-label="Design system sections">
+      <h1>HIGDesign HIG Design System</h1>
+      <p>Internal Apple-platform UI reference derived from the Apple Human Interface Guidelines structure.</p>
+      <ul class="nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#principles">Principles</a></li>
+        <li><a href="#tokens">Tokens</a></li>
+        <li><a href="#platforms">Platforms</a></li>
+        <li><a href="#patterns">Patterns</a></li>
+        <li><a href="#components">Components</a></li>
+        <li><a href="#inputs">Inputs</a></li>
+        <li><a href="#technologies">Technologies</a></li>
+        <li><a href="#examples">Examples</a></li>
+        <li><a href="#checklist">PR Checklist</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <header id="overview" class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Apple HIG Foundation</p>
+          <h2>Native, adaptive, privacy-safe UI for HIGDesign.</h2>
+          <p>This library converts the Apple Human Interface Guidelines map into HIGDesign-specific design rules, tokens, patterns, and SwiftUI implementation notes for iOS, iPadOS, macOS, visionOS, tvOS, and watchOS.</p>
+        </div>
+        <div class="platform-panel" aria-label="NavigationSplitView preview">
+          <div class="platform-screen">
+            <div class="sidebar-rail">
+              <div class="rail-item"></div>
+              <div class="rail-item"></div>
+              <div class="rail-item"></div>
+              <div class="rail-item"></div>
+              <div class="rail-item"></div>
+            </div>
+            <div class="detail-pane">
+              <div class="pane-row"></div>
+              <div class="pane-row"></div>
+              <div class="pane-row"></div>
+              <div class="pane-row"></div>
+              <div class="pane-row"></div>
+              <div class="pane-row"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section id="principles">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Operating Rules</p>
+            <h2>Design principles</h2>
+          </div>
+          <p>These rules are the baseline for all HIGDesign public API work. They are intentionally stricter than a loose visual style guide because components must stay token-driven, theme-driven, and Apple-native.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>Native first</h3>
+            <p>Use SwiftUI controls and platform patterns before custom UI. Custom controls need a workflow, accessibility, and platform justification.</p>
+            <div class="tag-row"><span class="tag priority">Mandatory</span><span class="tag">SwiftUI</span></div>
+          </article>
+          <article class="card">
+            <h3>Adaptive by default</h3>
+            <p>Design for all six Apple platforms. Prefer native layout conventions per idiom instead of one fixed phone layout stretched everywhere.</p>
+            <div class="tag-row"><span class="tag">iOS</span><span class="tag">iPadOS</span><span class="tag">macOS</span><span class="tag">visionOS</span><span class="tag">tvOS</span><span class="tag">watchOS</span></div>
+          </article>
+          <article class="card">
+            <h3>Tokens own visuals</h3>
+            <p>Components render from raw, semantic, and component tokens resolved through <code>HIGTheme</code>. Application business logic stays outside the design-system package.</p>
+            <div class="tag-row"><span class="tag priority">Architecture</span><span class="tag">HIGTheme</span></div>
+          </article>
+          <article class="card">
+            <h3>Privacy in every surface</h3>
+            <p>Do not log user-entered text, secrets, private app content, or implementation internals from library diagnostics.</p>
+            <div class="tag-row"><span class="tag priority">Privacy</span><span class="tag">Logging</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="tokens">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Design Tokens</p>
+            <h2>HIGDesign system tokens</h2>
+          </div>
+          <p>Use system-adaptive color, type, spacing, and materials. These tokens are descriptions for SwiftUI implementation, not hard-coded app colors.</p>
+        </div>
+        <div class="token-grid">
+          <div class="token"><div class="swatch" style="--swatch: var(--blue)"></div><h4>Accent</h4><p>Use system accent for primary actions, selection, and current navigation.</p></div>
+          <div class="token"><div class="swatch" style="--swatch: var(--green)"></div><h4>Success</h4><p>Use sparingly for completed states, approved content, and valid outcomes.</p></div>
+          <div class="token"><div class="swatch" style="--swatch: var(--orange)"></div><h4>Attention</h4><p>Use for pending review, warnings, and moderation attention states.</p></div>
+          <div class="token"><div class="swatch" style="--swatch: var(--red)"></div><h4>Destructive</h4><p>Use for destructive actions, rejected states, and critical validation.</p></div>
+          <div class="token"><div class="swatch" style="--swatch: var(--surface)"></div><h4>Grouped surface</h4><p>Map to grouped backgrounds, materials, and list surfaces rather than flat custom fills.</p></div>
+          <div class="token"><div class="swatch" style="--swatch: var(--line)"></div><h4>Separator</h4><p>Use system separators and dividers for hierarchy. Avoid decorative borders.</p></div>
+        </div>
+      </section>
+
+      <section id="platforms">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Getting Started</p>
+            <h2>Platform model</h2>
+          </div>
+          <p>HIGDesign uses one Apple-native product system with platform-specific presentation. The same feature can have different navigation density by device.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>iPhone</h3>
+            <p>Use tab-based top-level navigation, stack-based detail flows, full-screen or large sheets for complex forms, and visible primary actions.</p>
+            <div class="tag-row"><span class="tag">TabView</span><span class="tag">NavigationStack</span></div>
+          </article>
+          <article class="card">
+            <h3>iPad</h3>
+            <p>Use split views for library, community, and admin-like workflows. Keep pointer, keyboard, and drag-aware behavior in mind.</p>
+            <div class="tag-row"><span class="tag">NavigationSplitView</span><span class="tag">Pointer</span></div>
+          </article>
+          <article class="card">
+            <h3>Mac</h3>
+            <p>Use productivity layouts with sidebars, tables, toolbars, menus, inspectors, resizable windows, and useful minimum sizes.</p>
+            <div class="tag-row"><span class="tag">Sidebar</span><span class="tag">Toolbar</span><span class="tag">Table</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="hig-map">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">HIG Coverage</p>
+            <h2>Section and page map</h2>
+          </div>
+          <p>Filter this map when starting a UI task. Each card turns an HIG page topic into HIGDesign review guidance without copying Apple documentation text.</p>
+        </div>
+        <div class="toolbar" role="search">
+          <input id="search" class="search" type="search" placeholder="Filter HIG topics, HIGDesign areas, or SwiftUI primitives" aria-label="Filter design cards">
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter" type="button" data-filter="foundation" aria-pressed="false">Foundations</button>
+          <button class="filter" type="button" data-filter="pattern" aria-pressed="false">Patterns</button>
+          <button class="filter" type="button" data-filter="component" aria-pressed="false">Components</button>
+          <button class="filter" type="button" data-filter="input" aria-pressed="false">Inputs</button>
+          <button class="filter" type="button" data-filter="technology" aria-pressed="false">Technologies</button>
+        </div>
+        <div id="cardGrid" class="grid" aria-live="polite"></div>
+      </section>
+
+      <section id="patterns">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Patterns</p>
+            <h2>HIGDesign workflow patterns</h2>
+          </div>
+          <p>Use these pairings to translate common HIGDesign jobs into native SwiftUI structure.</p>
+        </div>
+        <div class="wide-grid">
+          <article class="card">
+            <h3>Showcase catalog</h3>
+            <p>Use split-view or stack navigation to browse components by HIG category with theme switching, Dynamic Type controls, and platform notes.</p>
+            <div class="tag-row"><span class="tag">NavigationSplitView</span><span class="tag">List</span><span class="tag">HIGThemeableView</span><span class="tag">searchable</span></div>
+          </article>
+          <article class="card">
+            <h3>Input components</h3>
+            <p>Use labels, helper text, validation styling, secure-field handling, and platform-appropriate keyboard behavior through HIG input APIs.</p>
+            <div class="tag-row"><span class="tag">HIGTextField</span><span class="tag">HIGSecureField</span><span class="tag">HIGSearchField</span><span class="tag">HIGPicker</span></div>
+          </article>
+          <article class="card">
+            <h3>Feedback surfaces</h3>
+            <p>Use native progress, alert, toast, and inline validation patterns with clear loading, success, warning, and error states.</p>
+            <div class="tag-row"><span class="tag">HIGProgressView</span><span class="tag">HIGAlert</span><span class="tag">HIGToast</span></div>
+          </article>
+          <article class="card">
+            <h3>Navigation chrome</h3>
+            <p>Map tabs, sidebars, toolbars, and search to platform conventions instead of one custom shell stretched across all devices.</p>
+            <div class="tag-row"><span class="tag">HIGTabBar</span><span class="tag">HIGSidebar</span><span class="tag">HIGToolbar</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="components">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Components</p>
+            <h2>Reusable component rules</h2>
+          </div>
+          <p>These are implementation defaults for `HIGComponents`. Add reusable components only when they reduce repeated real complexity across consuming apps.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>Buttons and menus</h3>
+            <p>Use text for clear commands, SF Symbols for familiar tool actions, menus for grouped secondary actions, and confirmation for destructive work.</p>
+          </article>
+          <article class="card">
+            <h3>Lists and tables</h3>
+            <p>Use `HIGList` for grouped content and row actions. Use native table patterns on macOS when dense comparison is required.</p>
+          </article>
+          <article class="card">
+            <h3>Sheets and popovers</h3>
+            <p>Sheets are for bounded tasks. Popovers are for lightweight choices. Complex editors need larger presentation or window-based workflows.</p>
+          </article>
+          <article class="card">
+            <h3>Progress and feedback</h3>
+            <p>Async work needs clear loading, disabled in-flight controls where needed, success feedback when it matters, and actionable error recovery.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="inputs">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Inputs</p>
+            <h2>Keyboard, pointer, and gesture rules</h2>
+          </div>
+          <p>HIGDesign components must work beyond touch-only interaction on Mac, iPad, TV, and visionOS.</p>
+        </div>
+        <ul class="checklist">
+          <li><span class="checkmark">OK</span><span>Text-heavy editors should support keyboard focus, selection, and predictable submit/cancel actions.</span></li>
+          <li><span class="checkmark">OK</span><span>Pointer hover can reveal secondary affordances, but required actions must stay discoverable without hover.</span></li>
+          <li><span class="checkmark">OK</span><span>Gestures should supplement visible controls, not replace them for core or destructive actions.</span></li>
+          <li><span class="checkmark">OK</span><span>macOS components should consider keyboard shortcuts only when visible menu or toolbar commands also exist.</span></li>
+        </ul>
+      </section>
+
+      <section id="technologies">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Technologies</p>
+            <h2>Out of package scope</h2>
+          </div>
+          <p>HIGDesign documents HIG-aligned component behavior only. Application technologies such as CloudKit, StoreKit, Sign in with Apple, widgets, and push notifications belong in consuming apps, not in the core package.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>Consuming app integrations</h3>
+            <p>Apps may compose HIGDesign components inside their own feature, sync, purchase, and account flows.</p>
+          </article>
+          <article class="card">
+            <h3>Showcase examples</h3>
+            <p>Showcase may demonstrate composition patterns without importing application-only SDKs into library targets.</p>
+          </article>
+          <article class="card">
+            <h3>Bridging layer</h3>
+            <p>Optional `HIGBridging` may wrap Cocoa controls for SwiftUI gaps while still styling them with HIG tokens.</p>
+          </article>
+          <article class="card">
+            <h3>Platform services</h3>
+            <p>Permission, account, and commerce UI should use system patterns in app code rather than design-system components.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="examples">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Reference Layouts</p>
+            <h2>Native layout examples</h2>
+          </div>
+          <p>These are static composition references for future SwiftUI work. They describe structure, not final visual design.</p>
+        </div>
+        <div class="wide-grid">
+          <article class="example-window" aria-label="macOS admin split-view reference">
+            <div class="window-titlebar">
+              <span class="traffic red"></span>
+              <span class="traffic yellow"></span>
+              <span class="traffic green"></span>
+            </div>
+            <div class="window-body">
+              <div class="window-sidebar">
+                <div class="list-row active"><div class="line medium"></div><div class="line short"></div></div>
+                <div class="list-row"><div class="line long"></div><div class="line short"></div></div>
+                <div class="list-row"><div class="line medium"></div><div class="line short"></div></div>
+              </div>
+              <div class="window-content">
+                <h3>Admin review detail</h3>
+                <p>Queue, detail, action toolbar, and audit-safe decisions belong in a split workflow.</p>
+                <div class="tag-row"><span class="tag">NavigationSplitView</span><span class="tag">Toolbar</span><span class="tag">Confirmation</span></div>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Structured editor form</h3>
+            <div class="sample-form">
+              <div class="field">
+                <label>Prompt title</label>
+                <div class="fake-input">Short, searchable title</div>
+              </div>
+              <div class="field">
+                <label>Builder fields</label>
+                <div class="fake-input">Subject, scene, style, lighting, negative prompt</div>
+              </div>
+              <div class="buttons">
+                <span class="button">Cancel</span>
+                <span class="button primary">Save Version</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="checklist">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">PR Readiness</p>
+            <h2>HIG checklist summary</h2>
+          </div>
+          <p>Paste this shape into PR bodies for user-facing UI work and fill it with specific notes.</p>
+        </div>
+        <ul class="checklist">
+          <li><span class="checkmark">OK</span><span>HIG sections reviewed: foundations, patterns, components, inputs, technologies.</span></li>
+          <li><span class="checkmark">OK</span><span>Native SwiftUI components used, or custom UI justification provided.</span></li>
+          <li><span class="checkmark">OK</span><span>Navigation and layout behavior fits every targeted platform.</span></li>
+          <li><span class="checkmark">OK</span><span>Sheet, popover, inspector, or window sizing is appropriate for workflow complexity.</span></li>
+          <li><span class="checkmark">OK</span><span>Empty, loading, error, disabled, and success states are accounted for.</span></li>
+          <li><span class="checkmark">OK</span><span>Accessibility labels, Dynamic Type, contrast, keyboard, and pointer behavior are considered.</span></li>
+          <li><span class="checkmark">OK</span><span>Logging avoids user-entered text, secrets, and private app content.</span></li>
+          <li><span class="checkmark">OK</span><span>Application business logic remains outside design-system components and modifiers.</span></li>
+        </ul>
+      </section>
+
+      <footer>
+        Source structure: <a href="https://developer.apple.com/design/human-interface-guidelines/">Apple Human Interface Guidelines</a>. This internal reference paraphrases and adapts the HIG structure for HIGDesign; it does not replace Apple documentation. For separated subpage references with generated snapshots, open <a href="hig/index.html">HIGDesign HIG Full Reference</a>.
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    const topics = [
+      {
+        group: "foundation",
+        title: "Accessibility",
+        summary: "Every interaction needs a clear label, readable text, adequate contrast, Dynamic Type behavior, and VoiceOver-friendly structure.",
+        higdesign: "Required for every interactive component, especially icon-only controls and loading/disabled states.",
+        tags: ["Dynamic Type", "VoiceOver", "Labels"]
+      },
+      {
+        group: "foundation",
+        title: "Branding",
+        summary: "Brand expression should support platform clarity instead of overwhelming native controls.",
+        higdesign: "Use HIGDesign identity in iconography, copy, and selected accents while keeping app chrome native.",
+        tags: ["Identity", "Native"]
+      },
+      {
+        group: "foundation",
+        title: "Color",
+        summary: "Use semantic, adaptive color. Do not use color as the only status signal.",
+        higdesign: "Map primary, secondary, destructive, and selection colors to semantic HIG tokens.",
+        tags: ["Semantic", "Contrast"]
+      },
+      {
+        group: "foundation",
+        title: "Dark Mode",
+        summary: "Surfaces, text, separators, and materials must adapt cleanly between light and dark appearances.",
+        higdesign: "Avoid hard-coded fills in reusable HIGComponents components.",
+        tags: ["Appearance", "System colors"]
+      },
+      {
+        group: "foundation",
+        title: "Feedback",
+        summary: "Make state changes visible and understandable without noisy interruption.",
+        higdesign: "Show loading, success, warning, and error states with native feedback patterns.",
+        tags: ["State", "Errors"]
+      },
+      {
+        group: "foundation",
+        title: "Layout",
+        summary: "Use hierarchy, alignment, spacing, and adaptive containers to keep content scannable.",
+        higdesign: "Prefer readable widths, adaptive stacks, and platform-appropriate density.",
+        tags: ["Adaptive", "Spacing"]
+      },
+      {
+        group: "foundation",
+        title: "Materials",
+        summary: "Use platform materials to separate chrome and content when the platform expects it.",
+        higdesign: "Use system backgrounds and toolbar/sidebar materials rather than custom translucent panels.",
+        tags: ["System", "Sidebar"]
+      },
+      {
+        group: "foundation",
+        title: "Motion",
+        summary: "Motion should clarify transitions and respect Reduce Motion.",
+        higdesign: "Keep component motion calm and respect Reduce Motion.",
+        tags: ["Reduce Motion", "Transitions"]
+      },
+      {
+        group: "foundation",
+        title: "Privacy",
+        summary: "Ask only for necessary access and explain user value in user-facing language.",
+        higdesign: "Never log user-entered text, secrets, or private app content.",
+        tags: ["Logging", "Permissions"]
+      },
+      {
+        group: "foundation",
+        title: "SF Symbols",
+        summary: "Use system symbols for common actions and match symbol weight to surrounding text.",
+        higdesign: "Use SF Symbols for common toolbar, tab, and navigation actions.",
+        tags: ["Icons", "Toolbar"]
+      },
+      {
+        group: "foundation",
+        title: "Typography",
+        summary: "Use dynamic text styles and a clear hierarchy instead of fixed viewport-scaled type.",
+        higdesign: "Components should scale with Dynamic Type and preserve hierarchy.",
+        tags: ["Text styles", "Hierarchy"]
+      },
+      {
+        group: "foundation",
+        title: "Writing",
+        summary: "Write concise labels, buttons, and errors that state what happened and what the user can do next.",
+        higdesign: "Avoid exposing implementation terms in public component labels or accessibility strings.",
+        tags: ["Copy", "Errors"]
+      },
+      {
+        group: "pattern",
+        title: "Accessing private data",
+        summary: "Permission requests should be timely, specific, and tied to visible user value.",
+        higdesign: "Use only when a component or Showcase example needs permission-oriented copy.",
+        tags: ["Permissions", "Privacy"]
+      },
+      {
+        group: "pattern",
+        title: "Collaboration and sharing",
+        summary: "Sharing should preserve user control and make recipients, scope, and visibility clear.",
+        higdesign: "Out of scope for the core design-system package.",
+        tags: ["Share", "Visibility"]
+      },
+      {
+        group: "pattern",
+        title: "Drag and drop",
+        summary: "Drag should supplement visible move/add actions and provide feedback for valid destinations.",
+        higdesign: "Use later for collection organization or reference asset assignment where appropriate.",
+        tags: ["Pointer", "Collections"]
+      },
+      {
+        group: "pattern",
+        title: "Entering data",
+        summary: "Use structured controls, validation, and clear grouping for forms.",
+        higdesign: "Structured Prompt Builder fields belong in organized sections with explicit save behavior.",
+        tags: ["Form", "Validation"]
+      },
+      {
+        group: "pattern",
+        title: "File management",
+        summary: "File workflows should use native pickers and clear ownership of imported data.",
+        higdesign: "Future reference assets must go through dependency clients, not direct view file access.",
+        tags: ["Files", "Reference assets"]
+      },
+      {
+        group: "pattern",
+        title: "Going full screen",
+        summary: "Full screen should support focused work and preserve access to essential controls.",
+        higdesign: "Use for long-form editing only if navigation and save state remain clear.",
+        tags: ["Focus", "Editor"]
+      },
+      {
+        group: "pattern",
+        title: "Launching",
+        summary: "Launch surfaces should get users to meaningful content quickly.",
+        higdesign: "Show library/community/admin state directly, not a marketing landing page inside the app.",
+        tags: ["Startup", "State"]
+      },
+      {
+        group: "pattern",
+        title: "Loading",
+        summary: "Use progress indicators, skeletons, or stable placeholders appropriate to task duration.",
+        higdesign: "Long-running component states need loading, disabled, and retry presentation.",
+        tags: ["ProgressView", "Retry"]
+      },
+      {
+        group: "pattern",
+        title: "Managing accounts",
+        summary: "Account UI should separate identity, sync state, subscription state, and privacy choices.",
+        higdesign: "Use dependency boundaries for iCloud, StoreKit, and future Sign in with Apple.",
+        tags: ["Account", "Settings"]
+      },
+      {
+        group: "pattern",
+        title: "Managing notifications",
+        summary: "Notification settings should be understandable and user-controlled.",
+        higdesign: "Keep in-app notification inbox separate from system notification permission UI.",
+        tags: ["Notifications", "Settings"]
+      },
+      {
+        group: "pattern",
+        title: "Modality",
+        summary: "Use modal presentation for focused tasks, not broad multi-step workflows.",
+        higdesign: "Avoid cramped fixed-width prompt editors and admin decision forms.",
+        tags: ["Sheet", "Popover", "Inspector"]
+      },
+      {
+        group: "pattern",
+        title: "Onboarding",
+        summary: "Introduce only what users need before first useful action.",
+        higdesign: "Future onboarding should lead to creating or importing prompts quickly.",
+        tags: ["First run", "Education"]
+      },
+      {
+        group: "pattern",
+        title: "Playing audio",
+        summary: "Media playback needs clear controls and system audio behavior.",
+        higdesign: "Currently out of scope; apply only if prompt references or tutorials add audio.",
+        tags: ["Deferred"]
+      },
+      {
+        group: "pattern",
+        title: "Printing",
+        summary: "Print workflows should use system print UI and preview expectations.",
+        higdesign: "Future printable prompt packs should use native print presentation.",
+        tags: ["Deferred", "macOS"]
+      },
+      {
+        group: "pattern",
+        title: "Ratings and reviews",
+        summary: "Ask for ratings respectfully and never block workflows.",
+        higdesign: "Prompt rating UI is product content rating; App Store review prompts are separate and StoreKit-controlled.",
+        tags: ["Rating", "StoreKit"]
+      },
+      {
+        group: "pattern",
+        title: "Searching",
+        summary: "Search should be easy to find, scoped clearly, and integrated with platform behavior.",
+        higdesign: "Use `.searchable` for library, community feed, collections, and admin queues.",
+        tags: ["searchable", "Filters"]
+      },
+      {
+        group: "pattern",
+        title: "Settings",
+        summary: "Settings should contain durable preferences, not primary workflows.",
+        higdesign: "Keep editing, moderation, and submission actions in feature surfaces rather than Settings.",
+        tags: ["Preferences", "Account"]
+      },
+      {
+        group: "pattern",
+        title: "Undo and redo",
+        summary: "Support reversal for editing and destructive local changes where practical.",
+        higdesign: "Prompt text edits, structured field changes, and local organization changes should consider undo.",
+        tags: ["Editing", "Safety"]
+      },
+      {
+        group: "component",
+        title: "Buttons",
+        summary: "Buttons need clear labels or familiar symbols, appropriate prominence, and disabled/loading states.",
+        higdesign: "Map to HIGButton roles: primary, secondary, destructive, and borderless.",
+        tags: ["Button", "Role"]
+      },
+      {
+        group: "component",
+        title: "Context menus",
+        summary: "Context menus are for secondary actions that complement visible controls.",
+        higdesign: "Use for library rows, collection rows, feed cards, and admin queue rows.",
+        tags: ["Secondary actions"]
+      },
+      {
+        group: "component",
+        title: "Menus",
+        summary: "Menus group related commands and choices without crowding the surface.",
+        higdesign: "Use for sort, filter, review actions, and item actions.",
+        tags: ["Menu", "Commands"]
+      },
+      {
+        group: "component",
+        title: "Pop-up buttons",
+        summary: "Use for compact single-choice selection when choices are not better shown inline.",
+        higdesign: "Use for category, model target, status filters, and admin scope selection.",
+        tags: ["Picker", "Selection"]
+      },
+      {
+        group: "component",
+        title: "Toolbars",
+        summary: "Toolbars hold frequent screen-level actions and navigation-adjacent commands.",
+        higdesign: "Use for create, search, filter, refresh, submit, approve, and admin actions.",
+        tags: ["ToolbarItem", "Commands"]
+      },
+      {
+        group: "component",
+        title: "Sidebars",
+        summary: "Sidebars organize top-level destinations and persistent sections on wide screens.",
+        higdesign: "Use for macOS/iPad library, community, collections, settings, and admin sections.",
+        tags: ["NavigationSplitView"]
+      },
+      {
+        group: "component",
+        title: "Tab bars",
+        summary: "Tabs are for peer top-level destinations on compact experiences.",
+        higdesign: "Use for iPhone Library, Community, Following, Notifications, and Settings.",
+        tags: ["TabView", "iPhone"]
+      },
+      {
+        group: "component",
+        title: "Search fields",
+        summary: "Search fields should have clear scope, cancel behavior, and empty results handling.",
+        higdesign: "Use native searchable modifiers and explicit filter state in Showcase or consuming apps.",
+        tags: ["searchable", "Scope"]
+      },
+      {
+        group: "component",
+        title: "Sheets",
+        summary: "Sheets handle bounded, focused tasks and should be large enough for their content.",
+        higdesign: "Submit-to-community can be a sheet; complex prompt editing should avoid cramped modal sizing.",
+        tags: ["Sheet", "Sizing"]
+      },
+      {
+        group: "component",
+        title: "Popovers",
+        summary: "Popovers show lightweight contextual controls or previews.",
+        higdesign: "Use for filter pickers, quick metadata, and compact explanations.",
+        tags: ["Popover", "Context"]
+      },
+      {
+        group: "component",
+        title: "Windows",
+        summary: "Windows should be resizable and useful at minimum sizes.",
+        higdesign: "HIGDesign Admin needs professional macOS window sizing for queues and details.",
+        tags: ["macOS", "Minimum size"]
+      },
+      {
+        group: "component",
+        title: "Scroll views",
+        summary: "Scroll only when content naturally exceeds available space; preserve visible primary actions.",
+        higdesign: "Long forms should be sectioned and avoid hidden destructive actions.",
+        tags: ["ScrollView", "Forms"]
+      },
+      {
+        group: "component",
+        title: "Lists and tables",
+        summary: "Use lists for hierarchical rows and tables for dense comparative data.",
+        higdesign: "Admin queues and scoring inputs should use tables on macOS.",
+        tags: ["List", "Table"]
+      },
+      {
+        group: "component",
+        title: "Split views",
+        summary: "Split views support browsing and editing without losing context.",
+        higdesign: "Default for iPad/macOS library, community detail, following feed, and admin review.",
+        tags: ["NavigationSplitView"]
+      },
+      {
+        group: "component",
+        title: "Text fields",
+        summary: "Text fields need labels, validation, keyboard behavior, and secure handling for private input.",
+        higdesign: "Use for titles/tags; use TextEditor for long prompt or note input with privacy-safe logs.",
+        tags: ["TextField", "TextEditor"]
+      },
+      {
+        group: "component",
+        title: "Toggles",
+        summary: "Toggles represent immediate binary settings or state changes.",
+        higdesign: "Use for enabled structured fields, visibility flags, notification preferences, and settings.",
+        tags: ["Toggle", "Binary"]
+      },
+      {
+        group: "component",
+        title: "Progress indicators",
+        summary: "Progress should match task duration and avoid blocking unrelated work.",
+        higdesign: "Use for async validation, theme switching, and bridged control setup in consuming apps.",
+        tags: ["ProgressView", "Async"]
+      },
+      {
+        group: "component",
+        title: "Rating indicators",
+        summary: "Ratings need clear scale, current value, and accessibility labels.",
+        higdesign: "Use a 1...5 rating boundary for prompt ratings and expose selected value to assistive tech.",
+        tags: ["Rating", "Accessibility"]
+      },
+      {
+        group: "component",
+        title: "Notifications",
+        summary: "Notification UI should distinguish system delivery from in-app message state.",
+        higdesign: "Distinguish inline alerts and transient feedback from app-owned notification state.",
+        tags: ["Inbox", "Preferences"]
+      },
+      {
+        group: "input",
+        title: "Gestures",
+        summary: "Gestures should be discoverable or paired with visible controls.",
+        higdesign: "Swipe actions may be used for lists, but important actions need menus or buttons too.",
+        tags: ["Swipe", "Touch"]
+      },
+      {
+        group: "input",
+        title: "Keyboards",
+        summary: "Keyboard use should be efficient, predictable, and respectful of focus.",
+        higdesign: "Support text editing, submit/cancel shortcuts where appropriate, and macOS menu commands.",
+        tags: ["Focus", "Shortcuts"]
+      },
+      {
+        group: "input",
+        title: "Pointing devices",
+        summary: "Pointer interactions can improve precision but should not hide essential controls.",
+        higdesign: "Use hover for row emphasis and secondary previews, not the only path to action.",
+        tags: ["Pointer", "Hover"]
+      },
+      {
+        group: "technology",
+        title: "iCloud",
+        summary: "iCloud surfaces should communicate sync/account state in user language.",
+        higdesign: "Out of scope for the core design-system package.",
+        tags: ["CloudKit", "Sync"]
+      },
+      {
+        group: "technology",
+        title: "In-app purchase",
+        summary: "Purchase UI should be honest, native, and handled through StoreKit.",
+        higdesign: "Out of scope for the core design-system package.",
+        tags: ["StoreKit", "Entitlements"]
+      },
+      {
+        group: "technology",
+        title: "Sign in with Apple",
+        summary: "Authentication should use system trust patterns and minimal data collection.",
+        higdesign: "Use only when the product needs explicit account identity beyond iCloud.",
+        tags: ["Identity", "Privacy"]
+      },
+      {
+        group: "technology",
+        title: "Siri",
+        summary: "Voice and shortcut actions need concise phrases and predictable outcomes.",
+        higdesign: "Out of scope for the core design-system package.",
+        tags: ["Shortcuts", "Privacy"]
+      },
+      {
+        group: "technology",
+        title: "Widgets",
+        summary: "Widgets should show glanceable, privacy-safe content and deep link to full workflows.",
+        higdesign: "Out of scope for the core design-system package.",
+        tags: ["Glanceable", "Privacy"]
+      },
+      {
+        group: "technology",
+        title: "Notifications",
+        summary: "System notifications require clear permission value and user controls.",
+        higdesign: "Do not add push behavior until product requirements explicitly call for it.",
+        tags: ["Permissions", "Deferred"]
+      }
+    ];
+
+    const grid = document.querySelector("#cardGrid");
+    const search = document.querySelector("#search");
+    const filters = Array.from(document.querySelectorAll(".filter"));
+    let activeFilter = "all";
+
+    function renderCards() {
+      const query = search.value.trim().toLowerCase();
+      const visible = topics.filter((topic) => {
+        const haystack = [
+          topic.group,
+          topic.title,
+          topic.summary,
+          topic.higdesign,
+          ...topic.tags
+        ].join(" ").toLowerCase();
+        const matchesQuery = query.length === 0 || haystack.includes(query);
+        const matchesFilter = activeFilter === "all" || topic.group === activeFilter;
+        return matchesQuery && matchesFilter;
+      });
+
+      grid.innerHTML = visible.map((topic) => `
+        <article class="card" data-group="${topic.group}">
+          <p class="eyebrow">${topic.group}</p>
+          <h3>${topic.title}</h3>
+          <p>${topic.summary}</p>
+          <p style="margin-top: 9px;"><strong>HIGDesign:</strong> ${topic.higdesign}</p>
+          <div class="tag-row">
+            ${topic.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
+          </div>
+        </article>
+      `).join("");
+    }
+
+    filters.forEach((button) => {
+      button.addEventListener("click", () => {
+        activeFilter = button.dataset.filter;
+        filters.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+        renderCards();
+      });
+    });
+
+    search.addEventListener("input", renderCards);
+    renderCards();
+  </script>
+</body>
+</html>
