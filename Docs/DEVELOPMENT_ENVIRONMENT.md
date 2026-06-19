@@ -21,6 +21,8 @@ Run from repository root:
 ```bash
 Scripts/verify_requirements_present.sh
 Scripts/verify_ui_guidelines_present.sh
+Scripts/verify_xcode_previews_present.sh
+Scripts/verify_view_naming.sh
 ```
 
 When package targets exist:

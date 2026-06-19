@@ -209,7 +209,8 @@ Xcode Preview Rules
 * Every public `struct SomeView: View` component must have its own useful, type-named `#Preview` in `SomeView.swift`.
 * Preview names must begin with the exact type name, for example `#Preview("HIGButton — Primary")`.
 * Previews must use deterministic mock themes and must not depend on live network, file system, or app targets.
-* Run `Scripts/verify_xcode_previews_present.sh` once that script exists and SwiftUI sources are present.
+* Run `Scripts/verify_xcode_previews_present.sh` for every SwiftUI change.
+* Run `Scripts/verify_view_naming.sh` for every SwiftUI change.
 
 Apple HIG UI Rule
 
@@ -244,6 +245,14 @@ UI guidelines guard:
 
 Scripts/verify_ui_guidelines_present.sh
 
+Xcode preview coverage guard:
+
+Scripts/verify_xcode_previews_present.sh
+
+View naming guard:
+
+Scripts/verify_view_naming.sh
+
 Swift package build:
 
 swift build --package-path .
@@ -266,7 +275,7 @@ The governance foundation should include:
 * `Docs/PRD.md`
 * `Requirements/` BA documents
 * `Docs/UI_DESIGN_GUIDELINES.md`
-* verification scripts for requirements and UI guidelines
+* verification scripts for requirements, UI guidelines, Xcode previews, and view naming
 
 Next milestone: Phase 0 discovery and Phase 1 SPM skeleton with `HIGFoundations` and raw tokens.
 
