@@ -13,7 +13,7 @@ mkdir -p "$SNAPSHOT_DIR" "$PLATFORM_DIR"/{macos,ios,ipados,visionos,tvos,watchos
 components=()
 while IFS= read -r component; do
     components+=("$component")
-done < <(rg -o 'case ([a-zA-Z]+)' Showcase/ShowcaseComponent.swift | sed -E 's/case //' | sort -u)
+done < <(grep -oE 'case ([a-zA-Z]+)' Showcase/ShowcaseComponent.swift | sed -E 's/case //' | sort -u)
 
 if ((${#components[@]} == 0)); then
     echo "No ShowcaseComponent cases found." >&2
