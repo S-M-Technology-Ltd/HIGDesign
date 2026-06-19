@@ -21,11 +21,11 @@ jobs:
           Scripts/verify_showcase_coverage.sh
           Scripts/verify_docc_coverage.sh
           Scripts/verify_showcase_snapshots_present.sh
-      - name: Refresh showcase snapshot manifest
-        run: Scripts/publish_showcase_snapshots.sh
+      - name: Capture showcase snapshots
+        run: Scripts/capture_showcase_snapshots.sh
       - name: Swift build (all platforms)
         run: Scripts/build_all_platforms.sh
       - name: Swift test (macOS)
         run: swift test --package-path .
       - name: Build Showcase (macOS)
-        run: swift build --package-path . --target HIGShowcase
+        run: swift build --package-path . --target HIGShowcaseApp

@@ -1,12 +1,12 @@
 import HIGDesign
 
-enum ShowcaseThemeChoice: String, CaseIterable, Identifiable, Sendable {
+public enum ShowcaseThemeChoice: String, CaseIterable, Identifiable, Sendable {
     case system
     case highContrast
 
-    var id: String { rawValue }
+    public var id: String { rawValue }
 
-    var title: String {
+    public var title: String {
         switch self {
         case .system:
             "System"
@@ -15,7 +15,7 @@ enum ShowcaseThemeChoice: String, CaseIterable, Identifiable, Sendable {
         }
     }
 
-    func makeTheme() -> any HIGTheme {
+    public func makeTheme() -> any HIGTheme {
         switch self {
         case .system:
             HIGSystemTheme()

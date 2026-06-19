@@ -32,6 +32,7 @@ showcase_key_for() {
         HIGCard) echo card ;;
         HIGTabBar) echo tabBar ;;
         HIGToast) echo toast ;;
+        HIGAlertBanner) echo alert ;;
         HIGSidebar) echo sidebar ;;
         HIGLabel) echo label ;;
         HIGBadge) echo badge ;;

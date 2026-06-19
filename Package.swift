@@ -26,7 +26,8 @@ let package = Package(
             "HIGModifiers",
         ]),
         .library(name: "HIGDesignPlatform", targets: ["HIGPlatform"]),
-        .executable(name: "HIGShowcase", targets: ["HIGShowcase"]),
+        .executable(name: "HIGShowcase", targets: ["HIGShowcaseApp"]),
+        .executable(name: "HIGSnapshotCapture", targets: ["HIGSnapshotCapture"]),
     ],
     targets: [
         .target(name: "HIGFoundations", path: "Sources/HIGFoundations"),
@@ -86,10 +87,22 @@ let package = Package(
             ],
             path: "Sources/HIGDesign"
         ),
-        .executableTarget(
+        .target(
             name: "HIGShowcase",
             dependencies: ["HIGDesign"],
-            path: "Showcase"
+            path: "Showcase",
+            exclude: ["HIGShowcaseApp.swift"]
+        ),
+        .executableTarget(
+            name: "HIGShowcaseApp",
+            dependencies: ["HIGShowcase"],
+            path: "Showcase",
+            sources: ["HIGShowcaseApp.swift"]
+        ),
+        .executableTarget(
+            name: "HIGSnapshotCapture",
+            dependencies: ["HIGShowcase"],
+            path: "SnapshotCapture"
         ),
         .testTarget(
             name: "HIGDesignTests",

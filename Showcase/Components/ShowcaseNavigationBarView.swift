@@ -8,12 +8,16 @@ struct ShowcaseNavigationBarView: View {
                 VStack(alignment: .leading, spacing: 24) {
                     ShowcaseMetadataView(component: .navigationBar)
 
-                    Text("This screen uses a large navigation title via higNavigationBarTitle.")
+                    Text("This screen uses the composable higNavigationBar API with leading and trailing actions.")
                         .foregroundStyle(.secondary)
                 }
                 .higPadding(.screenEdge)
             }
-            .higNavigationBarTitle("Inbox", displayMode: .large)
+            .higNavigationBar("Inbox", displayMode: .large) {
+                Button("Filter", systemImage: "line.3.horizontal.decrease.circle") {}
+            } trailing: {
+                Button("Compose", systemImage: "square.and.pencil") {}
+            }
         }
         .navigationTitle("Navigation Bar")
     }

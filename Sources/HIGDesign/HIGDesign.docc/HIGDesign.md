@@ -37,6 +37,9 @@ HIGDesign packages a layered token architecture, environment-driven themes, and 
 - ``HIGSidebar``
 - ``HIGSidebarItem``
 - ``HIGAlertButtonRole``
+- ``HIGAlertBanner``
+- ``HIGAlertBannerStyle``
+- ``HIGToastQueue``
 - ``HIGLabel``
 - ``HIGLabelStyle``
 - ``HIGBadge``
@@ -53,5 +56,7 @@ HIGDesign packages a layered token architecture, environment-driven themes, and 
 - ``HIGToolbarTextAction``
 - ``higAlert(_:isPresented:message:primaryButtonTitle:primaryButtonRole:primaryAction:secondaryButtonTitle:secondaryButtonRole:secondaryAction:)``
 - ``higToast(isPresented:message:)``
+- ``higToastQueue(_:)``
 - ``higNavigationBarTitle(_:displayMode:)``
+- ``higNavigationBar(_:displayMode:leading:trailing:)``
 - ``HIGNavigationBarDisplayMode``

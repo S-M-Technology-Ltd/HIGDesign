@@ -9,6 +9,19 @@ struct ShowcaseAlertView: View {
             VStack(alignment: .leading, spacing: 24) {
                 ShowcaseMetadataView(component: .alert)
 
+                HIGAlertBanner(
+                    "Backup restored",
+                    message: "Your documents are available on this device again.",
+                    style: .info
+                )
+
+                HIGAlertBanner(
+                    "Storage almost full",
+                    message: "Remove older items to keep syncing.",
+                    style: .warning,
+                    actionTitle: "Manage"
+                )
+
                 HIGButton("Delete Item", role: .destructive) {
                     isPresented = true
                 }

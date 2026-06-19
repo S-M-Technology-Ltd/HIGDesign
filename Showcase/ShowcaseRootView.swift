@@ -1,12 +1,14 @@
 import HIGDesign
 import SwiftUI
 
-struct ShowcaseRootView: View {
+public struct ShowcaseRootView: View {
     @State private var selection: ShowcaseComponent? = .button
     @State private var themeChoice: ShowcaseThemeChoice = .system
     @State private var colorScheme: ColorScheme?
 
-    var body: some View {
+    public init() {}
+
+    public var body: some View {
         HIGThemeableView(theme: themeChoice.makeTheme()) {
             ShowcaseCatalogView(
                 selection: $selection,

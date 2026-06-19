@@ -24,11 +24,8 @@ public struct HIGSidebar<Selection: Hashable & Sendable, Detail: View>: View {
 
     public var body: some View {
         NavigationSplitView {
-            List(items, selection: $selection) { item in
-                Label(item.title, systemImage: item.systemImage)
-                    .tag(Optional(item.id))
-            }
-            .navigationTitle(title)
+            styledSidebarList
+                .navigationTitle(title)
         } detail: {
             if let selection {
                 detail(selection)
@@ -40,6 +37,28 @@ public struct HIGSidebar<Selection: Hashable & Sendable, Detail: View>: View {
                 )
             }
         }
+    }
+
+    @ViewBuilder
+    private var styledSidebarList: some View {
+        let tokens = theme.sidebar
+
+        #if os(iOS) || os(visionOS) || os(macOS)
+        List(items, selection: $selection) { item in
+            Label(item.title, systemImage: item.systemImage)
+                .tag(Optional(item.id))
+                .padding(.vertical, tokens.rowPadding)
+                .listRowBackground(theme.colors.backgroundSecondary)
+        }
+        .listStyle(.sidebar)
+        .scrollContentBackground(.hidden)
+        .background(theme.colors.backgroundPrimary)
+        #else
+        List(items, selection: $selection) { item in
+            Label(item.title, systemImage: item.systemImage)
+                .tag(Optional(item.id))
+        }
+        #endif
     }
 }
 

@@ -15,4 +15,5 @@ public protocol HIGTheme: Sendable {
     var toast: any HIGToastTokens { get }
     var badge: any HIGBadgeTokens { get }
     var list: any HIGListTokens { get }
+    var sidebar: any HIGSidebarTokens { get }
 }

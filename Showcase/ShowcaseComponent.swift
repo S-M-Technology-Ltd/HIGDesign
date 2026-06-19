@@ -1,6 +1,6 @@
 import Foundation
 
-enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
+public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case button
     case textField
     case toggle
@@ -19,9 +19,9 @@ enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case list
     case form
 
-    var id: String { rawValue }
+    public var id: String { rawValue }
 
-    var title: String {
+    public var title: String {
         switch self {
         case .button: "Button"
         case .textField: "Text Field"
@@ -75,10 +75,10 @@ enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .card: "Grouped surfaces for related settings and content."
         case .tabBar: "Top-level section navigation with themed tab items."
         case .toolbar: "Screen-level actions using native toolbar placements."
-        case .alert: "Modal confirmations with destructive and cancel roles."
-        case .toast: "Transient success and status messages."
-        case .sidebar: "Split-view navigation for regular-width layouts."
-        case .navigationBar: "Large and inline navigation title presentation."
+        case .alert: "Inline banners and modal confirmations with HIG button roles."
+        case .toast: "Single toasts and queued transient status messages."
+        case .sidebar: "Themed split-view navigation for regular-width layouts."
+        case .navigationBar: "Composable navigation titles with leading and trailing actions."
         case .label: "Primary, secondary, and caption text pairings."
         case .badge: "Compact counts and short status metadata."
         case .activityIndicator: "Indeterminate loading spinners."

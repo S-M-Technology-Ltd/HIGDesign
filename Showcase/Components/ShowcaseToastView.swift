@@ -3,6 +3,7 @@ import SwiftUI
 
 struct ShowcaseToastView: View {
     @State private var isPresented = false
+    @State private var queue = HIGToastQueue()
 
     var body: some View {
         ScrollView {
@@ -16,11 +17,18 @@ struct ShowcaseToastView: View {
                         isPresented = false
                     }
                 }
+
+                HIGButton("Queue Toasts", role: .secondary) {
+                    queue.enqueue("Settings saved")
+                    queue.enqueue("Profile updated")
+                    queue.enqueue("Sync complete")
+                }
             }
             .higPadding(.screenEdge)
         }
         .navigationTitle("Toast")
         .higToast(isPresented: $isPresented, message: "Settings saved")
+        .higToastQueue(queue)
     }
 }
 

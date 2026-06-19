@@ -39,6 +39,7 @@ Scripts/verify_showcase_coverage.sh
 Scripts/verify_docc_coverage.sh
 Scripts/verify_showcase_snapshots_present.sh
 Scripts/publish_showcase_snapshots.sh
+Scripts/capture_showcase_snapshots.sh
 ```
 
 ```bash
@@ -56,4 +57,4 @@ Scripts/build_all_platforms.sh
 
 ## Current Milestone
 
-Phase 5 content and indicators. All platform builds, tests, showcase build, coverage guards, DocC coverage, and snapshot manifest verification are mandatory before merging UI changes.
+Phase 6 navigation and feedback expansion. All platform builds, tests, showcase build, coverage guards, DocC coverage, and automated snapshot capture are mandatory before merging UI changes.

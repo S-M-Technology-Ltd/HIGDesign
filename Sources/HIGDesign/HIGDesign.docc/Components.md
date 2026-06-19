@@ -29,9 +29,13 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGActivityIndicator``
 - ``HIGActivityIndicatorSize``
 - ``HIGAlertButtonRole``
+- ``HIGAlertBanner``
+- ``HIGAlertBannerStyle``
 - ``higAlert(_:isPresented:message:primaryButtonTitle:primaryButtonRole:primaryAction:secondaryButtonTitle:secondaryButtonRole:secondaryAction:)``
 - ``HIGToast``
+- ``HIGToastQueue``
 - ``higToast(isPresented:message:)``
+- ``higToastQueue(_:)``
 
 ## Layout
 
@@ -48,6 +52,7 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGSidebarItem``
 - ``HIGNavigationBarDisplayMode``
 - ``higNavigationBarTitle(_:displayMode:)``
+- ``higNavigationBar(_:displayMode:leading:trailing:)``
 - ``higToolbar(_:)``
 - ``HIGToolbarTextAction``
 

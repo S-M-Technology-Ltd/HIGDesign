@@ -1,3 +1,4 @@
+import HIGShowcase
 import SwiftUI
 
 @main

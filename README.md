@@ -30,4 +30,4 @@ swift run HIGShowcase
 
 ## Status
 
-Phase 5: seventeen showcase screens, content/layout APIs (`HIGLabel`, `HIGBadge`, `HIGList`, `HIGFormSection`), and snapshot manifest workflow (v0.5.0).
+Phase 6: alert banners, toast queueing, sidebar styling, composable navigation bar, and automated showcase snapshot capture (v0.6.0).

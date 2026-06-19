@@ -29,13 +29,18 @@ EXPECTED_SYMBOLS=(
     HIGSidebar
     HIGSidebarItem
     HIGAlertButtonRole
+    HIGAlertBanner
+    HIGAlertBannerStyle
+    HIGToastQueue
     HIGToolbarTextAction
     HIGNavigationBarDisplayMode
     higPadding
     higToolbar
     higAlert
     higToast
+    higToastQueue
     higNavigationBarTitle
+    higNavigationBar
     HIGLabel
     HIGLabelStyle
     HIGBadge

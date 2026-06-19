@@ -35,6 +35,29 @@ public extension View {
     func higToast(isPresented: Binding<Bool>, message: String) -> some View {
         modifier(HIGToastModifier(isPresented: isPresented, message: message))
     }
+
+    /// Presents queued toast messages from ``HIGToastQueue`` along the bottom edge.
+    func higToastQueue(_ queue: HIGToastQueue) -> some View {
+        modifier(HIGToastQueueModifier(queue: queue))
+    }
+}
+
+private struct HIGToastQueueModifier: ViewModifier {
+    @Bindable var queue: HIGToastQueue
+
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    func body(content: Content) -> some View {
+        content
+            .overlay(alignment: .bottom) {
+                if let message = queue.currentMessage {
+                    HIGToast(message)
+                        .padding()
+                        .transition(.move(edge: .bottom).combined(with: .opacity))
+                }
+            }
+            .animation(reduceMotion ? nil : .easeInOut(duration: 0.2), value: queue.currentMessage)
+    }
 }
 
 private struct HIGToastModifier: ViewModifier {
@@ -61,6 +84,27 @@ private struct HIGToastModifier: ViewModifier {
     HIGThemeableView(theme: HIGComponentPreviewTheme()) {
         HIGToast("Settings saved")
             .padding()
+    }
+}
+
+private struct HIGToastQueuePreviewView: View {
+    @State private var queue = HIGToastQueue()
+
+    var body: some View {
+        VStack(spacing: 16) {
+            HIGButton("Queue Toasts", role: .primary) {
+                queue.enqueue("Settings saved")
+                queue.enqueue("Profile updated")
+            }
+        }
+        .padding()
+        .higToastQueue(queue)
+    }
+}
+
+#Preview("HIGToastQueuePreviewView") {
+    HIGThemeableView(theme: HIGComponentPreviewTheme()) {
+        HIGToastQueuePreviewView()
     }
 }
 #endif
