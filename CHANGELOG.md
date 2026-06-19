@@ -2,6 +2,29 @@
 
 All notable changes to HIGDesign are documented here. The project follows [Semantic Versioning](https://semver.org/) from v1.0.0 onward.
 
+## 1.1.0 — 2026-06-20
+
+Minor release adding custom activity indicator styles, a shimmer placeholder modifier, and PhotoPicker Swift concurrency improvements.
+
+### Added
+
+- `HIGActivityIndicatorStyle` with ten custom indicator styles (orbital, pulsing, arcs, rotating dots, flickering dots, scaling dots, opacity dots, equalizer, growing circle, gradient) alongside the system default
+- `higShimmer(isActive:mode:)` modifier with `HIGShimmerMode` and `HIGShimmerTokens` wired through all built-in themes
+- `PhotoKitCoordinator` actor for PhotoPicker image loading and caching
+- `Scripts/verify_no_gcd.sh` to enforce Swift concurrency over GCD in library sources
+- Unified pull request template and portable `grep`-based verification scripts
+
+### Changed
+
+- PhotoPicker image loading and library access migrated from GCD to Swift concurrency (`async`/`await`, actors)
+- Picker chrome buttons use liquid glass style on iOS 26+ with bordered fallback
+- Activity indicator showcase subsection expanded with all custom styles and shimmer examples
+- Updated activity indicator showcase snapshots across theme and platform matrices
+
+### Removed
+
+- GitHub Actions PR Checks workflow and orchestrator scripts (`run_pr_checks.sh`, `run_governance_checks.sh`, `run_macos_checks.sh`)
+
 ## 1.0.1 — 2026-06-19
 
 Patch release fixing PhotoPicker build issues, sample-app warnings, and showcase snapshot rendering.

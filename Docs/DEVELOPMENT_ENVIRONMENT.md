@@ -50,7 +50,7 @@ Individual guards remain available under `Scripts/verify_*.sh` when debugging a 
 
 ## Current Milestone
 
-Phase 13 v1.0.0 preparation. Run builds, tests, and individual `Scripts/verify_*.sh` guards locally before opening a PR. Regenerate showcase PNGs manually when updating README or Pages imagery.
+Phase 13 v1.1.0 released. Run builds, tests, and individual `Scripts/verify_*.sh` guards locally before opening a PR. Regenerate showcase PNGs manually when updating README or Pages imagery.
 
 ## Xcode
 
