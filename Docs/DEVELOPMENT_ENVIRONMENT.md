@@ -30,12 +30,9 @@ Minimum deployment targets cover the latest three calendar years:
 Run from repository root:
 
 ```bash
-# Same entry point as GitHub Actions PR Checks workflow
-Scripts/run_pr_checks.sh
-
-# Or run phases separately:
-Scripts/run_governance_checks.sh   # Linux or macOS
-Scripts/run_macos_checks.sh        # macOS only (builds, tests, sample app)
+Scripts/build_all_platforms.sh
+swift test
+Scripts/verify_sample_xcode_project.sh
 
 Showcase snapshot capture is manual — for README and GitHub Pages images only:
 
@@ -53,7 +50,7 @@ Individual guards remain available under `Scripts/verify_*.sh` when debugging a 
 
 ## Current Milestone
 
-Phase 13 v1.0.0 preparation. PR Checks (`Scripts/run_pr_checks.sh`) covers governance guards, all-platform builds, tests, and the sample app. Regenerate showcase PNGs manually when updating README or Pages imagery.
+Phase 13 v1.0.0 preparation. Run builds, tests, and individual `Scripts/verify_*.sh` guards locally before opening a PR. Regenerate showcase PNGs manually when updating README or Pages imagery.
 
 ## Xcode
 

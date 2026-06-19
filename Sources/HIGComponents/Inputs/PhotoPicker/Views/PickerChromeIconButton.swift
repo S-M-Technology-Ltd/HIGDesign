@@ -8,7 +8,7 @@ enum PickerChromeButtonSizing {
     case banner
 }
 
-/// Icon-only control styled like navigation bar toolbar buttons (bordered circle).
+/// Icon-only control styled like navigation bar toolbar buttons (liquid glass circle on iOS 26+).
 struct PickerChromeIconButtonView: View {
     let systemImage: String
     let accessibilityLabel: String
@@ -44,7 +44,7 @@ struct PickerChromeIconButtonView: View {
     }
 }
 
-/// Text + icon control styled like navigation bar toolbar buttons (bordered capsule).
+/// Text + icon control styled like navigation bar toolbar buttons (liquid glass capsule on iOS 26+).
 struct PickerChromeLabelButtonView: View {
     let title: String
     let systemImage: String
@@ -97,6 +97,16 @@ private enum PickerChromeButtonStyleSupport {
     ) -> AnyView {
         let controlSize: ControlSize = sizing == .banner ? .small : .mini
 
+        if #available(iOS 26.0, *) {
+            return AnyView(
+                content
+                    .buttonStyle(.glass as GlassButtonStyle)
+                    .controlSize(controlSize)
+                    .buttonBorderShape(.circle)
+                    .labelStyle(.iconOnly)
+            )
+        }
+
         return AnyView(
             content
                 .buttonStyle(.bordered)
@@ -112,6 +122,16 @@ private enum PickerChromeButtonStyleSupport {
         sizing: PickerChromeButtonSizing
     ) -> AnyView {
         let controlSize: ControlSize = sizing == .banner ? .mini : .small
+
+        if #available(iOS 26.0, *) {
+            return AnyView(
+                content
+                    .buttonStyle(.glass as GlassButtonStyle)
+                    .controlSize(controlSize)
+                    .buttonBorderShape(.capsule)
+                    .labelStyle(.titleAndIcon)
+            )
+        }
 
         return AnyView(
             content
