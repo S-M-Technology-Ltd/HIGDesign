@@ -103,7 +103,7 @@ Swift Concurrency Rules
 * Prefer `Sendable` token structs and enums.
 * Mark UI-facing theme APIs with `@MainActor` when needed.
 * UI updates must be main-actor safe.
-* Avoid GCD and `DispatchQueue` unless an Apple API explicitly requires it.
+* Do not use GCD or `DispatchQueue`; use Swift concurrency (`Task`, `async`/`await`, actors) instead. Enforced by `Scripts/verify_no_gcd.sh`.
 
 File Organization
 
