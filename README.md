@@ -137,12 +137,10 @@ Themes: **System** · **High Contrast** · **Brand accent** — each with light 
 
 ## Contributing
 
-PRs welcome. Run before submitting:
+PRs welcome. Run before submitting (same checks as CI):
 
 ```bash
-swift build && swift test
-Scripts/verify_component_token_usage.sh
-Scripts/verify_showcase_snapshot_diff.sh
+Scripts/run_pr_checks.sh
 ```
 
 ## License
