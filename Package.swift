@@ -104,12 +104,13 @@ let package = Package(
             name: "HIGShowcase",
             dependencies: ["HIGDesign"],
             path: "Showcase",
-            exclude: ["HIGShowcaseApp.swift"]
+            exclude: ["HIGShowcaseApp.swift", "Info.plist"]
         ),
         .executableTarget(
             name: "HIGShowcaseApp",
             dependencies: ["HIGShowcase"],
             path: "Showcase",
+            exclude: ["Info.plist"],
             sources: ["HIGShowcaseApp.swift"]
         ),
         .executableTarget(

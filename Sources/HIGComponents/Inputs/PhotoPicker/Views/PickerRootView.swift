@@ -479,6 +479,7 @@ struct PickerRootView: View {
     }
 
     private func registerLibraryObserver() {
+        guard HIGPhotoPickerRuntime.shouldAccessPhotoKit else { return }
         guard libraryChangeObserver == nil else { return }
 
         let observer = PhotoLibraryChangeObserver {

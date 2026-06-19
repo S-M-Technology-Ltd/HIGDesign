@@ -35,7 +35,11 @@ public struct PhotosLibraryClient: PhotosLibraryClientProtocol {
     public init() {}
 
     public func fetchAlbums(allowedMediaTypes: Set<PHAssetMediaType>) async -> [HIGPhotoAlbum] {
-        await performLibraryWork {
+        #if DEBUG
+        guard HIGPhotoPickerRuntime.shouldAccessPhotoKit else { return [] }
+        #endif
+
+        return await performLibraryWork {
             var albums: [HIGPhotoAlbum] = []
 
             for type in [PHAssetCollectionType.smartAlbum, .album] {
@@ -56,7 +60,11 @@ public struct PhotosLibraryClient: PhotosLibraryClientProtocol {
         in albumID: String,
         allowedMediaTypes: Set<PHAssetMediaType>
     ) async -> [HIGPhotoAsset] {
-        await performLibraryWork {
+        #if DEBUG
+        guard HIGPhotoPickerRuntime.shouldAccessPhotoKit else { return [] }
+        #endif
+
+        return await performLibraryWork {
             let collections = PHAssetCollection.fetchAssetCollections(
                 withLocalIdentifiers: [albumID],
                 options: nil
@@ -69,7 +77,11 @@ public struct PhotosLibraryClient: PhotosLibraryClientProtocol {
     }
 
     public func fetchAsset(localIdentifier: String) async -> HIGPhotoAsset? {
-        await performLibraryWork {
+        #if DEBUG
+        guard HIGPhotoPickerRuntime.shouldAccessPhotoKit else { return nil }
+        #endif
+
+        return await performLibraryWork {
             guard let phAsset = PHAsset.fetchAssets(withLocalIdentifiers: [localIdentifier], options: nil).firstObject else {
                 return nil
             }

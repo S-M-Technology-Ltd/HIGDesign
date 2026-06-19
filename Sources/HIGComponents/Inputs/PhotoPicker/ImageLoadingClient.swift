@@ -59,6 +59,8 @@ public final class ImageLoadingClient: @unchecked Sendable {
     #endif
 
     public func prepareAssets(ids: [String]) {
+        guard !isPreviewMode else { return }
+
         photoKitQueue.async { [weak self] in
             guard let self else { return }
             for id in ids {
@@ -68,6 +70,7 @@ public final class ImageLoadingClient: @unchecked Sendable {
     }
 
     public func ensurePrepared(assetID: String) async {
+        guard !isPreviewMode else { return }
         _ = await cachedAsset(for: assetID)
     }
 
@@ -185,6 +188,8 @@ public final class ImageLoadingClient: @unchecked Sendable {
     }
 
     public func startCaching(assetIDs: [String], targetSize: CGSize) {
+        guard !isPreviewMode else { return }
+
         photoKitQueue.async { [weak self] in
             guard let self else { return }
             let phAssets = assetIDs.compactMap { self.cachedAssetOnQueue(for: $0) }
@@ -202,6 +207,8 @@ public final class ImageLoadingClient: @unchecked Sendable {
     }
 
     public func stopCaching(assetIDs: [String], targetSize: CGSize) {
+        guard !isPreviewMode else { return }
+
         photoKitQueue.async { [weak self] in
             guard let self else { return }
             let phAssets = assetIDs.compactMap { self.cachedAssetOnQueue(for: $0) }
@@ -219,12 +226,16 @@ public final class ImageLoadingClient: @unchecked Sendable {
     }
 
     public func cancel(for key: String) {
+        guard !isPreviewMode else { return }
+
         photoKitQueue.async { [weak self] in
             self?.cancelOnQueue(matching: key)
         }
     }
 
     public func cancelAll() {
+        guard !isPreviewMode else { return }
+
         photoKitQueue.async { [weak self] in
             guard let self else { return }
             let requestIDs = Array(self.activeRequests.values)
@@ -390,7 +401,9 @@ public final class ImageLoadingClient: @unchecked Sendable {
     }
 
     private func cachedAsset(for id: String) async -> PHAsset? {
-        await withCheckedContinuation { continuation in
+        guard !isPreviewMode else { return nil }
+
+        return await withCheckedContinuation { continuation in
             photoKitQueue.async { [weak self] in
                 continuation.resume(returning: self?.cachedAssetOnQueue(for: id))
             }

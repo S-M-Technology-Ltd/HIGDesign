@@ -41,3 +41,5 @@ Committed project settings intentionally omit `DEVELOPMENT_TEAM` so personal sig
 - `PHPhotoLibraryPreventAutomaticLimitedAccessAlert`
 
 Copy the same keys into your own app target when integrating `HIGPhotoPicker`.
+
+For Xcode Previews of photo-picker UI, prefer opening `HIGDesignSample` so the preview host includes these privacy keys. Package-only previews use mock PhotoKit data and do not replace a signed app run on device.

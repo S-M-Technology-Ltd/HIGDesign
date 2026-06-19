@@ -28,6 +28,12 @@ public struct PhotosAuthorizationClient: PhotosAuthorizationClientProtocol {
     }
 
     public func requestAuthorization() async -> HIGPhotoAuthorizationStatus {
+        #if DEBUG
+        if !HIGPhotoPickerRuntime.shouldAccessPhotoKit {
+            return .authorized
+        }
+        #endif
+
         let existing = currentStatus()
         guard existing == .notDetermined else { return existing }
 
@@ -39,6 +45,12 @@ public struct PhotosAuthorizationClient: PhotosAuthorizationClientProtocol {
     }
 
     private func resolvedAuthorizationStatus() -> HIGPhotoAuthorizationStatus {
+        #if DEBUG
+        if !HIGPhotoPickerRuntime.shouldAccessPhotoKit {
+            return .authorized
+        }
+        #endif
+
         if #available(iOS 14, *) {
             let readWriteStatus = PHPhotoLibrary.authorizationStatus(for: .readWrite)
             if readWriteStatus != .notDetermined {

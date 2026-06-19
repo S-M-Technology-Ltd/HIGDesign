@@ -47,6 +47,12 @@ Previews must use:
 - safe fictional labels and content
 - no live network, file-system, or app-target dependencies
 
+### HIGPhotoPicker
+
+`XCPreviewAgent` does not inherit a host app Info.plist. Photo-picker previews therefore use mock assets and skip PhotoKit when `XCODE_RUNNING_FOR_PREVIEWS=1`.
+
+To exercise the real picker on a device or simulator app, run `HIGDesignSample` (which includes `NSPhotoLibraryUsageDescription`) instead of relying on package-only previews.
+
 ## Guard Behavior Before Source Lands
 
 Until SwiftUI source directories exist, `verify_xcode_previews_present.sh` and `verify_view_naming.sh` exit successfully with a skip message. Once `Sources/HIGComponents` or `Showcase/` contains `View` types, the guards become mandatory.
