@@ -30,4 +30,4 @@ swift run HIGShowcase
 
 ## Status
 
-Phase 7: checkbox, radio, segmented control, slider, secure/search fields, picker, and Dynamic Type showcase controls (v0.7.0).
+Phase 8: icon, avatar, link, bullet list, text editor, stepper, and snapshot diff verification in CI (v0.8.0).

@@ -107,6 +107,18 @@ struct ShowcaseCatalogView: View {
             ShowcaseSearchFieldView()
         case .picker:
             ShowcasePickerView()
+        case .icon:
+            ShowcaseIconView()
+        case .avatar:
+            ShowcaseAvatarView()
+        case .link:
+            ShowcaseLinkView()
+        case .bulletList:
+            ShowcaseBulletListView()
+        case .textEditor:
+            ShowcaseTextEditorView()
+        case .stepper:
+            ShowcaseStepperView()
         }
     }
 }

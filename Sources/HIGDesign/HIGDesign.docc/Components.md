@@ -16,6 +16,7 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGRadioOption``
 - ``HIGSegmentedControl``
 - ``HIGSlider``
+- ``HIGStepper``
 
 ## Content
 
@@ -23,12 +24,19 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGLabelStyle``
 - ``HIGBadge``
 - ``HIGBadgeStyle``
+- ``HIGIcon``
+- ``HIGIconSize``
+- ``HIGIconStyle``
+- ``HIGAvatar``
+- ``HIGLink``
+- ``HIGBulletList``
 
 ## Inputs
 
 - ``HIGTextField``
 - ``HIGSecureField``
 - ``HIGSearchField``
+- ``HIGTextEditor``
 - ``HIGPicker``
 
 ## Feedback

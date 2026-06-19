@@ -33,8 +33,10 @@ HIGDesign packages a layered token architecture, environment-driven themes, and 
 - ``HIGRadioOption``
 - ``HIGSegmentedControl``
 - ``HIGSlider``
+- ``HIGStepper``
 - ``HIGSecureField``
 - ``HIGSearchField``
+- ``HIGTextEditor``
 - ``HIGPicker``
 - ``HIGDivider``
 - ``HIGProgressView``
@@ -56,6 +58,12 @@ HIGDesign packages a layered token architecture, environment-driven themes, and 
 - ``HIGActivityIndicatorSize``
 - ``HIGList``
 - ``HIGFormSection``
+- ``HIGIcon``
+- ``HIGIconSize``
+- ``HIGIconStyle``
+- ``HIGAvatar``
+- ``HIGLink``
+- ``HIGBulletList``
 
 ### Modifiers
 

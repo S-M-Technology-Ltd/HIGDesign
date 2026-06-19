@@ -11,7 +11,8 @@ public enum ShowcaseSnapshotCapture {
     public static func run() {
         let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
         let manifestURL = root.appendingPathComponent("Design/Showcase/manifest.json")
-        let snapshotRoot = root.appendingPathComponent("Design/Showcase/snapshots")
+        let showcaseRoot = snapshotOutputRoot(from: root)
+        let snapshotRoot = showcaseRoot.appendingPathComponent("snapshots")
 
         guard let manifestData = try? Data(contentsOf: manifestURL),
               let manifest = try? JSONDecoder().decode(Manifest.self, from: manifestData) else {
@@ -29,7 +30,7 @@ public enum ShowcaseSnapshotCapture {
 
             let themeChoice = ShowcaseThemeChoice(rawValue: entry.theme) ?? .system
             let colorScheme: ColorScheme = entry.colorScheme == "dark" ? .dark : .light
-            let outputURL = root.appendingPathComponent("Design/Showcase").appendingPathComponent(entry.file)
+            let outputURL = showcaseRoot.appendingPathComponent(entry.file)
 
             let content = ShowcaseSnapshotView(component: component)
                 .preferredColorScheme(colorScheme)
@@ -53,6 +54,13 @@ public enum ShowcaseSnapshotCapture {
         }
 
         print("Captured \(manifest.entries.count) showcase snapshots.")
+    }
+
+    private static func snapshotOutputRoot(from root: URL) -> URL {
+        if let override = ProcessInfo.processInfo.environment["HIG_SNAPSHOT_OUTPUT_ROOT"] {
+            return URL(fileURLWithPath: override)
+        }
+        return root.appendingPathComponent("Design/Showcase")
     }
 
     private static func renderPNG<Content: View>(from content: Content) -> Data? {

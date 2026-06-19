@@ -21,6 +21,12 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
     public let alert: any HIGAlertTokens
     public let toast: any HIGToastTokens
     public let badge: any HIGBadgeTokens
+    public let icon: any HIGIconTokens
+    public let avatar: any HIGAvatarTokens
+    public let link: any HIGLinkTokens
+    public let bulletList: any HIGBulletListTokens
+    public let textEditor: any HIGTextEditorTokens
+    public let stepper: any HIGStepperTokens
     public let list: any HIGListTokens
     public let sidebar: any HIGSidebarTokens
 
@@ -51,6 +57,12 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
         self.alert = base.alert
         self.toast = base.toast
         self.badge = base.badge
+        self.icon = base.icon
+        self.avatar = base.avatar
+        self.link = base.link
+        self.bulletList = base.bulletList
+        self.textEditor = base.textEditor
+        self.stepper = base.stepper
         self.list = base.list
         self.sidebar = base.sidebar
     }

@@ -20,6 +20,12 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let alert: any HIGAlertTokens
     public let toast: any HIGToastTokens
     public let badge: any HIGBadgeTokens
+    public let icon: any HIGIconTokens
+    public let avatar: any HIGAvatarTokens
+    public let link: any HIGLinkTokens
+    public let bulletList: any HIGBulletListTokens
+    public let textEditor: any HIGTextEditorTokens
+    public let stepper: any HIGStepperTokens
     public let list: any HIGListTokens
     public let sidebar: any HIGSidebarTokens
 
@@ -40,6 +46,12 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         alert: any HIGAlertTokens = HIGSystemAlertTokens(),
         toast: any HIGToastTokens = HIGSystemToastTokens(),
         badge: any HIGBadgeTokens = HIGSystemBadgeTokens(),
+        icon: any HIGIconTokens = HIGSystemIconTokens(),
+        avatar: any HIGAvatarTokens = HIGSystemAvatarTokens(),
+        link: any HIGLinkTokens = HIGSystemLinkTokens(),
+        bulletList: any HIGBulletListTokens = HIGSystemBulletListTokens(),
+        textEditor: any HIGTextEditorTokens = HIGSystemTextEditorTokens(),
+        stepper: any HIGStepperTokens = HIGSystemStepperTokens(),
         list: any HIGListTokens = HIGSystemListTokens(),
         sidebar: any HIGSidebarTokens = HIGSystemSidebarTokens()
     ) {
@@ -59,6 +71,12 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.alert = alert
         self.toast = toast
         self.badge = badge
+        self.icon = icon
+        self.avatar = avatar
+        self.link = link
+        self.bulletList = bulletList
+        self.textEditor = textEditor
+        self.stepper = stepper
         self.list = list
         self.sidebar = sidebar
     }

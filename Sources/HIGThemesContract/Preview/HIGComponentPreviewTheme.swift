@@ -20,6 +20,12 @@ public struct HIGComponentPreviewTheme: HIGTheme {
     public let alert: any HIGAlertTokens = HIGSystemAlertTokens()
     public let toast: any HIGToastTokens = HIGSystemToastTokens()
     public let badge: any HIGBadgeTokens = HIGSystemBadgeTokens()
+    public let icon: any HIGIconTokens = HIGSystemIconTokens()
+    public let avatar: any HIGAvatarTokens = HIGSystemAvatarTokens()
+    public let link: any HIGLinkTokens = HIGSystemLinkTokens()
+    public let bulletList: any HIGBulletListTokens = HIGSystemBulletListTokens()
+    public let textEditor: any HIGTextEditorTokens = HIGSystemTextEditorTokens()
+    public let stepper: any HIGStepperTokens = HIGSystemStepperTokens()
     public let list: any HIGListTokens = HIGSystemListTokens()
     public let sidebar: any HIGSidebarTokens = HIGSystemSidebarTokens()
 

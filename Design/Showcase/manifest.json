@@ -50,6 +50,30 @@
       "file": "snapshots/alert-highContrast-dark.png"
     },
     {
+      "component": "avatar",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/avatar-system-light.png"
+    },
+    {
+      "component": "avatar",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/avatar-system-dark.png"
+    },
+    {
+      "component": "avatar",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/avatar-highContrast-light.png"
+    },
+    {
+      "component": "avatar",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/avatar-highContrast-dark.png"
+    },
+    {
       "component": "badge",
       "theme": "system",
       "colorScheme": "light",
@@ -72,6 +96,30 @@
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/badge-highContrast-dark.png"
+    },
+    {
+      "component": "bulletList",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/bulletList-system-light.png"
+    },
+    {
+      "component": "bulletList",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/bulletList-system-dark.png"
+    },
+    {
+      "component": "bulletList",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/bulletList-highContrast-light.png"
+    },
+    {
+      "component": "bulletList",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/bulletList-highContrast-dark.png"
     },
     {
       "component": "button",
@@ -194,6 +242,30 @@
       "file": "snapshots/form-highContrast-dark.png"
     },
     {
+      "component": "icon",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/icon-system-light.png"
+    },
+    {
+      "component": "icon",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/icon-system-dark.png"
+    },
+    {
+      "component": "icon",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/icon-highContrast-light.png"
+    },
+    {
+      "component": "icon",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/icon-highContrast-dark.png"
+    },
+    {
       "component": "label",
       "theme": "system",
       "colorScheme": "light",
@@ -216,6 +288,30 @@
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/label-highContrast-dark.png"
+    },
+    {
+      "component": "link",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/link-system-light.png"
+    },
+    {
+      "component": "link",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/link-system-dark.png"
+    },
+    {
+      "component": "link",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/link-highContrast-light.png"
+    },
+    {
+      "component": "link",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/link-highContrast-dark.png"
     },
     {
       "component": "list",
@@ -458,6 +554,30 @@
       "file": "snapshots/slider-highContrast-dark.png"
     },
     {
+      "component": "stepper",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/stepper-system-light.png"
+    },
+    {
+      "component": "stepper",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/stepper-system-dark.png"
+    },
+    {
+      "component": "stepper",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/stepper-highContrast-light.png"
+    },
+    {
+      "component": "stepper",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/stepper-highContrast-dark.png"
+    },
+    {
       "component": "tabBar",
       "theme": "system",
       "colorScheme": "light",
@@ -480,6 +600,30 @@
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/tabBar-highContrast-dark.png"
+    },
+    {
+      "component": "textEditor",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/textEditor-system-light.png"
+    },
+    {
+      "component": "textEditor",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/textEditor-system-dark.png"
+    },
+    {
+      "component": "textEditor",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/textEditor-highContrast-light.png"
+    },
+    {
+      "component": "textEditor",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/textEditor-highContrast-dark.png"
     },
     {
       "component": "textField",

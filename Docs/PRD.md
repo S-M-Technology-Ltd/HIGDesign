@@ -70,16 +70,17 @@ HIGDesign synthesizes architecture and patterns from:
 | `HIGDesignPlatform` | Idiom and capability adapters |
 | `HIGDesignBridging` | Optional Cocoa bridges |
 
-## Current Milestone: Phase 7 Controls and Inputs Expansion
+## Current Milestone: Phase 8 Content and Media Components
 
-Phase 7 extends controls and inputs and expands showcase accessibility states.
+Phase 8 extends content components and multi-line input controls.
 
 This milestone includes:
 
-- `HIGCheckbox`, `HIGRadio`, `HIGSegmentedControl`, `HIGSlider`, `HIGSecureField`, `HIGSearchField`, and `HIGPicker`
-- checkbox, radio, segmented-control, slider, and picker token protocols on `HIGTheme`
-- twenty-four-component `HIGShowcase` catalog
-- Dynamic Type size controls in showcase settings
+- `HIGIcon`, `HIGAvatar`, `HIGLink`, and `HIGBulletList`
+- `HIGTextEditor` and `HIGStepper`
+- icon, avatar, link, bullet-list, text-editor, and stepper token protocols on `HIGTheme`
+- thirty-component `HIGShowcase` catalog
+- snapshot diff verification in CI
 
 This milestone does not include:
 
@@ -88,13 +89,13 @@ This milestone does not include:
 - remote third-party dependencies
 - custom brand themes beyond system defaults
 
-## Next Milestone: Phase 8 Content and Media Components
+## Next Milestone: Phase 9 Navigation and Menu Components
 
 The next milestone delivers:
 
-- `HIGIcon`, `HIGAvatar`, `HIGLink`, and `HIGBulletList`
-- `HIGTextEditor` and `HIGStepper`
-- snapshot diff verification in CI
+- `HIGMenuButton` and `HIGTag`
+- navigation and toolbar component polish
+- optional SwiftUI bridging helpers
 
 ## Success Metrics
 

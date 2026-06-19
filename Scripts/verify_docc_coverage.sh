@@ -57,6 +57,14 @@ EXPECTED_SYMBOLS=(
     HIGActivityIndicatorSize
     HIGList
     HIGFormSection
+    HIGIcon
+    HIGIconSize
+    HIGIconStyle
+    HIGAvatar
+    HIGLink
+    HIGBulletList
+    HIGTextEditor
+    HIGStepper
 )
 
 missing=()

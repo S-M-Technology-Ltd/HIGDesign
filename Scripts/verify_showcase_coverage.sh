@@ -8,6 +8,7 @@ EXPECTED=(
     button textField toggle divider progressView card tabBar toolbar
     alert toast sidebar navigationBar label badge activityIndicator list form
     checkbox radio segmentedControl slider secureField searchField picker
+    icon avatar link bulletList textEditor stepper
 )
 
 missing=()
@@ -47,6 +48,12 @@ showcase_key_for() {
         HIGActivityIndicator) echo activityIndicator ;;
         HIGList) echo list ;;
         HIGFormSection) echo form ;;
+        HIGIcon) echo icon ;;
+        HIGAvatar) echo avatar ;;
+        HIGLink) echo link ;;
+        HIGBulletList) echo bulletList ;;
+        HIGTextEditor) echo textEditor ;;
+        HIGStepper) echo stepper ;;
         *) return 1 ;;
     esac
 }

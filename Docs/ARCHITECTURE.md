@@ -83,4 +83,4 @@ Phase 7 controls and inputs expansion builds on the Phase 1–6 foundation, whic
 
 Verification: `Scripts/build_all_platforms.sh`, `swift test`, and all governance guards (including `verify_no_uikit.sh`) pass locally.
 
-Next phase: content and media components (`HIGIcon`, `HIGAvatar`, `HIGLink`), text editor and stepper controls, snapshot diff verification, and optional SwiftUI bridging helpers.
+Next phase: navigation and menu components (`HIGMenuButton`, `HIGTag`), toolbar and navigation-bar polish, and optional SwiftUI bridging helpers.

@@ -25,6 +25,12 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case secureField
     case searchField
     case picker
+    case icon
+    case avatar
+    case link
+    case bulletList
+    case textEditor
+    case stepper
 
     public var id: String { rawValue }
 
@@ -54,6 +60,12 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .secureField: "Secure Field"
         case .searchField: "Search Field"
         case .picker: "Picker"
+        case .icon: "Icon"
+        case .avatar: "Avatar"
+        case .link: "Link"
+        case .bulletList: "Bullet List"
+        case .textEditor: "Text Editor"
+        case .stepper: "Stepper"
         }
     }
 
@@ -83,6 +95,12 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .secureField: "Text Fields"
         case .searchField: "Searching"
         case .picker: "Pickers"
+        case .icon: "SF Symbols"
+        case .avatar: "Images"
+        case .link: "Links"
+        case .bulletList: "Typography"
+        case .textEditor: "Text Fields"
+        case .stepper: "Steppers"
         }
     }
 
@@ -112,6 +130,12 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .secureField: "Masked entry for passwords and sensitive text."
         case .searchField: "Search input with icon affordance and clear labeling."
         case .picker: "Menu pickers for choosing one value from a list."
+        case .icon: "Themed SF Symbols in small, medium, and large sizes."
+        case .avatar: "Circular avatars with initials or fallback symbols."
+        case .link: "Accent-colored text links that open URLs."
+        case .bulletList: "Vertical bullet lists using HIG typography."
+        case .textEditor: "Multi-line text entry with themed borders and backgrounds."
+        case .stepper: "Integer steppers with labeled captions and bounded ranges."
         }
     }
 
@@ -119,7 +143,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         switch self {
         case .button, .textField, .toggle, .divider, .progressView, .card, .toolbar,
              .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .list, .form,
-             .checkbox, .radio, .secureField, .searchField, .picker:
+             .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,
+             .bulletList, .textEditor, .stepper:
             "iOS, iPadOS, macOS, visionOS, tvOS, watchOS"
         case .slider:
             "iOS, iPadOS, macOS, visionOS"

@@ -38,6 +38,7 @@ Scripts/verify_no_uikit.sh
 Scripts/verify_showcase_coverage.sh
 Scripts/verify_docc_coverage.sh
 Scripts/verify_showcase_snapshots_present.sh
+Scripts/verify_showcase_snapshot_diff.sh
 Scripts/publish_showcase_snapshots.sh
 Scripts/capture_showcase_snapshots.sh
 ```
@@ -57,4 +58,4 @@ Scripts/build_all_platforms.sh
 
 ## Current Milestone
 
-Phase 7 controls and inputs expansion. All platform builds, tests, showcase build, coverage guards, DocC coverage, and automated snapshot capture are mandatory before merging UI changes.
+Phase 8 content and media components. All platform builds, tests, showcase build, coverage guards, DocC coverage, automated snapshot capture, and snapshot diff verification are mandatory before merging UI changes.
