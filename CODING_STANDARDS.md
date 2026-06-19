@@ -1,5 +1,12 @@
 CODING STANDARDS - HIGDesign Project
 
+Git Workflow
+
+* Never commit or push directly to `develop` or `main`.
+* Create a topic branch from `develop`, push the branch, and open a pull request.
+* Keep PRs focused (one feature or fix per PR when practical).
+* Ensure CI passes before requesting merge.
+
 Architecture
 
 * HIGDesign must use a layered Swift Package Manager module graph.
