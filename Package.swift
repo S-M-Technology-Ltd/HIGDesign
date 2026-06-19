@@ -26,6 +26,7 @@ let package = Package(
             "HIGModifiers",
         ]),
         .library(name: "HIGDesignPlatform", targets: ["HIGPlatform"]),
+        .library(name: "HIGDesignBridging", targets: ["HIGBridging"]),
         .executable(name: "HIGShowcase", targets: ["HIGShowcaseApp"]),
         .executable(name: "HIGSnapshotCapture", targets: ["HIGSnapshotCapture"]),
     ],
@@ -73,6 +74,11 @@ let package = Package(
             path: "Sources/HIGModifiers"
         ),
         .target(
+            name: "HIGBridging",
+            dependencies: ["HIGFoundations"],
+            path: "Sources/HIGBridging"
+        ),
+        .target(
             name: "HIGDesign",
             dependencies: [
                 "HIGFoundations",
@@ -112,6 +118,7 @@ let package = Package(
                 "HIGTokensComponent",
                 "HIGThemesSystem",
                 "HIGComponents",
+                "HIGBridging",
             ],
             path: "Tests/HIGDesignTests"
         ),

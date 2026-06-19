@@ -7,6 +7,7 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGButton``
 - ``HIGButtonRole``
 - ``HIGButtonSize``
+- ``HIGMenuButton``
 
 ## Controls
 
@@ -24,6 +25,8 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGLabelStyle``
 - ``HIGBadge``
 - ``HIGBadgeStyle``
+- ``HIGTag``
+- ``HIGTagStyle``
 - ``HIGIcon``
 - ``HIGIconSize``
 - ``HIGIconStyle``
@@ -67,10 +70,13 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGSidebar``
 - ``HIGSidebarItem``
 - ``HIGNavigationBarDisplayMode``
+- ``HIGNavigationBarTextAction``
+- ``HIGNavigationBarIconAction``
 - ``higNavigationBarTitle(_:displayMode:)``
 - ``higNavigationBar(_:displayMode:leading:trailing:)``
 - ``higToolbar(_:)``
 - ``HIGToolbarTextAction``
+- ``HIGToolbarIconAction``
 
 ## Modifiers
 

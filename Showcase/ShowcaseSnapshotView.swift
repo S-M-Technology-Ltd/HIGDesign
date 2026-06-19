@@ -79,6 +79,10 @@ public struct ShowcaseSnapshotView: View {
             ShowcaseTextEditorView()
         case .stepper:
             ShowcaseStepperView()
+        case .menuButton:
+            ShowcaseMenuButtonView()
+        case .tag:
+            ShowcaseTagView()
         }
     }
 }

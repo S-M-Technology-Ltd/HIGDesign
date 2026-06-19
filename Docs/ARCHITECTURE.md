@@ -79,8 +79,8 @@ Phase 7 controls and inputs expansion builds on the Phase 1–6 foundation, whic
 | `HIGShowcase` | Implemented — cross-platform component gallery executable |
 
 | `HIGDesign` | Implemented — umbrella re-exports |
-| `HIGBridging` | Deferred — optional Cocoa bridges for a later phase |
+| `HIGBridging` | Implemented — optional SwiftUI layout helpers (`HIGConditionalView`, `HIGScrollableContainer`) |
 
 Verification: `Scripts/build_all_platforms.sh`, `swift test`, and all governance guards (including `verify_no_uikit.sh`) pass locally.
 
-Next phase: navigation and menu components (`HIGMenuButton`, `HIGTag`), toolbar and navigation-bar polish, and optional SwiftUI bridging helpers.
+Next phase: feedback and indicator expansion, removable tag flows, and custom `HIGTheme` authoring scaffolding.

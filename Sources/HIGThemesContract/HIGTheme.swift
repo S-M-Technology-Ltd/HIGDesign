@@ -25,6 +25,10 @@ public protocol HIGTheme: Sendable {
     var bulletList: any HIGBulletListTokens { get }
     var textEditor: any HIGTextEditorTokens { get }
     var stepper: any HIGStepperTokens { get }
+    var menuButton: any HIGMenuButtonTokens { get }
+    var tag: any HIGTagTokens { get }
+    var navigationBar: any HIGNavigationBarTokens { get }
+    var toolbar: any HIGToolbarTokens { get }
     var list: any HIGListTokens { get }
     var sidebar: any HIGSidebarTokens { get }
 }

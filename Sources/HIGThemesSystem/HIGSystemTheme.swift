@@ -26,6 +26,10 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let bulletList: any HIGBulletListTokens
     public let textEditor: any HIGTextEditorTokens
     public let stepper: any HIGStepperTokens
+    public let menuButton: any HIGMenuButtonTokens
+    public let tag: any HIGTagTokens
+    public let navigationBar: any HIGNavigationBarTokens
+    public let toolbar: any HIGToolbarTokens
     public let list: any HIGListTokens
     public let sidebar: any HIGSidebarTokens
 
@@ -52,6 +56,10 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         bulletList: any HIGBulletListTokens = HIGSystemBulletListTokens(),
         textEditor: any HIGTextEditorTokens = HIGSystemTextEditorTokens(),
         stepper: any HIGStepperTokens = HIGSystemStepperTokens(),
+        menuButton: any HIGMenuButtonTokens = HIGSystemMenuButtonTokens(),
+        tag: any HIGTagTokens = HIGSystemTagTokens(),
+        navigationBar: any HIGNavigationBarTokens = HIGSystemNavigationBarTokens(),
+        toolbar: any HIGToolbarTokens = HIGSystemToolbarTokens(),
         list: any HIGListTokens = HIGSystemListTokens(),
         sidebar: any HIGSidebarTokens = HIGSystemSidebarTokens()
     ) {
@@ -77,6 +85,10 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.bulletList = bulletList
         self.textEditor = textEditor
         self.stepper = stepper
+        self.menuButton = menuButton
+        self.tag = tag
+        self.navigationBar = navigationBar
+        self.toolbar = toolbar
         self.list = list
         self.sidebar = sidebar
     }

@@ -70,32 +70,32 @@ HIGDesign synthesizes architecture and patterns from:
 | `HIGDesignPlatform` | Idiom and capability adapters |
 | `HIGDesignBridging` | Optional Cocoa bridges |
 
-## Current Milestone: Phase 8 Content and Media Components
+## Current Milestone: Phase 9 Navigation and Menu Components
 
-Phase 8 extends content components and multi-line input controls.
+Phase 9 extends menu actions, metadata chips, and navigation chrome.
 
 This milestone includes:
 
-- `HIGIcon`, `HIGAvatar`, `HIGLink`, and `HIGBulletList`
-- `HIGTextEditor` and `HIGStepper`
-- icon, avatar, link, bullet-list, text-editor, and stepper token protocols on `HIGTheme`
-- thirty-component `HIGShowcase` catalog
-- snapshot diff verification in CI
+- `HIGMenuButton` and `HIGTag`
+- menu-button, tag, navigation-bar, and toolbar token protocols on `HIGTheme`
+- navigation bar and toolbar action helpers with theme-backed fonts
+- thirty-two-component `HIGShowcase` catalog
+- optional `HIGDesignBridging` product with SwiftUI layout helpers
 
 This milestone does not include:
 
 - full component library delivery
-- bridging implementations
+- Cocoa/UIKit bridging implementations
 - remote third-party dependencies
 - custom brand themes beyond system defaults
 
-## Next Milestone: Phase 9 Navigation and Menu Components
+## Next Milestone: Phase 10 Feedback and Indicator Expansion
 
 The next milestone delivers:
 
-- `HIGMenuButton` and `HIGTag`
-- navigation and toolbar component polish
-- optional SwiftUI bridging helpers
+- `HIGTag` companion removal flows and `HIGMenuButton` icon-only variant polish
+- `HIGActivityIndicator` sizing presets across platforms
+- brand theme scaffolding and custom `HIGTheme` authoring guide
 
 ## Success Metrics
 

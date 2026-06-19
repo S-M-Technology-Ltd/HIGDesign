@@ -30,4 +30,4 @@ swift run HIGShowcase
 
 ## Status
 
-Phase 8: icon, avatar, link, bullet list, text editor, stepper, and snapshot diff verification in CI (v0.8.0).
+Phase 9: menu button, tag, navigation/toolbar polish, and optional bridging helpers (v0.9.0).

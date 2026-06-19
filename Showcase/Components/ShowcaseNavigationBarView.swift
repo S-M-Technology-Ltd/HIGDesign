@@ -14,9 +14,15 @@ struct ShowcaseNavigationBarView: View {
                 .higPadding(.screenEdge)
             }
             .higNavigationBar("Inbox", displayMode: .large) {
-                Button("Filter", systemImage: "line.3.horizontal.decrease.circle") {}
+                HIGNavigationBarIconAction(
+                    "line.3.horizontal.decrease.circle",
+                    accessibilityLabel: "Filter"
+                ) {}
             } trailing: {
-                Button("Compose", systemImage: "square.and.pencil") {}
+                HIGNavigationBarIconAction(
+                    "square.and.pencil",
+                    accessibilityLabel: "Compose"
+                ) {}
             }
         }
         .navigationTitle("Navigation Bar")

@@ -27,6 +27,10 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
     public let bulletList: any HIGBulletListTokens
     public let textEditor: any HIGTextEditorTokens
     public let stepper: any HIGStepperTokens
+    public let menuButton: any HIGMenuButtonTokens
+    public let tag: any HIGTagTokens
+    public let navigationBar: any HIGNavigationBarTokens
+    public let toolbar: any HIGToolbarTokens
     public let list: any HIGListTokens
     public let sidebar: any HIGSidebarTokens
 
@@ -63,6 +67,10 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
         self.bulletList = base.bulletList
         self.textEditor = base.textEditor
         self.stepper = base.stepper
+        self.menuButton = base.menuButton
+        self.tag = base.tag
+        self.navigationBar = base.navigationBar
+        self.toolbar = base.toolbar
         self.list = base.list
         self.sidebar = base.sidebar
     }

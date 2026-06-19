@@ -18,7 +18,7 @@ struct ShowcaseToolbarView: View {
                 HIGToolbarTextAction("Close") {}
             }
             ToolbarItem(placement: .primaryAction) {
-                HIGToolbarTextAction("Add") {}
+                HIGToolbarIconAction("plus", accessibilityLabel: "Add") {}
             }
         }
     }

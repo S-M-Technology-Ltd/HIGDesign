@@ -65,6 +65,14 @@ EXPECTED_SYMBOLS=(
     HIGBulletList
     HIGTextEditor
     HIGStepper
+    HIGMenuButton
+    HIGTag
+    HIGTagStyle
+    HIGNavigationBarTextAction
+    HIGNavigationBarIconAction
+    HIGToolbarIconAction
+    HIGConditionalView
+    HIGScrollableContainer
 )
 
 missing=()

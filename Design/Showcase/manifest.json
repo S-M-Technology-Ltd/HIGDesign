@@ -338,6 +338,30 @@
       "file": "snapshots/list-highContrast-dark.png"
     },
     {
+      "component": "menuButton",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/menuButton-system-light.png"
+    },
+    {
+      "component": "menuButton",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/menuButton-system-dark.png"
+    },
+    {
+      "component": "menuButton",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/menuButton-highContrast-light.png"
+    },
+    {
+      "component": "menuButton",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/menuButton-highContrast-dark.png"
+    },
+    {
       "component": "navigationBar",
       "theme": "system",
       "colorScheme": "light",
@@ -600,6 +624,30 @@
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/tabBar-highContrast-dark.png"
+    },
+    {
+      "component": "tag",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/tag-system-light.png"
+    },
+    {
+      "component": "tag",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/tag-system-dark.png"
+    },
+    {
+      "component": "tag",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/tag-highContrast-light.png"
+    },
+    {
+      "component": "tag",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/tag-highContrast-dark.png"
     },
     {
       "component": "textEditor",

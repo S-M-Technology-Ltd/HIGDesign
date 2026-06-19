@@ -31,6 +31,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case bulletList
     case textEditor
     case stepper
+    case menuButton
+    case tag
 
     public var id: String { rawValue }
 
@@ -66,6 +68,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .bulletList: "Bullet List"
         case .textEditor: "Text Editor"
         case .stepper: "Stepper"
+        case .menuButton: "Menu Button"
+        case .tag: "Tag"
         }
     }
 
@@ -101,6 +105,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .bulletList: "Typography"
         case .textEditor: "Text Fields"
         case .stepper: "Steppers"
+        case .menuButton: "Buttons"
+        case .tag: "Labels"
         }
     }
 
@@ -136,6 +142,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .bulletList: "Vertical bullet lists using HIG typography."
         case .textEditor: "Multi-line text entry with themed borders and backgrounds."
         case .stepper: "Integer steppers with labeled captions and bounded ranges."
+        case .menuButton: "Secondary-styled buttons that present action menus."
+        case .tag: "Pill-shaped chips for categories, filters, and metadata."
         }
     }
 
@@ -144,7 +152,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .button, .textField, .toggle, .divider, .progressView, .card, .toolbar,
              .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .list, .form,
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,
-             .bulletList, .textEditor, .stepper:
+             .bulletList, .textEditor, .stepper, .menuButton, .tag:
             "iOS, iPadOS, macOS, visionOS, tvOS, watchOS"
         case .slider:
             "iOS, iPadOS, macOS, visionOS"
