@@ -77,7 +77,7 @@ Phase 12 delivered navigation components and snapshot fidelity at v0.12.0. v1.0.
 Phase 13 prepares the first stable release:
 
 - API stability review and semver policy sign-off for v1.0.0
-- committed Xcode workspace and consumer integration guides
+- committed sample Xcode project and consumer integration guides
 - expanded `HIGBridging` helpers with documented platform fallbacks
 - performance and accessibility audit pass across the full component catalog
 

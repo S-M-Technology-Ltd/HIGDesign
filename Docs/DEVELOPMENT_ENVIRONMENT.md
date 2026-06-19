@@ -39,6 +39,7 @@ Scripts/verify_showcase_coverage.sh
 Scripts/verify_docc_coverage.sh
 Scripts/verify_showcase_snapshots_present.sh
 Scripts/verify_showcase_snapshot_diff.sh
+Scripts/verify_sample_xcode_project.sh
 Scripts/publish_showcase_snapshots.sh
 Scripts/capture_showcase_snapshots.sh
 ```
@@ -62,4 +63,11 @@ Phase 13 v1.0.0 preparation. All platform builds, tests, showcase build, coverag
 
 ## Xcode
 
-HIGDesign is SPM-first. Open `Package.swift` or `HIGDesign.xcworkspace` at the repository root. Xcode exposes package schemes (`HIGShowcase`, `HIGSnapshotCapture`, library targets). A standalone `.xcodeproj` is intentionally not checked in.
+Primary entry point: `Sample/HIGDesignSample.xcodeproj` (iOS + macOS sample app linking local `HIGShowcase`).
+
+```bash
+open Sample/HIGDesignSample.xcodeproj
+Scripts/verify_sample_xcode_project.sh
+```
+
+Package-only entry points (`Package.swift`, `HIGDesign.xcworkspace`) remain for library targets and `HIGSnapshotCapture`.

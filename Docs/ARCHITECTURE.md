@@ -76,7 +76,7 @@ Phase 7 controls and inputs expansion builds on the Phase 1–6 foundation, whic
 | `HIGPlatform` | Implemented — `HIGPlatformCapabilities` |
 | `HIGComponents` | Implemented — actions, inputs, controls, feedback, layout, and navigation components |
 | `HIGModifiers` | Implemented — `higPadding`, `higNavigationBar`, `higToolbar` (delegates to `HIGComponents`) |
-| `HIGShowcase` | Implemented — cross-platform component gallery executable |
+| `HIGShowcase` | Implemented — component gallery library and sample-app dependency |
 
 | `HIGDesign` | Implemented — umbrella re-exports |
 | `HIGBridging` | Implemented — optional SwiftUI layout helpers (`HIGConditionalView`, `HIGScrollableContainer`) |

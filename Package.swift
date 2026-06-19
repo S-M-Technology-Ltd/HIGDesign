@@ -27,7 +27,8 @@ let package = Package(
         ]),
         .library(name: "HIGDesignPlatform", targets: ["HIGPlatform"]),
         .library(name: "HIGDesignBridging", targets: ["HIGBridging"]),
-        .executable(name: "HIGShowcase", targets: ["HIGShowcaseApp"]),
+        .library(name: "HIGShowcase", targets: ["HIGShowcase"]),
+        .executable(name: "HIGShowcaseApp", targets: ["HIGShowcaseApp"]),
         .executable(name: "HIGSnapshotCapture", targets: ["HIGSnapshotCapture"]),
     ],
     targets: [

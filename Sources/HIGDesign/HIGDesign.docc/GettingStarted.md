@@ -24,10 +24,10 @@ struct MyApp: App {
 
 ## Showcase
 
-Run the `HIGShowcase` executable target in Xcode or from the command line on macOS:
+Open `Sample/HIGDesignSample.xcodeproj` in Xcode, or run the `HIGShowcaseApp` executable from the command line on macOS:
 
 ```bash
-swift run HIGShowcase
+swift run HIGShowcaseApp
 ```
 
 The showcase demonstrates light, dark, high-contrast, Dynamic Type, and Reduce Motion states for every shipped component.

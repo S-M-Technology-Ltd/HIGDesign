@@ -25,7 +25,7 @@ Scripts/verify_no_uikit.sh
 swift build --package-path .
 swift test --package-path .
 Scripts/build_all_platforms.sh
-swift run HIGShowcase
+swift run HIGShowcaseApp
 ```
 
 ## Status
@@ -34,14 +34,19 @@ Phase 12: HIGNavigationBar, HIGToolbar, snapshot fidelity, and pre-1.0 API guide
 
 ## Open in Xcode
 
-This repo is a Swift Package — there is no separate `.xcodeproj`. Open the package directly:
+Use the sample app project to browse and run every component:
 
 ```bash
-open Package.swift
-# or
-open HIGDesign.xcworkspace
+open Sample/HIGDesignSample.xcodeproj
 # or
 Scripts/open_xcode.sh
 ```
 
-Select the **HIGShowcase** scheme to run the component gallery. Other schemes: `HIGSnapshotCapture`, `HIGDesign`, library products.
+| Scheme | Run on | What you get |
+|--------|--------|----------------|
+| `HIGDesignSampleMac` | My Mac | Full 32-component showcase catalog |
+| `HIGDesignSample` | iPhone / iPad Simulator | Same catalog, touch layouts |
+
+The sample links the local `HIGShowcase` package product. See [Sample/README.md](Sample/README.md).
+
+Package-only workflows (`open Package.swift`, `HIGDesign.xcworkspace`) remain available for library development and `HIGSnapshotCapture`.

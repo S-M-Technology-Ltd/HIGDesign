@@ -1,0 +1,404 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		HIGD10012F0A000000000001 /* HIGDesignSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = HIGD10012F0A000000000011 /* HIGDesignSampleApp.swift */; };
+		HIGD10012F0A000000000002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = HIGD10012F0A000000000012 /* Assets.xcassets */; };
+		HIGD10012F0A000000000003 /* HIGDesignSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = HIGD10012F0A000000000011 /* HIGDesignSampleApp.swift */; };
+		HIGD10012F0A000000000004 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = HIGD10012F0A000000000012 /* Assets.xcassets */; };
+		HIGD10012F0A000000000005 /* HIGShowcase in Frameworks */ = {isa = PBXBuildFile; productRef = HIGD10012F0A000000000051 /* HIGShowcase */; };
+		HIGD10012F0A000000000006 /* HIGShowcase in Frameworks */ = {isa = PBXBuildFile; productRef = HIGD10012F0A000000000052 /* HIGShowcase */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		HIGD10012F0A000000000021 /* HIGDesignSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HIGDesignSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		HIGD10012F0A000000000022 /* HIGDesignSampleMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HIGDesignSampleMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		HIGD10012F0A000000000011 /* HIGDesignSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIGDesignSampleApp.swift; sourceTree = "<group>"; };
+		HIGD10012F0A000000000012 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		HIGD10012F0A000000000013 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		HIGD10012F0A000000000031 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				HIGD10012F0A000000000005 /* HIGShowcase in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		HIGD10012F0A000000000032 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				HIGD10012F0A000000000006 /* HIGShowcase in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		HIGD10012F0A000000000041 = {
+			isa = PBXGroup;
+			children = (
+				HIGD10012F0A000000000042 /* HIGDesign */,
+				HIGD10012F0A000000000043 /* HIGDesignSample */,
+				HIGD10012F0A000000000044 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		HIGD10012F0A000000000042 /* HIGDesign */ = {
+			isa = PBXGroup;
+			children = (
+				HIGD10012F0A000000000013 /* Package.swift */,
+			);
+			name = HIGDesign;
+			sourceTree = "<group>";
+		};
+		HIGD10012F0A000000000043 /* HIGDesignSample */ = {
+			isa = PBXGroup;
+			children = (
+				HIGD10012F0A000000000011 /* HIGDesignSampleApp.swift */,
+				HIGD10012F0A000000000012 /* Assets.xcassets */,
+			);
+			path = HIGDesignSample;
+			sourceTree = "<group>";
+		};
+		HIGD10012F0A000000000044 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				HIGD10012F0A000000000021 /* HIGDesignSample.app */,
+				HIGD10012F0A000000000022 /* HIGDesignSampleMac.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		HIGD10012F0A000000000061 /* HIGDesignSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = HIGD10012F0A000000000071 /* Build configuration list for PBXNativeTarget "HIGDesignSample" */;
+			buildPhases = (
+				HIGD10012F0A000000000081 /* Sources */,
+				HIGD10012F0A000000000031 /* Frameworks */,
+				HIGD10012F0A000000000091 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HIGDesignSample;
+			packageProductDependencies = (
+				HIGD10012F0A000000000051 /* HIGShowcase */,
+			);
+			productName = HIGDesignSample;
+			productReference = HIGD10012F0A000000000021 /* HIGDesignSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		HIGD10012F0A000000000062 /* HIGDesignSampleMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = HIGD10012F0A000000000072 /* Build configuration list for PBXNativeTarget "HIGDesignSampleMac" */;
+			buildPhases = (
+				HIGD10012F0A000000000082 /* Sources */,
+				HIGD10012F0A000000000032 /* Frameworks */,
+				HIGD10012F0A000000000092 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HIGDesignSampleMac;
+			packageProductDependencies = (
+				HIGD10012F0A000000000052 /* HIGShowcase */,
+			);
+			productName = HIGDesignSampleMac;
+			productReference = HIGD10012F0A000000000022 /* HIGDesignSampleMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		HIGD10012F0A0000000000F0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					HIGD10012F0A000000000061 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					HIGD10012F0A000000000062 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = HIGD10012F0A000000000070 /* Build configuration list for PBXProject "HIGDesignSample" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = HIGD10012F0A000000000041;
+			packageReferences = (
+				HIGD10012F0A000000000050 /* XCLocalSwiftPackageReference ".." */,
+			);
+			productRefGroup = HIGD10012F0A000000000044 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				HIGD10012F0A000000000061 /* HIGDesignSample */,
+				HIGD10012F0A000000000062 /* HIGDesignSampleMac */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		HIGD10012F0A000000000091 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				HIGD10012F0A000000000002 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		HIGD10012F0A000000000092 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				HIGD10012F0A000000000004 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		HIGD10012F0A000000000081 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				HIGD10012F0A000000000001 /* HIGDesignSampleApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		HIGD10012F0A000000000082 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				HIGD10012F0A000000000003 /* HIGDesignSampleApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		HIGD10012F0A000000000050 /* XCLocalSwiftPackageReference ".." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ..;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		HIGD10012F0A000000000051 /* HIGShowcase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = HIGD10012F0A000000000050 /* XCLocalSwiftPackageReference ".." */;
+			productName = HIGShowcase;
+		};
+		HIGD10012F0A000000000052 /* HIGShowcase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = HIGD10012F0A000000000050 /* XCLocalSwiftPackageReference ".." */;
+			productName = HIGShowcase;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCBuildConfiguration section */
+		HIGD10012F0A0000000000A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		HIGD10012F0A0000000000A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		HIGD10012F0A0000000000B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.12.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.higdesign.sample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		HIGD10012F0A0000000000B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.12.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.higdesign.sample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		HIGD10012F0A0000000000C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 0.12.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.higdesign.sample.mac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		HIGD10012F0A0000000000C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 0.12.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.higdesign.sample.mac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		HIGD10012F0A000000000070 /* Build configuration list for PBXProject "HIGDesignSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				HIGD10012F0A0000000000A1 /* Debug */,
+				HIGD10012F0A0000000000A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		HIGD10012F0A000000000071 /* Build configuration list for PBXNativeTarget "HIGDesignSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				HIGD10012F0A0000000000B1 /* Debug */,
+				HIGD10012F0A0000000000B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		HIGD10012F0A000000000072 /* Build configuration list for PBXNativeTarget "HIGDesignSampleMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				HIGD10012F0A0000000000C1 /* Debug */,
+				HIGD10012F0A0000000000C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = HIGD10012F0A0000000000F0 /* Project object */;
+}
