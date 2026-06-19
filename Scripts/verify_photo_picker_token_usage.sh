@@ -9,9 +9,9 @@ if [[ ! -d "$PHOTO_PICKER_DIR" ]]; then
     exit 1
 fi
 
-if rg -n 'PickerDesign' "$PHOTO_PICKER_DIR" >/dev/null 2>&1; then
+if grep -rn 'PickerDesign' "$PHOTO_PICKER_DIR" >/dev/null 2>&1; then
     echo "Photo picker token guard failed: PickerDesign is deprecated; use theme.photoPicker tokens." >&2
-    rg -n 'PickerDesign' "$PHOTO_PICKER_DIR" >&2 || true
+    grep -rn 'PickerDesign' "$PHOTO_PICKER_DIR" >&2 || true
     exit 1
 fi
 
@@ -28,7 +28,7 @@ PATTERNS=(
 )
 
 for pattern in "${PATTERNS[@]}"; do
-    if matches="$(rg -n "$pattern" "${VIEW_FILES[@]}" 2>/dev/null || true)"; then
+    if matches="$(grep -En "$pattern" "${VIEW_FILES[@]}" 2>/dev/null || true)"; then
         if [[ -n "$matches" ]]; then
             echo "Photo picker token guard failed: hardcoded visual value matching '$pattern'." >&2
             echo "$matches" >&2

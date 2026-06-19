@@ -4,7 +4,8 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
-if rg -n 'DEVELOPMENT_TEAM|PROVISIONING_PROFILE' Sample/HIGDesignSample.xcodeproj/project.pbxproj 2>/dev/null; then
+if grep -nE 'DEVELOPMENT_TEAM|PROVISIONING_PROFILE' Sample/HIGDesignSample.xcodeproj/project.pbxproj >/dev/null 2>&1; then
+    grep -nE 'DEVELOPMENT_TEAM|PROVISIONING_PROFILE' Sample/HIGDesignSample.xcodeproj/project.pbxproj >&2
     echo "Committed signing guard failed: keep team/profile overrides in Sample/Config/Signing.local.xcconfig only." >&2
     exit 1
 fi

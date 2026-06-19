@@ -30,28 +30,15 @@ Minimum deployment targets cover the latest three calendar years:
 Run from repository root:
 
 ```bash
-Scripts/verify_requirements_present.sh
-Scripts/verify_ui_guidelines_present.sh
-Scripts/verify_xcode_previews_present.sh
-Scripts/verify_view_naming.sh
-Scripts/verify_component_token_usage.sh
-Scripts/verify_photo_picker_token_usage.sh
-Scripts/verify_no_uikit.sh
-Scripts/verify_no_gcd.sh
-Scripts/verify_showcase_coverage.sh
-Scripts/verify_docc_coverage.sh
-Scripts/verify_showcase_snapshots_present.sh
-Scripts/verify_showcase_snapshot_diff.sh
-Scripts/verify_sample_xcode_project.sh
-Scripts/publish_showcase_snapshots.sh
-Scripts/capture_showcase_snapshots.sh
+# Same entry point as GitHub Actions PR Checks workflow
+Scripts/run_pr_checks.sh
+
+# Or run phases separately:
+Scripts/run_governance_checks.sh   # Linux or macOS
+Scripts/run_macos_checks.sh        # macOS only (snapshots, builds, sample app)
 ```
 
-```bash
-swift build --package-path .
-swift test --package-path .
-Scripts/build_all_platforms.sh
-```
+Individual guards remain available under `Scripts/verify_*.sh` when debugging a single failure.
 
 ## Agent Workflow
 

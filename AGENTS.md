@@ -251,6 +251,20 @@ Development Environment Rules
 
 Verification Commands
 
+PR checks (matches `.github/workflows/pr-checks.yml`):
+
+Scripts/run_pr_checks.sh
+
+Governance-only (Linux or macOS):
+
+Scripts/run_governance_checks.sh
+
+macOS-only (snapshots, multi-platform build, sample app):
+
+Scripts/run_macos_checks.sh
+
+Individual guards (debugging):
+
 Requirements guard:
 
 Scripts/verify_requirements_present.sh
