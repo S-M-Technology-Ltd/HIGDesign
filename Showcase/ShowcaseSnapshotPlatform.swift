@@ -41,6 +41,23 @@ public enum ShowcaseSnapshotPlatform: String, CaseIterable, Sendable, Identifiab
 }
 
 extension ShowcaseComponent {
+    private var usesFullHeightSnapshotCanvas: Bool {
+        switch self {
+        case .photoPicker, .sidebar, .tabBar, .navigationBar, .toolbar, .list, .form, .textEditor:
+            true
+        default:
+            false
+        }
+    }
+
+    public func snapshotCanvasSize(for platform: ShowcaseSnapshotPlatform) -> CGSize {
+        let base = platform.canvasSize
+        guard !usesFullHeightSnapshotCanvas else { return base }
+
+        let compactHeight = min(base.height, 520)
+        return CGSize(width: base.width, height: compactHeight)
+    }
+
     var supportedSnapshotPlatforms: [ShowcaseSnapshotPlatform] {
         switch self {
         case .button, .textField, .toggle, .divider, .progressView, .card, .toolbar,

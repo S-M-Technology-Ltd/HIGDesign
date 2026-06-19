@@ -26,20 +26,18 @@ public enum ShowcaseSnapshotCapture {
             let themeChoice = ShowcaseThemeChoice(rawValue: entry.theme) ?? .system
             let colorScheme: ColorScheme = entry.colorScheme == "dark" ? .dark : .light
             let outputURL = showcaseRoot.appendingPathComponent(entry.file)
-            let canvasSize = canvasSize(for: entry)
+            let canvasSize = canvasSize(for: entry, component: component)
 
             try? FileManager.default.createDirectory(
                 at: outputURL.deletingLastPathComponent(),
                 withIntermediateDirectories: true
             )
 
-            let content = ShowcaseSnapshotView(component: component)
-                .preferredColorScheme(colorScheme)
-                .frame(width: canvasSize.width, height: canvasSize.height)
-
             let wrapped = HIGThemeableView(theme: themeChoice.makeTheme()) {
-                content
+                ShowcaseSnapshotView(component: component)
+                    .preferredColorScheme(colorScheme)
             }
+            .frame(width: canvasSize.width, height: canvasSize.height)
 
             guard let pngData = renderPNG(from: wrapped, size: canvasSize, colorScheme: colorScheme) else {
                 fputs("Failed to render \(entry.file)\n", stderr)
@@ -57,11 +55,11 @@ public enum ShowcaseSnapshotCapture {
         print("Captured \(manifest.entries.count) showcase snapshots.")
     }
 
-    private static func canvasSize(for entry: Manifest.Entry) -> CGSize {
+    private static func canvasSize(for entry: Manifest.Entry, component: ShowcaseComponent) -> CGSize {
         if entry.kind == "platform",
            let platform = entry.platform,
            let snapshotPlatform = ShowcaseSnapshotPlatform(rawValue: platform) {
-            return snapshotPlatform.canvasSize
+            return component.snapshotCanvasSize(for: snapshotPlatform)
         }
         return ShowcaseSnapshotPlatform.macos.canvasSize
     }
@@ -97,10 +95,12 @@ public enum ShowcaseSnapshotCapture {
         hostingView.layoutSubtreeIfNeeded()
         drainMainRunLoop()
 
+        hostingView.wantsLayer = true
+        hostingView.layer?.contentsScale = scale
+
         guard let rep = hostingView.bitmapImageRepForCachingDisplay(in: hostingView.bounds) else {
             return nil
         }
-        rep.size = CGSize(width: size.width * scale, height: size.height * scale)
         hostingView.cacheDisplay(in: hostingView.bounds, to: rep)
 
         guard let png = rep.representation(using: .png, properties: [:]),

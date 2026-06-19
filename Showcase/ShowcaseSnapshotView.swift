@@ -23,6 +23,7 @@ public struct ShowcaseSnapshotView: View {
             snapshotContent
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .background(theme.colors.backgroundPrimary)
     }
 
