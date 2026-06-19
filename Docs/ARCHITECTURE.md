@@ -1,0 +1,66 @@
+# HIGDesign Architecture
+
+## Overview
+
+HIGDesign is a modular Swift Package that delivers an Apple HIG-aligned design system for SwiftUI apps across six Apple platforms.
+
+## Module Graph
+
+```text
+HIGFoundations
+  → HIGTokensRaw
+    → HIGTokensSemantic
+      → HIGTokensComponent
+        → HIGThemesContract
+          → HIGThemesSystem
+          → HIGPlatform
+          → HIGBridging
+            → HIGComponents
+            → HIGModifiers
+              → exported HIGDesign
+```
+
+## Responsibilities
+
+| Module | Responsibility |
+|--------|----------------|
+| `HIGFoundations` | idioms, size classes, logging, accessibility helpers |
+| `HIGTokensRaw` | system primitives and HIG measurements |
+| `HIGTokensSemantic` | role-based token protocols |
+| `HIGTokensComponent` | component-specific token protocols |
+| `HIGThemesContract` | `HIGTheme`, `HIGThemeableView`, environment keys |
+| `HIGThemesSystem` | built-in light, dark, high-contrast, and compact themes |
+| `HIGPlatform` | capability detection and layout adapters |
+| `HIGBridging` | optional Cocoa bridges |
+| `HIGComponents` | public `HIG*` SwiftUI components |
+| `HIGModifiers` | token-backed view modifiers |
+| `HIGDesign` | umbrella export target |
+
+## Design Decisions
+
+### HIG-first visuals
+
+All public styling resolves from HIG tokens and themes. Components do not hardcode brand colors or custom font families.
+
+### Environment-driven theming
+
+Apps inject themes with `HIGThemeableView`. Components read `@Environment(\.higTheme)`.
+
+### Native SwiftUI first
+
+Bridging is optional and isolated. Native SwiftUI is the default component implementation strategy.
+
+### Platform capability model
+
+Shared platform checks live in `HIGPlatform` so components do not accumulate copy-pasted `#if os()` logic.
+
+## Reference Inputs
+
+- `../ouds-ios` — token layering and theme contract
+- `../SwiftUIX` — platform abstraction and bridging patterns
+- `../SwiftUI-Design-System-Pro` — token categories and modifier DSL ideas
+- `../promptory-apple` — requirements and HIG review process
+
+## Current State
+
+The repository is in the governance-foundation milestone. Package targets and source modules are planned but not yet implemented.
