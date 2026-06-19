@@ -1,23 +1,17 @@
 # API Stability
 
-HIGDesign is pre-1.0. Phase milestones use `0.x.y` versions while the public component catalog matures.
+HIGDesign **v1.0.0** is the first stable release. Semantic versioning applies to public modules.
 
-## Current Policy (pre-1.0)
+## v1.0.0 Policy
 
-- **Minor (`0.x.0`)** — new components, tokens, themes, or additive APIs.
-- **Patch (`0.x.y`)** — bug fixes, snapshot updates, and documentation corrections.
-- Breaking changes are allowed between minor milestones when documented in release notes.
-
-## Target v1.0.0 Policy
-
-When v1.0.0 ships, semantic versioning will apply to:
+Semantic versioning applies to:
 
 - `HIGFoundations`, `HIGTokensRaw`, `HIGTokensSemantic`, `HIGTokensComponent`
 - `HIGThemesContract`, `HIGThemesSystem`
 - `HIGComponents`, `HIGModifiers`, `HIGPlatform`
 - Umbrella `HIGDesign` and `HIGDesignCore` / `HIGDesignComponents` products
 
-Planned rules at v1.0.0:
+Rules:
 
 - **Major** — breaking public API or documented default-behavior changes.
 - **Minor** — additive APIs with default-preserving parameters.
@@ -36,7 +30,7 @@ Navigation components ship as both views and modifiers:
 - ``HIGNavigationBar`` and ``higNavigationBar(_:displayMode:leading:trailing:)``
 - ``HIGToolbar`` and ``higToolbar(_:)``
 
-## Deprecation Process (from v1.0.0 onward)
+## Deprecation Process
 
 1. Mark APIs `@available(*, deprecated, message:)` in the release that introduces the replacement.
 2. Document the migration path in release notes and DocC.
@@ -45,3 +39,7 @@ Navigation components ship as both views and modifiers:
 ## Optional Bridging
 
 `HIGBridging` and `HIGDesignBridging` remain experimental. Their APIs may evolve more quickly until a dedicated bridging stability milestone is declared.
+
+## Pre-1.0 History
+
+Versions `0.x.y` allowed breaking changes between minor milestones while the component catalog matured. See [CHANGELOG.md](../../../CHANGELOG.md).

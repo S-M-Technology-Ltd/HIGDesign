@@ -70,16 +70,17 @@ HIGDesign synthesizes architecture and patterns from:
 | `HIGDesignPlatform` | Idiom and capability adapters |
 | `HIGDesignBridging` | Optional Cocoa bridges |
 
-## Current Milestone: Phase 13 Adoption and v1.0.0 Preparation
+## Current Milestone: v1.0.0 (released)
 
-Phase 12 delivered navigation components and snapshot fidelity at v0.12.0. v1.0.0 is not released yet.
+v1.0.0 is the first stable public release (2026-06-19).
 
-Phase 13 prepares the first stable release:
+Delivered:
 
-- API stability review and semver policy sign-off for v1.0.0
-- committed sample Xcode project and consumer integration guides
-- expanded `HIGBridging` helpers with documented platform fallbacks
-- performance and accessibility audit pass across the full component catalog
+- 33 `HIG*` SwiftUI components with design-token enforcement across the catalog
+- API stability policy and semantic versioning from v1.0.0
+- Sample Xcode project and [HOW_TO_USE.md](HOW_TO_USE.md) consumer guide
+- 385 committed showcase snapshots (theme + per-platform matrix)
+- `HIGPhotoPicker` on iOS with sample privacy keys
 
 Phase 12 (complete, v0.12.0) delivered:
 

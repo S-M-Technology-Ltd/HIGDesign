@@ -6,21 +6,16 @@ import SwiftUI
 
 @MainActor
 public enum ShowcaseSnapshotCapture {
-    private static let snapshotSize = CGSize(width: 900, height: 620)
-
     public static func run() {
         let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
         let manifestURL = root.appendingPathComponent("Design/Showcase/manifest.json")
         let showcaseRoot = snapshotOutputRoot(from: root)
-        let snapshotRoot = showcaseRoot.appendingPathComponent("snapshots")
 
         guard let manifestData = try? Data(contentsOf: manifestURL),
               let manifest = try? JSONDecoder().decode(Manifest.self, from: manifestData) else {
             fputs("Failed to read showcase snapshot manifest.\n", stderr)
             exit(1)
         }
-
-        try? FileManager.default.createDirectory(at: snapshotRoot, withIntermediateDirectories: true)
 
         for entry in manifest.entries {
             guard let component = ShowcaseComponent(rawValue: entry.component) else {
@@ -31,16 +26,22 @@ public enum ShowcaseSnapshotCapture {
             let themeChoice = ShowcaseThemeChoice(rawValue: entry.theme) ?? .system
             let colorScheme: ColorScheme = entry.colorScheme == "dark" ? .dark : .light
             let outputURL = showcaseRoot.appendingPathComponent(entry.file)
+            let canvasSize = canvasSize(for: entry)
+
+            try? FileManager.default.createDirectory(
+                at: outputURL.deletingLastPathComponent(),
+                withIntermediateDirectories: true
+            )
 
             let content = ShowcaseSnapshotView(component: component)
                 .preferredColorScheme(colorScheme)
-                .frame(width: snapshotSize.width, height: snapshotSize.height)
+                .frame(width: canvasSize.width, height: canvasSize.height)
 
             let wrapped = HIGThemeableView(theme: themeChoice.makeTheme()) {
                 content
             }
 
-            guard let pngData = renderPNG(from: wrapped) else {
+            guard let pngData = renderPNG(from: wrapped, size: canvasSize) else {
                 fputs("Failed to render \(entry.file)\n", stderr)
                 exit(1)
             }
@@ -56,6 +57,15 @@ public enum ShowcaseSnapshotCapture {
         print("Captured \(manifest.entries.count) showcase snapshots.")
     }
 
+    private static func canvasSize(for entry: Manifest.Entry) -> CGSize {
+        if entry.kind == "platform",
+           let platform = entry.platform,
+           let snapshotPlatform = ShowcaseSnapshotPlatform(rawValue: platform) {
+            return snapshotPlatform.canvasSize
+        }
+        return ShowcaseSnapshotPlatform.macos.canvasSize
+    }
+
     private static func snapshotOutputRoot(from root: URL) -> URL {
         if let override = ProcessInfo.processInfo.environment["HIG_SNAPSHOT_OUTPUT_ROOT"] {
             return URL(fileURLWithPath: override)
@@ -63,8 +73,9 @@ public enum ShowcaseSnapshotCapture {
         return root.appendingPathComponent("Design/Showcase")
     }
 
-    private static func renderPNG<Content: View>(from content: Content) -> Data? {
+    private static func renderPNG<Content: View>(from content: Content, size: CGSize) -> Data? {
         let renderer = ImageRenderer(content: content)
+        renderer.proposedSize = ProposedViewSize(size)
         renderer.scale = 2
         guard let image = renderer.nsImage,
               let tiff = image.tiffRepresentation,
@@ -78,10 +89,12 @@ public enum ShowcaseSnapshotCapture {
 
 private struct Manifest: Decodable {
     struct Entry: Decodable {
+        let kind: String
         let component: String
         let theme: String
         let colorScheme: String
         let file: String
+        let platform: String?
     }
 
     let entries: [Entry]

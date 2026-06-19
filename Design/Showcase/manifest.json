@@ -1,1193 +1,2887 @@
 {
-  "version": 1,
+  "version": 2,
   "entries": [
     {
+      "kind": "theme",
       "component": "activityIndicator",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/activityIndicator-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "activityIndicator",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/activityIndicator-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "activityIndicator",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/activityIndicator-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "activityIndicator",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/activityIndicator-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "activityIndicator",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/activityIndicator-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "activityIndicator",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/activityIndicator-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "activityIndicator",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/activityIndicator-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "activityIndicator",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/activityIndicator-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "activityIndicator",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/activityIndicator-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "activityIndicator",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/activityIndicator-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "activityIndicator",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/activityIndicator-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "activityIndicator",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/activityIndicator-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "alert",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/alert-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "alert",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/alert-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "alert",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/alert-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "alert",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/alert-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "alert",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/alert-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "alert",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/alert-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "alert",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/alert-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "alert",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/alert-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "alert",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/alert-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "alert",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/alert-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "alert",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/alert-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "alert",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/alert-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "avatar",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/avatar-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "avatar",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/avatar-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "avatar",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/avatar-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "avatar",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/avatar-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "avatar",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/avatar-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "avatar",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/avatar-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "avatar",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/avatar-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "avatar",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/avatar-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "avatar",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/avatar-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "avatar",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/avatar-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "avatar",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/avatar-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "avatar",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/avatar-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "badge",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/badge-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "badge",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/badge-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "badge",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/badge-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "badge",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/badge-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "badge",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/badge-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "badge",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/badge-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "badge",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/badge-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "badge",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/badge-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "badge",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/badge-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "badge",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/badge-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "badge",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/badge-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "badge",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/badge-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "bulletList",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/bulletList-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "bulletList",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/bulletList-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "bulletList",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/bulletList-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "bulletList",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/bulletList-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "bulletList",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/bulletList-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "bulletList",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/bulletList-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "bulletList",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/bulletList-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "bulletList",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/bulletList-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "bulletList",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/bulletList-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "bulletList",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/bulletList-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "bulletList",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/bulletList-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "bulletList",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/bulletList-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "button",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/button-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "button",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/button-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "button",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/button-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "button",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/button-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "button",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/button-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "button",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/button-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "button",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/button-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "button",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/button-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "button",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/button-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "button",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/button-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "button",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/button-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "button",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/button-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "card",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/card-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "card",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/card-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "card",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/card-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "card",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/card-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "card",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/card-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "card",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/card-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "card",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/card-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "card",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/card-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "card",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/card-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "card",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/card-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "card",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/card-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "card",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/card-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "checkbox",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/checkbox-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "checkbox",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/checkbox-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "checkbox",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/checkbox-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "checkbox",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/checkbox-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "checkbox",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/checkbox-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "checkbox",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/checkbox-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "checkbox",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/checkbox-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "checkbox",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/checkbox-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "checkbox",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/checkbox-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "checkbox",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/checkbox-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "checkbox",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/checkbox-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "checkbox",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/checkbox-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "divider",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/divider-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "divider",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/divider-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "divider",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/divider-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "divider",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/divider-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "divider",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/divider-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "divider",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/divider-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "divider",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/divider-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "divider",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/divider-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "divider",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/divider-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "divider",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/divider-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "divider",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/divider-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "divider",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/divider-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "form",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/form-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "form",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/form-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "form",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/form-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "form",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/form-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "form",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/form-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "form",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/form-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "form",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/form-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "form",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/form-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "form",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/form-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "form",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/form-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "form",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/form-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "form",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/form-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "icon",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/icon-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "icon",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/icon-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "icon",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/icon-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "icon",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/icon-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "icon",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/icon-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "icon",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/icon-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "icon",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/icon-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "icon",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/icon-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "icon",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/icon-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "icon",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/icon-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "icon",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/icon-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "icon",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/icon-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "label",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/label-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "label",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/label-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "label",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/label-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "label",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/label-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "label",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/label-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "label",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/label-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "label",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/label-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "label",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/label-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "label",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/label-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "label",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/label-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "label",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/label-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "label",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/label-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "link",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/link-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "link",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/link-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "link",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/link-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "link",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/link-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "link",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/link-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "link",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/link-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "link",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/link-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "link",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/link-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "link",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/link-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "link",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/link-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "link",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/link-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "link",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/link-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "list",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/list-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "list",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/list-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "list",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/list-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "list",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/list-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "list",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/list-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "list",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/list-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "list",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/list-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "list",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/list-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "list",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/list-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "list",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/list-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "list",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/list-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "list",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/list-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "menuButton",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/menuButton-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "menuButton",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/menuButton-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "menuButton",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/menuButton-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "menuButton",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/menuButton-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "menuButton",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/menuButton-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "menuButton",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/menuButton-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "menuButton",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/menuButton-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "menuButton",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/menuButton-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "menuButton",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/menuButton-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "menuButton",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/menuButton-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "menuButton",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/menuButton-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "menuButton",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/menuButton-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "navigationBar",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/navigationBar-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "navigationBar",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/navigationBar-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "navigationBar",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/navigationBar-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "navigationBar",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/navigationBar-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "navigationBar",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/navigationBar-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "navigationBar",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/navigationBar-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "navigationBar",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/navigationBar-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "navigationBar",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/navigationBar-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "navigationBar",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/navigationBar-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "navigationBar",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/navigationBar-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "navigationBar",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/navigationBar-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "navigationBar",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/navigationBar-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "photoPicker",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/photoPicker-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "photoPicker",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/photoPicker-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "photoPicker",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/photoPicker-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "photoPicker",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/photoPicker-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "photoPicker",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/photoPicker-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "photoPicker",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/photoPicker-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "photoPicker",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/photoPicker-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "picker",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/picker-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "picker",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/picker-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "picker",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/picker-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "picker",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/picker-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "picker",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/picker-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "picker",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/picker-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "picker",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/picker-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "picker",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/picker-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "picker",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/picker-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "picker",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/picker-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "picker",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/picker-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "picker",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/picker-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "progressView",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/progressView-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "progressView",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/progressView-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "progressView",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/progressView-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "progressView",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/progressView-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "progressView",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/progressView-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "progressView",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/progressView-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "progressView",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/progressView-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "progressView",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/progressView-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "progressView",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/progressView-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "progressView",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/progressView-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "progressView",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/progressView-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "progressView",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/progressView-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "radio",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/radio-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "radio",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/radio-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "radio",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/radio-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "radio",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/radio-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "radio",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/radio-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "radio",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/radio-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "radio",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/radio-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "radio",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/radio-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "radio",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/radio-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "radio",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/radio-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "radio",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/radio-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "radio",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/radio-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "searchField",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/searchField-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "searchField",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/searchField-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "searchField",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/searchField-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "searchField",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/searchField-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "searchField",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/searchField-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "searchField",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/searchField-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "searchField",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/searchField-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "searchField",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/searchField-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "searchField",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/searchField-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "searchField",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/searchField-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "searchField",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/searchField-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "searchField",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/searchField-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "secureField",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/secureField-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "secureField",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/secureField-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "secureField",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/secureField-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "secureField",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/secureField-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "secureField",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/secureField-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "secureField",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/secureField-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "secureField",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/secureField-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "secureField",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/secureField-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "secureField",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/secureField-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "secureField",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/secureField-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "secureField",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/secureField-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "secureField",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/secureField-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "segmentedControl",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/segmentedControl-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "segmentedControl",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/segmentedControl-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "segmentedControl",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/segmentedControl-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "segmentedControl",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/segmentedControl-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "segmentedControl",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/segmentedControl-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "segmentedControl",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/segmentedControl-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "segmentedControl",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/segmentedControl-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "segmentedControl",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/segmentedControl-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "segmentedControl",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/segmentedControl-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "segmentedControl",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/segmentedControl-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "segmentedControl",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/segmentedControl-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "sidebar",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/sidebar-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "sidebar",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/sidebar-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "sidebar",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/sidebar-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "sidebar",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/sidebar-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "sidebar",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/sidebar-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "sidebar",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/sidebar-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "sidebar",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/sidebar-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "sidebar",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/sidebar-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "sidebar",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/sidebar-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "sidebar",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/sidebar-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "slider",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/slider-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "slider",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/slider-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "slider",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/slider-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "slider",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/slider-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "slider",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/slider-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "slider",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/slider-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "slider",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/slider-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "slider",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/slider-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "slider",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/slider-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "slider",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/slider-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "stepper",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/stepper-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "stepper",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/stepper-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "stepper",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/stepper-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "stepper",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/stepper-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "stepper",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/stepper-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "stepper",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/stepper-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "stepper",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/stepper-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "stepper",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/stepper-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "stepper",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/stepper-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "stepper",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/stepper-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "stepper",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/stepper-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "stepper",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/stepper-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "tabBar",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/tabBar-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "tabBar",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/tabBar-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "tabBar",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/tabBar-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "tabBar",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/tabBar-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "tabBar",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/tabBar-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "tabBar",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/tabBar-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "tabBar",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/tabBar-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "tabBar",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/tabBar-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "tabBar",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/tabBar-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "tabBar",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/tabBar-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "tabBar",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/tabBar-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "tag",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/tag-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "tag",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/tag-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "tag",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/tag-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "tag",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/tag-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "tag",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/tag-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "tag",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/tag-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "tag",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/tag-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "tag",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/tag-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "tag",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/tag-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "tag",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/tag-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "tag",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/tag-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "tag",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/tag-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "textEditor",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/textEditor-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "textEditor",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/textEditor-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "textEditor",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/textEditor-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "textEditor",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/textEditor-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "textEditor",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/textEditor-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "textEditor",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/textEditor-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "textEditor",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/textEditor-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "textEditor",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/textEditor-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "textEditor",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/textEditor-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "textEditor",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/textEditor-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "textEditor",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/textEditor-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "textEditor",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/textEditor-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "textField",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/textField-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "textField",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/textField-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "textField",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/textField-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "textField",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/textField-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "textField",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/textField-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "textField",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/textField-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "textField",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/textField-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "textField",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/textField-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "textField",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/textField-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "textField",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/textField-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "textField",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/textField-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "textField",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/textField-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "toast",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/toast-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "toast",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/toast-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "toast",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/toast-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "toast",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/toast-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "toast",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/toast-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "toast",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/toast-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "toast",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/toast-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "toast",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/toast-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "toast",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/toast-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "toast",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/toast-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "toast",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/toast-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "toast",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/toast-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "toggle",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/toggle-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "toggle",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/toggle-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "toggle",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/toggle-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "toggle",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/toggle-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "toggle",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/toggle-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "toggle",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/toggle-brand-dark.png"
     },
     {
+      "kind": "platform",
+      "component": "toggle",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/toggle-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "toggle",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/toggle-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "toggle",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/toggle-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "toggle",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/toggle-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "toggle",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/toggle-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "toggle",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/toggle-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "toolbar",
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/toolbar-system-light.png"
     },
     {
+      "kind": "theme",
       "component": "toolbar",
       "theme": "system",
       "colorScheme": "dark",
       "file": "snapshots/toolbar-system-dark.png"
     },
     {
+      "kind": "theme",
       "component": "toolbar",
       "theme": "highContrast",
       "colorScheme": "light",
       "file": "snapshots/toolbar-highContrast-light.png"
     },
     {
+      "kind": "theme",
       "component": "toolbar",
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/toolbar-highContrast-dark.png"
     },
     {
+      "kind": "theme",
       "component": "toolbar",
       "theme": "brand",
       "colorScheme": "light",
       "file": "snapshots/toolbar-brand-light.png"
     },
     {
+      "kind": "theme",
       "component": "toolbar",
       "theme": "brand",
       "colorScheme": "dark",
       "file": "snapshots/toolbar-brand-dark.png"
+    },
+    {
+      "kind": "platform",
+      "component": "toolbar",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/toolbar-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "toolbar",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/toolbar-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "toolbar",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/toolbar-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "toolbar",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/toolbar-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "toolbar",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/toolbar-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "toolbar",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/toolbar-system-light.png"
     }
   ]
 }
