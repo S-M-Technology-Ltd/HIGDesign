@@ -2,6 +2,11 @@ import HIGDesign
 import SwiftUI
 
 struct ShowcaseActivityIndicatorView: View {
+    private let customStyles: [HIGActivityIndicatorStyle] = [
+        .orbital, .pulsing, .arcs, .rotatingDots, .flickeringDots,
+        .scalingDots, .opacityDots, .equalizer, .growingCircle, .gradient,
+    ]
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
@@ -25,8 +30,9 @@ struct ShowcaseActivityIndicatorView: View {
                         .foregroundStyle(.secondary)
 
                     VStack(alignment: .leading, spacing: 20) {
-                        HIGActivityIndicator("Orbital", size: .medium, style: .orbital)
-                        HIGActivityIndicator("Pulsing", size: .medium, style: .pulsing)
+                        ForEach(customStyles, id: \.self) { style in
+                            HIGActivityIndicator(style.showcaseLabel, size: .medium, style: style)
+                        }
                     }
                 }
 
@@ -54,6 +60,24 @@ struct ShowcaseActivityIndicatorView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .redacted(reason: .placeholder)
         .higShimmer()
+    }
+}
+
+private extension HIGActivityIndicatorStyle {
+    var showcaseLabel: String {
+        switch self {
+        case .system: "System"
+        case .orbital: "Orbital"
+        case .pulsing: "Pulsing"
+        case .arcs: "Arcs"
+        case .rotatingDots: "Rotating dots"
+        case .flickeringDots: "Flickering dots"
+        case .scalingDots: "Scaling dots"
+        case .opacityDots: "Opacity dots"
+        case .equalizer: "Equalizer"
+        case .growingCircle: "Growing circle"
+        case .gradient: "Gradient"
+        }
     }
 }
 

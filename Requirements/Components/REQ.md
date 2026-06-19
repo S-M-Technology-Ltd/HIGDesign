@@ -44,7 +44,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 - `HIGBadge`
 - `HIGTag`
 - `HIGProgressView`
-- `HIGActivityIndicator` with styles: `system` (default), `orbital`, `pulsing`
+- `HIGActivityIndicator` with styles: `system` (default), `orbital`, `pulsing`, `arcs`, `rotatingDots`, `flickeringDots`, `scalingDots`, `opacityDots`, `equalizer`, `growingCircle`, `gradient`
 - `HIGAlert`
 - `HIGToast`
 
