@@ -14,6 +14,7 @@ Cross-cutting SwiftUI view modifiers that apply HIG tokens and accessibility beh
 - Elevation: `higElevation`, `higShadow`
 - Accessibility: `higAccessibilityLabel`, `higAccessibilityHint`, `higAccessibilityHidden`
 - Motion: `higAnimation`, `higReduceMotionAware`
+- Loading placeholders: `higShimmer` with mask, overlay, and background modes
 
 ### Behavior
 

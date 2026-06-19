@@ -53,6 +53,7 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGProgressView``
 - ``HIGActivityIndicator``
 - ``HIGActivityIndicatorSize``
+- ``HIGActivityIndicatorStyle``
 - ``HIGAlert``
 - ``HIGAlertButtonRole``
 - ``HIGAlertBanner``
@@ -91,3 +92,6 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 ## Modifiers
 
 - ``higPadding(_:)``
+- ``higShimmer(isActive:mode:)``
+- ``HIGShimmerMode``
+- ``HIGShimmerTokens``
