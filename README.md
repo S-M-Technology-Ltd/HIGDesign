@@ -1,6 +1,6 @@
 # HIGDesign
 
-**v1.0.0** — A SwiftUI design system that follows Apple Human Interface Guidelines across iOS, iPadOS, macOS, visionOS, tvOS, and watchOS.
+**v1.0.1** — A SwiftUI design system that follows Apple Human Interface Guidelines across iOS, iPadOS, macOS, visionOS, tvOS, and watchOS.
 
 [![Swift 6](https://img.shields.io/badge/Swift-6-orange.svg)](Package.swift)
 [![Platforms](https://img.shields.io/badge/Platforms-iOS%20·%20iPadOS%20·%20macOS%20·%20visionOS%20·%20tvOS%20·%20watchOS-blue.svg)](Package.swift)
@@ -34,7 +34,7 @@ struct MyApp: App {
 }
 ```
 
-Add the package in Xcode: **File → Add Package Dependencies** → `https://github.com/S-M-Technology-Ltd/HIGDesign.git` (from `1.0.0`).
+Add the package in Xcode: **File → Add Package Dependencies** → `https://github.com/S-M-Technology-Ltd/HIGDesign.git` (from `1.0.1`).
 
 Full integration guide: **[Docs/HOW_TO_USE.md](Docs/HOW_TO_USE.md)**
 

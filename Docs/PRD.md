@@ -70,11 +70,18 @@ HIGDesign synthesizes architecture and patterns from:
 | `HIGDesignPlatform` | Idiom and capability adapters |
 | `HIGDesignBridging` | Optional Cocoa bridges |
 
-## Current Milestone: v1.0.0 (released)
+## Current Milestone: v1.0.1 (released)
 
-v1.0.0 is the first stable public release (2026-06-19).
+v1.0.1 is a patch release (2026-06-19) fixing PhotoPicker build warnings, sample-app warnings, and showcase snapshot rendering.
 
-Delivered:
+Delivered in v1.0.1:
+
+- Reliable headless showcase snapshot capture with correctly framed, non-blank PNGs
+- Compact platform snapshot canvases for simple components
+- PhotoPicker iOS build and `ViewBuilder` availability warning fixes
+- Sample app `AccentColor` asset and warning-free iOS build
+
+v1.0.0 (2026-06-19) delivered:
 
 - 33 `HIG*` SwiftUI components with design-token enforcement across the catalog
 - API stability policy and semantic versioning from v1.0.0

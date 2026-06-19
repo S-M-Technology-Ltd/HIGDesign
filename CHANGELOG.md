@@ -2,6 +2,25 @@
 
 All notable changes to HIGDesign are documented here. The project follows [Semantic Versioning](https://semver.org/) from v1.0.0 onward.
 
+## 1.0.1 — 2026-06-19
+
+Patch release fixing PhotoPicker build issues, sample-app warnings, and showcase snapshot rendering.
+
+### Fixed
+
+- PhotoPicker iOS build: missing `HIGTokensComponent` imports in showcase and preview views
+- `ViewBuilder` `buildLimitedAvailability` warnings in PhotoPicker chrome and album list
+- Ten `HIGDesignSample` build warnings (deprecated `onChange`, redundant `await`, Sendable PhotoKit capture, unused values)
+- Showcase snapshots rendering as blank/transparent PNGs in headless capture
+- Showcase snapshot layout painting content in the bottom half of the canvas with large black margins
+- Missing `AccentColor` asset in the sample app catalog
+
+### Changed
+
+- Showcase snapshot capture uses an off-screen `NSWindow` + `NSHostingView` renderer
+- Platform showcase snapshots for simple components use a compact 520pt canvas height
+- All 385 showcase snapshots re-captured with correct framing and theme backgrounds
+
 ## 1.0.0 — 2026-06-19
 
 First stable public release.
