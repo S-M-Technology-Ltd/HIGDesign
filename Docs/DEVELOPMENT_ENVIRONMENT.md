@@ -25,11 +25,10 @@ Scripts/verify_xcode_previews_present.sh
 Scripts/verify_view_naming.sh
 ```
 
-When package targets exist:
-
 ```bash
 swift build --package-path .
 swift test --package-path .
+Scripts/build_all_platforms.sh
 ```
 
 ## Agent Workflow
@@ -41,4 +40,4 @@ swift test --package-path .
 
 ## Current Milestone
 
-Governance foundation only. Package build commands become mandatory once `Package.swift` and module targets land.
+Phase 1 SPM skeleton. All platform builds and tests are mandatory before merging UI changes.

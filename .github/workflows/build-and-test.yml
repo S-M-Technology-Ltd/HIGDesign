@@ -1,0 +1,23 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [develop, main]
+  pull_request:
+    branches: [develop, main]
+
+jobs:
+  build-test:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify docs and scripts
+        run: |
+          Scripts/verify_requirements_present.sh
+          Scripts/verify_ui_guidelines_present.sh
+          Scripts/verify_xcode_previews_present.sh
+          Scripts/verify_view_naming.sh
+      - name: Swift build (all platforms)
+        run: Scripts/build_all_platforms.sh
+      - name: Swift test (macOS)
+        run: swift test --package-path .

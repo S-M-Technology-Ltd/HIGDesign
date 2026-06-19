@@ -23,7 +23,10 @@ if ((${#existing_paths[@]} == 0)); then
     exit 0
 fi
 
-mapfile -t swift_files < <(
+swift_files=()
+while IFS= read -r file; do
+    swift_files+=("$file")
+done < <(
     rg -l --glob '*.swift' \
         '^[[:space:]]*(private[[:space:]]+|fileprivate[[:space:]]+|internal[[:space:]]+|public[[:space:]]+)?struct[[:space:]]+[A-Za-z_][A-Za-z0-9_]*[^:]*:[^{]*\bView\b' \
         "${existing_paths[@]}" 2>/dev/null | sort || true

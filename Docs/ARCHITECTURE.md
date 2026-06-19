@@ -63,4 +63,22 @@ Shared platform checks live in `HIGPlatform` so components do not accumulate cop
 
 ## Current State
 
-The repository is in the governance-foundation milestone. Package targets and source modules are planned but not yet implemented.
+Phase 1 SPM skeleton is implemented and builds on all six platforms (macOS, iOS, tvOS, watchOS, visionOS).
+
+| Module | Status |
+|--------|--------|
+| `HIGFoundations` | Implemented — idioms, size classes, logging, accessibility helpers, WCAG contrast |
+| `HIGTokensRaw` | Implemented — spacing, radius, motion primitives |
+| `HIGTokensSemantic` | Implemented — color, typography, spacing protocols; platform color fallbacks |
+| `HIGTokensComponent` | Implemented — button token protocol |
+| `HIGThemesContract` | Implemented — `HIGTheme`, environment key, `HIGThemeableView` |
+| `HIGThemesSystem` | Implemented — system and high-contrast themes |
+| `HIGPlatform` | Implemented — `HIGPlatformCapabilities` |
+| `HIGComponents` | Implemented — `HIGButton` with roles and sizes |
+| `HIGModifiers` | Implemented — `higPadding` modifier |
+| `HIGDesign` | Implemented — umbrella re-exports |
+| `HIGBridging` | Deferred — optional Cocoa bridges for a later phase |
+
+Verification: `Scripts/build_all_platforms.sh`, `swift test`, and all four governance guards pass locally.
+
+Next phase: showcase app, additional components (`HIGTextField`, `HIGToggle`), DocC, and optional `HIGBridging`.
