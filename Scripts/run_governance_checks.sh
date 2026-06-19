@@ -27,7 +27,6 @@ run_check verify_photo_picker_token_usage.sh "Photo picker tokens"
 run_check verify_no_committed_signing.sh "Committed signing"
 run_check verify_showcase_coverage.sh "Showcase coverage"
 run_check verify_docc_coverage.sh "DocC coverage"
-run_check verify_showcase_snapshots_present.sh "Showcase snapshot manifest"
 
 echo ""
 echo "Governance checks passed."

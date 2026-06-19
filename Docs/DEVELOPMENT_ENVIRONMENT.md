@@ -35,7 +35,11 @@ Scripts/run_pr_checks.sh
 
 # Or run phases separately:
 Scripts/run_governance_checks.sh   # Linux or macOS
-Scripts/run_macos_checks.sh        # macOS only (snapshots, builds, sample app)
+Scripts/run_macos_checks.sh        # macOS only (builds, tests, sample app)
+
+Showcase snapshot capture is manual — for README and GitHub Pages images only:
+
+Scripts/capture_showcase_snapshots.sh
 ```
 
 Individual guards remain available under `Scripts/verify_*.sh` when debugging a single failure.
@@ -49,7 +53,7 @@ Individual guards remain available under `Scripts/verify_*.sh` when debugging a 
 
 ## Current Milestone
 
-Phase 13 v1.0.0 preparation. All platform builds, tests, showcase build, coverage guards, DocC coverage, automated snapshot capture (including brand theme variants), and snapshot diff verification are mandatory before merging UI changes.
+Phase 13 v1.0.0 preparation. PR Checks (`Scripts/run_pr_checks.sh`) covers governance guards, all-platform builds, tests, and the sample app. Regenerate showcase PNGs manually when updating README or Pages imagery.
 
 ## Xcode
 

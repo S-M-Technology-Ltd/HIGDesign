@@ -259,7 +259,9 @@ Governance-only (Linux or macOS):
 
 Scripts/run_governance_checks.sh
 
-macOS-only (snapshots, multi-platform build, sample app):
+macOS-only (multi-platform build, tests, sample app):
+
+Showcase snapshot capture (`Scripts/capture_showcase_snapshots.sh`) is manual for README/Pages images — not part of PR Checks.
 
 Scripts/run_macos_checks.sh
 

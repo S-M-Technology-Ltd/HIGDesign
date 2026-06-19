@@ -15,7 +15,7 @@
 - [ ] Branched from `develop` (not committing directly to `develop`)
 - [ ] `Scripts/run_pr_checks.sh` passes locally (or `run_governance_checks.sh` + `run_macos_checks.sh` on macOS)
 - [ ] New or changed public APIs have DocC entries and token/tests/showcase coverage where applicable
-- [ ] Showcase snapshots updated when UI changed (`Scripts/capture_showcase_snapshots.sh`)
+- [ ] README/showcase images updated when UI changed (`Scripts/capture_showcase_snapshots.sh`, manual — not run in CI)
 - [ ] UI changes include HIG checklist notes (if applicable)
 - [ ] `Docs/PRD.md` / `Requirements/*/REQ.md` updated (if public API or behavior changed)
 
