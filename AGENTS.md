@@ -16,6 +16,8 @@ Project Shape
     * SwiftUI
     * Swift Package Manager
     * DocC
+* Package sources and tests must not import or call UIKit. Use SwiftUI-only APIs.
+* Minimum supported OS releases are the latest three calendar years: iOS 18, iPadOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2.
 * HIGDesign is a reusable design system package, not an application shell.
 * Do not add a custom backend, web app, React Native, Flutter, Electron, Firebase, Supabase, or cross-platform UI unless explicitly requested.
 * Do not add TCA, SwiftData, CloudKit, or StoreKit unless explicitly requested.
@@ -183,6 +185,7 @@ Bridging Rules
 * Bridging belongs in `HIGBridging` and is optional for package consumers.
 * Bridged controls must still resolve colors, typography, spacing, and motion from HIG tokens.
 * Do not expose raw UIKit or AppKit types in public HIG component APIs.
+* Do not add UIKit representables or UIKit imports anywhere in the package.
 
 Requirements Documentation Rules
 

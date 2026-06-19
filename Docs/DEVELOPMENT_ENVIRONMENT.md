@@ -5,6 +5,17 @@
 - macOS with Xcode 16 or newer
 - Swift 6 language mode
 - Swift Package Manager
+- SwiftUI-only package sources (no UIKit)
+
+## Supported OS Releases
+
+Minimum deployment targets cover the latest three calendar years:
+
+- iOS 18 / iPadOS 18
+- macOS 15
+- tvOS 18
+- watchOS 11
+- visionOS 2
 
 ## Repository Layout
 
@@ -23,6 +34,7 @@ Scripts/verify_requirements_present.sh
 Scripts/verify_ui_guidelines_present.sh
 Scripts/verify_xcode_previews_present.sh
 Scripts/verify_view_naming.sh
+Scripts/verify_no_uikit.sh
 ```
 
 ```bash

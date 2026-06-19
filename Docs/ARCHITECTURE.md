@@ -2,7 +2,7 @@
 
 ## Overview
 
-HIGDesign is a modular Swift Package that delivers an Apple HIG-aligned design system for SwiftUI apps across six Apple platforms.
+HIGDesign is a modular Swift Package that delivers an Apple HIG-aligned design system for SwiftUI apps across six Apple platforms. The package is SwiftUI-only and does not use UIKit. Minimum OS releases cover the latest three calendar years (iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2).
 
 ## Module Graph
 
@@ -48,7 +48,7 @@ Apps inject themes with `HIGThemeableView`. Components read `@Environment(\.higT
 
 ### Native SwiftUI first
 
-Bridging is optional and isolated. Native SwiftUI is the default component implementation strategy.
+All implementation is SwiftUI-native. UIKit imports and representables are prohibited. Optional bridging, if added later, must use SwiftUI-only patterns.
 
 ### Platform capability model
 
@@ -67,9 +67,9 @@ Phase 1 SPM skeleton is implemented and builds on all six platforms (macOS, iOS,
 
 | Module | Status |
 |--------|--------|
-| `HIGFoundations` | Implemented — idioms, size classes, logging, accessibility helpers, WCAG contrast |
+| `HIGFoundations` | Implemented — idioms, size classes, logging, `HIGAccessibilityPreferences`, WCAG contrast |
 | `HIGTokensRaw` | Implemented — spacing, radius, motion primitives |
-| `HIGTokensSemantic` | Implemented — color, typography, spacing protocols; platform color fallbacks |
+| `HIGTokensSemantic` | Implemented — color, typography, spacing protocols; SwiftUI semantic platform colors |
 | `HIGTokensComponent` | Implemented — button token protocol |
 | `HIGThemesContract` | Implemented — `HIGTheme`, environment key, `HIGThemeableView` |
 | `HIGThemesSystem` | Implemented — system and high-contrast themes |
@@ -79,6 +79,6 @@ Phase 1 SPM skeleton is implemented and builds on all six platforms (macOS, iOS,
 | `HIGDesign` | Implemented — umbrella re-exports |
 | `HIGBridging` | Deferred — optional Cocoa bridges for a later phase |
 
-Verification: `Scripts/build_all_platforms.sh`, `swift test`, and all four governance guards pass locally.
+Verification: `Scripts/build_all_platforms.sh`, `swift test`, and all governance guards (including `verify_no_uikit.sh`) pass locally.
 
 Next phase: showcase app, additional components (`HIGTextField`, `HIGToggle`), DocC, and optional `HIGBridging`.

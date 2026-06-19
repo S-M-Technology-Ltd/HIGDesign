@@ -4,7 +4,7 @@ Module-level business requirements with per-platform sections (`### iOS`, `### i
 
 ## Summary
 
-HIGDesign is a native Apple-platform SwiftUI design system library for building applications that follow Apple Human Interface Guidelines consistently across iOS, iPadOS, macOS, visionOS, tvOS, and watchOS.
+HIGDesign is a native Apple-platform SwiftUI design system library for building applications that follow Apple Human Interface Guidelines consistently across iOS, iPadOS, macOS, visionOS, tvOS, and watchOS. The package is SwiftUI-only and supports OS releases from the latest three calendar years.
 
 The library provides:
 
@@ -70,19 +70,17 @@ HIGDesign synthesizes architecture and patterns from:
 | `HIGDesignPlatform` | Idiom and capability adapters |
 | `HIGDesignBridging` | Optional Cocoa bridges |
 
-## Current Milestone: Governance Foundation
+## Current Milestone: Phase 1 Foundation
 
-The current milestone establishes project rules before code implementation.
+Phase 1 delivers the SPM skeleton, governance guards, and first proof component.
 
 This milestone includes:
 
-- `AGENTS.md`
-- `Docs/AGENT_RULES.md`
-- `CODING_STANDARDS.md`
-- `Docs/PRD.md`
-- `Requirements/` BA documents
-- `Docs/UI_DESIGN_GUIDELINES.md`
-- verification scripts for requirements and UI guidelines
+- layered SPM modules from `HIGFoundations` through `HIGDesign`
+- SwiftUI-only implementation policy (no UIKit)
+- minimum OS releases from the latest three calendar years
+- `HIGButton`, system themes, and token infrastructure
+- CI matrix for six platforms
 
 This milestone does not include:
 
@@ -92,16 +90,13 @@ This milestone does not include:
 - remote third-party dependencies
 - custom brand themes beyond system defaults
 
-## Next Milestone: Phase 0 and Phase 1 Foundation
+## Next Milestone: Phase 2 Components and Showcase
 
 The next milestone delivers:
 
-- SPM skeleton and CI matrix for six platforms
-- `HIGFoundations`
-- `HIGTokensRaw`
-- `HIGThemesContract`
-- `HIGThemesSystem`
-- first proof component: `HIGButton`
+- Showcase app with component gallery
+- additional components such as `HIGTextField` and `HIGToggle`
+- DocC documentation
 
 ## Success Metrics
 

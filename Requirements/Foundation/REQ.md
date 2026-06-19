@@ -14,7 +14,8 @@ Cross-cutting utilities that every HIGDesign module depends on: platform idioms,
 
 ### Accessibility
 
-- Expose helpers for Reduce Motion, Increase Contrast, Bold Text, and Dynamic Type size.
+- Expose `HIGAccessibilityPreferences` resolved from SwiftUI environment values for Reduce Motion, Increase Contrast, and Dynamic Type size.
+- Do not use UIKit accessibility APIs.
 - Provide WCAG contrast checking utilities for semantic color pairs.
 - Define minimum touch-target helpers used by interactive components.
 

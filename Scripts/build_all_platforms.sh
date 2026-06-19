@@ -12,10 +12,10 @@ build_platform() {
     swift build --package-path . --sdk "$sdk" --triple "$triple"
 }
 
-build_platform "macOS" "$(xcrun --sdk macosx --show-sdk-path)" "$(uname -m)-apple-macosx13.0"
-build_platform "iOS" "$(xcrun --sdk iphoneos --show-sdk-path)" "arm64-apple-ios16.0"
-build_platform "tvOS" "$(xcrun --sdk appletvos --show-sdk-path)" "arm64-apple-tvos16.0"
-build_platform "watchOS" "$(xcrun --sdk watchos --show-sdk-path)" "arm64_32-apple-watchos9.0"
-build_platform "visionOS" "$(xcrun --sdk xros --show-sdk-path)" "arm64-apple-xros1.0"
+build_platform "macOS" "$(xcrun --sdk macosx --show-sdk-path)" "$(uname -m)-apple-macosx15.0"
+build_platform "iOS" "$(xcrun --sdk iphoneos --show-sdk-path)" "arm64-apple-ios18.0"
+build_platform "tvOS" "$(xcrun --sdk appletvos --show-sdk-path)" "arm64-apple-tvos18.0"
+build_platform "watchOS" "$(xcrun --sdk watchos --show-sdk-path)" "arm64_32-apple-watchos11.0"
+build_platform "visionOS" "$(xcrun --sdk xros --show-sdk-path)" "arm64-apple-xros2.0"
 
 echo "All platform builds succeeded."

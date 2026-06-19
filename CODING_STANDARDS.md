@@ -30,6 +30,8 @@ Strict Code Rules
 * Maintain high test coverage for token resolution, theme behavior, and component state logic.
 * Do not scatter raw `print` statements through production code.
 * Use modern SwiftUI and adaptive layouts for all supported Apple platforms.
+* Do not import or call UIKit APIs in package sources or tests. Use SwiftUI environment values and semantic `Color` initializers instead.
+* Support only OS releases from the latest three calendar years. Current minimums: iOS 18, iPadOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2.
 
 Apple HIG UI Standards
 
@@ -86,6 +88,7 @@ Bridging Rules
 * Native SwiftUI is the default.
 * Bridged controls must still use HIG tokens for styling.
 * Do not leak UIKit or AppKit types through public HIG APIs.
+* Bridging must remain SwiftUI-native. UIKit representables are not permitted.
 
 Swift Concurrency Rules
 
@@ -131,6 +134,8 @@ Scripts/verify_ui_guidelines_present.sh
 Scripts/verify_xcode_previews_present.sh
 
 Scripts/verify_view_naming.sh
+
+Scripts/verify_no_uikit.sh
 
 swift build --package-path .
 

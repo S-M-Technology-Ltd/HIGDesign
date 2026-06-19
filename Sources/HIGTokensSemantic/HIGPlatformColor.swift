@@ -3,11 +3,11 @@ import SwiftUI
 enum HIGPlatformColor {
     static var systemBackground: Color {
         #if os(macOS)
-        Color(nsColor: .windowBackgroundColor)
+        Color(.windowBackgroundColor)
         #elseif os(iOS) || os(visionOS)
-        Color(uiColor: .systemBackground)
+        Color(.systemBackground)
         #elseif os(tvOS)
-        Color(uiColor: .black)
+        Color.black
         #else
         Color.black
         #endif
@@ -15,11 +15,11 @@ enum HIGPlatformColor {
 
     static var secondarySystemBackground: Color {
         #if os(macOS)
-        Color(nsColor: .controlBackgroundColor)
+        Color(.controlBackgroundColor)
         #elseif os(iOS) || os(visionOS)
-        Color(uiColor: .secondarySystemBackground)
+        Color(.secondarySystemBackground)
         #elseif os(tvOS)
-        Color(uiColor: .darkGray)
+        Color(white: 0.15)
         #else
         Color(white: 0.12)
         #endif
@@ -27,11 +27,11 @@ enum HIGPlatformColor {
 
     static var tertiarySystemFill: Color {
         #if os(macOS)
-        Color(nsColor: .quaternaryLabelColor).opacity(0.25)
+        Color(.tertiarySystemFill)
         #elseif os(iOS) || os(visionOS)
-        Color(uiColor: .tertiarySystemFill)
+        Color(.tertiarySystemFill)
         #elseif os(tvOS)
-        Color(uiColor: .gray).opacity(0.35)
+        Color.gray.opacity(0.35)
         #else
         Color.gray.opacity(0.25)
         #endif
@@ -39,9 +39,9 @@ enum HIGPlatformColor {
 
     static var separator: Color {
         #if os(macOS)
-        Color(nsColor: .separatorColor)
+        Color(.separatorColor)
         #elseif os(iOS) || os(visionOS) || os(tvOS)
-        Color(uiColor: .separator)
+        Color(.separator)
         #else
         Color.gray.opacity(0.4)
         #endif

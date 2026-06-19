@@ -12,7 +12,7 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - Categories include color, typography, spacing, radius, border, elevation, opacity, motion, and grid.
 - Raw spacing uses a 4pt base grid.
 - Raw typography maps to system text styles, not custom font families.
-- Raw colors reference semantic system colors or dynamic equivalents.
+- Raw colors reference SwiftUI semantic colors or dynamic equivalents. UIKit color APIs are not permitted.
 
 ### Semantic tokens
 

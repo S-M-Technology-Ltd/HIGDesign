@@ -19,8 +19,9 @@ Platform adapters, capability detection, and layout helpers for all supported Ap
 
 ### Type abstraction
 
-- Platform bridging types follow the `AppKitOrUIKit` abstraction pattern from SwiftUIX.
+- Platform helpers must use SwiftUI-only APIs.
 - Public HIG APIs must not expose raw UIKit or AppKit types.
+- Minimum supported OS releases are the latest three calendar years.
 
 ## Requirements
 

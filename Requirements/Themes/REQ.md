@@ -36,7 +36,7 @@ Theme contract, environment injection, and built-in system themes for HIGDesign.
 
 ### iOS
 
-- `HIGThemeableView` injects size class environment values on UIKit-backed platforms.
+- `HIGThemeableView` injects size class environment values from SwiftUI size classes.
 
 ### iPadOS
 

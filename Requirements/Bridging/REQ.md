@@ -2,7 +2,7 @@
 
 ## Summary
 
-Optional Cocoa bridges for SwiftUI gaps. Bridging is a separate product and must not be required for core HIG components unless explicitly approved.
+Optional SwiftUI bridges for platform gaps. Bridging is a separate product and must not be required for core HIG components unless explicitly approved. UIKit representables are not permitted.
 
 ## All platforms
 
@@ -30,7 +30,7 @@ Optional Cocoa bridges for SwiftUI gaps. Bridging is a separate product and must
 
 ### iOS
 
-- Bridges may use UIKit representables where needed.
+- Bridges must use SwiftUI-native APIs only.
 
 ### iPadOS
 

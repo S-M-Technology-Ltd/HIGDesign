@@ -5,11 +5,11 @@ import PackageDescription
 let package = Package(
     name: "HIGDesign",
     platforms: [
-        .iOS(.v16),
-        .macOS(.v13),
-        .visionOS(.v1),
-        .tvOS(.v16),
-        .watchOS(.v9),
+        .iOS(.v18),
+        .macOS(.v15),
+        .visionOS(.v2),
+        .tvOS(.v18),
+        .watchOS(.v11),
     ],
     products: [
         .library(name: "HIGDesign", targets: ["HIGDesign"]),
