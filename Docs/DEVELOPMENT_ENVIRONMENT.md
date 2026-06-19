@@ -37,6 +37,7 @@ Scripts/verify_view_naming.sh
 Scripts/verify_component_token_usage.sh
 Scripts/verify_photo_picker_token_usage.sh
 Scripts/verify_no_uikit.sh
+Scripts/verify_no_gcd.sh
 Scripts/verify_showcase_coverage.sh
 Scripts/verify_docc_coverage.sh
 Scripts/verify_showcase_snapshots_present.sh

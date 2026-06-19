@@ -131,7 +131,7 @@ Swift Concurrency Rules
 * Prefer `Sendable` token structs and protocol requirements where practical.
 * Mark UI-facing theme and environment types with `@MainActor` when they touch SwiftUI state.
 * Use `async`/`await` only where side effects exist; token and component rendering should stay synchronous unless bridging requires otherwise.
-* Avoid GCD and `DispatchQueue` unless an Apple API explicitly requires it.
+* Do not use GCD or `DispatchQueue`; use Swift concurrency (`Task`, `async`/`await`, actors) instead. Run `Scripts/verify_no_gcd.sh`.
 
 HIGFoundations Rules
 
