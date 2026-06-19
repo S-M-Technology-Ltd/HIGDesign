@@ -2,9 +2,9 @@ import Testing
 
 @Test
 func showcaseCatalogIncludesPhaseElevenComponents() {
-    #expect(ShowcaseCatalog.phaseElevenComponentCount == 32)
+    #expect(ShowcaseCatalog.componentCount == 33)
 }
 
 private enum ShowcaseCatalog {
-    static let phaseElevenComponentCount = 32
+    static let componentCount = 33
 }

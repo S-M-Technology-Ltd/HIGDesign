@@ -8,7 +8,7 @@ EXPECTED=(
     button textField toggle divider progressView card tabBar toolbar
     alert toast sidebar navigationBar label badge activityIndicator list form
     checkbox radio segmentedControl slider secureField searchField picker
-    icon avatar link bulletList textEditor stepper menuButton tag
+    icon avatar link bulletList textEditor stepper menuButton tag instagramPhotosPicker
 )
 
 missing=()
@@ -64,6 +64,7 @@ showcase_key_for() {
         HIGToolbar) echo toolbar ;;
         HIGToolbarTextAction) echo toolbar ;;
         HIGToolbarIconAction) echo toolbar ;;
+        HIGInstagramPhotosPicker) echo instagramPhotosPicker ;;
         *) return 1 ;;
     esac
 }

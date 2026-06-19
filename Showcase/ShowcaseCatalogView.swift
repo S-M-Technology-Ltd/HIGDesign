@@ -123,6 +123,8 @@ struct ShowcaseCatalogView: View {
             ShowcaseMenuButtonView()
         case .tag:
             ShowcaseTagView()
+        case .instagramPhotosPicker:
+            ShowcaseInstagramPhotosPickerView()
         }
     }
 }

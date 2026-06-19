@@ -43,6 +43,10 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGSearchField``
 - ``HIGTextEditor``
 - ``HIGPicker``
+- ``HIGInstagramPhotosPicker``
+- ``HIGInstagramPhotosPickerConfiguration``
+- ``HIGInstagramPhotosAsset``
+- ``HIGInstagramPhotosMediaType``
 
 ## Feedback
 

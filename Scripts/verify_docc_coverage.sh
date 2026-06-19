@@ -28,6 +28,10 @@ EXPECTED_SYMBOLS=(
     HIGSecureField
     HIGSearchField
     HIGPicker
+    HIGInstagramPhotosPicker
+    HIGInstagramPhotosPickerConfiguration
+    HIGInstagramPhotosAsset
+    HIGInstagramPhotosMediaType
     HIGDivider
     HIGProgressView
     HIGCard
