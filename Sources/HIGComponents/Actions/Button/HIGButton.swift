@@ -1,5 +1,6 @@
 import HIGPlatform
 import HIGThemesContract
+import HIGTokensSemantic
 import SwiftUI
 
 public struct HIGButton: View {
@@ -121,21 +122,8 @@ private struct HIGButtonStyleView: ButtonStyle {
 }
 
 #if DEBUG
-import HIGTokensComponent
-import HIGTokensSemantic
-
-private struct HIGButtonPreviewTheme: HIGTheme {
-    let name = "Preview"
-    let colors: any HIGColorSemanticTokens = HIGSystemColorSemanticTokens()
-    let typography: any HIGTypographySemanticTokens = HIGSystemTypographySemanticTokens()
-    let spacing: any HIGSpacingSemanticTokens = HIGSystemSpacingSemanticTokens()
-    let button: any HIGButtonTokens = HIGSystemButtonTokens()
-    let textField: any HIGTextFieldTokens = HIGSystemTextFieldTokens()
-    let toggle: any HIGToggleTokens = HIGSystemToggleTokens()
-}
-
 #Preview("HIGButton — Primary") {
-    HIGThemeableView(theme: HIGButtonPreviewTheme()) {
+    HIGThemeableView(theme: HIGComponentPreviewTheme()) {
         VStack(spacing: 16) {
             HIGButton("Continue", role: .primary) {}
             HIGButton("Cancel", role: .secondary) {}

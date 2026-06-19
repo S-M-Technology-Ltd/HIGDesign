@@ -35,23 +35,10 @@ public struct HIGToggle: View {
 }
 
 #if DEBUG
-import HIGTokensComponent
-import HIGTokensSemantic
-
-private struct HIGTogglePreviewTheme: HIGTheme {
-    let name = "Preview"
-    let colors: any HIGColorSemanticTokens = HIGSystemColorSemanticTokens()
-    let typography: any HIGTypographySemanticTokens = HIGSystemTypographySemanticTokens()
-    let spacing: any HIGSpacingSemanticTokens = HIGSystemSpacingSemanticTokens()
-    let button: any HIGButtonTokens = HIGSystemButtonTokens()
-    let textField: any HIGTextFieldTokens = HIGSystemTextFieldTokens()
-    let toggle: any HIGToggleTokens = HIGSystemToggleTokens()
-}
-
 #Preview("HIGToggle") {
     @Previewable @State var notificationsEnabled = true
 
-    HIGThemeableView(theme: HIGTogglePreviewTheme()) {
+    HIGThemeableView(theme: HIGComponentPreviewTheme()) {
         HIGToggle("Notifications", isOn: $notificationsEnabled)
             .padding()
     }

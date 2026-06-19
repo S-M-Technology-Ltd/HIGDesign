@@ -30,4 +30,4 @@ swift run HIGShowcase
 
 ## Status
 
-Phase 2: `HIGButton`, `HIGTextField`, `HIGToggle`, and `HIGDivider` ship with the `HIGShowcase` gallery app and DocC getting-started docs.
+Phase 3: eight public components ship with `HIGShowcase`, `higToolbar`, showcase coverage guards, and DocC updates (v0.3.0).

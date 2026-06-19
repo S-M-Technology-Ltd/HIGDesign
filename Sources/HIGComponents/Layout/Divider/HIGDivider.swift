@@ -16,21 +16,8 @@ public struct HIGDivider: View {
 }
 
 #if DEBUG
-import HIGTokensComponent
-import HIGTokensSemantic
-
-private struct HIGDividerPreviewTheme: HIGTheme {
-    let name = "Preview"
-    let colors: any HIGColorSemanticTokens = HIGSystemColorSemanticTokens()
-    let typography: any HIGTypographySemanticTokens = HIGSystemTypographySemanticTokens()
-    let spacing: any HIGSpacingSemanticTokens = HIGSystemSpacingSemanticTokens()
-    let button: any HIGButtonTokens = HIGSystemButtonTokens()
-    let textField: any HIGTextFieldTokens = HIGSystemTextFieldTokens()
-    let toggle: any HIGToggleTokens = HIGSystemToggleTokens()
-}
-
 #Preview("HIGDivider") {
-    HIGThemeableView(theme: HIGDividerPreviewTheme()) {
+    HIGThemeableView(theme: HIGComponentPreviewTheme()) {
         VStack(spacing: 16) {
             Text("Above")
             HIGDivider()

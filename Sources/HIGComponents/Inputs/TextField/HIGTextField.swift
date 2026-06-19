@@ -52,23 +52,10 @@ public struct HIGTextField: View {
 }
 
 #if DEBUG
-import HIGTokensComponent
-import HIGTokensSemantic
-
-private struct HIGTextFieldPreviewTheme: HIGTheme {
-    let name = "Preview"
-    let colors: any HIGColorSemanticTokens = HIGSystemColorSemanticTokens()
-    let typography: any HIGTypographySemanticTokens = HIGSystemTypographySemanticTokens()
-    let spacing: any HIGSpacingSemanticTokens = HIGSystemSpacingSemanticTokens()
-    let button: any HIGButtonTokens = HIGSystemButtonTokens()
-    let textField: any HIGTextFieldTokens = HIGSystemTextFieldTokens()
-    let toggle: any HIGToggleTokens = HIGSystemToggleTokens()
-}
-
 #Preview("HIGTextField") {
     @Previewable @State var name = ""
 
-    HIGThemeableView(theme: HIGTextFieldPreviewTheme()) {
+    HIGThemeableView(theme: HIGComponentPreviewTheme()) {
         HIGTextField("Full name", text: $name, placeholder: "Enter your name")
             .padding()
     }

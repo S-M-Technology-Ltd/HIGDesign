@@ -25,7 +25,13 @@ HIGDesign packages a layered token architecture, environment-driven themes, and 
 - ``HIGTextField``
 - ``HIGToggle``
 - ``HIGDivider``
+- ``HIGProgressView``
+- ``HIGCard``
+- ``HIGTabBar``
+- ``HIGTabItem``
 
 ### Modifiers
 
 - ``higPadding(_:)``
+- ``higToolbar(_:)``
+- ``HIGToolbarTextAction``

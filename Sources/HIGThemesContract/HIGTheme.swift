@@ -9,4 +9,6 @@ public protocol HIGTheme: Sendable {
     var button: any HIGButtonTokens { get }
     var textField: any HIGTextFieldTokens { get }
     var toggle: any HIGToggleTokens { get }
+    var card: any HIGCardTokens { get }
+    var progress: any HIGProgressTokens { get }
 }

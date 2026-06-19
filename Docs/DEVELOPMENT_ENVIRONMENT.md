@@ -35,6 +35,7 @@ Scripts/verify_ui_guidelines_present.sh
 Scripts/verify_xcode_previews_present.sh
 Scripts/verify_view_naming.sh
 Scripts/verify_no_uikit.sh
+Scripts/verify_showcase_coverage.sh
 ```
 
 ```bash
@@ -52,4 +53,4 @@ Scripts/build_all_platforms.sh
 
 ## Current Milestone
 
-Phase 2 components and showcase. All platform builds, tests, and showcase build are mandatory before merging UI changes.
+Phase 3 component expansion. All platform builds, tests, showcase build, and showcase coverage guard are mandatory before merging UI changes.

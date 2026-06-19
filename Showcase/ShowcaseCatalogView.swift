@@ -62,6 +62,14 @@ struct ShowcaseCatalogView: View {
             ShowcaseToggleView()
         case .divider:
             ShowcaseDividerView()
+        case .progressView:
+            ShowcaseProgressView()
+        case .card:
+            ShowcaseCardView()
+        case .tabBar:
+            ShowcaseTabBarView()
+        case .toolbar:
+            ShowcaseToolbarView()
         }
     }
 }
