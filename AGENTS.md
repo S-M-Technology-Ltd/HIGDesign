@@ -251,19 +251,15 @@ Development Environment Rules
 
 Verification Commands
 
-PR checks (matches `.github/workflows/pr-checks.yml`):
+Local verification (run before opening a PR):
 
-Scripts/run_pr_checks.sh
+Scripts/build_all_platforms.sh
 
-Governance-only (Linux or macOS):
+swift test
 
-Scripts/run_governance_checks.sh
+Scripts/verify_sample_xcode_project.sh
 
-macOS-only (multi-platform build, tests, sample app):
-
-Showcase snapshot capture (`Scripts/capture_showcase_snapshots.sh`) is manual for README/Pages images — not part of PR Checks.
-
-Scripts/run_macos_checks.sh
+Showcase snapshot capture (`Scripts/capture_showcase_snapshots.sh`) is manual for README/Pages images only.
 
 Individual guards (debugging):
 

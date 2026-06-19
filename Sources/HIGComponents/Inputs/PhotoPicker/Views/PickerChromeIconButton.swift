@@ -90,6 +90,7 @@ struct PickerChromeLabelButtonView: View {
 }
 
 private enum PickerChromeButtonStyleSupport {
+    @MainActor
     static func applyIconStyle<Content: View>(
         to content: Content,
         sizing: PickerChromeButtonSizing
@@ -99,7 +100,7 @@ private enum PickerChromeButtonStyleSupport {
         if #available(iOS 26.0, *) {
             return AnyView(
                 content
-                    .buttonStyle(.glass)
+                    .buttonStyle(.glass as GlassButtonStyle)
                     .controlSize(controlSize)
                     .buttonBorderShape(.circle)
                     .labelStyle(.iconOnly)
@@ -115,6 +116,7 @@ private enum PickerChromeButtonStyleSupport {
         )
     }
 
+    @MainActor
     static func applyLabelStyle<Content: View>(
         to content: Content,
         sizing: PickerChromeButtonSizing
@@ -124,7 +126,7 @@ private enum PickerChromeButtonStyleSupport {
         if #available(iOS 26.0, *) {
             return AnyView(
                 content
-                    .buttonStyle(.glass)
+                    .buttonStyle(.glass as GlassButtonStyle)
                     .controlSize(controlSize)
                     .buttonBorderShape(.capsule)
                     .labelStyle(.titleAndIcon)
@@ -144,6 +146,7 @@ private enum PickerChromeButtonStyleSupport {
 private struct PickerChromeIconButtonViewStyle: ViewModifier {
     let sizing: PickerChromeButtonSizing
 
+    @MainActor
     func body(content: Content) -> some View {
         PickerChromeButtonStyleSupport.applyIconStyle(to: content, sizing: sizing)
     }
@@ -152,6 +155,7 @@ private struct PickerChromeIconButtonViewStyle: ViewModifier {
 private struct PickerChromeLabelButtonViewStyle: ViewModifier {
     let sizing: PickerChromeButtonSizing
 
+    @MainActor
     func body(content: Content) -> some View {
         PickerChromeButtonStyleSupport.applyLabelStyle(to: content, sizing: sizing)
     }

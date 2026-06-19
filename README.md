@@ -137,10 +137,12 @@ Themes: **System** · **High Contrast** · **Brand accent** — each with light 
 
 ## Contributing
 
-PRs welcome. Run before submitting (same checks as CI):
+PRs welcome. Run before submitting:
 
 ```bash
-Scripts/run_pr_checks.sh
+Scripts/build_all_platforms.sh
+swift test
+Scripts/verify_sample_xcode_project.sh
 ```
 
 ## License
