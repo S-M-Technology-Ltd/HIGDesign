@@ -70,6 +70,14 @@ struct ShowcaseCatalogView: View {
             ShowcaseTabBarView()
         case .toolbar:
             ShowcaseToolbarView()
+        case .alert:
+            ShowcaseAlertView()
+        case .toast:
+            ShowcaseToastView()
+        case .sidebar:
+            ShowcaseSidebarView()
+        case .navigationBar:
+            ShowcaseNavigationBarView()
         }
     }
 }

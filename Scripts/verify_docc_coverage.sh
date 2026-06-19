@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$ROOT"
+
+DOCC_DIR="$ROOT/Sources/HIGDesign/HIGDesign.docc"
+if [[ ! -d "$DOCC_DIR" ]]; then
+    echo "DocC coverage guard failed: missing $DOCC_DIR" >&2
+    exit 1
+fi
+
+EXPECTED_SYMBOLS=(
+    HIGTheme
+    HIGThemeableView
+    HIGSystemTheme
+    HIGHighContrastTheme
+    HIGButton
+    HIGButtonRole
+    HIGButtonSize
+    HIGTextField
+    HIGToggle
+    HIGDivider
+    HIGProgressView
+    HIGCard
+    HIGTabBar
+    HIGTabItem
+    HIGToast
+    HIGSidebar
+    HIGSidebarItem
+    HIGAlertButtonRole
+    HIGToolbarTextAction
+    HIGNavigationBarDisplayMode
+    higPadding
+    higToolbar
+    higAlert
+    higToast
+    higNavigationBarTitle
+)
+
+missing=()
+for symbol in "${EXPECTED_SYMBOLS[@]}"; do
+    if ! rg -q "${symbol}" "$DOCC_DIR"; then
+        missing+=("$symbol")
+    fi
+done
+
+if ((${#missing[@]} > 0)); then
+    echo "DocC coverage guard failed: symbols missing from HIGDesign.docc:" >&2
+    printf '  %s\n' "${missing[@]}" >&2
+    exit 1
+fi
+
+echo "DocC coverage guard passed: public API symbols are documented in HIGDesign.docc."

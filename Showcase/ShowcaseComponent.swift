@@ -9,6 +9,10 @@ enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case card
     case tabBar
     case toolbar
+    case alert
+    case toast
+    case sidebar
+    case navigationBar
 
     var id: String { rawValue }
 
@@ -30,6 +34,14 @@ enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
             "Tab Bar"
         case .toolbar:
             "Toolbar"
+        case .alert:
+            "Alert"
+        case .toast:
+            "Toast"
+        case .sidebar:
+            "Sidebar"
+        case .navigationBar:
+            "Navigation Bar"
         }
     }
 
@@ -51,6 +63,14 @@ enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
             "Tab Bars"
         case .toolbar:
             "Toolbars"
+        case .alert:
+            "Alerts"
+        case .toast:
+            "Component Notifications"
+        case .sidebar:
+            "Split Views"
+        case .navigationBar:
+            "Navigation Bars"
         }
     }
 
@@ -72,15 +92,25 @@ enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
             "Top-level section navigation with themed tab items."
         case .toolbar:
             "Screen-level actions using native toolbar placements."
+        case .alert:
+            "Modal confirmations with destructive and cancel roles."
+        case .toast:
+            "Transient success and status messages."
+        case .sidebar:
+            "Split-view navigation for regular-width layouts."
+        case .navigationBar:
+            "Large and inline navigation title presentation."
         }
     }
 
     var platforms: String {
         switch self {
-        case .button, .textField, .toggle, .divider, .progressView, .card, .toolbar:
+        case .button, .textField, .toggle, .divider, .progressView, .card, .toolbar, .alert, .toast, .navigationBar:
             "iOS, iPadOS, macOS, visionOS, tvOS, watchOS"
         case .tabBar:
             "iOS, iPadOS, macOS, visionOS, tvOS"
+        case .sidebar:
+            "iOS, iPadOS, macOS, visionOS"
         }
     }
 }

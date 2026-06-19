@@ -30,4 +30,4 @@ swift run HIGShowcase
 
 ## Status
 
-Phase 3: eight public components ship with `HIGShowcase`, `higToolbar`, showcase coverage guards, and DocC updates (v0.3.0).
+Phase 4: twelve showcase screens, feedback/navigation APIs (`higAlert`, `HIGToast`, `HIGSidebar`, `higNavigationBarTitle`), and DocC coverage guards (v0.4.0).

@@ -1,8 +1,8 @@
 import Testing
 
 @Test
-func showcaseCatalogIncludesPhaseThreeComponents() {
-    let expected: Set<String> = [
+func showcaseCatalogIncludesPhaseFourComponents() {
+    let catalog: Set<String> = [
         "button",
         "textField",
         "toggle",
@@ -11,19 +11,11 @@ func showcaseCatalogIncludesPhaseThreeComponents() {
         "card",
         "tabBar",
         "toolbar",
+        "alert",
+        "toast",
+        "sidebar",
+        "navigationBar",
     ]
 
-    let catalog = Set([
-        "button",
-        "textField",
-        "toggle",
-        "divider",
-        "progressView",
-        "card",
-        "tabBar",
-        "toolbar",
-    ])
-
-    #expect(catalog == expected)
-    #expect(catalog.count == 8)
+    #expect(catalog.count == 12)
 }

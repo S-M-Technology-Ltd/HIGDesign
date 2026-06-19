@@ -11,4 +11,6 @@ public protocol HIGTheme: Sendable {
     var toggle: any HIGToggleTokens { get }
     var card: any HIGCardTokens { get }
     var progress: any HIGProgressTokens { get }
+    var alert: any HIGAlertTokens { get }
+    var toast: any HIGToastTokens { get }
 }

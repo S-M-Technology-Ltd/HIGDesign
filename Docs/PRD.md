@@ -70,16 +70,16 @@ HIGDesign synthesizes architecture and patterns from:
 | `HIGDesignPlatform` | Idiom and capability adapters |
 | `HIGDesignBridging` | Optional Cocoa bridges |
 
-## Current Milestone: Phase 3 Component Expansion
+## Current Milestone: Phase 4 Feedback and Navigation
 
-Phase 3 extends the component catalog, navigation chrome, showcase coverage, and verification guards.
+Phase 4 adds feedback and navigation components, full DocC coverage, and expanded showcase verification.
 
 This milestone includes:
 
-- `HIGProgressView`, `HIGCard`, `HIGTabBar`, and `higToolbar`
-- card and progress token protocols on `HIGTheme`
-- expanded `HIGShowcase` screens for every public component
-- showcase coverage guard and component snapshot-style regression tests
+- `higAlert`, `HIGToast`, `HIGSidebar`, and `higNavigationBarTitle`
+- alert and toast token protocols on `HIGTheme`
+- twelve-component `HIGShowcase` catalog
+- DocC components article and `verify_docc_coverage.sh`
 
 This milestone does not include:
 
@@ -89,13 +89,13 @@ This milestone does not include:
 - remote third-party dependencies
 - custom brand themes beyond system defaults
 
-## Next Milestone: Phase 4 Feedback and Navigation
+## Next Milestone: Phase 5 Content and Indicators
 
 The next milestone delivers:
 
-- `HIGAlert`, `HIGToast`, and `HIGSidebar`
-- navigation chrome polish (`HIGNavigationBar`)
-- DocC symbol coverage for all public APIs
+- `HIGLabel`, `HIGBadge`, and `HIGActivityIndicator`
+- `HIGList` and form layout primitives
+- Showcase snapshot publishing workflow
 
 ## Success Metrics
 

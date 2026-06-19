@@ -11,6 +11,7 @@ HIGDesign packages a layered token architecture, environment-driven themes, and 
 ### Essentials
 
 - <doc:GettingStarted>
+- <doc:Components>
 
 ### Theming
 
@@ -18,10 +19,13 @@ HIGDesign packages a layered token architecture, environment-driven themes, and 
 - ``HIGThemeableView``
 - ``HIGSystemTheme``
 - ``HIGHighContrastTheme``
+- ``HIGComponentPreviewTheme``
 
 ### Components
 
 - ``HIGButton``
+- ``HIGButtonRole``
+- ``HIGButtonSize``
 - ``HIGTextField``
 - ``HIGToggle``
 - ``HIGDivider``
@@ -29,9 +33,17 @@ HIGDesign packages a layered token architecture, environment-driven themes, and 
 - ``HIGCard``
 - ``HIGTabBar``
 - ``HIGTabItem``
+- ``HIGToast``
+- ``HIGSidebar``
+- ``HIGSidebarItem``
+- ``HIGAlertButtonRole``
 
 ### Modifiers
 
 - ``higPadding(_:)``
 - ``higToolbar(_:)``
 - ``HIGToolbarTextAction``
+- ``higAlert(_:isPresented:message:primaryButtonTitle:primaryButtonRole:primaryAction:secondaryButtonTitle:secondaryButtonRole:secondaryAction:)``
+- ``higToast(isPresented:message:)``
+- ``higNavigationBarTitle(_:displayMode:)``
+- ``HIGNavigationBarDisplayMode``

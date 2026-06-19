@@ -19,6 +19,7 @@ jobs:
           Scripts/verify_view_naming.sh
           Scripts/verify_no_uikit.sh
           Scripts/verify_showcase_coverage.sh
+          Scripts/verify_docc_coverage.sh
       - name: Swift build (all platforms)
         run: Scripts/build_all_platforms.sh
       - name: Swift test (macOS)

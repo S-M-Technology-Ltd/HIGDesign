@@ -12,6 +12,8 @@ public struct HIGComponentPreviewTheme: HIGTheme {
     public let toggle: any HIGToggleTokens = HIGSystemToggleTokens()
     public let card: any HIGCardTokens = HIGSystemCardTokens()
     public let progress: any HIGProgressTokens = HIGSystemProgressTokens()
+    public let alert: any HIGAlertTokens = HIGSystemAlertTokens()
+    public let toast: any HIGToastTokens = HIGSystemToastTokens()
 
     public init() {}
 }

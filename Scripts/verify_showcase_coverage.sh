@@ -13,6 +13,10 @@ EXPECTED=(
     card
     tabBar
     toolbar
+    alert
+    toast
+    sidebar
+    navigationBar
 )
 
 missing=()
@@ -37,6 +41,8 @@ showcase_key_for() {
         HIGProgressView) echo progressView ;;
         HIGCard) echo card ;;
         HIGTabBar) echo tabBar ;;
+        HIGToast) echo toast ;;
+        HIGSidebar) echo sidebar ;;
         *) return 1 ;;
     esac
 }
