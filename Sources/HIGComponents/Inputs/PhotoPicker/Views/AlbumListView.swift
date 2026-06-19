@@ -49,36 +49,15 @@ struct AlbumListView: View {
         .scrollContentBackground(.hidden)
     }
 
-    @ViewBuilder
     private var emptyState: some View {
-        if #available(iOS 17.0, *) {
-            ContentUnavailableView {
-                Label {
-                    Text(localization.albumEmptyTitle())
-                } icon: {
-                    Image(systemName: "photo.on.rectangle.angled")
-                }
-            } description: {
-                Text(localization.albumEmptyMessage())
-            }
-        } else {
-            VStack(spacing: tokens.albumListRowSpacing) {
-                Image(systemName: "photo.on.rectangle.angled")
-                    .font(.system(size: tokens.albumListEmptyIconSize, weight: .light))
-                    .symbolRenderingMode(.hierarchical)
-                    .foregroundStyle(theme.colors.labelSecondary)
-                    .accessibilityHidden(true)
-
+        ContentUnavailableView {
+            Label {
                 Text(localization.albumEmptyTitle())
-                    .font(.title3.weight(.semibold))
-
-                Text(localization.albumEmptyMessage())
-                    .font(.body)
-                    .foregroundStyle(theme.colors.labelSecondary)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, tokens.albumListEmptyStatePadding)
+            } icon: {
+                Image(systemName: "photo.on.rectangle.angled")
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        } description: {
+            Text(localization.albumEmptyMessage())
         }
     }
 

@@ -89,31 +89,63 @@ struct PickerChromeLabelButtonView: View {
     }
 }
 
+private enum PickerChromeButtonStyleSupport {
+    static func applyIconStyle<Content: View>(
+        to content: Content,
+        sizing: PickerChromeButtonSizing
+    ) -> AnyView {
+        let controlSize: ControlSize = sizing == .banner ? .small : .mini
+
+        if #available(iOS 26.0, *) {
+            return AnyView(
+                content
+                    .buttonStyle(.glass)
+                    .controlSize(controlSize)
+                    .buttonBorderShape(.circle)
+                    .labelStyle(.iconOnly)
+            )
+        }
+
+        return AnyView(
+            content
+                .buttonStyle(.bordered)
+                .controlSize(controlSize)
+                .buttonBorderShape(.circle)
+                .labelStyle(.iconOnly)
+        )
+    }
+
+    static func applyLabelStyle<Content: View>(
+        to content: Content,
+        sizing: PickerChromeButtonSizing
+    ) -> AnyView {
+        let controlSize: ControlSize = sizing == .banner ? .mini : .small
+
+        if #available(iOS 26.0, *) {
+            return AnyView(
+                content
+                    .buttonStyle(.glass)
+                    .controlSize(controlSize)
+                    .buttonBorderShape(.capsule)
+                    .labelStyle(.titleAndIcon)
+            )
+        }
+
+        return AnyView(
+            content
+                .buttonStyle(.bordered)
+                .controlSize(controlSize)
+                .buttonBorderShape(.capsule)
+                .labelStyle(.titleAndIcon)
+        )
+    }
+}
+
 private struct PickerChromeIconButtonViewStyle: ViewModifier {
     let sizing: PickerChromeButtonSizing
 
     func body(content: Content) -> some View {
-        let controlSize: ControlSize = sizing == .banner ? .small : .mini
-
-        if #available(iOS 26.0, *) {
-            content
-                .buttonStyle(.glass)
-                .controlSize(controlSize)
-                .buttonBorderShape(.circle)
-                .labelStyle(.iconOnly)
-        } else if #available(iOS 17.0, *) {
-            content
-                .buttonStyle(.bordered)
-                .controlSize(controlSize)
-                .buttonBorderShape(.circle)
-                .labelStyle(.iconOnly)
-        } else {
-            content
-                .buttonStyle(.bordered)
-                .controlSize(controlSize)
-                .labelStyle(.iconOnly)
-                .clipShape(Circle())
-        }
+        PickerChromeButtonStyleSupport.applyIconStyle(to: content, sizing: sizing)
     }
 }
 
@@ -121,26 +153,7 @@ private struct PickerChromeLabelButtonViewStyle: ViewModifier {
     let sizing: PickerChromeButtonSizing
 
     func body(content: Content) -> some View {
-        let controlSize: ControlSize = sizing == .banner ? .mini : .small
-
-        if #available(iOS 26.0, *) {
-            content
-                .buttonStyle(.glass)
-                .controlSize(controlSize)
-                .buttonBorderShape(.capsule)
-                .labelStyle(.titleAndIcon)
-        } else if #available(iOS 17.0, *) {
-            content
-                .buttonStyle(.bordered)
-                .controlSize(controlSize)
-                .buttonBorderShape(.capsule)
-                .labelStyle(.titleAndIcon)
-        } else {
-            content
-                .buttonStyle(.bordered)
-                .controlSize(controlSize)
-                .labelStyle(.titleAndIcon)
-        }
+        PickerChromeButtonStyleSupport.applyLabelStyle(to: content, sizing: sizing)
     }
 }
 
