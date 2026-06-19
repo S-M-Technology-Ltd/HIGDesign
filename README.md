@@ -21,8 +21,13 @@ Scripts/verify_requirements_present.sh
 Scripts/verify_ui_guidelines_present.sh
 Scripts/verify_xcode_previews_present.sh
 Scripts/verify_view_naming.sh
+Scripts/verify_no_uikit.sh
+swift build --package-path .
+swift test --package-path .
+Scripts/build_all_platforms.sh
+swift run HIGShowcase
 ```
 
 ## Status
 
-Current milestone: governance foundation — agent rules, BA requirements, and coding standards are in place before package implementation begins.
+Phase 2: `HIGButton`, `HIGTextField`, `HIGToggle`, and `HIGDivider` ship with the `HIGShowcase` gallery app and DocC getting-started docs.

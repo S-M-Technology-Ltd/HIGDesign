@@ -9,6 +9,8 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
     public let typography: any HIGTypographySemanticTokens
     public let spacing: any HIGSpacingSemanticTokens
     public let button: any HIGButtonTokens
+    public let textField: any HIGTextFieldTokens
+    public let toggle: any HIGToggleTokens
 
     public init(base: HIGSystemTheme = HIGSystemTheme()) {
         let baseColors = base.colors
@@ -25,5 +27,7 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
         self.typography = base.typography
         self.spacing = base.spacing
         self.button = base.button
+        self.textField = base.textField
+        self.toggle = base.toggle
     }
 }

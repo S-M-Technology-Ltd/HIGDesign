@@ -22,3 +22,5 @@ jobs:
         run: Scripts/build_all_platforms.sh
       - name: Swift test (macOS)
         run: swift test --package-path .
+      - name: Build Showcase (macOS)
+        run: swift build --package-path . --target HIGShowcase

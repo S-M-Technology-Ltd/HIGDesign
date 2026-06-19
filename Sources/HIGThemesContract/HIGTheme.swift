@@ -7,4 +7,6 @@ public protocol HIGTheme: Sendable {
     var typography: any HIGTypographySemanticTokens { get }
     var spacing: any HIGSpacingSemanticTokens { get }
     var button: any HIGButtonTokens { get }
+    var textField: any HIGTextFieldTokens { get }
+    var toggle: any HIGToggleTokens { get }
 }

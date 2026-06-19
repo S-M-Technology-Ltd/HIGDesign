@@ -63,7 +63,7 @@ Shared platform checks live in `HIGPlatform` so components do not accumulate cop
 
 ## Current State
 
-Phase 1 SPM skeleton is implemented and builds on all six platforms (macOS, iOS, tvOS, watchOS, visionOS).
+Phase 2 components and showcase are in progress on top of the Phase 1 SPM skeleton, which builds on all six platforms (macOS, iOS, tvOS, watchOS, visionOS).
 
 | Module | Status |
 |--------|--------|
@@ -74,11 +74,12 @@ Phase 1 SPM skeleton is implemented and builds on all six platforms (macOS, iOS,
 | `HIGThemesContract` | Implemented — `HIGTheme`, environment key, `HIGThemeableView` |
 | `HIGThemesSystem` | Implemented — system and high-contrast themes |
 | `HIGPlatform` | Implemented — `HIGPlatformCapabilities` |
-| `HIGComponents` | Implemented — `HIGButton` with roles and sizes |
+| `HIGComponents` | Implemented — `HIGButton`, `HIGTextField`, `HIGToggle`, `HIGDivider` |
+| `HIGShowcase` | Implemented — cross-platform component gallery executable |
 | `HIGModifiers` | Implemented — `higPadding` modifier |
 | `HIGDesign` | Implemented — umbrella re-exports |
 | `HIGBridging` | Deferred — optional Cocoa bridges for a later phase |
 
 Verification: `Scripts/build_all_platforms.sh`, `swift test`, and all governance guards (including `verify_no_uikit.sh`) pass locally.
 
-Next phase: showcase app, additional components (`HIGTextField`, `HIGToggle`), DocC, and optional `HIGBridging`.
+Next phase: additional component families (`HIGProgressView`, `HIGCard`, navigation chrome), Showcase screenshots, and optional SwiftUI bridging helpers.

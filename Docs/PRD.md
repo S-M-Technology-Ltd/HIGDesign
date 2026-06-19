@@ -70,33 +70,32 @@ HIGDesign synthesizes architecture and patterns from:
 | `HIGDesignPlatform` | Idiom and capability adapters |
 | `HIGDesignBridging` | Optional Cocoa bridges |
 
-## Current Milestone: Phase 1 Foundation
+## Current Milestone: Phase 2 Components and Showcase
 
-Phase 1 delivers the SPM skeleton, governance guards, and first proof component.
+Phase 2 extends the package with additional components, a cross-platform showcase app, and DocC documentation.
 
 This milestone includes:
 
-- layered SPM modules from `HIGFoundations` through `HIGDesign`
-- SwiftUI-only implementation policy (no UIKit)
-- minimum OS releases from the latest three calendar years
-- `HIGButton`, system themes, and token infrastructure
-- CI matrix for six platforms
+- `HIGTextField`, `HIGToggle`, and `HIGDivider`
+- text-field and toggle component token protocols on `HIGTheme`
+- `HIGShowcase` executable with theme and accessibility demonstrations
+- DocC getting-started content under `HIGDesign.docc`
 
 This milestone does not include:
 
 - full component library delivery
-- Showcase app binaries
+- automated screenshot publishing
 - bridging implementations
 - remote third-party dependencies
 - custom brand themes beyond system defaults
 
-## Next Milestone: Phase 2 Components and Showcase
+## Next Milestone: Phase 3 Component Expansion
 
 The next milestone delivers:
 
-- Showcase app with component gallery
-- additional components such as `HIGTextField` and `HIGToggle`
-- DocC documentation
+- feedback and layout components such as `HIGProgressView` and `HIGCard`
+- navigation chrome (`HIGToolbar`, `HIGTabBar`)
+- expanded Showcase coverage and snapshot tests
 
 ## Success Metrics
 

@@ -8,16 +8,22 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let typography: any HIGTypographySemanticTokens
     public let spacing: any HIGSpacingSemanticTokens
     public let button: any HIGButtonTokens
+    public let textField: any HIGTextFieldTokens
+    public let toggle: any HIGToggleTokens
 
     public init(
         colors: any HIGColorSemanticTokens = HIGSystemColorSemanticTokens(),
         typography: any HIGTypographySemanticTokens = HIGSystemTypographySemanticTokens(),
         spacing: any HIGSpacingSemanticTokens = HIGSystemSpacingSemanticTokens(),
-        button: any HIGButtonTokens = HIGSystemButtonTokens()
+        button: any HIGButtonTokens = HIGSystemButtonTokens(),
+        textField: any HIGTextFieldTokens = HIGSystemTextFieldTokens(),
+        toggle: any HIGToggleTokens = HIGSystemToggleTokens()
     ) {
         self.colors = colors
         self.typography = typography
         self.spacing = spacing
         self.button = button
+        self.textField = textField
+        self.toggle = toggle
     }
 }

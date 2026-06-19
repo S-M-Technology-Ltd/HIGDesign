@@ -52,4 +52,4 @@ Scripts/build_all_platforms.sh
 
 ## Current Milestone
 
-Phase 1 SPM skeleton. All platform builds and tests are mandatory before merging UI changes.
+Phase 2 components and showcase. All platform builds, tests, and showcase build are mandatory before merging UI changes.
