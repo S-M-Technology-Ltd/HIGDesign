@@ -43,7 +43,7 @@ A **Swift Package** with HIG-correct SwiftUI components, design tokens, and them
 | Spacing and colors drift across screens | Token layers enforce consistency |
 | Brand theming means touching every view | Swap theme at the root — everything updates |
 | Multi-platform means re-solving the same patterns | Platform-appropriate behavior built in |
-| No visual regression baseline | 385 committed showcase snapshots in CI |
+| Marketing gallery | 385 showcase snapshots for README and GitHub Pages |
 
 Native SwiftUI is the foundation. HIGDesign is the **opinionated layer** that saves weeks of design-system work while keeping you aligned with [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/).
 
@@ -122,7 +122,7 @@ Themes: **System** · **High Contrast** · **Brand accent** — each with light 
 - **Environment-driven theming** — `@Environment(\.higTheme)` everywhere
 - **Modular SPM products** — `HIGDesign` umbrella or `HIGDesignCore` + `HIGDesignComponents`
 - **DocC catalog** — open in Xcode → *Product → Build Documentation*
-- **CI-verified** — token guards, snapshot diff, 45 unit tests, six-platform builds
+- **CI-verified** — token guards, 47 unit tests, six-platform builds
 
 ## Documentation
 

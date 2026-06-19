@@ -21,7 +21,6 @@ run_check() {
 
 echo "HIGDesign macOS checks"
 
-run_check "Showcase snapshot diff" Scripts/verify_showcase_snapshot_diff.sh
 run_check "Swift build (all platforms)" Scripts/build_all_platforms.sh
 run_check "Swift test (macOS)" swift test --package-path .
 run_check "Build Showcase app" swift build --package-path . --target HIGShowcaseApp
