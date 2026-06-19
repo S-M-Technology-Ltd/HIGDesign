@@ -56,6 +56,7 @@ showcase_key_for() {
         HIGStepper) echo stepper ;;
         HIGMenuButton) echo menuButton ;;
         HIGTag) echo tag ;;
+        HIGRemovableTag) echo tag ;;
         *) return 1 ;;
     esac
 }

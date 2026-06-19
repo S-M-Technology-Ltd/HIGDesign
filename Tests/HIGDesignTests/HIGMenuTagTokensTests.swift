@@ -13,6 +13,13 @@ func tagTokensUsePillPadding() {
     let tokens = HIGSystemTagTokens()
     #expect(tokens.horizontalPadding >= 8)
     #expect(tokens.cornerRadius >= 12)
+    #expect(tokens.removeButtonSize > 0)
+}
+
+@Test
+func menuButtonTokensDefineIconOnlySize() {
+    let tokens = HIGSystemMenuButtonTokens()
+    #expect(tokens.iconOnlySize >= 44)
 }
 
 @Test

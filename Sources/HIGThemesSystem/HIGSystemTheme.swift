@@ -30,6 +30,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let tag: any HIGTagTokens
     public let navigationBar: any HIGNavigationBarTokens
     public let toolbar: any HIGToolbarTokens
+    public let activityIndicator: any HIGActivityIndicatorTokens
     public let list: any HIGListTokens
     public let sidebar: any HIGSidebarTokens
 
@@ -60,6 +61,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         tag: any HIGTagTokens = HIGSystemTagTokens(),
         navigationBar: any HIGNavigationBarTokens = HIGSystemNavigationBarTokens(),
         toolbar: any HIGToolbarTokens = HIGSystemToolbarTokens(),
+        activityIndicator: any HIGActivityIndicatorTokens = HIGSystemActivityIndicatorTokens(),
         list: any HIGListTokens = HIGSystemListTokens(),
         sidebar: any HIGSidebarTokens = HIGSystemSidebarTokens()
     ) {
@@ -89,6 +91,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.tag = tag
         self.navigationBar = navigationBar
         self.toolbar = toolbar
+        self.activityIndicator = activityIndicator
         self.list = list
         self.sidebar = sidebar
     }

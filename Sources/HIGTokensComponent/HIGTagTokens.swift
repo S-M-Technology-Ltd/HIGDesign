@@ -7,6 +7,9 @@ public protocol HIGTagTokens: Sendable {
     var verticalPadding: CGFloat { get }
     var cornerRadius: CGFloat { get }
     var font: Font { get }
+    var removeSpacing: CGFloat { get }
+    var removeTrailingPadding: CGFloat { get }
+    var removeButtonSize: CGFloat { get }
 }
 
 public struct HIGSystemTagTokens: HIGTagTokens, Sendable {
@@ -14,16 +17,25 @@ public struct HIGSystemTagTokens: HIGTagTokens, Sendable {
     public let verticalPadding: CGFloat
     public let cornerRadius: CGFloat
     public let font: Font
+    public let removeSpacing: CGFloat
+    public let removeTrailingPadding: CGFloat
+    public let removeButtonSize: CGFloat
 
     public init(
         horizontalPadding: CGFloat = HIGSpacing.md.rawValue,
         verticalPadding: CGFloat = HIGSpacing.xs.rawValue,
         cornerRadius: CGFloat = HIGRadius.continuous.rawValue,
-        font: Font = .caption.weight(.medium)
+        font: Font = .caption.weight(.medium),
+        removeSpacing: CGFloat = HIGSpacing.xs.rawValue,
+        removeTrailingPadding: CGFloat = HIGSpacing.xxs.rawValue,
+        removeButtonSize: CGFloat = 20
     ) {
         self.horizontalPadding = horizontalPadding
         self.verticalPadding = verticalPadding
         self.cornerRadius = cornerRadius
         self.font = font
+        self.removeSpacing = removeSpacing
+        self.removeTrailingPadding = removeTrailingPadding
+        self.removeButtonSize = removeButtonSize
     }
 }

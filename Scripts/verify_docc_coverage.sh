@@ -68,6 +68,10 @@ EXPECTED_SYMBOLS=(
     HIGMenuButton
     HIGTag
     HIGTagStyle
+    HIGRemovableTag
+    HIGMenuButtonPresentation
+    HIGBrandTheme
+    HIGActivityIndicatorTokens
     HIGNavigationBarTextAction
     HIGNavigationBarIconAction
     HIGToolbarIconAction

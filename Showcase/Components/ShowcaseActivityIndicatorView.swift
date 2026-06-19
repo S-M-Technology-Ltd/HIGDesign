@@ -7,9 +7,10 @@ struct ShowcaseActivityIndicatorView: View {
             VStack(alignment: .leading, spacing: 24) {
                 ShowcaseMetadataView(component: .activityIndicator)
 
-                VStack(alignment: .leading, spacing: 16) {
-                    HIGActivityIndicator("Syncing library")
-                    HIGActivityIndicator(size: .large)
+                VStack(alignment: .leading, spacing: 20) {
+                    HIGActivityIndicator("Syncing library", size: .small)
+                    HIGActivityIndicator("Syncing library", size: .medium)
+                    HIGActivityIndicator("Syncing library", size: .large)
                 }
             }
             .higPadding(.screenEdge)

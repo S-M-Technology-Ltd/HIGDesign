@@ -3,8 +3,9 @@ import HIGTokensComponent
 import HIGTokensSemantic
 import SwiftUI
 
-public struct HIGHighContrastTheme: HIGTheme, Sendable {
-    public let name = "High Contrast"
+/// A brand theme that overrides accent color while inheriting system defaults.
+public struct HIGBrandTheme: HIGTheme, Sendable {
+    public let name: String
     public let colors: any HIGColorSemanticTokens
     public let typography: any HIGTypographySemanticTokens
     public let spacing: any HIGSpacingSemanticTokens
@@ -35,8 +36,13 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
     public let list: any HIGListTokens
     public let sidebar: any HIGSidebarTokens
 
-    public init(base: HIGSystemTheme = HIGSystemTheme()) {
+    public init(
+        name: String,
+        accent: Color,
+        base: HIGSystemTheme = HIGSystemTheme()
+    ) {
         let baseColors = base.colors
+        self.name = name
         self.colors = HIGSystemColorSemanticTokens(
             labelPrimary: baseColors.labelPrimary,
             labelSecondary: baseColors.labelSecondary,
@@ -44,8 +50,8 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
             backgroundSecondary: baseColors.backgroundSecondary,
             fillPrimary: baseColors.fillPrimary,
             separator: baseColors.separator,
-            accent: baseColors.accent,
-            destructive: Color.red
+            accent: accent,
+            destructive: baseColors.destructive
         )
         self.typography = base.typography
         self.spacing = base.spacing

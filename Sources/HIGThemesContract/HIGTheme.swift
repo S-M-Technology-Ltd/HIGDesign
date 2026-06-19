@@ -29,6 +29,7 @@ public protocol HIGTheme: Sendable {
     var tag: any HIGTagTokens { get }
     var navigationBar: any HIGNavigationBarTokens { get }
     var toolbar: any HIGToolbarTokens { get }
+    var activityIndicator: any HIGActivityIndicatorTokens { get }
     var list: any HIGListTokens { get }
     var sidebar: any HIGSidebarTokens { get }
 }

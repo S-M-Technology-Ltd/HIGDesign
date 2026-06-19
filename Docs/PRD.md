@@ -70,32 +70,32 @@ HIGDesign synthesizes architecture and patterns from:
 | `HIGDesignPlatform` | Idiom and capability adapters |
 | `HIGDesignBridging` | Optional Cocoa bridges |
 
-## Current Milestone: Phase 9 Navigation and Menu Components
+## Current Milestone: Phase 10 Feedback and Indicator Expansion
 
-Phase 9 extends menu actions, metadata chips, and navigation chrome.
+Phase 10 extends filter chips, menu affordances, loading indicators, and theme authoring.
 
 This milestone includes:
 
-- `HIGMenuButton` and `HIGTag`
-- menu-button, tag, navigation-bar, and toolbar token protocols on `HIGTheme`
-- navigation bar and toolbar action helpers with theme-backed fonts
+- `HIGRemovableTag` and `HIGMenuButton` icon-only presentation
+- platform-aware `HIGActivityIndicator` sizing presets and activity-indicator tokens on `HIGTheme`
+- `HIGBrandTheme` scaffolding and a custom `HIGTheme` authoring guide
+- brand theme preview in showcase settings
 - thirty-two-component `HIGShowcase` catalog
-- optional `HIGDesignBridging` product with SwiftUI layout helpers
 
 This milestone does not include:
 
 - full component library delivery
 - Cocoa/UIKit bridging implementations
 - remote third-party dependencies
-- custom brand themes beyond system defaults
+- production brand theme packs beyond scaffolding
 
-## Next Milestone: Phase 10 Feedback and Indicator Expansion
+## Next Milestone: Phase 11 Alert and Notification Components
 
 The next milestone delivers:
 
-- `HIGTag` companion removal flows and `HIGMenuButton` icon-only variant polish
-- `HIGActivityIndicator` sizing presets across platforms
-- brand theme scaffolding and custom `HIGTheme` authoring guide
+- unified `HIGAlert` modal component polish beyond `HIGAlertBanner`
+- toast queue configuration and dismissal controls
+- expanded snapshot coverage for brand theme variants
 
 ## Success Metrics
 

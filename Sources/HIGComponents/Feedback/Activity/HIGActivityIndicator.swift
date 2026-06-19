@@ -1,4 +1,6 @@
+import HIGPlatform
 import HIGThemesContract
+import HIGTokensComponent
 import SwiftUI
 
 /// An indeterminate activity indicator with optional caption text.
@@ -7,7 +9,6 @@ public struct HIGActivityIndicator: View {
     private let size: HIGActivityIndicatorSize
 
     @Environment(\.higTheme) private var theme
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     public init(_ label: String? = nil, size: HIGActivityIndicatorSize = .medium) {
         self.label = label
@@ -15,6 +16,10 @@ public struct HIGActivityIndicator: View {
     }
 
     public var body: some View {
+        let tokens = theme.activityIndicator
+        let capabilities = HIGPlatformCapabilities.current
+        let scale = size.scale(for: tokens)
+
         VStack(alignment: .leading, spacing: theme.spacing.compactItem) {
             if let label {
                 Text(label)
@@ -23,7 +28,8 @@ public struct HIGActivityIndicator: View {
             }
 
             ProgressView()
-                .controlSize(size.controlSize)
+                .controlSize(size.controlSize(for: capabilities))
+                .scaleEffect(scale)
                 .tint(theme.colors.accent)
         }
         .accessibilityElement(children: .combine)
@@ -35,7 +41,8 @@ public struct HIGActivityIndicator: View {
 #Preview("HIGActivityIndicator") {
     HIGThemeableView(theme: HIGComponentPreviewTheme()) {
         VStack(alignment: .leading, spacing: 20) {
-            HIGActivityIndicator("Syncing")
+            HIGActivityIndicator("Syncing", size: .small)
+            HIGActivityIndicator("Syncing", size: .medium)
             HIGActivityIndicator(size: .large)
         }
         .padding()

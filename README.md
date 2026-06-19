@@ -30,4 +30,4 @@ swift run HIGShowcase
 
 ## Status
 
-Phase 9: menu button, tag, navigation/toolbar polish, and optional bridging helpers (v0.9.0).
+Phase 10: removable tags, icon-only menu button, activity indicator presets, and brand theme scaffolding (v0.10.0).

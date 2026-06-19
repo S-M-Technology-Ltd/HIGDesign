@@ -30,6 +30,7 @@ public struct HIGComponentPreviewTheme: HIGTheme {
     public let tag: any HIGTagTokens = HIGSystemTagTokens()
     public let navigationBar: any HIGNavigationBarTokens = HIGSystemNavigationBarTokens()
     public let toolbar: any HIGToolbarTokens = HIGSystemToolbarTokens()
+    public let activityIndicator: any HIGActivityIndicatorTokens = HIGSystemActivityIndicatorTokens()
     public let list: any HIGListTokens = HIGSystemListTokens()
     public let sidebar: any HIGSidebarTokens = HIGSystemSidebarTokens()
 

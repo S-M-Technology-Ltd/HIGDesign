@@ -58,4 +58,4 @@ Scripts/build_all_platforms.sh
 
 ## Current Milestone
 
-Phase 9 navigation and menu components. All platform builds, tests, showcase build, coverage guards, DocC coverage, automated snapshot capture, and snapshot diff verification are mandatory before merging UI changes.
+Phase 10 feedback and indicator expansion. All platform builds, tests, showcase build, coverage guards, DocC coverage, automated snapshot capture, and snapshot diff verification are mandatory before merging UI changes.

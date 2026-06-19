@@ -3,6 +3,7 @@ import HIGDesign
 public enum ShowcaseThemeChoice: String, CaseIterable, Identifiable, Sendable {
     case system
     case highContrast
+    case brand
 
     public var id: String { rawValue }
 
@@ -12,6 +13,8 @@ public enum ShowcaseThemeChoice: String, CaseIterable, Identifiable, Sendable {
             "System"
         case .highContrast:
             "High Contrast"
+        case .brand:
+            "Brand"
         }
     }
 
@@ -21,6 +24,8 @@ public enum ShowcaseThemeChoice: String, CaseIterable, Identifiable, Sendable {
             HIGSystemTheme()
         case .highContrast:
             HIGHighContrastTheme()
+        case .brand:
+            HIGBrandTheme(name: "Brand", accent: .purple)
         }
     }
 }

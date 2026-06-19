@@ -72,7 +72,7 @@ Phase 7 controls and inputs expansion builds on the Phase 1–6 foundation, whic
 | `HIGTokensSemantic` | Implemented — color, typography, spacing protocols; SwiftUI semantic platform colors |
 | `HIGTokensComponent` | Implemented — button token protocol |
 | `HIGThemesContract` | Implemented — `HIGTheme`, environment key, `HIGThemeableView` |
-| `HIGThemesSystem` | Implemented — system and high-contrast themes |
+| `HIGThemesSystem` | Implemented — system, high-contrast, and brand themes |
 | `HIGPlatform` | Implemented — `HIGPlatformCapabilities` |
 | `HIGComponents` | Implemented — actions, inputs, controls, feedback, layout, and navigation components |
 | `HIGModifiers` | Implemented — `higPadding`, `higToolbar`, `HIGToolbarTextAction` |
@@ -83,4 +83,4 @@ Phase 7 controls and inputs expansion builds on the Phase 1–6 foundation, whic
 
 Verification: `Scripts/build_all_platforms.sh`, `swift test`, and all governance guards (including `verify_no_uikit.sh`) pass locally.
 
-Next phase: feedback and indicator expansion, removable tag flows, and custom `HIGTheme` authoring scaffolding.
+Next phase: alert and notification component polish, toast queue controls, and brand-theme snapshot coverage.

@@ -20,6 +20,11 @@ struct ShowcaseMenuButtonView: View {
                         Button("Title") {}
                         Button("Date Modified") {}
                     }
+
+                    HIGMenuButton(icon: "ellipsis.circle", accessibilityLabel: "More options") {
+                        Button("Share") {}
+                        Button("Archive") {}
+                    }
                 }
             }
             .higPadding(.screenEdge)
