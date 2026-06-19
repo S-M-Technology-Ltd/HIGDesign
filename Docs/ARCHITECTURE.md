@@ -75,7 +75,7 @@ Phase 7 controls and inputs expansion builds on the Phase 1–6 foundation, whic
 | `HIGThemesSystem` | Implemented — system, high-contrast, and brand themes |
 | `HIGPlatform` | Implemented — `HIGPlatformCapabilities` |
 | `HIGComponents` | Implemented — actions, inputs, controls, feedback, layout, and navigation components |
-| `HIGModifiers` | Implemented — `higPadding`, `higToolbar`, `HIGToolbarTextAction` |
+| `HIGModifiers` | Implemented — `higPadding`, `higNavigationBar`, `higToolbar` (delegates to `HIGComponents`) |
 | `HIGShowcase` | Implemented — cross-platform component gallery executable |
 
 | `HIGDesign` | Implemented — umbrella re-exports |
@@ -83,4 +83,4 @@ Phase 7 controls and inputs expansion builds on the Phase 1–6 foundation, whic
 
 Verification: `Scripts/build_all_platforms.sh`, `swift test`, and all governance guards (including `verify_no_uikit.sh`) pass locally.
 
-Next phase: navigation component wrappers, API stability review, and v1.0.0 release candidate preparation.
+v1.0.0 shipped in Phase 12. Next phase: bridging hardening, adoption guides, and accessibility audit (Phase 13).

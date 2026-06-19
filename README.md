@@ -30,4 +30,4 @@ swift run HIGShowcase
 
 ## Status
 
-Phase 11: HIGAlert modal, toast queue configuration, and brand-theme snapshot coverage (v0.11.0).
+Phase 12: HIGNavigationBar, HIGToolbar, API stability guide, and v1.0.0 release.

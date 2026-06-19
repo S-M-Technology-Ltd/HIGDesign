@@ -9,11 +9,18 @@ public struct ShowcaseSnapshotView: View {
     }
 
     public var body: some View {
-        NavigationStack {
+        VStack(alignment: .leading, spacing: 0) {
+            Text(component.title)
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(.secondary)
+                .padding(.horizontal, 16)
+                .padding(.top, 12)
+                .accessibilityHidden(true)
+
             snapshotContent
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                .background(.background)
         }
+        .background(.background)
     }
 
     @ViewBuilder

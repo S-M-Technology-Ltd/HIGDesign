@@ -4,16 +4,17 @@ import SwiftUI
 struct ShowcaseNavigationBarView: View {
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 24) {
-                    ShowcaseMetadataView(component: .navigationBar)
+            HIGNavigationBar("Inbox", displayMode: .large) {
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 24) {
+                        ShowcaseMetadataView(component: .navigationBar)
 
-                    Text("This screen uses the composable higNavigationBar API with leading and trailing actions.")
-                        .foregroundStyle(.secondary)
+                        Text("Composable navigation titles with leading and trailing actions.")
+                            .foregroundStyle(.secondary)
+                    }
+                    .higPadding(.screenEdge)
                 }
-                .higPadding(.screenEdge)
-            }
-            .higNavigationBar("Inbox", displayMode: .large) {
+            } leading: {
                 HIGNavigationBarIconAction(
                     "line.3.horizontal.decrease.circle",
                     accessibilityLabel: "Filter"
@@ -25,7 +26,6 @@ struct ShowcaseNavigationBarView: View {
                 ) {}
             }
         }
-        .navigationTitle("Navigation Bar")
     }
 }
 

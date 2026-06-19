@@ -12,6 +12,7 @@ HIGDesign packages a layered token architecture, environment-driven themes, and 
 
 - <doc:GettingStarted>
 - <doc:Components>
+- <doc:APIStability>
 - <doc:Bridging>
 - <doc:CustomThemes>
 
@@ -74,6 +75,8 @@ HIGDesign packages a layered token architecture, environment-driven themes, and 
 - ``HIGTag``
 - ``HIGTagStyle``
 - ``HIGRemovableTag``
+- ``HIGNavigationBar``
+- ``HIGToolbar``
 
 ### Modifiers
 

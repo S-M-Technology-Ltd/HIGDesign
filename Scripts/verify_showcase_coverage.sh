@@ -58,6 +58,12 @@ showcase_key_for() {
         HIGMenuButton) echo menuButton ;;
         HIGTag) echo tag ;;
         HIGRemovableTag) echo tag ;;
+        HIGNavigationBar) echo navigationBar ;;
+        HIGNavigationBarTextAction) echo navigationBar ;;
+        HIGNavigationBarIconAction) echo navigationBar ;;
+        HIGToolbar) echo toolbar ;;
+        HIGToolbarTextAction) echo toolbar ;;
+        HIGToolbarIconAction) echo toolbar ;;
         *) return 1 ;;
     esac
 }
@@ -72,6 +78,6 @@ while IFS= read -r component; do
         echo "Showcase coverage guard failed: ${component} has no ShowcaseComponent case (${showcase_key})." >&2
         exit 1
     fi
-done < <(rg --no-filename -o 'public struct (HIG[A-Za-z]+): View' Sources/HIGComponents | sed -E 's/public struct (HIG[A-Za-z]+): View/\1/' | sort -u)
+done < <(rg --no-filename -o 'public struct (HIG[A-Za-z]+).*: View( \{| where)' Sources/HIGComponents | sed -E 's/public struct (HIG[A-Za-z]+).*/\1/' | sort -u)
 
 echo "Showcase coverage guard passed: all public components are represented in Showcase."

@@ -70,31 +70,30 @@ HIGDesign synthesizes architecture and patterns from:
 | `HIGDesignPlatform` | Idiom and capability adapters |
 | `HIGDesignBridging` | Optional Cocoa bridges |
 
-## Current Milestone: Phase 11 Alert and Notification Components
+## Current Milestone: Phase 12 Library Completion and v1.0.0
 
-Phase 11 unifies modal alerts and configurable toast queues.
+Phase 12 completes the core component catalog and publishes the first stable release.
 
 This milestone includes:
 
-- `HIGAlert` modal surface alongside `HIGAlertBanner` and `higAlert`
-- `HIGToastQueueConfiguration` with manual dismissal and queue limits
-- brand theme variants in showcase snapshot coverage (192 PNG entries)
-- thirty-two-component `HIGShowcase` catalog
+- `HIGNavigationBar` and `HIGToolbar` as composable `View` components alongside existing modifiers
+- API stability guide and semantic-versioning policy for v1.0.0
+- showcase snapshot fidelity improvements with per-component labeling and no duplicate navigation chrome
+- thirty-two-component `HIGShowcase` catalog at v1.0.0
 
 This milestone does not include:
 
-- full component library delivery
-- Cocoa/UIKit bridging implementations
+- Cocoa/UIKit bridging implementations beyond scaffolding
 - remote third-party dependencies
 - production brand theme packs beyond scaffolding
 
-## Next Milestone: Phase 12 Library Completion and Release Candidate
+## Next Milestone: Phase 13 Adoption and Bridging Hardening
 
 The next milestone delivers:
 
-- remaining navigation component wrappers (`HIGNavigationBar`, `HIGToolbar`)
-- documentation pass and API stability review for v1.0.0
-- showcase snapshot fidelity improvements for distinct component renders
+- expanded `HIGBridging` helpers with documented platform fallbacks
+- consumer integration guides and sample app wiring
+- performance and accessibility audit pass across the full component catalog
 
 ## Success Metrics
 

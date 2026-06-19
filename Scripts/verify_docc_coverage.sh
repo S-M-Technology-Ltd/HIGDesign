@@ -42,6 +42,8 @@ EXPECTED_SYMBOLS=(
     HIGAlertBannerStyle
     HIGToastQueue
     HIGToastQueueConfiguration
+    HIGNavigationBar
+    HIGToolbar
     HIGToolbarTextAction
     HIGNavigationBarDisplayMode
     higPadding

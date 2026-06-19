@@ -70,7 +70,7 @@ let package = Package(
         ),
         .target(
             name: "HIGModifiers",
-            dependencies: ["HIGThemesContract"],
+            dependencies: ["HIGThemesContract", "HIGComponents"],
             path: "Sources/HIGModifiers"
         ),
         .target(
