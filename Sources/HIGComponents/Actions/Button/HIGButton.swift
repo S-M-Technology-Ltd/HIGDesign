@@ -1,5 +1,6 @@
 import HIGPlatform
 import HIGThemesContract
+import HIGTokensRaw
 import HIGTokensSemantic
 import SwiftUI
 
@@ -37,7 +38,9 @@ public struct HIGButton: View {
             HIGButtonLabelView(
                 title: title,
                 isLoading: isLoading,
-                font: tokens.font
+                font: tokens.font,
+                hiddenOpacity: theme.opacity.hidden,
+                fullOpacity: theme.opacity.full
             )
             .frame(maxWidth: role == .primary ? .infinity : nil)
             .frame(minHeight: minHeight)
@@ -47,13 +50,14 @@ public struct HIGButton: View {
             HIGButtonStyleView(
                 role: role,
                 colors: theme.colors,
+                opacity: theme.opacity,
                 cornerRadius: tokens.cornerRadius,
                 isEnabled: isEnabled,
                 isLoading: isLoading
             )
         )
         .disabled(isLoading || !isEnabled)
-        .animation(reduceMotion ? nil : .easeInOut(duration: 0.2), value: isLoading)
+        .animation(reduceMotion ? nil : .easeInOut(duration: theme.motion.quick), value: isLoading)
         .accessibilityLabel(title)
         .accessibilityAddTraits(.isButton)
         .accessibilityHint(isLoading ? "Loading" : "")
@@ -64,12 +68,14 @@ private struct HIGButtonLabelView: View {
     let title: String
     let isLoading: Bool
     let font: Font
+    let hiddenOpacity: CGFloat
+    let fullOpacity: CGFloat
 
     var body: some View {
         ZStack {
             Text(title)
                 .font(font)
-                .opacity(isLoading ? 0 : 1)
+                .opacity(isLoading ? hiddenOpacity : fullOpacity)
             if isLoading {
                 ProgressView()
                     .controlSize(.small)
@@ -81,6 +87,7 @@ private struct HIGButtonLabelView: View {
 private struct HIGButtonStyleView: ButtonStyle {
     let role: HIGButtonRole
     let colors: any HIGColorSemanticTokens
+    let opacity: any HIGOpacitySemanticTokens
     let cornerRadius: CGFloat
     let isEnabled: Bool
     let isLoading: Bool
@@ -93,13 +100,13 @@ private struct HIGButtonStyleView: ButtonStyle {
             .foregroundStyle(foreground)
             .background(background)
             .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
-            .opacity(isEnabled && !isLoading ? 1 : 0.55)
+            .opacity(isEnabled && !isLoading ? opacity.full : opacity.disabled)
     }
 
     private var foregroundColor: Color {
         switch role {
         case .primary:
-            Color.white
+            colors.labelOnAccent
         case .secondary, .borderless:
             colors.accent
         case .destructive:
@@ -110,11 +117,11 @@ private struct HIGButtonStyleView: ButtonStyle {
     private func backgroundColor(isPressed: Bool) -> Color {
         switch role {
         case .primary:
-            colors.accent.opacity(isPressed ? 0.82 : 1)
+            colors.accent.opacity(isPressed ? opacity.pressedPrimary : opacity.full)
         case .secondary:
-            colors.fillPrimary.opacity(isPressed ? 0.9 : 1)
+            colors.fillPrimary.opacity(isPressed ? opacity.pressedSecondary : opacity.full)
         case .destructive:
-            colors.destructive.opacity(0.12)
+            colors.destructive.opacity(opacity.subtleFill)
         case .borderless:
             .clear
         }
@@ -124,7 +131,7 @@ private struct HIGButtonStyleView: ButtonStyle {
 #if DEBUG
 #Preview("HIGButton — Primary") {
     HIGThemeableView(theme: HIGComponentPreviewTheme()) {
-        VStack(spacing: 16) {
+        VStack(spacing: HIGSpacing.lg.rawValue) {
             HIGButton("Continue", role: .primary) {}
             HIGButton("Cancel", role: .secondary) {}
             HIGButton("Delete", role: .destructive) {}
@@ -134,7 +141,13 @@ private struct HIGButtonStyleView: ButtonStyle {
 }
 
 #Preview("HIGButtonLabelView — Loading") {
-    HIGButtonLabelView(title: "Continue", isLoading: true, font: .body.weight(.semibold))
+    HIGButtonLabelView(
+        title: "Continue",
+        isLoading: true,
+        font: .body.weight(.semibold),
+        hiddenOpacity: HIGOpacity.hidden.rawValue,
+        fullOpacity: HIGOpacity.full.rawValue
+    )
         .padding()
 }
 #endif

@@ -1,4 +1,5 @@
 import HIGThemesContract
+import HIGTokensRaw
 import SwiftUI
 
 /// A transient feedback banner aligned with HIG toast guidance.
@@ -40,7 +41,7 @@ public struct HIGToast: View {
         .clipShape(RoundedRectangle(cornerRadius: tokens.cornerRadius, style: .continuous))
         .overlay {
             RoundedRectangle(cornerRadius: tokens.cornerRadius, style: .continuous)
-                .strokeBorder(theme.colors.separator, lineWidth: 1)
+                .strokeBorder(theme.colors.separator, lineWidth: theme.border.hairline)
         }
         .accessibilityElement(children: .combine)
         .accessibilityLabel(message)
@@ -62,6 +63,7 @@ public extension View {
 private struct HIGToastQueueModifier: ViewModifier {
     @Bindable var queue: HIGToastQueue
 
+    @Environment(\.higTheme) private var theme
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     func body(content: Content) -> some View {
@@ -75,7 +77,7 @@ private struct HIGToastQueueModifier: ViewModifier {
                     .transition(.move(edge: .bottom).combined(with: .opacity))
                 }
             }
-            .animation(reduceMotion ? nil : .easeInOut(duration: 0.2), value: queue.currentMessage)
+            .animation(reduceMotion ? nil : .easeInOut(duration: theme.motion.quick), value: queue.currentMessage)
     }
 }
 
@@ -83,6 +85,7 @@ private struct HIGToastModifier: ViewModifier {
     @Binding var isPresented: Bool
     let message: String
 
+    @Environment(\.higTheme) private var theme
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     func body(content: Content) -> some View {
@@ -96,7 +99,7 @@ private struct HIGToastModifier: ViewModifier {
                     .transition(.move(edge: .bottom).combined(with: .opacity))
                 }
             }
-            .animation(reduceMotion ? nil : .easeInOut(duration: 0.2), value: isPresented)
+            .animation(reduceMotion ? nil : .easeInOut(duration: theme.motion.quick), value: isPresented)
     }
 }
 
@@ -114,7 +117,7 @@ private struct HIGToastQueuePreviewView: View {
     @State private var queue = HIGToastQueue(configuration: .interactive)
 
     var body: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: HIGSpacing.lg.rawValue) {
             HIGButton("Queue Toasts", role: .primary) {
                 queue.enqueue("Settings saved")
                 queue.enqueue("Profile updated")

@@ -285,14 +285,14 @@ struct PickerRootView: View {
     }
 
     private func toggleLimitedBanner() {
-        withAnimation(.easeInOut(duration: 0.2)) {
+        withAnimation(.easeInOut(duration: theme.motion.quick)) {
             isLimitedBannerExpanded.toggle()
         }
     }
 
     private func collapseLimitedBannerIfNeeded() {
         guard isLimitedBannerExpanded else { return }
-        withAnimation(.easeInOut(duration: 0.2)) {
+        withAnimation(.easeInOut(duration: theme.motion.quick)) {
             isLimitedBannerExpanded = false
         }
     }

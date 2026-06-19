@@ -1,4 +1,5 @@
 import HIGThemesContract
+import HIGTokensRaw
 import SwiftUI
 
 /// A horizontal rule that uses the active theme separator color.
@@ -10,7 +11,7 @@ public struct HIGDivider: View {
     public var body: some View {
         Rectangle()
             .fill(theme.colors.separator)
-            .frame(height: 1)
+            .frame(height: theme.divider.thickness)
             .accessibilityHidden(true)
     }
 }
@@ -18,7 +19,7 @@ public struct HIGDivider: View {
 #if DEBUG
 #Preview("HIGDivider") {
     HIGThemeableView(theme: HIGComponentPreviewTheme()) {
-        VStack(spacing: 16) {
+        VStack(spacing: HIGSpacing.lg.rawValue) {
             Text("Above")
             HIGDivider()
             Text("Below")

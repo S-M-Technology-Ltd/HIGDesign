@@ -8,6 +8,10 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
     public let colors: any HIGColorSemanticTokens
     public let typography: any HIGTypographySemanticTokens
     public let spacing: any HIGSpacingSemanticTokens
+    public let opacity: any HIGOpacitySemanticTokens
+    public let border: any HIGBorderSemanticTokens
+    public let motion: any HIGMotionSemanticTokens
+    public let divider: any HIGDividerTokens
     public let button: any HIGButtonTokens
     public let textField: any HIGTextFieldTokens
     public let toggle: any HIGToggleTokens
@@ -41,15 +45,21 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
         self.colors = HIGSystemColorSemanticTokens(
             labelPrimary: baseColors.labelPrimary,
             labelSecondary: baseColors.labelSecondary,
+            labelOnAccent: baseColors.labelOnAccent,
             backgroundPrimary: baseColors.backgroundPrimary,
             backgroundSecondary: baseColors.backgroundSecondary,
             fillPrimary: baseColors.fillPrimary,
             separator: baseColors.separator,
             accent: baseColors.accent,
-            destructive: Color.red
+            destructive: Color.red,
+            warning: baseColors.warning
         )
         self.typography = base.typography
         self.spacing = base.spacing
+        self.opacity = base.opacity
+        self.border = base.border
+        self.motion = base.motion
+        self.divider = base.divider
         self.button = base.button
         self.textField = base.textField
         self.toggle = base.toggle

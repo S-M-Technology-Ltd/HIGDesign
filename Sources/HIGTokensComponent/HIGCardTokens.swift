@@ -15,7 +15,7 @@ public struct HIGSystemCardTokens: HIGCardTokens, Sendable {
     public init(
         cornerRadius: CGFloat = HIGRadius.lg.rawValue,
         contentPadding: CGFloat = HIGSpacing.lg.rawValue,
-        borderWidth: CGFloat = 1
+        borderWidth: CGFloat = HIGBorder.hairline.rawValue
     ) {
         self.cornerRadius = cornerRadius
         self.contentPadding = contentPadding

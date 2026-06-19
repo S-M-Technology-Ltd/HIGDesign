@@ -1,4 +1,5 @@
 import HIGThemesContract
+import HIGTokensRaw
 import SwiftUI
 
 /// A pill-shaped label for categories, filters, and metadata chips.
@@ -25,7 +26,7 @@ public struct HIGTag: View {
             .overlay {
                 if style == .outline {
                     Capsule()
-                        .strokeBorder(theme.colors.separator, lineWidth: 1)
+                        .strokeBorder(theme.colors.separator, lineWidth: theme.border.hairline)
                 }
             }
             .clipShape(Capsule())
@@ -37,7 +38,7 @@ public struct HIGTag: View {
         case .neutral:
             theme.colors.labelPrimary
         case .accent:
-            Color.white
+            theme.colors.labelOnAccent
         case .outline:
             theme.colors.accent
         }
@@ -58,7 +59,7 @@ public struct HIGTag: View {
 #if DEBUG
 #Preview("HIGTag") {
     HIGThemeableView(theme: HIGComponentPreviewTheme()) {
-        HStack(spacing: 12) {
+        HStack(spacing: HIGSpacing.md.rawValue) {
             HIGTag("Design")
             HIGTag("SwiftUI", style: .accent)
             HIGTag("Beta", style: .outline)

@@ -1,6 +1,7 @@
 import HIGPlatform
 import HIGThemesContract
 import HIGTokensComponent
+import HIGTokensRaw
 import SwiftUI
 
 /// An indeterminate activity indicator with optional caption text.
@@ -40,7 +41,7 @@ public struct HIGActivityIndicator: View {
 #if DEBUG
 #Preview("HIGActivityIndicator") {
     HIGThemeableView(theme: HIGComponentPreviewTheme()) {
-        VStack(alignment: .leading, spacing: 20) {
+        VStack(alignment: .leading, spacing: HIGSpacing.xl.rawValue) {
             HIGActivityIndicator("Syncing", size: .small)
             HIGActivityIndicator("Syncing", size: .medium)
             HIGActivityIndicator(size: .large)

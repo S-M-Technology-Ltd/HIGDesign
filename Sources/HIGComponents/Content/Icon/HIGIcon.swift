@@ -1,5 +1,6 @@
 import HIGThemesContract
 import HIGTokensComponent
+import HIGTokensRaw
 import SwiftUI
 
 /// A themed SF Symbol icon.
@@ -44,7 +45,7 @@ public struct HIGIcon: View {
 #if DEBUG
 #Preview("HIGIcon") {
     HIGThemeableView(theme: HIGComponentPreviewTheme()) {
-        HStack(spacing: 16) {
+        HStack(spacing: HIGSpacing.lg.rawValue) {
             HIGIcon("bell", size: .small)
             HIGIcon("star.fill", style: .accent)
             HIGIcon("folder", size: .large, style: .secondary)

@@ -34,7 +34,7 @@ public struct HIGSegmentedControl<Value: Hashable & Sendable>: View {
             segmentedPicker
                 .frame(minHeight: minHeight)
                 .font(tokens.font)
-                .opacity(isEnabled ? 1 : 0.55)
+                .opacity(isEnabled ? theme.opacity.full : theme.opacity.disabled)
         }
         .accessibilityElement(children: .contain)
         .accessibilityLabel(label)

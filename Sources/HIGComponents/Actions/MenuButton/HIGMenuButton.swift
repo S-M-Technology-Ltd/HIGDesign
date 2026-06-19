@@ -1,6 +1,7 @@
 import HIGPlatform
 import HIGThemesContract
 import HIGTokensComponent
+import HIGTokensRaw
 import SwiftUI
 
 /// Presentation style for ``HIGMenuButton``.
@@ -96,7 +97,7 @@ public struct HIGMenuButton<MenuContent: View>: View {
             .padding(.horizontal, tokens.horizontalPadding)
             .background(theme.colors.fillPrimary)
             .clipShape(RoundedRectangle(cornerRadius: tokens.cornerRadius, style: .continuous))
-            .opacity(isEnabled ? 1 : 0.55)
+            .opacity(isEnabled ? theme.opacity.full : theme.opacity.disabled)
         case .iconOnly:
             let iconSize = max(tokens.iconOnlySize, minHeight)
             Image(systemName: systemImage ?? "ellipsis.circle")
@@ -105,7 +106,7 @@ public struct HIGMenuButton<MenuContent: View>: View {
                 .frame(width: iconSize, height: iconSize)
                 .background(theme.colors.fillPrimary)
                 .clipShape(RoundedRectangle(cornerRadius: tokens.cornerRadius, style: .continuous))
-                .opacity(isEnabled ? 1 : 0.55)
+                .opacity(isEnabled ? theme.opacity.full : theme.opacity.disabled)
         }
     }
 }
@@ -113,7 +114,7 @@ public struct HIGMenuButton<MenuContent: View>: View {
 #if DEBUG
 #Preview("HIGMenuButton") {
     HIGThemeableView(theme: HIGComponentPreviewTheme()) {
-        VStack(spacing: 16) {
+        VStack(spacing: HIGSpacing.lg.rawValue) {
             HIGMenuButton("Options", systemImage: "ellipsis.circle") {
                 Button("Rename") {}
                 Button("Duplicate") {}

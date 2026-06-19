@@ -76,7 +76,7 @@ public struct HIGAlert: View {
         .clipShape(RoundedRectangle(cornerRadius: tokens.cornerRadius, style: .continuous))
         .overlay {
             RoundedRectangle(cornerRadius: tokens.cornerRadius, style: .continuous)
-                .strokeBorder(theme.colors.separator, lineWidth: 1)
+                .strokeBorder(theme.colors.separator, lineWidth: theme.border.hairline)
         }
         .accessibilityElement(children: .contain)
         .accessibilityLabel(title)

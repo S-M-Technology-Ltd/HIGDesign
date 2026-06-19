@@ -62,7 +62,7 @@ public struct HIGRadio<Value: Hashable & Sendable>: View {
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
-        .opacity(isEnabled ? 1 : 0.55)
+        .opacity(isEnabled ? theme.opacity.full : theme.opacity.disabled)
         .accessibilityLabel(option.label)
         .accessibilityAddTraits(selection == option.value ? .isSelected : [])
     }

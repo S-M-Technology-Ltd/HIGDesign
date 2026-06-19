@@ -1,4 +1,5 @@
 import HIGThemesContract
+import HIGTokensRaw
 import SwiftUI
 
 /// An inline alert banner for persistent, non-modal feedback.
@@ -59,7 +60,10 @@ public struct HIGAlertBanner: View {
         .clipShape(RoundedRectangle(cornerRadius: tokens.cornerRadius, style: .continuous))
         .overlay {
             RoundedRectangle(cornerRadius: tokens.cornerRadius, style: .continuous)
-                .strokeBorder(style.accentColor(theme: theme).opacity(0.35), lineWidth: 1)
+                .strokeBorder(
+                    style.accentColor(theme: theme).opacity(theme.opacity.bannerBorder),
+                    lineWidth: theme.border.hairline
+                )
         }
         .accessibilityElement(children: .combine)
     }
@@ -68,7 +72,7 @@ public struct HIGAlertBanner: View {
 #if DEBUG
 #Preview("HIGAlertBanner") {
     HIGThemeableView(theme: HIGComponentPreviewTheme()) {
-        VStack(spacing: 16) {
+        VStack(spacing: HIGSpacing.lg.rawValue) {
             HIGAlertBanner("Sync complete", message: "Your changes were saved to iCloud.")
             HIGAlertBanner(
                 "Storage almost full",

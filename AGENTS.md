@@ -258,7 +258,11 @@ View naming guard:
 
 Scripts/verify_view_naming.sh
 
-Photo picker design token guard:
+Component design token guard:
+
+Scripts/verify_component_token_usage.sh
+
+Photo picker design token guard (supplementary):
 
 Scripts/verify_photo_picker_token_usage.sh
 

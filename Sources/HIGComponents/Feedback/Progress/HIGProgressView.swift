@@ -1,4 +1,5 @@
 import HIGThemesContract
+import HIGTokensRaw
 import SwiftUI
 
 /// HIG-aligned progress indicator for determinate and indeterminate loading states.
@@ -42,7 +43,7 @@ public struct HIGProgressView: View {
 #if DEBUG
 #Preview("HIGProgressView") {
     HIGThemeableView(theme: HIGComponentPreviewTheme()) {
-        VStack(alignment: .leading, spacing: 20) {
+        VStack(alignment: .leading, spacing: HIGSpacing.xl.rawValue) {
             HIGProgressView("Uploading")
             HIGProgressView("Installing", value: 0.62)
         }

@@ -7,6 +7,10 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let colors: any HIGColorSemanticTokens
     public let typography: any HIGTypographySemanticTokens
     public let spacing: any HIGSpacingSemanticTokens
+    public let opacity: any HIGOpacitySemanticTokens
+    public let border: any HIGBorderSemanticTokens
+    public let motion: any HIGMotionSemanticTokens
+    public let divider: any HIGDividerTokens
     public let button: any HIGButtonTokens
     public let textField: any HIGTextFieldTokens
     public let toggle: any HIGToggleTokens
@@ -39,6 +43,10 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         colors: any HIGColorSemanticTokens = HIGSystemColorSemanticTokens(),
         typography: any HIGTypographySemanticTokens = HIGSystemTypographySemanticTokens(),
         spacing: any HIGSpacingSemanticTokens = HIGSystemSpacingSemanticTokens(),
+        opacity: any HIGOpacitySemanticTokens = HIGSystemOpacitySemanticTokens(),
+        border: any HIGBorderSemanticTokens = HIGSystemBorderSemanticTokens(),
+        motion: any HIGMotionSemanticTokens = HIGSystemMotionSemanticTokens(),
+        divider: any HIGDividerTokens = HIGSystemDividerTokens(),
         button: any HIGButtonTokens = HIGSystemButtonTokens(),
         textField: any HIGTextFieldTokens = HIGSystemTextFieldTokens(),
         toggle: any HIGToggleTokens = HIGSystemToggleTokens(),
@@ -70,6 +78,10 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.colors = colors
         self.typography = typography
         self.spacing = spacing
+        self.opacity = opacity
+        self.border = border
+        self.motion = motion
+        self.divider = divider
         self.button = button
         self.textField = textField
         self.toggle = toggle

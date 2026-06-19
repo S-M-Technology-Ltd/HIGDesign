@@ -1,4 +1,5 @@
 import HIGThemesContract
+import HIGTokensRaw
 import SwiftUI
 
 /// A title and optional subtitle using HIG typography roles.
@@ -67,7 +68,7 @@ public struct HIGLabel: View {
 #if DEBUG
 #Preview("HIGLabel") {
     HIGThemeableView(theme: HIGComponentPreviewTheme()) {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: HIGSpacing.lg.rawValue) {
             HIGLabel("Notifications", subtitle: "Choose alert styles", style: .primary)
             HIGLabel("Last synced", subtitle: "2 minutes ago", style: .secondary)
             HIGLabel("Optional", style: .caption)

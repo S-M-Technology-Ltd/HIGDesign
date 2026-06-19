@@ -35,7 +35,7 @@ public struct HIGPicker<Value: Hashable & Sendable>: View {
             .font(tokens.font)
             .frame(minHeight: minHeight, alignment: .leading)
             .foregroundStyle(theme.colors.labelPrimary)
-            .opacity(isEnabled ? 1 : 0.55)
+            .opacity(isEnabled ? theme.opacity.full : theme.opacity.disabled)
         }
         .accessibilityElement(children: .combine)
         .accessibilityLabel(label)

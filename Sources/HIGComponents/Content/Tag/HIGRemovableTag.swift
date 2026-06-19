@@ -1,5 +1,6 @@
 import HIGPlatform
 import HIGThemesContract
+import HIGTokensRaw
 import SwiftUI
 
 /// A tag chip with a remove affordance for filter and selection flows.
@@ -47,11 +48,11 @@ public struct HIGRemovableTag: View {
         .overlay {
             if style == .outline {
                 Capsule()
-                    .strokeBorder(theme.colors.separator, lineWidth: 1)
+                    .strokeBorder(theme.colors.separator, lineWidth: theme.border.hairline)
             }
         }
         .clipShape(Capsule())
-        .opacity(isEnabled ? 1 : 0.55)
+        .opacity(isEnabled ? theme.opacity.full : theme.opacity.disabled)
         .accessibilityElement(children: .combine)
         .accessibilityLabel("Tag \(text)")
     }
@@ -61,7 +62,7 @@ public struct HIGRemovableTag: View {
         case .neutral:
             theme.colors.labelPrimary
         case .accent:
-            Color.white
+            theme.colors.labelOnAccent
         case .outline:
             theme.colors.accent
         }
@@ -72,7 +73,7 @@ public struct HIGRemovableTag: View {
         case .neutral, .outline:
             theme.colors.labelSecondary
         case .accent:
-            Color.white.opacity(0.9)
+            theme.colors.labelOnAccent.opacity(theme.opacity.labelOnAccentSecondary)
         }
     }
 
@@ -91,7 +92,7 @@ public struct HIGRemovableTag: View {
 #if DEBUG
 #Preview("HIGRemovableTag") {
     HIGThemeableView(theme: HIGComponentPreviewTheme()) {
-        HStack(spacing: 12) {
+        HStack(spacing: HIGSpacing.md.rawValue) {
             HIGRemovableTag("Design") {}
             HIGRemovableTag("SwiftUI", style: .accent) {}
             HIGRemovableTag("Beta", style: .outline) {}

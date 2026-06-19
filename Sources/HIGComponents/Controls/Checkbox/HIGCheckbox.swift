@@ -35,7 +35,7 @@ public struct HIGCheckbox: View {
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
-        .opacity(isEnabled ? 1 : 0.55)
+        .opacity(isEnabled ? theme.opacity.full : theme.opacity.disabled)
         .accessibilityLabel(label)
         .accessibilityAddTraits(isOn ? .isSelected : [])
     }

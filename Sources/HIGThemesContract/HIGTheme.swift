@@ -6,6 +6,10 @@ public protocol HIGTheme: Sendable {
     var colors: any HIGColorSemanticTokens { get }
     var typography: any HIGTypographySemanticTokens { get }
     var spacing: any HIGSpacingSemanticTokens { get }
+    var opacity: any HIGOpacitySemanticTokens { get }
+    var border: any HIGBorderSemanticTokens { get }
+    var motion: any HIGMotionSemanticTokens { get }
+    var divider: any HIGDividerTokens { get }
     var button: any HIGButtonTokens { get }
     var textField: any HIGTextFieldTokens { get }
     var toggle: any HIGToggleTokens { get }

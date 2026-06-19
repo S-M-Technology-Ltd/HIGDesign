@@ -24,7 +24,7 @@ public struct HIGSystemTextEditorTokens: HIGTextEditorTokens, Sendable {
         horizontalPadding: CGFloat = HIGSpacing.md.rawValue,
         verticalPadding: CGFloat = HIGSpacing.sm.rawValue,
         cornerRadius: CGFloat = HIGRadius.sm.rawValue,
-        borderWidth: CGFloat = 1,
+        borderWidth: CGFloat = HIGBorder.hairline.rawValue,
         font: Font = .body
     ) {
         self.minHeight = minHeight

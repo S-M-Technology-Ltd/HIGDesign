@@ -43,7 +43,7 @@ public struct HIGTextField: View {
                         .strokeBorder(theme.colors.separator, lineWidth: tokens.borderWidth)
                 }
                 .foregroundStyle(theme.colors.labelPrimary)
-                .opacity(isEnabled ? 1 : 0.55)
+                .opacity(isEnabled ? theme.opacity.full : theme.opacity.disabled)
         }
         .accessibilityElement(children: .combine)
         .accessibilityLabel(label)

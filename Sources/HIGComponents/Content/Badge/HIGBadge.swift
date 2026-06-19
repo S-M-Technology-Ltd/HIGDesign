@@ -1,4 +1,5 @@
 import HIGThemesContract
+import HIGTokensRaw
 import SwiftUI
 
 /// A compact status label for counts and short metadata.
@@ -31,7 +32,7 @@ public struct HIGBadge: View {
         case .neutral:
             theme.colors.labelPrimary
         case .accent:
-            Color.white
+            theme.colors.labelOnAccent
         case .destructive:
             theme.colors.destructive
         }
@@ -44,7 +45,7 @@ public struct HIGBadge: View {
         case .accent:
             theme.colors.accent
         case .destructive:
-            theme.colors.destructive.opacity(0.12)
+            theme.colors.destructive.opacity(theme.opacity.subtleFill)
         }
     }
 }
@@ -52,7 +53,7 @@ public struct HIGBadge: View {
 #if DEBUG
 #Preview("HIGBadge") {
     HIGThemeableView(theme: HIGComponentPreviewTheme()) {
-        HStack(spacing: 12) {
+        HStack(spacing: HIGSpacing.md.rawValue) {
             HIGBadge("New")
             HIGBadge("3", style: .accent)
             HIGBadge("!", style: .destructive)

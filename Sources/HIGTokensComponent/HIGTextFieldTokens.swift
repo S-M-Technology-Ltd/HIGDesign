@@ -21,7 +21,7 @@ public struct HIGSystemTextFieldTokens: HIGTextFieldTokens, Sendable {
         minHeight: CGFloat = 44,
         horizontalPadding: CGFloat = HIGSpacing.md.rawValue,
         cornerRadius: CGFloat = HIGRadius.sm.rawValue,
-        borderWidth: CGFloat = 1,
+        borderWidth: CGFloat = HIGBorder.hairline.rawValue,
         font: Font = .body
     ) {
         self.minHeight = minHeight

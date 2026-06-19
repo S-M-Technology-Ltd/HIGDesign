@@ -29,7 +29,7 @@ public struct HIGToggle: View {
         .toggleStyle(.switch)
         #endif
         .frame(minHeight: minHeight, alignment: .leading)
-        .opacity(isEnabled ? 1 : 0.55)
+        .opacity(isEnabled ? theme.opacity.full : theme.opacity.disabled)
         .accessibilityLabel(label)
     }
 }

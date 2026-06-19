@@ -23,13 +23,13 @@ public enum HIGAlertBannerStyle: Sendable {
         case .info:
             theme.colors.accent
         case .warning:
-            .orange
+            theme.colors.warning
         case .error:
             theme.colors.destructive
         }
     }
 
     func backgroundColor(theme: any HIGTheme) -> Color {
-        accentColor(theme: theme).opacity(0.12)
+        accentColor(theme: theme).opacity(theme.opacity.subtleFill)
     }
 }

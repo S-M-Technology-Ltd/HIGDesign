@@ -1,4 +1,5 @@
 import HIGThemesContract
+import HIGTokensRaw
 import SwiftUI
 
 /// A circular avatar with initials or a fallback symbol.
@@ -38,7 +39,7 @@ public struct HIGAvatar: View {
 #if DEBUG
 #Preview("HIGAvatar") {
     HIGThemeableView(theme: HIGComponentPreviewTheme()) {
-        HStack(spacing: 16) {
+        HStack(spacing: HIGSpacing.lg.rawValue) {
             HIGAvatar("AR")
             HIGAvatar("Sam")
             HIGAvatar("", systemImage: "person.fill")
