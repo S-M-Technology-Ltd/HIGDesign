@@ -93,14 +93,14 @@ struct PhotoPreviewView: View {
         .onAppear {
             updatePreviewDimensionsIfNeeded(width: width, height: height, cropSide: cropSide)
         }
-        .onChange(of: width) { newWidth in
+        .onChange(of: width) { _, newWidth in
             updatePreviewDimensionsIfNeeded(
                 width: newWidth,
                 height: height,
                 cropSide: min(newWidth, height)
             )
         }
-        .onChange(of: height) { newHeight in
+        .onChange(of: height) { _, newHeight in
             updatePreviewDimensionsIfNeeded(
                 width: width,
                 height: newHeight,
@@ -171,7 +171,7 @@ struct PhotoPreviewView: View {
             }
             if let cached {
                 guard !Task.isCancelled else { return }
-                await applyPreviewImage(cached, assetID: asset.id)
+                applyPreviewImage(cached, assetID: asset.id)
             }
 
             await imageLoader.ensurePrepared(assetID: asset.id)
@@ -184,7 +184,7 @@ struct PhotoPreviewView: View {
                 )
 
                 guard !Task.isCancelled else { return }
-                await applyPreviewImage(result.cgImage, assetID: asset.id)
+                applyPreviewImage(result.cgImage, assetID: asset.id)
 
                 let cacheKey = ImageCacheKey.thumbnail(assetID: asset.id, targetSize: previewPointSize)
                 await ImageCache.shared.insert(result.cgImage, for: cacheKey, assetID: asset.id)
@@ -206,7 +206,7 @@ struct PhotoPreviewView: View {
                 }
 
                 guard !Task.isCancelled else { return }
-                await applyPreviewImage(fullImage, assetID: asset.id)
+                applyPreviewImage(fullImage, assetID: asset.id)
                 await MainActor.run {
                     isDownloading = false
                     downloadProgress = 0
@@ -253,7 +253,7 @@ struct PhotoPreviewView: View {
             }
 
             guard !Task.isCancelled else { return }
-            await applyPreviewImage(fullImage, assetID: asset.id)
+            applyPreviewImage(fullImage, assetID: asset.id)
             await MainActor.run {
                 isDownloading = false
                 downloadProgress = 0

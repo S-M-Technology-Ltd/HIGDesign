@@ -181,7 +181,7 @@ struct PickerRootView: View {
                 reloadLibrary()
             }
         }
-        .onChange(of: pickerSelection.assets) { newValue in
+        .onChange(of: pickerSelection.assets) { _, newValue in
             selection = newValue
         }
     }

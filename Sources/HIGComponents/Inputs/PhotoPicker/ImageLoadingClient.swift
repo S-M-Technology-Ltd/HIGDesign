@@ -16,12 +16,12 @@ public struct ImageLoadResult: Sendable {
 
 private struct PhotoKitCGImagePayload: @unchecked Sendable {
     let cgImage: CGImage
-    let info: [AnyHashable: Any]?
+    let isInCloud: Bool
 }
 
-private struct PhotoKitDataPayload: @unchecked Sendable {
+private struct PhotoKitDataPayload: Sendable {
     let data: Data
-    let info: [AnyHashable: Any]?
+    let isInCloud: Bool
 }
 
 private struct ImageRequestStrategy {
@@ -126,7 +126,6 @@ public final class ImageLoadingClient: @unchecked Sendable {
             throw HIGPhotoImageLoadingError.imageUnavailable
         }
 
-        let pixelSize = PhotoKitImageSizing.pixelSize(for: targetSize, scale: displayScale)
         return try await loadPreviewImage(
             for: asset,
             targetSize: targetSize,
@@ -158,7 +157,7 @@ public final class ImageLoadingClient: @unchecked Sendable {
                 progress: progress
             )
 
-            if PHAssetCloudStatus.isInCloud(info: payload.info), !configuration.iCloudNetworkAccessAllowed {
+            if payload.isInCloud, !configuration.iCloudNetworkAccessAllowed {
                 throw HIGPhotoImageLoadingError.networkAccessDisabled
             }
 
@@ -359,7 +358,7 @@ public final class ImageLoadingClient: @unchecked Sendable {
                 )
                 return ImageLoadResult(
                     cgImage: payload.cgImage,
-                    isInCloud: PHAssetCloudStatus.isInCloud(info: payload.info)
+                    isInCloud: payload.isInCloud
                 )
             } catch {
                 lastError = error
@@ -396,7 +395,7 @@ public final class ImageLoadingClient: @unchecked Sendable {
 
         return ImageLoadResult(
             cgImage: cgImage,
-            isInCloud: PHAssetCloudStatus.isInCloud(info: payload.info)
+            isInCloud: payload.isInCloud
         )
     }
 
@@ -447,7 +446,7 @@ public final class ImageLoadingClient: @unchecked Sendable {
             throw HIGPhotoImageLoadingError.imageUnavailable
         }
 
-        return PhotoKitCGImagePayload(cgImage: cgImage, info: payload.info)
+        return PhotoKitCGImagePayload(cgImage: cgImage, isInCloud: payload.isInCloud)
     }
 
     private func requestImageData(
@@ -490,10 +489,15 @@ public final class ImageLoadingClient: @unchecked Sendable {
                         for: asset,
                         options: options
                     ) { data, _, _, info in
+                        let cancelled = (info?[PHImageCancelledKey] as? Bool) == true
+                        let imageError = info?[PHImageErrorKey] as? Error
+                        let isInCloud = PHAssetCloudStatus.isInCloud(info: info)
+                        let imageData = data
+
                         self.photoKitQueue.async {
                             self.storeRequestOnQueue(key: key, id: nil)
 
-                            if let cancelled = info?[PHImageCancelledKey] as? Bool, cancelled {
+                            if cancelled {
                                 guardState.resumeOnce(
                                     continuation,
                                     throwing: HIGPhotoImageLoadingError.cancelled
@@ -501,12 +505,12 @@ public final class ImageLoadingClient: @unchecked Sendable {
                                 return
                             }
 
-                            if let error = info?[PHImageErrorKey] as? Error {
-                                guardState.resumeOnce(continuation, throwing: error)
+                            if let imageError {
+                                guardState.resumeOnce(continuation, throwing: imageError)
                                 return
                             }
 
-                            guard let data else {
+                            guard let imageData else {
                                 guardState.resumeOnce(
                                     continuation,
                                     throwing: HIGPhotoImageLoadingError.imageUnavailable
@@ -516,7 +520,7 @@ public final class ImageLoadingClient: @unchecked Sendable {
 
                             guardState.resumeOnce(
                                 continuation,
-                                returning: PhotoKitDataPayload(data: data, info: info)
+                                returning: PhotoKitDataPayload(data: imageData, isInCloud: isInCloud)
                             )
                         }
                     }
