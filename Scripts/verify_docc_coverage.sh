@@ -63,6 +63,7 @@ EXPECTED_SYMBOLS=(
     HIGBadgeStyle
     HIGActivityIndicator
     HIGActivityIndicatorSize
+    HIGActivityIndicatorStyle
     HIGList
     HIGFormSection
     HIGIcon
@@ -80,6 +81,9 @@ EXPECTED_SYMBOLS=(
     HIGMenuButtonPresentation
     HIGBrandTheme
     HIGActivityIndicatorTokens
+    HIGShimmerMode
+    HIGShimmerTokens
+    higShimmer
     HIGNavigationBarTextAction
     HIGNavigationBarIconAction
     HIGToolbarIconAction

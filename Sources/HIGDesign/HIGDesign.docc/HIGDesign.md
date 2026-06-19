@@ -111,6 +111,7 @@ HIGThemeableView(theme: HIGSystemTheme()) {
 - ``HIGProgressView``
 - ``HIGActivityIndicator``
 - ``HIGActivityIndicatorSize``
+- ``HIGActivityIndicatorStyle``
 - ``HIGAlert``
 - ``HIGAlertButtonRole``
 - ``HIGAlertBanner``
@@ -133,3 +134,6 @@ HIGThemeableView(theme: HIGSystemTheme()) {
 - ``higNavigationBarTitle(_:displayMode:)``
 - ``higNavigationBar(_:displayMode:leading:trailing:)``
 - ``HIGNavigationBarDisplayMode``
+- ``higShimmer(isActive:mode:)``
+- ``HIGShimmerMode``
+- ``HIGShimmerTokens``

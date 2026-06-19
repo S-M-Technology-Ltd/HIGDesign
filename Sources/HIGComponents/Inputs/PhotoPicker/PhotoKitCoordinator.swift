@@ -37,10 +37,11 @@ actor PhotoKitCoordinator {
         }
     }
 
-    func startCaching(assetIDs: [String], targetSize: CGSize, options: PHImageRequestOptions) {
+    func startCaching(assetIDs: [String], targetSize: CGSize, allowsNetwork: Bool) {
         let phAssets = assetIDs.compactMap { cachedAsset(for: $0) }
         guard !phAssets.isEmpty else { return }
 
+        let options = thumbnailRequestOptions(allowsNetwork: allowsNetwork)
         let pixelSize = PhotoKitImageSizing.pixelSize(for: targetSize, scale: displayScale)
         imageManager.startCachingImages(
             for: phAssets,
@@ -50,10 +51,11 @@ actor PhotoKitCoordinator {
         )
     }
 
-    func stopCaching(assetIDs: [String], targetSize: CGSize, options: PHImageRequestOptions) {
+    func stopCaching(assetIDs: [String], targetSize: CGSize, allowsNetwork: Bool) {
         let phAssets = assetIDs.compactMap { cachedAsset(for: $0) }
         guard !phAssets.isEmpty else { return }
 
+        let options = thumbnailRequestOptions(allowsNetwork: allowsNetwork)
         let pixelSize = PhotoKitImageSizing.pixelSize(for: targetSize, scale: displayScale)
         imageManager.stopCachingImages(
             for: phAssets,
@@ -192,6 +194,15 @@ actor PhotoKitCoordinator {
             continuation,
             returning: PhotoKitDataPayload(data: data, isInCloud: isInCloud)
         )
+    }
+
+    private func thumbnailRequestOptions(allowsNetwork: Bool) -> PHImageRequestOptions {
+        let options = PHImageRequestOptions()
+        options.deliveryMode = .fastFormat
+        options.resizeMode = .fast
+        options.version = .current
+        options.isNetworkAccessAllowed = allowsNetwork
+        return options
     }
 
     private func cancelRequest(for key: String) {
