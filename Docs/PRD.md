@@ -70,11 +70,19 @@ HIGDesign synthesizes architecture and patterns from:
 | `HIGDesignPlatform` | Idiom and capability adapters |
 | `HIGDesignBridging` | Optional Cocoa bridges |
 
-## Current Milestone: v1.0.1 (released)
+## Current Milestone: v1.1.0 (released)
 
-v1.0.1 is a patch release (2026-06-19) fixing PhotoPicker build warnings, sample-app warnings, and showcase snapshot rendering.
+v1.1.0 is a minor release (2026-06-20) adding custom activity indicator styles, a shimmer placeholder modifier, and PhotoPicker Swift concurrency improvements.
 
-Delivered in v1.0.1:
+Delivered in v1.1.0:
+
+- `HIGActivityIndicatorStyle` with ten custom indicator styles plus the system default
+- `higShimmer(isActive:mode:)` modifier with theme-backed `HIGShimmerTokens`
+- PhotoPicker image loading migrated to `PhotoKitCoordinator` actor (no GCD)
+- Picker chrome liquid glass buttons on iOS 26+ with bordered fallback
+- `Scripts/verify_no_gcd.sh` and portable `grep`-based verification scripts
+
+v1.0.1 (2026-06-19) delivered:
 
 - Reliable headless showcase snapshot capture with correctly framed, non-blank PNGs
 - Compact platform snapshot canvases for simple components

@@ -20,7 +20,7 @@ Add HIGDesign to your `Package.swift` dependency list:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/S-M-Technology-Ltd/HIGDesign.git", from: "1.0.1"),
+    .package(url: "https://github.com/S-M-Technology-Ltd/HIGDesign.git", from: "1.1.0"),
 ],
 targets: [
     .target(
