@@ -210,6 +210,22 @@ swift run HIGShowcaseApp
 
 ## Snapshot gallery
 
+## Public documentation
+
+| Resource | URL |
+|----------|-----|
+| Component gallery (GitHub Pages) | https://s-m-technology-ltd.github.io/HIGDesign/ |
+| DocC catalog | Open `HIGDesign` in Xcode → **Product → Build Documentation** |
+| Swift Package Index | https://swiftpackageindex.com/S-M-Technology-Ltd/HIGDesign |
+
+Submit the package to SPI if it is not indexed yet:
+
+```bash
+Scripts/open_swift_package_index.sh
+```
+
+## Showcase snapshots
+
 Committed PNG snapshots live under `Design/Showcase/snapshots/`:
 
 - **Theme matrix** — `{component}-{theme}-{colorScheme}.png` (system, highContrast, brand × light, dark)

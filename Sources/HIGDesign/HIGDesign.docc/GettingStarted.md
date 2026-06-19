@@ -31,3 +31,12 @@ swift run HIGShowcaseApp
 ```
 
 The showcase demonstrates light, dark, high-contrast, Dynamic Type, and Reduce Motion states for every shipped component.
+
+## Learn more
+
+- <doc:DesignTokens> — token layer architecture
+- <doc:PlatformSupport> — per-platform availability
+- <doc:ShowcaseApp> — sample app and gallery
+- <doc:CustomThemes> — brand and high-contrast themes
+
+Public docs: [GitHub Pages gallery](https://s-m-technology-ltd.github.io/HIGDesign/) · [HOW_TO_USE.md](https://github.com/S-M-Technology-Ltd/HIGDesign/blob/develop/Docs/HOW_TO_USE.md)

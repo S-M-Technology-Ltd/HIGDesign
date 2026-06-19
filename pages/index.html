@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="HIGDesign — SwiftUI design system aligned with Apple Human Interface Guidelines. 33 components, design tokens, and themes for every Apple platform.">
+  <title>HIGDesign — SwiftUI design system for Apple platforms</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f5f5f7;
+      --text: #1d1d1f;
+      --muted: #6e6e73;
+      --line: rgba(0,0,0,.08);
+      --surface: #ffffff;
+      --accent: #0071e3;
+      --accent-hover: #0077ed;
+      --hero-shadow: 0 24px 80px rgba(0,0,0,.12);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      line-height: 1.5;
+      background: var(--bg);
+      color: var(--text);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000;
+        --text: #f5f5f7;
+        --muted: #a1a1a6;
+        --line: rgba(255,255,255,.12);
+        --surface: #1c1c1e;
+        --hero-shadow: 0 24px 80px rgba(0,0,0,.45);
+      }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: blur(16px);
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      min-height: 52px; gap: 16px;
+    }
+    .brand { font-size: 18px; font-weight: 600; color: var(--text); }
+    .nav-links { display: flex; gap: 18px; font-size: 14px; flex-wrap: wrap; }
+    .hero { padding: 72px 0 48px; text-align: center; }
+    .eyebrow {
+      display: inline-block; margin-bottom: 12px; padding: 4px 10px;
+      border-radius: 999px; background: var(--surface); border: 1px solid var(--line);
+      font-size: 12px; color: var(--muted);
+    }
+    h1 {
+      margin: 0 0 16px; font-size: clamp(36px, 6vw, 56px);
+      line-height: 1.05; letter-spacing: -0.02em;
+    }
+    .lead {
+      max-width: 720px; margin: 0 auto 28px;
+      font-size: clamp(18px, 2.4vw, 22px); color: var(--muted);
+    }
+    .cta-row { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 44px; padding: 0 20px; border-radius: 980px;
+      font-size: 15px; font-weight: 500;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent-hover); color: #fff; text-decoration: none; }
+    .btn-secondary {
+      background: var(--surface); color: var(--text);
+      border: 1px solid var(--line);
+    }
+    .btn-secondary:hover { text-decoration: none; }
+    .hero-shot {
+      max-width: 900px; margin: 0 auto; border-radius: 18px;
+      overflow: hidden; border: 1px solid var(--line);
+      box-shadow: var(--hero-shadow);
+    }
+    .hero-shot img { display: block; width: 100%; height: auto; }
+    section { padding: 56px 0; }
+    h2 { margin: 0 0 12px; font-size: 32px; letter-spacing: -0.02em; }
+    .section-lead { margin: 0 0 32px; color: var(--muted); max-width: 640px; }
+    .features {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;
+    }
+    .feature {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: 16px; padding: 20px;
+    }
+    .feature h3 { margin: 0 0 8px; font-size: 17px; }
+    .feature p { margin: 0; color: var(--muted); font-size: 14px; }
+    .grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px;
+    }
+    .card {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: 16px; overflow: hidden;
+    }
+    .card img { display: block; width: 100%; height: auto; background: #fff; }
+    .card-body { padding: 14px 16px 16px; }
+    .card h3 { margin: 0 0 4px; font-size: 15px; }
+    .card p { margin: 0; font-size: 13px; color: var(--muted); }
+    .code {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: 16px; padding: 20px; overflow: auto;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px; line-height: 1.55;
+    }
+    footer {
+      border-top: 1px solid var(--line); padding: 32px 0 48px;
+      color: var(--muted); font-size: 13px;
+    }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#">HIGDesign</a>
+      <nav class="nav-links">
+        <a href="#components">Components</a>
+        <a href="#install">Install</a>
+        <a href="https://github.com/S-M-Technology-Ltd/HIGDesign/blob/develop/Docs/HOW_TO_USE.md">Docs</a>
+        <a href="https://github.com/S-M-Technology-Ltd/HIGDesign">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <span class="eyebrow">Swift 6 · SwiftUI · 6 Apple platforms</span>
+        <h1>Apple HIG components,<br>ready for production.</h1>
+        <p class="lead">
+          33 themed SwiftUI components, a layered token system, and committed showcase snapshots —
+          so your app looks native on iPhone, iPad, Mac, Apple&nbsp;TV, Apple&nbsp;Watch, and visionOS.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://github.com/S-M-Technology-Ltd/HIGDesign">View on GitHub</a>
+          <a class="btn btn-secondary" href="#install">Add via SPM</a>
+          <a class="btn btn-secondary" href="https://swiftpackageindex.com/S-M-Technology-Ltd/HIGDesign">Swift Package Index</a>
+        </div>
+        <div class="hero-shot">
+          <img src="https://raw.githubusercontent.com/S-M-Technology-Ltd/HIGDesign/v1.0.1/Design/Showcase/snapshots/button-system-light.png" alt="HIGButton component preview" width="900" height="620" loading="eager">
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Built for real apps</h2>
+        <p class="section-lead">Not a toy UI kit — HIGDesign enforces tokens, documents every public symbol, and ships with verification scripts used in CI.</p>
+        <div class="features">
+          <article class="feature">
+            <h3>HIG-aligned</h3>
+            <p>Components follow Apple Human Interface Guidelines with intentional per-platform behavior.</p>
+          </article>
+          <article class="feature">
+            <h3>Theme-driven</h3>
+            <p>Wrap once with <code>HIGThemeableView</code>. Swap system, high-contrast, or brand themes instantly.</p>
+          </article>
+          <article class="feature">
+            <h3>Token layers</h3>
+            <p>Raw → semantic → component tokens eliminate magic numbers in view code.</p>
+          </article>
+          <article class="feature">
+            <h3>385 snapshots</h3>
+            <p>Theme matrix plus per-platform renders keep visual regressions visible in PRs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="components">
+      <div class="wrap">
+        <h2>Component gallery</h2>
+        <p class="section-lead">System theme, light mode, macOS canvas. Explore all 33 components in the sample app or DocC catalog.</p>
+        <div class="grid" id="gallery"></div>
+      </div>
+    </section>
+
+    <section id="install">
+      <div class="wrap">
+        <h2>Install</h2>
+        <p class="section-lead">Add the package in Xcode or Package.swift, then wrap your root view.</p>
+        <pre class="code"><code>// Package.swift
+.package(url: "https://github.com/S-M-Technology-Ltd/HIGDesign.git", from: "1.0.1")
+
+// App.swift
+import HIGDesign
+
+HIGThemeableView(theme: HIGSystemTheme()) {
+    HIGButton("Continue", role: .primary) { }
+}</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>HIGDesign · MIT License · Apple trademarks belong to Apple Inc.</div>
+      <div class="footer-links">
+        <a href="https://github.com/S-M-Technology-Ltd/HIGDesign">Repository</a>
+        <a href="https://github.com/S-M-Technology-Ltd/HIGDesign/releases">Releases</a>
+        <a href="https://github.com/S-M-Technology-Ltd/HIGDesign/blob/develop/Docs/HOW_TO_USE.md">HOW_TO_USE</a>
+        <a href="https://github.com/S-M-Technology-Ltd/HIGDesign/tree/develop/Sources/HIGDesign/HIGDesign.docc">DocC catalog</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const base = "https://raw.githubusercontent.com/S-M-Technology-Ltd/HIGDesign/v1.0.1/Design/Showcase/snapshots/";
+    const items = [
+      ["Button", "Primary actions and loading states", "button-system-light.png"],
+      ["Text Field", "Labels, placeholders, validation", "textField-system-light.png"],
+      ["Toggle", "Platform-appropriate switches", "toggle-system-light.png"],
+      ["Card", "Grouped content surfaces", "card-system-light.png"],
+      ["Tab Bar", "Top-level navigation", "tabBar-system-light.png"],
+      ["Alert", "Modal decisions", "alert-system-light.png"],
+      ["Toast", "Transient feedback", "toast-system-light.png"],
+      ["Photo Picker", "iOS album browser", "photoPicker-system-light.png"],
+      ["Navigation Bar", "Titles and toolbar actions", "navigationBar-system-light.png"],
+      ["List", "Structured rows", "list-system-light.png"],
+    ];
+    const gallery = document.getElementById("gallery");
+    for (const [title, summary, file] of items) {
+      const slug = title.toLowerCase().replace(/ /g, "-");
+      gallery.insertAdjacentHTML("beforeend", `
+        <article class="card">
+          <img src="${base}${file}" alt="${title} preview" width="900" height="620" loading="lazy">
+          <div class="card-body">
+            <h3>${title}</h3>
+            <p>${summary}</p>
+          </div>
+        </article>`);
+    }
+  </script>
+</body>
+</html>

@@ -2,19 +2,38 @@
 
 Native SwiftUI design system components, tokens, and themes aligned with Apple Human Interface Guidelines.
 
+@Metadata {
+    @DisplayName("HIGDesign")
+    @TitleHeading("Framework")
+}
+
 ## Overview
 
 HIGDesign packages a layered token architecture, environment-driven themes, and reusable `HIG*` components for iOS, iPadOS, macOS, visionOS, tvOS, and watchOS. The library is SwiftUI-only and targets OS releases from the latest three calendar years.
 
+```swift
+import HIGDesign
+
+HIGThemeableView(theme: HIGSystemTheme()) {
+    HIGButton("Continue", role: .primary) { }
+}
+```
+
 ## Topics
 
-### Essentials
+### Getting Started
 
 - <doc:GettingStarted>
+- <doc:ShowcaseApp>
 - <doc:Components>
+
+### Architecture
+
+- <doc:DesignTokens>
+- <doc:CustomThemes>
+- <doc:PlatformSupport>
 - <doc:APIStability>
 - <doc:Bridging>
-- <doc:CustomThemes>
 
 ### Theming
 
@@ -25,14 +44,28 @@ HIGDesign packages a layered token architecture, environment-driven themes, and 
 - ``HIGBrandTheme``
 - ``HIGComponentPreviewTheme``
 
-### Components
+### Actions
 
 - ``HIGButton``
 - ``HIGButtonRole``
 - ``HIGButtonSize``
 - ``HIGMenuButton``
 - ``HIGMenuButtonPresentation``
+
+### Inputs
+
 - ``HIGTextField``
+- ``HIGSecureField``
+- ``HIGSearchField``
+- ``HIGTextEditor``
+- ``HIGPicker``
+- ``HIGPhotoPicker``
+- ``HIGPhotoPickerConfiguration``
+- ``HIGPhotoAsset``
+- ``HIGPhotoMediaType``
+
+### Controls
+
 - ``HIGToggle``
 - ``HIGCheckbox``
 - ``HIGRadio``
@@ -40,45 +73,51 @@ HIGDesign packages a layered token architecture, environment-driven themes, and 
 - ``HIGSegmentedControl``
 - ``HIGSlider``
 - ``HIGStepper``
-- ``HIGSecureField``
-- ``HIGSearchField``
-- ``HIGTextEditor``
-- ``HIGPicker``
-- ``HIGPhotoPicker``
-- ``HIGPhotoPickerConfiguration``
-- ``HIGDivider``
-- ``HIGProgressView``
-- ``HIGCard``
-- ``HIGTabBar``
-- ``HIGTabItem``
-- ``HIGToast``
-- ``HIGSidebar``
-- ``HIGSidebarItem``
-- ``HIGAlert``
-- ``HIGAlertButtonRole``
-- ``HIGAlertBanner``
-- ``HIGAlertBannerStyle``
-- ``HIGToastQueue``
-- ``HIGToastQueueConfiguration``
+
+### Content
+
 - ``HIGLabel``
 - ``HIGLabelStyle``
 - ``HIGBadge``
 - ``HIGBadgeStyle``
-- ``HIGActivityIndicator``
-- ``HIGActivityIndicatorSize``
-- ``HIGList``
-- ``HIGFormSection``
+- ``HIGTag``
+- ``HIGTagStyle``
+- ``HIGRemovableTag``
 - ``HIGIcon``
 - ``HIGIconSize``
 - ``HIGIconStyle``
 - ``HIGAvatar``
 - ``HIGLink``
 - ``HIGBulletList``
-- ``HIGTag``
-- ``HIGTagStyle``
-- ``HIGRemovableTag``
+
+### Layout
+
+- ``HIGCard``
+- ``HIGDivider``
+- ``HIGList``
+- ``HIGFormSection``
+
+### Navigation
+
+- ``HIGTabBar``
+- ``HIGTabItem``
+- ``HIGSidebar``
+- ``HIGSidebarItem``
 - ``HIGNavigationBar``
 - ``HIGToolbar``
+
+### Feedback
+
+- ``HIGProgressView``
+- ``HIGActivityIndicator``
+- ``HIGActivityIndicatorSize``
+- ``HIGAlert``
+- ``HIGAlertButtonRole``
+- ``HIGAlertBanner``
+- ``HIGAlertBannerStyle``
+- ``HIGToast``
+- ``HIGToastQueue``
+- ``HIGToastQueueConfiguration``
 
 ### Modifiers
 
