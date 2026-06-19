@@ -30,27 +30,16 @@ Minimum deployment targets cover the latest three calendar years:
 Run from repository root:
 
 ```bash
-Scripts/verify_requirements_present.sh
-Scripts/verify_ui_guidelines_present.sh
-Scripts/verify_xcode_previews_present.sh
-Scripts/verify_view_naming.sh
-Scripts/verify_component_token_usage.sh
-Scripts/verify_photo_picker_token_usage.sh
-Scripts/verify_no_uikit.sh
-Scripts/verify_showcase_coverage.sh
-Scripts/verify_docc_coverage.sh
-Scripts/verify_showcase_snapshots_present.sh
-Scripts/verify_showcase_snapshot_diff.sh
+Scripts/build_all_platforms.sh
+swift test
 Scripts/verify_sample_xcode_project.sh
-Scripts/publish_showcase_snapshots.sh
+
+Showcase snapshot capture is manual — for README and GitHub Pages images only:
+
 Scripts/capture_showcase_snapshots.sh
 ```
 
-```bash
-swift build --package-path .
-swift test --package-path .
-Scripts/build_all_platforms.sh
-```
+Individual guards remain available under `Scripts/verify_*.sh` when debugging a single failure.
 
 ## Agent Workflow
 
@@ -61,7 +50,7 @@ Scripts/build_all_platforms.sh
 
 ## Current Milestone
 
-Phase 13 v1.0.0 preparation. All platform builds, tests, showcase build, coverage guards, DocC coverage, automated snapshot capture (including brand theme variants), and snapshot diff verification are mandatory before merging UI changes.
+Phase 13 v1.0.0 preparation. Run builds, tests, and individual `Scripts/verify_*.sh` guards locally before opening a PR. Regenerate showcase PNGs manually when updating README or Pages imagery.
 
 ## Xcode
 

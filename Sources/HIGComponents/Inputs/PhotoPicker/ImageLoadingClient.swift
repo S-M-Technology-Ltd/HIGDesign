@@ -19,24 +19,16 @@ private struct PhotoKitCGImagePayload: @unchecked Sendable {
     let isInCloud: Bool
 }
 
-private struct PhotoKitDataPayload: Sendable {
-    let data: Data
-    let isInCloud: Bool
-}
-
 private struct ImageRequestStrategy {
     let deliveryMode: PHImageRequestOptionsDeliveryMode
     let resizeMode: PHImageRequestOptionsResizeMode
     let version: PHImageRequestOptionsVersion
 }
 
-/// Loads images from PhotoKit on a dedicated serial queue to avoid blocking the main actor.
+/// Loads images from PhotoKit on a dedicated actor to avoid blocking the main actor.
 public final class ImageLoadingClient: @unchecked Sendable {
     private let configuration: HIGPhotoPickerConfiguration
-    private let imageManager: PHCachingImageManager
-    private let photoKitQueue = DispatchQueue(label: "HIGPhotoPicker.PhotoKit", qos: .userInitiated)
-    private var activeRequests: [String: PHImageRequestID] = [:]
-    private var assetCache: [String: PHAsset] = [:]
+    private let coordinator: PhotoKitCoordinator
     private let isPreviewMode: Bool
     private let displayScale: CGFloat
 
@@ -47,9 +39,12 @@ public final class ImageLoadingClient: @unchecked Sendable {
         displayScale: CGFloat? = nil
     ) {
         self.configuration = configuration
-        self.imageManager = imageManager
         self.isPreviewMode = isPreviewMode
         self.displayScale = displayScale ?? PhotoKitImageSizing.displayScale()
+        self.coordinator = PhotoKitCoordinator(
+            imageManager: imageManager,
+            displayScale: self.displayScale
+        )
     }
 
     #if DEBUG
@@ -61,17 +56,12 @@ public final class ImageLoadingClient: @unchecked Sendable {
     public func prepareAssets(ids: [String]) {
         guard !isPreviewMode else { return }
 
-        photoKitQueue.async { [weak self] in
-            guard let self else { return }
-            for id in ids {
-                _ = self.cachedAssetOnQueue(for: id)
-            }
-        }
+        Task { await coordinator.prepareAssets(ids: ids) }
     }
 
     public func ensurePrepared(assetID: String) async {
         guard !isPreviewMode else { return }
-        _ = await cachedAsset(for: assetID)
+        _ = await coordinator.cachedAsset(for: assetID)
     }
 
     public func loadThumbnail(
@@ -83,7 +73,7 @@ public final class ImageLoadingClient: @unchecked Sendable {
             return try previewThumbnail(for: asset)
         }
 
-        guard let phAsset = await cachedAsset(for: asset.id) else {
+        guard let phAsset = await coordinator.cachedAsset(for: asset.id) else {
             throw HIGPhotoImageLoadingError.assetNotFound
         }
         guard phAsset.mediaType == .image else {
@@ -119,7 +109,7 @@ public final class ImageLoadingClient: @unchecked Sendable {
             return try previewThumbnail(for: asset)
         }
 
-        guard let phAsset = await cachedAsset(for: asset.id) else {
+        guard let phAsset = await coordinator.cachedAsset(for: asset.id) else {
             throw HIGPhotoImageLoadingError.assetNotFound
         }
         guard phAsset.mediaType == .image else {
@@ -141,7 +131,7 @@ public final class ImageLoadingClient: @unchecked Sendable {
             return try await previewFullSizeImage(for: asset, progress: progress)
         }
 
-        guard let phAsset = await cachedAsset(for: asset.id) else {
+        guard let phAsset = await coordinator.cachedAsset(for: asset.id) else {
             throw HIGPhotoImageLoadingError.assetNotFound
         }
         guard phAsset.mediaType == .image else {
@@ -189,60 +179,27 @@ public final class ImageLoadingClient: @unchecked Sendable {
     public func startCaching(assetIDs: [String], targetSize: CGSize) {
         guard !isPreviewMode else { return }
 
-        photoKitQueue.async { [weak self] in
-            guard let self else { return }
-            let phAssets = assetIDs.compactMap { self.cachedAssetOnQueue(for: $0) }
-            guard !phAssets.isEmpty else { return }
-
-            let pixelSize = PhotoKitImageSizing.pixelSize(for: targetSize, scale: self.displayScale)
-            let options = self.thumbnailOptions(allowsNetwork: false)
-            self.imageManager.startCachingImages(
-                for: phAssets,
-                targetSize: pixelSize,
-                contentMode: .aspectFill,
-                options: options
-            )
-        }
+        let options = thumbnailOptions(allowsNetwork: false)
+        Task { await coordinator.startCaching(assetIDs: assetIDs, targetSize: targetSize, options: options) }
     }
 
     public func stopCaching(assetIDs: [String], targetSize: CGSize) {
         guard !isPreviewMode else { return }
 
-        photoKitQueue.async { [weak self] in
-            guard let self else { return }
-            let phAssets = assetIDs.compactMap { self.cachedAssetOnQueue(for: $0) }
-            guard !phAssets.isEmpty else { return }
-
-            let pixelSize = PhotoKitImageSizing.pixelSize(for: targetSize, scale: self.displayScale)
-            let options = self.thumbnailOptions(allowsNetwork: false)
-            self.imageManager.stopCachingImages(
-                for: phAssets,
-                targetSize: pixelSize,
-                contentMode: .aspectFill,
-                options: options
-            )
-        }
+        let options = thumbnailOptions(allowsNetwork: false)
+        Task { await coordinator.stopCaching(assetIDs: assetIDs, targetSize: targetSize, options: options) }
     }
 
     public func cancel(for key: String) {
         guard !isPreviewMode else { return }
 
-        photoKitQueue.async { [weak self] in
-            self?.cancelOnQueue(matching: key)
-        }
+        Task { await coordinator.cancel(matching: key) }
     }
 
     public func cancelAll() {
         guard !isPreviewMode else { return }
 
-        photoKitQueue.async { [weak self] in
-            guard let self else { return }
-            let requestIDs = Array(self.activeRequests.values)
-            self.activeRequests.removeAll()
-            for requestID in requestIDs {
-                self.imageManager.cancelImageRequest(requestID)
-            }
-        }
+        Task { await coordinator.cancelAll() }
     }
 
     public func loadPreviewImage(
@@ -254,7 +211,7 @@ public final class ImageLoadingClient: @unchecked Sendable {
             return try previewThumbnail(for: asset)
         }
 
-        guard let phAsset = await cachedAsset(for: asset.id) else {
+        guard let phAsset = await coordinator.cachedAsset(for: asset.id) else {
             throw HIGPhotoImageLoadingError.assetNotFound
         }
         guard phAsset.mediaType == .image else {
@@ -399,28 +356,6 @@ public final class ImageLoadingClient: @unchecked Sendable {
         )
     }
 
-    private func cachedAsset(for id: String) async -> PHAsset? {
-        guard !isPreviewMode else { return nil }
-
-        return await withCheckedContinuation { continuation in
-            photoKitQueue.async { [weak self] in
-                continuation.resume(returning: self?.cachedAssetOnQueue(for: id))
-            }
-        }
-    }
-
-    private func cachedAssetOnQueue(for id: String) -> PHAsset? {
-        if let cached = assetCache[id] {
-            return cached
-        }
-
-        let asset = PHAsset.fetchAssets(withLocalIdentifiers: [id], options: nil).firstObject
-        if let asset {
-            assetCache[id] = asset
-        }
-        return asset
-    }
-
     private func requestCGImage(
         key: String,
         asset: PHAsset,
@@ -458,99 +393,15 @@ public final class ImageLoadingClient: @unchecked Sendable {
         allowsNetwork: Bool,
         progress: (@Sendable (Double) -> Void)?
     ) async throws -> PhotoKitDataPayload {
-        try Task.checkCancellation()
-
-        return try await withTaskCancellationHandler {
-            try await withCheckedThrowingContinuation { continuation in
-                let guardState = ContinuationGuard()
-
-                photoKitQueue.async { [weak self] in
-                    guard let self else {
-                        guardState.resumeOnce(continuation, throwing: HIGPhotoImageLoadingError.cancelled)
-                        return
-                    }
-
-                    self.cancelOnQueue(for: key)
-
-                    let options = PHImageRequestOptions()
-                    options.deliveryMode = deliveryMode
-                    options.resizeMode = resizeMode
-                    options.version = version
-                    options.isNetworkAccessAllowed = allowsNetwork
-                    options.isSynchronous = false
-
-                    if allowsNetwork, let progress {
-                        options.progressHandler = { value, _, _, _ in
-                            progress(value)
-                        }
-                    }
-
-                    let requestID = self.imageManager.requestImageDataAndOrientation(
-                        for: asset,
-                        options: options
-                    ) { data, _, _, info in
-                        let cancelled = (info?[PHImageCancelledKey] as? Bool) == true
-                        let imageError = info?[PHImageErrorKey] as? Error
-                        let isInCloud = PHAssetCloudStatus.isInCloud(info: info)
-                        let imageData = data
-
-                        self.photoKitQueue.async {
-                            self.storeRequestOnQueue(key: key, id: nil)
-
-                            if cancelled {
-                                guardState.resumeOnce(
-                                    continuation,
-                                    throwing: HIGPhotoImageLoadingError.cancelled
-                                )
-                                return
-                            }
-
-                            if let imageError {
-                                guardState.resumeOnce(continuation, throwing: imageError)
-                                return
-                            }
-
-                            guard let imageData else {
-                                guardState.resumeOnce(
-                                    continuation,
-                                    throwing: HIGPhotoImageLoadingError.imageUnavailable
-                                )
-                                return
-                            }
-
-                            guardState.resumeOnce(
-                                continuation,
-                                returning: PhotoKitDataPayload(data: imageData, isInCloud: isInCloud)
-                            )
-                        }
-                    }
-
-                    self.storeRequestOnQueue(key: key, id: requestID)
-                }
-            }
-        } onCancel: { [weak self] in
-            self?.cancel(for: key)
-        }
-    }
-
-    private func cancelOnQueue(for key: String) {
-        guard let requestID = activeRequests.removeValue(forKey: key) else { return }
-        imageManager.cancelImageRequest(requestID)
-    }
-
-    private func cancelOnQueue(matching keyPrefix: String) {
-        let keys = activeRequests.keys.filter { $0 == keyPrefix || $0.hasPrefix("\(keyPrefix)-") }
-        for key in keys {
-            cancelOnQueue(for: key)
-        }
-    }
-
-    private func storeRequestOnQueue(key: String, id: PHImageRequestID?) {
-        if let id {
-            activeRequests[key] = id
-        } else {
-            activeRequests.removeValue(forKey: key)
-        }
+        try await coordinator.requestImageData(
+            key: key,
+            asset: asset,
+            deliveryMode: deliveryMode,
+            resizeMode: resizeMode,
+            version: version,
+            allowsNetwork: allowsNetwork,
+            progress: progress
+        )
     }
 
     private func thumbnailOptions(allowsNetwork: Bool) -> PHImageRequestOptions {

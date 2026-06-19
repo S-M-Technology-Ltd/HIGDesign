@@ -74,7 +74,7 @@ struct PhotoPreviewView: View {
             }
 
             if showsCropMask {
-                PreviewCompositionGridOverlay()
+                PreviewCompositionGridOverlayView()
                     .frame(width: width, height: height)
             }
 
@@ -269,7 +269,7 @@ struct PhotoPreviewView: View {
     }
 }
 
-private struct PreviewCompositionGridOverlay: View {
+private struct PreviewCompositionGridOverlayView: View {
     @Environment(\.higTheme) private var theme
 
     private var tokens: any HIGPhotoPickerTokens { theme.photoPicker }
@@ -396,7 +396,7 @@ private struct ZoomableSwiftUIImageView: View {
     let tokens = HIGSystemPhotoPickerTokens()
     ZStack {
         tokens.previewBackground
-        PreviewCompositionGridOverlay()
+        PreviewCompositionGridOverlayView()
     }
     .frame(width: tokens.fallbackLayoutWidth * 0.75, height: tokens.fallbackLayoutWidth * 0.75)
 }

@@ -6,7 +6,8 @@ cd "$ROOT"
 
 PATTERN='import UIKit|import UIKit\.|UIColor\.|UIAccessibility\.|UIViewRepresentable|UIViewControllerRepresentable'
 
-if rg -n "$PATTERN" Sources Tests; then
+if grep -rEn "$PATTERN" Sources Tests >/dev/null 2>&1; then
+    grep -rEn "$PATTERN" Sources Tests >&2
     echo "UIKit guard failed: HIGDesign sources must use SwiftUI only." >&2
     exit 1
 fi

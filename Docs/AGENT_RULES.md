@@ -8,6 +8,12 @@ These rules apply to automated and human-assisted coding agents working in this 
 - The library supports iOS, iPadOS, macOS, visionOS, tvOS, and watchOS.
 - HIGDesign is not an application. Do not add app-only concerns such as persistence, sync, purchases, or moderation unless explicitly requested.
 
+## Git workflow
+
+- Never push directly to `develop` or `main`.
+- Branch from `develop`, push the branch, and open a pull request.
+- Wait for the `Build and Test` workflow to pass before merge.
+
 ## Architecture
 
 - Use modular Swift Package Manager targets with an acyclic dependency graph.

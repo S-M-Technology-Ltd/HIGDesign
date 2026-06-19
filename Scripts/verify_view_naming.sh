@@ -23,13 +23,13 @@ if ((${#existing_paths[@]} == 0)); then
     exit 0
 fi
 
+VIEW_PATTERN='^[[:space:]]*(private[[:space:]]+|fileprivate[[:space:]]+|internal[[:space:]]+|public[[:space:]]+)?struct[[:space:]]+[A-Za-z_][A-Za-z0-9_]*[^:]*:[^{]*[[:<:]]View[[:>:]]'
+
 swift_files=()
 while IFS= read -r file; do
     swift_files+=("$file")
 done < <(
-    rg -l --glob '*.swift' \
-        '^[[:space:]]*(private[[:space:]]+|fileprivate[[:space:]]+|internal[[:space:]]+|public[[:space:]]+)?struct[[:space:]]+[A-Za-z_][A-Za-z0-9_]*[^:]*:[^{]*\bView\b' \
-        "${existing_paths[@]}" 2>/dev/null | sort || true
+    grep -rlE "$VIEW_PATTERN" "${existing_paths[@]}" 2>/dev/null | sort || true
 )
 
 if ((${#swift_files[@]} == 0)); then
