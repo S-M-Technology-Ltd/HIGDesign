@@ -179,15 +179,13 @@ public final class ImageLoadingClient: @unchecked Sendable {
     public func startCaching(assetIDs: [String], targetSize: CGSize) {
         guard !isPreviewMode else { return }
 
-        let options = thumbnailOptions(allowsNetwork: false)
-        Task { await coordinator.startCaching(assetIDs: assetIDs, targetSize: targetSize, options: options) }
+        Task { await coordinator.startCaching(assetIDs: assetIDs, targetSize: targetSize, allowsNetwork: false) }
     }
 
     public func stopCaching(assetIDs: [String], targetSize: CGSize) {
         guard !isPreviewMode else { return }
 
-        let options = thumbnailOptions(allowsNetwork: false)
-        Task { await coordinator.stopCaching(assetIDs: assetIDs, targetSize: targetSize, options: options) }
+        Task { await coordinator.stopCaching(assetIDs: assetIDs, targetSize: targetSize, allowsNetwork: false) }
     }
 
     public func cancel(for key: String) {
@@ -402,15 +400,6 @@ public final class ImageLoadingClient: @unchecked Sendable {
             allowsNetwork: allowsNetwork,
             progress: progress
         )
-    }
-
-    private func thumbnailOptions(allowsNetwork: Bool) -> PHImageRequestOptions {
-        let options = PHImageRequestOptions()
-        options.deliveryMode = .fastFormat
-        options.resizeMode = .fast
-        options.version = .current
-        options.isNetworkAccessAllowed = allowsNetwork
-        return options
     }
 
     #if DEBUG
