@@ -1,0 +1,12 @@
+// Copy this file to Signing.local.xcconfig (same folder) for iPhone/iPad device builds:
+//
+//   cp Signing.local.xcconfig.example Signing.local.xcconfig
+//
+// Then set your Apple Development team ID from Xcode → Settings → Accounts,
+// or from https://developer.apple.com/account → Membership details.
+
+DEVELOPMENT_TEAM = YOUR_TEAM_ID
+
+// Optional overrides for your personal device testing:
+// PRODUCT_BUNDLE_IDENTIFIER = com.example.higdesign.sample
+// CODE_SIGN_IDENTITY = Apple Development

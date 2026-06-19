@@ -5,6 +5,9 @@
 ## User settings
 xcuserdata/
 
+# Sample app signing (device builds — keep team ID local)
+Sample/Config/Signing.local.xcconfig
+
 ## Obj-C/Swift specific
 *.hmap
 

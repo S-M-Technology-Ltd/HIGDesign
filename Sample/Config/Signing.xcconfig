@@ -1,0 +1,3 @@
+// Shared signing configuration for HIGDesignSample.
+// Device-specific values belong in Signing.local.xcconfig (gitignored).
+#include? "Signing.local.xcconfig"
