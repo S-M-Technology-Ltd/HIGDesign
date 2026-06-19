@@ -37,7 +37,7 @@ import re
 text = (root / "Showcase/ShowcaseComponent.swift").read_text(encoding="utf-8")
 components = sorted(set(re.findall(r"^\s*case ([a-zA-Z]+)\b", text, re.MULTILINE)))
 
-themes = {"system", "highContrast"}
+themes = {"system", "highContrast", "brand"}
 schemes = {"light", "dark"}
 manifest_keys = {(e["component"], e["theme"], e["colorScheme"]) for e in entries}
 

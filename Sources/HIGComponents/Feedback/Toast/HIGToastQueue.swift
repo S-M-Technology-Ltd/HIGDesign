@@ -6,6 +6,7 @@ import Observation
 @Observable
 public final class HIGToastQueue {
     public private(set) var currentMessage: String?
+    public let configuration: HIGToastQueueConfiguration
 
     private struct PendingToast: Sendable {
         let message: String
@@ -15,11 +16,19 @@ public final class HIGToastQueue {
     private var pending: [PendingToast] = []
     private var dismissTask: Task<Void, Never>?
 
-    public init() {}
+    public init(configuration: HIGToastQueueConfiguration = .standard) {
+        self.configuration = configuration
+    }
 
     /// Adds a toast to the queue. Toasts display sequentially.
-    public func enqueue(_ message: String, duration: Duration = .seconds(2)) {
-        pending.append(PendingToast(message: message, duration: duration))
+    public func enqueue(_ message: String, duration: Duration? = nil) {
+        let resolvedDuration = duration ?? configuration.defaultDuration
+        pending.append(PendingToast(message: message, duration: resolvedDuration))
+
+        while pending.count > configuration.maximumQueuedMessages {
+            pending.removeFirst()
+        }
+
         presentNextIfIdle()
     }
 

@@ -30,4 +30,4 @@ swift run HIGShowcase
 
 ## Status
 
-Phase 10: removable tags, icon-only menu button, activity indicator presets, and brand theme scaffolding (v0.10.0).
+Phase 11: HIGAlert modal, toast queue configuration, and brand-theme snapshot coverage (v0.11.0).

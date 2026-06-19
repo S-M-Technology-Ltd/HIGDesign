@@ -22,7 +22,16 @@ struct ShowcaseAlertView: View {
                     actionTitle: "Manage"
                 )
 
-                HIGButton("Delete Item", role: .destructive) {
+                HIGAlert(
+                    "Delete Item?",
+                    message: "This action cannot be undone.",
+                    primaryButtonTitle: "Delete",
+                    primaryButtonRole: .destructive,
+                    secondaryButtonTitle: "Cancel",
+                    secondaryButtonRole: .cancel
+                )
+
+                HIGButton("Present Native Alert", role: .destructive) {
                     isPresented = true
                 }
             }

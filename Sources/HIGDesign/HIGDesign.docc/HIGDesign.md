@@ -51,10 +51,12 @@ HIGDesign packages a layered token architecture, environment-driven themes, and 
 - ``HIGToast``
 - ``HIGSidebar``
 - ``HIGSidebarItem``
+- ``HIGAlert``
 - ``HIGAlertButtonRole``
 - ``HIGAlertBanner``
 - ``HIGAlertBannerStyle``
 - ``HIGToastQueue``
+- ``HIGToastQueueConfiguration``
 - ``HIGLabel``
 - ``HIGLabelStyle``
 - ``HIGBadge``

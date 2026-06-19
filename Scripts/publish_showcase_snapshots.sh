@@ -6,7 +6,7 @@ cd "$ROOT"
 
 MANIFEST_PATH="Design/Showcase/manifest.json"
 SNAPSHOT_DIR="Design/Showcase/snapshots"
-THEMES=(system highContrast)
+THEMES=(system highContrast brand)
 SCHEMES=(light dark)
 
 mkdir -p "$SNAPSHOT_DIR"
@@ -25,7 +25,7 @@ python3 - <<'PY' "$MANIFEST_PATH" "${components[@]}"
 import json, sys
 path = sys.argv[1]
 components = sys.argv[2:]
-themes = ["system", "highContrast"]
+themes = ["system", "highContrast", "brand"]
 schemes = ["light", "dark"]
 entries = []
 for component in components:

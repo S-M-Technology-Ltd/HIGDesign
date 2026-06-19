@@ -58,4 +58,4 @@ Scripts/build_all_platforms.sh
 
 ## Current Milestone
 
-Phase 10 feedback and indicator expansion. All platform builds, tests, showcase build, coverage guards, DocC coverage, automated snapshot capture, and snapshot diff verification are mandatory before merging UI changes.
+Phase 11 alert and notification components. All platform builds, tests, showcase build, coverage guards, DocC coverage, automated snapshot capture (including brand theme variants), and snapshot diff verification are mandatory before merging UI changes.

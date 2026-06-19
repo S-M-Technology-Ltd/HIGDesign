@@ -70,16 +70,15 @@ HIGDesign synthesizes architecture and patterns from:
 | `HIGDesignPlatform` | Idiom and capability adapters |
 | `HIGDesignBridging` | Optional Cocoa bridges |
 
-## Current Milestone: Phase 10 Feedback and Indicator Expansion
+## Current Milestone: Phase 11 Alert and Notification Components
 
-Phase 10 extends filter chips, menu affordances, loading indicators, and theme authoring.
+Phase 11 unifies modal alerts and configurable toast queues.
 
 This milestone includes:
 
-- `HIGRemovableTag` and `HIGMenuButton` icon-only presentation
-- platform-aware `HIGActivityIndicator` sizing presets and activity-indicator tokens on `HIGTheme`
-- `HIGBrandTheme` scaffolding and a custom `HIGTheme` authoring guide
-- brand theme preview in showcase settings
+- `HIGAlert` modal surface alongside `HIGAlertBanner` and `higAlert`
+- `HIGToastQueueConfiguration` with manual dismissal and queue limits
+- brand theme variants in showcase snapshot coverage (192 PNG entries)
 - thirty-two-component `HIGShowcase` catalog
 
 This milestone does not include:
@@ -89,13 +88,13 @@ This milestone does not include:
 - remote third-party dependencies
 - production brand theme packs beyond scaffolding
 
-## Next Milestone: Phase 11 Alert and Notification Components
+## Next Milestone: Phase 12 Library Completion and Release Candidate
 
 The next milestone delivers:
 
-- unified `HIGAlert` modal component polish beyond `HIGAlertBanner`
-- toast queue configuration and dismissal controls
-- expanded snapshot coverage for brand theme variants
+- remaining navigation component wrappers (`HIGNavigationBar`, `HIGToolbar`)
+- documentation pass and API stability review for v1.0.0
+- showcase snapshot fidelity improvements for distinct component renders
 
 ## Success Metrics
 

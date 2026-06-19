@@ -26,6 +26,18 @@
       "file": "snapshots/activityIndicator-highContrast-dark.png"
     },
     {
+      "component": "activityIndicator",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/activityIndicator-brand-light.png"
+    },
+    {
+      "component": "activityIndicator",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/activityIndicator-brand-dark.png"
+    },
+    {
       "component": "alert",
       "theme": "system",
       "colorScheme": "light",
@@ -48,6 +60,18 @@
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/alert-highContrast-dark.png"
+    },
+    {
+      "component": "alert",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/alert-brand-light.png"
+    },
+    {
+      "component": "alert",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/alert-brand-dark.png"
     },
     {
       "component": "avatar",
@@ -74,6 +98,18 @@
       "file": "snapshots/avatar-highContrast-dark.png"
     },
     {
+      "component": "avatar",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/avatar-brand-light.png"
+    },
+    {
+      "component": "avatar",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/avatar-brand-dark.png"
+    },
+    {
       "component": "badge",
       "theme": "system",
       "colorScheme": "light",
@@ -96,6 +132,18 @@
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/badge-highContrast-dark.png"
+    },
+    {
+      "component": "badge",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/badge-brand-light.png"
+    },
+    {
+      "component": "badge",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/badge-brand-dark.png"
     },
     {
       "component": "bulletList",
@@ -122,6 +170,18 @@
       "file": "snapshots/bulletList-highContrast-dark.png"
     },
     {
+      "component": "bulletList",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/bulletList-brand-light.png"
+    },
+    {
+      "component": "bulletList",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/bulletList-brand-dark.png"
+    },
+    {
       "component": "button",
       "theme": "system",
       "colorScheme": "light",
@@ -144,6 +204,18 @@
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/button-highContrast-dark.png"
+    },
+    {
+      "component": "button",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/button-brand-light.png"
+    },
+    {
+      "component": "button",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/button-brand-dark.png"
     },
     {
       "component": "card",
@@ -170,6 +242,18 @@
       "file": "snapshots/card-highContrast-dark.png"
     },
     {
+      "component": "card",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/card-brand-light.png"
+    },
+    {
+      "component": "card",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/card-brand-dark.png"
+    },
+    {
       "component": "checkbox",
       "theme": "system",
       "colorScheme": "light",
@@ -192,6 +276,18 @@
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/checkbox-highContrast-dark.png"
+    },
+    {
+      "component": "checkbox",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/checkbox-brand-light.png"
+    },
+    {
+      "component": "checkbox",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/checkbox-brand-dark.png"
     },
     {
       "component": "divider",
@@ -218,6 +314,18 @@
       "file": "snapshots/divider-highContrast-dark.png"
     },
     {
+      "component": "divider",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/divider-brand-light.png"
+    },
+    {
+      "component": "divider",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/divider-brand-dark.png"
+    },
+    {
       "component": "form",
       "theme": "system",
       "colorScheme": "light",
@@ -240,6 +348,18 @@
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/form-highContrast-dark.png"
+    },
+    {
+      "component": "form",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/form-brand-light.png"
+    },
+    {
+      "component": "form",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/form-brand-dark.png"
     },
     {
       "component": "icon",
@@ -266,6 +386,18 @@
       "file": "snapshots/icon-highContrast-dark.png"
     },
     {
+      "component": "icon",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/icon-brand-light.png"
+    },
+    {
+      "component": "icon",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/icon-brand-dark.png"
+    },
+    {
       "component": "label",
       "theme": "system",
       "colorScheme": "light",
@@ -288,6 +420,18 @@
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/label-highContrast-dark.png"
+    },
+    {
+      "component": "label",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/label-brand-light.png"
+    },
+    {
+      "component": "label",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/label-brand-dark.png"
     },
     {
       "component": "link",
@@ -314,6 +458,18 @@
       "file": "snapshots/link-highContrast-dark.png"
     },
     {
+      "component": "link",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/link-brand-light.png"
+    },
+    {
+      "component": "link",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/link-brand-dark.png"
+    },
+    {
       "component": "list",
       "theme": "system",
       "colorScheme": "light",
@@ -336,6 +492,18 @@
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/list-highContrast-dark.png"
+    },
+    {
+      "component": "list",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/list-brand-light.png"
+    },
+    {
+      "component": "list",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/list-brand-dark.png"
     },
     {
       "component": "menuButton",
@@ -362,6 +530,18 @@
       "file": "snapshots/menuButton-highContrast-dark.png"
     },
     {
+      "component": "menuButton",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/menuButton-brand-light.png"
+    },
+    {
+      "component": "menuButton",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/menuButton-brand-dark.png"
+    },
+    {
       "component": "navigationBar",
       "theme": "system",
       "colorScheme": "light",
@@ -384,6 +564,18 @@
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/navigationBar-highContrast-dark.png"
+    },
+    {
+      "component": "navigationBar",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/navigationBar-brand-light.png"
+    },
+    {
+      "component": "navigationBar",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/navigationBar-brand-dark.png"
     },
     {
       "component": "picker",
@@ -410,6 +602,18 @@
       "file": "snapshots/picker-highContrast-dark.png"
     },
     {
+      "component": "picker",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/picker-brand-light.png"
+    },
+    {
+      "component": "picker",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/picker-brand-dark.png"
+    },
+    {
       "component": "progressView",
       "theme": "system",
       "colorScheme": "light",
@@ -432,6 +636,18 @@
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/progressView-highContrast-dark.png"
+    },
+    {
+      "component": "progressView",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/progressView-brand-light.png"
+    },
+    {
+      "component": "progressView",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/progressView-brand-dark.png"
     },
     {
       "component": "radio",
@@ -458,6 +674,18 @@
       "file": "snapshots/radio-highContrast-dark.png"
     },
     {
+      "component": "radio",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/radio-brand-light.png"
+    },
+    {
+      "component": "radio",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/radio-brand-dark.png"
+    },
+    {
       "component": "searchField",
       "theme": "system",
       "colorScheme": "light",
@@ -480,6 +708,18 @@
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/searchField-highContrast-dark.png"
+    },
+    {
+      "component": "searchField",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/searchField-brand-light.png"
+    },
+    {
+      "component": "searchField",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/searchField-brand-dark.png"
     },
     {
       "component": "secureField",
@@ -506,6 +746,18 @@
       "file": "snapshots/secureField-highContrast-dark.png"
     },
     {
+      "component": "secureField",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/secureField-brand-light.png"
+    },
+    {
+      "component": "secureField",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/secureField-brand-dark.png"
+    },
+    {
       "component": "segmentedControl",
       "theme": "system",
       "colorScheme": "light",
@@ -528,6 +780,18 @@
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/segmentedControl-highContrast-dark.png"
+    },
+    {
+      "component": "segmentedControl",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/segmentedControl-brand-light.png"
+    },
+    {
+      "component": "segmentedControl",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/segmentedControl-brand-dark.png"
     },
     {
       "component": "sidebar",
@@ -554,6 +818,18 @@
       "file": "snapshots/sidebar-highContrast-dark.png"
     },
     {
+      "component": "sidebar",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/sidebar-brand-light.png"
+    },
+    {
+      "component": "sidebar",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/sidebar-brand-dark.png"
+    },
+    {
       "component": "slider",
       "theme": "system",
       "colorScheme": "light",
@@ -576,6 +852,18 @@
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/slider-highContrast-dark.png"
+    },
+    {
+      "component": "slider",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/slider-brand-light.png"
+    },
+    {
+      "component": "slider",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/slider-brand-dark.png"
     },
     {
       "component": "stepper",
@@ -602,6 +890,18 @@
       "file": "snapshots/stepper-highContrast-dark.png"
     },
     {
+      "component": "stepper",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/stepper-brand-light.png"
+    },
+    {
+      "component": "stepper",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/stepper-brand-dark.png"
+    },
+    {
       "component": "tabBar",
       "theme": "system",
       "colorScheme": "light",
@@ -624,6 +924,18 @@
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/tabBar-highContrast-dark.png"
+    },
+    {
+      "component": "tabBar",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/tabBar-brand-light.png"
+    },
+    {
+      "component": "tabBar",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/tabBar-brand-dark.png"
     },
     {
       "component": "tag",
@@ -650,6 +962,18 @@
       "file": "snapshots/tag-highContrast-dark.png"
     },
     {
+      "component": "tag",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/tag-brand-light.png"
+    },
+    {
+      "component": "tag",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/tag-brand-dark.png"
+    },
+    {
       "component": "textEditor",
       "theme": "system",
       "colorScheme": "light",
@@ -672,6 +996,18 @@
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/textEditor-highContrast-dark.png"
+    },
+    {
+      "component": "textEditor",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/textEditor-brand-light.png"
+    },
+    {
+      "component": "textEditor",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/textEditor-brand-dark.png"
     },
     {
       "component": "textField",
@@ -698,6 +1034,18 @@
       "file": "snapshots/textField-highContrast-dark.png"
     },
     {
+      "component": "textField",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/textField-brand-light.png"
+    },
+    {
+      "component": "textField",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/textField-brand-dark.png"
+    },
+    {
       "component": "toast",
       "theme": "system",
       "colorScheme": "light",
@@ -720,6 +1068,18 @@
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/toast-highContrast-dark.png"
+    },
+    {
+      "component": "toast",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/toast-brand-light.png"
+    },
+    {
+      "component": "toast",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/toast-brand-dark.png"
     },
     {
       "component": "toggle",
@@ -746,6 +1106,18 @@
       "file": "snapshots/toggle-highContrast-dark.png"
     },
     {
+      "component": "toggle",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/toggle-brand-light.png"
+    },
+    {
+      "component": "toggle",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/toggle-brand-dark.png"
+    },
+    {
       "component": "toolbar",
       "theme": "system",
       "colorScheme": "light",
@@ -768,6 +1140,18 @@
       "theme": "highContrast",
       "colorScheme": "dark",
       "file": "snapshots/toolbar-highContrast-dark.png"
+    },
+    {
+      "component": "toolbar",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/toolbar-brand-light.png"
+    },
+    {
+      "component": "toolbar",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/toolbar-brand-dark.png"
     }
   ]
 }

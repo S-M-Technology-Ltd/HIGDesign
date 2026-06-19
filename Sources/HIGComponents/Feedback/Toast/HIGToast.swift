@@ -4,29 +4,46 @@ import SwiftUI
 /// A transient feedback banner aligned with HIG toast guidance.
 public struct HIGToast: View {
     private let message: String
+    private let onDismiss: (() -> Void)?
 
     @Environment(\.higTheme) private var theme
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
-    public init(_ message: String) {
+    public init(_ message: String, onDismiss: (() -> Void)? = nil) {
         self.message = message
+        self.onDismiss = onDismiss
     }
 
     public var body: some View {
         let tokens = theme.toast
 
-        Text(message)
-            .font(tokens.font)
-            .foregroundStyle(theme.colors.labelPrimary)
-            .padding(.horizontal, tokens.horizontalPadding)
-            .padding(.vertical, tokens.verticalPadding)
-            .background(theme.colors.backgroundSecondary)
-            .clipShape(RoundedRectangle(cornerRadius: tokens.cornerRadius, style: .continuous))
-            .overlay {
-                RoundedRectangle(cornerRadius: tokens.cornerRadius, style: .continuous)
-                    .strokeBorder(theme.colors.separator, lineWidth: 1)
+        HStack(spacing: theme.spacing.compactItem) {
+            Text(message)
+                .font(tokens.font)
+                .foregroundStyle(theme.colors.labelPrimary)
+                .frame(maxWidth: .infinity, alignment: .leading)
+
+            if let onDismiss {
+                Button(action: onDismiss) {
+                    Image(systemName: "xmark")
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(theme.colors.labelSecondary)
+                        .frame(width: tokens.dismissButtonSize, height: tokens.dismissButtonSize)
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Dismiss")
             }
-            .accessibilityLabel(message)
+        }
+        .padding(.horizontal, tokens.horizontalPadding)
+        .padding(.vertical, tokens.verticalPadding)
+        .background(theme.colors.backgroundSecondary)
+        .clipShape(RoundedRectangle(cornerRadius: tokens.cornerRadius, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: tokens.cornerRadius, style: .continuous)
+                .strokeBorder(theme.colors.separator, lineWidth: 1)
+        }
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(message)
     }
 }
 
@@ -51,9 +68,11 @@ private struct HIGToastQueueModifier: ViewModifier {
         content
             .overlay(alignment: .bottom) {
                 if let message = queue.currentMessage {
-                    HIGToast(message)
-                        .padding()
-                        .transition(.move(edge: .bottom).combined(with: .opacity))
+                    HIGToast(message, onDismiss: queue.configuration.allowsManualDismissal ? {
+                        queue.dismissCurrent()
+                    } : nil)
+                    .padding()
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
                 }
             }
             .animation(reduceMotion ? nil : .easeInOut(duration: 0.2), value: queue.currentMessage)
@@ -70,9 +89,11 @@ private struct HIGToastModifier: ViewModifier {
         content
             .overlay(alignment: .bottom) {
                 if isPresented {
-                    HIGToast(message)
-                        .padding()
-                        .transition(.move(edge: .bottom).combined(with: .opacity))
+                    HIGToast(message) {
+                        isPresented = false
+                    }
+                    .padding()
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
                 }
             }
             .animation(reduceMotion ? nil : .easeInOut(duration: 0.2), value: isPresented)
@@ -82,13 +103,15 @@ private struct HIGToastModifier: ViewModifier {
 #if DEBUG
 #Preview("HIGToast") {
     HIGThemeableView(theme: HIGComponentPreviewTheme()) {
-        HIGToast("Settings saved")
-            .padding()
+        HIGToast("Settings saved") {
+            // Dismiss preview
+        }
+        .padding()
     }
 }
 
 private struct HIGToastQueuePreviewView: View {
-    @State private var queue = HIGToastQueue()
+    @State private var queue = HIGToastQueue(configuration: .interactive)
 
     var body: some View {
         VStack(spacing: 16) {
