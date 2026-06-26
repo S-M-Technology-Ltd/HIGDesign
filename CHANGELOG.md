@@ -2,6 +2,23 @@
 
 All notable changes to HIGDesign are documented here. The project follows [Semantic Versioning](https://semver.org/) from v1.0.0 onward.
 
+## Unreleased
+
+### Added
+
+- `HIGIcons` module with Heroicons v2 24pt outline and solid sets (324 icons)
+- `HIGHeroIconToken`, `HIGHeroIcon`, `HIGHeroIconVariant`, and `HIGThemeManager` for token-based icon resolution
+- `HIGDesignIcons` SPM product for icon-only consumers
+- `Scripts/generate_hero_icons.py` to regenerate the icon catalog and Swift tokens from Heroicons source
+- `HIGScaledDimension` helper for Dynamic Type–aware icon sizing
+- `HIGIconSize.fixed(CGFloat)` and `HIGIconStyle.tint(Color)` for custom icon size and color
+
+### Changed
+
+- `HIGIcon` and `HIGHeroIcon` scale with system Dynamic Type by default
+- `HIGIconSize` and `HIGIconStyle` moved to `HIGTokensComponent` and `HIGThemesContract` respectively for shared use across icon components
+- Showcase Icon page demonstrates SF Symbols and Heroicons with Dynamic Type scaling
+
 ## 1.1.0 — 2026-06-20
 
 Minor release adding custom activity indicator styles, a shimmer placeholder modifier, and PhotoPicker Swift concurrency improvements.

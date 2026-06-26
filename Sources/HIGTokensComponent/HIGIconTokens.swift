@@ -2,8 +2,11 @@ import CoreGraphics
 import SwiftUI
 
 public protocol HIGIconTokens: Sendable {
+    /// Base small icon size before Dynamic Type scaling.
     var smallSize: CGFloat { get }
+    /// Base medium icon size before Dynamic Type scaling.
     var mediumSize: CGFloat { get }
+    /// Base large icon size before Dynamic Type scaling.
     var largeSize: CGFloat { get }
 }
 

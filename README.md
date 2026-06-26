@@ -109,7 +109,7 @@ Browse all components online → **[s-m-technology-ltd.github.io/HIGDesign](http
 | **Actions** | Button, Menu Button |
 | **Inputs** | Text Field, Secure Field, Search Field, Text Editor, Picker, Photo Picker *(iOS)* |
 | **Controls** | Toggle, Checkbox, Radio, Segmented Control, Slider, Stepper |
-| **Content** | Label, Badge, Icon, Avatar, Link, Tag, Bullet List |
+| **Content** | Label, Badge, Icon, Heroicons (324 outline + solid), Avatar, Link, Tag, Bullet List |
 | **Layout** | Divider, Card, List, Form Section |
 | **Navigation** | Tab Bar, Toolbar, Sidebar, Navigation Bar |
 | **Feedback** | Progress View, Activity Indicator, Alert, Toast |
@@ -120,7 +120,8 @@ Themes: **System** · **High Contrast** · **Brand accent** — each with light 
 
 - **Layered tokens** — `Raw → Semantic → Component → Theme` (no magic numbers in views)
 - **Environment-driven theming** — `@Environment(\.higTheme)` everywhere
-- **Modular SPM products** — `HIGDesign` umbrella or `HIGDesignCore` + `HIGDesignComponents`
+- **Modular SPM products** — `HIGDesign` umbrella, `HIGDesignIcons`, or `HIGDesignCore` + `HIGDesignComponents`
+- **Heroicons v2** — 324 outline and solid icons via `HIGHeroIconToken`, themed sizing, and Dynamic Type scaling
 - **DocC catalog** — open in Xcode → *Product → Build Documentation*
 - **CI-verified** — token guards, 47 unit tests, six-platform builds
 

@@ -32,6 +32,11 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGIcon``
 - ``HIGIconSize``
 - ``HIGIconStyle``
+- ``HIGHeroIcon``
+- ``HIGHeroIconToken``
+- ``HIGHeroIconVariant``
+- ``HIGHeroIconDescriptor``
+- ``HIGThemeManager``
 - ``HIGAvatar``
 - ``HIGLink``
 - ``HIGBulletList``

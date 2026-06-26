@@ -86,6 +86,10 @@ HIGThemeableView(theme: HIGSystemTheme()) {
 - ``HIGIcon``
 - ``HIGIconSize``
 - ``HIGIconStyle``
+- ``HIGHeroIcon``
+- ``HIGHeroIconToken``
+- ``HIGHeroIconVariant``
+- ``HIGThemeManager``
 - ``HIGAvatar``
 - ``HIGLink``
 - ``HIGBulletList``

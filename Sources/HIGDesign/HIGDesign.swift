@@ -1,5 +1,6 @@
 @_exported import HIGComponents
 @_exported import HIGFoundations
+@_exported import HIGIcons
 @_exported import HIGModifiers
 @_exported import HIGPlatform
 @_exported import HIGThemesContract
