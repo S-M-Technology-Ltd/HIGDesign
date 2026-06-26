@@ -70,11 +70,18 @@ HIGDesign synthesizes architecture and patterns from:
 | `HIGDesignPlatform` | Idiom and capability adapters |
 | `HIGDesignBridging` | Optional Cocoa bridges |
 
-## Current Milestone: v1.2.0 (released)
+## Current Milestone: v1.2.1 (released)
 
-v1.2.0 is a minor release (2026-06-26) adding Heroicons v2 integration, Dynamic Type–aware icon sizing, and custom icon size and tint options.
+v1.2.1 is a patch release (2026-06-27) fixing theme registration crashes, Heroicon scaling at large sizes, and Showcase preview polish.
 
-Delivered in v1.2.0:
+Delivered in v1.2.1:
+
+- Synchronous theme registration so `HIGThemeManager` and previews do not crash during view body builds
+- Heroicon rendering fix for large fixed sizes via uniform view-box scaling
+- Showcase Icon playground, per-sample API snippets, and token-backed showcase layouts
+- `Scripts/verify_showcase_token_usage.sh` showcase design-token guard
+
+v1.2.0 (2026-06-26) delivered:
 
 - `HIGIcons` module with 324 Heroicons v2 outline and solid icons
 - `HIGHeroIcon`, `HIGHeroIconToken`, and `HIGThemeManager` for token-based icon resolution
