@@ -1,6 +1,12 @@
 import CoreGraphics
 import SwiftUI
 
+enum HIGHeroIconMetrics {
+    /// Heroicons v2 24pt assets use a 24×24 view box.
+    static let viewBoxSize: CGFloat = 24
+    static let viewBoxRect = CGRect(origin: .zero, size: CGSize(width: viewBoxSize, height: viewBoxSize))
+}
+
 struct HIGHeroIconShape: Shape {
     let token: HIGHeroIconToken
     let variant: HIGHeroIconVariant
@@ -12,7 +18,10 @@ struct HIGHeroIconShape: Shape {
 
         let combined = CGMutablePath()
         for pathEntry in entry.paths {
-            let subpath = HIGSVGPathParser.makePath(from: pathEntry.d, in: rect)
+            let subpath = HIGSVGPathParser.makePath(
+                from: pathEntry.d,
+                in: HIGHeroIconMetrics.viewBoxRect
+            )
             combined.addPath(subpath)
         }
 

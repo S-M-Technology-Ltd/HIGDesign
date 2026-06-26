@@ -167,6 +167,14 @@ Theme Rules
 * Built-in themes must support light mode, dark mode, and increased contrast.
 * Theme changes require updates to `Requirements/Themes/REQ.md` in the same change.
 
+Showcase Rules
+
+* Showcase and sample apps demonstrate public HIGDesign APIs only; they must not become dependencies of library targets.
+* Showcase view code must resolve spacing, padding, colors, typography, corner radius, borders, and opacity from design tokens — not hardcoded literals such as `spacing: 12`, `.quaternary.opacity(0.35)`, or `.font(.headline)`.
+* Read visual values from `@Environment(\.higTheme)` (`theme.spacing`, `theme.colors`, `theme.typography`, `theme.card`, component token structs) or approved helpers such as `higPadding`, `HIGSpacing`, and `HIGAccessibility`.
+* Reuse shared showcase helpers such as `ShowcaseSurfaceTileView` for token-backed demo surfaces.
+* Showcase changes require updates to `Requirements/Showcase/REQ.md` when behavior or demo affordances change.
+
 Component Rules
 
 * Public components use the `HIG` prefix, for example `HIGButton`, `HIGTextField`, `HIGTabBar`.
@@ -282,6 +290,10 @@ Scripts/verify_view_naming.sh
 Component design token guard:
 
 Scripts/verify_component_token_usage.sh
+
+Showcase design token guard:
+
+Scripts/verify_showcase_token_usage.sh
 
 Photo picker design token guard (supplementary):
 

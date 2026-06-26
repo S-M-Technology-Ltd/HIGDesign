@@ -11,10 +11,11 @@ public struct HIGThemeableView<Content: View>: View {
     }
 
     public var body: some View {
-        content()
-            .environment(\.higThemeStorage, theme)
-            .background(HIGThemeRegistrationView(theme: theme))
-            .modifier(HIGSizeClassModifier())
+        HIGThemeRegistrationBridge(theme: theme) {
+            content()
+                .environment(\.higThemeStorage, theme)
+                .modifier(HIGSizeClassModifier())
+        }
     }
 }
 

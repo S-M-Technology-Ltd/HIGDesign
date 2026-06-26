@@ -6,6 +6,7 @@ public struct ShowcaseRootView: View {
     @State private var themeChoice: ShowcaseThemeChoice = .system
     @State private var colorScheme: ColorScheme?
     @State private var dynamicTypeSizeChoice: ShowcaseDynamicTypeSizeChoice = .system
+    @State private var iconSettings = ShowcaseIconSettings()
 
     public init() {}
 
@@ -16,7 +17,8 @@ public struct ShowcaseRootView: View {
                     selection: $selection,
                     themeChoice: $themeChoice,
                     colorScheme: $colorScheme,
-                    dynamicTypeSizeChoice: $dynamicTypeSizeChoice
+                    dynamicTypeSizeChoice: $dynamicTypeSizeChoice,
+                    iconSettings: $iconSettings
                 )
             }
         }
@@ -27,6 +29,8 @@ public struct ShowcaseRootView: View {
 
 #if DEBUG
 #Preview("ShowcaseRootView") {
-    ShowcaseRootView()
+    ShowcasePreviewContainer(includeNavigationStack: false) {
+        ShowcaseRootView()
+    }
 }
 #endif

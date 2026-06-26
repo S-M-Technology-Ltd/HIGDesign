@@ -8,6 +8,7 @@ private struct ShowcaseListRow: Identifiable {
 }
 
 struct ShowcaseListView: View {
+    @Environment(\.higTheme) private var theme
     private let rows = [
         ShowcaseListRow(title: "Inbox", detail: "12 unread"),
         ShowcaseListRow(title: "Drafts", detail: "3 items"),
@@ -15,19 +16,29 @@ struct ShowcaseListView: View {
     ]
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: theme.spacing.screenEdge) {
             ShowcaseMetadataView(component: .list)
                 .higPadding(.screenEdge)
 
+            ShowcaseSampleView(code: """
             HIGList(rows) { row in
-                VStack(alignment: .leading, spacing: 4) {
+                VStack(alignment: .leading, spacing: HIGSpacing.xxs.rawValue) {
                     Text(row.title)
-                        .font(.headline)
                     Text(row.detail)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
                 }
             }
+            """) {
+                HIGList(rows) { row in
+                    VStack(alignment: .leading, spacing: HIGSpacing.xxs.rawValue) {
+                        Text(row.title)
+                            .font(theme.typography.headline)
+                        Text(row.detail)
+                            .font(theme.typography.caption)
+                            .foregroundStyle(theme.colors.labelSecondary)
+                    }
+                }
+            }
+            .higPadding(.screenEdge)
         }
         .navigationTitle("List")
     }
@@ -35,6 +46,8 @@ struct ShowcaseListView: View {
 
 #if DEBUG
 #Preview("ShowcaseListView") {
-    ShowcaseListView()
+    ShowcasePreviewContainer {
+        ShowcaseListView()
+    }
 }
 #endif

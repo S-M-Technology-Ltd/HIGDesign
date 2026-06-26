@@ -2,17 +2,22 @@ import HIGDesign
 import SwiftUI
 
 struct ShowcaseCheckboxView: View {
+    @Environment(\.higTheme) private var theme
     @State private var rememberMe = true
     @State private var marketingEmails = false
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .leading, spacing: theme.spacing.section) {
                 ShowcaseMetadataView(component: .checkbox)
 
-                VStack(spacing: 16) {
-                    HIGCheckbox("Remember me", isOn: $rememberMe)
-                    HIGCheckbox("Marketing emails", isOn: $marketingEmails)
+                VStack(spacing: theme.spacing.screenEdge) {
+                    ShowcaseSampleView(code: "HIGCheckbox(\"Remember me\", isOn: $rememberMe)") {
+                        HIGCheckbox("Remember me", isOn: $rememberMe)
+                    }
+                    ShowcaseSampleView(code: "HIGCheckbox(\"Marketing emails\", isOn: $marketingEmails)") {
+                        HIGCheckbox("Marketing emails", isOn: $marketingEmails)
+                    }
                 }
             }
             .higPadding(.screenEdge)
@@ -23,6 +28,8 @@ struct ShowcaseCheckboxView: View {
 
 #if DEBUG
 #Preview("ShowcaseCheckboxView") {
-    ShowcaseCheckboxView()
+    ShowcasePreviewContainer {
+        ShowcaseCheckboxView()
+    }
 }
 #endif

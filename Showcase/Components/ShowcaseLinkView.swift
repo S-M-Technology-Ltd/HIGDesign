@@ -2,16 +2,21 @@ import HIGDesign
 import SwiftUI
 
 struct ShowcaseLinkView: View {
+    @Environment(\.higTheme) private var theme
     private let higURL = URL(string: "https://developer.apple.com/design/human-interface-guidelines/")!
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .leading, spacing: theme.spacing.section) {
                 ShowcaseMetadataView(component: .link)
 
-                VStack(alignment: .leading, spacing: 16) {
-                    HIGLink("Human Interface Guidelines", url: higURL)
-                    HIGLink("SwiftUI Documentation", url: URL(string: "https://developer.apple.com/documentation/swiftui")!)
+                VStack(spacing: theme.spacing.screenEdge) {
+                    ShowcaseSampleView(code: "HIGLink(\"Human Interface Guidelines\", url: higURL)") {
+                        HIGLink("Human Interface Guidelines", url: higURL)
+                    }
+                    ShowcaseSampleView(code: "HIGLink(\"SwiftUI Documentation\", url: swiftUIURL)") {
+                        HIGLink("SwiftUI Documentation", url: URL(string: "https://developer.apple.com/documentation/swiftui")!)
+                    }
                 }
             }
             .higPadding(.screenEdge)
@@ -22,6 +27,8 @@ struct ShowcaseLinkView: View {
 
 #if DEBUG
 #Preview("ShowcaseLinkView") {
-    ShowcaseLinkView()
+    ShowcasePreviewContainer {
+        ShowcaseLinkView()
+    }
 }
 #endif

@@ -1,3 +1,4 @@
+import HIGDesign
 import SwiftUI
 
 struct ShowcaseWelcomeView: View {
@@ -12,6 +13,8 @@ struct ShowcaseWelcomeView: View {
 
 #if DEBUG
 #Preview("ShowcaseWelcomeView") {
-    ShowcaseWelcomeView()
+    ShowcasePreviewContainer(includeNavigationStack: false) {
+        ShowcaseWelcomeView()
+    }
 }
 #endif

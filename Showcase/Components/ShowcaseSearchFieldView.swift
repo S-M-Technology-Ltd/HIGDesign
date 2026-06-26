@@ -2,14 +2,17 @@ import HIGDesign
 import SwiftUI
 
 struct ShowcaseSearchFieldView: View {
+    @Environment(\.higTheme) private var theme
     @State private var query = ""
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .leading, spacing: theme.spacing.section) {
                 ShowcaseMetadataView(component: .searchField)
 
-                HIGSearchField("Library Search", text: $query, placeholder: "Search titles")
+                ShowcaseSampleView(code: "HIGSearchField(\"Library Search\", text: $query, placeholder: \"Search titles\")") {
+                    HIGSearchField("Library Search", text: $query, placeholder: "Search titles")
+                }
             }
             .higPadding(.screenEdge)
         }
@@ -19,6 +22,8 @@ struct ShowcaseSearchFieldView: View {
 
 #if DEBUG
 #Preview("ShowcaseSearchFieldView") {
-    ShowcaseSearchFieldView()
+    ShowcasePreviewContainer {
+        ShowcaseSearchFieldView()
+    }
 }
 #endif

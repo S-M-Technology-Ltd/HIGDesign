@@ -41,6 +41,10 @@ Scripts/capture_showcase_snapshots.sh
 
 Individual guards remain available under `Scripts/verify_*.sh` when debugging a single failure.
 
+Showcase design token guard (run when changing Showcase or sample UI):
+
+Scripts/verify_showcase_token_usage.sh
+
 ## Agent Workflow
 
 1. Read `AGENTS.md`, `CODING_STANDARDS.md`, and the relevant `Requirements/*/REQ.md`.

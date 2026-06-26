@@ -1,10 +1,13 @@
+import HIGDesign
 import SwiftUI
 
 struct ShowcaseCatalogView: View {
+    @Environment(\.higTheme) private var theme
     @Binding var selection: ShowcaseComponent?
     @Binding var themeChoice: ShowcaseThemeChoice
     @Binding var colorScheme: ColorScheme?
     @Binding var dynamicTypeSizeChoice: ShowcaseDynamicTypeSizeChoice
+    @Binding var iconSettings: ShowcaseIconSettings
 
     var body: some View {
         #if os(watchOS)
@@ -17,11 +20,11 @@ struct ShowcaseCatalogView: View {
     private var standardCatalog: some View {
         NavigationSplitView {
             List(ShowcaseComponent.allCases, selection: $selection) { component in
-                VStack(alignment: .leading, spacing: 2) {
+                VStack(alignment: .leading, spacing: HIGSpacing.xxs.rawValue / 2) {
                     Text(component.title)
                     Text(component.summary)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
+                        .font(theme.typography.caption)
+                        .foregroundStyle(theme.colors.labelSecondary)
                         .lineLimit(2)
                 }
                 .tag(component)
@@ -29,9 +32,11 @@ struct ShowcaseCatalogView: View {
             .navigationTitle("Components")
             .safeAreaInset(edge: .bottom) {
                 ShowcaseSettingsView(
+                    selection: selection,
                     themeChoice: $themeChoice,
                     colorScheme: $colorScheme,
-                    dynamicTypeSizeChoice: $dynamicTypeSizeChoice
+                    dynamicTypeSizeChoice: $dynamicTypeSizeChoice,
+                    iconSettings: $iconSettings
                 )
                     .padding()
                     .background(.regularMaterial)
@@ -108,7 +113,7 @@ struct ShowcaseCatalogView: View {
         case .picker:
             ShowcasePickerView()
         case .icon:
-            ShowcaseIconView()
+            ShowcaseIconView(iconSettings: $iconSettings)
         case .avatar:
             ShowcaseAvatarView()
         case .link:
@@ -131,11 +136,14 @@ struct ShowcaseCatalogView: View {
 
 #if DEBUG
 #Preview("ShowcaseCatalogView") {
-    ShowcaseCatalogView(
+    ShowcasePreviewContainer(includeNavigationStack: false) {
+        ShowcaseCatalogView(
         selection: .constant(.button),
         themeChoice: .constant(.system),
         colorScheme: .constant(nil),
-        dynamicTypeSizeChoice: .constant(.system)
+        dynamicTypeSizeChoice: .constant(.system),
+        iconSettings: .constant(ShowcaseIconSettings())
     )
+    }
 }
 #endif

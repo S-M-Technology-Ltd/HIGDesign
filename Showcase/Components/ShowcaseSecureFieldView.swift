@@ -2,17 +2,22 @@ import HIGDesign
 import SwiftUI
 
 struct ShowcaseSecureFieldView: View {
+    @Environment(\.higTheme) private var theme
     @State private var password = ""
     @State private var pin = ""
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .leading, spacing: theme.spacing.section) {
                 ShowcaseMetadataView(component: .secureField)
 
-                VStack(spacing: 16) {
-                    HIGSecureField("Password", text: $password, placeholder: "Enter password")
-                    HIGSecureField("PIN", text: $pin, placeholder: "4-digit PIN")
+                VStack(spacing: theme.spacing.screenEdge) {
+                    ShowcaseSampleView(code: "HIGSecureField(\"Password\", text: $password, placeholder: \"Enter password\")") {
+                        HIGSecureField("Password", text: $password, placeholder: "Enter password")
+                    }
+                    ShowcaseSampleView(code: "HIGSecureField(\"PIN\", text: $pin, placeholder: \"4-digit PIN\")") {
+                        HIGSecureField("PIN", text: $pin, placeholder: "4-digit PIN")
+                    }
                 }
             }
             .higPadding(.screenEdge)
@@ -23,6 +28,8 @@ struct ShowcaseSecureFieldView: View {
 
 #if DEBUG
 #Preview("ShowcaseSecureFieldView") {
-    ShowcaseSecureFieldView()
+    ShowcasePreviewContainer {
+        ShowcaseSecureFieldView()
+    }
 }
 #endif

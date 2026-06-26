@@ -2,15 +2,22 @@ import HIGDesign
 import SwiftUI
 
 struct ShowcaseBadgeView: View {
+    @Environment(\.higTheme) private var theme
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .leading, spacing: theme.spacing.section) {
                 ShowcaseMetadataView(component: .badge)
 
-                HStack(spacing: 12) {
-                    HIGBadge("New")
-                    HIGBadge("3", style: .accent)
-                    HIGBadge("!", style: .destructive)
+                VStack(spacing: theme.spacing.item) {
+                    ShowcaseSampleView(code: "HIGBadge(\"New\")") {
+                        HIGBadge("New")
+                    }
+                    ShowcaseSampleView(code: "HIGBadge(\"3\", style: .accent)") {
+                        HIGBadge("3", style: .accent)
+                    }
+                    ShowcaseSampleView(code: "HIGBadge(\"!\", style: .destructive)") {
+                        HIGBadge("!", style: .destructive)
+                    }
                 }
             }
             .higPadding(.screenEdge)
@@ -21,6 +28,8 @@ struct ShowcaseBadgeView: View {
 
 #if DEBUG
 #Preview("ShowcaseBadgeView") {
-    ShowcaseBadgeView()
+    ShowcasePreviewContainer {
+        ShowcaseBadgeView()
+    }
 }
 #endif

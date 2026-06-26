@@ -2,15 +2,22 @@ import HIGDesign
 import SwiftUI
 
 struct ShowcaseAvatarView: View {
+    @Environment(\.higTheme) private var theme
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .leading, spacing: theme.spacing.section) {
                 ShowcaseMetadataView(component: .avatar)
 
-                HStack(spacing: 16) {
-                    HIGAvatar("AR")
-                    HIGAvatar("Sam")
-                    HIGAvatar("", systemImage: "person.fill")
+                VStack(spacing: theme.spacing.item) {
+                    ShowcaseSampleView(code: "HIGAvatar(\"AR\")") {
+                        HIGAvatar("AR")
+                    }
+                    ShowcaseSampleView(code: "HIGAvatar(\"Sam\")") {
+                        HIGAvatar("Sam")
+                    }
+                    ShowcaseSampleView(code: "HIGAvatar(\"\", systemImage: \"person.fill\")") {
+                        HIGAvatar("", systemImage: "person.fill")
+                    }
                 }
             }
             .higPadding(.screenEdge)
@@ -21,6 +28,8 @@ struct ShowcaseAvatarView: View {
 
 #if DEBUG
 #Preview("ShowcaseAvatarView") {
-    ShowcaseAvatarView()
+    ShowcasePreviewContainer {
+        ShowcaseAvatarView()
+    }
 }
 #endif

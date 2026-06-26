@@ -8,12 +8,27 @@ private enum ShowcaseTab: String, Hashable, Sendable {
 }
 
 struct ShowcaseTabBarView: View {
+    @Environment(\.higTheme) private var theme
     @State private var selection = ShowcaseTab.home
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: theme.spacing.screenEdge) {
             ShowcaseMetadataView(component: .tabBar)
                 .higPadding(.screenEdge)
+
+            ShowcaseCodeSnippetView(code: """
+            HIGTabBar(
+                selection: $selection,
+                tabs: [
+                    HIGTabItem(id: .home, title: "Home", systemImage: "house"),
+                    HIGTabItem(id: .library, title: "Library", systemImage: "books.vertical"),
+                    HIGTabItem(id: .settings, title: "Settings", systemImage: "gearshape"),
+                ]
+            ) { tab in
+                // tab content
+            }
+            """)
+            .higPadding(.screenEdge)
 
             HIGTabBar(
                 selection: $selection,
@@ -37,11 +52,11 @@ struct ShowcaseTabBarView: View {
     }
 
     private func tabContent(title: String, detail: String) -> some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: theme.spacing.compactItem) {
             Text(title)
-                .font(.title2)
+                .font(theme.typography.title)
             Text(detail)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(theme.colors.labelSecondary)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .higPadding(.screenEdge)
@@ -50,6 +65,8 @@ struct ShowcaseTabBarView: View {
 
 #if DEBUG
 #Preview("ShowcaseTabBarView") {
-    ShowcaseTabBarView()
+    ShowcasePreviewContainer {
+        ShowcaseTabBarView()
+    }
 }
 #endif
