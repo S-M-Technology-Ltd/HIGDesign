@@ -1,4 +1,5 @@
 @testable import HIGIcons
+import HIGThemesContract
 import HIGThemesSystem
 import XCTest
 
@@ -37,10 +38,18 @@ final class HIGHeroIconTests: XCTestCase {
 
     @MainActor
     func testThemeManagerResolvesOutlineDescriptor() {
-        HIGThemeManager.register(HIGSystemTheme())
+        HIGThemeRegistration.register(HIGSystemTheme())
         let descriptor = HIGThemeManager.outlineIcon(from: .academicCap)
 
         XCTAssertEqual(descriptor.token, .academicCap)
         XCTAssertEqual(descriptor.variant, .outline)
+    }
+
+    @MainActor
+    func testThemeRegistrationStoresCurrentTheme() {
+        let theme = HIGSystemTheme()
+        HIGThemeRegistration.register(theme)
+        XCTAssertTrue(HIGThemeRegistration.currentTheme is HIGSystemTheme)
+        XCTAssertEqual(HIGThemeManager.current.name, theme.name)
     }
 }

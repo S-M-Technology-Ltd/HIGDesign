@@ -2,6 +2,8 @@ import HIGDesign
 import SwiftUI
 
 struct ShowcaseIconView: View {
+    @Environment(\.higTheme) private var theme
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
@@ -26,8 +28,8 @@ struct ShowcaseIconView: View {
                         .font(.headline)
 
                     HStack(spacing: 16) {
-                        HIGHeroIcon(descriptor: HIGThemeManager.outlineIcon(from: .academicCap))
-                        HIGHeroIcon(descriptor: HIGThemeManager.solidIcon(from: .academicCap), style: .accent)
+                        HIGHeroIcon(descriptor: theme.outlineIcon(from: .academicCap))
+                        HIGHeroIcon(descriptor: theme.solidIcon(from: .academicCap), style: .accent)
                         HIGHeroIcon(.bell, variant: .outline, size: .large)
                         HIGHeroIcon(.bell, variant: .solid, style: .secondary)
                     }
@@ -41,6 +43,10 @@ struct ShowcaseIconView: View {
 
 #if DEBUG
 #Preview("ShowcaseIconView") {
-    ShowcaseIconView()
+    HIGThemeableView(theme: HIGSystemTheme()) {
+        NavigationStack {
+            ShowcaseIconView()
+        }
+    }
 }
 #endif

@@ -17,7 +17,6 @@ public struct HIGHeroIcon: View {
         size: HIGIconSize = .medium,
         style: HIGIconStyle = .primary
     ) {
-        HIGIconsBootstrap.ensureActivated()
         self.descriptor = HIGHeroIconDescriptor(token: token, variant: variant)
         self.size = size
         self.style = style
@@ -28,7 +27,6 @@ public struct HIGHeroIcon: View {
         size: HIGIconSize = .medium,
         style: HIGIconStyle = .primary
     ) {
-        HIGIconsBootstrap.ensureActivated()
         self.descriptor = descriptor
         self.size = size
         self.style = style

@@ -3,14 +3,12 @@ import HIGThemesContract
 /// Provides imperative access to the active HIG theme and icon tokens.
 @MainActor
 public enum HIGThemeManager {
-    private static var registeredTheme: (any HIGTheme)?
-
     /// The theme most recently registered by ``HIGThemeableView``.
     public static var current: any HIGTheme {
-        guard let registeredTheme else {
+        guard let theme = HIGThemeRegistration.currentTheme else {
             preconditionFailure("HIGTheme is required. Wrap content in HIGThemeableView(theme:).")
         }
-        return registeredTheme
+        return theme
     }
 
     /// Resolves an outline Heroicon token from ``current``.
@@ -21,9 +19,5 @@ public enum HIGThemeManager {
     /// Resolves a solid Heroicon token from ``current``.
     public static func solidIcon(from token: HIGHeroIconToken) -> HIGHeroIconDescriptor {
         current.solidIcon(from: token)
-    }
-
-    static func register(_ theme: any HIGTheme) {
-        registeredTheme = theme
     }
 }
