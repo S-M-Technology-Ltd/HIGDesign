@@ -1,3 +1,4 @@
+import HIGFoundations
 import HIGThemesContract
 import HIGTokensComponent
 import HIGTokensRaw
@@ -23,23 +24,16 @@ public struct HIGIcon: View {
 
     public var body: some View {
         let tokens = theme.icon
+        let basePointSize = size.basePointSize(tokens: tokens)
 
-        Image(systemName: systemName)
-            .font(.system(size: pointSize(tokens: tokens)))
-            .foregroundStyle(style.color(theme: theme))
-            .accessibilityHidden(true)
-    }
-
-    private func pointSize(tokens: any HIGIconTokens) -> CGFloat {
-        switch size {
-        case .small:
-            tokens.smallSize
-        case .medium:
-            tokens.mediumSize
-        case .large:
-            tokens.largeSize
+        HIGScaledDimension(baseValue: basePointSize) { pointSize in
+            Image(systemName: systemName)
+                .font(.system(size: pointSize))
+                .foregroundStyle(style.color(theme: theme))
+                .accessibilityHidden(true)
         }
     }
+
 }
 
 #if DEBUG
@@ -49,6 +43,7 @@ public struct HIGIcon: View {
             HIGIcon("bell", size: .small)
             HIGIcon("star.fill", style: .accent)
             HIGIcon("folder", size: .large, style: .secondary)
+            HIGIcon("heart.fill", size: .fixed(32), style: .tint(.pink))
         }
         .padding()
     }

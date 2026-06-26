@@ -13,6 +13,7 @@ HIGFoundations
       → HIGTokensComponent
         → HIGThemesContract
           → HIGThemesSystem
+          → HIGIcons
           → HIGPlatform
           → HIGBridging
             → HIGComponents
@@ -30,6 +31,7 @@ HIGFoundations
 | `HIGTokensComponent` | component-specific token protocols |
 | `HIGThemesContract` | `HIGTheme`, `HIGThemeableView`, environment keys |
 | `HIGThemesSystem` | built-in light, dark, high-contrast, and compact themes |
+| `HIGIcons` | Heroicons catalog, `HIGHeroIconToken`, `HIGHeroIcon`, `HIGThemeManager` |
 | `HIGPlatform` | capability detection and layout adapters |
 | `HIGBridging` | optional Cocoa bridges |
 | `HIGComponents` | public `HIG*` SwiftUI components |
@@ -74,6 +76,7 @@ Phase 7 controls and inputs expansion builds on the Phase 1–6 foundation, whic
 | `HIGThemesContract` | Implemented — `HIGTheme`, environment key, `HIGThemeableView` |
 | `HIGThemesSystem` | Implemented — system, high-contrast, and brand themes |
 | `HIGPlatform` | Implemented — `HIGPlatformCapabilities` |
+| `HIGIcons` | Implemented — Heroicons v2 outline/solid catalog, SVG path rendering, theme-aware resolution |
 | `HIGComponents` | Implemented — actions, inputs, controls, feedback, layout, and navigation components |
 | `HIGModifiers` | Implemented — `higPadding`, `higNavigationBar`, `higToolbar` (delegates to `HIGComponents`) |
 | `HIGShowcase` | Implemented — component gallery library and sample-app dependency |

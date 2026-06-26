@@ -23,6 +23,16 @@ var body: some View {
 }
 ```
 
+## Icon tokens
+
+``HIGIconTokens`` defines base small, medium, and large point sizes. ``HIGIcon`` and ``HIGHeroIcon`` scale these values with Dynamic Type via ``HIGScaledDimension``.
+
+Heroicons identifiers live in ``HIGHeroIconToken`` (``HIGIcons`` module). Resolve outline or solid variants from the active theme:
+
+```swift
+HIGHeroIcon(descriptor: theme.outlineIcon(from: .academicCap))
+```
+
 ## Custom themes
 
 Override semantic colors or individual component token structs when creating ``HIGBrandTheme`` or a bespoke ``HIGTheme`` conformance. See <doc:CustomThemes>.

@@ -20,6 +20,18 @@ struct ShowcaseIconView: View {
                         HIGIcon("info.circle", style: .secondary)
                     }
                 }
+
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("Heroicons")
+                        .font(.headline)
+
+                    HStack(spacing: 16) {
+                        HIGHeroIcon(descriptor: HIGThemeManager.outlineIcon(from: .academicCap))
+                        HIGHeroIcon(descriptor: HIGThemeManager.solidIcon(from: .academicCap), style: .accent)
+                        HIGHeroIcon(.bell, variant: .outline, size: .large)
+                        HIGHeroIcon(.bell, variant: .solid, style: .secondary)
+                    }
+                }
             }
             .higPadding(.screenEdge)
         }

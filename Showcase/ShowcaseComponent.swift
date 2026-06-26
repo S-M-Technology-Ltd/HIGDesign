@@ -139,7 +139,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .secureField: "Masked entry for passwords and sensitive text."
         case .searchField: "Search input with icon affordance and clear labeling."
         case .picker: "Menu pickers for choosing one value from a list."
-        case .icon: "Themed SF Symbols in small, medium, and large sizes."
+        case .icon: "Themed SF Symbols and Heroicons that scale with Dynamic Type."
         case .avatar: "Circular avatars with initials or fallback symbols."
         case .link: "Accent-colored text links that open URLs."
         case .bulletList: "Vertical bullet lists using HIG typography."

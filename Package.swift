@@ -20,7 +20,9 @@ let package = Package(
             "HIGTokensComponent",
             "HIGThemesContract",
             "HIGThemesSystem",
+            "HIGIcons",
         ]),
+        .library(name: "HIGDesignIcons", targets: ["HIGIcons"]),
         .library(name: "HIGDesignComponents", targets: [
             "HIGComponents",
             "HIGModifiers",
@@ -55,6 +57,12 @@ let package = Package(
             path: "Sources/HIGThemesSystem"
         ),
         .target(
+            name: "HIGIcons",
+            dependencies: ["HIGFoundations", "HIGThemesContract", "HIGTokensComponent"],
+            path: "Sources/HIGIcons",
+            resources: [.process("Resources")]
+        ),
+        .target(
             name: "HIGPlatform",
             dependencies: ["HIGFoundations"],
             path: "Sources/HIGPlatform"
@@ -62,10 +70,12 @@ let package = Package(
         .target(
             name: "HIGComponents",
             dependencies: [
+                "HIGFoundations",
                 "HIGThemesContract",
                 "HIGPlatform",
                 "HIGTokensSemantic",
                 "HIGTokensComponent",
+                "HIGIcons",
             ],
             path: "Sources/HIGComponents",
             linkerSettings: [
@@ -94,6 +104,7 @@ let package = Package(
                 "HIGTokensComponent",
                 "HIGThemesContract",
                 "HIGThemesSystem",
+                "HIGIcons",
                 "HIGPlatform",
                 "HIGComponents",
                 "HIGModifiers",
@@ -125,6 +136,7 @@ let package = Package(
                 "HIGTokensSemantic",
                 "HIGTokensComponent",
                 "HIGThemesSystem",
+                "HIGIcons",
                 "HIGComponents",
                 "HIGBridging",
             ],

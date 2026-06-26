@@ -36,9 +36,10 @@ targets: [
 
 | Product | Use when |
 |---------|----------|
-| `HIGDesign` | Full library — tokens, themes, components, modifiers |
+| `HIGDesign` | Full library — tokens, themes, components, modifiers, icons |
 | `HIGDesignCore` | Tokens and theme contract only |
 | `HIGDesignComponents` | Components and modifiers without umbrella re-export |
+| `HIGDesignIcons` | Heroicons catalog, tokens, and `HIGHeroIcon` only |
 | `HIGDesignPlatform` | Platform capability helpers |
 | `HIGShowcase` | Building an internal component gallery (not required for apps) |
 
@@ -188,6 +189,51 @@ Present toasts with view modifiers:
 ContentView()
     .higToast(isPresented: $showsToast, message: "Saved")
 ```
+
+### Icons
+
+HIGDesign ships two icon components:
+
+| Component | Source | Use when |
+|-----------|--------|----------|
+| `HIGIcon` | SF Symbols | System-native symbol names (`"bell.fill"`) |
+| `HIGHeroIcon` | Heroicons v2 (24pt) | Tokenized outline/solid icons (`.bell`, `.academicCap`) |
+
+Both read sizing and color from the active theme, scale with **Dynamic Type** by default, and support preset or custom sizes and tints.
+
+#### SF Symbols
+
+```swift
+HIGIcon("bell", size: .medium, style: .primary)
+HIGIcon("star.fill", size: .large, style: .accent)
+HIGIcon("heart.fill", size: .fixed(32), style: .tint(.pink))
+```
+
+#### Heroicons
+
+Resolve icons from the active theme or `HIGThemeManager`:
+
+```swift
+HIGHeroIcon(.academicCap, variant: .outline)
+HIGHeroIcon(.academicCap, variant: .solid, style: .accent)
+HIGHeroIcon(descriptor: HIGThemeManager.outlineIcon(from: .bell), size: .large)
+HIGHeroIcon(.heart, variant: .solid, size: .fixed(28), style: .tint(.orange))
+```
+
+`HIGHeroIconToken` exposes all 324 Heroicons identifiers (for example `.academicCap`, `.bell`, `.heart`). Regenerate the catalog from a local Heroicons checkout:
+
+```bash
+python3 Scripts/generate_hero_icons.py
+```
+
+#### Size and tint options
+
+| Parameter | Values | Default |
+|-----------|--------|---------|
+| `size` | `.small`, `.medium`, `.large`, `.fixed(CGFloat)` | `.medium` |
+| `style` | `.primary`, `.secondary`, `.accent`, `.tint(Color)` | `.primary` |
+
+Token sizes (16 / 20 / 28 pt) and `.fixed` values are **base** sizes — they still scale with the user's Dynamic Type setting.
 
 ## Browse the catalog locally
 

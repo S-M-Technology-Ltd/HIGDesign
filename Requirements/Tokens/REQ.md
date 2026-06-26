@@ -9,7 +9,9 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 ### Raw tokens
 
 - Raw tokens represent Apple system primitives or documented HIG measurements.
-- Categories include color, typography, spacing, radius, border, elevation, opacity, motion, and grid.
+- Categories include color, typography, spacing, radius, border, elevation, opacity, motion, grid, and icon identifiers.
+- Heroicons v2 24pt outline and solid sets are available through `HIGHeroIconToken` in `HIGIcons`.
+- Icon size tokens are base point values. `HIGIcon` and `HIGHeroIcon` scale them with the system Dynamic Type size by default.
 - Raw spacing uses a 4pt base grid.
 - Raw typography maps to system text styles, not custom font families.
 - Raw colors reference SwiftUI semantic colors or dynamic equivalents. UIKit color APIs are not permitted.

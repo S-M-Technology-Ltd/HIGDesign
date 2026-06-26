@@ -1,0 +1,7 @@
+Heroicons
+
+This module includes SVG path data derived from Heroicons v2 (24px outline and solid sets).
+
+Copyright (c) Tailwind Labs, Inc.
+Licensed under the MIT License.
+Source: https://github.com/tailwindlabs/heroicons
