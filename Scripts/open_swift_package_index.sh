@@ -20,7 +20,7 @@ Swift Package Index — HIGDesign
 Repo checklist for SPI:
   ✓ Public GitHub repository
   ✓ Package.swift at repository root
-  ✓ Semantic version tags (v1.0.0, v1.0.1, v1.1.0, v1.2.0)
+  ✓ Semantic version tags (v1.0.0, v1.0.1, v1.1.0, v1.2.0, v1.2.1)
   ✓ MIT license
 EOF
 

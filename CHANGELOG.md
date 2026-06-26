@@ -2,6 +2,28 @@
 
 All notable changes to HIGDesign are documented here. The project follows [Semantic Versioning](https://semver.org/) from v1.0.0 onward.
 
+## 1.2.1 — 2026-06-27
+
+Patch release fixing theme registration crashes, Heroicon scaling at large sizes, and Showcase preview and documentation polish.
+
+### Fixed
+
+- `HIGThemeManager` and `@Environment(\.higTheme)` crash when icons resolve during view body builds (synchronous theme registration)
+- Heroicons distorting at large fixed sizes (e.g. 48pt) by rendering in the native 24pt view box and scaling uniformly
+- Xcode Showcase previews crashing with `HIGTheme is required` (`ShowcasePreviewContainer`)
+
+### Added
+
+- Showcase Icon playground in settings (family, token, variant, size up to 512pt, style, tint)
+- `ShowcaseSampleView`, `ShowcaseCodeSnippetView`, and API snippets beneath every showcase sample
+- `Scripts/verify_showcase_token_usage.sh` and `Scripts/migrate_showcase_tokens.py`
+- Activity Indicator showcase grid layout tuned for code-bearing tiles
+
+### Changed
+
+- Showcase view code migrated to design tokens (no hardcoded spacing, fonts, or colors)
+- Improved Activity Indicator showcase grid columns for compact and regular size classes
+
 ## 1.2.0 — 2026-06-26
 
 Minor release adding Heroicons v2 integration, Dynamic Type–aware icon sizing, and custom icon size and tint options.

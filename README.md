@@ -53,7 +53,7 @@ Native SwiftUI is the foundation. HIGDesign is the **opinionated layer** that sa
 ```
 https://github.com/S-M-Technology-Ltd/HIGDesign.git
 ```
-(from `1.2.0`)
+(from `1.2.1`)
 
 **2. Wrap your app:**
 
