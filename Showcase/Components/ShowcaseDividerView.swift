@@ -2,21 +2,24 @@ import HIGDesign
 import SwiftUI
 
 struct ShowcaseDividerView: View {
+    @Environment(\.higTheme) private var theme
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .leading, spacing: theme.spacing.section) {
                 ShowcaseMetadataView(component: .divider)
 
-                VStack(alignment: .leading, spacing: 12) {
-                    Text("Account")
-                        .font(.headline)
-                    Text("Manage profile and security settings.")
-                        .foregroundStyle(.secondary)
-                    HIGDivider()
-                    Text("Preferences")
-                        .font(.headline)
-                    Text("Theme, accessibility, and notification defaults.")
-                        .foregroundStyle(.secondary)
+                ShowcaseSampleView(code: "HIGDivider()") {
+                    VStack(alignment: .leading, spacing: theme.spacing.item) {
+                        Text("Account")
+                            .font(theme.typography.headline)
+                        Text("Manage profile and security settings.")
+                            .foregroundStyle(theme.colors.labelSecondary)
+                        HIGDivider()
+                        Text("Preferences")
+                            .font(theme.typography.headline)
+                        Text("Theme, accessibility, and notification defaults.")
+                            .foregroundStyle(theme.colors.labelSecondary)
+                    }
                 }
             }
             .higPadding(.screenEdge)
@@ -27,6 +30,8 @@ struct ShowcaseDividerView: View {
 
 #if DEBUG
 #Preview("ShowcaseDividerView") {
-    ShowcaseDividerView()
+    ShowcasePreviewContainer {
+        ShowcaseDividerView()
+    }
 }
 #endif

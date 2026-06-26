@@ -2,17 +2,20 @@ import HIGDesign
 import SwiftUI
 
 struct ShowcaseSettingsView: View {
+    @Environment(\.higTheme) private var theme
+    let selection: ShowcaseComponent?
     @Binding var themeChoice: ShowcaseThemeChoice
     @Binding var colorScheme: ColorScheme?
     @Binding var dynamicTypeSizeChoice: ShowcaseDynamicTypeSizeChoice
+    @Binding var iconSettings: ShowcaseIconSettings
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.colorSchemeContrast) private var colorSchemeContrast
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: theme.spacing.item) {
             Text("Showcase Settings")
-                .font(.headline)
+                .font(theme.typography.headline)
 
             Picker("Theme", selection: $themeChoice) {
                 ForEach(ShowcaseThemeChoice.allCases) { choice in
@@ -38,14 +41,19 @@ struct ShowcaseSettingsView: View {
             .pickerStyle(.menu)
             #endif
 
-            VStack(alignment: .leading, spacing: 4) {
+            if selection == .icon {
+                Divider()
+                ShowcaseIconSettingsSectionView(settings: $iconSettings)
+            }
+
+            VStack(alignment: .leading, spacing: HIGSpacing.xxs.rawValue) {
                 Text("Applied Dynamic Type: \(dynamicTypeSizeChoice.title)")
                 Text("Environment Dynamic Type: \(String(describing: dynamicTypeSize))")
                 Text("Reduce Motion: \(reduceMotion ? "On" : "Off")")
                 Text("Contrast: \(colorSchemeContrast == .increased ? "Increased" : "Standard")")
             }
-            .font(.caption)
-            .foregroundStyle(.secondary)
+            .font(theme.typography.caption)
+            .foregroundStyle(theme.colors.labelSecondary)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
@@ -53,11 +61,15 @@ struct ShowcaseSettingsView: View {
 
 #if DEBUG
 #Preview("ShowcaseSettingsView") {
-    ShowcaseSettingsView(
-        themeChoice: .constant(.system),
-        colorScheme: .constant(nil),
-        dynamicTypeSizeChoice: .constant(.system)
-    )
-        .padding()
+    ShowcasePreviewContainer(includeNavigationStack: false) {
+        ShowcaseSettingsView(
+            selection: .icon,
+            themeChoice: .constant(.system),
+            colorScheme: .constant(nil),
+            dynamicTypeSizeChoice: .constant(.system),
+            iconSettings: .constant(ShowcaseIconSettings())
+        )
+        .higPadding(.screenEdge)
+    }
 }
 #endif

@@ -7,21 +7,33 @@ private enum ShowcaseBillingPlan: String, Hashable, Sendable {
 }
 
 struct ShowcaseRadioView: View {
+    @Environment(\.higTheme) private var theme
     @State private var plan = ShowcaseBillingPlan.monthly
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .leading, spacing: theme.spacing.section) {
                 ShowcaseMetadataView(component: .radio)
 
+                ShowcaseSampleView(code: """
                 HIGRadio(
                     "Billing Plan",
                     selection: $plan,
                     options: [
-                        HIGRadioOption(value: ShowcaseBillingPlan.monthly, label: "Monthly"),
-                        HIGRadioOption(value: ShowcaseBillingPlan.yearly, label: "Yearly"),
+                        HIGRadioOption(value: .monthly, label: "Monthly"),
+                        HIGRadioOption(value: .yearly, label: "Yearly"),
                     ]
                 )
+                """) {
+                    HIGRadio(
+                        "Billing Plan",
+                        selection: $plan,
+                        options: [
+                            HIGRadioOption(value: ShowcaseBillingPlan.monthly, label: "Monthly"),
+                            HIGRadioOption(value: ShowcaseBillingPlan.yearly, label: "Yearly"),
+                        ]
+                    )
+                }
             }
             .higPadding(.screenEdge)
         }
@@ -31,6 +43,8 @@ struct ShowcaseRadioView: View {
 
 #if DEBUG
 #Preview("ShowcaseRadioView") {
-    ShowcaseRadioView()
+    ShowcasePreviewContainer {
+        ShowcaseRadioView()
+    }
 }
 #endif

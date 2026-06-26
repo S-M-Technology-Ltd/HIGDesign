@@ -65,6 +65,14 @@ These rules apply to automated and human-assisted coding agents working in this 
 - Every public `struct SomeView: View` must include a useful `#Preview` in the same file.
 - Previews must use deterministic themes and mock data only.
 
+## Showcase Policy
+
+- Showcase and sample apps demonstrate public APIs only and must not become library dependencies.
+- Showcase view code must resolve visual values from design tokens and `@Environment(\.higTheme)`, not hardcoded spacing, padding, colors, typography, corner radius, or material shortcuts such as `.quaternary`.
+- Prefer `higPadding`, `theme.spacing`, `theme.colors`, `theme.typography`, `theme.card`, `HIGSpacing`, and `HIGAccessibility` in showcase layouts.
+- Run `Scripts/verify_showcase_token_usage.sh` when changing Showcase or sample UI.
+- Showcase behavior changes require updates to `Requirements/Showcase/REQ.md` in the same change.
+
 ## Logging Policy
 
 - Use the shared HIG logging helper from Foundations.

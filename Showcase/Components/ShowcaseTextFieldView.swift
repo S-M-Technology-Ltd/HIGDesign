@@ -2,17 +2,22 @@ import HIGDesign
 import SwiftUI
 
 struct ShowcaseTextFieldView: View {
+    @Environment(\.higTheme) private var theme
     @State private var fullName = ""
     @State private var email = "person@example.com"
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .leading, spacing: theme.spacing.section) {
                 ShowcaseMetadataView(component: .textField)
 
-                VStack(spacing: 16) {
-                    HIGTextField("Full name", text: $fullName, placeholder: "Enter your name")
-                    HIGTextField("Email", text: $email, placeholder: "name@example.com")
+                VStack(spacing: theme.spacing.screenEdge) {
+                    ShowcaseSampleView(code: "HIGTextField(\"Full name\", text: $fullName, placeholder: \"Enter your name\")") {
+                        HIGTextField("Full name", text: $fullName, placeholder: "Enter your name")
+                    }
+                    ShowcaseSampleView(code: "HIGTextField(\"Email\", text: $email, placeholder: \"name@example.com\")") {
+                        HIGTextField("Email", text: $email, placeholder: "name@example.com")
+                    }
                 }
             }
             .higPadding(.screenEdge)
@@ -23,6 +28,8 @@ struct ShowcaseTextFieldView: View {
 
 #if DEBUG
 #Preview("ShowcaseTextFieldView") {
-    ShowcaseTextFieldView()
+    ShowcasePreviewContainer {
+        ShowcaseTextFieldView()
+    }
 }
 #endif

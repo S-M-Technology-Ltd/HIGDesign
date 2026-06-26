@@ -8,22 +8,35 @@ private enum ShowcaseInboxFilter: String, Hashable, Sendable {
 }
 
 struct ShowcaseSegmentedControlView: View {
+    @Environment(\.higTheme) private var theme
     @State private var filter = ShowcaseInboxFilter.all
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .leading, spacing: theme.spacing.section) {
                 ShowcaseMetadataView(component: .segmentedControl)
 
+                ShowcaseSampleView(code: """
                 HIGSegmentedControl(
                     "Inbox Filter",
                     selection: $filter,
                     options: [
-                        HIGRadioOption(value: ShowcaseInboxFilter.all, label: "All"),
-                        HIGRadioOption(value: ShowcaseInboxFilter.unread, label: "Unread"),
-                        HIGRadioOption(value: ShowcaseInboxFilter.flagged, label: "Flagged"),
+                        HIGRadioOption(value: .all, label: "All"),
+                        HIGRadioOption(value: .unread, label: "Unread"),
+                        HIGRadioOption(value: .flagged, label: "Flagged"),
                     ]
                 )
+                """) {
+                    HIGSegmentedControl(
+                        "Inbox Filter",
+                        selection: $filter,
+                        options: [
+                            HIGRadioOption(value: ShowcaseInboxFilter.all, label: "All"),
+                            HIGRadioOption(value: ShowcaseInboxFilter.unread, label: "Unread"),
+                            HIGRadioOption(value: ShowcaseInboxFilter.flagged, label: "Flagged"),
+                        ]
+                    )
+                }
             }
             .higPadding(.screenEdge)
         }
@@ -33,6 +46,8 @@ struct ShowcaseSegmentedControlView: View {
 
 #if DEBUG
 #Preview("ShowcaseSegmentedControlView") {
-    ShowcaseSegmentedControlView()
+    ShowcasePreviewContainer {
+        ShowcaseSegmentedControlView()
+    }
 }
 #endif

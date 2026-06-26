@@ -16,6 +16,30 @@ final class HIGHeroIconTests: XCTestCase {
         XCTAssertNotNil(HIGHeroIconCatalog.entry(for: .academicCap, variant: .outline))
     }
 
+    func testHomeOutlinePathFitsViewBox() {
+        guard let entry = HIGHeroIconCatalog.entry(for: .home, variant: .outline) else {
+            return XCTFail("Missing home outline catalog entry")
+        }
+
+        let combined = CGMutablePath()
+        for pathEntry in entry.paths {
+            combined.addPath(
+                HIGSVGPathParser.makePath(
+                    from: pathEntry.d,
+                    in: CGRect(origin: .zero, size: CGSize(width: 24, height: 24))
+                )
+            )
+        }
+
+        let bounds = combined.boundingBox
+        XCTAssertGreaterThan(bounds.width, 0)
+        XCTAssertGreaterThan(bounds.height, 0)
+        XCTAssertLessThanOrEqual(bounds.maxX, 24.5)
+        XCTAssertLessThanOrEqual(bounds.maxY, 24.5)
+        XCTAssertGreaterThanOrEqual(bounds.minX, -0.5)
+        XCTAssertGreaterThanOrEqual(bounds.minY, -0.5)
+    }
+
     func testSolidCatalogEntryExists() {
         XCTAssertNotNil(HIGHeroIconCatalog.entry(for: .academicCap, variant: .solid))
     }

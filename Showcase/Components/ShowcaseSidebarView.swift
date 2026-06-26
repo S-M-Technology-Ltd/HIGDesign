@@ -8,12 +8,28 @@ private enum ShowcaseSidebarSection: String, Hashable, Sendable {
 }
 
 struct ShowcaseSidebarView: View {
+    @Environment(\.higTheme) private var theme
     @State private var selection: ShowcaseSidebarSection? = .inbox
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
+        VStack(alignment: .leading, spacing: HIGSpacing.none.rawValue) {
             ShowcaseMetadataView(component: .sidebar)
                 .higPadding(.screenEdge)
+
+            ShowcaseCodeSnippetView(code: """
+            HIGSidebar(
+                selection: $selection,
+                title: "Mail",
+                items: [
+                    HIGSidebarItem(id: .inbox, title: "Inbox", systemImage: "tray"),
+                    HIGSidebarItem(id: .drafts, title: "Drafts", systemImage: "doc"),
+                    HIGSidebarItem(id: .archive, title: "Archive", systemImage: "archivebox"),
+                ]
+            ) { section in
+                // detail content
+            }
+            """)
+            .higPadding(.screenEdge)
 
             HIGSidebar(
                 selection: $selection,
@@ -24,11 +40,11 @@ struct ShowcaseSidebarView: View {
                     HIGSidebarItem(id: ShowcaseSidebarSection.archive, title: "Archive", systemImage: "archivebox"),
                 ]
             ) { section in
-                VStack(alignment: .leading, spacing: 8) {
+                VStack(alignment: .leading, spacing: theme.spacing.compactItem) {
                     Text(sectionTitle(section))
-                        .font(.title2)
+                        .font(theme.typography.title)
                     Text("Example messages for the \(sectionTitle(section)) section.")
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(theme.colors.labelSecondary)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                 .higPadding(.screenEdge)
@@ -51,6 +67,8 @@ struct ShowcaseSidebarView: View {
 
 #if DEBUG
 #Preview("ShowcaseSidebarView") {
-    ShowcaseSidebarView()
+    ShowcasePreviewContainer {
+        ShowcaseSidebarView()
+    }
 }
 #endif

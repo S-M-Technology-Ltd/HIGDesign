@@ -1,4 +1,5 @@
 import HIGThemesContract
+import HIGDesign
 import SwiftUI
 
 /// Renders a single showcase component for snapshot capture.
@@ -12,12 +13,12 @@ public struct ShowcaseSnapshotView: View {
     }
 
     public var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
+        VStack(alignment: .leading, spacing: HIGSpacing.none.rawValue) {
             Text(component.title)
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(.secondary)
-                .padding(.horizontal, 16)
-                .padding(.top, 12)
+                .font(theme.typography.caption.weight(.semibold))
+                .foregroundStyle(theme.colors.labelSecondary)
+                .padding(.horizontal, theme.spacing.screenEdge)
+                .padding(.top, theme.spacing.item)
                 .accessibilityHidden(true)
 
             snapshotContent
@@ -79,7 +80,7 @@ public struct ShowcaseSnapshotView: View {
         case .picker:
             ShowcasePickerView()
         case .icon:
-            ShowcaseIconView()
+            ShowcaseIconView(iconSettings: .constant(ShowcaseIconSettings()))
         case .avatar:
             ShowcaseAvatarView()
         case .link:
@@ -102,6 +103,8 @@ public struct ShowcaseSnapshotView: View {
 
 #if DEBUG
 #Preview("ShowcaseSnapshotView") {
-    ShowcaseSnapshotView(component: .button)
+    ShowcasePreviewContainer(includeNavigationStack: false) {
+        ShowcaseSnapshotView(component: .button)
+    }
 }
 #endif

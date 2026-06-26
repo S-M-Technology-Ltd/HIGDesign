@@ -39,25 +39,32 @@ public struct HIGHeroIcon: View {
         let color = style.color(theme: theme)
 
         HIGScaledDimension(baseValue: basePointSize) { pointSize in
-            if let entry = HIGHeroIconCatalog.entry(for: descriptor.token, variant: descriptor.variant),
-               entry.renderMode == .stroke {
-                shape
-                    .stroke(
-                        color,
-                        style: StrokeStyle(
-                            lineWidth: entry.strokeWidth * (pointSize / 24),
-                            lineCap: .round,
-                            lineJoin: .round
+            let scale = pointSize / HIGHeroIconMetrics.viewBoxSize
+            let entry = HIGHeroIconCatalog.entry(for: descriptor.token, variant: descriptor.variant)
+
+            Group {
+                if let entry, entry.renderMode == .stroke {
+                    shape
+                        .stroke(
+                            color,
+                            style: StrokeStyle(
+                                lineWidth: entry.strokeWidth,
+                                lineCap: .round,
+                                lineJoin: .round
+                            )
                         )
-                    )
-                    .frame(width: pointSize, height: pointSize)
-                    .accessibilityHidden(true)
-            } else {
-                shape
-                    .fill(color)
-                    .frame(width: pointSize, height: pointSize)
-                    .accessibilityHidden(true)
+                } else {
+                    shape
+                        .fill(color)
+                }
             }
+            .frame(
+                width: HIGHeroIconMetrics.viewBoxSize,
+                height: HIGHeroIconMetrics.viewBoxSize
+            )
+            .scaleEffect(scale)
+            .frame(width: pointSize, height: pointSize)
+            .accessibilityHidden(true)
         }
     }
 
@@ -70,6 +77,7 @@ public struct HIGHeroIcon: View {
             HIGHeroIcon(.academicCap, variant: .outline)
             HIGHeroIcon(.academicCap, variant: .solid, style: .accent)
             HIGHeroIcon(.bell, variant: .outline, size: .large)
+            HIGHeroIcon(.home, variant: .outline, size: .fixed(48))
             HIGHeroIcon(.heart, variant: .solid, size: .fixed(32), style: .tint(.pink))
         }
         .padding()
