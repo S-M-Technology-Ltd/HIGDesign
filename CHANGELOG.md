@@ -2,7 +2,9 @@
 
 All notable changes to HIGDesign are documented here. The project follows [Semantic Versioning](https://semver.org/) from v1.0.0 onward.
 
-## Unreleased
+## 1.2.0 — 2026-06-26
+
+Minor release adding Heroicons v2 integration, Dynamic Type–aware icon sizing, and custom icon size and tint options.
 
 ### Added
 

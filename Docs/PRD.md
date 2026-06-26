@@ -70,11 +70,20 @@ HIGDesign synthesizes architecture and patterns from:
 | `HIGDesignPlatform` | Idiom and capability adapters |
 | `HIGDesignBridging` | Optional Cocoa bridges |
 
-## Current Milestone: v1.1.0 (released)
+## Current Milestone: v1.2.0 (released)
 
-v1.1.0 is a minor release (2026-06-20) adding custom activity indicator styles, a shimmer placeholder modifier, and PhotoPicker Swift concurrency improvements.
+v1.2.0 is a minor release (2026-06-26) adding Heroicons v2 integration, Dynamic Type–aware icon sizing, and custom icon size and tint options.
 
-Delivered in v1.1.0:
+Delivered in v1.2.0:
+
+- `HIGIcons` module with 324 Heroicons v2 outline and solid icons
+- `HIGHeroIcon`, `HIGHeroIconToken`, and `HIGThemeManager` for token-based icon resolution
+- `HIGDesignIcons` SPM product for icon-only consumers
+- `HIGScaledDimension` and Dynamic Type scaling for `HIGIcon` and `HIGHeroIcon`
+- `HIGIconSize.fixed(CGFloat)` and `HIGIconStyle.tint(Color)` for custom icon metrics and colors
+- `Scripts/generate_hero_icons.py` to regenerate the icon catalog from Heroicons source
+
+v1.1.0 (2026-06-20) delivered:
 
 - `HIGActivityIndicatorStyle` with ten custom indicator styles plus the system default
 - `higShimmer(isActive:mode:)` modifier with theme-backed `HIGShimmerTokens`
