@@ -121,7 +121,7 @@ struct PhotoGridCellView: View {
         let cacheKey = ImageCacheKey.thumbnail(assetID: asset.id, targetSize: requestSize)
         loadTask?.cancel()
         loadTask = Task {
-            if let cached = await ImageCache.shared.image(for: cacheKey) {
+            if let cached = ImageCache.shared.image(for: cacheKey) {
                 guard !Task.isCancelled else { return }
                 await MainActor.run {
                     thumbnail = cached
@@ -136,7 +136,7 @@ struct PhotoGridCellView: View {
                     targetSize: requestSize
                 )
                 guard !Task.isCancelled else { return }
-                await ImageCache.shared.insert(result.cgImage, for: cacheKey, assetID: asset.id)
+                ImageCache.shared.insert(result.cgImage, for: cacheKey, assetID: asset.id)
                 await MainActor.run {
                     thumbnail = result.cgImage
                     loadedTargetSide = cellSide

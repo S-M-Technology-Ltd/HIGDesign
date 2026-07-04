@@ -43,7 +43,7 @@ public enum ShowcaseSnapshotPlatform: String, CaseIterable, Sendable, Identifiab
 extension ShowcaseComponent {
     private var usesFullHeightSnapshotCanvas: Bool {
         switch self {
-        case .photoPicker, .sidebar, .tabBar, .navigationBar, .toolbar, .list, .form, .textEditor:
+        case .photoPicker, .photoEditor, .longTextEditor, .sidebar, .tabBar, .navigationBar, .toolbar, .list, .form, .textEditor:
             true
         default:
             false
@@ -71,8 +71,10 @@ extension ShowcaseComponent {
             [.macos, .ios, .ipados, .visionos, .tvos]
         case .sidebar:
             [.macos, .ios, .ipados, .visionos]
-        case .photoPicker:
+        case .photoPicker, .photoEditor:
             [.ios]
+        case .longTextEditor:
+            [.macos, .ios, .ipados, .visionos]
         }
     }
 }

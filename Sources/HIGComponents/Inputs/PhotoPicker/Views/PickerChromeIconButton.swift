@@ -97,16 +97,6 @@ private enum PickerChromeButtonStyleSupport {
     ) -> AnyView {
         let controlSize: ControlSize = sizing == .banner ? .small : .mini
 
-        if #available(iOS 26.0, *) {
-            return AnyView(
-                content
-                    .buttonStyle(.glass as GlassButtonStyle)
-                    .controlSize(controlSize)
-                    .buttonBorderShape(.circle)
-                    .labelStyle(.iconOnly)
-            )
-        }
-
         return AnyView(
             content
                 .buttonStyle(.bordered)
@@ -122,16 +112,6 @@ private enum PickerChromeButtonStyleSupport {
         sizing: PickerChromeButtonSizing
     ) -> AnyView {
         let controlSize: ControlSize = sizing == .banner ? .mini : .small
-
-        if #available(iOS 26.0, *) {
-            return AnyView(
-                content
-                    .buttonStyle(.glass as GlassButtonStyle)
-                    .controlSize(controlSize)
-                    .buttonBorderShape(.capsule)
-                    .labelStyle(.titleAndIcon)
-            )
-        }
 
         return AnyView(
             content

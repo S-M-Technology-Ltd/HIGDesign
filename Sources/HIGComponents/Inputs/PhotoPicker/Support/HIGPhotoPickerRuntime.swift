@@ -14,5 +14,8 @@ enum HIGPhotoPickerRuntime {
     static var shouldAccessPhotoKit: Bool {
         !isRunningInXcodePreview
     }
+
+    /// Debug marker to confirm the serial-queue image pipeline is linked (not the removed `PhotoKitCoordinator` actor).
+    static let imagePipelineIdentifier = "HIGPhotoPicker.ImageLoadingClient.v2"
 }
 #endif

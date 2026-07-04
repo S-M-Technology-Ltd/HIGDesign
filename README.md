@@ -33,7 +33,7 @@ Stop rebuilding buttons, forms, and navigation chrome from scratch. HIGDesign gi
 
 A **Swift Package** with HIG-correct SwiftUI components, design tokens, and themes. Import one product, wrap your app in `HIGThemeableView`, and use `HIGButton`, `HIGTextField`, `HIGTabBar`, and 30 more — each styled from tokens, not hardcoded values.
 
-**No UIKit.** Swift 6. iOS 18+, macOS 15+, visionOS 2+, tvOS 18+, watchOS 11+.
+**SwiftUI-first.** Optional UIKit/AppKit bridging in `HIGBridging` when needed. Swift 6. iOS 18+, macOS 15+, visionOS 2+, tvOS 18+, watchOS 11+.
 
 ## Why use it instead of raw SwiftUI?
 

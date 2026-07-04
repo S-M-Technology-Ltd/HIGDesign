@@ -8,7 +8,7 @@ EXPECTED=(
     button textField toggle divider progressView card tabBar toolbar
     alert toast sidebar navigationBar label badge activityIndicator list form
     checkbox radio segmentedControl slider secureField searchField picker
-    icon avatar link bulletList textEditor stepper menuButton tag photoPicker
+    icon avatar link bulletList textEditor stepper menuButton tag photoPicker photoEditor
 )
 
 missing=()
@@ -65,6 +65,7 @@ showcase_key_for() {
         HIGToolbarTextAction) echo toolbar ;;
         HIGToolbarIconAction) echo toolbar ;;
         HIGPhotoPicker) echo photoPicker ;;
+        HIGPhotoEditor) echo photoEditor ;;
         *) return 1 ;;
     esac
 }

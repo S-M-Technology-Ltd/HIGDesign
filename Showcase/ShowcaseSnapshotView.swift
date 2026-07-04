@@ -97,6 +97,10 @@ public struct ShowcaseSnapshotView: View {
             ShowcaseTagView()
         case .photoPicker:
             ShowcasePhotoPickerView()
+        case .photoEditor:
+            ShowcasePhotoEditorView()
+        case .longTextEditor:
+            ShowcaseLongTextEditorView()
         }
     }
 }

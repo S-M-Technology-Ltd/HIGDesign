@@ -9,6 +9,21 @@ struct ShowcaseCatalogView: View {
     @Binding var dynamicTypeSizeChoice: ShowcaseDynamicTypeSizeChoice
     @Binding var iconSettings: ShowcaseIconSettings
 
+    @State private var searchText = ""
+    #if os(iOS) || os(visionOS)
+    @State private var preferredCompactColumn: NavigationSplitViewColumn = .sidebar
+    #endif
+
+    private var filteredComponents: [ShowcaseComponent] {
+        let sorted = ShowcaseComponent.catalogSorted
+        let query = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !query.isEmpty else { return sorted }
+        return sorted.filter { component in
+            component.title.localizedCaseInsensitiveContains(query)
+                || component.summary.localizedCaseInsensitiveContains(query)
+        }
+    }
+
     var body: some View {
         #if os(watchOS)
         watchCatalog
@@ -18,41 +33,81 @@ struct ShowcaseCatalogView: View {
     }
 
     private var standardCatalog: some View {
-        NavigationSplitView {
-            List(ShowcaseComponent.allCases, selection: $selection) { component in
-                VStack(alignment: .leading, spacing: HIGSpacing.xxs.rawValue / 2) {
-                    Text(component.title)
-                    Text(component.summary)
-                        .font(theme.typography.caption)
-                        .foregroundStyle(theme.colors.labelSecondary)
-                        .lineLimit(2)
-                }
-                .tag(component)
-            }
-            .navigationTitle("Components")
-            .safeAreaInset(edge: .bottom) {
-                ShowcaseSettingsView(
-                    selection: selection,
-                    themeChoice: $themeChoice,
-                    colorScheme: $colorScheme,
-                    dynamicTypeSizeChoice: $dynamicTypeSizeChoice,
-                    iconSettings: $iconSettings
-                )
-                    .padding()
-                    .background(.regularMaterial)
-            }
+        splitView
+    }
+
+    @ViewBuilder
+    private var splitView: some View {
+        #if os(iOS) || os(visionOS)
+        NavigationSplitView(preferredCompactColumn: $preferredCompactColumn) {
+            catalogSidebar
         } detail: {
-            if let selection {
-                showcaseDetail(for: selection)
-            } else {
-                ShowcaseWelcomeView()
+            catalogDetail
+        }
+        #else
+        NavigationSplitView {
+            catalogSidebar
+        } detail: {
+            catalogDetail
+        }
+        #endif
+    }
+
+    private var catalogSidebar: some View {
+        List {
+            ForEach(filteredComponents) { component in
+                catalogRow(for: component)
             }
+        }
+        .navigationTitle("Components")
+        .searchable(text: $searchText, prompt: "Search components")
+        .safeAreaInset(edge: .bottom) {
+            ShowcaseSettingsView(
+                selection: selection,
+                themeChoice: $themeChoice,
+                colorScheme: $colorScheme,
+                dynamicTypeSizeChoice: $dynamicTypeSizeChoice,
+                iconSettings: $iconSettings
+            )
+            .padding()
+            .background(.regularMaterial)
+        }
+    }
+
+    @ViewBuilder
+    private func catalogRow(for component: ShowcaseComponent) -> some View {
+        let isSelected = selection == component
+
+        Button {
+            selection = component
+        } label: {
+            VStack(alignment: .leading, spacing: HIGSpacing.xxs.rawValue / 2) {
+                Text(component.title)
+                Text(component.summary)
+                    .font(theme.typography.caption)
+                    .foregroundStyle(theme.colors.labelSecondary)
+                    .lineLimit(2)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .listRowBackground(isSelected ? theme.colors.fillPrimary.opacity(0.15) : nil)
+        .accessibilityAddTraits(isSelected ? .isSelected : [])
+    }
+
+    @ViewBuilder
+    private var catalogDetail: some View {
+        if let selection {
+            showcaseDetail(for: selection)
+        } else {
+            ShowcaseWelcomeView()
         }
     }
 
     private var watchCatalog: some View {
         NavigationStack {
-            List(ShowcaseComponent.allCases) { component in
+            List(ShowcaseComponent.catalogSorted) { component in
                 NavigationLink(component.title) {
                     showcaseDetail(for: component)
                 }
@@ -130,6 +185,10 @@ struct ShowcaseCatalogView: View {
             ShowcaseTagView()
         case .photoPicker:
             ShowcasePhotoPickerView()
+        case .photoEditor:
+            ShowcasePhotoEditorView()
+        case .longTextEditor:
+            ShowcaseLongTextEditorView()
         }
     }
 }
@@ -138,12 +197,12 @@ struct ShowcaseCatalogView: View {
 #Preview("ShowcaseCatalogView") {
     ShowcasePreviewContainer(includeNavigationStack: false) {
         ShowcaseCatalogView(
-        selection: .constant(.button),
-        themeChoice: .constant(.system),
-        colorScheme: .constant(nil),
-        dynamicTypeSizeChoice: .constant(.system),
-        iconSettings: .constant(ShowcaseIconSettings())
-    )
+            selection: .constant(nil),
+            themeChoice: .constant(.system),
+            colorScheme: .constant(nil),
+            dynamicTypeSizeChoice: .constant(.system),
+            iconSettings: .constant(ShowcaseIconSettings())
+        )
     }
 }
 #endif

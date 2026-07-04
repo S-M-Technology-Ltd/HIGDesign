@@ -16,7 +16,7 @@ Project Shape
     * SwiftUI
     * Swift Package Manager
     * DocC
-* Package sources and tests must not import or call UIKit. Use SwiftUI-only APIs.
+* Prefer SwiftUI-only APIs in package sources and tests. UIKit or AppKit bridging belongs in `HIGBridging` only when SwiftUI cannot satisfy the requirement.
 * Minimum supported OS releases are the latest three calendar years: iOS 18, iPadOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2.
 * HIGDesign is a reusable design system package, not an application shell.
 * Do not add a custom backend, web app, React Native, Flutter, Electron, Firebase, Supabase, or cross-platform UI unless explicitly requested.
@@ -202,8 +202,8 @@ Bridging Rules
 * Native SwiftUI is the default implementation path.
 * Bridging belongs in `HIGBridging` and is optional for package consumers.
 * Bridged controls must still resolve colors, typography, spacing, and motion from HIG tokens.
-* Do not expose raw UIKit or AppKit types in public HIG component APIs.
-* Do not add UIKit representables or UIKit imports anywhere in the package.
+* Prefer not to expose raw UIKit or AppKit types in public HIG component APIs.
+* UIKit or AppKit representables and imports are allowed only in `HIGBridging` when SwiftUI cannot satisfy the requirement. Document the justification in the PR.
 
 Requirements Documentation Rules
 
@@ -298,6 +298,10 @@ Scripts/verify_showcase_token_usage.sh
 Photo picker design token guard (supplementary):
 
 Scripts/verify_photo_picker_token_usage.sh
+
+Photo editor design token guard (supplementary):
+
+Scripts/verify_photo_editor_token_usage.sh
 
 Swift package build:
 

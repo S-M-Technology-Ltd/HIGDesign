@@ -39,6 +39,8 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let list: any HIGListTokens
     public let sidebar: any HIGSidebarTokens
     public let photoPicker: any HIGPhotoPickerTokens
+    public let photoEditor: any HIGPhotoEditorTokens
+    public let longTextEditor: any HIGLongTextEditorTokens
 
     public init(
         colors: any HIGColorSemanticTokens = HIGSystemColorSemanticTokens(),
@@ -75,7 +77,9 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         shimmer: any HIGShimmerTokens = HIGSystemShimmerTokens(),
         list: any HIGListTokens = HIGSystemListTokens(),
         sidebar: any HIGSidebarTokens = HIGSystemSidebarTokens(),
-        photoPicker: any HIGPhotoPickerTokens = HIGSystemPhotoPickerTokens()
+        photoPicker: any HIGPhotoPickerTokens = HIGSystemPhotoPickerTokens(),
+        photoEditor: any HIGPhotoEditorTokens = HIGSystemPhotoEditorTokens(),
+        longTextEditor: any HIGLongTextEditorTokens = HIGSystemLongTextEditorTokens()
     ) {
         self.colors = colors
         self.typography = typography
@@ -112,5 +116,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.list = list
         self.sidebar = sidebar
         self.photoPicker = photoPicker
+        self.photoEditor = photoEditor
+        self.longTextEditor = longTextEditor
     }
 }

@@ -11,13 +11,20 @@ fi
 
 PROJECT="$ROOT/Sample/HIGDesignSample.xcodeproj"
 
-if ! grep -q 'INFOPLIST_KEY_NSPhotoLibraryUsageDescription' "$PROJECT/project.pbxproj"; then
-    echo "Sample Xcode project guard failed: iOS target is missing NSPhotoLibraryUsageDescription." >&2
+INFO_PLIST="$ROOT/Sample/HIGDesignSample/Info.plist"
+
+if ! grep -q 'INFOPLIST_FILE = HIGDesignSample/Info.plist' "$PROJECT/project.pbxproj"; then
+    echo "Sample Xcode project guard failed: iOS target is missing INFOPLIST_FILE." >&2
     exit 1
 fi
 
-if ! grep -q 'INFOPLIST_KEY_PHPhotoLibraryPreventAutomaticLimitedAccessAlert' "$PROJECT/project.pbxproj"; then
-    echo "Sample Xcode project guard failed: iOS target is missing PHPhotoLibraryPreventAutomaticLimitedAccessAlert." >&2
+if ! grep -q 'NSPhotoLibraryUsageDescription' "$INFO_PLIST"; then
+    echo "Sample Xcode project guard failed: Info.plist is missing NSPhotoLibraryUsageDescription." >&2
+    exit 1
+fi
+
+if ! grep -q 'PHPhotoLibraryPreventAutomaticLimitedAccessAlert' "$INFO_PLIST"; then
+    echo "Sample Xcode project guard failed: Info.plist is missing PHPhotoLibraryPreventAutomaticLimitedAccessAlert." >&2
     exit 1
 fi
 

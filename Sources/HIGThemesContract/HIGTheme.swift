@@ -38,4 +38,6 @@ public protocol HIGTheme: Sendable {
     var list: any HIGListTokens { get }
     var sidebar: any HIGSidebarTokens { get }
     var photoPicker: any HIGPhotoPickerTokens { get }
+    var photoEditor: any HIGPhotoEditorTokens { get }
+    var longTextEditor: any HIGLongTextEditorTokens { get }
 }
