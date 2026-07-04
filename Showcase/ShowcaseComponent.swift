@@ -34,8 +34,17 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case menuButton
     case tag
     case photoPicker
+    case photoEditor
+    case longTextEditor
 
     public var id: String { rawValue }
+
+    /// Components sorted A–Z by display title for the showcase catalog.
+    public static var catalogSorted: [ShowcaseComponent] {
+        allCases.sorted { lhs, rhs in
+            lhs.title.localizedCaseInsensitiveCompare(rhs.title) == .orderedAscending
+        }
+    }
 
     public var title: String {
         switch self {
@@ -72,6 +81,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .menuButton: "Menu Button"
         case .tag: "Tag"
         case .photoPicker: "Photo Picker"
+        case .photoEditor: "Photo Editor"
+        case .longTextEditor: "Long Text Editor"
         }
     }
 
@@ -110,6 +121,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .menuButton: "Buttons"
         case .tag: "Labels"
         case .photoPicker: "Photo Picker"
+        case .photoEditor: "Photo Editing"
+        case .longTextEditor: "Rich Text Editing"
         }
     }
 
@@ -148,6 +161,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .menuButton: "Secondary-styled buttons that present action menus."
         case .tag: "Pill-shaped chips for categories, filters, and metadata."
         case .photoPicker: "Photo library picker with album browsing, preview crop, and iCloud support."
+        case .photoEditor: "Crop, rotate, and aspect-ratio editing inspired by TOCropViewController."
+        case .longTextEditor: "Rich HTML long-form editing with formatting toolbar, inspired by swift-rich-html-editor."
         }
     }
 
@@ -166,8 +181,10 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
             "iOS, iPadOS, macOS, visionOS, tvOS"
         case .sidebar:
             "iOS, iPadOS, macOS, visionOS"
-        case .photoPicker:
+        case .photoPicker, .photoEditor:
             "iOS"
+        case .longTextEditor:
+            "iOS, iPadOS, macOS, visionOS"
         }
     }
 

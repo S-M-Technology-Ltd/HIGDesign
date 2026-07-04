@@ -1,10 +1,11 @@
+import HIGShowcase
 import Testing
 
 @Test
-func showcaseCatalogIncludesPhaseElevenComponents() {
-    #expect(ShowcaseCatalog.componentCount == 33)
-}
-
-private enum ShowcaseCatalog {
-    static let componentCount = 33
+func showcaseCatalogIncludesLongTextEditor() {
+    let titles = ShowcaseComponent.allCases.map(\.title)
+    #expect(ShowcaseComponent.allCases.count == 35)
+    #expect(titles.contains("Photo Editor"))
+    #expect(titles.contains("Long Text Editor"))
+    #expect(ShowcaseComponent.allCases.last?.title == "Long Text Editor")
 }

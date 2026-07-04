@@ -6,7 +6,7 @@ struct ShowcaseWelcomeView: View {
         ContentUnavailableView(
             "Select a Component",
             systemImage: "square.grid.2x2",
-            description: Text("Choose a HIGDesign component to inspect roles, tokens, and accessibility behavior.")
+            description: Text("Browse the A–Z component list or search by name to inspect roles, tokens, and accessibility behavior.")
         )
     }
 }

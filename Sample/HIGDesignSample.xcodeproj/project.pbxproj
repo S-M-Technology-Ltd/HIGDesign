@@ -18,6 +18,7 @@
 /* Begin PBXFileReference section */
 		HIGD10012F0A000000000011 /* HIGDesignSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIGDesignSampleApp.swift; sourceTree = "<group>"; };
 		HIGD10012F0A000000000012 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		HIGD10012F0A000000000016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		HIGD10012F0A000000000013 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
 		HIGD10012F0A000000000021 /* HIGDesignSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HIGDesignSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		HIGD10012F0A000000000022 /* HIGDesignSampleMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HIGDesignSampleMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				HIGD10012F0A000000000011 /* HIGDesignSampleApp.swift */,
+				HIGD10012F0A000000000016 /* Info.plist */,
 				HIGD10012F0A000000000012 /* Assets.xcassets */,
 			);
 			path = HIGDesignSample;
@@ -264,6 +266,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HIGDesignSample/Info.plist;
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "HIGDesignSample needs photo library access to showcase the HIGPhotoPicker component.";
 				INFOPLIST_KEY_PHPhotoLibraryPreventAutomaticLimitedAccessAlert = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -296,6 +299,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HIGDesignSample/Info.plist;
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "HIGDesignSample needs photo library access to showcase the HIGPhotoPicker component.";
 				INFOPLIST_KEY_PHPhotoLibraryPreventAutomaticLimitedAccessAlert = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

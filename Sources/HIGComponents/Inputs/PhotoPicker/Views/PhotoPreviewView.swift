@@ -165,9 +165,9 @@ struct PhotoPreviewView: View {
         )
 
         loadTask = Task {
-            var cached = await ImageCache.shared.image(for: gridCacheKey)
+            var cached = ImageCache.shared.image(for: gridCacheKey)
             if cached == nil {
-                cached = await ImageCache.shared.imageForAssetID(asset.id)
+                cached = ImageCache.shared.imageForAssetID(asset.id)
             }
             if let cached {
                 guard !Task.isCancelled else { return }
@@ -187,7 +187,7 @@ struct PhotoPreviewView: View {
                 applyPreviewImage(result.cgImage, assetID: asset.id)
 
                 let cacheKey = ImageCacheKey.thumbnail(assetID: asset.id, targetSize: previewPointSize)
-                await ImageCache.shared.insert(result.cgImage, for: cacheKey, assetID: asset.id)
+                ImageCache.shared.insert(result.cgImage, for: cacheKey, assetID: asset.id)
 
                 guard needsFullSizeUpgrade(result: result, asset: asset, allowsNetwork: allowsNetwork) else {
                     await MainActor.run { isDownloading = false }

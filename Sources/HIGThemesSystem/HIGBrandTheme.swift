@@ -41,6 +41,8 @@ public struct HIGBrandTheme: HIGTheme, Sendable {
     public let list: any HIGListTokens
     public let sidebar: any HIGSidebarTokens
     public let photoPicker: any HIGPhotoPickerTokens
+    public let photoEditor: any HIGPhotoEditorTokens
+    public let longTextEditor: any HIGLongTextEditorTokens
 
     public init(
         name: String,
@@ -95,5 +97,7 @@ public struct HIGBrandTheme: HIGTheme, Sendable {
         self.list = base.list
         self.sidebar = base.sidebar
         self.photoPicker = base.photoPicker
+        self.photoEditor = base.photoEditor
+        self.longTextEditor = base.longTextEditor
     }
 }

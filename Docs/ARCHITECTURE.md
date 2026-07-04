@@ -2,7 +2,7 @@
 
 ## Overview
 
-HIGDesign is a modular Swift Package that delivers an Apple HIG-aligned design system for SwiftUI apps across six Apple platforms. The package is SwiftUI-only and does not use UIKit. Minimum OS releases cover the latest three calendar years (iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2).
+HIGDesign is a modular Swift Package that delivers an Apple HIG-aligned design system for SwiftUI apps across six Apple platforms. SwiftUI is the default implementation path. UIKit or AppKit bridging is limited to `HIGBridging` when SwiftUI cannot satisfy the requirement. Minimum OS releases cover the latest three calendar years (iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2).
 
 ## Module Graph
 
@@ -50,7 +50,7 @@ Apps inject themes with `HIGThemeableView`. Components read `@Environment(\.higT
 
 ### Native SwiftUI first
 
-All implementation is SwiftUI-native. UIKit imports and representables are prohibited. Optional bridging, if added later, must use SwiftUI-only patterns.
+All public components should be SwiftUI-native. UIKit or AppKit imports and representables belong in `HIGBridging` when SwiftUI cannot satisfy the requirement.
 
 ### Platform capability model
 
@@ -77,7 +77,7 @@ Phase 7 controls and inputs expansion builds on the Phase 1–6 foundation, whic
 | `HIGThemesSystem` | Implemented — system, high-contrast, and brand themes |
 | `HIGPlatform` | Implemented — `HIGPlatformCapabilities` |
 | `HIGIcons` | Implemented — Heroicons v2 outline/solid catalog, SVG path rendering, theme-aware resolution |
-| `HIGComponents` | Implemented — actions, inputs, controls, feedback, layout, and navigation components |
+| `HIGComponents` | Implemented — actions, inputs, controls, feedback, layout, and navigation components (including `HIGPhotoEditor`) |
 | `HIGModifiers` | Implemented — `higPadding`, `higNavigationBar`, `higToolbar` (delegates to `HIGComponents`) |
 | `HIGShowcase` | Implemented — component gallery library and sample-app dependency |
 

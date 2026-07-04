@@ -78,11 +78,15 @@ let package = Package(
                 "HIGIcons",
             ],
             path: "Sources/HIGComponents",
+            resources: [
+                .process("Inputs/LongTextEditor/WebKitCore/Resources"),
+            ],
             linkerSettings: [
                 .linkedFramework("Photos", .when(platforms: [.iOS])),
                 .linkedFramework("PhotosUI", .when(platforms: [.iOS])),
                 .linkedFramework("ImageIO", .when(platforms: [.iOS])),
                 .linkedFramework("CoreGraphics", .when(platforms: [.iOS])),
+                .linkedFramework("WebKit", .when(platforms: [.iOS, .macOS, .visionOS])),
             ]
         ),
         .target(
@@ -139,6 +143,7 @@ let package = Package(
                 "HIGIcons",
                 "HIGComponents",
                 "HIGBridging",
+                "HIGShowcase",
             ],
             path: "Tests/HIGDesignTests"
         ),

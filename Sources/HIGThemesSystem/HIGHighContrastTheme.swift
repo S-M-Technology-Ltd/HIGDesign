@@ -40,6 +40,8 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
     public let list: any HIGListTokens
     public let sidebar: any HIGSidebarTokens
     public let photoPicker: any HIGPhotoPickerTokens
+    public let photoEditor: any HIGPhotoEditorTokens
+    public let longTextEditor: any HIGLongTextEditorTokens
 
     public init(base: HIGSystemTheme = HIGSystemTheme()) {
         let baseColors = base.colors
@@ -89,5 +91,7 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
         self.list = base.list
         self.sidebar = base.sidebar
         self.photoPicker = base.photoPicker
+        self.photoEditor = base.photoEditor
+        self.longTextEditor = base.longTextEditor
     }
 }

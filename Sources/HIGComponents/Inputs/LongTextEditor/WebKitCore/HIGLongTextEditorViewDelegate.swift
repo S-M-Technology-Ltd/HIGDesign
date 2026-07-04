@@ -1,0 +1,133 @@
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing,
+//  software distributed under the License is distributed on an
+//  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+//  KIND, either express or implied.  See the License for the
+//  specific language governing permissions and limitations
+//  under the License.
+
+import Foundation
+
+/// The methods for receiving editing-related messages for editor view objects.
+///
+/// All of the methods in this protocol are optional.
+@MainActor
+public protocol HIGLongTextEditorViewDelegate: AnyObject {
+    /// Tells the delegate when the specified editor view is fully loaded and ready to be used.
+    ///
+    /// The editor must load a ``WebKit/WKWebView`` prior to be editable.
+    /// You can inject CSS or set the initial HTML at any time, but the content will
+    /// only be visible once the editor is loaded.
+    ///
+    ///  Implementation of this method is optional.
+    ///
+    /// - Parameter higLongTextEditorView: The editor which is loaded.
+    func higLongTextEditorViewDidLoad(_ higLongTextEditorView: HIGLongTextEditorView)
+
+    /// Tells the delegate when the user changes the content or format in the specified editor view.
+    ///
+    /// The editor calls this method whenever the content of the editor change.
+    ///
+    /// Implementation of this method is optional.
+    ///
+    /// - Parameter higLongTextEditorView: The editor which is loaded.
+    func higLongTextEditorViewDidChange(_ higLongTextEditorView: HIGLongTextEditorView)
+
+    /// Tells the delegate when the position of the carte or the selection range of the specified
+    /// editor moves.
+    ///
+    /// Implementation of this method is optional.
+    ///
+    /// - Parameters:
+    ///   - higLongTextEditorView: The editor which is loaded.
+    ///   - caretPosition: The new position of the caret or of the selection range.
+    func higLongTextEditorView(_ higLongTextEditorView: HIGLongTextEditorView, caretPositionDidChange caretPosition: CGRect)
+
+    /// Tells the delegate when the attributes of the selected text changes in the specified editor view.
+    ///
+    /// When the carte moves, the editor calls this method if the attributes of the selected text is
+    /// different from the old one.
+    /// For example, the method will be called if the newly selected text is bold but the previous one
+    /// was not.
+    /// The object ``HIGLongTextUITextAttributes`` contains all the information about the selected text.
+    ///
+    /// Implementation of this method is optional.
+    ///
+    /// - Parameters:
+    ///   - higLongTextEditorView: The editor which is loaded.
+    ///   - textAttributes: The new attributes of the selected text.
+    func higLongTextEditorView(
+        _ higLongTextEditorView: HIGLongTextEditorView,
+        selectedTextAttributesDidChange textAttributes: HIGLongTextUITextAttributes
+    )
+
+    /// Tells the delegate when a JavaScript function executed in the specified editor has failed.
+    ///
+    /// When the editor calls a JavaScript to update the content, the CSS, or format the text, an
+    /// error may potentially be raised by JavaScript.
+    ///
+    /// Implementation of this method is optional.
+    ///
+    /// - Parameters:
+    ///   - higLongTextEditorView: The editor which is loaded.
+    ///   - javascriptError: The `Error` containing information about the error raised by JavaScript.
+    ///   - function: The name of the failing function.
+    func higLongTextEditorView(
+        _ higLongTextEditorView: HIGLongTextEditorView,
+        javascriptFunctionDidFail javascriptError: any Error,
+        whileExecuting function: String
+    )
+
+    /// Asks the delegate if the editor should handle opening the link itself.
+    ///
+    /// The user can open the link thanks to the contextual menu. If the editor handles this task itself,
+    /// the link will open in the default browser on iOS but in the editor on macOS.
+    /// You may need to customize this behaviour. If the method returns `true`, the editor won't
+    /// open the link and you will be responsible for doing so.
+    ///
+    /// Implementation of this method is optional. Default return value is `false`.
+    ///
+    /// - Parameters:
+    ///   - higLongTextEditorView: The editor which is loaded.
+    ///   - shouldHandleLink: The URL the user clicked on.
+    ///
+    /// - Returns: `false` if the editor should handle the link opening itself.
+    func higLongTextEditorView(_ higLongTextEditorView: HIGLongTextEditorView, shouldHandleLink link: URL) -> Bool
+
+    /// Tells the delegate when the user's text selection has changed inside the editor.
+    ///
+    /// This method is triggered whenever the user selects or deselects text.
+    ///
+    /// Implementation of this method is optional.
+    ///
+    /// - Parameters:
+    ///   - higLongTextEditorView: The editor which is loaded.
+    ///   - selection: The current text string selected by the user.
+    func higLongTextEditorView(_ higLongTextEditorView: HIGLongTextEditorView, selectionDidChange selection: String)
+}
+
+// Default implementation for optional functions
+public extension HIGLongTextEditorViewDelegate {
+    func higLongTextEditorViewDidLoad(_ higLongTextEditorView: HIGLongTextEditorView) {}
+    func higLongTextEditorViewDidChange(_ higLongTextEditorView: HIGLongTextEditorView) {}
+    func higLongTextEditorView(_ higLongTextEditorView: HIGLongTextEditorView, caretPositionDidChange caretPosition: CGRect) {}
+    func higLongTextEditorView(
+        _ higLongTextEditorView: HIGLongTextEditorView,
+        selectedTextAttributesDidChange textAttributes: HIGLongTextUITextAttributes
+    ) {}
+    func higLongTextEditorView(
+        _ higLongTextEditorView: HIGLongTextEditorView,
+        javascriptFunctionDidFail javascriptError: any Error,
+        whileExecuting function: String
+    ) {}
+    func higLongTextEditorView(_ higLongTextEditorView: HIGLongTextEditorView, shouldHandleLink link: URL) -> Bool {
+        return false
+    }
+
+    func higLongTextEditorView(_ higLongTextEditorView: HIGLongTextEditorView, selectionDidChange selection: String) {}
+}

@@ -52,6 +52,12 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGPhotoPickerConfiguration``
 - ``HIGPhotoAsset``
 - ``HIGPhotoMediaType``
+- ``HIGPhotoEditor``
+- ``HIGPhotoEditorConfiguration``
+- ``HIGPhotoEditorAspectRatio``
+- ``HIGPhotoEditorCroppingStyle``
+- ``HIGPhotoEditorCropState``
+- ``HIGPhotoEditorFinishResult``
 
 ## Feedback
 

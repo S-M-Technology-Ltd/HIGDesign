@@ -3,6 +3,7 @@ import HIGThemesContract
 import HIGTokensComponent
 import Photos
 import SwiftUI
+import UIKit
 
 struct PickerRootView: View {
     @Binding var selection: [HIGPhotoAsset]
@@ -20,7 +21,7 @@ struct PickerRootView: View {
     @State private var libraryReloadTask: Task<Void, Never>?
     @Environment(\.higTheme) private var theme
     @Environment(\.openURL) private var openURL
-    @Environment(\.scenePhase) private var scenePhase
+    @State private var containerWidth: CGFloat = 0
 
     private var tokens: any HIGPhotoPickerTokens { theme.photoPicker }
     private var layout: PickerLayout { PickerLayout(tokens: tokens) }
@@ -174,12 +175,8 @@ struct PickerRootView: View {
             libraryChangeObserver?.unregister()
             libraryChangeObserver = nil
         }
-        .onChange(of: scenePhase) { _, newPhase in
-            guard newPhase == .active else { return }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
             refreshAuthorizationStatus()
-            if authorizationStatus.canBrowseLibrary {
-                reloadLibrary()
-            }
         }
         .onChange(of: pickerSelection.assets) { _, newValue in
             selection = newValue
@@ -188,34 +185,37 @@ struct PickerRootView: View {
 
     @ViewBuilder
     private var pickerContent: some View {
-        GeometryReader { geometry in
-            let layoutWidth = geometry.size.width
-            let headerHeight = layout.collapsibleHeaderHeight(
-                containerWidth: layoutWidth,
-                showsBanner: authorizationStatus == .limited,
-                isBannerExpanded: isLimitedBannerExpanded,
-                collapseProgress: headerCollapseProgress
+        let layoutWidth = resolvedContainerWidth
+        let gridCellSide = layout.gridCellSideLength(containerWidth: layoutWidth)
+        let headerHeight = layout.collapsibleHeaderHeight(
+            containerWidth: layoutWidth,
+            showsBanner: authorizationStatus == .limited,
+            isBannerExpanded: isLimitedBannerExpanded,
+            collapseProgress: headerCollapseProgress
+        )
+
+        VStack(spacing: tokens.stackSpacingNone) {
+            pickerHeader(layoutWidth: layoutWidth)
+                .frame(height: headerHeight, alignment: .top)
+                .clipped()
+
+            PhotoGridView(
+                assets: assets,
+                cellSide: gridCellSide,
+                configuration: configuration,
+                selection: pickerSelection,
+                imageLoader: imageLoader,
+                onAssetFocused: handleAssetFocused
             )
-
-            VStack(spacing: tokens.stackSpacingNone) {
-                pickerHeader(layoutWidth: layoutWidth)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: headerHeight, alignment: .top)
-                    .clipped()
-
-                PhotoGridView(
-                    assets: assets,
-                    configuration: configuration,
-                    selection: pickerSelection,
-                    imageLoader: imageLoader,
-                    onAssetFocused: handleAssetFocused
-                )
-            }
-            .frame(width: layoutWidth, height: geometry.size.height, alignment: .top)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(tokens.gridBackground)
-        .animation(nil, value: headerCollapseProgress)
+        .onContainerWidthChange($containerWidth)
+        .animation(nil, value: containerWidth)
+    }
+
+    private var resolvedContainerWidth: CGFloat {
+        containerWidth > 0 ? containerWidth : tokens.fallbackLayoutWidth
     }
 
     private func pickerHeader(layoutWidth: CGFloat) -> some View {
@@ -369,7 +369,9 @@ struct PickerRootView: View {
     }
 
     private func manageLimitedLibraryAccess() {
-        openApplicationSettings()
+        LimitedLibraryPickerPresenter.present {
+            reloadLibrary()
+        }
     }
 
     private func bootstrap() async {
@@ -381,6 +383,9 @@ struct PickerRootView: View {
         }
 
         PhotoLibraryHostRequirements.logMissingRequirementsIfNeeded(for: authorizationStatus)
+        #if DEBUG
+        print("HIGPhotoPicker using \(HIGPhotoPickerRuntime.imagePipelineIdentifier)")
+        #endif
 
         guard authorizationStatus.canBrowseLibrary else { return }
         reloadLibrary()

@@ -2,7 +2,7 @@ import HIGDesign
 import SwiftUI
 
 public struct ShowcaseRootView: View {
-    @State private var selection: ShowcaseComponent? = .button
+    @State private var selection: ShowcaseComponent?
     @State private var themeChoice: ShowcaseThemeChoice = .system
     @State private var colorScheme: ColorScheme?
     @State private var dynamicTypeSizeChoice: ShowcaseDynamicTypeSizeChoice = .system

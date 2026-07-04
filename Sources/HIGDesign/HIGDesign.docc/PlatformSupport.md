@@ -21,6 +21,7 @@ Some components are limited to platforms where the underlying HIG pattern applie
 | Component | Platforms |
 |-----------|-----------|
 | ``HIGPhotoPicker`` | iOS |
+| ``HIGPhotoEditor`` | iOS |
 | ``HIGSegmentedControl``, ``HIGTabBar`` | iOS, iPadOS, macOS, visionOS, tvOS |
 | ``HIGSlider`` | iOS, iPadOS, macOS, visionOS |
 | ``HIGSidebar`` | iOS, iPadOS, macOS, visionOS |
