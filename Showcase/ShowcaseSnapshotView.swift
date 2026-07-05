@@ -2,17 +2,28 @@ import HIGThemesContract
 import HIGDesign
 import SwiftUI
 
-/// Renders a single showcase component for snapshot capture.
+/// Renders a single showcase component for theme snapshot capture.
 public struct ShowcaseSnapshotView: View {
     public let component: ShowcaseComponent
+    public let platform: ShowcaseSnapshotPlatform?
 
     @Environment(\.higTheme) private var theme
 
-    public init(component: ShowcaseComponent) {
+    public init(
+        component: ShowcaseComponent,
+        platform: ShowcaseSnapshotPlatform? = nil
+    ) {
         self.component = component
+        self.platform = platform
     }
 
     public var body: some View {
+        themeSnapshotBody
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+            .background(theme.colors.backgroundPrimary)
+    }
+
+    private var themeSnapshotBody: some View {
         VStack(alignment: .leading, spacing: HIGSpacing.none.rawValue) {
             Text(component.title)
                 .font(theme.typography.caption.weight(.semibold))
@@ -21,82 +32,11 @@ public struct ShowcaseSnapshotView: View {
                 .padding(.top, theme.spacing.item)
                 .accessibilityHidden(true)
 
-            snapshotContent
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-        .background(theme.colors.backgroundPrimary)
-    }
-
-    @ViewBuilder
-    private var snapshotContent: some View {
-        switch component {
-        case .button:
-            ShowcaseButtonView()
-        case .textField:
-            ShowcaseTextFieldView()
-        case .toggle:
-            ShowcaseToggleView()
-        case .divider:
-            ShowcaseDividerView()
-        case .progressView:
-            ShowcaseProgressView()
-        case .card:
-            ShowcaseCardView()
-        case .tabBar:
-            ShowcaseTabBarView()
-        case .toolbar:
-            ShowcaseToolbarView()
-        case .alert:
-            ShowcaseAlertView()
-        case .toast:
-            ShowcaseToastView()
-        case .sidebar:
-            ShowcaseSidebarView()
-        case .navigationBar:
-            ShowcaseNavigationBarView()
-        case .label:
-            ShowcaseLabelView()
-        case .badge:
-            ShowcaseBadgeView()
-        case .activityIndicator:
-            ShowcaseActivityIndicatorView()
-        case .list:
-            ShowcaseListView()
-        case .form:
-            ShowcaseFormView()
-        case .checkbox:
-            ShowcaseCheckboxView()
-        case .radio:
-            ShowcaseRadioView()
-        case .segmentedControl:
-            ShowcaseSegmentedControlView()
-        case .slider:
-            ShowcaseSliderView()
-        case .secureField:
-            ShowcaseSecureFieldView()
-        case .searchField:
-            ShowcaseSearchFieldView()
-        case .picker:
-            ShowcasePickerView()
-        case .icon:
-            ShowcaseIconView(iconSettings: .constant(ShowcaseIconSettings()))
-        case .avatar:
-            ShowcaseAvatarView()
-        case .link:
-            ShowcaseLinkView()
-        case .bulletList:
-            ShowcaseBulletListView()
-        case .textEditor:
-            ShowcaseTextEditorView()
-        case .stepper:
-            ShowcaseStepperView()
-        case .menuButton:
-            ShowcaseMenuButtonView()
-        case .tag:
-            ShowcaseTagView()
-        case .photoPicker:
-            ShowcasePhotoPickerView()
+            ShowcaseSnapshotCatalogDetail(
+                component: component,
+                iconSettings: .constant(ShowcaseIconSettings())
+            )
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         }
     }
 }

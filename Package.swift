@@ -78,11 +78,15 @@ let package = Package(
                 "HIGIcons",
             ],
             path: "Sources/HIGComponents",
+            resources: [
+                .process("Inputs/LongTextEditor/WebKitCore/Resources"),
+            ],
             linkerSettings: [
                 .linkedFramework("Photos", .when(platforms: [.iOS])),
                 .linkedFramework("PhotosUI", .when(platforms: [.iOS])),
                 .linkedFramework("ImageIO", .when(platforms: [.iOS])),
                 .linkedFramework("CoreGraphics", .when(platforms: [.iOS])),
+                .linkedFramework("WebKit", .when(platforms: [.iOS, .macOS, .visionOS])),
             ]
         ),
         .target(
@@ -115,7 +119,11 @@ let package = Package(
             name: "HIGShowcase",
             dependencies: ["HIGDesign"],
             path: "Showcase",
-            exclude: ["HIGShowcaseApp.swift", "Info.plist"]
+            exclude: ["HIGShowcaseApp.swift", "Info.plist"],
+            resources: [
+                .process("Resources/ios_bg.png"),
+                .process("Resources/macos_bg.png"),
+            ]
         ),
         .executableTarget(
             name: "HIGShowcaseApp",
@@ -127,7 +135,11 @@ let package = Package(
         .executableTarget(
             name: "HIGSnapshotCapture",
             dependencies: ["HIGShowcase"],
-            path: "SnapshotCapture"
+            path: "SnapshotCapture",
+            resources: [
+                .process("ios_bg.png"),
+                .process("macos_bg.png"),
+            ]
         ),
         .testTarget(
             name: "HIGDesignTests",
@@ -139,6 +151,7 @@ let package = Package(
                 "HIGIcons",
                 "HIGComponents",
                 "HIGBridging",
+                "HIGShowcase",
             ],
             path: "Tests/HIGDesignTests"
         ),

@@ -8,9 +8,11 @@ enum ImageCacheKey {
     }
 }
 
-actor ImageCache {
+/// Thread-safe image cache for grid and preview thumbnails (no Swift actors — avoids executor hops from UIKit cells).
+final class ImageCache: @unchecked Sendable {
     static let shared = ImageCache()
 
+    private let lock = NSLock()
     private let cache = NSCache<NSString, CGImage>()
     private var assetKeys: [String: String] = [:]
 
@@ -20,16 +22,22 @@ actor ImageCache {
     }
 
     func image(for key: String) -> CGImage? {
-        cache.object(forKey: key as NSString)
+        lock.lock()
+        defer { lock.unlock() }
+        return cache.object(forKey: key as NSString)
     }
 
     func imageForAssetID(_ assetID: String) -> CGImage? {
+        lock.lock()
+        defer { lock.unlock() }
         guard let key = assetKeys[assetID] else { return nil }
-        return image(for: key)
+        return cache.object(forKey: key as NSString)
     }
 
     func insert(_ image: CGImage, for key: String, assetID: String? = nil) {
         let cost = image.bytesPerRow * image.height
+        lock.lock()
+        defer { lock.unlock() }
         cache.setObject(image, forKey: key as NSString, cost: cost)
         if let assetID {
             assetKeys[assetID] = key
@@ -37,11 +45,16 @@ actor ImageCache {
     }
 
     func remove(for key: String) {
+        lock.lock()
+        defer { lock.unlock() }
         cache.removeObject(forKey: key as NSString)
     }
 
     func removeAll() {
+        lock.lock()
+        defer { lock.unlock() }
         cache.removeAllObjects()
         assetKeys.removeAll()
     }
-}#endif
+}
+#endif

@@ -15,7 +15,7 @@ open Sample/HIGDesignSample.xcodeproj
 | `HIGDesignSample` | iPhone / iPad Simulator | Touch-first component inspection |
 | `HIGDesignSampleMac` | My Mac | Desktop layout and sidebar navigation |
 
-Both schemes link the local `HIGShowcase` package product, which hosts the full 32-component catalog (`ShowcaseRootView`).
+Both schemes link the local `HIGShowcase` package product, which hosts the full 34-component catalog (`ShowcaseRootView`).
 
 ## Package dependency
 
@@ -33,13 +33,22 @@ Then edit `Sample/Config/Signing.local.xcconfig` and set `DEVELOPMENT_TEAM` to y
 
 Committed project settings intentionally omit `DEVELOPMENT_TEAM` so personal signing never lands on the remote. If Xcode prompts you to update signing, prefer editing `Signing.local.xcconfig` instead of checking in `project.pbxproj` changes.
 
-## Photo library privacy (iOS)
+## Photo components (iOS)
 
-`HIGPhotoPicker` requires host-app Info.plist entries. The sample iOS target already includes:
+`HIGPhotoPicker` and `HIGPhotoEditor` appear in the component sidebar (after **Photo Picker**). Select **Photo Editor** and tap **Edit Photo** to open the crop UI.
+
+- **iOS Simulator / device** — full interactive demo for both components.
+- **macOS sample** — sidebar entry is present; the detail pane explains that photo components are iOS-only.
+
+Rebuild the sample target after pulling changes (`Product → Clean Build Folder`, then Run). The catalog is driven by `ShowcaseComponent.allCases` in the local package — there is no separate sample-only component list.
+
+### Photo library privacy
+
+`HIGPhotoPicker` requires host-app Info.plist entries. The sample iOS target sets `INFOPLIST_FILE` to `HIGDesignSample/Info.plist`, which includes:
 
 - `NSPhotoLibraryUsageDescription`
-- `PHPhotoLibraryPreventAutomaticLimitedAccessAlert`
+- `PHPhotoLibraryPreventAutomaticLimitedAccessAlert` (`true`)
 
-Copy the same keys into your own app target when integrating `HIGPhotoPicker`.
+Copy the same keys into your own app target when integrating `HIGPhotoPicker`. The boolean limited-access key must live in a real Info.plist — `INFOPLIST_KEY_*` build settings alone may not embed it.
 
 For Xcode Previews of photo-picker UI, prefer opening `HIGDesignSample` so the preview host includes these privacy keys. Package-only previews use mock PhotoKit data and do not replace a signed app run on device.

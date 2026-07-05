@@ -18,6 +18,15 @@ struct ShowcaseButtonView: View {
                     ShowcaseSampleView(code: "HIGButton(\"Delete Account\", role: .destructive) {}") {
                         HIGButton("Delete Account", role: .destructive) {}
                     }
+                    ShowcaseSampleView(code: "HIGButton(\"Share\", systemImage: \"square.and.arrow.up\", role: .secondary) {}") {
+                        HIGButton("Share", systemImage: "square.and.arrow.up", role: .secondary) {}
+                    }
+                    ShowcaseSampleView(code: "HIGButton(\"Edit Photo\", systemImage: \"crop\", role: .secondary, style: .glass) {}") {
+                        HIGButton("Edit Photo", systemImage: "crop", role: .secondary, style: .glass) {}
+                    }
+                    ShowcaseSampleView(code: "HIGButton(\"Continue\", systemImage: \"arrow.right\", role: .primary, style: .glass) {}") {
+                        HIGButton("Continue", systemImage: "arrow.right", role: .primary, style: .glass) {}
+                    }
                     ShowcaseSampleView(code: "HIGButton(\"Skip\", role: .borderless) {}") {
                         HIGButton("Skip", role: .borderless) {}
                     }

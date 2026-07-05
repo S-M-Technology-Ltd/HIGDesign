@@ -29,14 +29,8 @@ public protocol PhotosLibraryClientProtocol: Sendable {
     func fetchAsset(localIdentifier: String) async -> HIGPhotoAsset?
 }
 
-private actor PhotosLibraryExecutor {
-    func perform<T: Sendable>(_ work: @Sendable () -> T) -> T {
-        work()
-    }
-}
-
 public struct PhotosLibraryClient: PhotosLibraryClientProtocol {
-    private static let executor = PhotosLibraryExecutor()
+    private static let libraryQueue = DispatchQueue(label: "HIGPhotoPicker.Library", qos: .userInitiated)
 
     public init() {}
 
@@ -45,7 +39,7 @@ public struct PhotosLibraryClient: PhotosLibraryClientProtocol {
         guard HIGPhotoPickerRuntime.shouldAccessPhotoKit else { return [] }
         #endif
 
-        return await Self.executor.perform {
+        return await performLibraryWork {
             var albums: [HIGPhotoAlbum] = []
 
             for type in [PHAssetCollectionType.smartAlbum, .album] {
@@ -70,7 +64,7 @@ public struct PhotosLibraryClient: PhotosLibraryClientProtocol {
         guard HIGPhotoPickerRuntime.shouldAccessPhotoKit else { return [] }
         #endif
 
-        return await Self.executor.perform {
+        return await performLibraryWork {
             let collections = PHAssetCollection.fetchAssetCollections(
                 withLocalIdentifiers: [albumID],
                 options: nil
@@ -87,7 +81,7 @@ public struct PhotosLibraryClient: PhotosLibraryClientProtocol {
         guard HIGPhotoPickerRuntime.shouldAccessPhotoKit else { return nil }
         #endif
 
-        return await Self.executor.perform {
+        return await performLibraryWork {
             guard let phAsset = PHAsset.fetchAssets(withLocalIdentifiers: [localIdentifier], options: nil).firstObject else {
                 return nil
             }
@@ -118,6 +112,14 @@ public struct PhotosLibraryClient: PhotosLibraryClientProtocol {
             assets.append(asset.makeLightweightAsset())
         }
         return assets
+    }
+
+    private func performLibraryWork<T: Sendable>(_ work: @escaping @Sendable () -> T) async -> T {
+        await withCheckedContinuation { continuation in
+            Self.libraryQueue.async {
+                continuation.resume(returning: work())
+            }
+        }
     }
 }
 #endif

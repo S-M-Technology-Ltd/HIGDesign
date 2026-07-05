@@ -7,59 +7,109 @@ import SwiftUI
 @MainActor
 public enum ShowcaseSnapshotCapture {
     public static func run() {
-        let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-        let manifestURL = root.appendingPathComponent("Design/Showcase/manifest.json")
-        let showcaseRoot = snapshotOutputRoot(from: root)
+        let options = ShowcaseSnapshotCaptureOptions(
+            pilotMode: ProcessInfo.processInfo.environment["HIG_SNAPSHOT_PILOT"] == "1"
+        )
+        run(options: options)
+    }
 
-        guard let manifestData = try? Data(contentsOf: manifestURL),
-              let manifest = try? JSONDecoder().decode(Manifest.self, from: manifestData) else {
+    public static func run(options: ShowcaseSnapshotCaptureOptions) {
+        let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
+        let showcaseRoot = snapshotOutputRoot(from: root)
+        let skipMobile = ProcessInfo.processInfo.environment["HIG_SNAPSHOT_SKIP_MOBILE_PLATFORMS"] == "1"
+
+        guard let manifest = try? ShowcaseSnapshotManifest.load(from: root) else {
             fputs("Failed to read showcase snapshot manifest.\n", stderr)
             exit(1)
         }
 
-        for entry in manifest.entries {
-            guard let component = ShowcaseComponent(rawValue: entry.component) else {
-                fputs("Unknown showcase component: \(entry.component)\n", stderr)
-                exit(1)
-            }
+        let entries = manifest.filtered(
+            pilotMode: options.pilotMode,
+            desktopOnly: skipMobile
+        )
 
-            let themeChoice = ShowcaseThemeChoice(rawValue: entry.theme) ?? .system
-            let colorScheme: ColorScheme = entry.colorScheme == "dark" ? .dark : .light
-            let outputURL = showcaseRoot.appendingPathComponent(entry.file)
-            let canvasSize = canvasSize(for: entry, component: component)
-
-            try? FileManager.default.createDirectory(
-                at: outputURL.deletingLastPathComponent(),
-                withIntermediateDirectories: true
-            )
-
-            let wrapped = HIGThemeableView(theme: themeChoice.makeTheme()) {
-                ShowcaseSnapshotView(component: component)
-                    .preferredColorScheme(colorScheme)
-            }
-            .frame(width: canvasSize.width, height: canvasSize.height)
-
-            guard let pngData = renderPNG(from: wrapped, size: canvasSize, colorScheme: colorScheme) else {
-                fputs("Failed to render \(entry.file)\n", stderr)
-                exit(1)
-            }
-
+        for entry in entries {
             do {
-                try pngData.write(to: outputURL, options: .atomic)
+                try capture(entry: entry, showcaseRoot: showcaseRoot, options: options)
             } catch {
                 fputs("Failed to write \(entry.file): \(error)\n", stderr)
                 exit(1)
             }
         }
 
-        print("Captured \(manifest.entries.count) showcase snapshots.")
+        if options.pilotMode {
+            print("Captured \(entries.count) pilot showcase snapshots.")
+        } else {
+            print("Captured \(entries.count) showcase snapshots.")
+        }
     }
 
-    private static func canvasSize(for entry: Manifest.Entry, component: ShowcaseComponent) -> CGSize {
-        if entry.kind == "platform",
-           let platform = entry.platform,
-           let snapshotPlatform = ShowcaseSnapshotPlatform(rawValue: platform) {
-            return component.snapshotCanvasSize(for: snapshotPlatform)
+    private static func capture(
+        entry: ShowcaseSnapshotManifest.Entry,
+        showcaseRoot: URL,
+        options: ShowcaseSnapshotCaptureOptions
+    ) throws {
+        let catalogSnapshot = entry.component == "catalog"
+        let component = catalogSnapshot ? nil : ShowcaseComponent(rawValue: entry.component)
+        if !catalogSnapshot, component == nil {
+            fputs("Unknown showcase component: \(entry.component)\n", stderr)
+            exit(1)
+        }
+
+        let themeChoice = ShowcaseThemeChoice(rawValue: entry.theme) ?? .system
+        let colorScheme: ColorScheme = entry.colorScheme == "dark" ? .dark : .light
+        let outputURL = showcaseRoot.appendingPathComponent(entry.file)
+        let platform = snapshotPlatform(for: entry)
+        let canvasSize = canvasSize(
+            for: entry,
+            component: component,
+            platform: platform,
+            options: options
+        )
+
+        try FileManager.default.createDirectory(
+            at: outputURL.deletingLastPathComponent(),
+            withIntermediateDirectories: true
+        )
+
+        let deviceBackground = platform.flatMap { options.deviceBackgrounds[$0] }
+
+        guard let pngData = ShowcaseSnapshotPixelCapture.renderPNG(
+            component: component,
+            catalogSnapshot: catalogSnapshot,
+            themeChoice: themeChoice,
+            colorScheme: colorScheme,
+            platform: platform,
+            canvasSize: canvasSize,
+            deviceBackground: deviceBackground
+        ), pngContainsVisiblePixels(pngData, minimumOpaquePixels: 1_000) else {
+            fputs("Failed to render \(entry.file)\n", stderr)
+            exit(1)
+        }
+
+        try pngData.write(to: outputURL, options: .atomic)
+    }
+
+    private static func snapshotPlatform(for entry: ShowcaseSnapshotManifest.Entry) -> ShowcaseSnapshotPlatform? {
+        guard entry.kind == "platform",
+              let platform = entry.platform,
+              let snapshotPlatform = ShowcaseSnapshotPlatform(rawValue: platform) else {
+            return nil
+        }
+        return snapshotPlatform
+    }
+
+    private static func canvasSize(
+        for entry: ShowcaseSnapshotManifest.Entry,
+        component: ShowcaseComponent?,
+        platform: ShowcaseSnapshotPlatform?,
+        options: ShowcaseSnapshotCaptureOptions
+    ) -> CGSize {
+        if let platform {
+            if let component {
+                return component.snapshotCanvasSize(for: platform)
+            }
+            return platform.canvasSize
         }
         return ShowcaseSnapshotPlatform.macos.canvasSize
     }
@@ -69,52 +119,6 @@ public enum ShowcaseSnapshotCapture {
             return URL(fileURLWithPath: override)
         }
         return root.appendingPathComponent("Design/Showcase")
-    }
-
-    private static func renderPNG<Content: View>(
-        from content: Content,
-        size: CGSize,
-        colorScheme: ColorScheme
-    ) -> Data? {
-        let scale: CGFloat = 2
-        let hostingView = NSHostingView(rootView: content)
-        hostingView.frame = CGRect(origin: .zero, size: size)
-        hostingView.appearance = NSAppearance(named: colorScheme == .dark ? .darkAqua : .aqua)
-
-        let window = NSWindow(
-            contentRect: CGRect(origin: .zero, size: size),
-            styleMask: [.borderless],
-            backing: .buffered,
-            defer: false
-        )
-        window.appearance = hostingView.appearance
-        window.contentView = hostingView
-        window.setFrameOrigin(NSPoint(x: -20_000, y: -20_000))
-        window.makeKeyAndOrderFront(nil)
-        window.displayIfNeeded()
-        hostingView.layoutSubtreeIfNeeded()
-        drainMainRunLoop()
-
-        hostingView.wantsLayer = true
-        hostingView.layer?.contentsScale = scale
-
-        guard let rep = hostingView.bitmapImageRepForCachingDisplay(in: hostingView.bounds) else {
-            return nil
-        }
-        hostingView.cacheDisplay(in: hostingView.bounds, to: rep)
-
-        guard let png = rep.representation(using: .png, properties: [:]),
-              pngContainsVisiblePixels(png, minimumOpaquePixels: 1_000) else {
-            return nil
-        }
-        return png
-    }
-
-    private static func drainMainRunLoop() {
-        let deadline = Date().addingTimeInterval(0.2)
-        while Date() < deadline {
-            RunLoop.current.run(mode: .default, before: Date().addingTimeInterval(0.01))
-        }
     }
 
     private static func pngContainsVisiblePixels(_ data: Data, minimumOpaquePixels: Int) -> Bool {
@@ -145,18 +149,5 @@ public enum ShowcaseSnapshotCapture {
         }
         return false
     }
-}
-
-private struct Manifest: Decodable {
-    struct Entry: Decodable {
-        let kind: String
-        let component: String
-        let theme: String
-        let colorScheme: String
-        let file: String
-        let platform: String?
-    }
-
-    let entries: [Entry]
 }
 #endif

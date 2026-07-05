@@ -9,6 +9,19 @@ struct ShowcaseCatalogView: View {
     @Binding var dynamicTypeSizeChoice: ShowcaseDynamicTypeSizeChoice
     @Binding var iconSettings: ShowcaseIconSettings
 
+    @State private var searchText = ""
+    @State private var sidebarScrollPosition: ShowcaseComponent.ID?
+
+    private var filteredComponents: [ShowcaseComponent] {
+        let sorted = ShowcaseComponent.catalogSorted
+        let query = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !query.isEmpty else { return sorted }
+        return sorted.filter { component in
+            component.title.localizedCaseInsensitiveContains(query)
+                || component.summary.localizedCaseInsensitiveContains(query)
+        }
+    }
+
     var body: some View {
         #if os(watchOS)
         watchCatalog
@@ -18,41 +31,62 @@ struct ShowcaseCatalogView: View {
     }
 
     private var standardCatalog: some View {
+        splitView
+    }
+
+    private var splitView: some View {
         NavigationSplitView {
-            List(ShowcaseComponent.allCases, selection: $selection) { component in
-                VStack(alignment: .leading, spacing: HIGSpacing.xxs.rawValue / 2) {
-                    Text(component.title)
-                    Text(component.summary)
-                        .font(theme.typography.caption)
-                        .foregroundStyle(theme.colors.labelSecondary)
-                        .lineLimit(2)
-                }
-                .tag(component)
-            }
-            .navigationTitle("Components")
-            .safeAreaInset(edge: .bottom) {
-                ShowcaseSettingsView(
-                    selection: selection,
-                    themeChoice: $themeChoice,
-                    colorScheme: $colorScheme,
-                    dynamicTypeSizeChoice: $dynamicTypeSizeChoice,
-                    iconSettings: $iconSettings
-                )
-                    .padding()
-                    .background(.regularMaterial)
-            }
+            catalogSidebar
         } detail: {
-            if let selection {
-                showcaseDetail(for: selection)
-            } else {
-                ShowcaseWelcomeView()
+            catalogDetail
+        }
+    }
+
+    private var catalogSidebar: some View {
+        List(filteredComponents, selection: $selection) { component in
+            VStack(alignment: .leading, spacing: HIGSpacing.xxs.rawValue / 2) {
+                Text(component.title)
+                Text(component.summary)
+                    .font(theme.typography.caption)
+                    .foregroundStyle(theme.colors.labelSecondary)
+                    .lineLimit(2)
             }
+            .tag(component)
+        }
+        .scrollPosition(id: $sidebarScrollPosition)
+        .onChange(of: selection) { _, newValue in
+            sidebarScrollPosition = newValue?.id
+        }
+        .onAppear {
+            sidebarScrollPosition = selection?.id
+        }
+        .navigationTitle("Components")
+        .searchable(text: $searchText, prompt: "Search components")
+        .safeAreaInset(edge: .bottom) {
+            ShowcaseSettingsView(
+                selection: selection,
+                themeChoice: $themeChoice,
+                colorScheme: $colorScheme,
+                dynamicTypeSizeChoice: $dynamicTypeSizeChoice,
+                iconSettings: $iconSettings
+            )
+            .padding()
+            .background(.regularMaterial)
+        }
+    }
+
+    @ViewBuilder
+    private var catalogDetail: some View {
+        if let selection {
+            showcaseDetail(for: selection)
+        } else {
+            ShowcaseWelcomeView()
         }
     }
 
     private var watchCatalog: some View {
         NavigationStack {
-            List(ShowcaseComponent.allCases) { component in
+            List(ShowcaseComponent.catalogSorted) { component in
                 NavigationLink(component.title) {
                     showcaseDetail(for: component)
                 }
@@ -63,74 +97,7 @@ struct ShowcaseCatalogView: View {
 
     @ViewBuilder
     private func showcaseDetail(for component: ShowcaseComponent) -> some View {
-        switch component {
-        case .button:
-            ShowcaseButtonView()
-        case .textField:
-            ShowcaseTextFieldView()
-        case .toggle:
-            ShowcaseToggleView()
-        case .divider:
-            ShowcaseDividerView()
-        case .progressView:
-            ShowcaseProgressView()
-        case .card:
-            ShowcaseCardView()
-        case .tabBar:
-            ShowcaseTabBarView()
-        case .toolbar:
-            ShowcaseToolbarView()
-        case .alert:
-            ShowcaseAlertView()
-        case .toast:
-            ShowcaseToastView()
-        case .sidebar:
-            ShowcaseSidebarView()
-        case .navigationBar:
-            ShowcaseNavigationBarView()
-        case .label:
-            ShowcaseLabelView()
-        case .badge:
-            ShowcaseBadgeView()
-        case .activityIndicator:
-            ShowcaseActivityIndicatorView()
-        case .list:
-            ShowcaseListView()
-        case .form:
-            ShowcaseFormView()
-        case .checkbox:
-            ShowcaseCheckboxView()
-        case .radio:
-            ShowcaseRadioView()
-        case .segmentedControl:
-            ShowcaseSegmentedControlView()
-        case .slider:
-            ShowcaseSliderView()
-        case .secureField:
-            ShowcaseSecureFieldView()
-        case .searchField:
-            ShowcaseSearchFieldView()
-        case .picker:
-            ShowcasePickerView()
-        case .icon:
-            ShowcaseIconView(iconSettings: $iconSettings)
-        case .avatar:
-            ShowcaseAvatarView()
-        case .link:
-            ShowcaseLinkView()
-        case .bulletList:
-            ShowcaseBulletListView()
-        case .textEditor:
-            ShowcaseTextEditorView()
-        case .stepper:
-            ShowcaseStepperView()
-        case .menuButton:
-            ShowcaseMenuButtonView()
-        case .tag:
-            ShowcaseTagView()
-        case .photoPicker:
-            ShowcasePhotoPickerView()
-        }
+        ShowcaseSnapshotCatalogDetail(component: component, iconSettings: $iconSettings)
     }
 }
 
@@ -138,12 +105,12 @@ struct ShowcaseCatalogView: View {
 #Preview("ShowcaseCatalogView") {
     ShowcasePreviewContainer(includeNavigationStack: false) {
         ShowcaseCatalogView(
-        selection: .constant(.button),
-        themeChoice: .constant(.system),
-        colorScheme: .constant(nil),
-        dynamicTypeSizeChoice: .constant(.system),
-        iconSettings: .constant(ShowcaseIconSettings())
-    )
+            selection: .constant(nil),
+            themeChoice: .constant(.system),
+            colorScheme: .constant(nil),
+            dynamicTypeSizeChoice: .constant(.system),
+            iconSettings: .constant(ShowcaseIconSettings())
+        )
     }
 }
 #endif

@@ -33,6 +33,7 @@ components = sorted(set(re.findall(r"^\s*case ([a-zA-Z]+)\b", text, re.MULTILINE
 
 platform_map = {
     "photoPicker": ["ios"],
+    "photoEditor": ["ios"],
     "slider": ["macos", "ios", "ipados", "visionos"],
     "segmentedControl": ["macos", "ios", "ipados", "visionos", "tvos"],
     "tabBar": ["macos", "ios", "ipados", "visionos", "tvos"],

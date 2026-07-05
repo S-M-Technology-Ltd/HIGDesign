@@ -132,11 +132,12 @@ enum HIGPhotoPreviewHostFactory {
     static func photoGrid(selection: HIGPhotoPickerSelection) -> some View {
         previewHost {
             PhotoGridView(
-            assets: HIGPhotoPreviewData.assets,
-            configuration: HIGPhotoPreviewData.configuration,
-            selection: selection,
-            imageLoader: ImageLoadingClient.preview,
-            onAssetFocused: { _ in }
+                assets: HIGPhotoPreviewData.assets,
+                cellSide: 120,
+                configuration: HIGPhotoPreviewData.configuration,
+                selection: selection,
+                imageLoader: ImageLoadingClient.preview,
+                onAssetFocused: { _ in }
             )
         }
     }

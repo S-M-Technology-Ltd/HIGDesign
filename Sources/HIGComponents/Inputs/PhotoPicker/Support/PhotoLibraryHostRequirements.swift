@@ -31,13 +31,23 @@ public enum PhotoLibraryHostRequirements: Sendable {
 
         let missingKeys = requiredKeys.filter { key in
             guard let value = reader.object(forInfoDictionaryKey: key) else { return true }
-            if let string = value as? String {
-                return string.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-            }
-            return false
+            return !isValidPlistValue(value, for: key)
         }
 
         return ValidationResult(missingKeys: missingKeys)
+    }
+
+    private static func isValidPlistValue(_ value: Any, for key: String) -> Bool {
+        if let string = value as? String {
+            return !string.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        }
+        if let bool = value as? Bool {
+            return key != preventAutomaticLimitedAccessAlertKey || bool
+        }
+        if let number = value as? NSNumber {
+            return key != preventAutomaticLimitedAccessAlertKey || number.boolValue
+        }
+        return true
     }
 
     static func logMissingRequirementsIfNeeded(
@@ -46,18 +56,22 @@ public enum PhotoLibraryHostRequirements: Sendable {
     ) {
         #if DEBUG
         guard status == .limited else { return }
+        guard !HIGPhotoPickerRuntime.isRunningInXcodePreview else { return }
 
         let validation = validateHostInfoPlist(bundle: bundle)
         guard !validation.isValid else { return }
 
         let keys = validation.missingKeys.joined(separator: ", ")
+        let bundleID = bundle.bundleIdentifier ?? "unknown"
         print(
             """
             HIGPhotoPicker warning: Missing host Info.plist keys: \(keys).
+            Host bundle: \(bundleID)
             Users with Limited Photos access may see a system photo-access sheet every time the picker opens.
-            Add the keys to your app target's Info.plist (not the Swift package).
+            Add the keys to your app target's Info.plist (not the Swift package), then Clean Build Folder and reinstall the app.
             """
         )
         #endif
     }
-}#endif
+}
+#endif
