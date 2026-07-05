@@ -1263,6 +1263,96 @@
     },
     {
       "kind": "theme",
+      "component": "longTextEditor",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/longTextEditor-system-light.png"
+    },
+    {
+      "kind": "theme",
+      "component": "longTextEditor",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/longTextEditor-system-dark.png"
+    },
+    {
+      "kind": "theme",
+      "component": "longTextEditor",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/longTextEditor-highContrast-light.png"
+    },
+    {
+      "kind": "theme",
+      "component": "longTextEditor",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/longTextEditor-highContrast-dark.png"
+    },
+    {
+      "kind": "theme",
+      "component": "longTextEditor",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/longTextEditor-brand-light.png"
+    },
+    {
+      "kind": "theme",
+      "component": "longTextEditor",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/longTextEditor-brand-dark.png"
+    },
+    {
+      "kind": "platform",
+      "component": "longTextEditor",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/longTextEditor-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "longTextEditor",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/longTextEditor-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "longTextEditor",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/longTextEditor-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "longTextEditor",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/longTextEditor-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "longTextEditor",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/longTextEditor-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "longTextEditor",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/longTextEditor-system-light.png"
+    },
+    {
+      "kind": "theme",
       "component": "menuButton",
       "theme": "system",
       "colorScheme": "light",
@@ -1440,6 +1530,96 @@
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/platforms/watchos/navigationBar-system-light.png"
+    },
+    {
+      "kind": "theme",
+      "component": "photoEditor",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/photoEditor-system-light.png"
+    },
+    {
+      "kind": "theme",
+      "component": "photoEditor",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/photoEditor-system-dark.png"
+    },
+    {
+      "kind": "theme",
+      "component": "photoEditor",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/photoEditor-highContrast-light.png"
+    },
+    {
+      "kind": "theme",
+      "component": "photoEditor",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/photoEditor-highContrast-dark.png"
+    },
+    {
+      "kind": "theme",
+      "component": "photoEditor",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/photoEditor-brand-light.png"
+    },
+    {
+      "kind": "theme",
+      "component": "photoEditor",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/photoEditor-brand-dark.png"
+    },
+    {
+      "kind": "platform",
+      "component": "photoEditor",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/photoEditor-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "photoEditor",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/photoEditor-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "photoEditor",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/photoEditor-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "photoEditor",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/photoEditor-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "photoEditor",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/photoEditor-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "photoEditor",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/photoEditor-system-light.png"
     },
     {
       "kind": "theme",
@@ -2882,6 +3062,96 @@
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/platforms/watchos/toolbar-system-light.png"
+    },
+    {
+      "kind": "theme",
+      "component": "catalog",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/catalog-system-light.png"
+    },
+    {
+      "kind": "theme",
+      "component": "catalog",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/catalog-system-dark.png"
+    },
+    {
+      "kind": "theme",
+      "component": "catalog",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/catalog-highContrast-light.png"
+    },
+    {
+      "kind": "theme",
+      "component": "catalog",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/catalog-highContrast-dark.png"
+    },
+    {
+      "kind": "theme",
+      "component": "catalog",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/catalog-brand-light.png"
+    },
+    {
+      "kind": "theme",
+      "component": "catalog",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/catalog-brand-dark.png"
+    },
+    {
+      "kind": "platform",
+      "component": "catalog",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/catalog-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "catalog",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/catalog-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "catalog",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/catalog-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "catalog",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/catalog-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "catalog",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/catalog-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "catalog",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/catalog-system-light.png"
     }
   ]
 }

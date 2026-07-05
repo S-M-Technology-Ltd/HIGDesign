@@ -20,10 +20,10 @@
 		HIGD10012F0A000000000012 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		HIGD10012F0A000000000016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		HIGD10012F0A000000000013 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
-		HIGD10012F0A000000000021 /* HIGDesignSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HIGDesignSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		HIGD10012F0A000000000022 /* HIGDesignSampleMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HIGDesignSampleMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		HIGD10012F0A000000000014 /* Signing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Signing.xcconfig; sourceTree = "<group>"; };
 		HIGD10012F0A000000000015 /* Signing.local.xcconfig.example */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Signing.local.xcconfig.example; sourceTree = "<group>"; };
+		HIGD10012F0A000000000021 /* HIGDesignSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HIGDesignSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		HIGD10012F0A000000000022 /* HIGDesignSampleMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HIGDesignSampleMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,15 +74,6 @@
 			path = HIGDesignSample;
 			sourceTree = "<group>";
 		};
-		HIGD10012F0A000000000045 /* Config */ = {
-			isa = PBXGroup;
-			children = (
-				HIGD10012F0A000000000014 /* Signing.xcconfig */,
-				HIGD10012F0A000000000015 /* Signing.local.xcconfig.example */,
-			);
-			path = Config;
-			sourceTree = "<group>";
-		};
 		HIGD10012F0A000000000044 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +81,15 @@
 				HIGD10012F0A000000000022 /* HIGDesignSampleMac.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		HIGD10012F0A000000000045 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				HIGD10012F0A000000000014 /* Signing.xcconfig */,
+				HIGD10012F0A000000000015 /* Signing.local.xcconfig.example */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -10,9 +10,7 @@ struct ShowcaseCatalogView: View {
     @Binding var iconSettings: ShowcaseIconSettings
 
     @State private var searchText = ""
-    #if os(iOS) || os(visionOS)
-    @State private var preferredCompactColumn: NavigationSplitViewColumn = .sidebar
-    #endif
+    @State private var sidebarScrollPosition: ShowcaseComponent.ID?
 
     private var filteredComponents: [ShowcaseComponent] {
         let sorted = ShowcaseComponent.catalogSorted
@@ -36,28 +34,31 @@ struct ShowcaseCatalogView: View {
         splitView
     }
 
-    @ViewBuilder
     private var splitView: some View {
-        #if os(iOS) || os(visionOS)
-        NavigationSplitView(preferredCompactColumn: $preferredCompactColumn) {
-            catalogSidebar
-        } detail: {
-            catalogDetail
-        }
-        #else
         NavigationSplitView {
             catalogSidebar
         } detail: {
             catalogDetail
         }
-        #endif
     }
 
     private var catalogSidebar: some View {
-        List {
-            ForEach(filteredComponents) { component in
-                catalogRow(for: component)
+        List(filteredComponents, selection: $selection) { component in
+            VStack(alignment: .leading, spacing: HIGSpacing.xxs.rawValue / 2) {
+                Text(component.title)
+                Text(component.summary)
+                    .font(theme.typography.caption)
+                    .foregroundStyle(theme.colors.labelSecondary)
+                    .lineLimit(2)
             }
+            .tag(component)
+        }
+        .scrollPosition(id: $sidebarScrollPosition)
+        .onChange(of: selection) { _, newValue in
+            sidebarScrollPosition = newValue?.id
+        }
+        .onAppear {
+            sidebarScrollPosition = selection?.id
         }
         .navigationTitle("Components")
         .searchable(text: $searchText, prompt: "Search components")
@@ -72,28 +73,6 @@ struct ShowcaseCatalogView: View {
             .padding()
             .background(.regularMaterial)
         }
-    }
-
-    @ViewBuilder
-    private func catalogRow(for component: ShowcaseComponent) -> some View {
-        let isSelected = selection == component
-
-        Button {
-            selection = component
-        } label: {
-            VStack(alignment: .leading, spacing: HIGSpacing.xxs.rawValue / 2) {
-                Text(component.title)
-                Text(component.summary)
-                    .font(theme.typography.caption)
-                    .foregroundStyle(theme.colors.labelSecondary)
-                    .lineLimit(2)
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .contentShape(Rectangle())
-        }
-        .buttonStyle(.plain)
-        .listRowBackground(isSelected ? theme.colors.fillPrimary.opacity(0.15) : nil)
-        .accessibilityAddTraits(isSelected ? .isSelected : [])
     }
 
     @ViewBuilder
@@ -118,78 +97,7 @@ struct ShowcaseCatalogView: View {
 
     @ViewBuilder
     private func showcaseDetail(for component: ShowcaseComponent) -> some View {
-        switch component {
-        case .button:
-            ShowcaseButtonView()
-        case .textField:
-            ShowcaseTextFieldView()
-        case .toggle:
-            ShowcaseToggleView()
-        case .divider:
-            ShowcaseDividerView()
-        case .progressView:
-            ShowcaseProgressView()
-        case .card:
-            ShowcaseCardView()
-        case .tabBar:
-            ShowcaseTabBarView()
-        case .toolbar:
-            ShowcaseToolbarView()
-        case .alert:
-            ShowcaseAlertView()
-        case .toast:
-            ShowcaseToastView()
-        case .sidebar:
-            ShowcaseSidebarView()
-        case .navigationBar:
-            ShowcaseNavigationBarView()
-        case .label:
-            ShowcaseLabelView()
-        case .badge:
-            ShowcaseBadgeView()
-        case .activityIndicator:
-            ShowcaseActivityIndicatorView()
-        case .list:
-            ShowcaseListView()
-        case .form:
-            ShowcaseFormView()
-        case .checkbox:
-            ShowcaseCheckboxView()
-        case .radio:
-            ShowcaseRadioView()
-        case .segmentedControl:
-            ShowcaseSegmentedControlView()
-        case .slider:
-            ShowcaseSliderView()
-        case .secureField:
-            ShowcaseSecureFieldView()
-        case .searchField:
-            ShowcaseSearchFieldView()
-        case .picker:
-            ShowcasePickerView()
-        case .icon:
-            ShowcaseIconView(iconSettings: $iconSettings)
-        case .avatar:
-            ShowcaseAvatarView()
-        case .link:
-            ShowcaseLinkView()
-        case .bulletList:
-            ShowcaseBulletListView()
-        case .textEditor:
-            ShowcaseTextEditorView()
-        case .stepper:
-            ShowcaseStepperView()
-        case .menuButton:
-            ShowcaseMenuButtonView()
-        case .tag:
-            ShowcaseTagView()
-        case .photoPicker:
-            ShowcasePhotoPickerView()
-        case .photoEditor:
-            ShowcasePhotoEditorView()
-        case .longTextEditor:
-            ShowcaseLongTextEditorView()
-        }
+        ShowcaseSnapshotCatalogDetail(component: component, iconSettings: $iconSettings)
     }
 }
 

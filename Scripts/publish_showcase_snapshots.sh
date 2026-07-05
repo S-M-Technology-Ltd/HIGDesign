@@ -13,7 +13,9 @@ mkdir -p "$SNAPSHOT_DIR" "$PLATFORM_DIR"/{macos,ios,ipados,visionos,tvos,watchos
 components=()
 while IFS= read -r component; do
     components+=("$component")
-done < <(grep -oE 'case ([a-zA-Z]+)' Showcase/ShowcaseComponent.swift | sed -E 's/case //' | sort -u)
+done < <(awk '/^public enum ShowcaseComponent/,/^    public var id/ {
+    if ($1 == "case" && $2 !~ /\./) print $2
+}' Showcase/ShowcaseComponent.swift | sort -u)
 
 if ((${#components[@]} == 0)); then
     echo "No ShowcaseComponent cases found." >&2
@@ -75,6 +77,26 @@ for component in components:
             "colorScheme": "light",
             "file": f"snapshots/platforms/{platform}/{component}-system-light.png",
         })
+
+for theme in themes:
+    for scheme in schemes:
+        entries.append({
+            "kind": "theme",
+            "component": "catalog",
+            "theme": theme,
+            "colorScheme": scheme,
+            "file": f"snapshots/catalog-{theme}-{scheme}.png",
+        })
+
+for platform in platform_map["all"]:
+    entries.append({
+        "kind": "platform",
+        "component": "catalog",
+        "platform": platform,
+        "theme": "system",
+        "colorScheme": "light",
+        "file": f"snapshots/platforms/{platform}/catalog-system-light.png",
+    })
 
 manifest = {"version": 2, "entries": entries}
 with open(manifest_path, "w", encoding="utf-8") as handle:

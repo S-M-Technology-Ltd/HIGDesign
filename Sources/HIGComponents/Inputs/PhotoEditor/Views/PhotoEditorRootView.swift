@@ -12,6 +12,7 @@ struct PhotoEditorRootView: View {
     let onFinish: (HIGPhotoEditorFinishResult) -> Void
 
     @State private var selectedAspectRatio: HIGPhotoEditorAspectRatio
+    @State private var aspectRatioOrientation: HIGPhotoEditorAspectRatioOrientation
     @State private var zoomScale: CGFloat = 1
     @State private var lastZoomScale: CGFloat = 1
     @State private var contentOffset = CGSize.zero
@@ -36,6 +37,10 @@ struct PhotoEditorRootView: View {
         self.onCancel = onCancel
         self.onFinish = onFinish
         _selectedAspectRatio = State(initialValue: configuration.effectiveAspectRatio)
+        _aspectRatioOrientation = State(
+            initialValue: configuration.initialAspectRatioOrientation
+                ?? Self.defaultAspectRatioOrientation(for: image)
+        )
 
         if let initial = configuration.initialCropState {
             _zoomScale = State(initialValue: initial.scale)
@@ -73,12 +78,15 @@ struct PhotoEditorRootView: View {
     private var toolbar: some View {
         PhotoEditorToolbarView(
             configuration: configuration,
+            selectedAspectRatio: selectedAspectRatio,
+            aspectRatioOrientation: aspectRatioOrientation,
             canReset: hasUserAdjustedCrop,
             onCancel: onCancel,
             onDone: commitCrop,
             onReset: resetCrop,
             onRotate: rotateImage,
-            onAspectRatioSelected: updateAspectRatio
+            onAspectRatioSelected: updateAspectRatio,
+            onAspectRatioOrientationToggled: toggleAspectRatioOrientation
         )
     }
 
@@ -122,12 +130,22 @@ struct PhotoEditorRootView: View {
             .onChange(of: selectedAspectRatio) { _, _ in
                 updateCropRegionIfNeeded(resolvedCropRegionSize(for: canvasSize), resetTransforms: true)
             }
+            .onChange(of: aspectRatioOrientation) { _, _ in
+                updateCropRegionIfNeeded(resolvedCropRegionSize(for: canvasSize), resetTransforms: true)
+            }
         }
+    }
+
+    private static func defaultAspectRatioOrientation(for image: CGImage) -> HIGPhotoEditorAspectRatioOrientation {
+        image.width >= image.height ? .landscape : .portrait
     }
 
     private func resolvedCropRegionSize(for canvasSize: CGSize) -> CGSize {
         let imageSize = HIGPhotoEditorImageProcessor.orientedImageSize(for: image, angle: rotationAngle)
-        let aspect = selectedAspectRatio.resolvedAspect(for: imageSize)
+        let aspect = selectedAspectRatio.resolvedAspect(
+            for: imageSize,
+            orientation: aspectRatioOrientation
+        )
         return HIGPhotoEditorImageProcessor.fittedCropRegionSize(
             aspect: aspect,
             availableSize: canvasSize,
@@ -171,7 +189,8 @@ struct PhotoEditorRootView: View {
             from: image,
             cropState: currentCropState(),
             croppingStyle: configuration.croppingStyle,
-            aspectRatio: selectedAspectRatio
+            aspectRatio: selectedAspectRatio,
+            aspectRatioOrientation: aspectRatioOrientation
         ) else {
             return
         }
@@ -186,6 +205,8 @@ struct PhotoEditorRootView: View {
         rotationAngle = 0
         hasUserAdjustedCrop = false
         selectedAspectRatio = configuration.effectiveAspectRatio
+        aspectRatioOrientation = configuration.initialAspectRatioOrientation
+            ?? Self.defaultAspectRatioOrientation(for: image)
     }
 
     private func rotateImage() {
@@ -199,6 +220,21 @@ struct PhotoEditorRootView: View {
 
     private func updateAspectRatio(_ aspectRatio: HIGPhotoEditorAspectRatio) {
         selectedAspectRatio = aspectRatio
+        if let preferredOrientation = aspectRatio.preferredOrientation {
+            aspectRatioOrientation = preferredOrientation
+        }
+        hasUserAdjustedCrop = true
+    }
+
+    private func toggleAspectRatioOrientation() {
+        if selectedAspectRatio.supportsOrientationToggle {
+            aspectRatioOrientation = aspectRatioOrientation.toggled
+        } else {
+            let toggledPreset = selectedAspectRatio.orientationToggledPreset
+            selectedAspectRatio = toggledPreset
+            aspectRatioOrientation = toggledPreset.preferredOrientation
+                ?? aspectRatioOrientation.toggled
+        }
         hasUserAdjustedCrop = true
     }
 }

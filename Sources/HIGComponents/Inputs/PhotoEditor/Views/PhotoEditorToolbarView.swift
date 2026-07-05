@@ -5,12 +5,15 @@ import SwiftUI
 
 struct PhotoEditorToolbarView: View {
     let configuration: HIGPhotoEditorConfiguration
+    let selectedAspectRatio: HIGPhotoEditorAspectRatio
+    let aspectRatioOrientation: HIGPhotoEditorAspectRatioOrientation
     let canReset: Bool
     let onCancel: () -> Void
     let onDone: () -> Void
     let onReset: () -> Void
     let onRotate: () -> Void
     let onAspectRatioSelected: (HIGPhotoEditorAspectRatio) -> Void
+    let onAspectRatioOrientationToggled: () -> Void
 
     @Environment(\.higTheme) private var theme
 
@@ -47,10 +50,25 @@ struct PhotoEditorToolbarView: View {
                     )
                 }
 
+                if configuration.allowsAspectRatioOrientationToggle,
+                   configuration.allowsAspectRatioSelection,
+                   configuration.croppingStyle != .circular {
+                    PhotoEditorChromeIconButtonView(
+                        systemImage: aspectRatioOrientation == .landscape
+                            ? "rectangle.landscape.rotate"
+                            : "rectangle.portrait.rotate",
+                        accessibilityLabel: aspectRatioOrientation == .landscape
+                            ? configuration.localization.landscapeOrientationTitle
+                            : configuration.localization.portraitOrientationTitle,
+                        accessibilityHint: "Switches the crop frame between landscape and portrait.",
+                        action: onAspectRatioOrientationToggled
+                    )
+                }
+
                 if configuration.allowsAspectRatioSelection, configuration.croppingStyle != .circular {
                     Menu {
                         ForEach(HIGPhotoEditorAspectRatio.allCases) { ratio in
-                            Button(ratio.title) {
+                            Button(ratio.menuTitle(orientation: aspectRatioOrientation)) {
                                 onAspectRatioSelected(ratio)
                             }
                         }

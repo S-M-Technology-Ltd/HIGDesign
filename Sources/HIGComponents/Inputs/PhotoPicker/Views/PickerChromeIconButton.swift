@@ -89,46 +89,13 @@ struct PickerChromeLabelButtonView: View {
     }
 }
 
-private enum PickerChromeButtonStyleSupport {
-    @MainActor
-    static func applyIconStyle<Content: View>(
-        to content: Content,
-        sizing: PickerChromeButtonSizing
-    ) -> AnyView {
-        let controlSize: ControlSize = sizing == .banner ? .small : .mini
-
-        return AnyView(
-            content
-                .buttonStyle(.bordered)
-                .controlSize(controlSize)
-                .buttonBorderShape(.circle)
-                .labelStyle(.iconOnly)
-        )
-    }
-
-    @MainActor
-    static func applyLabelStyle<Content: View>(
-        to content: Content,
-        sizing: PickerChromeButtonSizing
-    ) -> AnyView {
-        let controlSize: ControlSize = sizing == .banner ? .mini : .small
-
-        return AnyView(
-            content
-                .buttonStyle(.bordered)
-                .controlSize(controlSize)
-                .buttonBorderShape(.capsule)
-                .labelStyle(.titleAndIcon)
-        )
-    }
-}
-
 private struct PickerChromeIconButtonViewStyle: ViewModifier {
     let sizing: PickerChromeButtonSizing
 
     @MainActor
     func body(content: Content) -> some View {
-        PickerChromeButtonStyleSupport.applyIconStyle(to: content, sizing: sizing)
+        let controlSize: ControlSize = sizing == .banner ? .small : .mini
+        PhotoChromeButtonStyleSupport.applyIconStyle(to: content, controlSize: controlSize)
     }
 }
 
@@ -137,7 +104,12 @@ private struct PickerChromeLabelButtonViewStyle: ViewModifier {
 
     @MainActor
     func body(content: Content) -> some View {
-        PickerChromeButtonStyleSupport.applyLabelStyle(to: content, sizing: sizing)
+        let controlSize: ControlSize = sizing == .banner ? .mini : .small
+        PhotoChromeButtonStyleSupport.applyCapsuleStyle(
+            to: content,
+            controlSize: controlSize,
+            usesTitleAndIconLabel: true
+        )
     }
 }
 
