@@ -10,6 +10,7 @@ public struct ShowcaseSnapshotDeviceBackground: Sendable {
         /// Bright placeholder window on a desktop frame; content is aspect-fit (macOS).
         case placeholderWindow
     }
+
     public struct ScreenInsetFractions: Sendable {
         public let top: CGFloat
         public let leading: CGFloat

@@ -315,24 +315,8 @@ Per-platform Showcase builds should be added to this list as targets become avai
 
 Current Milestone
 
-Current milestone: project governance foundation.
+Current milestone: v1.3.0 released (2026-07-05).
 
-The governance foundation should include:
+v1.3.0 delivered `HIGPhotoEditor`, `HIGLongTextEditor`, liquid-glass `HIGButtonStyle`, device-framed showcase snapshots, and PhotoPicker `ImageLoadingClient`. See `Docs/PRD.md` and `CHANGELOG.md` for the full release notes.
 
-* `AGENTS.md`
-* `Docs/AGENT_RULES.md`
-* `CODING_STANDARDS.md`
-* `Docs/PRD.md`
-* `Requirements/` BA documents
-* `Docs/UI_DESIGN_GUIDELINES.md`
-* verification scripts for requirements, UI guidelines, Xcode previews, and view naming
-
-Next milestone: Phase 0 discovery and Phase 1 SPM skeleton with `HIGFoundations` and raw tokens.
-
-Do not include in this milestone:
-
-* full component library implementation
-* bridging layer implementation
-* Showcase app binaries
-* remote package dependencies
-* brand themes beyond system defaults
+Next milestone: post-v1.3.0 component and platform expansion per `Docs/PRD.md`.

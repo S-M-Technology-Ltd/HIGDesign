@@ -2,14 +2,12 @@
 
 ### The SwiftUI design system that actually follows Apple HIG — on every Apple platform.
 
-Stop rebuilding buttons, forms, and navigation chrome from scratch. HIGDesign gives you **33 production-ready components**, a **layered token system**, and **one-line theme switching** — so your app looks native on iPhone, iPad, Mac, Apple TV, Apple Watch, and visionOS.
+Stop rebuilding buttons, forms, and navigation chrome from scratch. HIGDesign gives you **35 production-ready components**, a **layered token system**, and **one-line theme switching** — so your app looks native on iPhone, iPad, Mac, Apple TV, Apple Watch, and visionOS.
 
 <p align="center">
-  <img src="Design/Showcase/snapshots/button-system-light.png" alt="HIGButton — system theme" width="420">
-  &nbsp;&nbsp;
-  <img src="Design/Showcase/snapshots/button-brand-light.png" alt="HIGButton — brand theme" width="420">
+  <img src="Design/Showcase/snapshots/platforms/ios/button-system-light.png" alt="HIGDesign Showcase on iPhone — Button component" width="320">
 </p>
-<p align="center"><sub>Same component · swap <code>HIGSystemTheme()</code> for <code>HIGBrandTheme(name: "Acme", accent: .purple)</code></sub></p>
+<p align="center"><sub>HIGShowcase on iPhone · system theme · light mode</sub></p>
 
 <p align="center">
   <a href="https://github.com/S-M-Technology-Ltd/HIGDesign/releases"><img src="https://img.shields.io/github/v/release/S-M-Technology-Ltd/HIGDesign?label=version" alt="Release"></a>
@@ -31,7 +29,7 @@ Stop rebuilding buttons, forms, and navigation chrome from scratch. HIGDesign gi
 
 ## What is HIGDesign?
 
-A **Swift Package** with HIG-correct SwiftUI components, design tokens, and themes. Import one product, wrap your app in `HIGThemeableView`, and use `HIGButton`, `HIGTextField`, `HIGTabBar`, and 30 more — each styled from tokens, not hardcoded values.
+A **Swift Package** with HIG-correct SwiftUI components, design tokens, and themes. Import one product, wrap your app in `HIGThemeableView`, and use `HIGButton`, `HIGTextField`, `HIGTabBar`, and 32 more — each styled from tokens, not hardcoded values.
 
 **SwiftUI-first.** Optional UIKit/AppKit bridging in `HIGBridging` when needed. Swift 6. iOS 18+, macOS 15+, visionOS 2+, tvOS 18+, watchOS 11+.
 
@@ -39,11 +37,11 @@ A **Swift Package** with HIG-correct SwiftUI components, design tokens, and them
 
 | Raw SwiftUI | HIGDesign |
 |-------------|-----------|
-| You style every control yourself | 33 pre-built, HIG-aligned components |
+| You style every control yourself | 35 pre-built, HIG-aligned components |
 | Spacing and colors drift across screens | Token layers enforce consistency |
 | Brand theming means touching every view | Swap theme at the root — everything updates |
 | Multi-platform means re-solving the same patterns | Platform-appropriate behavior built in |
-| Marketing gallery | 385 showcase snapshots for README and GitHub Pages |
+| Marketing gallery | Device-framed showcase snapshots for README and GitHub Pages |
 
 Native SwiftUI is the foundation. HIGDesign is the **opinionated layer** that saves weeks of design-system work while keeping you aligned with [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/).
 
@@ -53,7 +51,7 @@ Native SwiftUI is the foundation. HIGDesign is the **opinionated layer** that sa
 ```
 https://github.com/S-M-Technology-Ltd/HIGDesign.git
 ```
-(from `1.2.1`)
+(from `1.3.0`)
 
 **2. Wrap your app:**
 
@@ -81,17 +79,6 @@ That's it. Full guide → **[Docs/HOW_TO_USE.md](Docs/HOW_TO_USE.md)**
 
 ## See it in action
 
-<p align="center">
-  <img src="Design/Showcase/snapshots/card-system-light.png" alt="Card" width="280">
-  <img src="Design/Showcase/snapshots/toggle-system-light.png" alt="Toggle" width="280">
-  <img src="Design/Showcase/snapshots/alert-system-light.png" alt="Alert" width="280">
-</p>
-<p align="center">
-  <img src="Design/Showcase/snapshots/tabBar-system-light.png" alt="Tab Bar" width="280">
-  <img src="Design/Showcase/snapshots/photoPicker-system-light.png" alt="Photo Picker" width="280">
-  <img src="Design/Showcase/snapshots/navigationBar-system-light.png" alt="Navigation Bar" width="280">
-</p>
-
 Run the interactive showcase locally:
 
 ```bash
@@ -102,12 +89,12 @@ swift run HIGShowcaseApp                 # macOS CLI showcase
 
 Browse all components online → **[s-m-technology-ltd.github.io/HIGDesign](https://s-m-technology-ltd.github.io/HIGDesign/)**
 
-## 33 components
+## 35 components
 
 | | Components |
 |---|------------|
 | **Actions** | Button, Menu Button |
-| **Inputs** | Text Field, Secure Field, Search Field, Text Editor, Picker, Photo Picker *(iOS)* |
+| **Inputs** | Text Field, Secure Field, Search Field, Text Editor, Long Text Editor, Picker, Photo Picker *(iOS)*, Photo Editor |
 | **Controls** | Toggle, Checkbox, Radio, Segmented Control, Slider, Stepper |
 | **Content** | Label, Badge, Icon, Heroicons (324 outline + solid), Avatar, Link, Tag, Bullet List |
 | **Layout** | Divider, Card, List, Form Section |
@@ -123,7 +110,7 @@ Themes: **System** · **High Contrast** · **Brand accent** — each with light 
 - **Modular SPM products** — `HIGDesign` umbrella, `HIGDesignIcons`, or `HIGDesignCore` + `HIGDesignComponents`
 - **Heroicons v2** — 324 outline and solid icons via `HIGHeroIconToken`, themed sizing, and Dynamic Type scaling
 - **DocC catalog** — open in Xcode → *Product → Build Documentation*
-- **CI-verified** — token guards, 47 unit tests, six-platform builds
+- **CI-verified** — token guards, unit tests, six-platform builds
 
 ## Documentation
 

@@ -44,7 +44,7 @@ public enum ShowcaseSnapshotDeviceBackgrounds {
         let contentPlacement: ShowcaseSnapshotDeviceBackground.ContentPlacement
         switch platform {
         case .macos:
-            contentPlacement = .transparentCutout
+            contentPlacement = .placeholderWindow
         default:
             contentPlacement = .transparentCutout
         }
@@ -104,80 +104,40 @@ public enum ShowcaseSnapshotDeviceBackgrounds {
         from cgImage: CGImage,
         platform: ShowcaseSnapshotPlatform
     ) -> ShowcaseSnapshotDeviceBackground.ScreenInsetFractions? {
+        let pixelSize = CGSize(width: cgImage.width, height: cgImage.height)
+
         switch platform {
         case .macos:
-            return macOSKnownPlaceholderInsetFractions(
-                pixelSize: CGSize(width: cgImage.width, height: cgImage.height)
-            )
+            if let floodFill = floodFillScreenInsetFractions(from: cgImage),
+               isReasonableMacScreenInset(floodFill) {
+                return floodFill
+            }
+            return macOSKnownPlaceholderInsetFractions(pixelSize: pixelSize)
         default:
             return floodFillScreenInsetFractions(from: cgImage)
         }
     }
 
-    /// Finds the bright placeholder app-window rect on the laptop screen.
-    private static func macOSPlaceholderInsetFractions(
-        from cgImage: CGImage
-    ) -> ShowcaseSnapshotDeviceBackground.ScreenInsetFractions? {
-        guard let bytes = bitmapBytes(from: cgImage) else { return nil }
-
-        let width = cgImage.width
-        let height = cgImage.height
-        let stride = cgImage.bytesPerRow
-
-        let scanLeft = Int(Double(width) * 0.28)
-        let scanRight = Int(Double(width) * 0.73)
-        let scanTop = Int(Double(height) * 0.10)
-        let scanBottom = Int(Double(height) * 0.58)
-
-        var minX = width
-        var maxX = 0
-        var minY = height
-        var maxY = 0
-        var found = false
-
-        for y in scanTop..<scanBottom {
-            for x in scanLeft..<scanRight {
-                let offset = y * stride + x * 4
-                let red = Int(bytes[offset])
-                let green = Int(bytes[offset + 1])
-                let blue = Int(bytes[offset + 2])
-                let alpha = Int(bytes[offset + 3])
-
-                guard alpha > 128 else { continue }
-                guard red > 200, green > 200, blue > 200 else { continue }
-                guard abs(red - green) < 30, abs(green - blue) < 30 else { continue }
-
-                found = true
-                minX = min(minX, x)
-                maxX = max(maxX, x)
-                minY = min(minY, y)
-                maxY = max(maxY, y)
-            }
-        }
-
-        guard found, maxX > minX, maxY > minY else { return nil }
-
-        let boxWidth = maxX - minX + 1
-        let boxHeight = maxY - minY + 1
-        guard boxWidth > Int(Double(width) * 0.25),
-              boxHeight > Int(Double(height) * 0.20) else {
-            return nil
-        }
-
-        return ShowcaseSnapshotDeviceBackground.ScreenInsetFractions(
-            top: CGFloat(minY) / CGFloat(height),
-            leading: CGFloat(minX) / CGFloat(width),
-            bottom: CGFloat(height - 1 - maxY) / CGFloat(height),
-            trailing: CGFloat(width - 1 - maxX) / CGFloat(width)
-        )
+    private static func isReasonableMacScreenInset(
+        _ insets: ShowcaseSnapshotDeviceBackground.ScreenInsetFractions
+    ) -> Bool {
+        let screenWidth = 1 - insets.leading - insets.trailing
+        let screenHeight = 1 - insets.top - insets.bottom
+        return screenWidth > 0.45 && screenHeight > 0.45
     }
 
-    /// Known placement fractions for the bundled MacBook Pro showcase frame.
+    /// Known placement fractions for bundled MacBook showcase frames.
     private static func macOSKnownPlaceholderInsetFractions(
         pixelSize: CGSize
     ) -> ShowcaseSnapshotDeviceBackground.ScreenInsetFractions {
-        // Derived from the bright placeholder window in `macos_bg.png`.
-        switch (pixelSize.width, pixelSize.height) {
+        switch (Int(pixelSize.width), Int(pixelSize.height)) {
+        case (1960, 1192):
+            return ShowcaseSnapshotDeviceBackground.ScreenInsetFractions(
+                top: 45 / 1192,
+                leading: 202 / 1960,
+                bottom: (1192 - 1 - 1056) / 1192,
+                trailing: (1960 - 1 - 1758) / 1960
+            )
         case (1964, 1196):
             return ShowcaseSnapshotDeviceBackground.ScreenInsetFractions(
                 top: 120 / 1196,

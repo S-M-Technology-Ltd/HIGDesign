@@ -13,11 +13,15 @@ struct HIGShowcaseApp: App {
 
     var body: some Scene {
         WindowGroup {
+            #if os(iOS)
             if captureSnapshotsOnLaunch {
                 ShowcaseIOSCaptureRunner()
             } else {
                 ShowcaseRootView()
             }
+            #else
+            ShowcaseRootView()
+            #endif
         }
         #if os(macOS)
         .defaultSize(width: 1200, height: 800)

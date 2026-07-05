@@ -43,6 +43,9 @@ struct ShowcaseSnapshotPlatformCaptureView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .preferredColorScheme(entryColorScheme)
+        #if os(macOS)
+        .tint(Color(nsColor: .controlAccentColor))
+        #endif
         .onAppear {
             selection = component
         }

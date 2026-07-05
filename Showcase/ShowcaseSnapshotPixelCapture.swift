@@ -19,7 +19,8 @@ public enum ShowcaseSnapshotPixelCapture {
         colorScheme: ColorScheme,
         platform: ShowcaseSnapshotPlatform?,
         canvasSize: CGSize,
-        deviceBackground: ShowcaseSnapshotDeviceBackground? = nil
+        deviceBackground: ShowcaseSnapshotDeviceBackground? = nil,
+        compositeIntoDeviceFrame: Bool = true
     ) -> Data? {
         let idiom = platform?.userInterfaceIdiom
 
@@ -49,7 +50,7 @@ public enum ShowcaseSnapshotPixelCapture {
 
             guard let contentPNG else { return nil }
 
-            if let deviceBackground, platform != nil {
+            if compositeIntoDeviceFrame, let deviceBackground, platform != nil {
                 return ShowcaseSnapshotDeviceCompositor.composite(
                     contentPNG: contentPNG,
                     deviceBackground: deviceBackground
@@ -184,6 +185,8 @@ public enum ShowcaseSnapshotPixelCapture {
         window.contentView = hostingView
         window.title = "HIGDesign"
         window.titlebarAppearsTransparent = false
+        window.titleVisibility = .visible
+        window.toolbarStyle = .unified
         window.hasShadow = false
         window.isOpaque = true
         window.backgroundColor = .windowBackgroundColor
@@ -282,7 +285,7 @@ public enum ShowcaseSnapshotPixelCapture {
 
     private static func drainMainRunLoop() {
         #if os(macOS)
-        let deadline = Date().addingTimeInterval(1.0)
+        let deadline = Date().addingTimeInterval(1.5)
         while Date() < deadline {
             RunLoop.current.run(mode: .default, before: Date().addingTimeInterval(0.01))
         }

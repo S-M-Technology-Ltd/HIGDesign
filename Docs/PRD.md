@@ -70,11 +70,20 @@ HIGDesign synthesizes architecture and patterns from:
 | `HIGDesignPlatform` | Idiom and capability adapters |
 | `HIGDesignBridging` | Optional Cocoa bridges |
 
-## Current Milestone: v1.2.1 (released)
+## Current Milestone: v1.3.0 (released)
 
-v1.2.1 is a patch release (2026-06-27) fixing theme registration crashes, Heroicon scaling at large sizes, and Showcase preview polish.
+v1.3.0 is a minor release (2026-07-05) adding photo and long-form text editing, liquid-glass button styling, and device-framed showcase snapshots.
 
-Delivered in v1.2.1:
+Delivered in v1.3.0:
+
+- `HIGPhotoEditor` for crop, rotate, and aspect-ratio editing on iOS and macOS
+- `HIGLongTextEditor` for rich HTML editing with formatting toolbar
+- `HIGButtonStyle` with liquid glass on iOS 26+ and bordered fallback
+- Pixel-matched showcase snapshot pipeline (iPhone device frames, macOS window chrome)
+- PhotoPicker `ImageLoadingClient` replacing `PhotoKitCoordinator` actor
+- Showcase welcome landing, A–Z catalog sort, and README iPhone hero snapshot
+
+v1.2.1 (2026-06-27) delivered:
 
 - Synchronous theme registration so `HIGThemeManager` and previews do not crash during view body builds
 - Heroicon rendering fix for large fixed sizes via uniform view-box scaling

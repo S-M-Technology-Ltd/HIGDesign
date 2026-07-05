@@ -38,7 +38,13 @@ struct ShowcaseCatalogView: View {
         NavigationSplitView {
             catalogSidebar
         } detail: {
+            #if os(macOS)
+            NavigationStack {
+                catalogDetail
+            }
+            #else
             catalogDetail
+            #endif
         }
     }
 
@@ -46,13 +52,28 @@ struct ShowcaseCatalogView: View {
         List(filteredComponents, selection: $selection) { component in
             VStack(alignment: .leading, spacing: HIGSpacing.xxs.rawValue / 2) {
                 Text(component.title)
+                    .foregroundStyle(selection == component ? Color.white : theme.colors.labelPrimary)
                 Text(component.summary)
                     .font(theme.typography.caption)
-                    .foregroundStyle(theme.colors.labelSecondary)
+                    .foregroundStyle(
+                        selection == component
+                            ? Color.white.opacity(0.85)
+                            : theme.colors.labelSecondary
+                    )
                     .lineLimit(2)
             }
             .tag(component)
+            #if os(macOS)
+            .listRowBackground(
+                selection == component
+                    ? Color(nsColor: .controlAccentColor)
+                    : Color.clear
+            )
+            #endif
         }
+        #if os(macOS)
+        .listStyle(.sidebar)
+        #endif
         .scrollPosition(id: $sidebarScrollPosition)
         .onChange(of: selection) { _, newValue in
             sidebarScrollPosition = newValue?.id

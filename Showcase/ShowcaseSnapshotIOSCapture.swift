@@ -13,9 +13,7 @@ public enum ShowcaseSnapshotIOSCapture {
         let deviceBackgrounds = ShowcaseSnapshotDeviceBackgrounds.loadAll()
 
         for entry in entries {
-            let catalogSnapshot = entry.component == "catalog"
-            let component = catalogSnapshot ? nil : ShowcaseComponent(rawValue: entry.component)
-            if !catalogSnapshot, component == nil {
+            guard let component = ShowcaseComponent(rawValue: entry.component) else {
                 fputs("Unknown showcase component: \(entry.component)\n", stderr)
                 exit(1)
             }
@@ -26,7 +24,7 @@ public enum ShowcaseSnapshotIOSCapture {
                 continue
             }
 
-            let canvasSize = component?.snapshotCanvasSize(for: platform) ?? platform.canvasSize
+            let canvasSize = component.snapshotCanvasSize(for: platform)
             let outputURL = showcaseRoot.appendingPathComponent(entry.file)
 
             try FileManager.default.createDirectory(
@@ -36,7 +34,6 @@ public enum ShowcaseSnapshotIOSCapture {
 
             guard let pngData = ShowcaseSnapshotPixelCapture.renderPNG(
                 component: component,
-                catalogSnapshot: catalogSnapshot,
                 themeChoice: themeChoice,
                 colorScheme: colorScheme,
                 platform: platform,
