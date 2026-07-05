@@ -47,40 +47,21 @@ struct PhotoEditorChromeTextButtonView: View {
     }
 }
 
-private enum PhotoEditorChromeButtonStyleSupport {
-    @MainActor
-    static func applyIconStyle<Content: View>(to content: Content) -> AnyView {
-        return AnyView(
-            content
-                .buttonStyle(.bordered)
-                .controlSize(.mini)
-                .buttonBorderShape(.circle)
-                .labelStyle(.iconOnly)
-        )
-    }
-
-    @MainActor
-    static func applyTextStyle<Content: View>(to content: Content) -> AnyView {
-        return AnyView(
-            content
-                .buttonStyle(.bordered)
-                .controlSize(.small)
-                .buttonBorderShape(.capsule)
-        )
-    }
-}
-
 struct PhotoEditorChromeIconButtonStyle: ViewModifier {
     @MainActor
     func body(content: Content) -> some View {
-        PhotoEditorChromeButtonStyleSupport.applyIconStyle(to: content)
+        PhotoChromeButtonStyleSupport.applyIconStyle(to: content, controlSize: .mini)
     }
 }
 
 private struct PhotoEditorChromeTextButtonStyle: ViewModifier {
     @MainActor
     func body(content: Content) -> some View {
-        PhotoEditorChromeButtonStyleSupport.applyTextStyle(to: content)
+        PhotoChromeButtonStyleSupport.applyCapsuleStyle(
+            to: content,
+            controlSize: .small,
+            usesTitleAndIconLabel: false
+        )
     }
 }
 #endif

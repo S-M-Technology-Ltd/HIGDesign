@@ -20,8 +20,37 @@ func photoEditorCropStateNormalizesAngle() {
 
 @Test
 func photoEditorAspectRatioResolvesOriginalFromImageSize() {
-    let ratio = HIGPhotoEditorAspectRatio.original.resolvedAspect(for: CGSize(width: 1600, height: 900))
-    #expect(abs(ratio - (16.0 / 9.0)) < 0.001)
+    let landscape = HIGPhotoEditorAspectRatio.original.resolvedAspect(
+        for: CGSize(width: 1600, height: 900),
+        orientation: .landscape
+    )
+    let portrait = HIGPhotoEditorAspectRatio.original.resolvedAspect(
+        for: CGSize(width: 900, height: 1600),
+        orientation: .portrait
+    )
+    #expect(abs(landscape - (16.0 / 9.0)) < 0.001)
+    #expect(abs(portrait - (9.0 / 16.0)) < 0.001)
+}
+
+@Test
+func photoEditorAspectRatioFlipsPresetForPortraitOrientation() {
+    let landscape = HIGPhotoEditorAspectRatio.ratio4x3.resolvedAspect(
+        for: CGSize(width: 1200, height: 800),
+        orientation: .landscape
+    )
+    let portrait = HIGPhotoEditorAspectRatio.ratio4x3.resolvedAspect(
+        for: CGSize(width: 1200, height: 800),
+        orientation: .portrait
+    )
+
+    #expect(abs(landscape - (4.0 / 3.0)) < 0.001)
+    #expect(abs(portrait - (3.0 / 4.0)) < 0.001)
+}
+
+@Test
+func photoEditorLandscapeAndPortraitPresetsUseExpectedAspects() {
+    #expect(abs(HIGPhotoEditorAspectRatio.landscape.presetAspect! - (16.0 / 9.0)) < 0.001)
+    #expect(abs(HIGPhotoEditorAspectRatio.portrait.presetAspect! - (9.0 / 16.0)) < 0.001)
 }
 
 @Test
@@ -73,7 +102,8 @@ func photoEditorRendersCroppedImage() throws {
             from: source,
             cropState: cropState,
             croppingStyle: .default,
-            aspectRatio: .square
+            aspectRatio: .square,
+            aspectRatioOrientation: .landscape
         )
     )
 

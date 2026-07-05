@@ -25,7 +25,7 @@ public enum ShowcaseSnapshotPlatform: String, CaseIterable, Sendable, Identifiab
     public var canvasSize: CGSize {
         switch self {
         case .macos:
-            CGSize(width: 900, height: 620)
+            CGSize(width: 1200, height: 800)
         case .ios:
             CGSize(width: 390, height: 844)
         case .ipados:
@@ -36,6 +36,46 @@ public enum ShowcaseSnapshotPlatform: String, CaseIterable, Sendable, Identifiab
             CGSize(width: 960, height: 540)
         case .watchos:
             CGSize(width: 198, height: 242)
+        }
+    }
+
+    /// Top safe-area inset used when compositing into a device-frame snapshot.
+    public var snapshotTopSafeAreaHeight: CGFloat {
+        switch self {
+        case .ios:
+            54
+        case .ipados:
+            24
+        case .macos:
+            20
+        case .visionos:
+            28
+        case .tvos:
+            36
+        case .watchos:
+            18
+        }
+    }
+
+    /// Navigation bar row height for simulated mobile snapshot chrome.
+    public var snapshotNavigationBarHeight: CGFloat {
+        switch self {
+        case .watchos:
+            32
+        default:
+            44
+        }
+    }
+}
+
+extension ShowcaseComponent {
+    /// Components that already ship their own navigation or full-screen chrome.
+    var usesBuiltInNavigationChrome: Bool {
+        switch self {
+        case .navigationBar, .tabBar, .toolbar, .sidebar, .photoPicker, .photoEditor:
+            true
+        default:
+            false
         }
     }
 }
@@ -51,11 +91,7 @@ extension ShowcaseComponent {
     }
 
     public func snapshotCanvasSize(for platform: ShowcaseSnapshotPlatform) -> CGSize {
-        let base = platform.canvasSize
-        guard !usesFullHeightSnapshotCanvas else { return base }
-
-        let compactHeight = min(base.height, 520)
-        return CGSize(width: base.width, height: compactHeight)
+        platform.canvasSize
     }
 
     var supportedSnapshotPlatforms: [ShowcaseSnapshotPlatform] {

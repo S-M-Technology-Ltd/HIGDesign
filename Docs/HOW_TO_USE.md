@@ -20,7 +20,7 @@ Add HIGDesign to your `Package.swift` dependency list:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/S-M-Technology-Ltd/HIGDesign.git", from: "1.2.1"),
+    .package(url: "https://github.com/S-M-Technology-Ltd/HIGDesign.git", from: "1.3.0"),
 ],
 targets: [
     .target(
@@ -120,7 +120,7 @@ Conform to `HIGTheme` or compose from `HIGSystemTheme` and override specific tok
 
 ## Components
 
-33 public `HIG*` SwiftUI components ship in v1.0.0. Each maps to an Apple HIG section and resolves styling from `theme.<component>`.
+35 public `HIG*` SwiftUI components ship in v1.3.0. Each maps to an Apple HIG section and resolves styling from `theme.<component>`.
 
 ### Actions
 

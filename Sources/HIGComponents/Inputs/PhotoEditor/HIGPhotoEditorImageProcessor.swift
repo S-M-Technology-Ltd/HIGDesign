@@ -151,7 +151,8 @@ public enum HIGPhotoEditorImageProcessor {
         from image: CGImage,
         cropState: HIGPhotoEditorCropState,
         croppingStyle: HIGPhotoEditorCroppingStyle,
-        aspectRatio: HIGPhotoEditorAspectRatio
+        aspectRatio: HIGPhotoEditorAspectRatio,
+        aspectRatioOrientation: HIGPhotoEditorAspectRatioOrientation
     ) -> HIGPhotoEditorFinishResult? {
         let cropRect = cropRect(for: image, cropState: cropState)
         guard let croppedImage = croppedImage(
@@ -168,7 +169,8 @@ public enum HIGPhotoEditorImageProcessor {
             cropRect: cropRect,
             angle: cropState.angle,
             croppingStyle: croppingStyle,
-            aspectRatio: aspectRatio
+            aspectRatio: aspectRatio,
+            aspectRatioOrientation: aspectRatioOrientation
         )
     }
 }
