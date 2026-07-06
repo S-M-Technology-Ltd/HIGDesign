@@ -13,7 +13,7 @@ Stop rebuilding buttons, forms, and navigation chrome from scratch. HIGDesign gi
   <a href="https://github.com/S-M-Technology-Ltd/HIGDesign/releases"><img src="https://img.shields.io/github/v/release/S-M-Technology-Ltd/HIGDesign?label=version" alt="Release"></a>
   <a href="Package.swift"><img src="https://img.shields.io/badge/Swift-6-orange.svg" alt="Swift 6"></a>
   <a href="Package.swift"><img src="https://img.shields.io/badge/Platforms-6%20Apple%20OSes-blue.svg" alt="Platforms"></a>
-  <a href="https://swiftpackageindex.com/S-M-Technology-Ltd/HIGDesign"><img src="https://img.shields.io/badge/Swift%20Package%20Index-4B366A?logo=swift&logoColor=white" alt="SPI"></a>
+  <a href="https://swiftpackageindex.com/promptdora/HIGDesign"><img src="https://img.shields.io/badge/Swift%20Package%20Index-4B366A?logo=swift&logoColor=white" alt="SPI"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-lightgrey.svg" alt="MIT"></a>
 </p>
 
