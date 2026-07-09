@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-PACKAGE_URL="https://github.com/S-M-Technology-Ltd/HIGDesign"
+PACKAGE_URL="https://github.com/promptdora/HIGDesign"
 SUBMIT_URL="https://swiftpackageindex.com/add-a-package?url=${PACKAGE_URL}"
-PACKAGE_PAGE="https://swiftpackageindex.com/S-M-Technology-Ltd/HIGDesign"
+PACKAGE_PAGE="https://swiftpackageindex.com/promptdora/HIGDesign"
 
 cat <<EOF
 Swift Package Index — HIGDesign

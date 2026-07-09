@@ -4,7 +4,7 @@ Project Shape
 
 * HIGDesign is an Apple-only SwiftUI design system library that strictly follows Apple Human Interface Guidelines.
 * Repository: HIGDesign.
-* GitHub: https://github.com/S-M-Technology-Ltd/HIGDesign
+* GitHub: https://github.com/promptdora/HIGDesign
 * The library targets all Apple platforms:
     * iOS
     * iPadOS

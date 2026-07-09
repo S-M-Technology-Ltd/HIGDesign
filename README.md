@@ -5,13 +5,15 @@
 Ship native-looking iOS, iPadOS, macOS, visionOS, tvOS, and watchOS apps without reinventing buttons, forms, navigation, or theming. **35 HIG-aligned components**, a **layered token system**, and **one-line theme switching** — import once, wrap your app, and go.
 
 <p align="center">
-  <img src="Design/Showcase/snapshots/platforms/macos/button-system-light.png" alt="HIGDesign Showcase on macOS — Button component with sidebar, samples, and API snippets" width="780">
+  <img src="Design/Showcase/snapshots/platforms/macos/button-system-light.png" alt="HIGDesign Showcase on macOS — Button component with sidebar, samples, and API snippets" width="520">
+  &nbsp;
+  <img src="Design/Showcase/snapshots/platforms/ios/button-system-light.png" alt="HIGDesign Showcase on iPhone — Button component" width="280">
 </p>
-<p align="center"><sub>HIGShowcase on macOS · system theme · light mode · live catalog with code snippets</sub></p>
+<p align="center"><sub>macOS catalog · iPhone device frame — system theme · light mode</sub></p>
 
 <p align="center">
-  <a href="https://github.com/S-M-Technology-Ltd/HIGDesign/stargazers"><img src="https://img.shields.io/github/stars/S-M-Technology-Ltd/HIGDesign?style=social" alt="GitHub stars"></a>
-  <a href="https://github.com/S-M-Technology-Ltd/HIGDesign/releases"><img src="https://img.shields.io/github/v/release/S-M-Technology-Ltd/HIGDesign?label=version" alt="Release"></a>
+  <a href="https://github.com/promptdora/HIGDesign/stargazers"><img src="https://img.shields.io/github/stars/promptdora/HIGDesign?style=social" alt="GitHub stars"></a>
+  <a href="https://github.com/promptdora/HIGDesign/releases"><img src="https://img.shields.io/github/v/release/promptdora/HIGDesign?label=version" alt="Release"></a>
   <a href="Package.swift"><img src="https://img.shields.io/badge/Swift-6-orange.svg" alt="Swift 6"></a>
   <a href="Package.swift"><img src="https://img.shields.io/badge/Platforms-6%20Apple%20OSes-blue.svg" alt="Platforms"></a>
   <a href="https://swiftpackageindex.com/promptdora/HIGDesign"><img src="https://img.shields.io/badge/Swift%20Package%20Index-4B366A?logo=swift&logoColor=white" alt="SPI"></a>
@@ -19,11 +21,11 @@ Ship native-looking iOS, iPadOS, macOS, visionOS, tvOS, and watchOS apps without
 </p>
 
 <p align="center">
-  <a href="https://s-m-technology-ltd.github.io/HIGDesign/"><strong>🎨 Live component gallery</strong></a>
+  <a href="https://promptdora.github.io/HIGDesign/"><strong>🎨 Live component gallery</strong></a>
   &nbsp;·&nbsp;
   <a href="Docs/HOW_TO_USE.md">Docs</a>
   &nbsp;·&nbsp;
-  <a href="https://github.com/S-M-Technology-Ltd/HIGDesign/releases">Releases</a>
+  <a href="https://github.com/promptdora/HIGDesign/releases">Releases</a>
   &nbsp;·&nbsp;
   <a href="https://swiftpackageindex.com/promptdora/HIGDesign">API browser</a>
 </p>
@@ -64,29 +66,31 @@ Native SwiftUI is the foundation. HIGDesign is the layer that saves **weeks** of
 ## See it in action
 
 <p align="center">
-  <img src="Design/Showcase/snapshots/platforms/macos/longTextEditor-system-light.png" alt="Long Text Editor on macOS" width="360">
+  <img src="Design/Showcase/snapshots/platforms/macos/longTextEditor-system-light.png" alt="Long Text Editor on macOS" width="300">
   &nbsp;
-  <img src="Design/Showcase/snapshots/platforms/macos/photoEditor-system-light.png" alt="Photo Editor on macOS" width="360">
+  <img src="Design/Showcase/snapshots/platforms/ios/photoPicker-system-light.png" alt="Photo Picker on iPhone" width="200">
   &nbsp;
-  <img src="Design/Showcase/snapshots/platforms/macos/card-system-light.png" alt="Card component on macOS" width="360">
+  <img src="Design/Showcase/snapshots/platforms/macos/card-system-light.png" alt="Card on macOS" width="300">
+  &nbsp;
+  <img src="Design/Showcase/snapshots/platforms/ios/tabBar-system-light.png" alt="Tab Bar on iPhone" width="200">
 </p>
-<p align="center"><sub>Long Text Editor · Photo Editor · Card — macOS showcase, system theme</sub></p>
+<p align="center"><sub>Long Text Editor (Mac) · Photo Picker (iPhone) · Card (Mac) · Tab Bar (iPhone) — system theme</sub></p>
 
 Run the interactive catalog locally:
 
 ```bash
-git clone https://github.com/S-M-Technology-Ltd/HIGDesign.git && cd HIGDesign
+git clone https://github.com/promptdora/HIGDesign.git && cd HIGDesign
 open Sample/HIGDesignSample.xcodeproj    # iOS + macOS sample app
 swift run HIGShowcaseApp                 # macOS CLI showcase
 ```
 
-Browse every component online → **[s-m-technology-ltd.github.io/HIGDesign](https://s-m-technology-ltd.github.io/HIGDesign/)**
+Browse every component online → **[promptdora.github.io/HIGDesign](https://promptdora.github.io/HIGDesign/)**
 
 ## Quick start (copy & paste)
 
 **1. Add the package** — Xcode → *Add Package Dependencies*:
 ```
-https://github.com/S-M-Technology-Ltd/HIGDesign.git
+https://github.com/promptdora/HIGDesign.git
 ```
 (from `1.3.1`)
 
@@ -150,7 +154,7 @@ Themes: **System** · **High Contrast** · **Brand accent** — each with light 
 
 | | |
 |---|---|
-| [Component gallery](https://s-m-technology-ltd.github.io/HIGDesign/) | Visual marketing site |
+| [Component gallery](https://promptdora.github.io/HIGDesign/) | Visual marketing site |
 | [HOW_TO_USE.md](Docs/HOW_TO_USE.md) | Integration & theming |
 | [Swift Package Index](https://swiftpackageindex.com/promptdora/HIGDesign) | Builds & API browser |
 | [CHANGELOG.md](CHANGELOG.md) | Release notes |
@@ -180,5 +184,5 @@ MIT — see [LICENSE](LICENSE). Apple platform trademarks belong to Apple Inc.
 </p>
 
 <p align="center">
-  <sub>If HIGDesign saves you time, <a href="https://github.com/S-M-Technology-Ltd/HIGDesign"><strong>star the repo</strong></a> — it is the best way to support the project and help others find it.</sub>
+  <sub>If HIGDesign saves you time, <a href="https://github.com/promptdora/HIGDesign"><strong>star the repo</strong></a> — it is the best way to support the project and help others find it.</sub>
 </p>
