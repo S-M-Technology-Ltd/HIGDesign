@@ -119,7 +119,12 @@ let package = Package(
             name: "HIGShowcase",
             dependencies: ["HIGDesign"],
             path: "Showcase",
-            exclude: ["HIGShowcaseApp.swift", "Info.plist"],
+            exclude: [
+                "HIGShowcaseApp.swift",
+                "Info.plist",
+                "capture_ios_showcase_snapshots.sh",
+                "capture_showcase_snapshots.sh",
+            ],
             resources: [
                 .process("Resources/ios_bg.png"),
                 .process("Resources/macos_bg.png"),
@@ -129,7 +134,11 @@ let package = Package(
             name: "HIGShowcaseApp",
             dependencies: ["HIGShowcase"],
             path: "Showcase",
-            exclude: ["Info.plist"],
+            exclude: [
+                "Info.plist",
+                "capture_ios_showcase_snapshots.sh",
+                "capture_showcase_snapshots.sh",
+            ],
             sources: ["HIGShowcaseApp.swift"]
         ),
         .executableTarget(

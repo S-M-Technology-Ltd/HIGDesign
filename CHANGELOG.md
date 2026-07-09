@@ -2,6 +2,43 @@
 
 All notable changes to HIGDesign are documented here. The project follows [Semantic Versioning](https://semver.org/) from v1.0.0 onward.
 
+## 1.3.1 — 2026-07-06
+
+Patch release polishing macOS showcase snapshots, README discoverability, and GitHub Pages imagery.
+
+### Changed
+
+- Re-captured all macOS platform showcase snapshots with improved window chrome compositing
+- README hero and gallery use macOS showcase renders (Button, Long Text Editor, Photo Editor, Card)
+- GitHub Pages hero and component gallery updated to macOS snapshot paths
+- README discoverability polish: table of contents, star CTA, audience section, and keyword footer
+
+## 1.3.0 — 2026-07-05
+
+Minor release adding photo and long-form text editing, liquid-glass button styling, and a device-framed showcase snapshot pipeline.
+
+### Added
+
+- `HIGPhotoEditor` for crop, rotate, and aspect-ratio editing on iOS and macOS
+- `HIGLongTextEditor` for rich HTML long-form editing with a formatting toolbar
+- `HIGButtonStyle` with liquid glass support on iOS 26+ and bordered fallback
+- Pixel-matched showcase snapshot pipeline with iPhone device frames and macOS window chrome
+- `ImageLoadingClient` for PhotoPicker image loading (serial-queue concurrency model)
+- Showcase welcome landing, A–Z catalog sort, and shared `ShowcaseSnapshotCatalogDetail`
+- `Scripts/capture_ios_showcase_snapshots.sh` and `Scripts/verify_photo_editor_token_usage.sh`
+
+### Changed
+
+- PhotoPicker image loading migrated from `PhotoKitCoordinator` actor to `ImageLoadingClient`
+- `HIGPhotoEditor` expanded for macOS with platform-appropriate chrome and toolbar
+- Regenerated platform showcase snapshots with device frames and catalog chrome
+- README hero uses a single iPhone showcase snapshot
+
+### Fixed
+
+- Sample app `Info.plist` keys for limited photo library access
+- macOS showcase snapshot compositing and native window chrome capture
+
 ## 1.2.1 — 2026-06-27
 
 Patch release fixing theme registration crashes, Heroicon scaling at large sizes, and Showcase preview and documentation polish.

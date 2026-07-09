@@ -20,7 +20,7 @@ Add HIGDesign to your `Package.swift` dependency list:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/S-M-Technology-Ltd/HIGDesign.git", from: "1.2.1"),
+    .package(url: "https://github.com/promptdora/HIGDesign.git", from: "1.3.1"),
 ],
 targets: [
     .target(
@@ -212,7 +212,7 @@ The protocol extension in `HIGThemesContract` ensures every `HIGTheme` property 
 
 ## Components
 
-33 public `HIG*` SwiftUI components ship in v1.0.0. Each maps to an Apple HIG section and resolves styling from `theme.<component>`.
+35 public `HIG*` SwiftUI components ship in v1.3.1. Each maps to an Apple HIG section and resolves styling from `theme.<component>`.
 
 ### Actions
 
@@ -352,9 +352,9 @@ swift run HIGShowcaseApp
 
 | Resource | URL |
 |----------|-----|
-| Component gallery (GitHub Pages) | https://s-m-technology-ltd.github.io/HIGDesign/ |
+| Component gallery (GitHub Pages) | https://promptdora.github.io/HIGDesign/ |
 | DocC catalog | Open `HIGDesign` in Xcode → **Product → Build Documentation** |
-| Swift Package Index | https://swiftpackageindex.com/S-M-Technology-Ltd/HIGDesign |
+| Swift Package Index | https://swiftpackageindex.com/promptdora/HIGDesign |
 
 Submit the package to SPI if it is not indexed yet:
 

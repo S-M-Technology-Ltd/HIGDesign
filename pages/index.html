@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="HIGDesign — SwiftUI design system aligned with Apple Human Interface Guidelines. 33 components, design tokens, and themes for every Apple platform.">
+  <meta name="description" content="HIGDesign — production-ready SwiftUI design system aligned with Apple Human Interface Guidelines. 35 components, design tokens, and macOS showcase snapshots for iOS, iPadOS, Mac, and more.">
   <title>HIGDesign — SwiftUI design system for Apple platforms</title>
   <style>
     :root {
@@ -76,11 +76,16 @@
     }
     .btn-secondary:hover { text-decoration: none; }
     .hero-shot {
-      max-width: 900px; margin: 0 auto; border-radius: 18px;
-      overflow: hidden; border: 1px solid var(--line);
-      box-shadow: var(--hero-shadow);
+      max-width: 980px; margin: 0 auto; display: flex; gap: 16px;
+      justify-content: center; align-items: flex-start; flex-wrap: wrap;
     }
-    .hero-shot img { display: block; width: 100%; height: auto; }
+    .hero-frame {
+      border-radius: 18px; overflow: hidden; border: 1px solid var(--line);
+      box-shadow: var(--hero-shadow); background: var(--surface);
+    }
+    .hero-frame img { display: block; height: auto; }
+    .hero-frame.mac img { width: min(560px, 100%); }
+    .hero-frame.ios img { width: min(280px, 100%); }
     section { padding: 56px 0; }
     h2 { margin: 0 0 12px; font-size: 32px; letter-spacing: -0.02em; }
     .section-lead { margin: 0 0 32px; color: var(--muted); max-width: 640px; }
@@ -124,8 +129,8 @@
       <nav class="nav-links">
         <a href="#components">Components</a>
         <a href="#install">Install</a>
-        <a href="https://github.com/S-M-Technology-Ltd/HIGDesign/blob/develop/Docs/HOW_TO_USE.md">Docs</a>
-        <a href="https://github.com/S-M-Technology-Ltd/HIGDesign">GitHub</a>
+        <a href="https://github.com/promptdora/HIGDesign/blob/develop/Docs/HOW_TO_USE.md">Docs</a>
+        <a href="https://github.com/promptdora/HIGDesign">GitHub</a>
       </nav>
     </div>
   </header>
@@ -136,16 +141,21 @@
         <span class="eyebrow">Swift 6 · SwiftUI · 6 Apple platforms</span>
         <h1>Apple HIG components,<br>ready for production.</h1>
         <p class="lead">
-          33 themed SwiftUI components, a layered token system, and committed showcase snapshots —
+          35 themed SwiftUI components, a layered token system, and macOS + iPhone showcase snapshots —
           so your app looks native on iPhone, iPad, Mac, Apple&nbsp;TV, Apple&nbsp;Watch, and visionOS.
         </p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="https://github.com/S-M-Technology-Ltd/HIGDesign">View on GitHub</a>
+          <a class="btn btn-primary" href="https://github.com/promptdora/HIGDesign">View on GitHub</a>
           <a class="btn btn-secondary" href="#install">Add via SPM</a>
-          <a class="btn btn-secondary" href="https://swiftpackageindex.com/S-M-Technology-Ltd/HIGDesign">Swift Package Index</a>
+          <a class="btn btn-secondary" href="https://swiftpackageindex.com/promptdora/HIGDesign">Swift Package Index</a>
         </div>
         <div class="hero-shot">
-          <img src="https://raw.githubusercontent.com/S-M-Technology-Ltd/HIGDesign/v1.2.1/Design/Showcase/snapshots/button-system-light.png" alt="HIGButton component preview" width="900" height="620" loading="eager">
+          <div class="hero-frame mac">
+            <img src="https://raw.githubusercontent.com/promptdora/HIGDesign/v1.3.1/Design/Showcase/snapshots/platforms/macos/button-system-light.png" alt="HIGButton component preview on macOS" width="560" height="380" loading="eager">
+          </div>
+          <div class="hero-frame ios">
+            <img src="https://raw.githubusercontent.com/promptdora/HIGDesign/v1.3.1/Design/Showcase/snapshots/platforms/ios/button-system-light.png" alt="HIGButton component preview on iPhone" width="280" height="560" loading="eager">
+          </div>
         </div>
       </div>
     </section>
@@ -168,8 +178,8 @@
             <p>Raw → semantic → component tokens eliminate magic numbers in view code.</p>
           </article>
           <article class="feature">
-            <h3>385 snapshots</h3>
-            <p>Theme matrix plus per-platform renders keep visual regressions visible in PRs.</p>
+            <h3>Device-framed snapshots</h3>
+            <p>iPhone and Mac showcase renders keep visual regressions visible in PRs.</p>
           </article>
         </div>
       </div>
@@ -178,7 +188,7 @@
     <section id="components">
       <div class="wrap">
         <h2>Component gallery</h2>
-        <p class="section-lead">System theme, light mode, macOS canvas. Explore all 33 components in the sample app or DocC catalog.</p>
+        <p class="section-lead">System theme, light mode, macOS and iPhone showcases. Explore all 35 components in the sample app or DocC catalog.</p>
         <div class="grid" id="gallery"></div>
       </div>
     </section>
@@ -188,7 +198,7 @@
         <h2>Install</h2>
         <p class="section-lead">Add the package in Xcode or Package.swift, then wrap your root view.</p>
         <pre class="code"><code>// Package.swift
-.package(url: "https://github.com/S-M-Technology-Ltd/HIGDesign.git", from: "1.2.1")
+.package(url: "https://github.com/promptdora/HIGDesign.git", from: "1.3.1")
 
 // App.swift
 import HIGDesign
@@ -204,34 +214,33 @@ HIGThemeableView(theme: HIGSystemTheme()) {
     <div class="wrap">
       <div>HIGDesign · MIT License · Apple trademarks belong to Apple Inc.</div>
       <div class="footer-links">
-        <a href="https://github.com/S-M-Technology-Ltd/HIGDesign">Repository</a>
-        <a href="https://github.com/S-M-Technology-Ltd/HIGDesign/releases">Releases</a>
-        <a href="https://github.com/S-M-Technology-Ltd/HIGDesign/blob/develop/Docs/HOW_TO_USE.md">HOW_TO_USE</a>
-        <a href="https://github.com/S-M-Technology-Ltd/HIGDesign/tree/develop/Sources/HIGDesign/HIGDesign.docc">DocC catalog</a>
+        <a href="https://github.com/promptdora/HIGDesign">Repository</a>
+        <a href="https://github.com/promptdora/HIGDesign/releases">Releases</a>
+        <a href="https://github.com/promptdora/HIGDesign/blob/develop/Docs/HOW_TO_USE.md">HOW_TO_USE</a>
+        <a href="https://github.com/promptdora/HIGDesign/tree/develop/Sources/HIGDesign/HIGDesign.docc">DocC catalog</a>
       </div>
     </div>
   </footer>
 
   <script>
-    const base = "https://raw.githubusercontent.com/S-M-Technology-Ltd/HIGDesign/v1.2.1/Design/Showcase/snapshots/";
+    const snapshotRoot = "https://raw.githubusercontent.com/promptdora/HIGDesign/v1.3.1/Design/Showcase/snapshots/platforms/";
     const items = [
-      ["Button", "Primary actions and loading states", "button-system-light.png"],
-      ["Text Field", "Labels, placeholders, validation", "textField-system-light.png"],
-      ["Toggle", "Platform-appropriate switches", "toggle-system-light.png"],
-      ["Card", "Grouped content surfaces", "card-system-light.png"],
-      ["Tab Bar", "Top-level navigation", "tabBar-system-light.png"],
-      ["Alert", "Modal decisions", "alert-system-light.png"],
-      ["Toast", "Transient feedback", "toast-system-light.png"],
-      ["Photo Picker", "iOS album browser", "photoPicker-system-light.png"],
-      ["Navigation Bar", "Titles and toolbar actions", "navigationBar-system-light.png"],
-      ["List", "Structured rows", "list-system-light.png"],
+      ["Button (Mac)", "Primary, secondary, destructive, and glass styles", "macos", "button-system-light.png"],
+      ["Button (iPhone)", "Same component on iPhone device frame", "ios", "button-system-light.png"],
+      ["Long Text Editor (Mac)", "Rich HTML editing with formatting toolbar", "macos", "longTextEditor-system-light.png"],
+      ["Photo Picker (iPhone)", "iOS album browser", "ios", "photoPicker-system-light.png"],
+      ["Card (Mac)", "Grouped content surfaces", "macos", "card-system-light.png"],
+      ["Tab Bar (iPhone)", "Top-level navigation", "ios", "tabBar-system-light.png"],
+      ["Toggle (Mac)", "Platform-appropriate switches", "macos", "toggle-system-light.png"],
+      ["Alert (iPhone)", "Modal decisions", "ios", "alert-system-light.png"],
+      ["Sidebar (Mac)", "Navigation split views", "macos", "sidebar-system-light.png"],
+      ["Catalog (iPhone)", "A–Z component browser", "ios", "catalog-system-light.png"],
     ];
     const gallery = document.getElementById("gallery");
-    for (const [title, summary, file] of items) {
-      const slug = title.toLowerCase().replace(/ /g, "-");
+    for (const [title, summary, platform, file] of items) {
       gallery.insertAdjacentHTML("beforeend", `
         <article class="card">
-          <img src="${base}${file}" alt="${title} preview" width="900" height="620" loading="lazy">
+          <img src="${snapshotRoot}${platform}/${file}" alt="${title} preview" width="900" height="620" loading="lazy">
           <div class="card-body">
             <h3>${title}</h3>
             <p>${summary}</p>

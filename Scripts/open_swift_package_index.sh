@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-PACKAGE_URL="https://github.com/S-M-Technology-Ltd/HIGDesign"
+PACKAGE_URL="https://github.com/promptdora/HIGDesign"
 SUBMIT_URL="https://swiftpackageindex.com/add-a-package?url=${PACKAGE_URL}"
-PACKAGE_PAGE="https://swiftpackageindex.com/S-M-Technology-Ltd/HIGDesign"
+PACKAGE_PAGE="https://swiftpackageindex.com/promptdora/HIGDesign"
 
 cat <<EOF
 Swift Package Index — HIGDesign
@@ -20,7 +20,7 @@ Swift Package Index — HIGDesign
 Repo checklist for SPI:
   ✓ Public GitHub repository
   ✓ Package.swift at repository root
-  ✓ Semantic version tags (v1.0.0, v1.0.1, v1.1.0, v1.2.0, v1.2.1)
+  ✓ Semantic version tags (v1.0.0, v1.0.1, v1.1.0, v1.2.0, v1.2.1, v1.3.0, v1.3.1)
   ✓ MIT license
 EOF
 

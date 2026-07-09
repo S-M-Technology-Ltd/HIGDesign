@@ -54,7 +54,7 @@ Scripts/verify_showcase_token_usage.sh
 
 ## Current Milestone
 
-Phase 14 v1.2.1 released. Run builds, tests, and individual `Scripts/verify_*.sh` guards locally before opening a PR. Regenerate showcase PNGs manually when updating README or Pages imagery.
+Phase 15 v1.3.1 released. Run builds, tests, and individual `Scripts/verify_*.sh` guards locally before opening a PR. Regenerate showcase PNGs with `Scripts/capture_showcase_snapshots.sh` and `Scripts/capture_ios_showcase_snapshots.sh` when updating README or Pages imagery.
 
 ## Xcode
 
