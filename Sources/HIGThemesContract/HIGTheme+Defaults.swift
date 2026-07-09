@@ -1,0 +1,45 @@
+import HIGTokensComponent
+import HIGTokensSemantic
+
+extension HIGTheme {
+    public var name: String { "Custom" }
+
+    public var colors: any HIGColorSemanticTokens { HIGSystemColorSemanticTokens() }
+    public var typography: any HIGTypographySemanticTokens { HIGSystemTypographySemanticTokens() }
+    public var spacing: any HIGSpacingSemanticTokens { HIGSystemSpacingSemanticTokens() }
+    public var opacity: any HIGOpacitySemanticTokens { HIGSystemOpacitySemanticTokens() }
+    public var border: any HIGBorderSemanticTokens { HIGSystemBorderSemanticTokens() }
+    public var motion: any HIGMotionSemanticTokens { HIGSystemMotionSemanticTokens() }
+
+    public var divider: any HIGDividerTokens { HIGSystemDividerTokens() }
+    public var button: any HIGButtonTokens { HIGSystemButtonTokens() }
+    public var textField: any HIGTextFieldTokens { HIGSystemTextFieldTokens() }
+    public var toggle: any HIGToggleTokens { HIGSystemToggleTokens() }
+    public var checkbox: any HIGCheckboxTokens { HIGSystemCheckboxTokens() }
+    public var radio: any HIGRadioTokens { HIGSystemRadioTokens() }
+    public var segmentedControl: any HIGSegmentedControlTokens { HIGSystemSegmentedControlTokens() }
+    public var slider: any HIGSliderTokens { HIGSystemSliderTokens() }
+    public var picker: any HIGPickerTokens { HIGSystemPickerTokens() }
+    public var card: any HIGCardTokens { HIGSystemCardTokens() }
+    public var progress: any HIGProgressTokens { HIGSystemProgressTokens() }
+    public var alert: any HIGAlertTokens { HIGSystemAlertTokens() }
+    public var toast: any HIGToastTokens { HIGSystemToastTokens() }
+    public var badge: any HIGBadgeTokens { HIGSystemBadgeTokens() }
+    public var icon: any HIGIconTokens { HIGSystemIconTokens() }
+    public var avatar: any HIGAvatarTokens { HIGSystemAvatarTokens() }
+    public var link: any HIGLinkTokens { HIGSystemLinkTokens() }
+    public var bulletList: any HIGBulletListTokens { HIGSystemBulletListTokens() }
+    public var textEditor: any HIGTextEditorTokens { HIGSystemTextEditorTokens() }
+    public var stepper: any HIGStepperTokens { HIGSystemStepperTokens() }
+    public var menuButton: any HIGMenuButtonTokens { HIGSystemMenuButtonTokens() }
+    public var tag: any HIGTagTokens { HIGSystemTagTokens() }
+    public var navigationBar: any HIGNavigationBarTokens { HIGSystemNavigationBarTokens() }
+    public var toolbar: any HIGToolbarTokens { HIGSystemToolbarTokens() }
+    public var activityIndicator: any HIGActivityIndicatorTokens { HIGSystemActivityIndicatorTokens() }
+    public var shimmer: any HIGShimmerTokens { HIGSystemShimmerTokens() }
+    public var list: any HIGListTokens { HIGSystemListTokens() }
+    public var sidebar: any HIGSidebarTokens { HIGSystemSidebarTokens() }
+    public var photoPicker: any HIGPhotoPickerTokens { HIGSystemPhotoPickerTokens() }
+    public var photoEditor: any HIGPhotoEditorTokens { HIGSystemPhotoEditorTokens() }
+    public var longTextEditor: any HIGLongTextEditorTokens { HIGSystemLongTextEditorTokens() }
+}

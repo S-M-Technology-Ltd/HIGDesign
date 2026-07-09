@@ -96,7 +96,6 @@ enum ShowcaseSnapshotDeviceCompositor {
         }
 
         let canvasSize = deviceBackground.canvasPointSize
-        let screenRect = deviceBackground.screenRect(in: canvasSize)
         let pixelWidth = Int(canvasSize.width * scale)
         let pixelHeight = Int(canvasSize.height * scale)
 
@@ -135,42 +134,50 @@ enum ShowcaseSnapshotDeviceCompositor {
             fraction: 1
         )
 
-        let contentSize = contentImage.size
-        guard contentSize.width > 0, contentSize.height > 0 else { return nil }
-
-        let flippedPlacement = NSRect(
-            x: screenRect.minX,
-            y: canvasSize.height - screenRect.maxY,
-            width: screenRect.width,
-            height: screenRect.height
-        )
-
-        // Fill the cutout width and pin the window title bar to the top so traffic
-        // lights survive; any excess height is cropped from the bottom.
-        let widthScale = screenRect.width / contentSize.width
-        let drawSize = NSSize(
-            width: screenRect.width,
-            height: contentSize.height * widthScale
-        )
-        let drawOrigin = NSPoint(
-            x: flippedPlacement.minX,
-            y: flippedPlacement.maxY - drawSize.height
-        )
-        let drawRect = NSRect(origin: drawOrigin, size: drawSize)
-
-        graphicsContext.saveGraphicsState()
-        NSBezierPath(rect: flippedPlacement).addClip()
         contentImage.draw(
-            in: drawRect,
+            in: NSRect(origin: .zero, size: canvasSize),
             from: .zero,
-            operation: .copy,
+            operation: .sourceOver,
             fraction: 1
         )
-        graphicsContext.restoreGraphicsState()
 
         return rep.representation(using: .png, properties: [:])
     }
     #endif
+
+    private static func drawExactFit(
+        _ image: CGImage,
+        in destRect: CGRect,
+        context: CGContext
+    ) {
+        context.draw(image, in: destRect)
+    }
+
+    private static func drawAspectFit(
+        _ image: CGImage,
+        in destRect: CGRect,
+        context: CGContext
+    ) {
+        let sourceSize = CGSize(width: image.width, height: image.height)
+        guard sourceSize.width > 0, sourceSize.height > 0 else { return }
+
+        let widthScale = destRect.width / sourceSize.width
+        let heightScale = destRect.height / sourceSize.height
+        let fitScale = min(widthScale, heightScale)
+        let drawSize = CGSize(
+            width: sourceSize.width * fitScale,
+            height: sourceSize.height * fitScale
+        )
+        let drawOrigin = CGPoint(
+            x: destRect.midX - drawSize.width / 2,
+            y: destRect.midY - drawSize.height / 2
+        )
+
+        context.draw(
+            image,
+            in: CGRect(origin: drawOrigin, size: drawSize)
+        )
+    }
 
     private static func drawAspectFilled(
         _ image: CGImage,

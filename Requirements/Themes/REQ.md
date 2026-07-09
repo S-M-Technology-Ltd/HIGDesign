@@ -9,6 +9,7 @@ Theme contract, environment injection, and built-in system themes for HIGDesign.
 ### Theme contract
 
 - Define `HIGTheme` as the root theme protocol composing semantic and component token providers.
+- **Provide protocol extension defaults** for every `HIGTheme` requirement so users can conform with a minimal declaration — override only the token categories or component metrics they want to customise.
 - Provide `HIGThemeableView` as the required app integration wrapper.
 - Expose `@Environment(\.higTheme)` for component access.
 - Missing theme injection is a programmer error and must trap or assert in debug builds.

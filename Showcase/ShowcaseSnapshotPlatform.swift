@@ -47,7 +47,7 @@ public enum ShowcaseSnapshotPlatform: String, CaseIterable, Sendable, Identifiab
         case .ipados:
             24
         case .macos:
-            20
+            0
         case .visionos:
             28
         case .tvos:

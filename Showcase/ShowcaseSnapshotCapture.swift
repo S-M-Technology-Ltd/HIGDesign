@@ -60,10 +60,13 @@ public enum ShowcaseSnapshotCapture {
         let colorScheme: ColorScheme = entry.colorScheme == "dark" ? .dark : .light
         let outputURL = showcaseRoot.appendingPathComponent(entry.file)
         let platform = snapshotPlatform(for: entry)
+        let deviceBackground = platform.flatMap { options.deviceBackgrounds[$0] }
+
         let canvasSize = canvasSize(
             for: entry,
             component: component,
             platform: platform,
+            deviceBackground: deviceBackground,
             options: options
         )
 
@@ -72,39 +75,17 @@ public enum ShowcaseSnapshotCapture {
             withIntermediateDirectories: true
         )
 
-        let deviceBackground = platform.flatMap { options.deviceBackgrounds[$0] }
-
-        let debugContent = ProcessInfo.processInfo.environment["HIG_SNAPSHOT_DEBUG_CONTENT"] == "1"
-
-        guard let windowPNG = ShowcaseSnapshotPixelCapture.renderPNG(
+        guard let pngData = ShowcaseSnapshotPixelCapture.renderPNG(
             component: component,
             catalogSnapshot: catalogSnapshot,
             themeChoice: themeChoice,
             colorScheme: colorScheme,
             platform: platform,
             canvasSize: canvasSize,
-            deviceBackground: deviceBackground,
-            compositeIntoDeviceFrame: !debugContent
-        ), pngContainsVisiblePixels(windowPNG, minimumOpaquePixels: 1_000) else {
+            deviceBackground: deviceBackground
+        ), pngContainsVisiblePixels(pngData, minimumOpaquePixels: 1_000) else {
             fputs("Failed to render \(entry.file)\n", stderr)
             exit(1)
-        }
-
-        if debugContent {
-            let debugURL = URL(fileURLWithPath: "/tmp/showcase-macos-window.png")
-            try windowPNG.write(to: debugURL, options: .atomic)
-            fputs("Wrote debug window PNG to \(debugURL.path)\n", stderr)
-        }
-
-        let pngData: Data
-        if debugContent, let deviceBackground, platform != nil,
-           let composited = ShowcaseSnapshotDeviceCompositor.composite(
-            contentPNG: windowPNG,
-            deviceBackground: deviceBackground
-           ) {
-            pngData = composited
-        } else {
-            pngData = windowPNG
         }
 
         try pngData.write(to: outputURL, options: .atomic)
@@ -123,8 +104,15 @@ public enum ShowcaseSnapshotCapture {
         for entry: ShowcaseSnapshotManifest.Entry,
         component: ShowcaseComponent?,
         platform: ShowcaseSnapshotPlatform?,
+        deviceBackground: ShowcaseSnapshotDeviceBackground?,
         options: ShowcaseSnapshotCaptureOptions
     ) -> CGSize {
+        if let deviceBackground, let platform {
+            if platform == .macos {
+                return deviceBackground.canvasPointSize
+            }
+            return deviceBackground.fillCanvasSize()
+        }
         if let platform {
             if let component {
                 return component.snapshotCanvasSize(for: platform)

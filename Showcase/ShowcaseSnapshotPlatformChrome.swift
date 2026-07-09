@@ -57,7 +57,7 @@ struct ShowcaseSnapshotPlatformChromeView<Content: View>: View {
     private var macNavigationBar: some View {
         ZStack {
             HStack(spacing: theme.spacing.compactItem) {
-                ShowcaseSnapshotMacTrafficLights()
+                ShowcaseSnapshotMacTrafficLightsView()
 
                 Spacer(minLength: 0)
 
@@ -79,31 +79,5 @@ struct ShowcaseSnapshotPlatformChromeView<Content: View>: View {
             "square.and.arrow.up",
             accessibilityLabel: "Share"
         ) {}
-    }
-}
-
-/// Red/yellow/green window controls shown in macOS platform snapshot chrome.
-private struct ShowcaseSnapshotMacTrafficLights: View {
-    private let diameter: CGFloat = 12
-    private let spacing: CGFloat = 8
-
-    var body: some View {
-        HStack(spacing: spacing) {
-            trafficLight(color: Color(red: 1.0, green: 0.37, blue: 0.34))
-            trafficLight(color: Color(red: 1.0, green: 0.74, blue: 0.18))
-            trafficLight(color: Color(red: 0.16, green: 0.78, blue: 0.25))
-        }
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel("Window controls")
-    }
-
-    private func trafficLight(color: Color) -> some View {
-        Circle()
-            .fill(color)
-            .frame(width: diameter, height: diameter)
-            .overlay {
-                Circle()
-                    .stroke(Color.black.opacity(0.12), lineWidth: 0.5)
-            }
     }
 }

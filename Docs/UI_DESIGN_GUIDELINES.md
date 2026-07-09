@@ -8,6 +8,8 @@ Every new or changed public component, modifier, or themed visual must be review
 
 Xcode preview and view-naming rules live in [`XCODE_PREVIEWS.md`](XCODE_PREVIEWS.md).
 
+For per-component state reference with iOS snapshots, see [`COMPONENT_GALLERY.md`](COMPONENT_GALLERY.md).
+
 Renderable HTML reference libraries for these rules live at `Design/hig-design-system.html` and `Design/hig/index.html`.
 
 ## Mandatory Apple HIG Rule
