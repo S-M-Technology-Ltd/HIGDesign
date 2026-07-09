@@ -31,7 +31,7 @@ The sample project links the local package and demonstrates production-style int
 
 ## Snapshot gallery
 
-Still images for CI and documentation live in `Design/Showcase/snapshots/`, including device-framed iPhone renders under `platforms/ios/`. The public component gallery is published at [https://s-m-technology-ltd.github.io/HIGDesign/](https://s-m-technology-ltd.github.io/HIGDesign/).
+Still images for CI and documentation live in `Design/Showcase/snapshots/`, including device-framed iPhone renders under `platforms/ios/` and macOS window chrome under `platforms/macos/`. The public component gallery is published at [https://promptdora.github.io/HIGDesign/](https://promptdora.github.io/HIGDesign/).
 
 ## Related
 
