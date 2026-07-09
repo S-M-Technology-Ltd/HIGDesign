@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="HIGDesign — SwiftUI design system aligned with Apple Human Interface Guidelines. 35 components, design tokens, and themes for every Apple platform.">
+  <meta name="description" content="HIGDesign — production-ready SwiftUI design system aligned with Apple Human Interface Guidelines. 35 components, design tokens, and macOS showcase snapshots for iOS, iPadOS, Mac, and more.">
   <title>HIGDesign — SwiftUI design system for Apple platforms</title>
   <style>
     :root {
@@ -136,7 +136,7 @@
         <span class="eyebrow">Swift 6 · SwiftUI · 6 Apple platforms</span>
         <h1>Apple HIG components,<br>ready for production.</h1>
         <p class="lead">
-          35 themed SwiftUI components, a layered token system, and device-framed showcase snapshots —
+          35 themed SwiftUI components, a layered token system, and macOS showcase snapshots —
           so your app looks native on iPhone, iPad, Mac, Apple&nbsp;TV, Apple&nbsp;Watch, and visionOS.
         </p>
         <div class="cta-row">
@@ -145,7 +145,7 @@
           <a class="btn btn-secondary" href="https://swiftpackageindex.com/S-M-Technology-Ltd/HIGDesign">Swift Package Index</a>
         </div>
         <div class="hero-shot">
-          <img src="https://raw.githubusercontent.com/S-M-Technology-Ltd/HIGDesign/v1.3.0/Design/Showcase/snapshots/platforms/ios/button-system-light.png" alt="HIGButton component preview on iPhone" width="320" height="640" loading="eager">
+          <img src="https://raw.githubusercontent.com/S-M-Technology-Ltd/HIGDesign/develop/Design/Showcase/snapshots/platforms/macos/button-system-light.png" alt="HIGButton component preview on macOS" width="900" height="620" loading="eager">
         </div>
       </div>
     </section>
@@ -178,7 +178,7 @@
     <section id="components">
       <div class="wrap">
         <h2>Component gallery</h2>
-        <p class="section-lead">System theme, light mode, iPhone canvas. Explore all 35 components in the sample app or DocC catalog.</p>
+        <p class="section-lead">System theme, light mode, macOS showcase. Explore all 35 components in the sample app or DocC catalog.</p>
         <div class="grid" id="gallery"></div>
       </div>
     </section>
@@ -213,18 +213,18 @@ HIGThemeableView(theme: HIGSystemTheme()) {
   </footer>
 
   <script>
-    const base = "https://raw.githubusercontent.com/S-M-Technology-Ltd/HIGDesign/v1.3.0/Design/Showcase/snapshots/platforms/ios/";
+    const base = "https://raw.githubusercontent.com/S-M-Technology-Ltd/HIGDesign/develop/Design/Showcase/snapshots/platforms/macos/";
     const items = [
-      ["Button", "Primary actions and loading states", "button-system-light.png"],
-      ["Text Field", "Labels, placeholders, validation", "textField-system-light.png"],
-      ["Toggle", "Platform-appropriate switches", "toggle-system-light.png"],
+      ["Button", "Primary, secondary, destructive, and glass styles", "button-system-light.png"],
+      ["Long Text Editor", "Rich HTML editing with formatting toolbar", "longTextEditor-system-light.png"],
+      ["Photo Editor", "Crop, rotate, and aspect-ratio editing", "photoEditor-system-light.png"],
       ["Card", "Grouped content surfaces", "card-system-light.png"],
-      ["Tab Bar", "Top-level navigation", "tabBar-system-light.png"],
+      ["Toggle", "Platform-appropriate switches", "toggle-system-light.png"],
       ["Alert", "Modal decisions", "alert-system-light.png"],
-      ["Toast", "Transient feedback", "toast-system-light.png"],
-      ["Photo Picker", "iOS album browser", "photoPicker-system-light.png"],
-      ["Navigation Bar", "Titles and toolbar actions", "navigationBar-system-light.png"],
-      ["List", "Structured rows", "list-system-light.png"],
+      ["Tab Bar", "Top-level navigation", "tabBar-system-light.png"],
+      ["Sidebar", "Navigation split views", "sidebar-system-light.png"],
+      ["Activity Indicator", "Custom and system loading states", "activityIndicator-system-light.png"],
+      ["Catalog", "A–Z component browser", "catalog-system-light.png"],
     ];
     const gallery = document.getElementById("gallery");
     for (const [title, summary, file] of items) {
