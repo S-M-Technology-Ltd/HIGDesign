@@ -41,6 +41,7 @@ Ship native-looking iOS, iPadOS, macOS, visionOS, tvOS, and watchOS apps without
 - [Why HIGDesign?](#why-higdesign)
 - [See it in action](#see-it-in-action)
 - [Quick start](#quick-start-copy--paste)
+- [Integrate with an AI prompt](#integrate-with-an-ai-prompt)
 - [Who is this for?](#who-is-this-for)
 - [35 components](#35-components)
 - [Features](#features-developers-care-about)
@@ -66,15 +67,15 @@ Native SwiftUI is the foundation. HIGDesign is the layer that saves **weeks** of
 ## See it in action
 
 <p align="center">
-  <img src="Design/Showcase/snapshots/platforms/macos/longTextEditor-system-light.png" alt="Long Text Editor on macOS" width="300">
+  <img src="Design/Showcase/snapshots/platforms/macos/longTextEditor-system-light.png" alt="Long Text Editor on macOS" width="100%">
   &nbsp;
-  <img src="Design/Showcase/snapshots/platforms/ios/photoPicker-system-light.png" alt="Photo Picker on iPhone" width="200">
+  <img src="Design/Showcase/snapshots/platforms/ios/photoPicker-system-light.png" alt="Photo Picker on iPhone" width="100%">
   &nbsp;
-  <img src="Design/Showcase/snapshots/platforms/macos/card-system-light.png" alt="Card on macOS" width="300">
+  <img src="Design/Showcase/snapshots/platforms/macos/activityIndicator-system-light.png" alt="Activity Indicator on macOS" width="100%">
   &nbsp;
-  <img src="Design/Showcase/snapshots/platforms/ios/tabBar-system-light.png" alt="Tab Bar on iPhone" width="200">
+  <img src="Design/Showcase/snapshots/platforms/ios/tabBar-system-light.png" alt="Tab Bar on iPhone" width="100%">
 </p>
-<p align="center"><sub>Long Text Editor (Mac) · Photo Picker (iPhone) · Card (Mac) · Tab Bar (iPhone) — system theme</sub></p>
+<p align="center"><sub>Long Text Editor (Mac) · Photo Picker (iPhone) · Activity Indicator (Mac) · Tab Bar (iPhone) — system theme</sub></p>
 
 Run the interactive catalog locally:
 
@@ -117,6 +118,71 @@ struct MyApp: App {
 ```
 
 That's it. Full guide → **[Docs/HOW_TO_USE.md](Docs/HOW_TO_USE.md)**
+
+## Integrate with an AI prompt
+
+Paste one of these into Cursor, Claude, Copilot Chat, Grok, or any coding agent to wire HIGDesign into an existing SwiftUI app.
+
+### Full integration (recommended)
+
+```text
+Integrate HIGDesign into this SwiftUI project.
+
+Package
+- Add SPM dependency: https://github.com/promptdora/HIGDesign.git (from 1.3.1)
+- Link the HIGDesign product to the app target
+- Prefer `import HIGDesign` (umbrella product)
+
+App shell
+- Wrap the root content in `HIGThemeableView(theme: HIGSystemTheme()) { … }`
+- Keep a single theme injection at the app root (do not scatter theme providers)
+
+Migration rules
+- Prefer HIG* components over raw SwiftUI controls where a match exists:
+  Button → HIGButton, TextField → HIGTextField, SecureField → HIGSecureField,
+  Toggle → HIGToggle, Slider → HIGSlider, Picker → HIGPicker,
+  ProgressView → HIGProgressView, List rows / forms → HIGList / HIGFormSection,
+  cards → HIGCard, tabs → HIGTabBar, toolbars → HIGToolbar
+- Read spacing, colors, typography, radius, and opacity from `@Environment(\.higTheme)`
+  or HIG helpers — never hardcode magic numbers for those values
+- Use `.higPadding(.screenEdge)` (or theme spacing tokens) instead of ad-hoc padding
+- Preserve existing app architecture, navigation, and business logic
+- Do not add non-Apple UI stacks, TCA, SwiftData, Firebase, or third-party UI kits
+- Stay on Apple platforms only (iOS / iPadOS / macOS / visionOS / tvOS / watchOS)
+
+Acceptance
+- App builds with the new package
+- Root uses HIGThemeableView
+- At least one primary screen uses HIG components end-to-end
+- Summarize files changed and any APIs that still need manual follow-up
+
+References
+- https://github.com/promptdora/HIGDesign
+- https://github.com/promptdora/HIGDesign/blob/develop/Docs/HOW_TO_USE.md
+- https://promptdora.github.io/HIGDesign/
+```
+
+### Smaller prompts
+
+**Theme only**
+
+```text
+Add HIGDesign (https://github.com/promptdora/HIGDesign.git, from 1.3.1) and wrap the app root in HIGThemeableView(theme: HIGSystemTheme()). Do not refactor screens yet.
+```
+
+**Replace controls on one screen**
+
+```text
+On <ScreenName>, replace native SwiftUI controls with HIGDesign equivalents (HIGButton, HIGTextField, HIGToggle, etc.). Use @Environment(\.higTheme) for spacing/colors. Keep behavior and navigation unchanged. Package: https://github.com/promptdora/HIGDesign.git
+```
+
+**Brand accent theme**
+
+```text
+Keep HIGDesign integration. Switch the root theme to HIGBrandTheme(name: "<Brand>", accent: .<color>) and ensure screens still resolve colors from higTheme.
+```
+
+Tips: point the agent at `Docs/HOW_TO_USE.md` and the [component gallery](https://promptdora.github.io/HIGDesign/) so it matches real public APIs.
 
 ## Who is this for?
 
