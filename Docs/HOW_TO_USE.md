@@ -20,7 +20,7 @@ Add HIGDesign to your `Package.swift` dependency list:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/promptdora/HIGDesign.git", from: "1.3.1"),
+    .package(url: "https://github.com/promptdora/HIGDesign.git", from: "1.4.0"),
 ],
 targets: [
     .target(
@@ -212,7 +212,7 @@ The protocol extension in `HIGThemesContract` ensures every `HIGTheme` property 
 
 ## Components
 
-36 public `HIG*` SwiftUI components ship in the current mainline (including `HIGMatrixLoader` in 1.4.0). Each maps to an Apple HIG section and resolves styling from `theme.<component>`.
+36 public `HIG*` SwiftUI components ship in v1.4.0 (including `HIGMatrixLoader` with 112 catalog animations). Each maps to an Apple HIG section and resolves styling from `theme.<component>`.
 
 ### Actions
 
