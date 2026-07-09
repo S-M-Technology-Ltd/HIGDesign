@@ -70,9 +70,16 @@ HIGDesign synthesizes architecture and patterns from:
 | `HIGDesignPlatform` | Idiom and capability adapters |
 | `HIGDesignBridging` | Optional Cocoa bridges |
 
-## Current Milestone: v1.4.0 (in progress)
+## Current Milestone: v1.4.0 (released)
 
-v1.4.0 adds `HIGMatrixLoader`, a clean-room animated dot-matrix loading indicator (theme tokens, eight patterns, seed-stable style selection, Showcase, tests).
+v1.4.0 is a minor release (2026-07-10) adding a 112-animation matrix loader catalog and multi-platform sample verification gates.
+
+Delivered in v1.4.0:
+
+- `HIGMatrixLoader` with 112 clean-room catalog animations (`HIGMatrixLoaderID`)
+- `theme.matrixLoader` tokens, Showcase gallery, unit tests, DocC, and requirements
+- Platform API guards and mandatory iOS + macOS sample verification scripts
+- iOS sample fix for unguarded AppKit color APIs in Showcase snapshot chrome
 
 Previous: v1.3.1 (released 2026-07-06) polished macOS showcase snapshots, README discoverability, and GitHub Pages imagery.
 

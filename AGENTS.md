@@ -307,8 +307,8 @@ swift test --package-path .
 
 Current Milestone
 
-Current milestone: v1.3.1 released (2026-07-06).
+Current milestone: v1.4.0 released (2026-07-10).
 
-v1.3.1 polished macOS showcase snapshots, README discoverability, and GitHub Pages imagery. See `Docs/PRD.md` and `CHANGELOG.md` for the full release notes.
+v1.4.0 delivered `HIGMatrixLoader` (112 clean-room animations), matrix loader tokens/showcase/tests, and multi-platform sample verification gates. See `Docs/PRD.md` and `CHANGELOG.md` for the full release notes.
 
-Next milestone: post-v1.3.1 component and platform expansion per `Docs/PRD.md`.
+Next milestone: post-v1.4.0 component and platform expansion per `Docs/PRD.md`.

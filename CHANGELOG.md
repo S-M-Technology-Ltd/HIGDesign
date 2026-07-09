@@ -2,13 +2,20 @@
 
 All notable changes to HIGDesign are documented here. The project follows [Semantic Versioning](https://semver.org/) from v1.0.0 onward.
 
-## Unreleased — 1.4.0
+## 1.4.0 — 2026-07-10
+
+Minor release adding a 112-animation matrix loader catalog and multi-platform sample verification gates.
 
 ### Added
 
 - `HIGMatrixLoader` — clean-room animated dot-matrix loading indicator with **112** catalog animations (`HIGMatrixLoaderID`: square 23, circular 20, hex 10, 3×3 20, triangle 20, fun 18, icon 1), eight convenience styles, size tokens, Reduce Motion poses, and deterministic `seed` selection
 - `HIGMatrixLoaderTokens` / `theme.matrixLoader` component token wiring across system, brand, and high-contrast themes
 - Showcase page (full family gallery), unit tests, DocC symbols, and requirements for Matrix Loader
+- `Scripts/verify_platform_api_guards.sh` and `Scripts/verify_local_pr.sh` to catch unguarded AppKit/UIKit APIs and require iOS + macOS sample builds
+
+### Fixed
+
+- iOS sample / Showcase build failure from unguarded `Color(nsColor:)` in snapshot platform chrome
 
 ## 1.3.1 — 2026-07-06
 
