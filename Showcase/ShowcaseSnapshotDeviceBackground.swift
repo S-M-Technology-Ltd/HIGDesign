@@ -60,4 +60,25 @@ public struct ShowcaseSnapshotDeviceBackground: Sendable {
     public func screenRect(in canvasSize: CGSize? = nil) -> CGRect {
         screenInsets.screenRect(in: canvasSize ?? canvasPointSize)
     }
+
+    public func fillCanvasSize(minDimension: CGFloat = 600) -> CGSize {
+        let screen = screenRect(in: canvasPointSize)
+        let scale: CGFloat
+        if screen.width > screen.height {
+            scale = max(minDimension, screen.width) / screen.width
+        } else {
+            scale = max(minDimension, screen.height) / screen.height
+        }
+        return CGSize(width: screen.width * scale, height: screen.height * scale)
+    }
+
+    /// Canvas size adjusted for NSWindow titlebar when renders use titled window chrome.
+    public func fillCanvasSizeWithTitlebarCompensation(minDimension: CGFloat = 600, titlebarHeight: CGFloat = 28) -> CGSize {
+        let screen = screenRect(in: canvasPointSize)
+        let targetAspect = screen.width / screen.height
+        let width = max(minDimension, screen.width)
+        let totalHeight = width / targetAspect
+        let contentHeight = totalHeight - titlebarHeight
+        return CGSize(width: width, height: contentHeight)
+    }
 }

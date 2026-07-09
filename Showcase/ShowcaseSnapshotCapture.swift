@@ -60,10 +60,13 @@ public enum ShowcaseSnapshotCapture {
         let colorScheme: ColorScheme = entry.colorScheme == "dark" ? .dark : .light
         let outputURL = showcaseRoot.appendingPathComponent(entry.file)
         let platform = snapshotPlatform(for: entry)
+        let deviceBackground = platform.flatMap { options.deviceBackgrounds[$0] }
+
         let canvasSize = canvasSize(
             for: entry,
             component: component,
             platform: platform,
+            deviceBackground: deviceBackground,
             options: options
         )
 
@@ -71,8 +74,6 @@ public enum ShowcaseSnapshotCapture {
             at: outputURL.deletingLastPathComponent(),
             withIntermediateDirectories: true
         )
-
-        let deviceBackground = platform.flatMap { options.deviceBackgrounds[$0] }
 
         guard let pngData = ShowcaseSnapshotPixelCapture.renderPNG(
             component: component,
@@ -103,8 +104,15 @@ public enum ShowcaseSnapshotCapture {
         for entry: ShowcaseSnapshotManifest.Entry,
         component: ShowcaseComponent?,
         platform: ShowcaseSnapshotPlatform?,
+        deviceBackground: ShowcaseSnapshotDeviceBackground?,
         options: ShowcaseSnapshotCaptureOptions
     ) -> CGSize {
+        if let deviceBackground, let platform {
+            if platform == .macos {
+                return deviceBackground.canvasPointSize
+            }
+            return deviceBackground.fillCanvasSize()
+        }
         if let platform {
             if let component {
                 return component.snapshotCanvasSize(for: platform)

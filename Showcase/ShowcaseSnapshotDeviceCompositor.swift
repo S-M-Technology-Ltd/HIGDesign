@@ -96,7 +96,6 @@ enum ShowcaseSnapshotDeviceCompositor {
         }
 
         let canvasSize = deviceBackground.canvasPointSize
-        let screenRect = deviceBackground.screenRect(in: canvasSize)
         let pixelWidth = Int(canvasSize.width * scale)
         let pixelHeight = Int(canvasSize.height * scale)
 
@@ -135,37 +134,12 @@ enum ShowcaseSnapshotDeviceCompositor {
             fraction: 1
         )
 
-        let contentSize = contentImage.size
-        guard contentSize.width > 0, contentSize.height > 0 else { return nil }
-
-        let widthScale = screenRect.width / contentSize.width
-        let heightScale = screenRect.height / contentSize.height
-        let fillScale = max(widthScale, heightScale)
-        let drawSize = NSSize(
-            width: contentSize.width * fillScale,
-            height: contentSize.height * fillScale
-        )
-        let flippedPlacement = NSRect(
-            x: screenRect.minX,
-            y: canvasSize.height - screenRect.maxY,
-            width: screenRect.width,
-            height: screenRect.height
-        )
-        let drawOrigin = NSPoint(
-            x: flippedPlacement.midX - drawSize.width / 2,
-            y: flippedPlacement.midY - drawSize.height / 2
-        )
-        let drawRect = NSRect(origin: drawOrigin, size: drawSize)
-
-        graphicsContext.saveGraphicsState()
-        NSBezierPath(rect: flippedPlacement).addClip()
         contentImage.draw(
-            in: drawRect,
+            in: NSRect(origin: .zero, size: canvasSize),
             from: .zero,
-            operation: .copy,
+            operation: .sourceOver,
             fraction: 1
         )
-        graphicsContext.restoreGraphicsState()
 
         return rep.representation(using: .png, properties: [:])
     }

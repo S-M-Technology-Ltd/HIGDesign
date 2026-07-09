@@ -116,7 +116,99 @@ var body: some View {
 
 ### Custom themes
 
-Conform to `HIGTheme` or compose from `HIGSystemTheme` and override specific token protocols. Keep component token shapes stable so `HIG*` views continue to resolve spacing and typography predictably.
+Create your own theme by conforming to `HIGTheme`. Thanks to protocol extension defaults, you only need to declare the properties you want to customize — everything else inherits system defaults.
+
+**Minimal example — accent color only:**
+
+```swift
+import HIGDesign
+
+struct MyTheme: HIGTheme {
+    let name = "My Theme"
+    let colors = HIGSystemColorSemanticTokens(accent: .purple)
+}
+```
+
+**Full customisation — spacing, typography, and component tokens:**
+
+```swift
+struct ProTheme: HIGTheme {
+    let name = "Pro"
+
+    let colors = HIGSystemColorSemanticTokens(
+        accent: .indigo,
+        destructive: .orange
+    )
+
+    let typography = HIGSystemTypographySemanticTokens(
+        headline: .title.weight(.bold),
+        button: .headline
+    )
+
+    let spacing = HIGSystemSpacingSemanticTokens(
+        screenEdge: 24,
+        section: 32,
+        item: 12
+    )
+
+    let button = HIGSystemButtonTokens(
+        minHeight: 52,
+        cornerRadius: 14
+    )
+
+    let card = HIGSystemCardTokens(
+        cornerRadius: 20,
+        contentPadding: 20
+    )
+
+    let textField = HIGSystemTextFieldTokens(
+        cornerRadius: 12,
+        borderWidth: 2
+    )
+}
+```
+
+**Override from a base theme:**
+
+```swift
+struct AdaptiveTheme: HIGTheme {
+    let name = "Adaptive"
+    let base = HIGSystemTheme()
+
+    var colors: any HIGColorSemanticTokens {
+        HIGSystemColorSemanticTokens(
+            accent: .mint,
+            backgroundPrimary: .white,
+            backgroundSecondary: Color(.systemGray6)
+        )
+    }
+    // all other properties inherit from protocol extension defaults
+}
+```
+
+Switch to your custom theme the same way as any built-in:
+
+```swift
+HIGThemeableView(theme: MyTheme()) {
+    ContentView()
+}
+```
+
+**Token category overrides:**
+
+Every token category supports independent overrides. Mix and match freely:
+
+| Category | What you control |
+|---|---|
+| `colors` | `labelPrimary`, `labelSecondary`, `accent`, `destructive`, `warning`, backgrounds, fills, separators |
+| `typography` | `largeTitle`, `title`, `headline`, `body`, `callout`, `caption`, `button` |
+| `spacing` | `screenEdge`, `section`, `item`, `compactItem` |
+| `opacity` | `hidden`, `disabled`, `pressedPrimary`, `subtleFill`, `bannerBorder`, `full` |
+| `border` | `hairline` |
+| `motion` | `quick`, `standard`, `emphasized` |
+| `button` … `longTextEditor` | Per-component sizing, padding, radius, font, and style metrics |
+
+The protocol extension in `HIGThemesContract` ensures every `HIGTheme` property has a system default, so you never need to declare properties you're not changing.
 
 ## Components
 

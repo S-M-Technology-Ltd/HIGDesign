@@ -35,11 +35,13 @@ public enum ShowcaseSnapshotPixelCapture {
 
             let contentPNG: Data?
             #if os(macOS)
+            let windowTitle = component?.title ?? "HIGDesign"
             contentPNG = renderPNGOnMac(
                 from: content,
                 size: canvasSize,
                 colorScheme: colorScheme,
-                capturesWindowChrome: platform == .macos && deviceBackground != nil
+                capturesWindowChrome: platform == .macos && deviceBackground != nil,
+                windowTitle: windowTitle
             )
             #elseif os(iOS)
             contentPNG = renderPNGOnIOS(from: content, size: canvasSize, colorScheme: colorScheme)
@@ -70,6 +72,7 @@ public enum ShowcaseSnapshotPixelCapture {
         canvasSize: CGSize
     ) -> some View {
         let theme = themeChoice.makeTheme()
+        let isMacDeviceFrame = platform == .macos
 
         HIGThemeableView(theme: theme) {
             Group {
@@ -91,10 +94,10 @@ public enum ShowcaseSnapshotPixelCapture {
                 }
             }
             .preferredColorScheme(colorScheme)
-            .background(theme.colors.backgroundPrimary)
+            .background(isMacDeviceFrame ? .clear : theme.colors.backgroundPrimary)
         }
         .frame(width: canvasSize.width, height: canvasSize.height)
-        .background(theme.colors.backgroundPrimary)
+        .background(isMacDeviceFrame ? .clear : theme.colors.backgroundPrimary)
     }
 
     @ViewBuilder
@@ -140,6 +143,12 @@ public enum ShowcaseSnapshotPixelCapture {
                 themeChoice: themeChoice,
                 colorScheme: colorScheme
             )
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .padding(.top, 100)
+            .padding(.bottom, 230)
+            .padding(.leading, 280)
+            .padding(.trailing, 280)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         case .visionos:
             NavigationSplitView {
                 Color.clear
@@ -161,32 +170,37 @@ public enum ShowcaseSnapshotPixelCapture {
         from content: Content,
         size: CGSize,
         colorScheme: ColorScheme,
-        capturesWindowChrome: Bool
+        capturesWindowChrome: Bool,
+        windowTitle: String = "HIGDesign"
     ) -> Data? {
         let appearance = NSAppearance(named: colorScheme == .dark ? .darkAqua : .aqua)
         let hostingView = NSHostingView(rootView: content)
         hostingView.frame = CGRect(origin: .zero, size: size)
         hostingView.appearance = appearance
         hostingView.wantsLayer = true
-        hostingView.layer?.backgroundColor = NSColor.windowBackgroundColor.cgColor
 
-        let styleMask: NSWindow.StyleMask = capturesWindowChrome
-            ? [.titled, .closable, .miniaturizable, .resizable]
-            : [.borderless]
+        if capturesWindowChrome {
+            hostingView.layer?.backgroundColor = NSColor.clear.cgColor
+        } else {
+            hostingView.layer?.backgroundColor = NSColor.windowBackgroundColor.cgColor
+        }
 
         let window = NSWindow(
             contentRect: CGRect(origin: .zero, size: size),
-            styleMask: styleMask,
+            styleMask: [.borderless],
             backing: .buffered,
             defer: false
         )
         window.appearance = appearance
         window.contentView = hostingView
-        window.title = "HIGDesign"
-        window.titlebarAppearsTransparent = false
         window.hasShadow = false
-        window.isOpaque = true
-        window.backgroundColor = .windowBackgroundColor
+        window.isOpaque = !capturesWindowChrome
+        window.backgroundColor = capturesWindowChrome ? .clear : .windowBackgroundColor
+
+        return captureOffScreen(window: window, hostingView: hostingView)
+    }
+
+    private static func captureOffScreen(window: NSWindow, hostingView: NSView) -> Data? {
         window.setFrameOrigin(NSPoint(x: -20_000, y: -20_000))
         window.makeKeyAndOrderFront(nil)
         window.orderFrontRegardless()
@@ -196,18 +210,8 @@ public enum ShowcaseSnapshotPixelCapture {
         drainMainRunLoop()
 
         let scale: CGFloat = 2
-        let captureView: NSView
-        let captureBounds: NSRect
-
-        if capturesWindowChrome, let themeFrame = hostingView.superview {
-            themeFrame.needsLayout = true
-            themeFrame.layoutSubtreeIfNeeded()
-            captureView = themeFrame
-            captureBounds = themeFrame.bounds
-        } else {
-            captureView = hostingView
-            captureBounds = hostingView.bounds
-        }
+        let captureView = hostingView
+        let captureBounds = hostingView.bounds
 
         captureView.wantsLayer = true
         captureView.layer?.contentsScale = scale
