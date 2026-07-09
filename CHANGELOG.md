@@ -2,6 +2,17 @@
 
 All notable changes to HIGDesign are documented here. The project follows [Semantic Versioning](https://semver.org/) from v1.0.0 onward.
 
+## 1.3.1 — 2026-07-06
+
+Patch release polishing macOS showcase snapshots, README discoverability, and GitHub Pages imagery.
+
+### Changed
+
+- Re-captured all macOS platform showcase snapshots with improved window chrome compositing
+- README hero and gallery use macOS showcase renders (Button, Long Text Editor, Photo Editor, Card)
+- GitHub Pages hero and component gallery updated to macOS snapshot paths
+- README discoverability polish: table of contents, star CTA, audience section, and keyword footer
+
 ## 1.3.0 — 2026-07-05
 
 Minor release adding photo and long-form text editing, liquid-glass button styling, and a device-framed showcase snapshot pipeline.

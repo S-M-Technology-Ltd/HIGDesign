@@ -70,11 +70,18 @@ HIGDesign synthesizes architecture and patterns from:
 | `HIGDesignPlatform` | Idiom and capability adapters |
 | `HIGDesignBridging` | Optional Cocoa bridges |
 
-## Current Milestone: v1.3.0 (released)
+## Current Milestone: v1.3.1 (released)
 
-v1.3.0 is a minor release (2026-07-05) adding photo and long-form text editing, liquid-glass button styling, and device-framed showcase snapshots.
+v1.3.1 is a patch release (2026-07-06) polishing macOS showcase snapshots, README discoverability, and GitHub Pages imagery.
 
-Delivered in v1.3.0:
+Delivered in v1.3.1:
+
+- Re-captured macOS platform showcase snapshots with improved window chrome compositing
+- README hero and gallery use macOS showcase renders
+- GitHub Pages hero and gallery updated to macOS snapshot paths
+- README discoverability polish (table of contents, star CTA, audience section)
+
+v1.3.0 (2026-07-05) delivered:
 
 - `HIGPhotoEditor` for crop, rotate, and aspect-ratio editing on iOS and macOS
 - `HIGLongTextEditor` for rich HTML editing with formatting toolbar

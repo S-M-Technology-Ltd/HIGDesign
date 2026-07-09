@@ -88,7 +88,7 @@ Browse every component online → **[s-m-technology-ltd.github.io/HIGDesign](htt
 ```
 https://github.com/S-M-Technology-Ltd/HIGDesign.git
 ```
-(from `1.3.0`)
+(from `1.3.1`)
 
 **2. Wrap your app:**
 

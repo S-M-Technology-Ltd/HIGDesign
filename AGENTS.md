@@ -315,8 +315,8 @@ Per-platform Showcase builds should be added to this list as targets become avai
 
 Current Milestone
 
-Current milestone: v1.3.0 released (2026-07-05).
+Current milestone: v1.3.1 released (2026-07-06).
 
-v1.3.0 delivered `HIGPhotoEditor`, `HIGLongTextEditor`, liquid-glass `HIGButtonStyle`, device-framed showcase snapshots, and PhotoPicker `ImageLoadingClient`. See `Docs/PRD.md` and `CHANGELOG.md` for the full release notes.
+v1.3.1 polished macOS showcase snapshots, README discoverability, and GitHub Pages imagery. See `Docs/PRD.md` and `CHANGELOG.md` for the full release notes.
 
-Next milestone: post-v1.3.0 component and platform expansion per `Docs/PRD.md`.
+Next milestone: post-v1.3.1 component and platform expansion per `Docs/PRD.md`.
