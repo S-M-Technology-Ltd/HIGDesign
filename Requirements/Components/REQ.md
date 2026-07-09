@@ -47,6 +47,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 - `HIGTag`
 - `HIGProgressView`
 - `HIGActivityIndicator` with styles: `system` (default), `orbital`, `pulsing`, `arcs`, `rotatingDots`, `flickeringDots`, `scalingDots`, `opacityDots`, `equalizer`, `growingCircle`, `gradient`
+- `HIGMatrixLoader` with **112** clean-room catalog entries via `HIGMatrixLoaderID` (23 square, 20 circular, 10 hex, 20 3×3, 20 triangle, 18 fun, 1 icon); convenience `HIGMatrixLoaderStyle` aliases; sizes `small` / `medium` / `large`; deterministic `seed` selection across the full catalog; Reduce Motion static poses
 - `HIGAlert`
 - `HIGToast`
 

@@ -1,8 +1,11 @@
 import HIGDesign
 import SwiftUI
 
-#if canImport(AppKit)
+#if canImport(AppKit) && os(macOS)
 import AppKit
+#endif
+#if canImport(UIKit)
+import UIKit
 #endif
 
 /// Full showcase split view for macOS platform snapshots with SwiftUI title bar chrome.
@@ -48,7 +51,7 @@ struct ShowcaseSnapshotPlatformCaptureView: View {
             )
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .background(Color(nsColor: .windowBackgroundColor))
+        .background(platformWindowBackground)
         .preferredColorScheme(entryColorScheme)
         .onAppear {
             selection = component
@@ -69,7 +72,18 @@ struct ShowcaseSnapshotPlatformCaptureView: View {
                 .lineLimit(1)
         }
         .frame(height: 28)
-        .background(Color(nsColor: .windowBackgroundColor))
+        .background(platformWindowBackground)
+    }
+
+    /// System window / screen background that compiles on every Apple platform.
+    private var platformWindowBackground: Color {
+        #if os(macOS)
+        Color(nsColor: .windowBackgroundColor)
+        #elseif canImport(UIKit)
+        Color(uiColor: .systemBackground)
+        #else
+        Color.primary.opacity(0.04)
+        #endif
     }
 }
 

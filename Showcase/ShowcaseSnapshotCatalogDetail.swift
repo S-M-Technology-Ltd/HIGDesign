@@ -38,6 +38,8 @@ struct ShowcaseSnapshotCatalogDetail: View {
             ShowcaseBadgeView()
         case .activityIndicator:
             ShowcaseActivityIndicatorView()
+        case .matrixLoader:
+            ShowcaseMatrixLoaderView()
         case .list:
             ShowcaseListView()
         case .form:

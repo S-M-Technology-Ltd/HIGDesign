@@ -256,62 +256,54 @@ Development Environment Rules
 * Swift 6 language mode is required.
 * Document toolchain changes in `Docs/DEVELOPMENT_ENVIRONMENT.md`.
 * Do not claim verification passed unless the relevant command was actually run successfully.
+* **`swift test` alone is not enough.** It builds the package for the host (macOS) and will not catch iOS-only sample / Showcase compile failures (for example unguarded `Color(nsColor:)`).
+* After any change under `Showcase/`, `Sample/`, or multi-platform `Sources/`, agents **must** run the sample iOS + macOS gate before marking work done:
+  * `Scripts/verify_platform_api_guards.sh` (fast static check)
+  * `Scripts/verify_sample_xcode_project.sh` (builds `HIGDesignSample` iOS Simulator **and** `HIGDesignSampleMac`)
+* Preferred one-shot local PR gate: `Scripts/verify_local_pr.sh` (static guards + `swift test` + sample iOS/macOS builds).
+* Never claim “sample builds” or “verification passed” unless those commands were actually executed successfully in this session.
 
 Verification Commands
 
-Local verification (run before opening a PR):
+**Required before opening a PR (or finishing multi-platform UI work):**
 
-Scripts/build_all_platforms.sh
+```bash
+Scripts/verify_local_pr.sh
+```
 
+Equivalent expanded form:
+
+```bash
+Scripts/verify_platform_api_guards.sh
 swift test
+Scripts/verify_sample_xcode_project.sh   # iOS Simulator + macOS sample
+```
 
-Scripts/verify_sample_xcode_project.sh
+Full package multi-SDK build (slower; run when touching Package.swift or cross-platform core):
+
+```bash
+Scripts/build_all_platforms.sh
+```
 
 Showcase snapshot capture (`Scripts/capture_showcase_snapshots.sh`) is manual for README/Pages images only.
 
 Individual guards (debugging):
 
-Requirements guard:
-
+```bash
 Scripts/verify_requirements_present.sh
-
-UI guidelines guard:
-
 Scripts/verify_ui_guidelines_present.sh
-
-Xcode preview coverage guard:
-
 Scripts/verify_xcode_previews_present.sh
-
-View naming guard:
-
 Scripts/verify_view_naming.sh
-
-Component design token guard:
-
 Scripts/verify_component_token_usage.sh
-
-Showcase design token guard:
-
 Scripts/verify_showcase_token_usage.sh
-
-Photo picker design token guard (supplementary):
-
+Scripts/verify_platform_api_guards.sh
 Scripts/verify_photo_picker_token_usage.sh
-
-Photo editor design token guard (supplementary):
-
 Scripts/verify_photo_editor_token_usage.sh
-
-Swift package build:
-
+Scripts/verify_no_gcd.sh
+Scripts/verify_no_uikit.sh
 swift build --package-path .
-
-Swift package tests:
-
 swift test --package-path .
-
-Per-platform Showcase builds should be added to this list as targets become available.
+```
 
 Current Milestone
 

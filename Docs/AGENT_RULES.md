@@ -53,6 +53,16 @@ These rules apply to automated and human-assisted coding agents working in this 
 - Accessibility labels, traits, and touch-target behavior require tests for interactive components.
 - Platform-specific behavior requires at least one test or snapshot per supported platform family when feasible.
 
+## Multi-platform build gate (mandatory for agents)
+
+- **`swift test` is host-only (macOS).** It does not compile the iOS sample app or prove Showcase builds for iOS.
+- After changes to `Showcase/`, `Sample/`, or shared multi-platform sources, agents **must** run:
+  1. `Scripts/verify_platform_api_guards.sh` — rejects unguarded AppKit/UIKit APIs (e.g. bare `Color(nsColor:)`).
+  2. `Scripts/verify_sample_xcode_project.sh` — builds **HIGDesignSample** (iOS Simulator) and **HIGDesignSampleMac**.
+- Preferred aggregate: `Scripts/verify_local_pr.sh`.
+- Do not report work complete, or claim verification passed, unless those commands were run successfully in the same session.
+- Platform-private APIs must be wrapped in `#if os(macOS)`, `#if canImport(AppKit)`, `#if canImport(UIKit)`, or equivalent — never unguarded in multi-platform targets.
+
 ## Documentation Policy
 
 - Public API changes require DocC-compatible documentation.

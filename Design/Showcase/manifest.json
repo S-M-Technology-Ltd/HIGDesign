@@ -3152,6 +3152,96 @@
       "theme": "system",
       "colorScheme": "light",
       "file": "snapshots/platforms/watchos/catalog-system-light.png"
+    },
+    {
+      "kind": "theme",
+      "component": "matrixLoader",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/matrixLoader-system-light.png"
+    },
+    {
+      "kind": "theme",
+      "component": "matrixLoader",
+      "theme": "system",
+      "colorScheme": "dark",
+      "file": "snapshots/matrixLoader-system-dark.png"
+    },
+    {
+      "kind": "theme",
+      "component": "matrixLoader",
+      "theme": "highContrast",
+      "colorScheme": "light",
+      "file": "snapshots/matrixLoader-highContrast-light.png"
+    },
+    {
+      "kind": "theme",
+      "component": "matrixLoader",
+      "theme": "highContrast",
+      "colorScheme": "dark",
+      "file": "snapshots/matrixLoader-highContrast-dark.png"
+    },
+    {
+      "kind": "theme",
+      "component": "matrixLoader",
+      "theme": "brand",
+      "colorScheme": "light",
+      "file": "snapshots/matrixLoader-brand-light.png"
+    },
+    {
+      "kind": "theme",
+      "component": "matrixLoader",
+      "theme": "brand",
+      "colorScheme": "dark",
+      "file": "snapshots/matrixLoader-brand-dark.png"
+    },
+    {
+      "kind": "platform",
+      "component": "matrixLoader",
+      "platform": "macos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/macos/matrixLoader-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "matrixLoader",
+      "platform": "ios",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ios/matrixLoader-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "matrixLoader",
+      "platform": "ipados",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/ipados/matrixLoader-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "matrixLoader",
+      "platform": "visionos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/visionos/matrixLoader-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "matrixLoader",
+      "platform": "tvos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/tvos/matrixLoader-system-light.png"
+    },
+    {
+      "kind": "platform",
+      "component": "matrixLoader",
+      "platform": "watchos",
+      "theme": "system",
+      "colorScheme": "light",
+      "file": "snapshots/platforms/watchos/matrixLoader-system-light.png"
     }
   ]
 }

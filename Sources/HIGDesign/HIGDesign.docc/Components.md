@@ -65,6 +65,12 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGActivityIndicator``
 - ``HIGActivityIndicatorSize``
 - ``HIGActivityIndicatorStyle``
+- ``HIGMatrixLoader``
+- ``HIGMatrixLoaderID``
+- ``HIGMatrixLoaderFun``
+- ``HIGMatrixLoaderSize``
+- ``HIGMatrixLoaderStyle``
+- ``HIGMatrixLoaderTokens``
 - ``HIGAlert``
 - ``HIGAlertButtonRole``
 - ``HIGAlertBanner``
