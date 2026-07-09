@@ -16,6 +16,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case label
     case badge
     case activityIndicator
+    case matrixLoader
     case list
     case form
     case checkbox
@@ -63,6 +64,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .label: "Label"
         case .badge: "Badge"
         case .activityIndicator: "Activity Indicator"
+        case .matrixLoader: "Matrix Loader"
         case .list: "List"
         case .form: "Form Section"
         case .checkbox: "Checkbox"
@@ -103,6 +105,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .label: "Labels"
         case .badge: "Labels"
         case .activityIndicator: "Loading"
+        case .matrixLoader: "Loading"
         case .list: "Lists and Tables"
         case .form: "Settings"
         case .checkbox: "Selection Controls"
@@ -143,6 +146,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .label: "Primary, secondary, and caption text pairings."
         case .badge: "Compact counts and short status metadata."
         case .activityIndicator: "Indeterminate loading spinners."
+        case .matrixLoader: "112 clean-room animated dot-matrix loading grids."
         case .list: "Grouped rows with themed backgrounds."
         case .form: "Sectioned form groups with headers and footers."
         case .checkbox: "Multi-select settings with checkbox styling."
@@ -169,7 +173,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     var platforms: String {
         switch self {
         case .button, .textField, .toggle, .divider, .progressView, .card, .toolbar,
-             .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .list, .form,
+             .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .matrixLoader,
+             .list, .form,
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,
              .bulletList, .textEditor, .stepper, .menuButton, .tag:
             "iOS, iPadOS, macOS, visionOS, tvOS, watchOS"

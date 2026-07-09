@@ -35,6 +35,7 @@ public struct HIGComponentPreviewTheme: HIGTheme {
     public let navigationBar: any HIGNavigationBarTokens = HIGSystemNavigationBarTokens()
     public let toolbar: any HIGToolbarTokens = HIGSystemToolbarTokens()
     public let activityIndicator: any HIGActivityIndicatorTokens = HIGSystemActivityIndicatorTokens()
+    public let matrixLoader: any HIGMatrixLoaderTokens = HIGSystemMatrixLoaderTokens()
     public let shimmer: any HIGShimmerTokens = HIGSystemShimmerTokens()
     public let list: any HIGListTokens = HIGSystemListTokens()
     public let sidebar: any HIGSidebarTokens = HIGSystemSidebarTokens()

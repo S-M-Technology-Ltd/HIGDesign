@@ -2,7 +2,7 @@
 
 ### Production-ready SwiftUI components that follow Apple HIG — on every Apple platform.
 
-Ship native-looking iOS, iPadOS, macOS, visionOS, tvOS, and watchOS apps without reinventing buttons, forms, navigation, or theming. **35 HIG-aligned components**, a **layered token system**, and **one-line theme switching** — import once, wrap your app, and go.
+Ship native-looking iOS, iPadOS, macOS, visionOS, tvOS, and watchOS apps without reinventing buttons, forms, navigation, or theming. **36 HIG-aligned components**, a **layered token system**, and **one-line theme switching** — import once, wrap your app, and go.
 
 <p align="center">
   <img src="Design/Showcase/snapshots/platforms/macos/button-system-light.png" alt="HIGDesign Showcase on macOS — Button component with sidebar, samples, and API snippets" width="520">
@@ -43,7 +43,7 @@ Ship native-looking iOS, iPadOS, macOS, visionOS, tvOS, and watchOS apps without
 - [Quick start](#quick-start-copy--paste)
 - [Integrate with an AI prompt](#integrate-with-an-ai-prompt)
 - [Who is this for?](#who-is-this-for)
-- [35 components](#35-components)
+- [36 components](#36-components)
 - [Features](#features-developers-care-about)
 - [Documentation](#documentation)
 - [Contributing](#contributing)
@@ -56,7 +56,7 @@ Raw SwiftUI gives you primitives. HIGDesign gives you **opinionated, production-
 
 | Raw SwiftUI | HIGDesign |
 |-------------|-----------|
-| Style every control from scratch | **35** pre-built, HIG-aligned components |
+| Style every control from scratch | **36** pre-built, HIG-aligned components |
 | Magic numbers drift across screens | **Token layers** enforce consistency |
 | Re-theme means touching every view | Swap theme at the root — **everything updates** |
 | Re-solve the same patterns per platform | **Platform-appropriate** behavior built in |
@@ -191,7 +191,7 @@ Tips: point the agent at `Docs/HOW_TO_USE.md` and the [component gallery](https:
 - **Multi-platform apps** that need consistent tokens across iPhone, iPad, Mac, Apple TV, Watch, and visionOS
 - **Open-source contributors** looking for a well-documented, test-covered Apple-only design system
 
-## 35 components
+## 36 components
 
 | | Components |
 |---|------------|
@@ -201,7 +201,7 @@ Tips: point the agent at `Docs/HOW_TO_USE.md` and the [component gallery](https:
 | **Content** | Label, Badge, Icon, Heroicons (324 outline + solid), Avatar, Link, Tag, Bullet List |
 | **Layout** | Divider, Card, List, Form Section |
 | **Navigation** | Tab Bar, Toolbar, Sidebar, Navigation Bar |
-| **Feedback** | Progress View, Activity Indicator, Alert, Toast |
+| **Feedback** | Progress View, Activity Indicator, Matrix Loader, Alert, Toast |
 
 Themes: **System** · **High Contrast** · **Brand accent** — each with light and dark variants.
 

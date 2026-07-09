@@ -212,7 +212,7 @@ The protocol extension in `HIGThemesContract` ensures every `HIGTheme` property 
 
 ## Components
 
-35 public `HIG*` SwiftUI components ship in v1.3.1. Each maps to an Apple HIG section and resolves styling from `theme.<component>`.
+36 public `HIG*` SwiftUI components ship in the current mainline (including `HIGMatrixLoader` in 1.4.0). Each maps to an Apple HIG section and resolves styling from `theme.<component>`.
 
 ### Actions
 

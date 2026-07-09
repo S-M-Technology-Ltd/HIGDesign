@@ -116,6 +116,11 @@ HIGThemeableView(theme: HIGSystemTheme()) {
 - ``HIGActivityIndicator``
 - ``HIGActivityIndicatorSize``
 - ``HIGActivityIndicatorStyle``
+- ``HIGMatrixLoader``
+- ``HIGMatrixLoaderID``
+- ``HIGMatrixLoaderFun``
+- ``HIGMatrixLoaderSize``
+- ``HIGMatrixLoaderStyle``
 - ``HIGAlert``
 - ``HIGAlertButtonRole``
 - ``HIGAlertBanner``

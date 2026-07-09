@@ -27,30 +27,59 @@ Minimum deployment targets cover the latest three calendar years:
 
 ## Local Verification
 
-Run from repository root:
+Run from repository root.
+
+**Preferred one-shot gate** (static guards + unit tests + **iOS and macOS** sample builds):
+
+```bash
+Scripts/verify_local_pr.sh
+```
+
+Expanded form:
+
+```bash
+Scripts/verify_platform_api_guards.sh   # unguarded AppKit/UIKit APIs (fast)
+swift test
+Scripts/verify_sample_xcode_project.sh  # HIGDesignSample iOS + HIGDesignSampleMac
+```
+
+Full multi-SDK package build (slower; use when touching Package.swift / core platform code):
 
 ```bash
 Scripts/build_all_platforms.sh
-swift test
-Scripts/verify_sample_xcode_project.sh
+```
 
 Showcase snapshot capture is manual — for README and GitHub Pages images only:
 
+```bash
 Scripts/capture_showcase_snapshots.sh
 ```
+
+### Why sample iOS build is required
+
+`swift test` compiles the package for the **host (macOS)**. It will **not** catch Showcase or Sample code that fails only on iOS (classic example: unguarded `Color(nsColor: .windowBackgroundColor)`). Always run `Scripts/verify_sample_xcode_project.sh` (or `verify_local_pr.sh`) after multi-platform UI work.
 
 Individual guards remain available under `Scripts/verify_*.sh` when debugging a single failure.
 
 Showcase design token guard (run when changing Showcase or sample UI):
 
+```bash
 Scripts/verify_showcase_token_usage.sh
+```
+
+Platform-private API guard (run when touching Showcase / Sample / multi-platform Sources):
+
+```bash
+Scripts/verify_platform_api_guards.sh
+```
 
 ## Agent Workflow
 
 1. Read `AGENTS.md`, `CODING_STANDARDS.md`, and the relevant `Requirements/*/REQ.md`.
 2. Check `Docs/UI_DESIGN_GUIDELINES.md` before changing public UI.
 3. Update BA docs and architecture docs in the same change when behavior changes.
-4. Do not claim verification passed unless commands were run successfully.
+4. After Showcase / Sample / multi-platform source changes, run `Scripts/verify_local_pr.sh` (or at minimum `verify_platform_api_guards.sh` + `verify_sample_xcode_project.sh`).
+5. Do not claim verification passed unless commands were run successfully in the same session.
 
 ## Current Milestone
 

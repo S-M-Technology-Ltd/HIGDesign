@@ -35,6 +35,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let navigationBar: any HIGNavigationBarTokens
     public let toolbar: any HIGToolbarTokens
     public let activityIndicator: any HIGActivityIndicatorTokens
+    public let matrixLoader: any HIGMatrixLoaderTokens
     public let shimmer: any HIGShimmerTokens
     public let list: any HIGListTokens
     public let sidebar: any HIGSidebarTokens
@@ -74,6 +75,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         navigationBar: any HIGNavigationBarTokens = HIGSystemNavigationBarTokens(),
         toolbar: any HIGToolbarTokens = HIGSystemToolbarTokens(),
         activityIndicator: any HIGActivityIndicatorTokens = HIGSystemActivityIndicatorTokens(),
+        matrixLoader: any HIGMatrixLoaderTokens = HIGSystemMatrixLoaderTokens(),
         shimmer: any HIGShimmerTokens = HIGSystemShimmerTokens(),
         list: any HIGListTokens = HIGSystemListTokens(),
         sidebar: any HIGSidebarTokens = HIGSystemSidebarTokens(),
@@ -112,6 +114,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.navigationBar = navigationBar
         self.toolbar = toolbar
         self.activityIndicator = activityIndicator
+        self.matrixLoader = matrixLoader
         self.shimmer = shimmer
         self.list = list
         self.sidebar = sidebar

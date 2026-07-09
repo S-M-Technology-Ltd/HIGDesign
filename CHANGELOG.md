@@ -2,6 +2,14 @@
 
 All notable changes to HIGDesign are documented here. The project follows [Semantic Versioning](https://semver.org/) from v1.0.0 onward.
 
+## Unreleased — 1.4.0
+
+### Added
+
+- `HIGMatrixLoader` — clean-room animated dot-matrix loading indicator with **112** catalog animations (`HIGMatrixLoaderID`: square 23, circular 20, hex 10, 3×3 20, triangle 20, fun 18, icon 1), eight convenience styles, size tokens, Reduce Motion poses, and deterministic `seed` selection
+- `HIGMatrixLoaderTokens` / `theme.matrixLoader` component token wiring across system, brand, and high-contrast themes
+- Showcase page (full family gallery), unit tests, DocC symbols, and requirements for Matrix Loader
+
 ## 1.3.1 — 2026-07-06
 
 Patch release polishing macOS showcase snapshots, README discoverability, and GitHub Pages imagery.

@@ -70,9 +70,11 @@ HIGDesign synthesizes architecture and patterns from:
 | `HIGDesignPlatform` | Idiom and capability adapters |
 | `HIGDesignBridging` | Optional Cocoa bridges |
 
-## Current Milestone: v1.3.1 (released)
+## Current Milestone: v1.4.0 (in progress)
 
-v1.3.1 is a patch release (2026-07-06) polishing macOS showcase snapshots, README discoverability, and GitHub Pages imagery.
+v1.4.0 adds `HIGMatrixLoader`, a clean-room animated dot-matrix loading indicator (theme tokens, eight patterns, seed-stable style selection, Showcase, tests).
+
+Previous: v1.3.1 (released 2026-07-06) polished macOS showcase snapshots, README discoverability, and GitHub Pages imagery.
 
 Delivered in v1.3.1:
 

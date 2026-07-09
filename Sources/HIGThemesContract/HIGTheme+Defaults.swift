@@ -36,6 +36,7 @@ extension HIGTheme {
     public var navigationBar: any HIGNavigationBarTokens { HIGSystemNavigationBarTokens() }
     public var toolbar: any HIGToolbarTokens { HIGSystemToolbarTokens() }
     public var activityIndicator: any HIGActivityIndicatorTokens { HIGSystemActivityIndicatorTokens() }
+    public var matrixLoader: any HIGMatrixLoaderTokens { HIGSystemMatrixLoaderTokens() }
     public var shimmer: any HIGShimmerTokens { HIGSystemShimmerTokens() }
     public var list: any HIGListTokens { HIGSystemListTokens() }
     public var sidebar: any HIGSidebarTokens { HIGSystemSidebarTokens() }

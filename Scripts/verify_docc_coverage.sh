@@ -64,6 +64,12 @@ EXPECTED_SYMBOLS=(
     HIGActivityIndicator
     HIGActivityIndicatorSize
     HIGActivityIndicatorStyle
+    HIGMatrixLoader
+    HIGMatrixLoaderID
+    HIGMatrixLoaderFun
+    HIGMatrixLoaderSize
+    HIGMatrixLoaderStyle
+    HIGMatrixLoaderTokens
     HIGList
     HIGFormSection
     HIGIcon
