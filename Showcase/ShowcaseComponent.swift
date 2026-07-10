@@ -48,6 +48,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case timeline
     case statusIndicator
     case emptyState
+    case closeButton
+    case modal
 
     public var id: String { rawValue }
 
@@ -107,6 +109,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .timeline: "Timeline"
         case .statusIndicator: "Status Indicator"
         case .emptyState: "Empty State"
+        case .closeButton: "Close Button"
+        case .modal: "Modal"
         }
     }
 
@@ -159,6 +163,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .timeline: "Content"
         case .statusIndicator: "Content"
         case .emptyState: "Layout"
+        case .closeButton: "Buttons"
+        case .modal: "Modality"
         }
     }
 
@@ -211,13 +217,16 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .timeline: "Vertical activity timeline with markers, connectors, and timestamps."
         case .statusIndicator: "Presence dots for online, away, busy, and offline states."
         case .emptyState: "Centered empty-content messaging with optional icon and actions."
+        case .closeButton: "Standard dismiss control for modals, sheets, and panels."
+        case .modal: "Themed modal chrome with title, close, body, and footer for sheet content."
         }
     }
 
     var platforms: String {
         switch self {
         case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .breadcrumb, .pageHeader,
-             .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .statusIndicator, .emptyState, .toolbar,
+             .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .statusIndicator, .emptyState,
+             .closeButton, .modal, .toolbar,
              .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .matrixLoader,
              .list, .form,
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,

@@ -32,6 +32,8 @@ extension HIGTheme {
     public var timeline: any HIGTimelineTokens { HIGSystemTimelineTokens() }
     public var statusIndicator: any HIGStatusIndicatorTokens { HIGSystemStatusIndicatorTokens() }
     public var emptyState: any HIGEmptyStateTokens { HIGSystemEmptyStateTokens() }
+    public var closeButton: any HIGCloseButtonTokens { HIGSystemCloseButtonTokens() }
+    public var modal: any HIGModalTokens { HIGSystemModalTokens() }
     public var progress: any HIGProgressTokens { HIGSystemProgressTokens() }
     public var alert: any HIGAlertTokens { HIGSystemAlertTokens() }
     public var toast: any HIGToastTokens { HIGSystemToastTokens() }

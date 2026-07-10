@@ -667,6 +667,33 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGCloseButton
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| [Buttons](https://developer.apple.com/design/human-interface-guidelines/buttons) | All 6 | dismiss · 44pt target |
+
+**Guidelines:**
+- Use for dismissing modals, sheets, and dismissible panels
+- Default accessibility label is "Close"
+- Prefer placing in the trailing header of modal chrome
+
+---
+
+### HIGModal
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| [Modality](https://developer.apple.com/design/human-interface-guidelines/modality) | All 6 | title · message · close · body · footer |
+
+**Guidelines:**
+- Provides interior chrome — present with native `.sheet` / `.fullScreenCover`
+- Pair with `HIGCloseButton` via `onDismiss`
+- Keep one primary footer action when possible
+- Prefer `HIGAlert` for simple confirmations
+
+---
+
 ### HIGList
 
 | HIG category | Platforms | Styles |

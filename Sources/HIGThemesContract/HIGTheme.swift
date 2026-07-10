@@ -30,6 +30,8 @@ public protocol HIGTheme: Sendable {
     var timeline: any HIGTimelineTokens { get }
     var statusIndicator: any HIGStatusIndicatorTokens { get }
     var emptyState: any HIGEmptyStateTokens { get }
+    var closeButton: any HIGCloseButtonTokens { get }
+    var modal: any HIGModalTokens { get }
     var progress: any HIGProgressTokens { get }
     var alert: any HIGAlertTokens { get }
     var toast: any HIGToastTokens { get }

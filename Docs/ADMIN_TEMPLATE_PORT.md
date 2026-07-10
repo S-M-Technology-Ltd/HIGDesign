@@ -19,7 +19,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 |------|-------|--------|
 | 0 | Inventory, `HIGAdminTheme`, requirements | **Done** |
 | 1 | Surfaces & wayfinding (`HIGPanel`, breadcrumbs, steps, …) | **Done** (Wave 1 core surfaces) |
-| 2 | Overlays & chrome | Planned |
+| 2 | Overlays & chrome | **In progress** (`HIGCloseButton`, `HIGModal`) |
 | 3 | Advanced forms | Planned |
 | 4 | Data display | Planned |
 | 5 | Content hybrids | Planned |
@@ -48,7 +48,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Button groups | `HIGButtonGroup` | Planned |
 | Card | `HIGCard` | Extend |
 | Carousel | `HIGCarousel` | Planned |
-| Close | `HIGCloseButton` | Planned |
+
 | Code | `HIGCodeBlock` | Planned |
 | Custom forms / forms | Inputs + `HIGFormSection` | Extend |
 | Dropdowns | `HIGMenuButton` + menu APIs | Extend |
@@ -58,7 +58,8 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Jumbotron | `HIGHero` | Planned |
 | List group | `HIGList` / `HIGListGroup` | Extend / Planned |
 | Media | `HIGMediaRow` | Planned |
-| Modals | `HIGModal` helpers | Planned |
+| Modals | `HIGModal` helpers | **Done** (chrome; native sheet presentation) |
+| Close | `HIGCloseButton` | **Done** |
 | Navbar | `HIGNavigationBar` + shell | Extend |
 | Navs / tabs / accordion | `HIGTabs`, `HIGAccordion` | **Done** |
 | Pagination | `HIGPagination` | **Done** |
