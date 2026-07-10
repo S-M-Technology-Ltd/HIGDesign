@@ -33,6 +33,8 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let emptyState: any HIGEmptyStateTokens
     public let closeButton: any HIGCloseButtonTokens
     public let modal: any HIGModalTokens
+    public let tooltip: any HIGTooltipTokens
+    public let popover: any HIGPopoverTokens
     public let progress: any HIGProgressTokens
     public let alert: any HIGAlertTokens
     public let toast: any HIGToastTokens
@@ -86,6 +88,8 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         emptyState: any HIGEmptyStateTokens = HIGSystemEmptyStateTokens(),
         closeButton: any HIGCloseButtonTokens = HIGSystemCloseButtonTokens(),
         modal: any HIGModalTokens = HIGSystemModalTokens(),
+        tooltip: any HIGTooltipTokens = HIGSystemTooltipTokens(),
+        popover: any HIGPopoverTokens = HIGSystemPopoverTokens(),
         progress: any HIGProgressTokens = HIGSystemProgressTokens(),
         alert: any HIGAlertTokens = HIGSystemAlertTokens(),
         toast: any HIGToastTokens = HIGSystemToastTokens(),
@@ -138,6 +142,8 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.emptyState = emptyState
         self.closeButton = closeButton
         self.modal = modal
+        self.tooltip = tooltip
+        self.popover = popover
         self.progress = progress
         self.alert = alert
         self.toast = toast

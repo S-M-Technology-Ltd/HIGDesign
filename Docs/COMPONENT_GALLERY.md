@@ -694,6 +694,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### Tooltip / Popover
+
+| API | Platforms | Notes |
+|---|---|---|
+| `higTooltip(_:)` / `HIGTooltipLabel` | All 6 | Platform help + themed label bubble |
+| `higPopover(...)` / `HIGPopoverContainer` | All 6 (pointer platforms strongest) | Themed popover chrome |
+
+**Guidelines:**
+- Prefer short tooltips; put complex UI in popovers or sheets
+- Use `HIGTooltipLabel` only when a always-visible themed sample is needed
+- Popover content should stay scannable and token-backed
+
+---
+
 ### HIGList
 
 | HIG category | Platforms | Styles |

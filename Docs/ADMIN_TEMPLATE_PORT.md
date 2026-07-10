@@ -19,7 +19,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 |------|-------|--------|
 | 0 | Inventory, `HIGAdminTheme`, requirements | **Done** |
 | 1 | Surfaces & wayfinding (`HIGPanel`, breadcrumbs, steps, …) | **Done** (Wave 1 core surfaces) |
-| 2 | Overlays & chrome | **In progress** (`HIGCloseButton`, `HIGModal`) |
+| 2 | Overlays & chrome | **In progress** (+ tooltips / popovers) |
 | 3 | Advanced forms | Planned |
 | 4 | Data display | Planned |
 | 5 | Content hybrids | Planned |
@@ -63,7 +63,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Navbar | `HIGNavigationBar` + shell | Extend |
 | Navs / tabs / accordion | `HIGTabs`, `HIGAccordion` | **Done** |
 | Pagination | `HIGPagination` | **Done** |
-| Popovers / tooltips | `HIGPopover`, `HIGTooltip` | Planned |
+| Popovers / tooltips | `HIGPopoverContainer`, `HIGTooltipLabel`, `higPopover`, `higTooltip` | **Done** |
 | Progress | `HIGProgressView` | Extend |
 | Tables | `HIGTable` / `HIGDataTable` | Planned |
 | Typography | `HIGLabel` + type tokens | Extend |

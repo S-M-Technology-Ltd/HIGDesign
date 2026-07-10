@@ -27,6 +27,7 @@ Theme contract, environment injection, and built-in system themes for HIGDesign.
 - `HIGTheme` includes `timeline` component tokens for ``HIGTimeline``.
 - `HIGTheme` includes `statusIndicator` and `emptyState` component tokens.
 - `HIGTheme` includes `closeButton` and `modal` component tokens for overlay chrome.
+- `HIGTheme` includes `tooltip` and `popover` component tokens for helper overlays.
 
 ### Runtime behavior
 
