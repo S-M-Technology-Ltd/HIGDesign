@@ -18,6 +18,9 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - `HIGTabs` / `HIGTabsItem` / `theme.tabs` — in-content tabs with underline selection
 - `HIGAccordion` / `HIGAccordionSection` / `theme.accordion` — expandable section stack
 - Showcase Pagination, Tabs, and Accordion pages plus token tests
+- `HIGSteps` / `HIGStepsItem` / `HIGStepsAxis` / `theme.steps` — numbered process trail
+- `HIGPearlSteps` / `theme.pearlSteps` — compact pearl/dot step indicator
+- Showcase Steps and Pearl Steps pages plus token tests
 
 ## 1.4.0 — 2026-07-10
 

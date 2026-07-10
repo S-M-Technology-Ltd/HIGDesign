@@ -37,6 +37,8 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - `HIGPaginationTokens` defines page button metrics for ``HIGPagination``.
 - `HIGTabsTokens` defines fonts, underline height, and spacing for ``HIGTabs``.
 - `HIGAccordionTokens` defines header/content metrics for ``HIGAccordion`` / ``HIGAccordionSection``.
+- `HIGStepsTokens` defines indicator, connector, and label metrics for ``HIGSteps``.
+- `HIGPearlStepsTokens` defines pearl sizes and connectors for ``HIGPearlSteps``.
 
 ### Naming and API
 

@@ -119,6 +119,12 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGTabs``
 - ``HIGTabsItem``
 - ``HIGTabsTokens``
+- ``HIGSteps``
+- ``HIGStepsItem``
+- ``HIGStepsAxis``
+- ``HIGStepsTokens``
+- ``HIGPearlSteps``
+- ``HIGPearlStepsTokens``
 - ``higNavigationBarTitle(_:displayMode:)``
 - ``higNavigationBar(_:displayMode:leading:trailing:)``
 - ``higToolbar(_:)``

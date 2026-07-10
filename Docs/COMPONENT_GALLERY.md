@@ -600,6 +600,33 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGSteps
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| [Navigation](https://developer.apple.com/design/human-interface-guidelines/) | All 6 | horizontal · vertical · completed · current · upcoming |
+
+**Guidelines:**
+- Use for multi-step wizards and checkout flows
+- Zero-based `currentIndex`; completed steps show checkmarks
+- Prefer vertical on narrow widths (automatic fallback from horizontal)
+- Optional `onSelect` for revisiting completed steps
+
+---
+
+### HIGPearlSteps
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| [Navigation](https://developer.apple.com/design/human-interface-guidelines/) | All 6 | dots · connectors · optional selection |
+
+**Guidelines:**
+- Compact progress when titles would clutter
+- Prefer `HIGSteps` when each stage needs a label
+- Keep pearl count small (typically ≤7)
+
+---
+
 ### HIGList
 
 | HIG category | Platforms | Styles |

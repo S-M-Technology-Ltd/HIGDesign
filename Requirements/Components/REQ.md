@@ -60,6 +60,8 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 - `HIGPagination` — 1-based page navigation with previous/next and numbered pages; tokens via `theme.pagination`
 - `HIGTabs` / `HIGTabsItem` — in-content tab labels (not `HIGTabBar`); tokens via `theme.tabs`
 - `HIGAccordion` / `HIGAccordionSection` — expandable sections with multi- or single-expand modes; tokens via `theme.accordion`
+- `HIGSteps` / `HIGStepsItem` / `HIGStepsAxis` — numbered process trail (horizontal/vertical); tokens via `theme.steps`
+- `HIGPearlSteps` — compact pearl/dot step indicator; tokens via `theme.pearlSteps`
 - `HIGDivider`
 - `HIGList`
 - `HIGNavigationBar`
@@ -69,7 +71,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 
 #### Admin catalog expansion (planned families)
 
-Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after pagination/tabs/accordion: steps/timeline, data table, form advanced inputs, Swift Charts, and `HIGAdminShell`.
+Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after steps/pearls: timeline, status indicator, empty state, data table, form advanced inputs, Swift Charts, and `HIGAdminShell`.
 
 #### Content
 

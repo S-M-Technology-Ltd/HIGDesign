@@ -25,6 +25,8 @@ public protocol HIGTheme: Sendable {
     var pagination: any HIGPaginationTokens { get }
     var tabs: any HIGTabsTokens { get }
     var accordion: any HIGAccordionTokens { get }
+    var steps: any HIGStepsTokens { get }
+    var pearlSteps: any HIGPearlStepsTokens { get }
     var progress: any HIGProgressTokens { get }
     var alert: any HIGAlertTokens { get }
     var toast: any HIGToastTokens { get }

@@ -27,6 +27,8 @@ extension HIGTheme {
     public var pagination: any HIGPaginationTokens { HIGSystemPaginationTokens() }
     public var tabs: any HIGTabsTokens { HIGSystemTabsTokens() }
     public var accordion: any HIGAccordionTokens { HIGSystemAccordionTokens() }
+    public var steps: any HIGStepsTokens { HIGSystemStepsTokens() }
+    public var pearlSteps: any HIGPearlStepsTokens { HIGSystemPearlStepsTokens() }
     public var progress: any HIGProgressTokens { HIGSystemProgressTokens() }
     public var alert: any HIGAlertTokens { HIGSystemAlertTokens() }
     public var toast: any HIGToastTokens { HIGSystemToastTokens() }

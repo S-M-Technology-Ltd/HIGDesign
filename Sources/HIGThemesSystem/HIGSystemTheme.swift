@@ -26,6 +26,8 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let pagination: any HIGPaginationTokens
     public let tabs: any HIGTabsTokens
     public let accordion: any HIGAccordionTokens
+    public let steps: any HIGStepsTokens
+    public let pearlSteps: any HIGPearlStepsTokens
     public let progress: any HIGProgressTokens
     public let alert: any HIGAlertTokens
     public let toast: any HIGToastTokens
@@ -72,6 +74,8 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         pagination: any HIGPaginationTokens = HIGSystemPaginationTokens(),
         tabs: any HIGTabsTokens = HIGSystemTabsTokens(),
         accordion: any HIGAccordionTokens = HIGSystemAccordionTokens(),
+        steps: any HIGStepsTokens = HIGSystemStepsTokens(),
+        pearlSteps: any HIGPearlStepsTokens = HIGSystemPearlStepsTokens(),
         progress: any HIGProgressTokens = HIGSystemProgressTokens(),
         alert: any HIGAlertTokens = HIGSystemAlertTokens(),
         toast: any HIGToastTokens = HIGSystemToastTokens(),
@@ -117,6 +121,8 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.pagination = pagination
         self.tabs = tabs
         self.accordion = accordion
+        self.steps = steps
+        self.pearlSteps = pearlSteps
         self.progress = progress
         self.alert = alert
         self.toast = toast

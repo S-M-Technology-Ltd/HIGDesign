@@ -27,6 +27,8 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
     public let pagination: any HIGPaginationTokens
     public let tabs: any HIGTabsTokens
     public let accordion: any HIGAccordionTokens
+    public let steps: any HIGStepsTokens
+    public let pearlSteps: any HIGPearlStepsTokens
     public let progress: any HIGProgressTokens
     public let alert: any HIGAlertTokens
     public let toast: any HIGToastTokens
@@ -85,6 +87,8 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
         self.pagination = base.pagination
         self.tabs = base.tabs
         self.accordion = base.accordion
+        self.steps = base.steps
+        self.pearlSteps = base.pearlSteps
         self.progress = base.progress
         self.alert = base.alert
         self.toast = base.toast
