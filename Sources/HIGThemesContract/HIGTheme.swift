@@ -20,6 +20,8 @@ public protocol HIGTheme: Sendable {
     var picker: any HIGPickerTokens { get }
     var card: any HIGCardTokens { get }
     var panel: any HIGPanelTokens { get }
+    var breadcrumb: any HIGBreadcrumbTokens { get }
+    var pageHeader: any HIGPageHeaderTokens { get }
     var progress: any HIGProgressTokens { get }
     var alert: any HIGAlertTokens { get }
     var toast: any HIGToastTokens { get }

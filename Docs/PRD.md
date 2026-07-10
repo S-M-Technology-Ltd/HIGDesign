@@ -74,11 +74,12 @@ HIGDesign synthesizes architecture and patterns from:
 
 Next program after v1.4.0: port **all** Remark Admin Template capabilities into HIG-native components, optional `HIGAdminTheme`, admin shell, charts (Swift Charts), and Showcase recipes. Tracker: [`Docs/ADMIN_TEMPLATE_PORT.md`](ADMIN_TEMPLATE_PORT.md).
 
-First delivery slice:
+First delivery slices:
 
 - Inventory tracker document
 - `HIGAdminTheme` + Showcase theme choice
 - `HIGPanel` (primary admin surface) with tokens, tests, Showcase, DocC
+- `HIGBreadcrumb` + `HIGPageHeader` wayfinding chrome
 
 ## Previous Milestone: v1.4.0 (released)
 

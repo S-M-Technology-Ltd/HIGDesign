@@ -106,6 +106,11 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGToolbar``
 - ``HIGToolbarTextAction``
 - ``HIGToolbarIconAction``
+- ``HIGBreadcrumb``
+- ``HIGBreadcrumbItem``
+- ``HIGBreadcrumbTokens``
+- ``HIGPageHeader``
+- ``HIGPageHeaderTokens``
 - ``higNavigationBarTitle(_:displayMode:)``
 - ``higNavigationBar(_:displayMode:leading:trailing:)``
 - ``higToolbar(_:)``

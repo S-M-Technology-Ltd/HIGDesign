@@ -23,6 +23,8 @@ public struct HIGBrandTheme: HIGTheme, Sendable {
     public let picker: any HIGPickerTokens
     public let card: any HIGCardTokens
     public let panel: any HIGPanelTokens
+    public let breadcrumb: any HIGBreadcrumbTokens
+    public let pageHeader: any HIGPageHeaderTokens
     public let progress: any HIGProgressTokens
     public let alert: any HIGAlertTokens
     public let toast: any HIGToastTokens
@@ -81,6 +83,8 @@ public struct HIGBrandTheme: HIGTheme, Sendable {
         self.picker = base.picker
         self.card = base.card
         self.panel = base.panel
+        self.breadcrumb = base.breadcrumb
+        self.pageHeader = base.pageHeader
         self.progress = base.progress
         self.alert = base.alert
         self.toast = base.toast

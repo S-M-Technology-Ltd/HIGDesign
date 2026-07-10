@@ -11,6 +11,9 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase theme choice: **Admin**
 - `HIGPanel`, `HIGPanelOptions`, `HIGPanelActions`, `HIGPanelTokens` / `theme.panel` — admin content surface with title, description, refresh/collapse/close, body, and footer
 - Showcase Panel page, unit tests, DocC, and requirements updates for the admin expansion program
+- `HIGBreadcrumb` / `HIGBreadcrumbItem` / `theme.breadcrumb` — hierarchical navigation trail
+- `HIGPageHeader` / `theme.pageHeader` — page title chrome with optional breadcrumb, subtitle, and trailing actions
+- Showcase Breadcrumb and Page Header pages, unit tests, DocC, and requirements updates
 
 ## 1.4.0 — 2026-07-10
 
