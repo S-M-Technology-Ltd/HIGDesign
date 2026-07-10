@@ -515,6 +515,22 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGPanel
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| [Layout](https://developer.apple.com/design/human-interface-guidelines/layout) | All 6 | title · description · refresh · collapse · close · footer |
+
+**Guidelines:**
+- Primary admin dashboard surface (Remark panel role) with HIG-native chrome
+- Optional header actions: refresh, collapse/expand, close
+- Body and footer are ViewBuilder slots
+- Resolve padding, radius, fonts, and colors from `theme.panel` / semantic tokens
+- Prefer `HIGCard` for simple grouping; use `HIGPanel` when action chrome is required
+- Works with optional `HIGAdminTheme` for denser admin spacing
+
+---
+
 ### HIGList
 
 | HIG category | Platforms | Styles |

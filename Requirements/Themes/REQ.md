@@ -19,6 +19,8 @@ Theme contract, environment injection, and built-in system themes for HIGDesign.
 - `HIGSystemTheme` follows the active `ColorScheme`.
 - `HIGHighContrastTheme` overrides semantic colors for increased contrast.
 - `HIGCompactTheme` optimizes spacing and typography for constrained layouts.
+- `HIGAdminTheme` is an **optional** admin-density theme inspired by Remark Admin Template primary hues and page surfaces. It is not the default. Showcase exposes it as a theme choice. Accent skins use `HIGAdminThemeHue`.
+- `HIGTheme` includes `panel` component tokens for ``HIGPanel``.
 
 ### Runtime behavior
 

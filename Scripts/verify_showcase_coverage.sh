@@ -5,7 +5,7 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
 EXPECTED=(
-    button textField toggle divider progressView card tabBar toolbar
+    button textField toggle divider progressView card panel tabBar toolbar
     alert toast sidebar navigationBar label badge activityIndicator matrixLoader list form
     checkbox radio segmentedControl slider secureField searchField picker
     icon avatar link bulletList textEditor stepper menuButton tag photoPicker photoEditor longTextEditor
@@ -39,6 +39,7 @@ showcase_key_for() {
         HIGDivider) echo divider ;;
         HIGProgressView) echo progressView ;;
         HIGCard) echo card ;;
+        HIGPanel) echo panel ;;
         HIGTabBar) echo tabBar ;;
         HIGToast) echo toast ;;
         HIGAlertBanner) echo alert ;;

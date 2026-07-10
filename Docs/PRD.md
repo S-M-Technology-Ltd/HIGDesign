@@ -70,7 +70,17 @@ HIGDesign synthesizes architecture and patterns from:
 | `HIGDesignPlatform` | Idiom and capability adapters |
 | `HIGDesignBridging` | Optional Cocoa bridges |
 
-## Current Milestone: v1.4.0 (released)
+## Current Milestone: Admin catalog expansion (post-v1.4.0)
+
+Next program after v1.4.0: port **all** Remark Admin Template capabilities into HIG-native components, optional `HIGAdminTheme`, admin shell, charts (Swift Charts), and Showcase recipes. Tracker: [`Docs/ADMIN_TEMPLATE_PORT.md`](ADMIN_TEMPLATE_PORT.md).
+
+First delivery slice:
+
+- Inventory tracker document
+- `HIGAdminTheme` + Showcase theme choice
+- `HIGPanel` (primary admin surface) with tokens, tests, Showcase, DocC
+
+## Previous Milestone: v1.4.0 (released)
 
 v1.4.0 is a minor release (2026-07-10) adding a 112-animation matrix loader catalog and multi-platform sample verification gates.
 

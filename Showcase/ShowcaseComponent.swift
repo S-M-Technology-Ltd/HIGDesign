@@ -37,6 +37,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case photoPicker
     case photoEditor
     case longTextEditor
+    case panel
 
     public var id: String { rawValue }
 
@@ -85,6 +86,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .photoPicker: "Photo Picker"
         case .photoEditor: "Photo Editor"
         case .longTextEditor: "Long Text Editor"
+        case .panel: "Panel"
         }
     }
 
@@ -126,6 +128,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .photoPicker: "Photo Picker"
         case .photoEditor: "Photo Editing"
         case .longTextEditor: "Rich Text Editing"
+        case .panel: "Layout"
         }
     }
 
@@ -167,12 +170,13 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .photoPicker: "Photo library picker with album browsing, preview crop, and iCloud support."
         case .photoEditor: "Crop, rotate, and aspect-ratio editing inspired by TOCropViewController."
         case .longTextEditor: "Rich HTML long-form editing with formatting toolbar, inspired by swift-rich-html-editor."
+        case .panel: "Admin content surface with title, actions, collapsible body, and footer."
         }
     }
 
     var platforms: String {
         switch self {
-        case .button, .textField, .toggle, .divider, .progressView, .card, .toolbar,
+        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .toolbar,
              .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .matrixLoader,
              .list, .form,
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,

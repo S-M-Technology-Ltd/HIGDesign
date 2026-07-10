@@ -54,12 +54,17 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 #### Layout and navigation
 
 - `HIGCard`
+- `HIGPanel` — admin content surface with optional title, description, refresh/collapse/close actions, body, and footer; tokens via `theme.panel`
 - `HIGDivider`
 - `HIGList`
 - `HIGNavigationBar`
 - `HIGTabBar`
 - `HIGSidebar`
 - `HIGToolbar`
+
+#### Admin catalog expansion (planned families)
+
+Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after `HIGPanel`: breadcrumbs, pagination, tabs/accordion, steps/timeline, data table, form advanced inputs, Swift Charts, and `HIGAdminShell`.
 
 #### Content
 

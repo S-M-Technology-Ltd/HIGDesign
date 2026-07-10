@@ -31,6 +31,7 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - Component view code must not hardcode UI dimensions, colors, opacity, padding, width, height, corner radius, or spacing literals. Resolve those values from `theme.<component>` or semantic tokens.
 - `HIGPhotoEditorTokens` defines crop canvas, overlay, toolbar, and zoom values for ``HIGPhotoEditor``.
 - `HIGMatrixLoaderTokens` defines grid count, diameters, gap fraction, opacity range, and cycle duration for ``HIGMatrixLoader``.
+- `HIGPanelTokens` defines corner radius, content padding, header spacing, border width, action icon size, minimum action target, and title/description fonts for ``HIGPanel``.
 
 ### Naming and API
 

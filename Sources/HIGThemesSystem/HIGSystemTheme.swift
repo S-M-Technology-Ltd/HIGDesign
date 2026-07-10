@@ -20,6 +20,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let slider: any HIGSliderTokens
     public let picker: any HIGPickerTokens
     public let card: any HIGCardTokens
+    public let panel: any HIGPanelTokens
     public let progress: any HIGProgressTokens
     public let alert: any HIGAlertTokens
     public let toast: any HIGToastTokens
@@ -60,6 +61,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         slider: any HIGSliderTokens = HIGSystemSliderTokens(),
         picker: any HIGPickerTokens = HIGSystemPickerTokens(),
         card: any HIGCardTokens = HIGSystemCardTokens(),
+        panel: any HIGPanelTokens = HIGSystemPanelTokens(),
         progress: any HIGProgressTokens = HIGSystemProgressTokens(),
         alert: any HIGAlertTokens = HIGSystemAlertTokens(),
         toast: any HIGToastTokens = HIGSystemToastTokens(),
@@ -99,6 +101,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.slider = slider
         self.picker = picker
         self.card = card
+        self.panel = panel
         self.progress = progress
         self.alert = alert
         self.toast = toast

@@ -32,7 +32,7 @@ public struct ShowcaseSnapshotView: View {
                 .padding(.top, theme.spacing.item)
                 .accessibilityHidden(true)
 
-            ShowcaseSnapshotCatalogDetail(
+            ShowcaseSnapshotCatalogDetailView(
                 component: component,
                 iconSettings: .constant(ShowcaseIconSettings())
             )
