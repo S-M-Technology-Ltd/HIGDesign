@@ -22,6 +22,7 @@ Theme contract, environment injection, and built-in system themes for HIGDesign.
 - `HIGAdminTheme` is an **optional** admin-density theme inspired by Remark Admin Template primary hues and page surfaces. It is not the default. Showcase exposes it as a theme choice. Accent skins use `HIGAdminThemeHue`.
 - `HIGTheme` includes `panel` component tokens for ``HIGPanel``.
 - `HIGTheme` includes `breadcrumb` and `pageHeader` component tokens for ``HIGBreadcrumb`` and ``HIGPageHeader``.
+- `HIGTheme` includes `pagination`, `tabs`, and `accordion` component tokens for wayfinding and expandable layout.
 
 ### Runtime behavior
 

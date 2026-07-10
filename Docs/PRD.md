@@ -80,6 +80,7 @@ First delivery slices:
 - `HIGAdminTheme` + Showcase theme choice
 - `HIGPanel` (primary admin surface) with tokens, tests, Showcase, DocC
 - `HIGBreadcrumb` + `HIGPageHeader` wayfinding chrome
+- `HIGPagination`, `HIGTabs`, `HIGAccordion` content navigation
 
 ## Previous Milestone: v1.4.0 (released)
 

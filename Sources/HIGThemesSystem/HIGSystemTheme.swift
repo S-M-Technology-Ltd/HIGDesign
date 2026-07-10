@@ -23,6 +23,9 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let panel: any HIGPanelTokens
     public let breadcrumb: any HIGBreadcrumbTokens
     public let pageHeader: any HIGPageHeaderTokens
+    public let pagination: any HIGPaginationTokens
+    public let tabs: any HIGTabsTokens
+    public let accordion: any HIGAccordionTokens
     public let progress: any HIGProgressTokens
     public let alert: any HIGAlertTokens
     public let toast: any HIGToastTokens
@@ -66,6 +69,9 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         panel: any HIGPanelTokens = HIGSystemPanelTokens(),
         breadcrumb: any HIGBreadcrumbTokens = HIGSystemBreadcrumbTokens(),
         pageHeader: any HIGPageHeaderTokens = HIGSystemPageHeaderTokens(),
+        pagination: any HIGPaginationTokens = HIGSystemPaginationTokens(),
+        tabs: any HIGTabsTokens = HIGSystemTabsTokens(),
+        accordion: any HIGAccordionTokens = HIGSystemAccordionTokens(),
         progress: any HIGProgressTokens = HIGSystemProgressTokens(),
         alert: any HIGAlertTokens = HIGSystemAlertTokens(),
         toast: any HIGToastTokens = HIGSystemToastTokens(),
@@ -108,6 +114,9 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.panel = panel
         self.breadcrumb = breadcrumb
         self.pageHeader = pageHeader
+        self.pagination = pagination
+        self.tabs = tabs
+        self.accordion = accordion
         self.progress = progress
         self.alert = alert
         self.toast = toast

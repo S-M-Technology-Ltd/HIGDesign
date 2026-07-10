@@ -18,7 +18,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Wave | Focus | Status |
 |------|-------|--------|
 | 0 | Inventory, `HIGAdminTheme`, requirements | **Done** |
-| 1 | Surfaces & wayfinding (`HIGPanel`, breadcrumbs, steps, …) | **In progress** (`HIGPanel`, `HIGBreadcrumb`, `HIGPageHeader`) |
+| 1 | Surfaces & wayfinding (`HIGPanel`, breadcrumbs, steps, …) | **In progress** (`HIGPanel`, breadcrumb/header, pagination/tabs/accordion) |
 | 2 | Overlays & chrome | Planned |
 | 3 | Advanced forms | Planned |
 | 4 | Data display | Planned |
@@ -60,8 +60,8 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Media | `HIGMediaRow` | Planned |
 | Modals | `HIGModal` helpers | Planned |
 | Navbar | `HIGNavigationBar` + shell | Extend |
-| Navs / tabs / accordion | `HIGTabs`, `HIGAccordion` | Planned |
-| Pagination | `HIGPagination` | Planned |
+| Navs / tabs / accordion | `HIGTabs`, `HIGAccordion` | **Done** |
+| Pagination | `HIGPagination` | **Done** |
 | Popovers / tooltips | `HIGPopover`, `HIGTooltip` | Planned |
 | Progress | `HIGProgressView` | Extend |
 | Tables | `HIGTable` / `HIGDataTable` | Planned |

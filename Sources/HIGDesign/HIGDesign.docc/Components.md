@@ -89,6 +89,9 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGPanelOptions``
 - ``HIGPanelActions``
 - ``HIGPanelTokens``
+- ``HIGAccordion``
+- ``HIGAccordionSection``
+- ``HIGAccordionTokens``
 - ``HIGDivider``
 - ``HIGList``
 - ``HIGFormSection``
@@ -111,6 +114,11 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGBreadcrumbTokens``
 - ``HIGPageHeader``
 - ``HIGPageHeaderTokens``
+- ``HIGPagination``
+- ``HIGPaginationTokens``
+- ``HIGTabs``
+- ``HIGTabsItem``
+- ``HIGTabsTokens``
 - ``higNavigationBarTitle(_:displayMode:)``
 - ``higNavigationBar(_:displayMode:leading:trailing:)``
 - ``higToolbar(_:)``

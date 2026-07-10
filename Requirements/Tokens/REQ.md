@@ -34,6 +34,9 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - `HIGPanelTokens` defines corner radius, content padding, header spacing, border width, action icon size, minimum action target, and title/description fonts for ``HIGPanel``.
 - `HIGBreadcrumbTokens` defines link/current fonts, item spacing, separator size, and minimum tap target for ``HIGBreadcrumb``.
 - `HIGPageHeaderTokens` defines title/subtitle fonts and stack/breadcrumb spacing for ``HIGPageHeader``.
+- `HIGPaginationTokens` defines page button metrics for ``HIGPagination``.
+- `HIGTabsTokens` defines fonts, underline height, and spacing for ``HIGTabs``.
+- `HIGAccordionTokens` defines header/content metrics for ``HIGAccordion`` / ``HIGAccordionSection``.
 
 ### Naming and API
 

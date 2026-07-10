@@ -26,6 +26,12 @@ struct ShowcaseSnapshotCatalogDetailView: View {
             ShowcaseBreadcrumbView()
         case .pageHeader:
             ShowcasePageHeaderView()
+        case .pagination:
+            ShowcasePaginationView()
+        case .tabs:
+            ShowcaseTabsView()
+        case .accordion:
+            ShowcaseAccordionView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:

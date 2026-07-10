@@ -24,6 +24,9 @@ extension HIGTheme {
     public var panel: any HIGPanelTokens { HIGSystemPanelTokens() }
     public var breadcrumb: any HIGBreadcrumbTokens { HIGSystemBreadcrumbTokens() }
     public var pageHeader: any HIGPageHeaderTokens { HIGSystemPageHeaderTokens() }
+    public var pagination: any HIGPaginationTokens { HIGSystemPaginationTokens() }
+    public var tabs: any HIGTabsTokens { HIGSystemTabsTokens() }
+    public var accordion: any HIGAccordionTokens { HIGSystemAccordionTokens() }
     public var progress: any HIGProgressTokens { HIGSystemProgressTokens() }
     public var alert: any HIGAlertTokens { HIGSystemAlertTokens() }
     public var toast: any HIGToastTokens { HIGSystemToastTokens() }
