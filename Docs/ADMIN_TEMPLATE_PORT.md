@@ -17,8 +17,8 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 
 | Wave | Focus | Status |
 |------|-------|--------|
-| 0 | Inventory, `HIGAdminTheme`, requirements | **In progress** |
-| 1 | Surfaces & wayfinding (`HIGPanel`, breadcrumbs, steps, …) | **In progress** (`HIGPanel`) |
+| 0 | Inventory, `HIGAdminTheme`, requirements | **Done** |
+| 1 | Surfaces & wayfinding (`HIGPanel`, breadcrumbs, steps, …) | **In progress** (`HIGPanel`, `HIGBreadcrumb`, `HIGPageHeader`) |
 | 2 | Overlays & chrome | Planned |
 | 3 | Advanced forms | Planned |
 | 4 | Data display | Planned |
@@ -43,7 +43,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 |--------|------------|--------|
 | Alerts | `HIGAlert` / `HIGAlertBanner` | Extend |
 | Badge | `HIGBadge` | Extend |
-| Breadcrumbs | `HIGBreadcrumb` | Planned |
+| Breadcrumbs | `HIGBreadcrumb` | **Done** |
 | Buttons | `HIGButton` | Extend |
 | Button groups | `HIGButtonGroup` | Planned |
 | Card | `HIGCard` | Extend |
@@ -73,6 +73,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Remark | HIG target | Status |
 |--------|------------|--------|
 | Panels | `HIGPanel` | **Done** |
+| Page header (structure) | `HIGPageHeader` | **Done** |
 | Panel groups | `HIGPanelGroup` | Planned |
 | Avatar | `HIGAvatar` | Extend |
 | Status | `HIGStatusIndicator` | Planned |

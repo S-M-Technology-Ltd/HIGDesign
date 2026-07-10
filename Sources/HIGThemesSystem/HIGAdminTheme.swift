@@ -27,6 +27,8 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
     public let picker: any HIGPickerTokens
     public let card: any HIGCardTokens
     public let panel: any HIGPanelTokens
+    public let breadcrumb: any HIGBreadcrumbTokens
+    public let pageHeader: any HIGPageHeaderTokens
     public let progress: any HIGProgressTokens
     public let alert: any HIGAlertTokens
     public let toast: any HIGToastTokens
@@ -108,6 +110,19 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
             minActionTarget: base.panel.minActionTarget,
             titleFont: base.panel.titleFont,
             descriptionFont: base.panel.descriptionFont
+        )
+        self.breadcrumb = HIGSystemBreadcrumbTokens(
+            font: base.breadcrumb.font,
+            currentFont: base.breadcrumb.currentFont,
+            itemSpacing: HIGSpacing.xxs.rawValue,
+            separatorPointSize: base.breadcrumb.separatorPointSize,
+            minTapTarget: base.breadcrumb.minTapTarget
+        )
+        self.pageHeader = HIGSystemPageHeaderTokens(
+            titleFont: base.pageHeader.titleFont,
+            subtitleFont: base.pageHeader.subtitleFont,
+            stackSpacing: HIGSpacing.xs.rawValue,
+            breadcrumbSpacing: HIGSpacing.sm.rawValue
         )
         self.progress = base.progress
         self.alert = base.alert

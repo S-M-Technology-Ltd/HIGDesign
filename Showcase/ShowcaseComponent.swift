@@ -38,6 +38,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case photoEditor
     case longTextEditor
     case panel
+    case breadcrumb
+    case pageHeader
 
     public var id: String { rawValue }
 
@@ -87,6 +89,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .photoEditor: "Photo Editor"
         case .longTextEditor: "Long Text Editor"
         case .panel: "Panel"
+        case .breadcrumb: "Breadcrumb"
+        case .pageHeader: "Page Header"
         }
     }
 
@@ -129,6 +133,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .photoEditor: "Photo Editing"
         case .longTextEditor: "Rich Text Editing"
         case .panel: "Layout"
+        case .breadcrumb: "Navigation"
+        case .pageHeader: "Navigation"
         }
     }
 
@@ -171,12 +177,14 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .photoEditor: "Crop, rotate, and aspect-ratio editing inspired by TOCropViewController."
         case .longTextEditor: "Rich HTML long-form editing with formatting toolbar, inspired by swift-rich-html-editor."
         case .panel: "Admin content surface with title, actions, collapsible body, and footer."
+        case .breadcrumb: "Hierarchical navigation trail with a non-interactive current segment."
+        case .pageHeader: "Page title chrome with optional breadcrumb, subtitle, and trailing actions."
         }
     }
 
     var platforms: String {
         switch self {
-        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .toolbar,
+        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .breadcrumb, .pageHeader, .toolbar,
              .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .matrixLoader,
              .list, .form,
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,

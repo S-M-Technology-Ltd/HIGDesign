@@ -531,6 +531,35 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGBreadcrumb
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| [Navigation](https://developer.apple.com/design/human-interface-guidelines/) | All 6 | ancestors · current · chevron separators |
+
+**Guidelines:**
+- Show hierarchy from root to current page
+- Last segment is current (primary, non-interactive)
+- Ancestors use accent color when `onSelect` is provided
+- Minimum tap targets from `theme.breadcrumb`
+- Prefer wrapping to a vertical stack on very narrow widths
+
+---
+
+### HIGPageHeader
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| [Navigation](https://developer.apple.com/design/human-interface-guidelines/) | All 6 | title · subtitle · breadcrumb · trailing |
+
+**Guidelines:**
+- One clear page title as the primary header
+- Optional breadcrumb above the title for admin hierarchy
+- Trailing slot for primary page actions (e.g. Compose)
+- Use `theme.pageHeader` fonts and spacing; pair with `HIGAdminTheme` for denser dashboards
+
+---
+
 ### HIGList
 
 | HIG category | Platforms | Styles |

@@ -22,6 +22,10 @@ struct ShowcaseSnapshotCatalogDetailView: View {
             ShowcaseCardView()
         case .panel:
             ShowcasePanelView()
+        case .breadcrumb:
+            ShowcaseBreadcrumbView()
+        case .pageHeader:
+            ShowcasePageHeaderView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:
