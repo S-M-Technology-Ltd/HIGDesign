@@ -42,6 +42,8 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - `HIGTimelineTokens` defines marker, connector, and typography metrics for ``HIGTimeline``.
 - `HIGStatusIndicatorTokens` defines diameters and border width for ``HIGStatusIndicator``.
 - `HIGEmptyStateTokens` defines icon size, fonts, spacing, and max content width for ``HIGEmptyState``.
+- `HIGCloseButtonTokens` defines tap target and icon size for ``HIGCloseButton``.
+- `HIGModalTokens` defines padding, radius, max width, and header typography for ``HIGModal``.
 
 ### Naming and API
 

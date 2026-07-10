@@ -42,6 +42,10 @@ struct ShowcaseSnapshotCatalogDetailView: View {
             ShowcaseStatusIndicatorView()
         case .emptyState:
             ShowcaseEmptyStateView()
+        case .closeButton:
+            ShowcaseCloseButtonView()
+        case .modal:
+            ShowcaseModalView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:

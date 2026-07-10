@@ -37,6 +37,8 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
     public let timeline: any HIGTimelineTokens
     public let statusIndicator: any HIGStatusIndicatorTokens
     public let emptyState: any HIGEmptyStateTokens
+    public let closeButton: any HIGCloseButtonTokens
+    public let modal: any HIGModalTokens
     public let progress: any HIGProgressTokens
     public let alert: any HIGAlertTokens
     public let toast: any HIGToastTokens
@@ -186,6 +188,16 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
             stackSpacing: HIGSpacing.sm.rawValue,
             actionSpacing: HIGSpacing.xs.rawValue,
             maxContentWidth: base.emptyState.maxContentWidth
+        )
+        self.closeButton = base.closeButton
+        self.modal = HIGSystemModalTokens(
+            cornerRadius: HIGRadius.md.rawValue,
+            contentPadding: HIGSpacing.md.rawValue,
+            headerSpacing: HIGSpacing.xs.rawValue,
+            borderWidth: base.modal.borderWidth,
+            maxWidth: base.modal.maxWidth,
+            titleFont: base.modal.titleFont,
+            messageFont: base.modal.messageFont
         )
         self.progress = base.progress
         self.alert = base.alert

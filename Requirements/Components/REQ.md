@@ -50,6 +50,8 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 - `HIGMatrixLoader` with **112** clean-room catalog entries via `HIGMatrixLoaderID` (23 square, 20 circular, 10 hex, 20 3×3, 20 triangle, 18 fun, 1 icon); convenience `HIGMatrixLoaderStyle` aliases; sizes `small` / `medium` / `large`; deterministic `seed` selection across the full catalog; Reduce Motion static poses
 - `HIGAlert`
 - `HIGToast`
+- `HIGCloseButton` — standard dismiss control for modals/sheets/panels; tokens via `theme.closeButton`
+- `HIGModal` — themed modal chrome (title, message, close, body, footer) for use inside native sheets; tokens via `theme.modal`
 
 #### Layout and navigation
 
@@ -75,7 +77,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 
 #### Admin catalog expansion (planned families)
 
-Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after status/empty state: data table, form advanced inputs, Swift Charts, and `HIGAdminShell`.
+Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after modal chrome: tooltips/popovers, drawer, network progress, data table, form advanced inputs, Swift Charts, and `HIGAdminShell`.
 
 #### Content
 

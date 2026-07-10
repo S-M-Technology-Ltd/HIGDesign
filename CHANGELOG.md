@@ -27,6 +27,9 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - `HIGAvatar` optional `status` badge overlay
 - `HIGEmptyState` / `theme.emptyState` — empty-content messaging with optional actions
 - Showcase Status Indicator and Empty State pages plus token tests
+- `HIGCloseButton` / `theme.closeButton` — standard dismiss control
+- `HIGModal` / `theme.modal` — themed modal chrome for sheet/dialog content
+- Showcase Close Button and Modal pages plus token tests
 
 ## 1.4.0 — 2026-07-10
 

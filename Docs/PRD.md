@@ -84,6 +84,7 @@ First delivery slices:
 - `HIGSteps` and `HIGPearlSteps` process indicators
 - `HIGTimeline` activity timeline
 - `HIGStatusIndicator`, avatar status overlay, and `HIGEmptyState`
+- `HIGCloseButton` and `HIGModal` overlay chrome
 
 ## Previous Milestone: v1.4.0 (released)
 

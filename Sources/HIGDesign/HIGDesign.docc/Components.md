@@ -7,6 +7,8 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGButton``
 - ``HIGButtonRole``
 - ``HIGButtonSize``
+- ``HIGCloseButton``
+- ``HIGCloseButtonTokens``
 - ``HIGMenuButton``
 - ``HIGMenuButtonPresentation``
 
@@ -82,6 +84,8 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGAlertBanner``
 - ``HIGAlertBannerStyle``
 - ``higAlert(_:isPresented:message:primaryButtonTitle:primaryButtonRole:primaryAction:secondaryButtonTitle:secondaryButtonRole:secondaryAction:)``
+- ``HIGModal``
+- ``HIGModalTokens``
 - ``HIGToast``
 - ``HIGToastQueue``
 - ``HIGToastQueueConfiguration``
