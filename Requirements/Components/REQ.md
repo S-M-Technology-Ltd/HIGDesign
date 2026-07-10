@@ -54,6 +54,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 - `HIGModal` — themed modal chrome (title, message, close, body, footer) for use inside native sheets; tokens via `theme.modal`
 - `HIGTooltipLabel` + `higTooltip(_:)` — themed tooltip label and platform help tooltip; tokens via `theme.tooltip`
 - `HIGPopoverContainer` + `higPopover(...)` — themed popover chrome; tokens via `theme.popover`
+- `HIGDrawer` / `HIGDrawerEdge` + `higDrawer(...)` — slide-over panel with scrim; tokens via `theme.drawer`
 
 #### Layout and navigation
 
@@ -79,7 +80,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 
 #### Admin catalog expansion (planned families)
 
-Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after tooltips/popovers: drawer, network progress, data table, form advanced inputs, Swift Charts, and `HIGAdminShell`.
+Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after drawer: network progress, data table, form advanced inputs, Swift Charts, and `HIGAdminShell`.
 
 #### Content
 

@@ -33,6 +33,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - `HIGTooltipLabel` / `theme.tooltip` and `higTooltip(_:)` helper tooltip API
 - `HIGPopoverContainer` / `theme.popover` and `higPopover(...)` themed popover presentation
 - Showcase Tooltip and Popover pages plus token tests
+- `HIGDrawer` / `HIGDrawerEdge` / `theme.drawer` and `higDrawer(...)` slide-panel presentation
+- Showcase Drawer page plus token tests
 
 ## 1.4.0 — 2026-07-10
 

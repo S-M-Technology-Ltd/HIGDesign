@@ -86,6 +86,7 @@ First delivery slices:
 - `HIGStatusIndicator`, avatar status overlay, and `HIGEmptyState`
 - `HIGCloseButton` and `HIGModal` overlay chrome
 - `higTooltip` / `HIGTooltipLabel` and `higPopover` / `HIGPopoverContainer`
+- `HIGDrawer` / `higDrawer` slide panels
 
 ## Previous Milestone: v1.4.0 (released)
 

@@ -34,6 +34,7 @@ public protocol HIGTheme: Sendable {
     var modal: any HIGModalTokens { get }
     var tooltip: any HIGTooltipTokens { get }
     var popover: any HIGPopoverTokens { get }
+    var drawer: any HIGDrawerTokens { get }
     var progress: any HIGProgressTokens { get }
     var alert: any HIGAlertTokens { get }
     var toast: any HIGToastTokens { get }

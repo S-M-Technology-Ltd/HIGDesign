@@ -50,6 +50,8 @@ struct ShowcaseSnapshotCatalogDetailView: View {
             ShowcaseTooltipView()
         case .popover:
             ShowcasePopoverView()
+        case .drawer:
+            ShowcaseDrawerView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:

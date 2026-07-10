@@ -141,6 +141,9 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGStepsTokens``
 - ``HIGPearlSteps``
 - ``HIGPearlStepsTokens``
+- ``HIGDrawer``
+- ``HIGDrawerEdge``
+- ``HIGDrawerTokens``
 - ``higNavigationBarTitle(_:displayMode:)``
 - ``higNavigationBar(_:displayMode:leading:trailing:)``
 - ``higToolbar(_:)``
@@ -153,3 +156,4 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGShimmerTokens``
 - ``higTooltip(_:)``
 - ``higPopover(isPresented:attachmentAnchor:arrowEdge:content:)``
+- ``higDrawer(isPresented:edge:title:content:)``

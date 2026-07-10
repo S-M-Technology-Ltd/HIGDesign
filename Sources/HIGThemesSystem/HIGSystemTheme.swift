@@ -35,6 +35,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let modal: any HIGModalTokens
     public let tooltip: any HIGTooltipTokens
     public let popover: any HIGPopoverTokens
+    public let drawer: any HIGDrawerTokens
     public let progress: any HIGProgressTokens
     public let alert: any HIGAlertTokens
     public let toast: any HIGToastTokens
@@ -90,6 +91,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         modal: any HIGModalTokens = HIGSystemModalTokens(),
         tooltip: any HIGTooltipTokens = HIGSystemTooltipTokens(),
         popover: any HIGPopoverTokens = HIGSystemPopoverTokens(),
+        drawer: any HIGDrawerTokens = HIGSystemDrawerTokens(),
         progress: any HIGProgressTokens = HIGSystemProgressTokens(),
         alert: any HIGAlertTokens = HIGSystemAlertTokens(),
         toast: any HIGToastTokens = HIGSystemToastTokens(),
@@ -144,6 +146,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.modal = modal
         self.tooltip = tooltip
         self.popover = popover
+        self.drawer = drawer
         self.progress = progress
         self.alert = alert
         self.toast = toast

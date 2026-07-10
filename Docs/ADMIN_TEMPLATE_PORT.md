@@ -19,7 +19,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 |------|-------|--------|
 | 0 | Inventory, `HIGAdminTheme`, requirements | **Done** |
 | 1 | Surfaces & wayfinding (`HIGPanel`, breadcrumbs, steps, …) | **Done** (Wave 1 core surfaces) |
-| 2 | Overlays & chrome | **In progress** (+ tooltips / popovers) |
+| 2 | Overlays & chrome | **In progress** (+ drawer) |
 | 3 | Advanced forms | Planned |
 | 4 | Data display | Planned |
 | 5 | Content hybrids | Planned |
@@ -110,7 +110,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Lightbox / carousel | `HIGLightbox`, `HIGCarousel` | Planned |
 | Top progress (nprogress) | `HIGNetworkProgressBar` | Planned |
 | Button loading (ladda) | `HIGButton` loading | Extend |
-| Slide panel | `HIGDrawer` | Planned |
+| Slide panel | `HIGDrawer` / `higDrawer` | **Done** |
 | Calendar | `HIGCalendar` | Planned |
 | Charts (all JS libs) | Swift Charts family | Planned |
 | Maps | MapKit optional / recipe | Planned |
