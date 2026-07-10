@@ -63,6 +63,9 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 - `HIGSteps` / `HIGStepsItem` / `HIGStepsAxis` — numbered process trail (horizontal/vertical); tokens via `theme.steps`
 - `HIGPearlSteps` — compact pearl/dot step indicator; tokens via `theme.pearlSteps`
 - `HIGTimeline` / `HIGTimelineItem` — vertical activity timeline with markers and connectors; tokens via `theme.timeline`
+- `HIGStatusIndicator` / `HIGStatusKind` — presence dots (online/away/busy/offline); tokens via `theme.statusIndicator`
+- `HIGAvatar` optional `status` overlays a status badge on the avatar
+- `HIGEmptyState` — centered empty-content title/message/icon with optional actions; tokens via `theme.emptyState`
 - `HIGDivider`
 - `HIGList`
 - `HIGNavigationBar`
@@ -72,7 +75,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 
 #### Admin catalog expansion (planned families)
 
-Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after timeline: status indicator, empty state, data table, form advanced inputs, Swift Charts, and `HIGAdminShell`.
+Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after status/empty state: data table, form advanced inputs, Swift Charts, and `HIGAdminShell`.
 
 #### Content
 

@@ -23,6 +23,10 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Steps and Pearl Steps pages plus token tests
 - `HIGTimeline` / `HIGTimelineItem` / `theme.timeline` — vertical activity timeline
 - Showcase Timeline page plus token tests
+- `HIGStatusIndicator` / `HIGStatusKind` / `theme.statusIndicator` — presence dots
+- `HIGAvatar` optional `status` badge overlay
+- `HIGEmptyState` / `theme.emptyState` — empty-content messaging with optional actions
+- Showcase Status Indicator and Empty State pages plus token tests
 
 ## 1.4.0 — 2026-07-10
 

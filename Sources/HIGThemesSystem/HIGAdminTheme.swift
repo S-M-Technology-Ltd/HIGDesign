@@ -35,6 +35,8 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
     public let steps: any HIGStepsTokens
     public let pearlSteps: any HIGPearlStepsTokens
     public let timeline: any HIGTimelineTokens
+    public let statusIndicator: any HIGStatusIndicatorTokens
+    public let emptyState: any HIGEmptyStateTokens
     public let progress: any HIGProgressTokens
     public let alert: any HIGAlertTokens
     public let toast: any HIGToastTokens
@@ -175,6 +177,15 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
             itemSpacing: HIGSpacing.sm.rawValue,
             labelSpacing: HIGSpacing.xxs.rawValue,
             contentLeadingPadding: HIGSpacing.sm.rawValue
+        )
+        self.statusIndicator = base.statusIndicator
+        self.emptyState = HIGSystemEmptyStateTokens(
+            iconPointSize: base.emptyState.iconPointSize,
+            titleFont: base.emptyState.titleFont,
+            messageFont: base.emptyState.messageFont,
+            stackSpacing: HIGSpacing.sm.rawValue,
+            actionSpacing: HIGSpacing.xs.rawValue,
+            maxContentWidth: base.emptyState.maxContentWidth
         )
         self.progress = base.progress
         self.alert = base.alert

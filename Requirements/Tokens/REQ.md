@@ -40,6 +40,8 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - `HIGStepsTokens` defines indicator, connector, and label metrics for ``HIGSteps``.
 - `HIGPearlStepsTokens` defines pearl sizes and connectors for ``HIGPearlSteps``.
 - `HIGTimelineTokens` defines marker, connector, and typography metrics for ``HIGTimeline``.
+- `HIGStatusIndicatorTokens` defines diameters and border width for ``HIGStatusIndicator``.
+- `HIGEmptyStateTokens` defines icon size, fonts, spacing, and max content width for ``HIGEmptyState``.
 
 ### Naming and API
 

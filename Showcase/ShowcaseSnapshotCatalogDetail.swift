@@ -38,6 +38,10 @@ struct ShowcaseSnapshotCatalogDetailView: View {
             ShowcasePearlStepsView()
         case .timeline:
             ShowcaseTimelineView()
+        case .statusIndicator:
+            ShowcaseStatusIndicatorView()
+        case .emptyState:
+            ShowcaseEmptyStateView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:

@@ -18,7 +18,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Wave | Focus | Status |
 |------|-------|--------|
 | 0 | Inventory, `HIGAdminTheme`, requirements | **Done** |
-| 1 | Surfaces & wayfinding (`HIGPanel`, breadcrumbs, steps, …) | **In progress** (+ timeline) |
+| 1 | Surfaces & wayfinding (`HIGPanel`, breadcrumbs, steps, …) | **Done** (Wave 1 core surfaces) |
 | 2 | Overlays & chrome | Planned |
 | 3 | Advanced forms | Planned |
 | 4 | Data display | Planned |
@@ -75,8 +75,8 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Panels | `HIGPanel` | **Done** |
 | Page header (structure) | `HIGPageHeader` | **Done** |
 | Panel groups | `HIGPanelGroup` | Planned |
-| Avatar | `HIGAvatar` | Extend |
-| Status | `HIGStatusIndicator` | Planned |
+| Avatar | `HIGAvatar` | **Done** (status overlay) |
+| Status | `HIGStatusIndicator` | **Done** |
 | Steps / pearls | `HIGSteps`, `HIGPearlSteps` | **Done** |
 | Timeline | `HIGTimeline` | **Done** |
 | Chat / comment | `HIGChatBubble`, `HIGComment` | Planned |
@@ -143,5 +143,6 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 - [ ] Every row above is Done, Recipe, or Excluded
 - [x] `HIGAdminTheme` selectable in Showcase
 - [x] `HIGPanel` public with full component DoD
+- [x] Wave 1 wayfinding surfaces through status/empty state
 - [ ] All waves merged via PRs to `develop`
 - [ ] No third-party runtime dependencies introduced

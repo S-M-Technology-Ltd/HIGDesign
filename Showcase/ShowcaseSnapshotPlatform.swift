@@ -97,7 +97,7 @@ extension ShowcaseComponent {
     var supportedSnapshotPlatforms: [ShowcaseSnapshotPlatform] {
         switch self {
         case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .breadcrumb, .pageHeader,
-             .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .toolbar,
+             .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .statusIndicator, .emptyState, .toolbar,
              .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .matrixLoader,
              .list, .form,
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,

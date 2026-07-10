@@ -30,6 +30,8 @@ extension HIGTheme {
     public var steps: any HIGStepsTokens { HIGSystemStepsTokens() }
     public var pearlSteps: any HIGPearlStepsTokens { HIGSystemPearlStepsTokens() }
     public var timeline: any HIGTimelineTokens { HIGSystemTimelineTokens() }
+    public var statusIndicator: any HIGStatusIndicatorTokens { HIGSystemStatusIndicatorTokens() }
+    public var emptyState: any HIGEmptyStateTokens { HIGSystemEmptyStateTokens() }
     public var progress: any HIGProgressTokens { HIGSystemProgressTokens() }
     public var alert: any HIGAlertTokens { HIGSystemAlertTokens() }
     public var toast: any HIGToastTokens { HIGSystemToastTokens() }
