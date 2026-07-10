@@ -39,6 +39,7 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - `HIGAccordionTokens` defines header/content metrics for ``HIGAccordion`` / ``HIGAccordionSection``.
 - `HIGStepsTokens` defines indicator, connector, and label metrics for ``HIGSteps``.
 - `HIGPearlStepsTokens` defines pearl sizes and connectors for ``HIGPearlSteps``.
+- `HIGTimelineTokens` defines marker, connector, and typography metrics for ``HIGTimeline``.
 
 ### Naming and API
 

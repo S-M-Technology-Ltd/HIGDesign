@@ -28,6 +28,7 @@ public struct HIGComponentPreviewTheme: HIGTheme {
     public let accordion: any HIGAccordionTokens = HIGSystemAccordionTokens()
     public let steps: any HIGStepsTokens = HIGSystemStepsTokens()
     public let pearlSteps: any HIGPearlStepsTokens = HIGSystemPearlStepsTokens()
+    public let timeline: any HIGTimelineTokens = HIGSystemTimelineTokens()
     public let progress: any HIGProgressTokens = HIGSystemProgressTokens()
     public let alert: any HIGAlertTokens = HIGSystemAlertTokens()
     public let toast: any HIGToastTokens = HIGSystemToastTokens()

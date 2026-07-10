@@ -34,6 +34,7 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
     public let accordion: any HIGAccordionTokens
     public let steps: any HIGStepsTokens
     public let pearlSteps: any HIGPearlStepsTokens
+    public let timeline: any HIGTimelineTokens
     public let progress: any HIGProgressTokens
     public let alert: any HIGAlertTokens
     public let toast: any HIGToastTokens
@@ -163,6 +164,17 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
             connectorThickness: base.pearlSteps.connectorThickness,
             itemSpacing: HIGSpacing.xs.rawValue,
             minTapTarget: base.pearlSteps.minTapTarget
+        )
+        self.timeline = HIGSystemTimelineTokens(
+            titleFont: base.timeline.titleFont,
+            detailFont: base.timeline.detailFont,
+            timestampFont: base.timeline.timestampFont,
+            markerSize: base.timeline.markerSize,
+            markerIconPointSize: base.timeline.markerIconPointSize,
+            connectorWidth: base.timeline.connectorWidth,
+            itemSpacing: HIGSpacing.sm.rawValue,
+            labelSpacing: HIGSpacing.xxs.rawValue,
+            contentLeadingPadding: HIGSpacing.sm.rawValue
         )
         self.progress = base.progress
         self.alert = base.alert

@@ -627,6 +627,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGTimeline
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| [Layout](https://developer.apple.com/design/human-interface-guidelines/layout) | All 6 | markers · connectors · timestamps · SF Symbol markers |
+
+**Guidelines:**
+- Use for activity feeds, order history, and audit logs
+- Newest-first or chronological order is a product choice — keep order stable
+- Optional `systemImage` on markers; plain accent dots when omitted
+- Resolve spacing and type from `theme.timeline`
+
+---
+
 ### HIGList
 
 | HIG category | Platforms | Styles |

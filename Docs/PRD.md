@@ -82,6 +82,7 @@ First delivery slices:
 - `HIGBreadcrumb` + `HIGPageHeader` wayfinding chrome
 - `HIGPagination`, `HIGTabs`, `HIGAccordion` content navigation
 - `HIGSteps` and `HIGPearlSteps` process indicators
+- `HIGTimeline` activity timeline
 
 ## Previous Milestone: v1.4.0 (released)
 

@@ -45,6 +45,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case accordion
     case steps
     case pearlSteps
+    case timeline
 
     public var id: String { rawValue }
 
@@ -101,6 +102,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .accordion: "Accordion"
         case .steps: "Steps"
         case .pearlSteps: "Pearl Steps"
+        case .timeline: "Timeline"
         }
     }
 
@@ -150,6 +152,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .accordion: "Layout"
         case .steps: "Navigation"
         case .pearlSteps: "Navigation"
+        case .timeline: "Content"
         }
     }
 
@@ -199,13 +202,14 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .accordion: "Expandable section stack for dense admin settings content."
         case .steps: "Numbered multi-step process trail with horizontal or vertical layout."
         case .pearlSteps: "Compact pearl/dot progress indicator for short wizards."
+        case .timeline: "Vertical activity timeline with markers, connectors, and timestamps."
         }
     }
 
     var platforms: String {
         switch self {
         case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .breadcrumb, .pageHeader,
-             .pagination, .tabs, .accordion, .steps, .pearlSteps, .toolbar,
+             .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .toolbar,
              .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .matrixLoader,
              .list, .form,
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,

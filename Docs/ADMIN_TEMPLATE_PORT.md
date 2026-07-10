@@ -18,7 +18,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Wave | Focus | Status |
 |------|-------|--------|
 | 0 | Inventory, `HIGAdminTheme`, requirements | **Done** |
-| 1 | Surfaces & wayfinding (`HIGPanel`, breadcrumbs, steps, …) | **In progress** (+ steps / pearl steps) |
+| 1 | Surfaces & wayfinding (`HIGPanel`, breadcrumbs, steps, …) | **In progress** (+ timeline) |
 | 2 | Overlays & chrome | Planned |
 | 3 | Advanced forms | Planned |
 | 4 | Data display | Planned |
@@ -78,7 +78,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Avatar | `HIGAvatar` | Extend |
 | Status | `HIGStatusIndicator` | Planned |
 | Steps / pearls | `HIGSteps`, `HIGPearlSteps` | **Done** |
-| Timeline | `HIGTimeline` | Planned |
+| Timeline | `HIGTimeline` | **Done** |
 | Chat / comment | `HIGChatBubble`, `HIGComment` | Planned |
 | Cover / overlay | `HIGCover`, `HIGImageOverlay` | Planned |
 | Pricing | `HIGPricingCard` | Planned |

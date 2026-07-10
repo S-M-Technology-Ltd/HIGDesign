@@ -27,6 +27,7 @@ public protocol HIGTheme: Sendable {
     var accordion: any HIGAccordionTokens { get }
     var steps: any HIGStepsTokens { get }
     var pearlSteps: any HIGPearlStepsTokens { get }
+    var timeline: any HIGTimelineTokens { get }
     var progress: any HIGProgressTokens { get }
     var alert: any HIGAlertTokens { get }
     var toast: any HIGToastTokens { get }
