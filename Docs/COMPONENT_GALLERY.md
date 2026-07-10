@@ -708,6 +708,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGDrawer
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| [Modality](https://developer.apple.com/design/human-interface-guidelines/modality) | All 6 | leading · trailing · scrim · close |
+
+**Guidelines:**
+- Use for secondary inspectors and temporary navigation (Remark slidepanel role)
+- Present with `higDrawer(isPresented:edge:title:content:)`
+- Tap scrim or close control to dismiss
+- Respect Reduce Motion for slide animation
+
+---
+
 ### HIGList
 
 | HIG category | Platforms | Styles |

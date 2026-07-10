@@ -36,6 +36,7 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
     public let modal: any HIGModalTokens
     public let tooltip: any HIGTooltipTokens
     public let popover: any HIGPopoverTokens
+    public let drawer: any HIGDrawerTokens
     public let progress: any HIGProgressTokens
     public let alert: any HIGAlertTokens
     public let toast: any HIGToastTokens
@@ -103,6 +104,7 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
         self.modal = base.modal
         self.tooltip = base.tooltip
         self.popover = base.popover
+        self.drawer = base.drawer
         self.progress = base.progress
         self.alert = base.alert
         self.toast = base.toast

@@ -52,6 +52,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case modal
     case tooltip
     case popover
+    case drawer
 
     public var id: String { rawValue }
 
@@ -115,6 +116,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .modal: "Modal"
         case .tooltip: "Tooltip"
         case .popover: "Popover"
+        case .drawer: "Drawer"
         }
     }
 
@@ -171,6 +173,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .modal: "Modality"
         case .tooltip: "Tooltips"
         case .popover: "Popovers"
+        case .drawer: "Navigation"
         }
     }
 
@@ -227,6 +230,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .modal: "Themed modal chrome with title, close, body, and footer for sheet content."
         case .tooltip: "Helper tooltips via platform help and themed tooltip labels."
         case .popover: "Themed popover chrome presented with higPopover."
+        case .drawer: "Slide-over detail panel with scrim presentation via higDrawer."
         }
     }
 
@@ -234,7 +238,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         switch self {
         case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .breadcrumb, .pageHeader,
              .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .statusIndicator, .emptyState,
-             .closeButton, .modal, .tooltip, .popover, .toolbar,
+             .closeButton, .modal, .tooltip, .popover, .drawer, .toolbar,
              .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .matrixLoader,
              .list, .form,
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,

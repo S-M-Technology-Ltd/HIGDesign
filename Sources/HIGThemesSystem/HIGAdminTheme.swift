@@ -41,6 +41,7 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
     public let modal: any HIGModalTokens
     public let tooltip: any HIGTooltipTokens
     public let popover: any HIGPopoverTokens
+    public let drawer: any HIGDrawerTokens
     public let progress: any HIGProgressTokens
     public let alert: any HIGAlertTokens
     public let toast: any HIGToastTokens
@@ -207,6 +208,15 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
             cornerRadius: HIGRadius.sm.rawValue,
             borderWidth: base.popover.borderWidth,
             maxWidth: base.popover.maxWidth
+        )
+        self.drawer = HIGSystemDrawerTokens(
+            width: 300,
+            contentPadding: HIGSpacing.md.rawValue,
+            headerSpacing: HIGSpacing.xs.rawValue,
+            borderWidth: base.drawer.borderWidth,
+            cornerRadius: HIGRadius.sm.rawValue,
+            scrimOpacity: base.drawer.scrimOpacity,
+            titleFont: base.drawer.titleFont
         )
         self.progress = base.progress
         self.alert = base.alert
