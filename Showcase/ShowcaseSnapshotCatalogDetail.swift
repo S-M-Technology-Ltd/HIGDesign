@@ -46,6 +46,10 @@ struct ShowcaseSnapshotCatalogDetailView: View {
             ShowcaseCloseButtonView()
         case .modal:
             ShowcaseModalView()
+        case .tooltip:
+            ShowcaseTooltipView()
+        case .popover:
+            ShowcasePopoverView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:

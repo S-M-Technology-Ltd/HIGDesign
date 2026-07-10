@@ -33,6 +33,8 @@ public struct HIGComponentPreviewTheme: HIGTheme {
     public let emptyState: any HIGEmptyStateTokens = HIGSystemEmptyStateTokens()
     public let closeButton: any HIGCloseButtonTokens = HIGSystemCloseButtonTokens()
     public let modal: any HIGModalTokens = HIGSystemModalTokens()
+    public let tooltip: any HIGTooltipTokens = HIGSystemTooltipTokens()
+    public let popover: any HIGPopoverTokens = HIGSystemPopoverTokens()
     public let progress: any HIGProgressTokens = HIGSystemProgressTokens()
     public let alert: any HIGAlertTokens = HIGSystemAlertTokens()
     public let toast: any HIGToastTokens = HIGSystemToastTokens()

@@ -50,6 +50,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case emptyState
     case closeButton
     case modal
+    case tooltip
+    case popover
 
     public var id: String { rawValue }
 
@@ -111,6 +113,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .emptyState: "Empty State"
         case .closeButton: "Close Button"
         case .modal: "Modal"
+        case .tooltip: "Tooltip"
+        case .popover: "Popover"
         }
     }
 
@@ -165,6 +169,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .emptyState: "Layout"
         case .closeButton: "Buttons"
         case .modal: "Modality"
+        case .tooltip: "Tooltips"
+        case .popover: "Popovers"
         }
     }
 
@@ -219,6 +225,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .emptyState: "Centered empty-content messaging with optional icon and actions."
         case .closeButton: "Standard dismiss control for modals, sheets, and panels."
         case .modal: "Themed modal chrome with title, close, body, and footer for sheet content."
+        case .tooltip: "Helper tooltips via platform help and themed tooltip labels."
+        case .popover: "Themed popover chrome presented with higPopover."
         }
     }
 
@@ -226,7 +234,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         switch self {
         case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .breadcrumb, .pageHeader,
              .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .statusIndicator, .emptyState,
-             .closeButton, .modal, .toolbar,
+             .closeButton, .modal, .tooltip, .popover, .toolbar,
              .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .matrixLoader,
              .list, .form,
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,

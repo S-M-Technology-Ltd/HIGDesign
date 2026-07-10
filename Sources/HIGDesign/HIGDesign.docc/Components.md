@@ -86,6 +86,10 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``higAlert(_:isPresented:message:primaryButtonTitle:primaryButtonRole:primaryAction:secondaryButtonTitle:secondaryButtonRole:secondaryAction:)``
 - ``HIGModal``
 - ``HIGModalTokens``
+- ``HIGTooltipLabel``
+- ``HIGTooltipTokens``
+- ``HIGPopoverContainer``
+- ``HIGPopoverTokens``
 - ``HIGToast``
 - ``HIGToastQueue``
 - ``HIGToastQueueConfiguration``
@@ -147,3 +151,5 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``higShimmer(isActive:mode:)``
 - ``HIGShimmerMode``
 - ``HIGShimmerTokens``
+- ``higTooltip(_:)``
+- ``higPopover(isPresented:attachmentAnchor:arrowEdge:content:)``

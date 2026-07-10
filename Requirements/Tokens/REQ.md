@@ -44,6 +44,8 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - `HIGEmptyStateTokens` defines icon size, fonts, spacing, and max content width for ``HIGEmptyState``.
 - `HIGCloseButtonTokens` defines tap target and icon size for ``HIGCloseButton``.
 - `HIGModalTokens` defines padding, radius, max width, and header typography for ``HIGModal``.
+- `HIGTooltipTokens` defines padding, radius, font, and max width for ``HIGTooltipLabel``.
+- `HIGPopoverTokens` defines padding, radius, border, and max width for ``HIGPopoverContainer``.
 
 ### Naming and API
 

@@ -30,6 +30,9 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - `HIGCloseButton` / `theme.closeButton` — standard dismiss control
 - `HIGModal` / `theme.modal` — themed modal chrome for sheet/dialog content
 - Showcase Close Button and Modal pages plus token tests
+- `HIGTooltipLabel` / `theme.tooltip` and `higTooltip(_:)` helper tooltip API
+- `HIGPopoverContainer` / `theme.popover` and `higPopover(...)` themed popover presentation
+- Showcase Tooltip and Popover pages plus token tests
 
 ## 1.4.0 — 2026-07-10
 

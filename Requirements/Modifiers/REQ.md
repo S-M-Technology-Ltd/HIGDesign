@@ -15,6 +15,8 @@ Cross-cutting SwiftUI view modifiers that apply HIG tokens and accessibility beh
 - Accessibility: `higAccessibilityLabel`, `higAccessibilityHint`, `higAccessibilityHidden`
 - Motion: `higAnimation`, `higReduceMotionAware`
 - Loading placeholders: `higShimmer` with mask, overlay, and background modes
+- Tooltips: `higTooltip(_:)` (platform help + accessibility hint)
+- Popovers: `higPopover(isPresented:attachmentAnchor:arrowEdge:content:)` wrapping themed ``HIGPopoverContainer`` chrome
 
 ### Behavior
 

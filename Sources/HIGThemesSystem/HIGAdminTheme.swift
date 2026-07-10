@@ -39,6 +39,8 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
     public let emptyState: any HIGEmptyStateTokens
     public let closeButton: any HIGCloseButtonTokens
     public let modal: any HIGModalTokens
+    public let tooltip: any HIGTooltipTokens
+    public let popover: any HIGPopoverTokens
     public let progress: any HIGProgressTokens
     public let alert: any HIGAlertTokens
     public let toast: any HIGToastTokens
@@ -198,6 +200,13 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
             maxWidth: base.modal.maxWidth,
             titleFont: base.modal.titleFont,
             messageFont: base.modal.messageFont
+        )
+        self.tooltip = base.tooltip
+        self.popover = HIGSystemPopoverTokens(
+            contentPadding: HIGSpacing.sm.rawValue,
+            cornerRadius: HIGRadius.sm.rawValue,
+            borderWidth: base.popover.borderWidth,
+            maxWidth: base.popover.maxWidth
         )
         self.progress = base.progress
         self.alert = base.alert

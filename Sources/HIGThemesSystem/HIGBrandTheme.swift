@@ -35,6 +35,8 @@ public struct HIGBrandTheme: HIGTheme, Sendable {
     public let emptyState: any HIGEmptyStateTokens
     public let closeButton: any HIGCloseButtonTokens
     public let modal: any HIGModalTokens
+    public let tooltip: any HIGTooltipTokens
+    public let popover: any HIGPopoverTokens
     public let progress: any HIGProgressTokens
     public let alert: any HIGAlertTokens
     public let toast: any HIGToastTokens
@@ -105,6 +107,8 @@ public struct HIGBrandTheme: HIGTheme, Sendable {
         self.emptyState = base.emptyState
         self.closeButton = base.closeButton
         self.modal = base.modal
+        self.tooltip = base.tooltip
+        self.popover = base.popover
         self.progress = base.progress
         self.alert = base.alert
         self.toast = base.toast

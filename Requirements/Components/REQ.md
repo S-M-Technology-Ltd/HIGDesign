@@ -52,6 +52,8 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 - `HIGToast`
 - `HIGCloseButton` — standard dismiss control for modals/sheets/panels; tokens via `theme.closeButton`
 - `HIGModal` — themed modal chrome (title, message, close, body, footer) for use inside native sheets; tokens via `theme.modal`
+- `HIGTooltipLabel` + `higTooltip(_:)` — themed tooltip label and platform help tooltip; tokens via `theme.tooltip`
+- `HIGPopoverContainer` + `higPopover(...)` — themed popover chrome; tokens via `theme.popover`
 
 #### Layout and navigation
 
@@ -77,7 +79,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 
 #### Admin catalog expansion (planned families)
 
-Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after modal chrome: tooltips/popovers, drawer, network progress, data table, form advanced inputs, Swift Charts, and `HIGAdminShell`.
+Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after tooltips/popovers: drawer, network progress, data table, form advanced inputs, Swift Charts, and `HIGAdminShell`.
 
 #### Content
 
