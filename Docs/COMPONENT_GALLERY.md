@@ -560,6 +560,46 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGPagination
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| [Navigation](https://developer.apple.com/design/human-interface-guidelines/) | All 6 | prev · next · page numbers · ellipsis |
+
+**Guidelines:**
+- Use for long tables/lists; keep current page selected
+- 1-based page index; clamp into valid range
+- Minimum 44pt targets from `theme.pagination`
+- Prefer fewer visible pages on compact widths (`maxVisiblePages`)
+
+---
+
+### HIGTabs
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| [Navigation](https://developer.apple.com/design/human-interface-guidelines/) | All 6 | underline selection · horizontal scroll |
+
+**Guidelines:**
+- For in-page section switching — not top-level app structure (`HIGTabBar`)
+- Prefer `HIGSegmentedControl` when options are few and equal-weight filters
+- Selected tab uses accent underline and semibold label
+
+---
+
+### HIGAccordion
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| [Layout](https://developer.apple.com/design/human-interface-guidelines/layout) | All 6 | multi-expand · single-expand · chevron |
+
+**Guidelines:**
+- Group related dense settings without forcing long scroll
+- `allowsMultipleExpanded: false` for exclusive FAQ-style panels
+- Respect Reduce Motion for expand/collapse animation
+
+---
+
 ### HIGList
 
 | HIG category | Platforms | Styles |

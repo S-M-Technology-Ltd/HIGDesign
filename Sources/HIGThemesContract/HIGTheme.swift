@@ -22,6 +22,9 @@ public protocol HIGTheme: Sendable {
     var panel: any HIGPanelTokens { get }
     var breadcrumb: any HIGBreadcrumbTokens { get }
     var pageHeader: any HIGPageHeaderTokens { get }
+    var pagination: any HIGPaginationTokens { get }
+    var tabs: any HIGTabsTokens { get }
+    var accordion: any HIGAccordionTokens { get }
     var progress: any HIGProgressTokens { get }
     var alert: any HIGAlertTokens { get }
     var toast: any HIGToastTokens { get }

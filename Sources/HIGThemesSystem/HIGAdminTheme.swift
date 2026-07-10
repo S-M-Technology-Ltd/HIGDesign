@@ -29,6 +29,9 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
     public let panel: any HIGPanelTokens
     public let breadcrumb: any HIGBreadcrumbTokens
     public let pageHeader: any HIGPageHeaderTokens
+    public let pagination: any HIGPaginationTokens
+    public let tabs: any HIGTabsTokens
+    public let accordion: any HIGAccordionTokens
     public let progress: any HIGProgressTokens
     public let alert: any HIGAlertTokens
     public let toast: any HIGToastTokens
@@ -123,6 +126,24 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
             subtitleFont: base.pageHeader.subtitleFont,
             stackSpacing: HIGSpacing.xs.rawValue,
             breadcrumbSpacing: HIGSpacing.sm.rawValue
+        )
+        self.pagination = base.pagination
+        self.tabs = HIGSystemTabsTokens(
+            font: base.tabs.font,
+            selectedFont: base.tabs.selectedFont,
+            itemSpacing: HIGSpacing.md.rawValue,
+            underlineHeight: base.tabs.underlineHeight,
+            minTapTarget: base.tabs.minTapTarget
+        )
+        self.accordion = HIGSystemAccordionTokens(
+            titleFont: base.accordion.titleFont,
+            contentFont: base.accordion.contentFont,
+            headerMinHeight: base.accordion.headerMinHeight,
+            contentPadding: HIGSpacing.sm.rawValue,
+            sectionSpacing: HIGSpacing.xs.rawValue,
+            cornerRadius: HIGRadius.sm.rawValue,
+            borderWidth: base.accordion.borderWidth,
+            chevronPointSize: base.accordion.chevronPointSize
         )
         self.progress = base.progress
         self.alert = base.alert

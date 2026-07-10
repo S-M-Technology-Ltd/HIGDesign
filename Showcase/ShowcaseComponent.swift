@@ -40,6 +40,9 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case panel
     case breadcrumb
     case pageHeader
+    case pagination
+    case tabs
+    case accordion
 
     public var id: String { rawValue }
 
@@ -91,6 +94,9 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .panel: "Panel"
         case .breadcrumb: "Breadcrumb"
         case .pageHeader: "Page Header"
+        case .pagination: "Pagination"
+        case .tabs: "Tabs"
+        case .accordion: "Accordion"
         }
     }
 
@@ -135,6 +141,9 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .panel: "Layout"
         case .breadcrumb: "Navigation"
         case .pageHeader: "Navigation"
+        case .pagination: "Navigation"
+        case .tabs: "Navigation"
+        case .accordion: "Layout"
         }
     }
 
@@ -179,12 +188,16 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .panel: "Admin content surface with title, actions, collapsible body, and footer."
         case .breadcrumb: "Hierarchical navigation trail with a non-interactive current segment."
         case .pageHeader: "Page title chrome with optional breadcrumb, subtitle, and trailing actions."
+        case .pagination: "Page-number navigation with previous/next controls for long lists."
+        case .tabs: "In-content tab labels with underline selection (not app tab bars)."
+        case .accordion: "Expandable section stack for dense admin settings content."
         }
     }
 
     var platforms: String {
         switch self {
-        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .breadcrumb, .pageHeader, .toolbar,
+        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .breadcrumb, .pageHeader,
+             .pagination, .tabs, .accordion, .toolbar,
              .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .matrixLoader,
              .list, .form,
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,

@@ -14,6 +14,10 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - `HIGBreadcrumb` / `HIGBreadcrumbItem` / `theme.breadcrumb` — hierarchical navigation trail
 - `HIGPageHeader` / `theme.pageHeader` — page title chrome with optional breadcrumb, subtitle, and trailing actions
 - Showcase Breadcrumb and Page Header pages, unit tests, DocC, and requirements updates
+- `HIGPagination` / `theme.pagination` — page-number navigation for lists and tables
+- `HIGTabs` / `HIGTabsItem` / `theme.tabs` — in-content tabs with underline selection
+- `HIGAccordion` / `HIGAccordionSection` / `theme.accordion` — expandable section stack
+- Showcase Pagination, Tabs, and Accordion pages plus token tests
 
 ## 1.4.0 — 2026-07-10
 

@@ -57,6 +57,9 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 - `HIGPanel` — admin content surface with optional title, description, refresh/collapse/close actions, body, and footer; tokens via `theme.panel`
 - `HIGBreadcrumb` / `HIGBreadcrumbItem` — hierarchical trail; last segment is current; optional `onSelect` for ancestors; tokens via `theme.breadcrumb`
 - `HIGPageHeader` — page title with optional subtitle, breadcrumb trail, and trailing actions; tokens via `theme.pageHeader`
+- `HIGPagination` — 1-based page navigation with previous/next and numbered pages; tokens via `theme.pagination`
+- `HIGTabs` / `HIGTabsItem` — in-content tab labels (not `HIGTabBar`); tokens via `theme.tabs`
+- `HIGAccordion` / `HIGAccordionSection` — expandable sections with multi- or single-expand modes; tokens via `theme.accordion`
 - `HIGDivider`
 - `HIGList`
 - `HIGNavigationBar`
@@ -66,7 +69,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 
 #### Admin catalog expansion (planned families)
 
-Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after breadcrumb/page header: pagination, tabs/accordion, steps/timeline, data table, form advanced inputs, Swift Charts, and `HIGAdminShell`.
+Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after pagination/tabs/accordion: steps/timeline, data table, form advanced inputs, Swift Charts, and `HIGAdminShell`.
 
 #### Content
 
