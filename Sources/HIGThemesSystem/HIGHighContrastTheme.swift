@@ -21,6 +21,7 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
     public let slider: any HIGSliderTokens
     public let picker: any HIGPickerTokens
     public let card: any HIGCardTokens
+    public let panel: any HIGPanelTokens
     public let progress: any HIGProgressTokens
     public let alert: any HIGAlertTokens
     public let toast: any HIGToastTokens
@@ -73,6 +74,7 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
         self.slider = base.slider
         self.picker = base.picker
         self.card = base.card
+        self.panel = base.panel
         self.progress = base.progress
         self.alert = base.alert
         self.toast = base.toast

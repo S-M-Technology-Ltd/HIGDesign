@@ -1,0 +1,146 @@
+# Admin Template → HIGDesign Port Tracker
+
+Tracks the full Remark Admin Template capability catalog (`../admin-template`) as HIG-native SwiftUI work. Remark is a **capability checklist**, not a pixel port. Apple HIG remains the visual source of truth.
+
+| Status | Meaning |
+|--------|---------|
+| **Done** | Public `HIG*` API shipped with tokens, theme, tests, Showcase, docs |
+| **In progress** | Active implementation |
+| **Planned** | Mapped; not started |
+| **Extend** | Existing HIG component needs parity work |
+| **Recipe** | Showcase/Sample composition only (no new library module) |
+| **Excluded** | Explicitly not shipped; substitute documented |
+
+Reference: `/Users/andy/github/admin-template/design-system/` · demos under `admin-template/classic/base/html/`.
+
+## Wave status
+
+| Wave | Focus | Status |
+|------|-------|--------|
+| 0 | Inventory, `HIGAdminTheme`, requirements | **In progress** |
+| 1 | Surfaces & wayfinding (`HIGPanel`, breadcrumbs, steps, …) | **In progress** (`HIGPanel`) |
+| 2 | Overlays & chrome | Planned |
+| 3 | Advanced forms | Planned |
+| 4 | Data display | Planned |
+| 5 | Content hybrids | Planned |
+| 6 | Swift Charts family | Planned |
+| 7 | Admin shell & layout | Planned |
+| 8 | Parity extensions on existing components | Planned |
+| 9 | App/page Showcase recipes | Planned |
+| 10 | Gallery, DocC, release | Planned |
+
+## Themes
+
+| Item | HIG target | Status |
+|------|------------|--------|
+| Remark primary / skins | `HIGAdminTheme` | **Done** |
+| Dense admin spacing | Admin theme spacing overrides | **Done** |
+| classic vs material dual tree | One API; token styles only | Excluded (fork) |
+
+## Bootstrap-extend map
+
+| Remark | HIG target | Status |
+|--------|------------|--------|
+| Alerts | `HIGAlert` / `HIGAlertBanner` | Extend |
+| Badge | `HIGBadge` | Extend |
+| Breadcrumbs | `HIGBreadcrumb` | Planned |
+| Buttons | `HIGButton` | Extend |
+| Button groups | `HIGButtonGroup` | Planned |
+| Card | `HIGCard` | Extend |
+| Carousel | `HIGCarousel` | Planned |
+| Close | `HIGCloseButton` | Planned |
+| Code | `HIGCodeBlock` | Planned |
+| Custom forms / forms | Inputs + `HIGFormSection` | Extend |
+| Dropdowns | `HIGMenuButton` + menu APIs | Extend |
+| Grid / utilities | modifiers + docs | Extend |
+| Images | `HIGImageFrame` | Planned |
+| Input groups | `HIGInputGroup` | Planned |
+| Jumbotron | `HIGHero` | Planned |
+| List group | `HIGList` / `HIGListGroup` | Extend / Planned |
+| Media | `HIGMediaRow` | Planned |
+| Modals | `HIGModal` helpers | Planned |
+| Navbar | `HIGNavigationBar` + shell | Extend |
+| Navs / tabs / accordion | `HIGTabs`, `HIGAccordion` | Planned |
+| Pagination | `HIGPagination` | Planned |
+| Popovers / tooltips | `HIGPopover`, `HIGTooltip` | Planned |
+| Progress | `HIGProgressView` | Extend |
+| Tables | `HIGTable` / `HIGDataTable` | Planned |
+| Typography | `HIGLabel` + type tokens | Extend |
+| Reboot / glyphicons / font-weight | — | Excluded (web reset / icon fonts) |
+
+## Custom components map
+
+| Remark | HIG target | Status |
+|--------|------------|--------|
+| Panels | `HIGPanel` | **Done** |
+| Panel groups | `HIGPanelGroup` | Planned |
+| Avatar | `HIGAvatar` | Extend |
+| Status | `HIGStatusIndicator` | Planned |
+| Steps / pearls | `HIGSteps`, `HIGPearlSteps` | Planned |
+| Timeline | `HIGTimeline` | Planned |
+| Chat / comment | `HIGChatBubble`, `HIGComment` | Planned |
+| Cover / overlay | `HIGCover`, `HIGImageOverlay` | Planned |
+| Pricing | `HIGPricingCard` | Planned |
+| Ribbon / rating / testimonial | `HIGRibbon`, `HIGRating`, `HIGTestimonial` | Planned |
+| Icon / hamburger | `HIGIcon`, `HIGMenuToggle` | Exists / Planned |
+| Loader | `HIGActivityIndicator`, `HIGMatrixLoader` | Done |
+| Counter / widget | `HIGCounter`, `HIGWidget` | Planned |
+| Divider | `HIGDivider` | Done |
+| Checkbox / radio | `HIGCheckbox`, `HIGRadio` | Done |
+| Color selector | `HIGColorSelector` | Planned |
+| Social | `HIGSocialButton` | Planned |
+| Animation helpers | motion tokens / modifiers | Extend |
+| Example (docs SCSS) | — | Excluded |
+| Background / color helpers | Showcase swatches | Recipe |
+
+## Vendor roles (no third-party deps)
+
+| Role | HIG target | Status |
+|------|------------|--------|
+| Toasts | `HIGToast` | Extend |
+| Dialogs | confirmation / alert wrappers | Planned |
+| Date / time | `HIGDatePicker`, `HIGTimePicker` | Planned |
+| Select / multi / typeahead | `HIGSelect`, `HIGAutocomplete` | Planned |
+| Tags input | `HIGTagInput` | Planned |
+| File upload / drop | `HIGDropZone`, file importer helpers | Planned |
+| Image crop | `HIGPhotoEditor` | Done |
+| Tree / sortable | `HIGTreeView`, `HIGReorderableList` | Planned |
+| Lightbox / carousel | `HIGLightbox`, `HIGCarousel` | Planned |
+| Top progress (nprogress) | `HIGNetworkProgressBar` | Planned |
+| Button loading (ladda) | `HIGButton` loading | Extend |
+| Slide panel | `HIGDrawer` | Planned |
+| Calendar | `HIGCalendar` | Planned |
+| Charts (all JS libs) | Swift Charts family | Planned |
+| Maps | MapKit optional / recipe | Planned |
+| Dashboard grid | `HIGDashboardGrid` | Planned |
+| Video | `HIGVideoPlayer` | Planned |
+| Coach marks | `HIGCoachMark` | Planned |
+| Icon fonts (15+) | SF Symbols + Heroicons mapping | Excluded (fonts) |
+| Animsition | — | Excluded |
+| Chart.js / C3 / Flot / … | Swift Charts only | Excluded (vendors) |
+
+## Shells
+
+| Remark shell | HIG target | Status |
+|--------------|------------|--------|
+| base | `HIGAdminShell` `.sidebar` | Planned |
+| iconbar | `.iconRail` | Planned |
+| topbar / topicon | `.topBar` / `.topIcon` | Planned |
+| center | `.centered` | Planned |
+| mmenu | `.drawer` | Planned |
+
+## Widgets / apps / pages
+
+| Category | Approach | Status |
+|----------|----------|--------|
+| widgets/* | `HIGWidget` + charts/counters recipes | Planned |
+| apps/* (13) | Showcase recipes only | Planned |
+| pages/* (34) | Showcase recipes only | Planned |
+
+## Definition of done (program)
+
+- [ ] Every row above is Done, Recipe, or Excluded
+- [x] `HIGAdminTheme` selectable in Showcase
+- [x] `HIGPanel` public with full component DoD
+- [ ] All waves merged via PRs to `develop`
+- [ ] No third-party runtime dependencies introduced

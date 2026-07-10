@@ -15,7 +15,7 @@ struct HIGShowcaseApp: App {
         WindowGroup {
             #if os(iOS)
             if captureSnapshotsOnLaunch {
-                ShowcaseIOSCaptureRunner()
+                ShowcaseIOSCaptureRunnerView()
             } else {
                 ShowcaseRootView()
             }
@@ -30,7 +30,7 @@ struct HIGShowcaseApp: App {
 }
 
 #if os(iOS)
-private struct ShowcaseIOSCaptureRunner: View {
+private struct ShowcaseIOSCaptureRunnerView: View {
     @State private var didStart = false
 
     var body: some View {

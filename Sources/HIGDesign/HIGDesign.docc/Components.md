@@ -85,6 +85,10 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 ## Layout
 
 - ``HIGCard``
+- ``HIGPanel``
+- ``HIGPanelOptions``
+- ``HIGPanelActions``
+- ``HIGPanelTokens``
 - ``HIGDivider``
 - ``HIGList``
 - ``HIGFormSection``

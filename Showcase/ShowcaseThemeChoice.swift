@@ -5,6 +5,7 @@ public enum ShowcaseThemeChoice: String, CaseIterable, Identifiable, Sendable {
     case system
     case highContrast
     case brand
+    case admin
     case custom
 
     public var id: String { rawValue }
@@ -17,6 +18,8 @@ public enum ShowcaseThemeChoice: String, CaseIterable, Identifiable, Sendable {
             "High Contrast"
         case .brand:
             "Brand"
+        case .admin:
+            "Admin"
         case .custom:
             "Custom"
         }
@@ -30,6 +33,8 @@ public enum ShowcaseThemeChoice: String, CaseIterable, Identifiable, Sendable {
             HIGHighContrastTheme()
         case .brand:
             HIGBrandTheme(name: "Brand", accent: .purple)
+        case .admin:
+            HIGAdminTheme()
         case .custom:
             ShowcaseCustomTheme()
         }

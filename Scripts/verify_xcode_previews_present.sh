@@ -31,6 +31,7 @@ while IFS= read -r file; do
 done < <(
     grep -rlE "$VIEW_PATTERN" "${existing_paths[@]}" 2>/dev/null \
         | grep -v '/Inputs/PhotoPicker/' \
+        | grep -v 'PlatformSupport\.swift$' \
         | sort || true
 )
 

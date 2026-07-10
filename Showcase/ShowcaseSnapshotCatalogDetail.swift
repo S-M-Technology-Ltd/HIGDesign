@@ -2,7 +2,7 @@ import HIGDesign
 import SwiftUI
 
 /// Catalog detail content shared by the live showcase app and pixel-match snapshots.
-struct ShowcaseSnapshotCatalogDetail: View {
+struct ShowcaseSnapshotCatalogDetailView: View {
     let component: ShowcaseComponent
     @Binding var iconSettings: ShowcaseIconSettings
 
@@ -20,6 +20,8 @@ struct ShowcaseSnapshotCatalogDetail: View {
             ShowcaseProgressView()
         case .card:
             ShowcaseCardView()
+        case .panel:
+            ShowcasePanelView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:

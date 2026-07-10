@@ -2,6 +2,16 @@
 
 All notable changes to HIGDesign are documented here. The project follows [Semantic Versioning](https://semver.org/) from v1.0.0 onward.
 
+## Unreleased
+
+### Added
+
+- `Docs/ADMIN_TEMPLATE_PORT.md` — full Remark Admin Template → HIGDesign capability tracker
+- `HIGAdminTheme` / `HIGAdminThemeHue` — optional admin-density theme (Remark-inspired primary hues and denser spacing)
+- Showcase theme choice: **Admin**
+- `HIGPanel`, `HIGPanelOptions`, `HIGPanelActions`, `HIGPanelTokens` / `theme.panel` — admin content surface with title, description, refresh/collapse/close, body, and footer
+- Showcase Panel page, unit tests, DocC, and requirements updates for the admin expansion program
+
 ## 1.4.0 — 2026-07-10
 
 Minor release adding a 112-animation matrix loader catalog and multi-platform sample verification gates.

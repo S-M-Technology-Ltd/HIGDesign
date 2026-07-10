@@ -131,7 +131,7 @@ public enum ShowcaseSnapshotPixelCapture {
         themeChoice: ShowcaseThemeChoice,
         colorScheme: ColorScheme
     ) -> some View {
-        let detail = ShowcaseSnapshotCatalogDetail(
+        let detail = ShowcaseSnapshotCatalogDetailView(
             component: component,
             iconSettings: .constant(ShowcaseIconSettings())
         )

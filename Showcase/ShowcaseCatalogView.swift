@@ -97,7 +97,7 @@ struct ShowcaseCatalogView: View {
 
     @ViewBuilder
     private func showcaseDetail(for component: ShowcaseComponent) -> some View {
-        ShowcaseSnapshotCatalogDetail(component: component, iconSettings: $iconSettings)
+        ShowcaseSnapshotCatalogDetailView(component: component, iconSettings: $iconSettings)
     }
 }
 
