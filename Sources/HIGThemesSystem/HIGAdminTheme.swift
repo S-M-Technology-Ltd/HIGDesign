@@ -32,6 +32,8 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
     public let pagination: any HIGPaginationTokens
     public let tabs: any HIGTabsTokens
     public let accordion: any HIGAccordionTokens
+    public let steps: any HIGStepsTokens
+    public let pearlSteps: any HIGPearlStepsTokens
     public let progress: any HIGProgressTokens
     public let alert: any HIGAlertTokens
     public let toast: any HIGToastTokens
@@ -144,6 +146,23 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
             cornerRadius: HIGRadius.sm.rawValue,
             borderWidth: base.accordion.borderWidth,
             chevronPointSize: base.accordion.chevronPointSize
+        )
+        self.steps = HIGSystemStepsTokens(
+            titleFont: base.steps.titleFont,
+            detailFont: base.steps.detailFont,
+            indexFont: base.steps.indexFont,
+            indicatorSize: base.steps.indicatorSize,
+            connectorThickness: base.steps.connectorThickness,
+            itemSpacing: HIGSpacing.xs.rawValue,
+            labelSpacing: HIGSpacing.xxs.rawValue,
+            minTapTarget: base.steps.minTapTarget
+        )
+        self.pearlSteps = HIGSystemPearlStepsTokens(
+            pearlSize: base.pearlSteps.pearlSize,
+            currentPearlSize: base.pearlSteps.currentPearlSize,
+            connectorThickness: base.pearlSteps.connectorThickness,
+            itemSpacing: HIGSpacing.xs.rawValue,
+            minTapTarget: base.pearlSteps.minTapTarget
         )
         self.progress = base.progress
         self.alert = base.alert

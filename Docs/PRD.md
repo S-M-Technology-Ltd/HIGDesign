@@ -81,6 +81,7 @@ First delivery slices:
 - `HIGPanel` (primary admin surface) with tokens, tests, Showcase, DocC
 - `HIGBreadcrumb` + `HIGPageHeader` wayfinding chrome
 - `HIGPagination`, `HIGTabs`, `HIGAccordion` content navigation
+- `HIGSteps` and `HIGPearlSteps` process indicators
 
 ## Previous Milestone: v1.4.0 (released)
 

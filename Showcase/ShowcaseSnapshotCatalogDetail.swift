@@ -32,6 +32,10 @@ struct ShowcaseSnapshotCatalogDetailView: View {
             ShowcaseTabsView()
         case .accordion:
             ShowcaseAccordionView()
+        case .steps:
+            ShowcaseStepsView()
+        case .pearlSteps:
+            ShowcasePearlStepsView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:

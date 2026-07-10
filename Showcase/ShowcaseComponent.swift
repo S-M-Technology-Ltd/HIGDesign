@@ -43,6 +43,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case pagination
     case tabs
     case accordion
+    case steps
+    case pearlSteps
 
     public var id: String { rawValue }
 
@@ -97,6 +99,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .pagination: "Pagination"
         case .tabs: "Tabs"
         case .accordion: "Accordion"
+        case .steps: "Steps"
+        case .pearlSteps: "Pearl Steps"
         }
     }
 
@@ -144,6 +148,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .pagination: "Navigation"
         case .tabs: "Navigation"
         case .accordion: "Layout"
+        case .steps: "Navigation"
+        case .pearlSteps: "Navigation"
         }
     }
 
@@ -191,13 +197,15 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .pagination: "Page-number navigation with previous/next controls for long lists."
         case .tabs: "In-content tab labels with underline selection (not app tab bars)."
         case .accordion: "Expandable section stack for dense admin settings content."
+        case .steps: "Numbered multi-step process trail with horizontal or vertical layout."
+        case .pearlSteps: "Compact pearl/dot progress indicator for short wizards."
         }
     }
 
     var platforms: String {
         switch self {
         case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .breadcrumb, .pageHeader,
-             .pagination, .tabs, .accordion, .toolbar,
+             .pagination, .tabs, .accordion, .steps, .pearlSteps, .toolbar,
              .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .matrixLoader,
              .list, .form,
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,

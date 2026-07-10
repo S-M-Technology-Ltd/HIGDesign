@@ -23,6 +23,7 @@ Theme contract, environment injection, and built-in system themes for HIGDesign.
 - `HIGTheme` includes `panel` component tokens for ``HIGPanel``.
 - `HIGTheme` includes `breadcrumb` and `pageHeader` component tokens for ``HIGBreadcrumb`` and ``HIGPageHeader``.
 - `HIGTheme` includes `pagination`, `tabs`, and `accordion` component tokens for wayfinding and expandable layout.
+- `HIGTheme` includes `steps` and `pearlSteps` component tokens for process indicators.
 
 ### Runtime behavior
 
