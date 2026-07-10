@@ -30,6 +30,7 @@ public struct HIGBrandTheme: HIGTheme, Sendable {
     public let accordion: any HIGAccordionTokens
     public let steps: any HIGStepsTokens
     public let pearlSteps: any HIGPearlStepsTokens
+    public let timeline: any HIGTimelineTokens
     public let progress: any HIGProgressTokens
     public let alert: any HIGAlertTokens
     public let toast: any HIGToastTokens
@@ -95,6 +96,7 @@ public struct HIGBrandTheme: HIGTheme, Sendable {
         self.accordion = base.accordion
         self.steps = base.steps
         self.pearlSteps = base.pearlSteps
+        self.timeline = base.timeline
         self.progress = base.progress
         self.alert = base.alert
         self.toast = base.toast

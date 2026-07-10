@@ -21,6 +21,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - `HIGSteps` / `HIGStepsItem` / `HIGStepsAxis` / `theme.steps` — numbered process trail
 - `HIGPearlSteps` / `theme.pearlSteps` — compact pearl/dot step indicator
 - Showcase Steps and Pearl Steps pages plus token tests
+- `HIGTimeline` / `HIGTimelineItem` / `theme.timeline` — vertical activity timeline
+- Showcase Timeline page plus token tests
 
 ## 1.4.0 — 2026-07-10
 

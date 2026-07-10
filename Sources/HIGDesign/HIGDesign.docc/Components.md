@@ -40,6 +40,9 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGAvatar``
 - ``HIGLink``
 - ``HIGBulletList``
+- ``HIGTimeline``
+- ``HIGTimelineItem``
+- ``HIGTimelineTokens``
 
 ## Inputs
 

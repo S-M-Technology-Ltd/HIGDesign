@@ -36,6 +36,8 @@ struct ShowcaseSnapshotCatalogDetailView: View {
             ShowcaseStepsView()
         case .pearlSteps:
             ShowcasePearlStepsView()
+        case .timeline:
+            ShowcaseTimelineView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:
