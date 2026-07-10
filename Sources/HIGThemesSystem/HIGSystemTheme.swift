@@ -29,6 +29,8 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let steps: any HIGStepsTokens
     public let pearlSteps: any HIGPearlStepsTokens
     public let timeline: any HIGTimelineTokens
+    public let statusIndicator: any HIGStatusIndicatorTokens
+    public let emptyState: any HIGEmptyStateTokens
     public let progress: any HIGProgressTokens
     public let alert: any HIGAlertTokens
     public let toast: any HIGToastTokens
@@ -78,6 +80,8 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         steps: any HIGStepsTokens = HIGSystemStepsTokens(),
         pearlSteps: any HIGPearlStepsTokens = HIGSystemPearlStepsTokens(),
         timeline: any HIGTimelineTokens = HIGSystemTimelineTokens(),
+        statusIndicator: any HIGStatusIndicatorTokens = HIGSystemStatusIndicatorTokens(),
+        emptyState: any HIGEmptyStateTokens = HIGSystemEmptyStateTokens(),
         progress: any HIGProgressTokens = HIGSystemProgressTokens(),
         alert: any HIGAlertTokens = HIGSystemAlertTokens(),
         toast: any HIGToastTokens = HIGSystemToastTokens(),
@@ -126,6 +130,8 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.steps = steps
         self.pearlSteps = pearlSteps
         self.timeline = timeline
+        self.statusIndicator = statusIndicator
+        self.emptyState = emptyState
         self.progress = progress
         self.alert = alert
         self.toast = toast

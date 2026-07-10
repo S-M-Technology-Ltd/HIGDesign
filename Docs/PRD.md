@@ -83,6 +83,7 @@ First delivery slices:
 - `HIGPagination`, `HIGTabs`, `HIGAccordion` content navigation
 - `HIGSteps` and `HIGPearlSteps` process indicators
 - `HIGTimeline` activity timeline
+- `HIGStatusIndicator`, avatar status overlay, and `HIGEmptyState`
 
 ## Previous Milestone: v1.4.0 (released)
 

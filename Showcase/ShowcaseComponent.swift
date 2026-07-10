@@ -46,6 +46,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case steps
     case pearlSteps
     case timeline
+    case statusIndicator
+    case emptyState
 
     public var id: String { rawValue }
 
@@ -103,6 +105,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .steps: "Steps"
         case .pearlSteps: "Pearl Steps"
         case .timeline: "Timeline"
+        case .statusIndicator: "Status Indicator"
+        case .emptyState: "Empty State"
         }
     }
 
@@ -153,6 +157,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .steps: "Navigation"
         case .pearlSteps: "Navigation"
         case .timeline: "Content"
+        case .statusIndicator: "Content"
+        case .emptyState: "Layout"
         }
     }
 
@@ -203,13 +209,15 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .steps: "Numbered multi-step process trail with horizontal or vertical layout."
         case .pearlSteps: "Compact pearl/dot progress indicator for short wizards."
         case .timeline: "Vertical activity timeline with markers, connectors, and timestamps."
+        case .statusIndicator: "Presence dots for online, away, busy, and offline states."
+        case .emptyState: "Centered empty-content messaging with optional icon and actions."
         }
     }
 
     var platforms: String {
         switch self {
         case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .breadcrumb, .pageHeader,
-             .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .toolbar,
+             .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .statusIndicator, .emptyState, .toolbar,
              .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .matrixLoader,
              .list, .form,
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,

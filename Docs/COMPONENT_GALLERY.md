@@ -641,6 +641,32 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGStatusIndicator
+
+| HIG category | Platforms | States |
+|---|---|---|
+| [Status](https://developer.apple.com/design/human-interface-guidelines/) | All 6 | online · away · busy · offline |
+
+**Guidelines:**
+- Compact presence affordance for lists, chat, and admin tables
+- Pair with `HIGAvatar(..., status:)` for badge overlays
+- Colors map to semantic theme roles (accent / warning / destructive / secondary)
+
+---
+
+### HIGEmptyState
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| [Empty states](https://developer.apple.com/design/human-interface-guidelines/) | All 6 | icon · title · message · actions |
+
+**Guidelines:**
+- Explain what is empty and what to do next
+- Keep primary action singular when possible
+- Center content; cap width via `theme.emptyState.maxContentWidth`
+
+---
+
 ### HIGList
 
 | HIG category | Platforms | Styles |

@@ -6,33 +6,58 @@ import SwiftUI
 public struct HIGAvatar: View {
     private let initials: String
     private let systemImage: String?
+    private let status: HIGStatusKind?
 
     @Environment(\.higTheme) private var theme
 
-    public init(_ initials: String, systemImage: String? = nil) {
+    public init(
+        _ initials: String,
+        systemImage: String? = nil,
+        status: HIGStatusKind? = nil
+    ) {
         self.initials = String(initials.prefix(2)).uppercased()
         self.systemImage = systemImage
+        self.status = status
     }
 
     public var body: some View {
         let tokens = theme.avatar
+        let statusTokens = theme.statusIndicator
 
-        ZStack {
-            Circle()
-                .fill(theme.colors.fillPrimary)
+        ZStack(alignment: .bottomTrailing) {
+            ZStack {
+                Circle()
+                    .fill(theme.colors.fillPrimary)
 
-            if let systemImage {
-                Image(systemName: systemImage)
-                    .font(tokens.font)
-                    .foregroundStyle(theme.colors.labelSecondary)
-            } else {
-                Text(initials)
-                    .font(tokens.font)
-                    .foregroundStyle(theme.colors.labelPrimary)
+                if let systemImage {
+                    Image(systemName: systemImage)
+                        .font(tokens.font)
+                        .foregroundStyle(theme.colors.labelSecondary)
+                } else {
+                    Text(initials)
+                        .font(tokens.font)
+                        .foregroundStyle(theme.colors.labelPrimary)
+                }
+            }
+            .frame(width: tokens.diameter, height: tokens.diameter)
+
+            if let status {
+                HIGStatusIndicator(status, usesAvatarBadgeSize: true)
+                    .offset(
+                        x: statusTokens.avatarBadgeDiameter / 4,
+                        y: statusTokens.avatarBadgeDiameter / 4
+                    )
             }
         }
-        .frame(width: tokens.diameter, height: tokens.diameter)
-        .accessibilityLabel(initials.isEmpty ? "Avatar" : "Avatar \(initials)")
+        .accessibilityLabel(accessibilityLabelText)
+    }
+
+    private var accessibilityLabelText: String {
+        let base = initials.isEmpty ? "Avatar" : "Avatar \(initials)"
+        if let status {
+            return "\(base), \(status.accessibilityLabel)"
+        }
+        return base
     }
 }
 
@@ -41,8 +66,8 @@ public struct HIGAvatar: View {
     HIGThemeableView(theme: HIGComponentPreviewTheme()) {
         HStack(spacing: HIGSpacing.lg.rawValue) {
             HIGAvatar("AR")
-            HIGAvatar("Sam")
-            HIGAvatar("", systemImage: "person.fill")
+            HIGAvatar("Sam", status: .online)
+            HIGAvatar("", systemImage: "person.fill", status: .busy)
         }
         .padding()
     }

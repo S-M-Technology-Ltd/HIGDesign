@@ -38,6 +38,9 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGHeroIconDescriptor``
 - ``HIGThemeManager``
 - ``HIGAvatar``
+- ``HIGStatusKind``
+- ``HIGStatusIndicator``
+- ``HIGStatusIndicatorTokens``
 - ``HIGLink``
 - ``HIGBulletList``
 - ``HIGTimeline``
@@ -95,6 +98,8 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGAccordion``
 - ``HIGAccordionSection``
 - ``HIGAccordionTokens``
+- ``HIGEmptyState``
+- ``HIGEmptyStateTokens``
 - ``HIGDivider``
 - ``HIGList``
 - ``HIGFormSection``

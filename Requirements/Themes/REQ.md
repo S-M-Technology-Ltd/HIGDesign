@@ -25,6 +25,7 @@ Theme contract, environment injection, and built-in system themes for HIGDesign.
 - `HIGTheme` includes `pagination`, `tabs`, and `accordion` component tokens for wayfinding and expandable layout.
 - `HIGTheme` includes `steps` and `pearlSteps` component tokens for process indicators.
 - `HIGTheme` includes `timeline` component tokens for ``HIGTimeline``.
+- `HIGTheme` includes `statusIndicator` and `emptyState` component tokens.
 
 ### Runtime behavior
 

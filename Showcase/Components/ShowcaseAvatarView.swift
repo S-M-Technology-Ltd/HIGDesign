@@ -18,6 +18,13 @@ struct ShowcaseAvatarView: View {
                     ShowcaseSampleView(code: "HIGAvatar(\"\", systemImage: \"person.fill\")") {
                         HIGAvatar("", systemImage: "person.fill")
                     }
+                    ShowcaseSampleView(code: "HIGAvatar(\"AR\", status: .online)") {
+                        HStack(spacing: theme.spacing.item) {
+                            HIGAvatar("AR", status: .online)
+                            HIGAvatar("JD", status: .away)
+                            HIGAvatar("", systemImage: "person.fill", status: .offline)
+                        }
+                    }
                 }
             }
             .higPadding(.screenEdge)
