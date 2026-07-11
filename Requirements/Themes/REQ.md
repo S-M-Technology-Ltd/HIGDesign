@@ -36,6 +36,7 @@ Theme contract, environment injection, and built-in system themes for HIGDesign.
 - `HIGTheme` includes `datePicker` and `timePicker` component tokens for date and time selection.
 - `HIGTheme` includes `select` and `autocomplete` component tokens for form select and typeahead.
 - `HIGTheme` includes `tagInput` component tokens for freeform tag entry.
+- `HIGTheme` includes `dataTable` component tokens for columnar data tables.
 
 ### Runtime behavior
 

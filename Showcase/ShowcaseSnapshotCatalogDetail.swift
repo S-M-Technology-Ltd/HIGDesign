@@ -74,6 +74,8 @@ struct ShowcaseSnapshotCatalogDetailView: View {
             ShowcaseAutocompleteView()
         case .tagInput:
             ShowcaseTagInputView()
+        case .dataTable:
+            ShowcaseDataTableView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:

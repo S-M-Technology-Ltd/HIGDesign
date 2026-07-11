@@ -36,6 +36,7 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
     public let picker: any HIGPickerTokens
     public let card: any HIGCardTokens
     public let panel: any HIGPanelTokens
+    public let dataTable: any HIGDataTableTokens
     public let breadcrumb: any HIGBreadcrumbTokens
     public let pageHeader: any HIGPageHeaderTokens
     public let pagination: any HIGPaginationTokens
@@ -143,6 +144,7 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
             titleFont: base.panel.titleFont,
             descriptionFont: base.panel.descriptionFont
         )
+        self.dataTable = base.dataTable
         self.breadcrumb = HIGSystemBreadcrumbTokens(
             font: base.breadcrumb.font,
             currentFont: base.breadcrumb.currentFont,

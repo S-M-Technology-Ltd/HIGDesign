@@ -21,7 +21,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | 1 | Surfaces & wayfinding (`HIGPanel`, breadcrumbs, steps, …) | **Done** (Wave 1 core surfaces) |
 | 2 | Overlays & chrome | **Done** (core overlay kit) |
 | 3 | Advanced forms | **Done** (core form chrome; file upload still planned) |
-| 4 | Data display | Planned |
+| 4 | Data display | **In progress** (`HIGDataTable`) |
 | 5 | Content hybrids | Planned |
 | 6 | Swift Charts family | Planned |
 | 7 | Admin shell & layout | Planned |
@@ -66,7 +66,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Pagination | `HIGPagination` | **Done** |
 | Popovers / tooltips | `HIGPopoverContainer`, `HIGTooltipLabel`, `higPopover`, `higTooltip` | **Done** |
 | Progress | `HIGProgressView` | Extend |
-| Tables | `HIGTable` / `HIGDataTable` | Planned |
+| Tables | `HIGDataTable` | **Done** (v1 text columns; sorting/selection later) |
 | Typography | `HIGLabel` + type tokens | Extend |
 | Reboot / glyphicons / font-weight | — | Excluded (web reset / icon fonts) |
 

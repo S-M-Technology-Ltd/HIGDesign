@@ -616,6 +616,21 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGDataTable
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| [Lists and Tables](https://developer.apple.com/design/human-interface-guidelines/lists-and-tables) | All 6 | header · striped rows · horizontal scroll · empty state |
+
+**Guidelines:**
+- Use for multi-column admin data (users, orders, inventory)
+- Define columns with `HIGDataTableColumn` titles and text providers or key paths
+- Prefer striping for scanability; disable when density is low
+- Empty state message should describe the next action when possible
+- Prefer `HIGList` for single-column vertical browsing
+
+---
+
 ### HIGBreadcrumb
 
 | HIG category | Platforms | Features |

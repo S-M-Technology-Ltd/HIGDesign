@@ -54,6 +54,7 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - `HIGFieldMessageTokens` defines font, icon size, and spacing for ``HIGFieldMessage``.
 - `HIGDatePickerTokens` defines min height and font for ``HIGDatePicker`` and ``HIGTimePicker``.
 - `HIGSelectTokens` defines field chrome, chevron, chip spacing, and suggestion metrics for ``HIGSelect``, ``HIGAutocomplete``, and ``HIGTagInput``.
+- `HIGDataTableTokens` defines header/cell fonts, padding, row height, borders, and column metrics for ``HIGDataTable``.
 
 ### Naming and API
 

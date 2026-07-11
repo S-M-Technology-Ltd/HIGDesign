@@ -30,6 +30,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let picker: any HIGPickerTokens
     public let card: any HIGCardTokens
     public let panel: any HIGPanelTokens
+    public let dataTable: any HIGDataTableTokens
     public let breadcrumb: any HIGBreadcrumbTokens
     public let pageHeader: any HIGPageHeaderTokens
     public let pagination: any HIGPaginationTokens
@@ -96,6 +97,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         picker: any HIGPickerTokens = HIGSystemPickerTokens(),
         card: any HIGCardTokens = HIGSystemCardTokens(),
         panel: any HIGPanelTokens = HIGSystemPanelTokens(),
+        dataTable: any HIGDataTableTokens = HIGSystemDataTableTokens(),
         breadcrumb: any HIGBreadcrumbTokens = HIGSystemBreadcrumbTokens(),
         pageHeader: any HIGPageHeaderTokens = HIGSystemPageHeaderTokens(),
         pagination: any HIGPaginationTokens = HIGSystemPaginationTokens(),
@@ -161,6 +163,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.picker = picker
         self.card = card
         self.panel = panel
+        self.dataTable = dataTable
         self.breadcrumb = breadcrumb
         self.pageHeader = pageHeader
         self.pagination = pagination
