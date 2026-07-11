@@ -53,6 +53,7 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - `HIGInputGroupTokens` defines height, padding, radius, and adornment spacing for ``HIGInputGroup``.
 - `HIGFieldMessageTokens` defines font, icon size, and spacing for ``HIGFieldMessage``.
 - `HIGDatePickerTokens` defines min height and font for ``HIGDatePicker`` and ``HIGTimePicker``.
+- `HIGSelectTokens` defines field chrome, chevron, chip spacing, and suggestion metrics for ``HIGSelect`` and ``HIGAutocomplete``.
 
 ### Naming and API
 

@@ -250,6 +250,21 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGSelect / HIGAutocomplete
+
+| API | Platforms | Notes |
+|---|---|---|
+| `HIGSelect` | All 6 | Single (`Value?`) or multi (`Set`) with bordered field chrome |
+| `HIGAutocomplete` | All 6 | Typeahead filters string suggestions as the user types |
+
+**Guidelines:**
+- Use `HIGSelect` when the full option set is known and typing is unnecessary
+- Use multi-select when several values apply (teams, categories); chips are removable
+- Prefer `HIGAutocomplete` for long lists or free-form typeahead
+- `HIGPicker` remains the compact menu picker without field chrome
+
+---
+
 ### HIGPhotoPicker (iOS-only)
 
 | HIG category | Platforms | States |

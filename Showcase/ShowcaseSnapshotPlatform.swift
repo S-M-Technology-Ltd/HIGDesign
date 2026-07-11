@@ -99,7 +99,7 @@ extension ShowcaseComponent {
         case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .breadcrumb, .pageHeader,
              .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .statusIndicator, .emptyState,
              .closeButton, .modal, .tooltip, .popover, .drawer, .confirmationDialog, .networkProgressBar,
-             .buttonGroup, .menuToggle, .inputGroup, .fieldMessage, .datePicker, .timePicker, .toolbar,
+             .buttonGroup, .menuToggle, .inputGroup, .fieldMessage, .datePicker, .timePicker, .select, .autocomplete, .toolbar,
              .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .matrixLoader,
              .list, .form,
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,

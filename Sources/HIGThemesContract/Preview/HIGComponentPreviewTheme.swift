@@ -19,6 +19,8 @@ public struct HIGComponentPreviewTheme: HIGTheme {
     public let fieldMessage: any HIGFieldMessageTokens = HIGSystemFieldMessageTokens()
     public let datePicker: any HIGDatePickerTokens = HIGSystemDatePickerTokens()
     public let timePicker: any HIGDatePickerTokens = HIGSystemDatePickerTokens()
+    public let select: any HIGSelectTokens = HIGSystemSelectTokens()
+    public let autocomplete: any HIGSelectTokens = HIGSystemSelectTokens()
     public let toggle: any HIGToggleTokens = HIGSystemToggleTokens()
     public let checkbox: any HIGCheckboxTokens = HIGSystemCheckboxTokens()
     public let radio: any HIGRadioTokens = HIGSystemRadioTokens()
