@@ -64,6 +64,10 @@ struct ShowcaseSnapshotCatalogDetailView: View {
             ShowcaseInputGroupView()
         case .fieldMessage:
             ShowcaseFieldMessageView()
+        case .datePicker:
+            ShowcaseDatePickerView()
+        case .timePicker:
+            ShowcaseTimePickerView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:

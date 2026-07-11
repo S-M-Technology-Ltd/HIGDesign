@@ -91,6 +91,7 @@ First delivery slices:
 - `HIGButtonGroup` action clusters
 - `HIGMenuToggle` hamburger control (Wave 2 overlay kit complete)
 - `HIGInputGroup` and `HIGFieldMessage` (Wave 3 forms start)
+- `HIGDatePicker` and `HIGTimePicker` (Wave 3.2 date/time)
 
 ## Previous Milestone: v1.4.0 (released)
 

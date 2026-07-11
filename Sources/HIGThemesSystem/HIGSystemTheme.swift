@@ -17,6 +17,8 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let textField: any HIGTextFieldTokens
     public let inputGroup: any HIGInputGroupTokens
     public let fieldMessage: any HIGFieldMessageTokens
+    public let datePicker: any HIGDatePickerTokens
+    public let timePicker: any HIGDatePickerTokens
     public let toggle: any HIGToggleTokens
     public let checkbox: any HIGCheckboxTokens
     public let radio: any HIGRadioTokens
@@ -78,6 +80,8 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         textField: any HIGTextFieldTokens = HIGSystemTextFieldTokens(),
         inputGroup: any HIGInputGroupTokens = HIGSystemInputGroupTokens(),
         fieldMessage: any HIGFieldMessageTokens = HIGSystemFieldMessageTokens(),
+        datePicker: any HIGDatePickerTokens = HIGSystemDatePickerTokens(),
+        timePicker: any HIGDatePickerTokens = HIGSystemDatePickerTokens(),
         toggle: any HIGToggleTokens = HIGSystemToggleTokens(),
         checkbox: any HIGCheckboxTokens = HIGSystemCheckboxTokens(),
         radio: any HIGRadioTokens = HIGSystemRadioTokens(),
@@ -138,6 +142,8 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.textField = textField
         self.inputGroup = inputGroup
         self.fieldMessage = fieldMessage
+        self.datePicker = datePicker
+        self.timePicker = timePicker
         self.toggle = toggle
         self.checkbox = checkbox
         self.radio = radio

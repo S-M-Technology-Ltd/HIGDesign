@@ -20,7 +20,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | 0 | Inventory, `HIGAdminTheme`, requirements | **Done** |
 | 1 | Surfaces & wayfinding (`HIGPanel`, breadcrumbs, steps, …) | **Done** (Wave 1 core surfaces) |
 | 2 | Overlays & chrome | **Done** (core overlay kit) |
-| 3 | Advanced forms | **In progress** (`HIGInputGroup`, `HIGFieldMessage`) |
+| 3 | Advanced forms | **In progress** (`HIGInputGroup`, `HIGFieldMessage`, `HIGDatePicker`, `HIGTimePicker`) |
 | 4 | Data display | Planned |
 | 5 | Content hybrids | Planned |
 | 6 | Swift Charts family | Planned |
@@ -102,7 +102,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 |------|------------|--------|
 | Toasts | `HIGToast` | Extend |
 | Dialogs | `higConfirmationDialog` / `higAlert` | **Done** |
-| Date / time | `HIGDatePicker`, `HIGTimePicker` | Planned |
+| Date / time | `HIGDatePicker`, `HIGTimePicker` | **Done** |
 | Select / multi / typeahead | `HIGSelect`, `HIGAutocomplete` | Planned |
 | Tags input | `HIGTagInput` | Planned |
 | File upload / drop | `HIGDropZone`, file importer helpers | Planned |

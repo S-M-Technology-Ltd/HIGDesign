@@ -18,6 +18,8 @@ extension HIGTheme {
     public var textField: any HIGTextFieldTokens { HIGSystemTextFieldTokens() }
     public var inputGroup: any HIGInputGroupTokens { HIGSystemInputGroupTokens() }
     public var fieldMessage: any HIGFieldMessageTokens { HIGSystemFieldMessageTokens() }
+    public var datePicker: any HIGDatePickerTokens { HIGSystemDatePickerTokens() }
+    public var timePicker: any HIGDatePickerTokens { HIGSystemDatePickerTokens() }
     public var toggle: any HIGToggleTokens { HIGSystemToggleTokens() }
     public var checkbox: any HIGCheckboxTokens { HIGSystemCheckboxTokens() }
     public var radio: any HIGRadioTokens { HIGSystemRadioTokens() }

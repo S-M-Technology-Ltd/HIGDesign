@@ -236,6 +236,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGDatePicker / HIGTimePicker
+
+| API | Platforms | Notes |
+|---|---|---|
+| `HIGDatePicker` | All 6 | Date components; optional closed range; compact/field style by platform |
+| `HIGTimePicker` | All 6 | Hour and minute components; same themed label chrome |
+
+**Guidelines:**
+- Prefer separate date and time pickers over combined date-and-time when forms collect them independently
+- Pass an inclusive range when deadlines or booking windows are constrained
+- Labels sit above the control; keep them short and action-oriented
+
+---
+
 ### HIGPhotoPicker (iOS-only)
 
 | HIG category | Platforms | States |

@@ -45,6 +45,9 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - `HIGInputGroup` / `theme.inputGroup` — field chrome with leading/trailing adornments
 - `HIGFieldMessage` / `HIGFieldMessageKind` / `theme.fieldMessage` — helper/error/success field messages
 - Showcase Input Group and Field Message pages plus token tests
+- `HIGDatePicker` / `theme.datePicker` — labeled date selection with optional range
+- `HIGTimePicker` / `theme.timePicker` — labeled hour-and-minute selection
+- Showcase Date Picker and Time Picker pages plus token tests
 
 ## 1.4.0 — 2026-07-10
 
