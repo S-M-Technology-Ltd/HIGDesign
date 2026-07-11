@@ -63,6 +63,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case timePicker
     case select
     case autocomplete
+    case tagInput
 
     public var id: String { rawValue }
 
@@ -137,6 +138,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .timePicker: "Time Picker"
         case .select: "Select"
         case .autocomplete: "Autocomplete"
+        case .tagInput: "Tag Input"
         }
     }
 
@@ -204,6 +206,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .timePicker: "Pickers"
         case .select: "Pickers"
         case .autocomplete: "Searching"
+        case .tagInput: "Text Fields"
         }
     }
 
@@ -271,6 +274,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .timePicker: "Labeled hour-and-minute selection with themed captions."
         case .select: "Form select with field chrome for single or multi selection."
         case .autocomplete: "Typeahead field that filters suggestions as you type."
+        case .tagInput: "Freeform tag chips with type-to-add and optional suggestions."
         }
     }
 
@@ -279,7 +283,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .breadcrumb, .pageHeader,
              .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .statusIndicator, .emptyState,
              .closeButton, .modal, .tooltip, .popover, .drawer, .confirmationDialog, .networkProgressBar,
-             .buttonGroup, .menuToggle, .inputGroup, .fieldMessage, .datePicker, .timePicker, .select, .autocomplete, .toolbar,
+             .buttonGroup, .menuToggle, .inputGroup, .fieldMessage, .datePicker, .timePicker, .select, .autocomplete, .tagInput, .toolbar,
              .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .matrixLoader,
              .list, .form,
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,

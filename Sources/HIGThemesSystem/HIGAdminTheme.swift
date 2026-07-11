@@ -27,6 +27,7 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
     public let timePicker: any HIGDatePickerTokens
     public let select: any HIGSelectTokens
     public let autocomplete: any HIGSelectTokens
+    public let tagInput: any HIGSelectTokens
     public let toggle: any HIGToggleTokens
     public let checkbox: any HIGCheckboxTokens
     public let radio: any HIGRadioTokens
@@ -120,6 +121,7 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
         self.timePicker = base.timePicker
         self.select = base.select
         self.autocomplete = base.autocomplete
+        self.tagInput = base.tagInput
         self.toggle = base.toggle
         self.checkbox = base.checkbox
         self.radio = base.radio

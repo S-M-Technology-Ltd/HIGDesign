@@ -45,6 +45,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 - `HIGTimePicker` — labeled hour-and-minute selection; tokens via `theme.timePicker`
 - `HIGSelect` — form select with field chrome for single (`Value?`) or multi (`Set`) selection; tokens via `theme.select`
 - `HIGAutocomplete` — typeahead field that filters string suggestions; tokens via `theme.autocomplete`
+- `HIGTagInput` — freeform tag chips with type-to-add, optional suggestions, and max-tag cap; tokens via `theme.tagInput`
 - `HIGPhotoPicker`
 - `HIGPhotoEditor`
 - `HIGLongTextEditor`
@@ -90,7 +91,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 
 #### Admin catalog expansion (planned families)
 
-Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after select/autocomplete: tag input, data table, Swift Charts, and `HIGAdminShell`.
+Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after advanced forms: data table, Swift Charts, and `HIGAdminShell`.
 
 #### Content
 
