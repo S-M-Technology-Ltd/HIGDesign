@@ -18,6 +18,8 @@ public protocol HIGTheme: Sendable {
     var fieldMessage: any HIGFieldMessageTokens { get }
     var datePicker: any HIGDatePickerTokens { get }
     var timePicker: any HIGDatePickerTokens { get }
+    var select: any HIGSelectTokens { get }
+    var autocomplete: any HIGSelectTokens { get }
     var toggle: any HIGToggleTokens { get }
     var checkbox: any HIGCheckboxTokens { get }
     var radio: any HIGRadioTokens { get }

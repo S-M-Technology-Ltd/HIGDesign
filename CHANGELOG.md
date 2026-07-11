@@ -48,6 +48,9 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - `HIGDatePicker` / `theme.datePicker` — labeled date selection with optional range
 - `HIGTimePicker` / `theme.timePicker` — labeled hour-and-minute selection
 - Showcase Date Picker and Time Picker pages plus token tests
+- `HIGSelect` / `theme.select` — form select with field chrome for single or multi selection
+- `HIGAutocomplete` / `theme.autocomplete` — typeahead field with filtered suggestions
+- Showcase Select and Autocomplete pages plus token tests
 
 ## 1.4.0 — 2026-07-10
 

@@ -61,6 +61,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case fieldMessage
     case datePicker
     case timePicker
+    case select
+    case autocomplete
 
     public var id: String { rawValue }
 
@@ -133,6 +135,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .fieldMessage: "Field Message"
         case .datePicker: "Date Picker"
         case .timePicker: "Time Picker"
+        case .select: "Select"
+        case .autocomplete: "Autocomplete"
         }
     }
 
@@ -198,6 +202,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .fieldMessage: "Text Fields"
         case .datePicker: "Pickers"
         case .timePicker: "Pickers"
+        case .select: "Pickers"
+        case .autocomplete: "Searching"
         }
     }
 
@@ -263,6 +269,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .fieldMessage: "Helper, error, and success messages under form fields."
         case .datePicker: "Labeled date selection with themed captions and platform-native styles."
         case .timePicker: "Labeled hour-and-minute selection with themed captions."
+        case .select: "Form select with field chrome for single or multi selection."
+        case .autocomplete: "Typeahead field that filters suggestions as you type."
         }
     }
 
@@ -271,7 +279,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .breadcrumb, .pageHeader,
              .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .statusIndicator, .emptyState,
              .closeButton, .modal, .tooltip, .popover, .drawer, .confirmationDialog, .networkProgressBar,
-             .buttonGroup, .menuToggle, .inputGroup, .fieldMessage, .datePicker, .timePicker, .toolbar,
+             .buttonGroup, .menuToggle, .inputGroup, .fieldMessage, .datePicker, .timePicker, .select, .autocomplete, .toolbar,
              .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .matrixLoader,
              .list, .form,
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,
