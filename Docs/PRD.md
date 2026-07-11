@@ -90,6 +90,7 @@ First delivery slices:
 - `higConfirmationDialog` and `HIGNetworkProgressBar`
 - `HIGButtonGroup` action clusters
 - `HIGMenuToggle` hamburger control (Wave 2 overlay kit complete)
+- `HIGInputGroup` and `HIGFieldMessage` (Wave 3 forms start)
 
 ## Previous Milestone: v1.4.0 (released)
 

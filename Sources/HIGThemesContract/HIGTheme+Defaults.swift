@@ -16,6 +16,8 @@ extension HIGTheme {
     public var buttonGroup: any HIGButtonGroupTokens { HIGSystemButtonGroupTokens() }
     public var menuToggle: any HIGMenuToggleTokens { HIGSystemMenuToggleTokens() }
     public var textField: any HIGTextFieldTokens { HIGSystemTextFieldTokens() }
+    public var inputGroup: any HIGInputGroupTokens { HIGSystemInputGroupTokens() }
+    public var fieldMessage: any HIGFieldMessageTokens { HIGSystemFieldMessageTokens() }
     public var toggle: any HIGToggleTokens { HIGSystemToggleTokens() }
     public var checkbox: any HIGCheckboxTokens { HIGSystemCheckboxTokens() }
     public var radio: any HIGRadioTokens { HIGSystemRadioTokens() }

@@ -60,6 +60,10 @@ struct ShowcaseSnapshotCatalogDetailView: View {
             ShowcaseButtonGroupView()
         case .menuToggle:
             ShowcaseMenuToggleView()
+        case .inputGroup:
+            ShowcaseInputGroupView()
+        case .fieldMessage:
+            ShowcaseFieldMessageView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:

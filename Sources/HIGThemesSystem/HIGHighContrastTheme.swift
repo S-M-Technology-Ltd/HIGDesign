@@ -16,6 +16,8 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
     public let buttonGroup: any HIGButtonGroupTokens
     public let menuToggle: any HIGMenuToggleTokens
     public let textField: any HIGTextFieldTokens
+    public let inputGroup: any HIGInputGroupTokens
+    public let fieldMessage: any HIGFieldMessageTokens
     public let toggle: any HIGToggleTokens
     public let checkbox: any HIGCheckboxTokens
     public let radio: any HIGRadioTokens
@@ -87,6 +89,8 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
         self.buttonGroup = base.buttonGroup
         self.menuToggle = base.menuToggle
         self.textField = base.textField
+        self.inputGroup = base.inputGroup
+        self.fieldMessage = base.fieldMessage
         self.toggle = base.toggle
         self.checkbox = base.checkbox
         self.radio = base.radio

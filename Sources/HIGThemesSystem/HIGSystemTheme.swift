@@ -15,6 +15,8 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let buttonGroup: any HIGButtonGroupTokens
     public let menuToggle: any HIGMenuToggleTokens
     public let textField: any HIGTextFieldTokens
+    public let inputGroup: any HIGInputGroupTokens
+    public let fieldMessage: any HIGFieldMessageTokens
     public let toggle: any HIGToggleTokens
     public let checkbox: any HIGCheckboxTokens
     public let radio: any HIGRadioTokens
@@ -74,6 +76,8 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         buttonGroup: any HIGButtonGroupTokens = HIGSystemButtonGroupTokens(),
         menuToggle: any HIGMenuToggleTokens = HIGSystemMenuToggleTokens(),
         textField: any HIGTextFieldTokens = HIGSystemTextFieldTokens(),
+        inputGroup: any HIGInputGroupTokens = HIGSystemInputGroupTokens(),
+        fieldMessage: any HIGFieldMessageTokens = HIGSystemFieldMessageTokens(),
         toggle: any HIGToggleTokens = HIGSystemToggleTokens(),
         checkbox: any HIGCheckboxTokens = HIGSystemCheckboxTokens(),
         radio: any HIGRadioTokens = HIGSystemRadioTokens(),
@@ -132,6 +136,8 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.buttonGroup = buttonGroup
         self.menuToggle = menuToggle
         self.textField = textField
+        self.inputGroup = inputGroup
+        self.fieldMessage = fieldMessage
         self.toggle = toggle
         self.checkbox = checkbox
         self.radio = radio

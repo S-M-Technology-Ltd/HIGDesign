@@ -14,6 +14,8 @@ public protocol HIGTheme: Sendable {
     var buttonGroup: any HIGButtonGroupTokens { get }
     var menuToggle: any HIGMenuToggleTokens { get }
     var textField: any HIGTextFieldTokens { get }
+    var inputGroup: any HIGInputGroupTokens { get }
+    var fieldMessage: any HIGFieldMessageTokens { get }
     var toggle: any HIGToggleTokens { get }
     var checkbox: any HIGCheckboxTokens { get }
     var radio: any HIGRadioTokens { get }

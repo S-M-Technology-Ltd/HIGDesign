@@ -20,7 +20,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | 0 | Inventory, `HIGAdminTheme`, requirements | **Done** |
 | 1 | Surfaces & wayfinding (`HIGPanel`, breadcrumbs, steps, …) | **Done** (Wave 1 core surfaces) |
 | 2 | Overlays & chrome | **Done** (core overlay kit) |
-| 3 | Advanced forms | Planned |
+| 3 | Advanced forms | **In progress** (`HIGInputGroup`, `HIGFieldMessage`) |
 | 4 | Data display | Planned |
 | 5 | Content hybrids | Planned |
 | 6 | Swift Charts family | Planned |
@@ -50,11 +50,12 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Carousel | `HIGCarousel` | Planned |
 
 | Code | `HIGCodeBlock` | Planned |
-| Custom forms / forms | Inputs + `HIGFormSection` | Extend |
+| Custom forms / forms | Inputs + `HIGFormSection` + `HIGInputGroup` / `HIGFieldMessage` | **Extend** / **Done** (group + messages) |
 | Dropdowns | `HIGMenuButton` + menu APIs | Extend |
+| Input groups | `HIGInputGroup` | **Done** |
 | Grid / utilities | modifiers + docs | Extend |
 | Images | `HIGImageFrame` | Planned |
-| Input groups | `HIGInputGroup` | Planned |
+
 | Jumbotron | `HIGHero` | Planned |
 | List group | `HIGList` / `HIGListGroup` | Extend / Planned |
 | Media | `HIGMediaRow` | Planned |

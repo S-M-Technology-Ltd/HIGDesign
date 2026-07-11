@@ -42,6 +42,9 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Button Group page plus token tests
 - `HIGMenuToggle` / `theme.menuToggle` — animated hamburger menu control
 - Showcase Menu Toggle page plus token tests
+- `HIGInputGroup` / `theme.inputGroup` — field chrome with leading/trailing adornments
+- `HIGFieldMessage` / `HIGFieldMessageKind` / `theme.fieldMessage` — helper/error/success field messages
+- Showcase Input Group and Field Message pages plus token tests
 
 ## 1.4.0 — 2026-07-10
 

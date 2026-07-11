@@ -35,6 +35,8 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 #### Inputs
 
 - `HIGTextField`
+- `HIGInputGroup` — field chrome with optional leading/trailing adornments; tokens via `theme.inputGroup`
+- `HIGFieldMessage` / `HIGFieldMessageKind` — helper, error, and success messages under fields; tokens via `theme.fieldMessage`
 - `HIGSecureField`
 - `HIGSearchField`
 - `HIGTextEditor`
@@ -84,7 +86,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 
 #### Admin catalog expansion (planned families)
 
-Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after Wave 2 overlays: data table, form advanced inputs, Swift Charts, and `HIGAdminShell`.
+Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after input group/field message: date/time pickers, select/autocomplete, tag input, data table, Swift Charts, and `HIGAdminShell`.
 
 #### Content
 
