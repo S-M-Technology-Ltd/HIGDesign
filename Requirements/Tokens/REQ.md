@@ -52,6 +52,7 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - `HIGMenuToggleTokens` defines tap target and line metrics for ``HIGMenuToggle``.
 - `HIGInputGroupTokens` defines height, padding, radius, and adornment spacing for ``HIGInputGroup``.
 - `HIGFieldMessageTokens` defines font, icon size, and spacing for ``HIGFieldMessage``.
+- `HIGDatePickerTokens` defines min height and font for ``HIGDatePicker`` and ``HIGTimePicker``.
 
 ### Naming and API
 

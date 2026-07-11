@@ -33,6 +33,7 @@ Theme contract, environment injection, and built-in system themes for HIGDesign.
 - `HIGTheme` includes `buttonGroup` component tokens for action clusters.
 - `HIGTheme` includes `menuToggle` component tokens for hamburger menu controls.
 - `HIGTheme` includes `inputGroup` and `fieldMessage` component tokens for advanced form chrome.
+- `HIGTheme` includes `datePicker` and `timePicker` component tokens for date and time selection.
 
 ### Runtime behavior
 
