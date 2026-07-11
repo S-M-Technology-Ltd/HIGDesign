@@ -38,6 +38,7 @@ public struct HIGBrandTheme: HIGTheme, Sendable {
     public let tooltip: any HIGTooltipTokens
     public let popover: any HIGPopoverTokens
     public let drawer: any HIGDrawerTokens
+    public let networkProgressBar: any HIGNetworkProgressBarTokens
     public let progress: any HIGProgressTokens
     public let alert: any HIGAlertTokens
     public let toast: any HIGToastTokens
@@ -111,6 +112,7 @@ public struct HIGBrandTheme: HIGTheme, Sendable {
         self.tooltip = base.tooltip
         self.popover = base.popover
         self.drawer = base.drawer
+        self.networkProgressBar = base.networkProgressBar
         self.progress = base.progress
         self.alert = base.alert
         self.toast = base.toast

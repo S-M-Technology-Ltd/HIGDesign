@@ -35,6 +35,9 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Tooltip and Popover pages plus token tests
 - `HIGDrawer` / `HIGDrawerEdge` / `theme.drawer` and `higDrawer(...)` slide-panel presentation
 - Showcase Drawer page plus token tests
+- `higConfirmationDialog(...)` — native confirmation dialog with HIG button roles
+- `HIGNetworkProgressBar` / `theme.networkProgressBar` — thin top network/page loading bar
+- Showcase Confirmation Dialog and Network Progress Bar pages plus token tests
 
 ## 1.4.0 — 2026-07-10
 

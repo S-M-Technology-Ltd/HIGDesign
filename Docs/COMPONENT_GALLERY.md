@@ -722,6 +722,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### Confirmation / Network progress
+
+| API | Platforms | Notes |
+|---|---|---|
+| `higConfirmationDialog(...)` | All 6 | Native confirmation dialog + HIG button roles |
+| `HIGNetworkProgressBar` | All 6 | Thin top bar; determinate or indeterminate |
+
+**Guidelines:**
+- Prefer confirmation dialogs for destructive multi-choice actions
+- Place network progress at the top of the content hierarchy
+- Hide the bar when idle (`isActive: false`)
+
+---
+
 ### HIGList
 
 | HIG category | Platforms | Styles |
