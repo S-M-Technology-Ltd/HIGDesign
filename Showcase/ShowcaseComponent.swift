@@ -57,6 +57,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case networkProgressBar
     case buttonGroup
     case menuToggle
+    case inputGroup
+    case fieldMessage
 
     public var id: String { rawValue }
 
@@ -125,6 +127,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .networkProgressBar: "Network Progress Bar"
         case .buttonGroup: "Button Group"
         case .menuToggle: "Menu Toggle"
+        case .inputGroup: "Input Group"
+        case .fieldMessage: "Field Message"
         }
     }
 
@@ -186,6 +190,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .networkProgressBar: "Progress Indicators"
         case .buttonGroup: "Buttons"
         case .menuToggle: "Buttons"
+        case .inputGroup: "Text Fields"
+        case .fieldMessage: "Text Fields"
         }
     }
 
@@ -247,6 +253,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .networkProgressBar: "Thin top-edge progress bar for page or network loading."
         case .buttonGroup: "Clustered action buttons with consistent spacing and optional equal widths."
         case .menuToggle: "Hamburger menu control that animates between open and closed states."
+        case .inputGroup: "Text field chrome with leading and trailing adornments."
+        case .fieldMessage: "Helper, error, and success messages under form fields."
         }
     }
 
@@ -255,7 +263,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .breadcrumb, .pageHeader,
              .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .statusIndicator, .emptyState,
              .closeButton, .modal, .tooltip, .popover, .drawer, .confirmationDialog, .networkProgressBar,
-             .buttonGroup, .menuToggle, .toolbar,
+             .buttonGroup, .menuToggle, .inputGroup, .fieldMessage, .toolbar,
              .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .matrixLoader,
              .list, .form,
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,

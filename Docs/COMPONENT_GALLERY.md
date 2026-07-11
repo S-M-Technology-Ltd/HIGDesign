@@ -115,7 +115,21 @@ A visual reference for every public HIGDesign component — states, themes, plat
 - Secure fields mask input for passwords
 - Search fields show magnifying glass icon
 - Use `.keyboardType()`, `.textContentType()`, `.submitLabel()` for context
-- Validation feedback goes below the field, not inline
+- Validation feedback goes below the field via `HIGFieldMessage`, not inline
+
+---
+
+### HIGInputGroup / HIGFieldMessage
+
+| API | Platforms | Notes |
+|---|---|---|
+| `HIGInputGroup` | All 6 | Leading/trailing adornments + field chrome |
+| `HIGFieldMessage` | All 6 | `.helper` · `.error` · `.success` |
+
+**Guidelines:**
+- Use input groups for currency prefixes, unit suffixes, and icon adornments
+- Error messages should set `showsErrorBorder: true` or `messageKind: .error`
+- Keep adornment text short; prefer SF Symbols for icons
 
 <p align="center">
   <img src="../Design/Showcase/snapshots/textField-system-light.png" alt="HIGTextField — System Light" width="240">

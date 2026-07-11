@@ -32,6 +32,7 @@ Theme contract, environment injection, and built-in system themes for HIGDesign.
 - `HIGTheme` includes `networkProgressBar` component tokens for top loading bars.
 - `HIGTheme` includes `buttonGroup` component tokens for action clusters.
 - `HIGTheme` includes `menuToggle` component tokens for hamburger menu controls.
+- `HIGTheme` includes `inputGroup` and `fieldMessage` component tokens for advanced form chrome.
 
 ### Runtime behavior
 

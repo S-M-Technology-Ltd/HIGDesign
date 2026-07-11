@@ -50,6 +50,8 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - `HIGNetworkProgressBarTokens` defines height, corner radius, and indeterminate band fraction for ``HIGNetworkProgressBar``.
 - `HIGButtonGroupTokens` defines inter-button spacing for ``HIGButtonGroup``.
 - `HIGMenuToggleTokens` defines tap target and line metrics for ``HIGMenuToggle``.
+- `HIGInputGroupTokens` defines height, padding, radius, and adornment spacing for ``HIGInputGroup``.
+- `HIGFieldMessageTokens` defines font, icon size, and spacing for ``HIGFieldMessage``.
 
 ### Naming and API
 

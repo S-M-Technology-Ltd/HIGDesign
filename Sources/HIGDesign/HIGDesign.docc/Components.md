@@ -57,6 +57,11 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 ## Inputs
 
 - ``HIGTextField``
+- ``HIGInputGroup``
+- ``HIGInputGroupTokens``
+- ``HIGFieldMessage``
+- ``HIGFieldMessageKind``
+- ``HIGFieldMessageTokens``
 - ``HIGSecureField``
 - ``HIGSearchField``
 - ``HIGTextEditor``
