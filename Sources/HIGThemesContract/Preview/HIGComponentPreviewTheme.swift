@@ -13,6 +13,7 @@ public struct HIGComponentPreviewTheme: HIGTheme {
     public let divider: any HIGDividerTokens = HIGSystemDividerTokens()
     public let button: any HIGButtonTokens = HIGSystemButtonTokens()
     public let buttonGroup: any HIGButtonGroupTokens = HIGSystemButtonGroupTokens()
+    public let menuToggle: any HIGMenuToggleTokens = HIGSystemMenuToggleTokens()
     public let textField: any HIGTextFieldTokens = HIGSystemTextFieldTokens()
     public let toggle: any HIGToggleTokens = HIGSystemToggleTokens()
     public let checkbox: any HIGCheckboxTokens = HIGSystemCheckboxTokens()

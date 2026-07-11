@@ -56,6 +56,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case confirmationDialog
     case networkProgressBar
     case buttonGroup
+    case menuToggle
 
     public var id: String { rawValue }
 
@@ -123,6 +124,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .confirmationDialog: "Confirmation Dialog"
         case .networkProgressBar: "Network Progress Bar"
         case .buttonGroup: "Button Group"
+        case .menuToggle: "Menu Toggle"
         }
     }
 
@@ -183,6 +185,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .confirmationDialog: "Alerts"
         case .networkProgressBar: "Progress Indicators"
         case .buttonGroup: "Buttons"
+        case .menuToggle: "Buttons"
         }
     }
 
@@ -243,6 +246,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .confirmationDialog: "Native confirmation dialog presentation with HIG button roles."
         case .networkProgressBar: "Thin top-edge progress bar for page or network loading."
         case .buttonGroup: "Clustered action buttons with consistent spacing and optional equal widths."
+        case .menuToggle: "Hamburger menu control that animates between open and closed states."
         }
     }
 
@@ -251,7 +255,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .breadcrumb, .pageHeader,
              .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .statusIndicator, .emptyState,
              .closeButton, .modal, .tooltip, .popover, .drawer, .confirmationDialog, .networkProgressBar,
-             .buttonGroup, .toolbar,
+             .buttonGroup, .menuToggle, .toolbar,
              .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .matrixLoader,
              .list, .form,
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,

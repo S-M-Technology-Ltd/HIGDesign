@@ -19,6 +19,7 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
     public let divider: any HIGDividerTokens
     public let button: any HIGButtonTokens
     public let buttonGroup: any HIGButtonGroupTokens
+    public let menuToggle: any HIGMenuToggleTokens
     public let textField: any HIGTextFieldTokens
     public let toggle: any HIGToggleTokens
     public let checkbox: any HIGCheckboxTokens
@@ -105,6 +106,7 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
         self.divider = base.divider
         self.button = base.button
         self.buttonGroup = HIGSystemButtonGroupTokens(spacing: HIGSpacing.xs.rawValue)
+        self.menuToggle = base.menuToggle
         self.textField = base.textField
         self.toggle = base.toggle
         self.checkbox = base.checkbox

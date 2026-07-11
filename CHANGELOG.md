@@ -40,6 +40,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Confirmation Dialog and Network Progress Bar pages plus token tests
 - `HIGButtonGroup` / `HIGButtonGroupAxis` / `theme.buttonGroup` — clustered actions with equal-width layout option
 - Showcase Button Group page plus token tests
+- `HIGMenuToggle` / `theme.menuToggle` — animated hamburger menu control
+- Showcase Menu Toggle page plus token tests
 
 ## 1.4.0 — 2026-07-10
 

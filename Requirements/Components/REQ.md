@@ -20,6 +20,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 
 - `HIGButton` with roles: primary, secondary, destructive, borderless; supports `isLoading`
 - `HIGButtonGroup` / `HIGButtonGroupAxis` — related action clusters with spacing and optional equal widths; tokens via `theme.buttonGroup`
+- `HIGMenuToggle` — hamburger/menu toggle with animated open/closed glyph; tokens via `theme.menuToggle`
 - `HIGMenuButton` for menu-triggering actions
 
 #### Controls
@@ -83,7 +84,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 
 #### Admin catalog expansion (planned families)
 
-Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after button group: menu toggle polish, data table, form advanced inputs, Swift Charts, and `HIGAdminShell`.
+Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after Wave 2 overlays: data table, form advanced inputs, Swift Charts, and `HIGAdminShell`.
 
 #### Content
 

@@ -12,6 +12,7 @@ public protocol HIGTheme: Sendable {
     var divider: any HIGDividerTokens { get }
     var button: any HIGButtonTokens { get }
     var buttonGroup: any HIGButtonGroupTokens { get }
+    var menuToggle: any HIGMenuToggleTokens { get }
     var textField: any HIGTextFieldTokens { get }
     var toggle: any HIGToggleTokens { get }
     var checkbox: any HIGCheckboxTokens { get }

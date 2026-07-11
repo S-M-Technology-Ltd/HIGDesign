@@ -89,6 +89,7 @@ First delivery slices:
 - `HIGDrawer` / `higDrawer` slide panels
 - `higConfirmationDialog` and `HIGNetworkProgressBar`
 - `HIGButtonGroup` action clusters
+- `HIGMenuToggle` hamburger control (Wave 2 overlay kit complete)
 
 ## Previous Milestone: v1.4.0 (released)
 
