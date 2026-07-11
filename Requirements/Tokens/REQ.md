@@ -49,6 +49,7 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - `HIGDrawerTokens` defines width, padding, scrim opacity, and header metrics for ``HIGDrawer``.
 - `HIGNetworkProgressBarTokens` defines height, corner radius, and indeterminate band fraction for ``HIGNetworkProgressBar``.
 - `HIGButtonGroupTokens` defines inter-button spacing for ``HIGButtonGroup``.
+- `HIGMenuToggleTokens` defines tap target and line metrics for ``HIGMenuToggle``.
 
 ### Naming and API
 

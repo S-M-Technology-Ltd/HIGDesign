@@ -10,6 +10,8 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGButtonGroup``
 - ``HIGButtonGroupAxis``
 - ``HIGButtonGroupTokens``
+- ``HIGMenuToggle``
+- ``HIGMenuToggleTokens``
 - ``HIGCloseButton``
 - ``HIGCloseButtonTokens``
 - ``HIGMenuButton``

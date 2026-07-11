@@ -14,6 +14,7 @@ extension HIGTheme {
     public var divider: any HIGDividerTokens { HIGSystemDividerTokens() }
     public var button: any HIGButtonTokens { HIGSystemButtonTokens() }
     public var buttonGroup: any HIGButtonGroupTokens { HIGSystemButtonGroupTokens() }
+    public var menuToggle: any HIGMenuToggleTokens { HIGSystemMenuToggleTokens() }
     public var textField: any HIGTextFieldTokens { HIGSystemTextFieldTokens() }
     public var toggle: any HIGToggleTokens { HIGSystemToggleTokens() }
     public var checkbox: any HIGCheckboxTokens { HIGSystemCheckboxTokens() }

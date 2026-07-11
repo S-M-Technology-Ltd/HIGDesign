@@ -47,6 +47,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGMenuToggle
+
+| HIG category | Platforms | States |
+|---|---|---|
+| [Buttons](https://developer.apple.com/design/human-interface-guidelines/buttons) | All 6 | collapsed · expanded |
+
+**Guidelines:**
+- Use to open side navigation or drawers
+- Animates hamburger lines into a close glyph; respects Reduce Motion
+- Pair with `higDrawer` or `HIGSidebar` for admin shells
+- Minimum 44pt tap target from `theme.menuToggle`
+
+---
+
 ### HIGMenuButton
 
 | HIG category | Platforms | Styles |

@@ -5,7 +5,7 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
 EXPECTED=(
-    button textField toggle divider progressView card panel breadcrumb pageHeader pagination tabs accordion steps pearlSteps timeline statusIndicator emptyState closeButton modal tooltip popover drawer confirmationDialog networkProgressBar buttonGroup tabBar toolbar
+    button textField toggle divider progressView card panel breadcrumb pageHeader pagination tabs accordion steps pearlSteps timeline statusIndicator emptyState closeButton modal tooltip popover drawer confirmationDialog networkProgressBar buttonGroup menuToggle tabBar toolbar
     alert toast sidebar navigationBar label badge activityIndicator matrixLoader list form
     checkbox radio segmentedControl slider secureField searchField picker
     icon avatar link bulletList textEditor stepper menuButton tag photoPicker photoEditor longTextEditor
@@ -28,6 +28,7 @@ showcase_key_for() {
     case "$1" in
         HIGButton) echo button ;;
         HIGButtonGroup) echo buttonGroup ;;
+        HIGMenuToggle) echo menuToggle ;;
         HIGTextField) echo textField ;;
         HIGToggle) echo toggle ;;
         HIGCheckbox) echo checkbox ;;

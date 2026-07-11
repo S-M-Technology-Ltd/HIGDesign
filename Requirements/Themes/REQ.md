@@ -31,6 +31,7 @@ Theme contract, environment injection, and built-in system themes for HIGDesign.
 - `HIGTheme` includes `drawer` component tokens for slide panels.
 - `HIGTheme` includes `networkProgressBar` component tokens for top loading bars.
 - `HIGTheme` includes `buttonGroup` component tokens for action clusters.
+- `HIGTheme` includes `menuToggle` component tokens for hamburger menu controls.
 
 ### Runtime behavior
 
