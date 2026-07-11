@@ -2,7 +2,7 @@ import CoreGraphics
 import SwiftUI
 import HIGTokensRaw
 
-/// Component tokens for ``HIGSelect`` and ``HIGAutocomplete``.
+/// Component tokens for ``HIGSelect``, ``HIGAutocomplete``, and ``HIGTagInput``.
 public protocol HIGSelectTokens: Sendable {
     var minHeight: CGFloat { get }
     var horizontalPadding: CGFloat { get }
@@ -15,7 +15,7 @@ public protocol HIGSelectTokens: Sendable {
     var chipSpacing: CGFloat { get }
 }
 
-/// System defaults for form select and autocomplete chrome.
+/// System defaults for form select, autocomplete, and tag input chrome.
 public struct HIGSystemSelectTokens: HIGSelectTokens, Sendable {
     public let minHeight: CGFloat
     public let horizontalPadding: CGFloat

@@ -265,6 +265,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGTagInput
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| [Text Fields](https://developer.apple.com/design/human-interface-guidelines/text-fields) | All 6 | type-to-add · removable chips · optional suggestions · max tags |
+
+**Guidelines:**
+- Commit tags with Return / Enter or the inline Add action
+- Prefer `allowsDuplicates: false` for category and filter tags
+- Use optional `suggestions` for controlled vocabularies; freeform tags still allowed
+- Cap dense forms with `maxTags` when backend constraints apply
+
+---
+
 ### HIGPhotoPicker (iOS-only)
 
 | HIG category | Platforms | States |
