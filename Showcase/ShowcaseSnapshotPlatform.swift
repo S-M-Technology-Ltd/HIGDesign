@@ -98,7 +98,7 @@ extension ShowcaseComponent {
         switch self {
         case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .breadcrumb, .pageHeader,
              .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .statusIndicator, .emptyState,
-             .closeButton, .modal, .tooltip, .popover, .drawer, .toolbar,
+             .closeButton, .modal, .tooltip, .popover, .drawer, .confirmationDialog, .networkProgressBar, .toolbar,
              .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .matrixLoader,
              .list, .form,
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,

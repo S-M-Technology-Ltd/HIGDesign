@@ -36,6 +36,7 @@ public struct HIGComponentPreviewTheme: HIGTheme {
     public let tooltip: any HIGTooltipTokens = HIGSystemTooltipTokens()
     public let popover: any HIGPopoverTokens = HIGSystemPopoverTokens()
     public let drawer: any HIGDrawerTokens = HIGSystemDrawerTokens()
+    public let networkProgressBar: any HIGNetworkProgressBarTokens = HIGSystemNetworkProgressBarTokens()
     public let progress: any HIGProgressTokens = HIGSystemProgressTokens()
     public let alert: any HIGAlertTokens = HIGSystemAlertTokens()
     public let toast: any HIGToastTokens = HIGSystemToastTokens()

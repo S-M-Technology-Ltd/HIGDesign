@@ -87,6 +87,7 @@ First delivery slices:
 - `HIGCloseButton` and `HIGModal` overlay chrome
 - `higTooltip` / `HIGTooltipLabel` and `higPopover` / `HIGPopoverContainer`
 - `HIGDrawer` / `higDrawer` slide panels
+- `higConfirmationDialog` and `HIGNetworkProgressBar`
 
 ## Previous Milestone: v1.4.0 (released)
 

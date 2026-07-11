@@ -47,6 +47,7 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - `HIGTooltipTokens` defines padding, radius, font, and max width for ``HIGTooltipLabel``.
 - `HIGPopoverTokens` defines padding, radius, border, and max width for ``HIGPopoverContainer``.
 - `HIGDrawerTokens` defines width, padding, scrim opacity, and header metrics for ``HIGDrawer``.
+- `HIGNetworkProgressBarTokens` defines height, corner radius, and indeterminate band fraction for ``HIGNetworkProgressBar``.
 
 ### Naming and API
 

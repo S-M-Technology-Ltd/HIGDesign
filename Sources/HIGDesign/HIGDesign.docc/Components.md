@@ -90,6 +90,9 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGTooltipTokens``
 - ``HIGPopoverContainer``
 - ``HIGPopoverTokens``
+- ``HIGNetworkProgressBar``
+- ``HIGNetworkProgressBarTokens``
+- ``higConfirmationDialog(_:isPresented:titleVisibility:message:primaryButtonTitle:primaryButtonRole:primaryAction:secondaryButtonTitle:secondaryButtonRole:secondaryAction:)``
 - ``HIGToast``
 - ``HIGToastQueue``
 - ``HIGToastQueueConfiguration``

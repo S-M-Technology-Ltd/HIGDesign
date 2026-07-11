@@ -19,7 +19,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 |------|-------|--------|
 | 0 | Inventory, `HIGAdminTheme`, requirements | **Done** |
 | 1 | Surfaces & wayfinding (`HIGPanel`, breadcrumbs, steps, …) | **Done** (Wave 1 core surfaces) |
-| 2 | Overlays & chrome | **In progress** (+ drawer) |
+| 2 | Overlays & chrome | **In progress** (+ confirmation / network progress) |
 | 3 | Advanced forms | Planned |
 | 4 | Data display | Planned |
 | 5 | Content hybrids | Planned |
@@ -100,7 +100,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Role | HIG target | Status |
 |------|------------|--------|
 | Toasts | `HIGToast` | Extend |
-| Dialogs | confirmation / alert wrappers | Planned |
+| Dialogs | `higConfirmationDialog` / `higAlert` | **Done** |
 | Date / time | `HIGDatePicker`, `HIGTimePicker` | Planned |
 | Select / multi / typeahead | `HIGSelect`, `HIGAutocomplete` | Planned |
 | Tags input | `HIGTagInput` | Planned |
@@ -108,7 +108,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Image crop | `HIGPhotoEditor` | Done |
 | Tree / sortable | `HIGTreeView`, `HIGReorderableList` | Planned |
 | Lightbox / carousel | `HIGLightbox`, `HIGCarousel` | Planned |
-| Top progress (nprogress) | `HIGNetworkProgressBar` | Planned |
+| Top progress (nprogress) | `HIGNetworkProgressBar` | **Done** |
 | Button loading (ladda) | `HIGButton` loading | Extend |
 | Slide panel | `HIGDrawer` / `higDrawer` | **Done** |
 | Calendar | `HIGCalendar` | Planned |

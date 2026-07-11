@@ -52,6 +52,10 @@ struct ShowcaseSnapshotCatalogDetailView: View {
             ShowcasePopoverView()
         case .drawer:
             ShowcaseDrawerView()
+        case .confirmationDialog:
+            ShowcaseConfirmationDialogView()
+        case .networkProgressBar:
+            ShowcaseNetworkProgressBarView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:

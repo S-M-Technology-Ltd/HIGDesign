@@ -42,6 +42,7 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
     public let tooltip: any HIGTooltipTokens
     public let popover: any HIGPopoverTokens
     public let drawer: any HIGDrawerTokens
+    public let networkProgressBar: any HIGNetworkProgressBarTokens
     public let progress: any HIGProgressTokens
     public let alert: any HIGAlertTokens
     public let toast: any HIGToastTokens
@@ -218,6 +219,7 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
             scrimOpacity: base.drawer.scrimOpacity,
             titleFont: base.drawer.titleFont
         )
+        self.networkProgressBar = base.networkProgressBar
         self.progress = base.progress
         self.alert = base.alert
         self.toast = base.toast

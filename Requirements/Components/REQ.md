@@ -55,6 +55,8 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 - `HIGTooltipLabel` + `higTooltip(_:)` — themed tooltip label and platform help tooltip; tokens via `theme.tooltip`
 - `HIGPopoverContainer` + `higPopover(...)` — themed popover chrome; tokens via `theme.popover`
 - `HIGDrawer` / `HIGDrawerEdge` + `higDrawer(...)` — slide-over panel with scrim; tokens via `theme.drawer`
+- `higConfirmationDialog(...)` — native confirmation dialog presentation with HIG alert button roles
+- `HIGNetworkProgressBar` — thin top progress bar for page/network loading; tokens via `theme.networkProgressBar`
 
 #### Layout and navigation
 
@@ -80,7 +82,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 
 #### Admin catalog expansion (planned families)
 
-Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after drawer: network progress, data table, form advanced inputs, Swift Charts, and `HIGAdminShell`.
+Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after confirmation/network progress: button group polish, data table, form advanced inputs, Swift Charts, and `HIGAdminShell`.
 
 #### Content
 
