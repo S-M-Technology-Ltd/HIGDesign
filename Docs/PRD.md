@@ -88,6 +88,7 @@ First delivery slices:
 - `higTooltip` / `HIGTooltipLabel` and `higPopover` / `HIGPopoverContainer`
 - `HIGDrawer` / `higDrawer` slide panels
 - `higConfirmationDialog` and `HIGNetworkProgressBar`
+- `HIGButtonGroup` action clusters
 
 ## Previous Milestone: v1.4.0 (released)
 

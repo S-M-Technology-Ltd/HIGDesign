@@ -55,6 +55,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case drawer
     case confirmationDialog
     case networkProgressBar
+    case buttonGroup
 
     public var id: String { rawValue }
 
@@ -121,6 +122,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .drawer: "Drawer"
         case .confirmationDialog: "Confirmation Dialog"
         case .networkProgressBar: "Network Progress Bar"
+        case .buttonGroup: "Button Group"
         }
     }
 
@@ -180,6 +182,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .drawer: "Navigation"
         case .confirmationDialog: "Alerts"
         case .networkProgressBar: "Progress Indicators"
+        case .buttonGroup: "Buttons"
         }
     }
 
@@ -239,6 +242,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .drawer: "Slide-over detail panel with scrim presentation via higDrawer."
         case .confirmationDialog: "Native confirmation dialog presentation with HIG button roles."
         case .networkProgressBar: "Thin top-edge progress bar for page or network loading."
+        case .buttonGroup: "Clustered action buttons with consistent spacing and optional equal widths."
         }
     }
 
@@ -246,7 +250,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         switch self {
         case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .breadcrumb, .pageHeader,
              .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .statusIndicator, .emptyState,
-             .closeButton, .modal, .tooltip, .popover, .drawer, .confirmationDialog, .networkProgressBar, .toolbar,
+             .closeButton, .modal, .tooltip, .popover, .drawer, .confirmationDialog, .networkProgressBar,
+             .buttonGroup, .toolbar,
              .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .matrixLoader,
              .list, .form,
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,

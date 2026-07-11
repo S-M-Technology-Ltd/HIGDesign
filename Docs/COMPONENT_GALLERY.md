@@ -12,7 +12,7 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 | HIG category | Platforms | Roles | Sizes |
 |---|---|---|---|
-| [Buttons](https://developer.apple.com/design/human-interface-guidelines/buttons) | All 6 | `.primary` `.secondary` `.destructive` `.borderless` `.glass` | `.small` `.regular` `.large` |
+| [Buttons](https://developer.apple.com/design/human-interface-guidelines/buttons) | All 6 | `.primary` `.secondary` `.destructive` `.borderless` `.glass` | `.small` `.medium` `.large` |
 
 **Guidelines:**
 - Use primary buttons for the main call to action — one per screen
@@ -30,6 +30,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 </p>
 
 **Accessibility:** Respects Dynamic Type, Increase Contrast, and Reduce Motion. Each button exposes an `accessibilityLabel` derived from its title or a custom label.
+
+---
+
+### HIGButtonGroup
+
+| HIG category | Platforms | Axes |
+|---|---|---|
+| [Buttons](https://developer.apple.com/design/human-interface-guidelines/buttons) | All 6 | horizontal · vertical · equalWidth |
+
+**Guidelines:**
+- Group related actions (Save/Cancel, Edit/Share/Delete)
+- Prefer secondary roles when using `equalWidth: true`
+- Spacing from `theme.buttonGroup`
+- Do not replace `HIGSegmentedControl` for mutually exclusive filters
 
 ---
 

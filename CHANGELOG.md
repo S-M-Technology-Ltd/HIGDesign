@@ -38,6 +38,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - `higConfirmationDialog(...)` — native confirmation dialog with HIG button roles
 - `HIGNetworkProgressBar` / `theme.networkProgressBar` — thin top network/page loading bar
 - Showcase Confirmation Dialog and Network Progress Bar pages plus token tests
+- `HIGButtonGroup` / `HIGButtonGroupAxis` / `theme.buttonGroup` — clustered actions with equal-width layout option
+- Showcase Button Group page plus token tests
 
 ## 1.4.0 — 2026-07-10
 

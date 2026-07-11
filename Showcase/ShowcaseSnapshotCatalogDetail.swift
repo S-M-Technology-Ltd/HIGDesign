@@ -56,6 +56,8 @@ struct ShowcaseSnapshotCatalogDetailView: View {
             ShowcaseConfirmationDialogView()
         case .networkProgressBar:
             ShowcaseNetworkProgressBarView()
+        case .buttonGroup:
+            ShowcaseButtonGroupView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:
