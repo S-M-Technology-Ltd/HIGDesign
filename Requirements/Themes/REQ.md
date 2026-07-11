@@ -30,6 +30,7 @@ Theme contract, environment injection, and built-in system themes for HIGDesign.
 - `HIGTheme` includes `tooltip` and `popover` component tokens for helper overlays.
 - `HIGTheme` includes `drawer` component tokens for slide panels.
 - `HIGTheme` includes `networkProgressBar` component tokens for top loading bars.
+- `HIGTheme` includes `buttonGroup` component tokens for action clusters.
 
 ### Runtime behavior
 

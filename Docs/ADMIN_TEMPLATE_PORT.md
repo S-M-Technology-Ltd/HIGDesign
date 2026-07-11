@@ -19,7 +19,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 |------|-------|--------|
 | 0 | Inventory, `HIGAdminTheme`, requirements | **Done** |
 | 1 | Surfaces & wayfinding (`HIGPanel`, breadcrumbs, steps, …) | **Done** (Wave 1 core surfaces) |
-| 2 | Overlays & chrome | **In progress** (+ confirmation / network progress) |
+| 2 | Overlays & chrome | **In progress** (+ button group) |
 | 3 | Advanced forms | Planned |
 | 4 | Data display | Planned |
 | 5 | Content hybrids | Planned |
@@ -45,7 +45,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Badge | `HIGBadge` | Extend |
 | Breadcrumbs | `HIGBreadcrumb` | **Done** |
 | Buttons | `HIGButton` | Extend |
-| Button groups | `HIGButtonGroup` | Planned |
+| Button groups | `HIGButtonGroup` | **Done** |
 | Card | `HIGCard` | Extend |
 | Carousel | `HIGCarousel` | Planned |
 

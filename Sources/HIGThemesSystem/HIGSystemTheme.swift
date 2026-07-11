@@ -12,6 +12,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let motion: any HIGMotionSemanticTokens
     public let divider: any HIGDividerTokens
     public let button: any HIGButtonTokens
+    public let buttonGroup: any HIGButtonGroupTokens
     public let textField: any HIGTextFieldTokens
     public let toggle: any HIGToggleTokens
     public let checkbox: any HIGCheckboxTokens
@@ -69,6 +70,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         motion: any HIGMotionSemanticTokens = HIGSystemMotionSemanticTokens(),
         divider: any HIGDividerTokens = HIGSystemDividerTokens(),
         button: any HIGButtonTokens = HIGSystemButtonTokens(),
+        buttonGroup: any HIGButtonGroupTokens = HIGSystemButtonGroupTokens(),
         textField: any HIGTextFieldTokens = HIGSystemTextFieldTokens(),
         toggle: any HIGToggleTokens = HIGSystemToggleTokens(),
         checkbox: any HIGCheckboxTokens = HIGSystemCheckboxTokens(),
@@ -125,6 +127,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.motion = motion
         self.divider = divider
         self.button = button
+        self.buttonGroup = buttonGroup
         self.textField = textField
         self.toggle = toggle
         self.checkbox = checkbox

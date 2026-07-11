@@ -13,6 +13,7 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
     public let motion: any HIGMotionSemanticTokens
     public let divider: any HIGDividerTokens
     public let button: any HIGButtonTokens
+    public let buttonGroup: any HIGButtonGroupTokens
     public let textField: any HIGTextFieldTokens
     public let toggle: any HIGToggleTokens
     public let checkbox: any HIGCheckboxTokens
@@ -82,6 +83,7 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
         self.motion = base.motion
         self.divider = base.divider
         self.button = base.button
+        self.buttonGroup = base.buttonGroup
         self.textField = base.textField
         self.toggle = base.toggle
         self.checkbox = base.checkbox
