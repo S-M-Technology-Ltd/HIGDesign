@@ -8,7 +8,7 @@ Demonstration app for visually verifying HIGDesign components, themes, accessibi
 
 ### Purpose
 
-- Demonstrate every public component in realistic HIG contexts (including advanced form controls through `HIGTagInput`).
+- Demonstrate every public component in realistic HIG contexts (including `HIGTagInput` and `HIGDataTable`).
 - Provide theme switcher for light, dark, increased contrast, brand, and optional **Admin** (`HIGAdminTheme`).
 - Provide Dynamic Type and Reduce Motion demonstration states.
 - Provide an Icon playground in settings when the Icon component is selected (family, token, variant, size, style, and tint). Fixed size uses a slider from the theme small icon token through 512pt.

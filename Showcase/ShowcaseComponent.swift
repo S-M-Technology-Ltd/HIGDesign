@@ -64,6 +64,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case select
     case autocomplete
     case tagInput
+    case dataTable
 
     public var id: String { rawValue }
 
@@ -139,6 +140,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .select: "Select"
         case .autocomplete: "Autocomplete"
         case .tagInput: "Tag Input"
+        case .dataTable: "Data Table"
         }
     }
 
@@ -207,6 +209,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .select: "Pickers"
         case .autocomplete: "Searching"
         case .tagInput: "Text Fields"
+        case .dataTable: "Lists and Tables"
         }
     }
 
@@ -275,6 +278,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .select: "Form select with field chrome for single or multi selection."
         case .autocomplete: "Typeahead field that filters suggestions as you type."
         case .tagInput: "Freeform tag chips with type-to-add and optional suggestions."
+        case .dataTable: "Columnar admin table with header, striping, and horizontal scroll."
         }
     }
 
@@ -283,7 +287,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .breadcrumb, .pageHeader,
              .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .statusIndicator, .emptyState,
              .closeButton, .modal, .tooltip, .popover, .drawer, .confirmationDialog, .networkProgressBar,
-             .buttonGroup, .menuToggle, .inputGroup, .fieldMessage, .datePicker, .timePicker, .select, .autocomplete, .tagInput, .toolbar,
+             .buttonGroup, .menuToggle, .inputGroup, .fieldMessage, .datePicker, .timePicker, .select, .autocomplete, .tagInput, .dataTable, .toolbar,
              .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .matrixLoader,
              .list, .form,
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,

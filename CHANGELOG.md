@@ -53,6 +53,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Select and Autocomplete pages plus token tests
 - `HIGTagInput` / `theme.tagInput` — freeform tag chips with type-to-add and optional suggestions
 - Showcase Tag Input page plus requirements updates (Wave 3 advanced forms complete)
+- `HIGDataTable` / `HIGDataTableColumn` / `theme.dataTable` — columnar admin table with striping and empty state
+- Showcase Data Table page plus token tests (Wave 4.1 data display)
 
 ## 1.4.0 — 2026-07-10
 

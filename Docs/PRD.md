@@ -94,6 +94,7 @@ First delivery slices:
 - `HIGDatePicker` and `HIGTimePicker` (Wave 3.2 date/time)
 - `HIGSelect` and `HIGAutocomplete` (Wave 3.3 select / typeahead)
 - `HIGTagInput` (Wave 3.4 freeform tags; Wave 3 advanced forms complete)
+- `HIGDataTable` / `HIGDataTableColumn` (Wave 4.1 data display start)
 
 ## Previous Milestone: v1.4.0 (released)
 
