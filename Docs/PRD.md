@@ -70,9 +70,21 @@ HIGDesign synthesizes architecture and patterns from:
 | `HIGDesignPlatform` | Idiom and capability adapters |
 | `HIGDesignBridging` | Optional Cocoa bridges |
 
-## Current Milestone: Admin catalog expansion (post-v1.4.0)
+## Current Milestone: v1.5.0 (released)
 
-Next program after v1.4.0: port **all** Remark Admin Template capabilities into HIG-native components, optional `HIGAdminTheme`, admin shell, charts (Swift Charts), and Showcase recipes. Tracker: [`Docs/ADMIN_TEMPLATE_PORT.md`](ADMIN_TEMPLATE_PORT.md).
+v1.5.0 (2026-07-12) completes the **admin catalog expansion**: optional `HIGAdminTheme`, `HIGAdminShell`, panels/wayfinding, advanced forms, Swift Charts family, content hybrids, coach marks, MapKit map recipe, and Wave 9 Showcase app/page recipes. Tracker: [`Docs/ADMIN_TEMPLATE_PORT.md`](ADMIN_TEMPLATE_PORT.md).
+
+### Delivered in v1.5.0
+
+- Admin theme + six shell styles
+- 90+ public `HIG*` components across actions, inputs, layout, charts, media, and feedback
+- Showcase catalog with 127 entries (components + recipes)
+- DocC Admin Catalog + expanded Components symbol index
+- Zero third-party runtime dependencies preserved
+
+## Previous program: Admin catalog expansion (post-v1.4.0)
+
+The post-v1.4.0 program ported Remark Admin Template **capabilities** into HIG-native SwiftUI. Optional **Extend** rows remain for parity polish.
 
 First delivery slices:
 

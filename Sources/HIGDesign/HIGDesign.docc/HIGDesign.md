@@ -11,6 +11,8 @@ Native SwiftUI design system components, tokens, and themes aligned with Apple H
 
 HIGDesign packages a layered token architecture, environment-driven themes, and reusable `HIG*` components for iOS, iPadOS, macOS, visionOS, tvOS, and watchOS. The library is SwiftUI-only and targets OS releases from the latest three calendar years.
 
+v1.5.0 adds an optional admin-density theme, admin shell layouts, charts, advanced forms, and Showcase app/page recipes for admin products.
+
 ```swift
 import HIGDesign
 
@@ -26,6 +28,7 @@ HIGThemeableView(theme: HIGSystemTheme()) {
 - <doc:GettingStarted>
 - <doc:ShowcaseApp>
 - <doc:Components>
+- <doc:AdminCatalog>
 
 ### Architecture
 
@@ -42,107 +45,11 @@ HIGThemeableView(theme: HIGSystemTheme()) {
 - ``HIGSystemTheme``
 - ``HIGHighContrastTheme``
 - ``HIGBrandTheme``
+- ``HIGAdminTheme``
+- ``HIGAdminThemeHue``
 - ``HIGComponentPreviewTheme``
 
-### Actions
+### Catalog
 
-- ``HIGButton``
-- ``HIGButtonRole``
-- ``HIGButtonSize``
-- ``HIGMenuButton``
-- ``HIGMenuButtonPresentation``
-
-### Inputs
-
-- ``HIGTextField``
-- ``HIGSecureField``
-- ``HIGSearchField``
-- ``HIGTextEditor``
-- ``HIGPicker``
-- ``HIGPhotoPicker``
-- ``HIGPhotoPickerConfiguration``
-- ``HIGPhotoAsset``
-- ``HIGPhotoMediaType``
-
-### Controls
-
-- ``HIGToggle``
-- ``HIGCheckbox``
-- ``HIGRadio``
-- ``HIGRadioOption``
-- ``HIGSegmentedControl``
-- ``HIGSlider``
-- ``HIGStepper``
-
-### Content
-
-- ``HIGLabel``
-- ``HIGLabelStyle``
-- ``HIGBadge``
-- ``HIGBadgeStyle``
-- ``HIGTag``
-- ``HIGTagStyle``
-- ``HIGRemovableTag``
-- ``HIGIcon``
-- ``HIGIconSize``
-- ``HIGIconStyle``
-- ``HIGHeroIcon``
-- ``HIGHeroIconToken``
-- ``HIGHeroIconVariant``
-- ``HIGThemeManager``
-- ``HIGAvatar``
-- ``HIGLink``
-- ``HIGBulletList``
-
-### Layout
-
-- ``HIGCard``
-- ``HIGDivider``
-- ``HIGList``
-- ``HIGFormSection``
-
-### Navigation
-
-- ``HIGTabBar``
-- ``HIGTabItem``
-- ``HIGSidebar``
-- ``HIGSidebarItem``
-- ``HIGNavigationBar``
-- ``HIGToolbar``
-
-### Feedback
-
-- ``HIGProgressView``
-- ``HIGActivityIndicator``
-- ``HIGActivityIndicatorSize``
-- ``HIGActivityIndicatorStyle``
-- ``HIGMatrixLoader``
-- ``HIGMatrixLoaderID``
-- ``HIGMatrixLoaderFun``
-- ``HIGMatrixLoaderSize``
-- ``HIGMatrixLoaderStyle``
-- ``HIGAlert``
-- ``HIGAlertButtonRole``
-- ``HIGAlertBanner``
-- ``HIGAlertBannerStyle``
-- ``HIGToast``
-- ``HIGToastQueue``
-- ``HIGToastQueueConfiguration``
-
-### Modifiers
-
-- ``higPadding(_:)``
-- ``higToolbar(_:)``
-- ``HIGToolbarTextAction``
-- ``HIGToolbarIconAction``
-- ``HIGNavigationBarTextAction``
-- ``HIGNavigationBarIconAction``
-- ``higAlert(_:isPresented:message:primaryButtonTitle:primaryButtonRole:primaryAction:secondaryButtonTitle:secondaryButtonRole:secondaryAction:)``
-- ``higToast(isPresented:message:)``
-- ``higToastQueue(_:)``
-- ``higNavigationBarTitle(_:displayMode:)``
-- ``higNavigationBar(_:displayMode:leading:trailing:)``
-- ``HIGNavigationBarDisplayMode``
-- ``higShimmer(isActive:mode:)``
-- ``HIGShimmerMode``
-- ``HIGShimmerTokens``
+- <doc:Components>
+- <doc:AdminCatalog>

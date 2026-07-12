@@ -20,7 +20,7 @@ Add HIGDesign to your `Package.swift` dependency list:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/promptdora/HIGDesign.git", from: "1.4.0"),
+    .package(url: "https://github.com/promptdora/HIGDesign.git", from: "1.5.0"),
 ],
 targets: [
     .target(
@@ -82,6 +82,7 @@ struct MyApp: App {
 | `HIGSystemTheme()` | Default Apple HIG appearance |
 | `HIGHighContrastTheme()` | Increased contrast emphasis |
 | `HIGBrandTheme(name:accent:)` | Brand accent override on system defaults |
+| `HIGAdminTheme(hue:)` | Optional admin-density theme (Remark-inspired hues, denser spacing) |
 
 Switch themes by changing the value passed to `HIGThemeableView`:
 
@@ -210,18 +211,59 @@ Every token category supports independent overrides. Mix and match freely:
 
 The protocol extension in `HIGThemesContract` ensures every `HIGTheme` property has a system default, so you never need to declare properties you're not changing.
 
+## Admin apps
+
+For multi-column admin products, compose the shell with panels and charts:
+
+```swift
+HIGThemeableView(theme: HIGAdminTheme(hue: .blue)) {
+    HIGAdminShell(
+        style: .sidebar,
+        brandTitle: "Acme Admin",
+        sidebarTitle: "Menu",
+        selection: $section,
+        items: items
+    ) { section in
+        HIGPageHeader("Dashboard", subtitle: "Last 7 days")
+        HIGDashboardGrid {
+            HIGCounter("Users", value: "1,284", trend: .up, trendLabel: "+12%")
+            HIGWidget("Traffic") {
+                HIGBarChart(points: weekly)
+            }
+        }
+    }
+}
+```
+
+Browse **app and page recipes** (mailbox, login, invoice, …) in the Showcase catalog — they are composition demos only, not library business modules. See DocC **Admin Catalog** and [`ADMIN_TEMPLATE_PORT.md`](ADMIN_TEMPLATE_PORT.md).
+
+
 ## Components
 
-36 public `HIG*` SwiftUI components ship in v1.4.0 (including `HIGMatrixLoader` with 112 catalog animations). Each maps to an Apple HIG section and resolves styling from `theme.<component>`.
+v1.5.0 ships **90+** public `HIG*` SwiftUI components (including admin shell, charts, advanced forms, and content hybrids) plus Showcase composition recipes. Each maps to an Apple HIG section and resolves styling from `theme.<component>`. Tracker: [`ADMIN_TEMPLATE_PORT.md`](ADMIN_TEMPLATE_PORT.md).
 
 ### Actions
 
 ```swift
 HIGButton("Save", role: .primary) { }
+HIGButtonGroup {
+    HIGButton("Cancel", role: .secondary) { }
+    HIGButton("Save", role: .primary) { }
+}
 HIGMenuButton("Options", systemImage: "ellipsis.circle") {
     Button("Rename") {}
     Button("Delete", role: .destructive) {}
 }
+```
+
+### Admin surfaces
+
+```swift
+HIGPanel("Overview", description: "Weekly summary") {
+    Text("Panel body")
+}
+HIGDataTable(rows: people, columns: columns)
+HIGBarChart(points: weekly)
 ```
 
 ### Inputs

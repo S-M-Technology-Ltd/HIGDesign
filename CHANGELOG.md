@@ -1,137 +1,60 @@
-# Changelog
-
-All notable changes to HIGDesign are documented here. The project follows [Semantic Versioning](https://semver.org/) from v1.0.0 onward.
-
 ## Unreleased
 
 ### Added
 
-- Wave 9.2 Showcase **page recipes** (17 catalog entries covering all 34 Remark `html/pages/*` via consolidated variants)
-- Wave 9.1 Showcase **app recipes** (13): Mailbox, Calendar, Contacts, Documents, Forum, Location, Media, Message, Notebook, Projects, Taskboard, Travel, Work — composition only via public HIG APIs
-- Showcase **Map** recipe (`ShowcaseMapView`) — MapKit composition with `HIGWidget` / `HIGPanel` / `HIGListGroup` (no library `HIGMap` module; unavailable on tvOS)
-- `Docs/ADMIN_TEMPLATE_PORT.md` — full Remark Admin Template → HIGDesign capability tracker
-- `HIGAdminTheme` / `HIGAdminThemeHue` — optional admin-density theme (Remark-inspired primary hues and denser spacing)
+### Changed
+
+### Fixed
+
+## 1.5.0 — 2026-07-12
+
+Minor release completing the **admin catalog expansion**: optional admin theme, admin shell, panels and wayfinding, advanced forms, Swift Charts family, content hybrids, media surfaces, onboarding coach marks, MapKit map recipe, and Wave 9 Showcase app/page recipes. Zero third-party runtime dependencies.
+
+### Added
+
+#### Themes & shell
+- `HIGAdminTheme` / `HIGAdminThemeHue` — optional admin-density theme (Remark-inspired hues, denser spacing)
 - Showcase theme choice: **Admin**
-- `HIGPanel`, `HIGPanelOptions`, `HIGPanelActions`, `HIGPanelTokens` / `theme.panel` — admin content surface with title, description, refresh/collapse/close, body, and footer
-- Showcase Panel page, unit tests, DocC, and requirements updates for the admin expansion program
-- `HIGBreadcrumb` / `HIGBreadcrumbItem` / `theme.breadcrumb` — hierarchical navigation trail
-- `HIGPageHeader` / `theme.pageHeader` — page title chrome with optional breadcrumb, subtitle, and trailing actions
-- Showcase Breadcrumb and Page Header pages, unit tests, DocC, and requirements updates
-- `HIGPagination` / `theme.pagination` — page-number navigation for lists and tables
-- `HIGTabs` / `HIGTabsItem` / `theme.tabs` — in-content tabs with underline selection
-- `HIGAccordion` / `HIGAccordionSection` / `theme.accordion` — expandable section stack
-- Showcase Pagination, Tabs, and Accordion pages plus token tests
-- `HIGSteps` / `HIGStepsItem` / `HIGStepsAxis` / `theme.steps` — numbered process trail
-- `HIGPearlSteps` / `theme.pearlSteps` — compact pearl/dot step indicator
-- Showcase Steps and Pearl Steps pages plus token tests
-- `HIGTimeline` / `HIGTimelineItem` / `theme.timeline` — vertical activity timeline
-- Showcase Timeline page plus token tests
-- `HIGStatusIndicator` / `HIGStatusKind` / `theme.statusIndicator` — presence dots
-- `HIGAvatar` optional `status` badge overlay
-- `HIGEmptyState` / `theme.emptyState` — empty-content messaging with optional actions
-- Showcase Status Indicator and Empty State pages plus token tests
-- `HIGCloseButton` / `theme.closeButton` — standard dismiss control
-- `HIGModal` / `theme.modal` — themed modal chrome for sheet/dialog content
-- Showcase Close Button and Modal pages plus token tests
-- `HIGTooltipLabel` / `theme.tooltip` and `higTooltip(_:)` helper tooltip API
-- `HIGPopoverContainer` / `theme.popover` and `higPopover(...)` themed popover presentation
-- Showcase Tooltip and Popover pages plus token tests
-- `HIGDrawer` / `HIGDrawerEdge` / `theme.drawer` and `higDrawer(...)` slide-panel presentation
-- Showcase Drawer page plus token tests
-- `higConfirmationDialog(...)` — native confirmation dialog with HIG button roles
-- `HIGNetworkProgressBar` / `theme.networkProgressBar` — thin top network/page loading bar
-- Showcase Confirmation Dialog and Network Progress Bar pages plus token tests
-- `HIGButtonGroup` / `HIGButtonGroupAxis` / `theme.buttonGroup` — clustered actions with equal-width layout option
-- Showcase Button Group page plus token tests
-- `HIGMenuToggle` / `theme.menuToggle` — animated hamburger menu control
-- Showcase Menu Toggle page plus token tests
-- `HIGInputGroup` / `theme.inputGroup` — field chrome with leading/trailing adornments
-- `HIGFieldMessage` / `HIGFieldMessageKind` / `theme.fieldMessage` — helper/error/success field messages
-- Showcase Input Group and Field Message pages plus token tests
-- `HIGDatePicker` / `theme.datePicker` — labeled date selection with optional range
-- `HIGTimePicker` / `theme.timePicker` — labeled hour-and-minute selection
-- Showcase Date Picker and Time Picker pages plus token tests
-- `HIGSelect` / `theme.select` — form select with field chrome for single or multi selection
-- `HIGAutocomplete` / `theme.autocomplete` — typeahead field with filtered suggestions
-- Showcase Select and Autocomplete pages plus token tests
-- `HIGTagInput` / `theme.tagInput` — freeform tag chips with type-to-add and optional suggestions
-- Showcase Tag Input page plus requirements updates (Wave 3 advanced forms complete)
-- `HIGDataTable` / `HIGDataTableColumn` / `theme.dataTable` — columnar admin table with striping and empty state
-- Showcase Data Table page plus token tests (Wave 4.1 data display)
-- `HIGDropZone` / `theme.dropZone` — browse and drop file surface with selected-file list
-- Showcase Drop Zone page plus token tests
-- `HIGAdminShell` / `HIGAdminShellStyle` / `theme.adminShell` — admin app shell with brand chrome and sidebar navigation (Remark base)
-- Showcase Admin Shell page plus token tests (Wave 7.1)
-- `HIGCodeBlock` / `theme.codeBlock` — monospaced code surface with optional language label and share
-- Showcase Code Block page plus token tests (Wave 5.1 content hybrids)
-- `HIGCarousel` / `theme.carousel` — paged content carousel with themed indicators and optional auto-advance
-- Showcase Carousel page plus token tests (Wave 5.2)
-- `HIGMediaRow` / `theme.mediaRow` — media object row with leading media, title, subtitle, and trailing slot
-- Showcase Media Row page plus token tests (Wave 5.3)
-- `HIGHero` / `HIGHeroStyle` / `theme.hero` — jumbotron-style hero with standard and accent emphasis
-- Showcase Hero page plus token tests (Wave 5.4)
-- `HIGListGroup` / `HIGListGroupRow` / `theme.listGroup` — bordered list-group surface with selectable rows
-- Showcase List Group page plus token tests (Wave 5.5)
-- `HIGBarChart` / `HIGChartPoint` / `theme.barChart` — vertical bar chart via Apple Swift Charts
-- Showcase Bar Chart page plus token tests (Wave 6.1 charts family)
-- `HIGLineChart` / `theme.lineChart` — line chart with optional point markers via Apple Swift Charts
-- Showcase Line Chart page plus token tests (Wave 6.2 charts family)
-- `HIGPieChart` / `HIGPieChartStyle` / `theme.pieChart` — pie and donut charts via Apple Swift Charts
-- Showcase Pie Chart page plus token tests (Wave 6.3 charts family)
-- `HIGAreaChart` / `theme.areaChart` — filled area chart with optional stroke via Apple Swift Charts
-- Showcase Area Chart page plus token tests (Wave 6.4 charts family)
-- `HIGLightbox` / `theme.lightbox` — full-screen media gallery chrome with counter and previous/next
-- Showcase Lightbox page plus token tests (Wave 5 content hybrids companion to carousel)
-- `HIGAdminShellStyle.iconRail` — Remark iconbar: narrow icon-only leading rail on `HIGAdminShell`
-- Admin shell tokens for icon rail width/spacing/icon size; Showcase style picker (Wave 7.2)
-- `HIGAdminShellStyle.topBar` — Remark topbar: horizontal brand + nav strip above detail
-- Admin shell tokens for top bar height/spacing/icon size; Showcase Top Bar option (Wave 7.3)
-- `HIGAdminShellStyle.topIcon` — Remark topicon: horizontal icon-only nav strip above detail
-- Showcase Top Icon option; shared top-strip implementation with topBar (Wave 7.4)
-- `HIGAdminShellStyle.centered` — Remark center: top nav + max-width centered detail column
-- `centeredMaxWidth` admin shell token; Showcase Centered option (Wave 7.5)
-- `HIGAdminShellStyle.drawer` — Remark mmenu: hamburger + sliding navigation drawer over full-width detail
-- Showcase Drawer option; reuses `HIGMenuToggle` and drawer scrim tokens (Wave 7.6; shell styles complete)
-- `HIGCounter` / `HIGCounterTrend` / `theme.counter` — dashboard KPI tiles with value, caption, icon, and trend
-- Showcase Counter page plus token tests (Wave 8.1 widgets start)
-- `HIGWidget` / `theme.widget` — dashboard host surface for counters, charts, or custom body content
-- Showcase Widget page plus token tests (Wave 8.2)
-- `HIGPanelGroup` / `theme.panelGroup` — vertical stack of panels/widgets with optional group title
-- Showcase Panel Group page plus token tests (Wave 8.3)
-- `HIGRating` / `theme.rating` — star rating display and interactive selection
-- Showcase Rating page plus token tests
-- `HIGTestimonial` / `theme.testimonial` — quote card with author, role, avatar, and optional rating
-- Showcase Testimonial page plus token tests
-- `HIGRibbon` / `HIGRibbonStyle` / `HIGRibbonEdge` / `theme.ribbon` — corner promo ribbon with overlay helper
-- Showcase Ribbon page plus token tests
-- `HIGPricingCard` / `theme.pricingCard` — pricing plan card with price, features, CTA, featured emphasis, and optional ribbon
-- Showcase Pricing Card page plus token tests
-- `HIGChatBubble` / `HIGChatBubbleAlignment` / `theme.chatBubble` — incoming/outgoing chat message bubbles
-- Showcase Chat Bubble page plus token tests
-- `HIGComment` / `theme.comment` — discussion comment rows with author, body, timestamp, avatar, and reply
-- Showcase Comment page plus token tests
-- `HIGCover` / `HIGCoverStyle` / `theme.cover` — cover banners with solid or custom backgrounds and optional scrim
-- Showcase Cover page plus token tests
-- `HIGImageOverlay` / `HIGImageOverlayEdge` / `theme.imageOverlay` — media figure overlays with caption or custom panel
-- Showcase Image Overlay page plus token tests
-- `HIGColorSelector` / `HIGColorOption` / `theme.colorSelector` — circular color swatch selector
-- Showcase Color Selector page plus token tests
-- `HIGSocialButton` / `HIGSocialNetwork` / `HIGSocialButtonStyle` / `theme.socialButton` — social and account action buttons
-- Showcase Social Button page plus token tests
-- `HIGImageFrame` / `HIGImageFrameAspect` / `theme.imageFrame` — themed image container with aspect presets and placeholder
-- Showcase Image Frame page plus token tests
-- `HIGTreeView` / `HIGTreeNode` / `theme.treeView` — hierarchical expand/collapse tree with optional selection
-- Showcase Tree View page plus token tests
-- `HIGReorderableList` / `HIGReorderableListItem` / `theme.reorderableList` — drag-to-reorder admin lists
-- Showcase Reorderable List page plus token tests
-- `HIGCalendar` / `theme.calendar` — month grid with selection, navigation, and event marks
-- Showcase Calendar page plus token tests
-- `HIGDashboardGrid` / `theme.dashboardGrid` — adaptive multi-column dashboard layout
-- Showcase Dashboard Grid page plus token tests
-- `HIGVideoPlayer` / `theme.videoPlayer` — themed AVKit video surface with title, caption, and placeholder
-- Showcase Video Player page plus token tests
-- `HIGCoachMark` / `theme.coachMark` / `higCoachMark(...)` — onboarding coach marks with step progress and overlay helper
-- Showcase Coach Mark page plus token tests
+- `HIGAdminShell` / `HIGAdminShellStyle` — six shell layouts (sidebar, icon rail, top bar, top icon, centered, drawer)
+
+#### Surfaces & wayfinding
+- `HIGPanel`, `HIGPanelGroup`, `HIGWidget`, `HIGDashboardGrid`, `HIGCounter`
+- `HIGBreadcrumb`, `HIGPageHeader`, `HIGPagination`, `HIGTabs`, `HIGAccordion`
+- `HIGSteps`, `HIGPearlSteps`, `HIGTimeline`, `HIGStatusIndicator`, `HIGEmptyState`
+
+#### Overlays & chrome
+- `HIGCloseButton`, `HIGModal`, `HIGTooltipLabel` / `higTooltip`, `HIGPopoverContainer` / `higPopover`
+- `HIGDrawer` / `higDrawer`, `higConfirmationDialog`, `HIGNetworkProgressBar`
+- `HIGButtonGroup`, `HIGMenuToggle`, `HIGCoachMark` / `higCoachMark`
+
+#### Advanced forms & data
+- `HIGInputGroup`, `HIGFieldMessage`, `HIGDatePicker`, `HIGTimePicker`
+- `HIGSelect`, `HIGAutocomplete`, `HIGTagInput`, `HIGDropZone`, `HIGDataTable`
+- `HIGCalendar`, `HIGTreeView`, `HIGReorderableList`
+
+#### Content hybrids & media
+- `HIGCodeBlock`, `HIGCarousel`, `HIGLightbox`, `HIGMediaRow`, `HIGHero`, `HIGListGroup`
+- `HIGChatBubble`, `HIGComment`, `HIGCover`, `HIGImageOverlay`, `HIGImageFrame`
+- `HIGRibbon`, `HIGPricingCard`, `HIGRating`, `HIGTestimonial`
+- `HIGColorSelector`, `HIGSocialButton`, `HIGVideoPlayer`
+
+#### Charts (Swift Charts)
+- `HIGBarChart`, `HIGLineChart`, `HIGPieChart`, `HIGAreaChart` (+ `HIGChartPoint`)
+
+#### Showcase recipes (composition only)
+- MapKit **Map** recipe (`ShowcaseMapView`)
+- Wave 9.1: **13 app recipes** (mailbox → work)
+- Wave 9.2: **17 page recipes** covering 34 Remark pages (variants consolidated)
+
+#### Docs & tracker
+- `Docs/ADMIN_TEMPLATE_PORT.md` capability tracker
+- DocC `AdminCatalog` article; expanded `Components.md` symbol index
+- Gallery / HOW_TO_USE / PRD updates for the admin program
+
+### Notes
+- Extend rows (toasts polish, button loading, etc.) remain optional follow-ons — see tracker
+- No third-party runtime dependencies introduced
+- Maps and apps/pages are Showcase recipes, not library business modules
 
 ## 1.4.0 — 2026-07-10
 

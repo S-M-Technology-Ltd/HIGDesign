@@ -2,6 +2,8 @@
 
 HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGTheme``.
 
+v1.5.0 expands the catalog for admin-density apps: shells, panels, charts, advanced forms, media, and onboarding. Full capability tracking: `Docs/ADMIN_TEMPLATE_PORT.md`.
+
 ## Actions
 
 - ``HIGButton``
@@ -16,6 +18,10 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGCloseButtonTokens``
 - ``HIGMenuButton``
 - ``HIGMenuButtonPresentation``
+- ``HIGSocialButton``
+- ``HIGSocialNetwork``
+- ``HIGSocialButtonStyle``
+- ``HIGSocialButtonTokens``
 
 ## Controls
 
@@ -26,6 +32,11 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGSegmentedControl``
 - ``HIGSlider``
 - ``HIGStepper``
+- ``HIGColorSelector``
+- ``HIGColorOption``
+- ``HIGColorSelectorTokens``
+- ``HIGRating``
+- ``HIGRatingTokens``
 
 ## Content
 
@@ -43,7 +54,6 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGHeroIconToken``
 - ``HIGHeroIconVariant``
 - ``HIGHeroIconDescriptor``
-- ``HIGThemeManager``
 - ``HIGAvatar``
 - ``HIGStatusKind``
 - ``HIGStatusIndicator``
@@ -53,6 +63,41 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGTimeline``
 - ``HIGTimelineItem``
 - ``HIGTimelineTokens``
+- ``HIGChatBubble``
+- ``HIGChatBubbleAlignment``
+- ``HIGChatBubbleTokens``
+- ``HIGComment``
+- ``HIGCommentTokens``
+- ``HIGCover``
+- ``HIGCoverStyle``
+- ``HIGCoverTokens``
+- ``HIGImageOverlay``
+- ``HIGImageOverlayTokens``
+- ``HIGImageFrame``
+- ``HIGImageFrameAspect``
+- ``HIGImageFrameTokens``
+- ``HIGMediaRow``
+- ``HIGMediaRowTokens``
+- ``HIGHero``
+- ``HIGHeroStyle``
+- ``HIGHeroTokens``
+- ``HIGRibbon``
+- ``HIGRibbonTokens``
+- ``HIGPricingCard``
+- ``HIGPricingCardTokens``
+- ``HIGTestimonial``
+- ``HIGTestimonialTokens``
+- ``HIGCodeBlock``
+- ``HIGCodeBlockTokens``
+- ``HIGCarousel``
+- ``HIGCarouselTokens``
+- ``HIGLightbox``
+- ``HIGLightboxTokens``
+- ``HIGVideoPlayer``
+- ``HIGVideoPlayerTokens``
+- ``HIGCounter``
+- ``HIGCounterTrend``
+- ``HIGCounterTokens``
 
 ## Inputs
 
@@ -66,6 +111,20 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGSearchField``
 - ``HIGTextEditor``
 - ``HIGPicker``
+- ``HIGDatePicker``
+- ``HIGDatePickerTokens``
+- ``HIGTimePicker``
+- ``HIGTimePickerTokens``
+- ``HIGSelect``
+- ``HIGSelectTokens``
+- ``HIGAutocomplete``
+- ``HIGAutocompleteTokens``
+- ``HIGTagInput``
+- ``HIGTagInputTokens``
+- ``HIGCalendar``
+- ``HIGCalendarTokens``
+- ``HIGDropZone``
+- ``HIGDropZoneTokens``
 - ``HIGPhotoPicker``
 - ``HIGPhotoPickerConfiguration``
 - ``HIGPhotoAsset``
@@ -76,6 +135,8 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGPhotoEditorCroppingStyle``
 - ``HIGPhotoEditorCropState``
 - ``HIGPhotoEditorFinishResult``
+- ``HIGLongTextEditor``
+- ``HIGLongTextEditorConfiguration``
 
 ## Feedback
 
@@ -108,6 +169,9 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGToastQueueConfiguration``
 - ``higToast(isPresented:message:)``
 - ``higToastQueue(_:)``
+- ``HIGCoachMark``
+- ``HIGCoachMarkTokens``
+- ``higCoachMark(isPresented:title:message:stepIndex:stepCount:nextTitle:skipTitle:backTitle:onNext:onSkip:onBack:)``
 
 ## Layout
 
@@ -116,6 +180,24 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGPanelOptions``
 - ``HIGPanelActions``
 - ``HIGPanelTokens``
+- ``HIGPanelGroup``
+- ``HIGPanelGroupTokens``
+- ``HIGWidget``
+- ``HIGWidgetTokens``
+- ``HIGDashboardGrid``
+- ``HIGDashboardGridTokens``
+- ``HIGDataTable``
+- ``HIGDataTableColumn``
+- ``HIGDataTableTokens``
+- ``HIGListGroup``
+- ``HIGListGroupRow``
+- ``HIGListGroupTokens``
+- ``HIGTreeView``
+- ``HIGTreeNode``
+- ``HIGTreeViewTokens``
+- ``HIGReorderableList``
+- ``HIGReorderableListItem``
+- ``HIGReorderableListTokens``
 - ``HIGAccordion``
 - ``HIGAccordionSection``
 - ``HIGAccordionTokens``
@@ -125,12 +207,30 @@ HIGDesign ships SwiftUI-native components and modifiers that read from ``HIGThem
 - ``HIGList``
 - ``HIGFormSection``
 
+## Charts
+
+Swift Charts–backed admin metrics. Prefer system chart styling; chrome and spacing resolve from theme tokens.
+
+- ``HIGChartPoint``
+- ``HIGBarChart``
+- ``HIGBarChartTokens``
+- ``HIGLineChart``
+- ``HIGLineChartTokens``
+- ``HIGPieChart``
+- ``HIGPieChartStyle``
+- ``HIGPieChartTokens``
+- ``HIGAreaChart``
+- ``HIGAreaChartTokens``
+
 ## Navigation
 
 - ``HIGTabBar``
 - ``HIGTabItem``
 - ``HIGSidebar``
 - ``HIGSidebarItem``
+- ``HIGAdminShell``
+- ``HIGAdminShellStyle``
+- ``HIGAdminShellTokens``
 - ``HIGNavigationBar``
 - ``HIGNavigationBarDisplayMode``
 - ``HIGNavigationBarTextAction``
