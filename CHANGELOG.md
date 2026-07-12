@@ -101,6 +101,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Testimonial page plus token tests
 - `HIGRibbon` / `HIGRibbonStyle` / `HIGRibbonEdge` / `theme.ribbon` — corner promo ribbon with overlay helper
 - Showcase Ribbon page plus token tests
+- `HIGPricingCard` / `theme.pricingCard` — pricing plan card with price, features, CTA, featured emphasis, and optional ribbon
+- Showcase Pricing Card page plus token tests
 
 ## 1.4.0 — 2026-07-10
 

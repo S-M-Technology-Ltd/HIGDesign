@@ -38,6 +38,7 @@ extension HIGTheme {
     public var rating: any HIGRatingTokens { HIGSystemRatingTokens() }
     public var testimonial: any HIGTestimonialTokens { HIGSystemTestimonialTokens() }
     public var ribbon: any HIGRibbonTokens { HIGSystemRibbonTokens() }
+    public var pricingCard: any HIGPricingCardTokens { HIGSystemPricingCardTokens() }
     public var dataTable: any HIGDataTableTokens { HIGSystemDataTableTokens() }
     public var breadcrumb: any HIGBreadcrumbTokens { HIGSystemBreadcrumbTokens() }
     public var pageHeader: any HIGPageHeaderTokens { HIGSystemPageHeaderTokens() }

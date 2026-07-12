@@ -112,6 +112,8 @@ struct ShowcaseSnapshotCatalogDetailView: View {
             ShowcaseTestimonialView()
         case .ribbon:
             ShowcaseRibbonView()
+        case .pricingCard:
+            ShowcasePricingCardView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:
