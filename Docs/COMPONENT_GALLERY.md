@@ -807,6 +807,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGImageOverlay
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| Content | All 6 | media · caption · top/bottom/center/full · scrim · custom panel |
+
+**Guidelines:**
+- Use for gallery tiles, video thumbs, and media cards with captions
+- Prefer bottom captions for galleries; center panels for play/action affordances
+- Keep captions short; pair with real `Image` or video poster content in apps
+- Token-backed metrics via `theme.imageOverlay`
+
+---
+
 ### HIGCodeBlock
 
 | HIG category | Platforms | Features |

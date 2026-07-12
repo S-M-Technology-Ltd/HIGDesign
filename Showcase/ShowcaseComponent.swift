@@ -87,6 +87,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case chatBubble
     case comment
     case cover
+    case imageOverlay
 
     public var id: String { rawValue }
 
@@ -146,6 +147,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .chatBubble: "Chat Bubble"
         case .comment: "Comment"
         case .cover: "Cover"
+        case .imageOverlay: "Image Overlay"
         case .breadcrumb: "Breadcrumb"
         case .pageHeader: "Page Header"
         case .pagination: "Pagination"
@@ -237,6 +239,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .chatBubble: "Content"
         case .comment: "Content"
         case .cover: "Content"
+        case .imageOverlay: "Content"
         case .breadcrumb: "Navigation"
         case .pageHeader: "Navigation"
         case .pagination: "Navigation"
@@ -367,12 +370,13 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .chatBubble: "Incoming or outgoing chat message bubble with optional avatar and timestamp."
         case .comment: "Discussion comment row with author, body, timestamp, avatar, and reply."
         case .cover: "Cover banner with title, subtitle, scrim, and solid or custom background."
+        case .imageOverlay: "Media figure with caption or custom panel overlay and optional scrim."
         }
     }
 
     var platforms: String {
         switch self {
-        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .panelGroup, .counter, .widget, .rating, .testimonial, .ribbon, .pricingCard, .chatBubble, .comment, .cover, .breadcrumb, .pageHeader,
+        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .panelGroup, .counter, .widget, .rating, .testimonial, .ribbon, .pricingCard, .chatBubble, .comment, .cover, .imageOverlay, .breadcrumb, .pageHeader,
              .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .statusIndicator, .emptyState,
              .closeButton, .modal, .tooltip, .popover, .drawer, .confirmationDialog, .networkProgressBar,
              .buttonGroup, .menuToggle, .inputGroup, .fieldMessage, .datePicker, .timePicker, .select, .autocomplete, .tagInput, .dataTable, .toolbar,
