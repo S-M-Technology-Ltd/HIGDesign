@@ -25,7 +25,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | 5 | Content hybrids | **In progress** (`HIGCodeBlock`, `HIGCarousel`, `HIGLightbox`, `HIGMediaRow`, `HIGHero`, `HIGListGroup`) |
 | 6 | Swift Charts family | **In progress** (`HIGBarChart`, `HIGLineChart`, `HIGPieChart`, `HIGAreaChart`) |
 | 7 | Admin shell & layout | **Done** (`HIGAdminShell` styles: sidebar, iconRail, topBar, topIcon, centered, drawer) |
-| 8 | Widgets & parity extensions | **In progress** (`HIGCounter`, `HIGWidget`) |
+| 8 | Widgets & parity extensions | **In progress** (`HIGCounter`, `HIGWidget`, `HIGPanelGroup`) |
 | 9 | App/page Showcase recipes | Planned |
 | 10 | Gallery, DocC, release | Planned |
 
@@ -76,7 +76,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 |--------|------------|--------|
 | Panels | `HIGPanel` | **Done** |
 | Page header (structure) | `HIGPageHeader` | **Done** |
-| Panel groups | `HIGPanelGroup` | Planned |
+| Panel groups | `HIGPanelGroup` | **Done** |
 | Avatar | `HIGAvatar` | **Done** (status overlay) |
 | Status | `HIGStatusIndicator` | **Done** |
 | Steps / pearls | `HIGSteps`, `HIGPearlSteps` | **Done** |

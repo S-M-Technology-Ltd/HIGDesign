@@ -694,6 +694,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGPanelGroup
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| Layout | All 6 | optional group title · vertical stack · token spacing |
+
+**Guidelines:**
+- Stack `HIGPanel`, `HIGWidget`, or other dashboard cards with consistent spacing
+- Optional group title for sectioned dashboards
+- Prefer `HIGAccordion` when exclusive expand/collapse is required
+- Token-backed spacing via `theme.panelGroup`
+
+---
+
 ### HIGCodeBlock
 
 | HIG category | Platforms | Features |

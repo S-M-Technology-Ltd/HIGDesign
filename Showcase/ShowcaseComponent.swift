@@ -79,6 +79,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case lightbox
     case counter
     case widget
+    case panelGroup
 
     public var id: String { rawValue }
 
@@ -130,6 +131,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .panel: "Panel"
         case .counter: "Counter"
         case .widget: "Widget"
+        case .panelGroup: "Panel Group"
         case .breadcrumb: "Breadcrumb"
         case .pageHeader: "Page Header"
         case .pagination: "Pagination"
@@ -213,6 +215,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .panel: "Layout"
         case .counter: "Layout"
         case .widget: "Layout"
+        case .panelGroup: "Layout"
         case .breadcrumb: "Navigation"
         case .pageHeader: "Navigation"
         case .pagination: "Navigation"
@@ -335,12 +338,13 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .lightbox: "Full-screen media gallery chrome with close, counter, and previous/next."
         case .counter: "Dashboard KPI tile with value, caption, optional icon, and trend."
         case .widget: "Dashboard widget surface that hosts counters, charts, or custom content."
+        case .panelGroup: "Vertical stack of panels and widgets with shared group spacing."
         }
     }
 
     var platforms: String {
         switch self {
-        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .counter, .widget, .breadcrumb, .pageHeader,
+        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .panelGroup, .counter, .widget, .breadcrumb, .pageHeader,
              .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .statusIndicator, .emptyState,
              .closeButton, .modal, .tooltip, .popover, .drawer, .confirmationDialog, .networkProgressBar,
              .buttonGroup, .menuToggle, .inputGroup, .fieldMessage, .datePicker, .timePicker, .select, .autocomplete, .tagInput, .dataTable, .toolbar,
