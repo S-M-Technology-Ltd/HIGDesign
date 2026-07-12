@@ -83,7 +83,7 @@ Scripts/verify_platform_api_guards.sh
 
 ## Current Milestone
 
-Phase 16 v1.4.0 released. Prefer `Scripts/verify_local_pr.sh` (or platform API guards + sample iOS/macOS builds) before opening a PR. Regenerate showcase PNGs with `Scripts/capture_showcase_snapshots.sh` and `Scripts/capture_ios_showcase_snapshots.sh` when updating README or Pages imagery.
+v1.5.0 admin catalog released. Prefer `Scripts/verify_local_pr.sh` (or platform API guards + sample iOS/macOS builds) before opening a PR. Regenerate showcase PNGs with `Scripts/capture_showcase_snapshots.sh` and `Scripts/capture_ios_showcase_snapshots.sh` when updating README or Pages imagery.
 
 ## Xcode
 

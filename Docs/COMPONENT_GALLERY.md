@@ -2,7 +2,9 @@
 
 A visual reference for every public HIGDesign component — states, themes, platform support, and HIG compliance notes. All snapshots rendered on iOS 27.
 
-> See also: [UI Design Guidelines](UI_DESIGN_GUIDELINES.md) · [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/)
+**v1.5.0** completes the admin catalog expansion (**90+** public `HIG*` components, admin shell, charts, and Showcase app/page recipes). Capability tracker: [`ADMIN_TEMPLATE_PORT.md`](ADMIN_TEMPLATE_PORT.md). DocC: Admin Catalog + Components symbol index.
+
+> See also: [UI Design Guidelines](UI_DESIGN_GUIDELINES.md) · [How to Use](HOW_TO_USE.md) · [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/)
 
 ---
 

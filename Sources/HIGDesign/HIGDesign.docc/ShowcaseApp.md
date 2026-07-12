@@ -1,6 +1,6 @@
 # Showcase App
 
-HIGDesign includes a runnable showcase for exploring every shipped component before integrating it into your app.
+HIGDesign includes a runnable showcase for exploring every shipped component and Wave 9 composition recipe before integrating into your app.
 
 ## HIGShowcaseApp (macOS)
 
@@ -10,11 +10,12 @@ swift run HIGShowcaseApp
 
 The showcase provides:
 
-- Sidebar navigation across all 35 components
-- Theme picker: system, high contrast, brand
+- Sidebar navigation across **127** catalog entries (components + app/page recipes)
+- Theme picker: system, high contrast, brand, **admin**
 - Light / dark / system appearance
 - Dynamic Type size controls
 - Reduce Motion preview
+- Wave 9 recipes: 13 apps, 17 pages, MapKit map composition
 
 ## HIGDesignSample (Xcode)
 
@@ -36,4 +37,5 @@ Still images for CI and documentation live in `Design/Showcase/snapshots/`, incl
 ## Related
 
 - <doc:GettingStarted>
+- <doc:AdminCatalog>
 - <doc:PlatformSupport>

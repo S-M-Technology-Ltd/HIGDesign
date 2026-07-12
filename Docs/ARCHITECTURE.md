@@ -86,4 +86,4 @@ Phase 7 controls and inputs expansion builds on the Phase 1–6 foundation, whic
 
 Verification: `Scripts/build_all_platforms.sh`, `swift test`, and all governance guards (including `verify_no_uikit.sh`) pass locally.
 
-v1.3.0 ships 35 components (including `HIGPhotoEditor` and `HIGLongTextEditor`), design-token enforcement, and a device-framed showcase snapshot gallery (385 PNGs across theme and per-platform matrices). v1.4.0 adds `HIGMatrixLoader` (36 components).
+v1.3.0 shipped photo/long-text editing and device-framed showcase snapshots. v1.4.0 added `HIGMatrixLoader`. v1.5.0 expands to **90+** public components plus admin shell, charts, and Showcase recipes for the admin catalog program.
