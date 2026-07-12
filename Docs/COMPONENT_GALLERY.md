@@ -962,6 +962,35 @@ A visual reference for every public HIGDesign component — states, themes, plat
 ---
 
 
+
+### Page recipes (Wave 9.2)
+
+| Recipe | Covers Remark pages | Primary HIG building blocks |
+|---|---|---|
+| Login Page | login, login-v2, login-v3 | `HIGHero`, `HIGCard`, fields, buttons |
+| Register Page | register, register-v2, register-v3 | `HIGCard`, fields, buttons |
+| Forgot Password Page | forgot-password | fields, field message, buttons |
+| Lockscreen Page | lockscreen | `HIGAvatar`, secure field |
+| Profile Page | profile, profile-v2, profile-v3 | `HIGCover`, `HIGPanel`, avatar, editors |
+| User Page | user | `HIGPageHeader`, `HIGDataTable` |
+| Invoice Page | invoice | page header, panel, data table |
+| FAQ Page | faq | `HIGAccordion` |
+| Error Pages | error-400…503 | `HIGEmptyState` + segmented code |
+| Maintenance Page | maintenance | `HIGEmptyState` |
+| Blank Page | blank | page header + empty state |
+| Gallery Page | gallery, gallery-grid | `HIGDashboardGrid`, `HIGImageFrame` |
+| Search Results Page | search-result | search field + list group |
+| Site Map Page | site-map | `HIGTreeView` |
+| Project Page | project | steps, panel, media row, progress |
+| Code Editor Page | code-editor | `HIGCodeBlock` |
+| Email Templates Page | email-* | `HIGPanelGroup` layout recipes |
+
+**Guidelines:**
+- Map pages (`map-google`, `map-vector`) use the Map Showcase recipe
+- Variants are consolidated intentionally — not a pixel port of every Bootstrap skin
+- Composition only; no auth, billing, or email backend
+
+---
 ### App recipes (Wave 9.1)
 
 | Recipe | Primary HIG building blocks |

@@ -112,6 +112,23 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case appTaskboard
     case appTravel
     case appWork
+    case pageLogin
+    case pageRegister
+    case pageForgotPassword
+    case pageLockscreen
+    case pageProfile
+    case pageUser
+    case pageInvoice
+    case pageFAQ
+    case pageErrors
+    case pageMaintenance
+    case pageBlank
+    case pageGallery
+    case pageSearchResult
+    case pageSiteMap
+    case pageProject
+    case pageCodeEditor
+    case pageEmailTemplates
 
     public var id: String { rawValue }
 
@@ -195,6 +212,23 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .appTaskboard: "Taskboard App"
         case .appTravel: "Travel App"
         case .appWork: "Work App"
+        case .pageLogin: "Login Page"
+        case .pageRegister: "Register Page"
+        case .pageForgotPassword: "Forgot Password Page"
+        case .pageLockscreen: "Lockscreen Page"
+        case .pageProfile: "Profile Page"
+        case .pageUser: "User Page"
+        case .pageInvoice: "Invoice Page"
+        case .pageFAQ: "FAQ Page"
+        case .pageErrors: "Error Pages"
+        case .pageMaintenance: "Maintenance Page"
+        case .pageBlank: "Blank Page"
+        case .pageGallery: "Gallery Page"
+        case .pageSearchResult: "Search Results Page"
+        case .pageSiteMap: "Site Map Page"
+        case .pageProject: "Project Page"
+        case .pageCodeEditor: "Code Editor Page"
+        case .pageEmailTemplates: "Email Templates Page"
         case .breadcrumb: "Breadcrumb"
         case .pageHeader: "Page Header"
         case .pagination: "Pagination"
@@ -310,6 +344,23 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .appTaskboard: "Layout"
         case .appTravel: "Charts"
         case .appWork: "Charts"
+        case .pageLogin: "Forms"
+        case .pageRegister: "Forms"
+        case .pageForgotPassword: "Forms"
+        case .pageLockscreen: "Forms"
+        case .pageProfile: "Content"
+        case .pageUser: "Lists and Tables"
+        case .pageInvoice: "Lists and Tables"
+        case .pageFAQ: "Layout"
+        case .pageErrors: "Layout"
+        case .pageMaintenance: "Layout"
+        case .pageBlank: "Layout"
+        case .pageGallery: "Media"
+        case .pageSearchResult: "Searching"
+        case .pageSiteMap: "Navigation"
+        case .pageProject: "Navigation"
+        case .pageCodeEditor: "Typography"
+        case .pageEmailTemplates: "Layout"
         case .breadcrumb: "Navigation"
         case .pageHeader: "Navigation"
         case .pagination: "Navigation"
@@ -464,12 +515,29 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .appTaskboard: "Taskboard app recipe: kanban columns from HIGPanel stacks."
         case .appTravel: "Travel ops recipe: counters, widgets, and bar charts."
         case .appWork: "Work dashboard recipe: counters, widgets, and line charts."
+        case .pageLogin: "Sign-in page recipe covering login / login-v2 / login-v3."
+        case .pageRegister: "Account creation recipe covering register variants."
+        case .pageForgotPassword: "Password reset request page recipe."
+        case .pageLockscreen: "Session lock re-auth page recipe."
+        case .pageProfile: "Profile page recipe covering profile / v2 / v3."
+        case .pageUser: "User directory page with data table."
+        case .pageInvoice: "Invoice detail page with line items table."
+        case .pageFAQ: "FAQ page with accordion sections."
+        case .pageErrors: "Error page recipe for 400–503 empty states."
+        case .pageMaintenance: "Maintenance mode empty-state page recipe."
+        case .pageBlank: "Blank starter page with empty state."
+        case .pageGallery: "Gallery page recipe covering gallery and gallery-grid."
+        case .pageSearchResult: "Search results page with query and list rows."
+        case .pageSiteMap: "Site map page using hierarchical tree."
+        case .pageProject: "Single project detail page recipe."
+        case .pageCodeEditor: "Code editor page with monospaced code block."
+        case .pageEmailTemplates: "Email layout recipes (welcome, news, post, …)."
         }
     }
 
     var platforms: String {
         switch self {
-        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .panelGroup, .counter, .widget, .rating, .testimonial, .ribbon, .pricingCard, .chatBubble, .comment, .cover, .imageOverlay, .colorSelector, .socialButton, .imageFrame, .treeView, .reorderableList, .calendar, .dashboardGrid, .videoPlayer, .coachMark, .appMailbox, .appCalendar, .appContacts, .appDocuments, .appForum, .appLocation, .appMedia, .appMessage, .appNotebook, .appProjects, .appTaskboard, .appTravel, .appWork, .breadcrumb, .pageHeader,
+        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .panelGroup, .counter, .widget, .rating, .testimonial, .ribbon, .pricingCard, .chatBubble, .comment, .cover, .imageOverlay, .colorSelector, .socialButton, .imageFrame, .treeView, .reorderableList, .calendar, .dashboardGrid, .videoPlayer, .coachMark, .appMailbox, .appCalendar, .appContacts, .appDocuments, .appForum, .appLocation, .appMedia, .appMessage, .appNotebook, .appProjects, .appTaskboard, .appTravel, .appWork, .pageLogin, .pageRegister, .pageForgotPassword, .pageLockscreen, .pageProfile, .pageUser, .pageInvoice, .pageFAQ, .pageErrors, .pageMaintenance, .pageBlank, .pageGallery, .pageSearchResult, .pageSiteMap, .pageProject, .pageCodeEditor, .pageEmailTemplates, .breadcrumb, .pageHeader,
              .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .statusIndicator, .emptyState,
              .closeButton, .modal, .tooltip, .popover, .drawer, .confirmationDialog, .networkProgressBar,
              .buttonGroup, .menuToggle, .inputGroup, .fieldMessage, .datePicker, .timePicker, .select, .autocomplete, .tagInput, .dataTable, .toolbar,
