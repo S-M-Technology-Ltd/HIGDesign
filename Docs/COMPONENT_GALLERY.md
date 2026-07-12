@@ -877,6 +877,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGReorderableList
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| Layout | All 6 | drag reorder · bound items · caption · disable flag |
+
+**Guidelines:**
+- Use for priority lists, dashboard section order, and mailbox favorites
+- Bind `items` and read the array after reorder for persistence
+- On watchOS/tvOS, rows render statically (host owns reordering)
+- Token-backed metrics via `theme.reorderableList`
+
+---
+
 ### HIGCodeBlock
 
 | HIG category | Platforms | Features |

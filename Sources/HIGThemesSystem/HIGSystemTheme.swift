@@ -46,6 +46,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let socialButton: any HIGSocialButtonTokens
     public let imageFrame: any HIGImageFrameTokens
     public let treeView: any HIGTreeViewTokens
+    public let reorderableList: any HIGReorderableListTokens
     public let dataTable: any HIGDataTableTokens
     public let breadcrumb: any HIGBreadcrumbTokens
     public let pageHeader: any HIGPageHeaderTokens
@@ -140,6 +141,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         socialButton: any HIGSocialButtonTokens = HIGSystemSocialButtonTokens(),
         imageFrame: any HIGImageFrameTokens = HIGSystemImageFrameTokens(),
         treeView: any HIGTreeViewTokens = HIGSystemTreeViewTokens(),
+        reorderableList: any HIGReorderableListTokens = HIGSystemReorderableListTokens(),
         dataTable: any HIGDataTableTokens = HIGSystemDataTableTokens(),
         breadcrumb: any HIGBreadcrumbTokens = HIGSystemBreadcrumbTokens(),
         pageHeader: any HIGPageHeaderTokens = HIGSystemPageHeaderTokens(),
@@ -233,6 +235,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.socialButton = socialButton
         self.imageFrame = imageFrame
         self.treeView = treeView
+        self.reorderableList = reorderableList
         self.dataTable = dataTable
         self.breadcrumb = breadcrumb
         self.pageHeader = pageHeader

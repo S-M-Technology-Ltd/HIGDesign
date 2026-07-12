@@ -92,6 +92,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case socialButton
     case imageFrame
     case treeView
+    case reorderableList
 
     public var id: String { rawValue }
 
@@ -156,6 +157,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .socialButton: "Social Button"
         case .imageFrame: "Image Frame"
         case .treeView: "Tree View"
+        case .reorderableList: "Reorderable List"
         case .breadcrumb: "Breadcrumb"
         case .pageHeader: "Page Header"
         case .pagination: "Pagination"
@@ -252,6 +254,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .socialButton: "Buttons"
         case .imageFrame: "Content"
         case .treeView: "Layout"
+        case .reorderableList: "Layout"
         case .breadcrumb: "Navigation"
         case .pageHeader: "Navigation"
         case .pagination: "Navigation"
@@ -387,12 +390,13 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .socialButton: "Social and account action buttons with SF Symbols and semantic chrome."
         case .imageFrame: "Themed image container with aspect presets, border, and placeholder."
         case .treeView: "Hierarchical tree with expand, collapse, and optional selection."
+        case .reorderableList: "Drag-to-reorder list for admin priority and section ordering."
         }
     }
 
     var platforms: String {
         switch self {
-        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .panelGroup, .counter, .widget, .rating, .testimonial, .ribbon, .pricingCard, .chatBubble, .comment, .cover, .imageOverlay, .colorSelector, .socialButton, .imageFrame, .treeView, .breadcrumb, .pageHeader,
+        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .panelGroup, .counter, .widget, .rating, .testimonial, .ribbon, .pricingCard, .chatBubble, .comment, .cover, .imageOverlay, .colorSelector, .socialButton, .imageFrame, .treeView, .reorderableList, .breadcrumb, .pageHeader,
              .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .statusIndicator, .emptyState,
              .closeButton, .modal, .tooltip, .popover, .drawer, .confirmationDialog, .networkProgressBar,
              .buttonGroup, .menuToggle, .inputGroup, .fieldMessage, .datePicker, .timePicker, .select, .autocomplete, .tagInput, .dataTable, .toolbar,
