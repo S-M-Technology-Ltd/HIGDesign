@@ -41,6 +41,7 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
     public let counter: any HIGCounterTokens
     public let widget: any HIGWidgetTokens
     public let rating: any HIGRatingTokens
+    public let testimonial: any HIGTestimonialTokens
     public let dataTable: any HIGDataTableTokens
     public let breadcrumb: any HIGBreadcrumbTokens
     public let pageHeader: any HIGPageHeaderTokens
@@ -165,6 +166,7 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
         self.counter = base.counter
         self.widget = base.widget
         self.rating = base.rating
+        self.testimonial = base.testimonial
         self.dataTable = base.dataTable
         self.breadcrumb = HIGSystemBreadcrumbTokens(
             font: base.breadcrumb.font,

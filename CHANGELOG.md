@@ -97,6 +97,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Panel Group page plus token tests (Wave 8.3)
 - `HIGRating` / `theme.rating` — star rating display and interactive selection
 - Showcase Rating page plus token tests
+- `HIGTestimonial` / `theme.testimonial` — quote card with author, role, avatar, and optional rating
+- Showcase Testimonial page plus token tests
 
 ## 1.4.0 — 2026-07-10
 

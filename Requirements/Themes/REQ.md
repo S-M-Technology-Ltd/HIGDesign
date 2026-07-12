@@ -23,6 +23,7 @@ Theme contract, environment injection, and built-in system themes for HIGDesign.
 - `HIGTheme` includes `panel` component tokens for ``HIGPanel``.
 - `HIGTheme` includes `panelGroup` component tokens for ``HIGPanelGroup``.
 - `HIGTheme` includes `rating` component tokens for ``HIGRating``.
+- `HIGTheme` includes `testimonial` component tokens for ``HIGTestimonial``.
 - `HIGTheme` includes `counter` component tokens for ``HIGCounter``.
 - `HIGTheme` includes `widget` component tokens for ``HIGWidget``.
 - `HIGTheme` includes `breadcrumb` and `pageHeader` component tokens for ``HIGBreadcrumb`` and ``HIGPageHeader``.

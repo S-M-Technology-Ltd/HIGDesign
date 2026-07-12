@@ -35,6 +35,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let counter: any HIGCounterTokens
     public let widget: any HIGWidgetTokens
     public let rating: any HIGRatingTokens
+    public let testimonial: any HIGTestimonialTokens
     public let dataTable: any HIGDataTableTokens
     public let breadcrumb: any HIGBreadcrumbTokens
     public let pageHeader: any HIGPageHeaderTokens
@@ -118,6 +119,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         counter: any HIGCounterTokens = HIGSystemCounterTokens(),
         widget: any HIGWidgetTokens = HIGSystemWidgetTokens(),
         rating: any HIGRatingTokens = HIGSystemRatingTokens(),
+        testimonial: any HIGTestimonialTokens = HIGSystemTestimonialTokens(),
         dataTable: any HIGDataTableTokens = HIGSystemDataTableTokens(),
         breadcrumb: any HIGBreadcrumbTokens = HIGSystemBreadcrumbTokens(),
         pageHeader: any HIGPageHeaderTokens = HIGSystemPageHeaderTokens(),
@@ -200,6 +202,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.counter = counter
         self.widget = widget
         self.rating = rating
+        self.testimonial = testimonial
         self.dataTable = dataTable
         self.breadcrumb = breadcrumb
         self.pageHeader = pageHeader

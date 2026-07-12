@@ -723,6 +723,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGTestimonial
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| Content | All 6 | quote · author · role · optional avatar · optional rating |
+
+**Guidelines:**
+- Use for social proof, case studies, and admin marketing surfaces
+- Keep quotes concise; pair with `HIGRating` when scores matter
+- Provide avatar initials when a photo asset is not available
+- Token-backed chrome via `theme.testimonial`
+
+---
+
 ### HIGCodeBlock
 
 | HIG category | Platforms | Features |
