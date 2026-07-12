@@ -66,6 +66,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case tagInput
     case dataTable
     case dropZone
+    case adminShell
 
     public var id: String { rawValue }
 
@@ -143,6 +144,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .tagInput: "Tag Input"
         case .dataTable: "Data Table"
         case .dropZone: "Drop Zone"
+        case .adminShell: "Admin Shell"
         }
     }
 
@@ -213,6 +215,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .tagInput: "Text Fields"
         case .dataTable: "Lists and Tables"
         case .dropZone: "File Management"
+        case .adminShell: "Split Views"
         }
     }
 
@@ -283,6 +286,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .tagInput: "Freeform tag chips with type-to-add and optional suggestions."
         case .dataTable: "Columnar admin table with header, striping, and horizontal scroll."
         case .dropZone: "Browse and drop files into a themed upload surface."
+        case .adminShell: "Admin app shell with brand chrome and sidebar navigation."
         }
     }
 
@@ -303,7 +307,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
             "iOS, iPadOS, macOS, visionOS, tvOS"
         case .tabBar:
             "iOS, iPadOS, macOS, visionOS, tvOS"
-        case .sidebar:
+        case .sidebar, .adminShell:
             "iOS, iPadOS, macOS, visionOS"
         case .photoPicker, .photoEditor:
             "iOS"

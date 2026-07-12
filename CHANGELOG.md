@@ -57,6 +57,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Data Table page plus token tests (Wave 4.1 data display)
 - `HIGDropZone` / `theme.dropZone` — browse and drop file surface with selected-file list
 - Showcase Drop Zone page plus token tests
+- `HIGAdminShell` / `HIGAdminShellStyle` / `theme.adminShell` — admin app shell with brand chrome and sidebar navigation (Remark base)
+- Showcase Admin Shell page plus token tests (Wave 7.1)
 
 ## 1.4.0 — 2026-07-10
 
