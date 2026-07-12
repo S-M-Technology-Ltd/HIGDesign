@@ -11,6 +11,7 @@ import SwiftUI
 /// - ``HIGAdminShellStyle/iconRail`` — Remark **iconbar** (icon-only leading rail)
 /// - ``HIGAdminShellStyle/topBar`` — Remark **topbar** (horizontal labeled nav strip)
 /// - ``HIGAdminShellStyle/topIcon`` — Remark **topicon** (horizontal icon-only nav strip)
+/// - ``HIGAdminShellStyle/centered`` — Remark **center** (top nav + max-width centered detail)
 ///
 /// Prefer ``HIGSidebar`` when you only need a plain split view without brand chrome.
 public struct HIGAdminShell<Selection: Hashable & Sendable, Content: View>: View {
@@ -26,7 +27,7 @@ public struct HIGAdminShell<Selection: Hashable & Sendable, Content: View>: View
 
     /// Creates an admin shell.
     /// - Parameters:
-    ///   - style: Shell layout family (``.sidebar``, ``.iconRail``, ``.topBar``, or ``.topIcon``).
+    ///   - style: Shell layout family (``.sidebar``, ``.iconRail``, ``.topBar``, ``.topIcon``, or ``.centered``).
     ///   - brandTitle: Optional product name in the navigation chrome.
     ///   - sidebarTitle: Navigation title for the leading column (sidebar / icon rail).
     ///   - selection: Bound selected destination.
@@ -60,6 +61,8 @@ public struct HIGAdminShell<Selection: Hashable & Sendable, Content: View>: View
             topStripShell(tokens: tokens, iconOnly: false)
         case .topIcon:
             topStripShell(tokens: tokens, iconOnly: true)
+        case .centered:
+            centeredShell(tokens: tokens)
         }
     }
 
@@ -285,6 +288,28 @@ public struct HIGAdminShell<Selection: Hashable & Sendable, Content: View>: View
         .background(theme.colors.backgroundSecondary)
     }
 
+    // MARK: - Centered (Remark center)
+
+    @ViewBuilder
+    private func centeredShell(tokens: any HIGAdminShellTokens) -> some View {
+        VStack(spacing: 0) {
+            topStrip(tokens: tokens, iconOnly: false)
+            HIGDivider()
+            HStack(spacing: 0) {
+                Spacer(minLength: 0)
+                detailColumn(tokens: tokens)
+                    .frame(maxWidth: tokens.centeredMaxWidth)
+                Spacer(minLength: 0)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(theme.colors.backgroundSecondary)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(theme.colors.backgroundPrimary)
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel(brandTitle ?? sidebarTitle)
+    }
+
     // MARK: - Detail
 
     @ViewBuilder
@@ -312,6 +337,7 @@ public struct HIGAdminShell<Selection: Hashable & Sendable, Content: View>: View
         case .iconRail: "rectangle.leftthird.inset.filled"
         case .topBar: "menubar.rectangle"
         case .topIcon: "rectangle.topthird.inset.filled"
+        case .centered: "rectangle.center.inset.filled"
         }
     }
 
@@ -321,6 +347,7 @@ public struct HIGAdminShell<Selection: Hashable & Sendable, Content: View>: View
         case .iconRail: "Choose an item from the icon rail."
         case .topBar: "Choose an item from the top bar."
         case .topIcon: "Choose an item from the top icon bar."
+        case .centered: "Choose an item from the navigation bar."
         }
     }
 }
@@ -425,6 +452,31 @@ private enum HIGAdminShellPreviewSection: String, Hashable, Sendable {
                 Text(section.rawValue.capitalized)
                     .font(.title2)
                 Text("Top icon detail for \(section.rawValue).")
+                    .foregroundStyle(.secondary)
+            }
+        }
+    }
+}
+
+#Preview("HIGAdminShell — Centered") {
+    @Previewable @State var selection: HIGAdminShellPreviewSection? = .dashboard
+
+    HIGThemeableView(theme: HIGComponentPreviewTheme()) {
+        HIGAdminShell(
+            style: .centered,
+            brandTitle: "HIG Admin",
+            sidebarTitle: "Menu",
+            selection: $selection,
+            items: [
+                HIGSidebarItem(id: HIGAdminShellPreviewSection.dashboard, title: "Dashboard", systemImage: "square.grid.2x2"),
+                HIGSidebarItem(id: HIGAdminShellPreviewSection.users, title: "Users", systemImage: "person.2"),
+                HIGSidebarItem(id: HIGAdminShellPreviewSection.settings, title: "Settings", systemImage: "gearshape"),
+            ]
+        ) { section in
+            VStack(alignment: .leading, spacing: HIGSpacing.sm.rawValue) {
+                Text(section.rawValue.capitalized)
+                    .font(.title2)
+                Text("Centered detail for \(section.rawValue).")
                     .foregroundStyle(.secondary)
             }
         }

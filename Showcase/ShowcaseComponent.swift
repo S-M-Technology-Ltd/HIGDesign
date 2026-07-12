@@ -316,7 +316,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .tagInput: "Freeform tag chips with type-to-add and optional suggestions."
         case .dataTable: "Columnar admin table with header, striping, and horizontal scroll."
         case .dropZone: "Browse and drop files into a themed upload surface."
-        case .adminShell: "Admin app shell with brand chrome; sidebar, icon-rail, top-bar, and top-icon styles."
+        case .adminShell: "Admin app shell with brand chrome; sidebar, rails, top strips, and centered styles."
         case .codeBlock: "Monospaced code surface with optional language label and share."
         case .carousel: "Paged content carousel with themed indicators and optional auto-advance."
         case .mediaRow: "Media object row with leading media, title, subtitle, and trailing slot."

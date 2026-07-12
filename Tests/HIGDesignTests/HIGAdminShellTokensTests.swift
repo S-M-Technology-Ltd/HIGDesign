@@ -17,13 +17,15 @@ func adminShellTokensUseReadableMetrics() {
     #expect(tokens.topBarMinHeight >= HIGSpacing.massive.rawValue)
     #expect(tokens.topBarIconPointSize > 0)
     #expect(tokens.topBarItemSpacing >= HIGSpacing.xxs.rawValue)
+    #expect(tokens.centeredMaxWidth >= tokens.sidebarMaxWidth)
 }
 
 @Test
 func adminShellStyleCasesAreStable() {
-    #expect(HIGAdminShellStyle.allCases.count == 4)
+    #expect(HIGAdminShellStyle.allCases.count == 5)
     #expect(HIGAdminShellStyle.sidebar.rawValue == "sidebar")
     #expect(HIGAdminShellStyle.iconRail.rawValue == "iconRail")
     #expect(HIGAdminShellStyle.topBar.rawValue == "topBar")
     #expect(HIGAdminShellStyle.topIcon.rawValue == "topIcon")
+    #expect(HIGAdminShellStyle.centered.rawValue == "centered")
 }
