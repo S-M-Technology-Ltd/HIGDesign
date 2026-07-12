@@ -63,6 +63,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Code Block page plus token tests (Wave 5.1 content hybrids)
 - `HIGCarousel` / `theme.carousel` — paged content carousel with themed indicators and optional auto-advance
 - Showcase Carousel page plus token tests (Wave 5.2)
+- `HIGMediaRow` / `theme.mediaRow` — media object row with leading media, title, subtitle, and trailing slot
+- Showcase Media Row page plus token tests (Wave 5.3)
 
 ## 1.4.0 — 2026-07-10
 

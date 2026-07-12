@@ -69,6 +69,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case adminShell
     case codeBlock
     case carousel
+    case mediaRow
 
     public var id: String { rawValue }
 
@@ -149,6 +150,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .adminShell: "Admin Shell"
         case .codeBlock: "Code Block"
         case .carousel: "Carousel"
+        case .mediaRow: "Media Row"
         }
     }
 
@@ -222,6 +224,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .adminShell: "Split Views"
         case .codeBlock: "Typography"
         case .carousel: "Layout"
+        case .mediaRow: "Layout"
         }
     }
 
@@ -295,6 +298,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .adminShell: "Admin app shell with brand chrome and sidebar navigation."
         case .codeBlock: "Monospaced code surface with optional language label and share."
         case .carousel: "Paged content carousel with themed indicators and optional auto-advance."
+        case .mediaRow: "Media object row with leading media, title, subtitle, and trailing slot."
         }
     }
 
@@ -307,7 +311,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
              .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .matrixLoader,
              .list, .form,
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,
-             .bulletList, .textEditor, .stepper, .menuButton, .tag, .codeBlock, .carousel:
+             .bulletList, .textEditor, .stepper, .menuButton, .tag, .codeBlock, .carousel, .mediaRow:
             "iOS, iPadOS, macOS, visionOS, tvOS, watchOS"
         case .slider, .dropZone:
             "iOS, iPadOS, macOS, visionOS"

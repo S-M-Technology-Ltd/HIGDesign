@@ -22,7 +22,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | 2 | Overlays & chrome | **Done** (core overlay kit) |
 | 3 | Advanced forms | **Done** (including `HIGDropZone` file upload) |
 | 4 | Data display | **In progress** (`HIGDataTable`) |
-| 5 | Content hybrids | **In progress** (`HIGCodeBlock`, `HIGCarousel`) |
+| 5 | Content hybrids | **In progress** (`HIGCodeBlock`, `HIGCarousel`, `HIGMediaRow`) |
 | 6 | Swift Charts family | Planned |
 | 7 | Admin shell & layout | **In progress** (`HIGAdminShell` `.sidebar`) |
 | 8 | Parity extensions on existing components | Planned |
@@ -58,7 +58,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 
 | Jumbotron | `HIGHero` | Planned |
 | List group | `HIGList` / `HIGListGroup` | Extend / Planned |
-| Media | `HIGMediaRow` | Planned |
+| Media | `HIGMediaRow` | **Done** |
 | Modals | `HIGModal` helpers | **Done** (chrome; native sheet presentation) |
 | Close | `HIGCloseButton` | **Done** |
 | Navbar | `HIGNavigationBar` + shell | Extend |

@@ -94,13 +94,14 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 
 #### Admin catalog expansion (planned families)
 
-Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after carousel: lightbox, Swift Charts, and additional admin shell styles.
+Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after media row: hero, lightbox, Swift Charts, and additional admin shell styles.
 
 #### Content
 
 - `HIGLabel`
 - `HIGCodeBlock` — monospaced code surface with optional language label and share; tokens via `theme.codeBlock`
 - `HIGCarousel` — paged content carousel with themed indicators and optional auto-advance; tokens via `theme.carousel`
+- `HIGMediaRow` — media object row with leading media, title, subtitle, and trailing slot; tokens via `theme.mediaRow`
 - `HIGIcon`
 - `HIGAvatar`
 - `HIGBulletList`

@@ -71,6 +71,7 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
     public let adminShell: any HIGAdminShellTokens
     public let codeBlock: any HIGCodeBlockTokens
     public let carousel: any HIGCarouselTokens
+    public let mediaRow: any HIGMediaRowTokens
     public let photoPicker: any HIGPhotoPickerTokens
     public let photoEditor: any HIGPhotoEditorTokens
     public let longTextEditor: any HIGLongTextEditorTokens
@@ -154,6 +155,7 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
         self.adminShell = base.adminShell
         self.codeBlock = base.codeBlock
         self.carousel = base.carousel
+        self.mediaRow = base.mediaRow
         self.photoPicker = base.photoPicker
         self.photoEditor = base.photoEditor
         self.longTextEditor = base.longTextEditor
