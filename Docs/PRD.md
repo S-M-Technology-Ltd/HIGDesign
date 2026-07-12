@@ -105,6 +105,7 @@ First delivery slices:
 - `HIGCounter` / `HIGCounterTrend` (Wave 8.1 dashboard metric counters)
 - `HIGWidget` (Wave 8.2 dashboard widget host surface)
 - `HIGPanelGroup` (Wave 8.3 stacked panel/widget group)
+- `HIGRating` (star rating display and interactive selection)
 - `HIGCodeBlock` (Wave 5.1 monospaced code surface)
 - `HIGCarousel` (Wave 5.2 paged carousel)
 - `HIGMediaRow` (Wave 5.3 media object row)
