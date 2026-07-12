@@ -793,6 +793,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGCover
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| Content | All 6 | title · subtitle · accent/neutral · custom background · scrim · actions |
+
+**Guidelines:**
+- Use for profile headers, marketing banners, and admin landing covers
+- Prefer solid `.accent` / `.neutral` styles for simple banners; custom backgrounds for media
+- Enable `showsScrim` over busy imagery so labels stay readable
+- Token-backed metrics via `theme.cover`
+
+---
+
 ### HIGCodeBlock
 
 | HIG category | Platforms | Features |

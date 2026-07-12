@@ -41,6 +41,7 @@ extension HIGTheme {
     public var pricingCard: any HIGPricingCardTokens { HIGSystemPricingCardTokens() }
     public var chatBubble: any HIGChatBubbleTokens { HIGSystemChatBubbleTokens() }
     public var comment: any HIGCommentTokens { HIGSystemCommentTokens() }
+    public var cover: any HIGCoverTokens { HIGSystemCoverTokens() }
     public var dataTable: any HIGDataTableTokens { HIGSystemDataTableTokens() }
     public var breadcrumb: any HIGBreadcrumbTokens { HIGSystemBreadcrumbTokens() }
     public var pageHeader: any HIGPageHeaderTokens { HIGSystemPageHeaderTokens() }

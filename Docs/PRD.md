@@ -111,6 +111,7 @@ First delivery slices:
 - `HIGPricingCard` (pricing plan card with features, CTA, and featured emphasis)
 - `HIGChatBubble` (incoming/outgoing chat message bubbles)
 - `HIGComment` (discussion comment rows; chat/comment family complete)
+- `HIGCover` (cover/banner surface with scrim and solid or custom background)
 - `HIGCodeBlock` (Wave 5.1 monospaced code surface)
 - `HIGCarousel` (Wave 5.2 paged carousel)
 - `HIGMediaRow` (Wave 5.3 media object row)

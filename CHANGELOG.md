@@ -107,6 +107,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Chat Bubble page plus token tests
 - `HIGComment` / `theme.comment` — discussion comment rows with author, body, timestamp, avatar, and reply
 - Showcase Comment page plus token tests
+- `HIGCover` / `HIGCoverStyle` / `theme.cover` — cover banners with solid or custom backgrounds and optional scrim
+- Showcase Cover page plus token tests
 
 ## 1.4.0 — 2026-07-10
 

@@ -86,6 +86,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case pricingCard
     case chatBubble
     case comment
+    case cover
 
     public var id: String { rawValue }
 
@@ -144,6 +145,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .pricingCard: "Pricing Card"
         case .chatBubble: "Chat Bubble"
         case .comment: "Comment"
+        case .cover: "Cover"
         case .breadcrumb: "Breadcrumb"
         case .pageHeader: "Page Header"
         case .pagination: "Pagination"
@@ -234,6 +236,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .pricingCard: "Content"
         case .chatBubble: "Content"
         case .comment: "Content"
+        case .cover: "Content"
         case .breadcrumb: "Navigation"
         case .pageHeader: "Navigation"
         case .pagination: "Navigation"
@@ -363,12 +366,13 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .pricingCard: "Pricing plan card with price, features, CTA, and featured emphasis."
         case .chatBubble: "Incoming or outgoing chat message bubble with optional avatar and timestamp."
         case .comment: "Discussion comment row with author, body, timestamp, avatar, and reply."
+        case .cover: "Cover banner with title, subtitle, scrim, and solid or custom background."
         }
     }
 
     var platforms: String {
         switch self {
-        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .panelGroup, .counter, .widget, .rating, .testimonial, .ribbon, .pricingCard, .chatBubble, .comment, .breadcrumb, .pageHeader,
+        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .panelGroup, .counter, .widget, .rating, .testimonial, .ribbon, .pricingCard, .chatBubble, .comment, .cover, .breadcrumb, .pageHeader,
              .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .statusIndicator, .emptyState,
              .closeButton, .modal, .tooltip, .popover, .drawer, .confirmationDialog, .networkProgressBar,
              .buttonGroup, .menuToggle, .inputGroup, .fieldMessage, .datePicker, .timePicker, .select, .autocomplete, .tagInput, .dataTable, .toolbar,
