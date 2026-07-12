@@ -2,8 +2,10 @@ import Foundation
 
 /// Layout style for ``HIGAdminShell``.
 ///
-/// Maps to Remark Admin shell families. v1 ships ``sidebar`` (Remark **base**).
+/// Maps to Remark Admin shell families.
 public enum HIGAdminShellStyle: String, Sendable, CaseIterable {
-    /// Leading sidebar navigation with detail content (Remark base).
+    /// Leading labeled sidebar navigation with detail content (Remark **base**).
     case sidebar
+    /// Narrow icon-only leading rail with detail content (Remark **iconbar**).
+    case iconRail
 }

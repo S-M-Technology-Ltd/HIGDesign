@@ -10,6 +10,10 @@ public protocol HIGAdminShellTokens: Sendable {
     var sidebarMinWidth: CGFloat { get }
     var sidebarIdealWidth: CGFloat { get }
     var sidebarMaxWidth: CGFloat { get }
+    /// Fixed width for ``HIGAdminShellStyle/iconRail`` leading rail.
+    var iconRailWidth: CGFloat { get }
+    var iconRailItemSpacing: CGFloat { get }
+    var iconRailIconPointSize: CGFloat { get }
 }
 
 /// System defaults for admin application shells.
@@ -20,6 +24,9 @@ public struct HIGSystemAdminShellTokens: HIGAdminShellTokens, Sendable {
     public let sidebarMinWidth: CGFloat
     public let sidebarIdealWidth: CGFloat
     public let sidebarMaxWidth: CGFloat
+    public let iconRailWidth: CGFloat
+    public let iconRailItemSpacing: CGFloat
+    public let iconRailIconPointSize: CGFloat
 
     public init(
         contentPadding: CGFloat = HIGSpacing.lg.rawValue,
@@ -27,7 +34,10 @@ public struct HIGSystemAdminShellTokens: HIGAdminShellTokens, Sendable {
         brandFont: Font = .headline.weight(.semibold),
         sidebarMinWidth: CGFloat = 200,
         sidebarIdealWidth: CGFloat = 240,
-        sidebarMaxWidth: CGFloat = 320
+        sidebarMaxWidth: CGFloat = 320,
+        iconRailWidth: CGFloat = 72,
+        iconRailItemSpacing: CGFloat = HIGSpacing.sm.rawValue,
+        iconRailIconPointSize: CGFloat = 20
     ) {
         self.contentPadding = contentPadding
         self.brandPadding = brandPadding
@@ -35,5 +45,8 @@ public struct HIGSystemAdminShellTokens: HIGAdminShellTokens, Sendable {
         self.sidebarMinWidth = sidebarMinWidth
         self.sidebarIdealWidth = sidebarIdealWidth
         self.sidebarMaxWidth = sidebarMaxWidth
+        self.iconRailWidth = iconRailWidth
+        self.iconRailItemSpacing = iconRailItemSpacing
+        self.iconRailIconPointSize = iconRailIconPointSize
     }
 }
