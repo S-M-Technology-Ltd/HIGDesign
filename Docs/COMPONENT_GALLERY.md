@@ -779,6 +779,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGComment
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| Content | All 6 | author · body · timestamp · avatar · reply · separator |
+
+**Guidelines:**
+- Use for blog comments, activity feeds, and admin discussion threads
+- Prefer `HIGChatBubble` for real-time messaging; use `HIGComment` for feed-style posts
+- Stack rows in a `VStack` and indent nested replies in the host layout
+- Token-backed metrics via `theme.comment`
+
+---
+
 ### HIGCodeBlock
 
 | HIG category | Platforms | Features |

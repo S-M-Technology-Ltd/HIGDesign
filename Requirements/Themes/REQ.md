@@ -27,6 +27,7 @@ Theme contract, environment injection, and built-in system themes for HIGDesign.
 - `HIGTheme` includes `ribbon` component tokens for ``HIGRibbon``.
 - `HIGTheme` includes `pricingCard` component tokens for ``HIGPricingCard``.
 - `HIGTheme` includes `chatBubble` component tokens for ``HIGChatBubble``.
+- `HIGTheme` includes `comment` component tokens for ``HIGComment``.
 - `HIGTheme` includes `counter` component tokens for ``HIGCounter``.
 - `HIGTheme` includes `widget` component tokens for ``HIGWidget``.
 - `HIGTheme` includes `breadcrumb` and `pageHeader` component tokens for ``HIGBreadcrumb`` and ``HIGPageHeader``.

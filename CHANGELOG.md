@@ -105,6 +105,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Pricing Card page plus token tests
 - `HIGChatBubble` / `HIGChatBubbleAlignment` / `theme.chatBubble` — incoming/outgoing chat message bubbles
 - Showcase Chat Bubble page plus token tests
+- `HIGComment` / `theme.comment` — discussion comment rows with author, body, timestamp, avatar, and reply
+- Showcase Comment page plus token tests
 
 ## 1.4.0 — 2026-07-10
 

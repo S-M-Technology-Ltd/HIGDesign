@@ -45,6 +45,7 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
     public let ribbon: any HIGRibbonTokens
     public let pricingCard: any HIGPricingCardTokens
     public let chatBubble: any HIGChatBubbleTokens
+    public let comment: any HIGCommentTokens
     public let dataTable: any HIGDataTableTokens
     public let breadcrumb: any HIGBreadcrumbTokens
     public let pageHeader: any HIGPageHeaderTokens
@@ -173,6 +174,7 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
         self.ribbon = base.ribbon
         self.pricingCard = base.pricingCard
         self.chatBubble = base.chatBubble
+        self.comment = base.comment
         self.dataTable = base.dataTable
         self.breadcrumb = HIGSystemBreadcrumbTokens(
             font: base.breadcrumb.font,
