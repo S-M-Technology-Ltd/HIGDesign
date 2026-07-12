@@ -81,6 +81,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Lightbox page plus token tests (Wave 5 content hybrids companion to carousel)
 - `HIGAdminShellStyle.iconRail` — Remark iconbar: narrow icon-only leading rail on `HIGAdminShell`
 - Admin shell tokens for icon rail width/spacing/icon size; Showcase style picker (Wave 7.2)
+- `HIGAdminShellStyle.topBar` — Remark topbar: horizontal brand + nav strip above detail
+- Admin shell tokens for top bar height/spacing/icon size; Showcase Top Bar option (Wave 7.3)
 
 ## 1.4.0 — 2026-07-10
 
