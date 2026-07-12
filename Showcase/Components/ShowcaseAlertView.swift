@@ -27,17 +27,33 @@ struct ShowcaseAlertView: View {
 
                     ShowcaseSampleView(code: """
                     HIGAlertBanner(
+                        "Backup finished",
+                        message: "All devices are up to date.",
+                        style: .success
+                    )
+                    """) {
+                        HIGAlertBanner(
+                            "Backup finished",
+                            message: "All devices are up to date.",
+                            style: .success
+                        )
+                    }
+
+                    ShowcaseSampleView(code: """
+                    HIGAlertBanner(
                         "Storage almost full",
                         message: "Remove older items to keep syncing.",
                         style: .warning,
-                        actionTitle: "Manage"
+                        actionTitle: "Manage",
+                        onDismiss: { }
                     )
                     """) {
                         HIGAlertBanner(
                             "Storage almost full",
                             message: "Remove older items to keep syncing.",
                             style: .warning,
-                            actionTitle: "Manage"
+                            actionTitle: "Manage",
+                            onDismiss: {}
                         )
                     }
 

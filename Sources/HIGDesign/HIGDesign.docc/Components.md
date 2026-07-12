@@ -165,9 +165,11 @@ v1.5.0 expands the catalog for admin-density apps: shells, panels, charts, advan
 - ``HIGNetworkProgressBarTokens``
 - ``higConfirmationDialog(_:isPresented:titleVisibility:message:primaryButtonTitle:primaryButtonRole:primaryAction:secondaryButtonTitle:secondaryButtonRole:secondaryAction:)``
 - ``HIGToast``
+- ``HIGToastStyle``
+- ``HIGToastItem``
 - ``HIGToastQueue``
 - ``HIGToastQueueConfiguration``
-- ``higToast(isPresented:message:)``
+- ``higToast(isPresented:message:style:)``
 - ``higToastQueue(_:)``
 - ``HIGCoachMark``
 - ``HIGCoachMarkTokens``

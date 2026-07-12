@@ -201,7 +201,7 @@ Every token category supports independent overrides. Mix and match freely:
 
 | Category | What you control |
 |---|---|
-| `colors` | `labelPrimary`, `labelSecondary`, `accent`, `destructive`, `warning`, backgrounds, fills, separators |
+| `colors` | `labelPrimary`, `labelSecondary`, `accent`, `destructive`, `warning`, `success`, backgrounds, fills, separators |
 | `typography` | `largeTitle`, `title`, `headline`, `body`, `callout`, `caption`, `button` |
 | `spacing` | `screenEdge`, `section`, `item`, `compactItem` |
 | `opacity` | `hidden`, `disabled`, `pressedPrimary`, `subtleFill`, `bannerBorder`, `full` |
@@ -254,6 +254,15 @@ HIGMenuButton("Options", systemImage: "ellipsis.circle") {
     Button("Rename") {}
     Button("Delete", role: .destructive) {}
 }
+```
+
+### Feedback styles
+
+```swift
+HIGBadge("OK", style: .success)
+HIGAlertBanner("Saved", style: .success, onDismiss: { })
+HIGToast("Synced", style: .success)
+HIGButton("Saving", isLoading: true) { }
 ```
 
 ### Admin surfaces

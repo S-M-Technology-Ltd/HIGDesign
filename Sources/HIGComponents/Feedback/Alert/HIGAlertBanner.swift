@@ -9,6 +9,7 @@ public struct HIGAlertBanner: View {
     private let style: HIGAlertBannerStyle
     private let actionTitle: String?
     private let action: () -> Void
+    private let onDismiss: (() -> Void)?
 
     @Environment(\.higTheme) private var theme
 
@@ -17,17 +18,20 @@ public struct HIGAlertBanner: View {
         message: String? = nil,
         style: HIGAlertBannerStyle = .info,
         actionTitle: String? = nil,
-        action: @escaping () -> Void = {}
+        action: @escaping () -> Void = {},
+        onDismiss: (() -> Void)? = nil
     ) {
         self.title = title
         self.message = message
         self.style = style
         self.actionTitle = actionTitle
         self.action = action
+        self.onDismiss = onDismiss
     }
 
     public var body: some View {
         let tokens = theme.alert
+        let dismissSize = HIGSpacing.xl.rawValue
 
         HStack(alignment: .top, spacing: theme.spacing.item) {
             Image(systemName: style.systemImage)
@@ -54,6 +58,18 @@ public struct HIGAlertBanner: View {
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
+
+            if let onDismiss {
+                Button(action: onDismiss) {
+                    Image(systemName: "xmark")
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(theme.colors.labelSecondary)
+                        .frame(width: dismissSize, height: dismissSize)
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Dismiss")
+            }
         }
         .padding(tokens.contentPadding)
         .background(style.backgroundColor(theme: theme))
@@ -73,7 +89,7 @@ public struct HIGAlertBanner: View {
 #Preview("HIGAlertBanner") {
     HIGThemeableView(theme: HIGComponentPreviewTheme()) {
         VStack(spacing: HIGSpacing.lg.rawValue) {
-            HIGAlertBanner("Sync complete", message: "Your changes were saved to iCloud.")
+            HIGAlertBanner("Sync complete", message: "Your changes were saved to iCloud.", style: .success)
             HIGAlertBanner(
                 "Storage almost full",
                 message: "Remove older items to keep syncing.",
@@ -81,10 +97,10 @@ public struct HIGAlertBanner: View {
                 actionTitle: "Manage"
             )
             HIGAlertBanner(
-                "Sign-in failed",
-                message: "Check your network connection and try again.",
+                "Payment failed",
+                message: "Update your billing method.",
                 style: .error,
-                actionTitle: "Retry"
+                onDismiss: {}
             )
         }
         .padding()

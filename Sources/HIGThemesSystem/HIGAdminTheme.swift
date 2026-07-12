@@ -130,7 +130,8 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
             separator: HIGAdminPalette.separator,
             accent: hue.accentColor,
             destructive: HIGAdminPalette.danger,
-            warning: HIGAdminPalette.warning
+            warning: HIGAdminPalette.warning,
+            success: HIGAdminPalette.greenPrimary
         )
         self.typography = base.typography
         // Slightly denser vertical rhythm for admin dashboards while staying on the 4pt grid.

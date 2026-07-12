@@ -311,4 +311,4 @@ Current milestone: v1.5.0 released (2026-07-12).
 
 v1.5.0 delivered the admin catalog expansion: `HIGAdminTheme`, `HIGAdminShell`, panels/wayfinding, advanced forms, Swift Charts, content hybrids, coach marks, MapKit map recipe, and Wave 9 Showcase app/page recipes. See `Docs/PRD.md` and `CHANGELOG.md`.
 
-Next milestone: optional Extend-row parity polish and platform polish per `Docs/PRD.md` / `Docs/ADMIN_TEMPLATE_PORT.md`.
+Next milestone: opportunistic platform polish and consumer app work; core Extend rows closed post-v1.5.0.

@@ -12,15 +12,25 @@ struct ShowcaseToastView: View {
                 ShowcaseMetadataView(component: .toast)
 
                 VStack(spacing: theme.spacing.item) {
-                    ShowcaseSampleView(code: "HIGToast(\"Settings saved\") { }") {
-                        HIGToast("Settings saved") {
+                    ShowcaseSampleView(code: "HIGToast(\"Settings saved\", style: .success) { }") {
+                        HIGToast("Settings saved", style: .success) {
                             // Showcase dismiss affordance
                         }
                     }
 
                     ShowcaseSampleView(code: """
+                    HIGToast("Check connectivity", style: .warning)
+                    HIGToast("Sync failed", style: .error)
+                    """) {
+                        VStack(spacing: theme.spacing.item) {
+                            HIGToast("Check connectivity", style: .warning)
+                            HIGToast("Sync failed", style: .error)
+                        }
+                    }
+
+                    ShowcaseSampleView(code: """
                     HIGButton("Show Toast", role: .primary) { isPresented = true }
-                    .higToast(isPresented: $isPresented, message: "Settings saved")
+                    .higToast(isPresented: $isPresented, message: "Settings saved", style: .success)
                     """) {
                         HIGButton("Show Toast", role: .primary) {
                             isPresented = true
@@ -32,19 +42,14 @@ struct ShowcaseToastView: View {
                     }
 
                     ShowcaseSampleView(code: """
-                    @State private var queue = HIGToastQueue(configuration: .interactive)
-                    // ...
-                    HIGButton("Queue Toasts", role: .secondary) {
-                        queue.enqueue("Settings saved")
-                        queue.enqueue("Profile updated")
-                        queue.enqueue("Sync complete")
-                    }
+                    queue.enqueue("Settings saved", style: .success)
+                    queue.enqueue("Profile updated", style: .info)
                     .higToastQueue(queue)
                     """) {
                         HIGButton("Queue Toasts", role: .secondary) {
-                            queue.enqueue("Settings saved")
-                            queue.enqueue("Profile updated")
-                            queue.enqueue("Sync complete")
+                            queue.enqueue("Settings saved", style: .success)
+                            queue.enqueue("Profile updated", style: .info)
+                            queue.enqueue("Sync complete", style: .neutral)
                         }
                     }
                 }
@@ -52,7 +57,7 @@ struct ShowcaseToastView: View {
             .higPadding(.screenEdge)
         }
         .navigationTitle("Toast")
-        .higToast(isPresented: $isPresented, message: "Settings saved")
+        .higToast(isPresented: $isPresented, message: "Settings saved", style: .success)
         .higToastQueue(queue)
     }
 }

@@ -121,7 +121,8 @@ public struct HIGBrandTheme: HIGTheme, Sendable {
             separator: baseColors.separator,
             accent: accent,
             destructive: baseColors.destructive,
-            warning: baseColors.warning
+            warning: baseColors.warning,
+            success: baseColors.success
         )
         self.typography = base.typography
         self.spacing = base.spacing

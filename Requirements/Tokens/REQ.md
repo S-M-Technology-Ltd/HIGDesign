@@ -125,3 +125,4 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - Brand-specific token packs beyond system defaults in the first milestone
 - Figma import pipelines
 - Runtime token editing UI
+- Semantic colors include `success` for positive feedback roles (badges, toasts, banners, field messages).

@@ -10,11 +10,11 @@ struct ShowcaseCardView: View {
 
                 VStack(spacing: theme.spacing.screenEdge) {
                     ShowcaseSampleView(code: """
-                    HIGCard("Notifications") {
+                    HIGCard("Notifications", subtitle: "Devices and focus") {
                         Text("Choose which alerts appear on your devices.")
                     }
                     """) {
-                        HIGCard("Notifications") {
+                        HIGCard("Notifications", subtitle: "Devices and focus") {
                             Text("Choose which alerts appear on your devices.")
                                 .foregroundStyle(theme.colors.labelSecondary)
                         }

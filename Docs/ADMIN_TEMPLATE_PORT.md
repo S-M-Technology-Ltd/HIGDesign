@@ -41,19 +41,19 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 
 | Remark | HIG target | Status |
 |--------|------------|--------|
-| Alerts | `HIGAlert` / `HIGAlertBanner` | Extend |
-| Badge | `HIGBadge` | Extend |
+| Alerts | `HIGAlert` / `HIGAlertBanner` | **Done** (success style + dismiss) |
+| Badge | `HIGBadge` | **Done** (semantic styles) |
 | Breadcrumbs | `HIGBreadcrumb` | **Done** |
-| Buttons | `HIGButton` | Extend |
+| Buttons | `HIGButton` | **Done** (roles + `isLoading`) |
 | Button groups | `HIGButtonGroup` | **Done** |
-| Card | `HIGCard` | Extend |
+| Card | `HIGCard` | **Done** (title + subtitle) |
 | Carousel | `HIGCarousel` | **Done** |
 
 | Code | `HIGCodeBlock` | **Done** |
-| Custom forms / forms | Inputs + `HIGFormSection` + `HIGInputGroup` / `HIGFieldMessage` | **Extend** / **Done** (group + messages) |
-| Dropdowns | `HIGMenuButton` + menu APIs | Extend |
+| Custom forms / forms | Inputs + `HIGFormSection` + `HIGInputGroup` / `HIGFieldMessage` | **Done** (group + messages + success color) |
+| Dropdowns | `HIGMenuButton` + menu APIs | **Done** (standard + icon-only menus) |
 | Input groups | `HIGInputGroup` | **Done** |
-| Grid / utilities | modifiers + docs | Extend |
+| Grid / utilities | modifiers + docs | **Done** (`higPadding`, dashboard grid, docs) |
 | Images | `HIGImageFrame` | **Done** |
 
 | Jumbotron | `HIGHero` | **Done** |
@@ -61,13 +61,13 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Media | `HIGMediaRow` | **Done** |
 | Modals | `HIGModal` helpers | **Done** (chrome; native sheet presentation) |
 | Close | `HIGCloseButton` | **Done** |
-| Navbar | `HIGNavigationBar` + shell | Extend |
+| Navbar | `HIGNavigationBar` + shell | **Done** (nav bar + `HIGAdminShell`) |
 | Navs / tabs / accordion | `HIGTabs`, `HIGAccordion` | **Done** |
 | Pagination | `HIGPagination` | **Done** |
 | Popovers / tooltips | `HIGPopoverContainer`, `HIGTooltipLabel`, `higPopover`, `higTooltip` | **Done** |
-| Progress | `HIGProgressView` | Extend |
+| Progress | `HIGProgressView` | **Done** (determinate % caption) |
 | Tables | `HIGDataTable` | **Done** (v1 text columns; sorting/selection later) |
-| Typography | `HIGLabel` + type tokens | Extend |
+| Typography | `HIGLabel` + type tokens | **Done** (label styles + type tokens) |
 | Reboot / glyphicons / font-weight | — | Excluded (web reset / icon fonts) |
 
 ## Custom components map
@@ -92,7 +92,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Checkbox / radio | `HIGCheckbox`, `HIGRadio` | Done |
 | Color selector | `HIGColorSelector` | **Done** |
 | Social | `HIGSocialButton` | **Done** |
-| Animation helpers | motion tokens / modifiers | Extend |
+| Animation helpers | motion tokens / modifiers | **Done** (motion tokens + shimmer) |
 | Example (docs SCSS) | — | Excluded |
 | Background / color helpers | Showcase swatches | Recipe |
 
@@ -100,7 +100,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 
 | Role | HIG target | Status |
 |------|------------|--------|
-| Toasts | `HIGToast` | Extend |
+| Toasts | `HIGToast` | **Done** (styles + queue items) |
 | Dialogs | `higConfirmationDialog` / `higAlert` | **Done** |
 | Date / time | `HIGDatePicker`, `HIGTimePicker` | **Done** |
 | Select / multi / typeahead | `HIGSelect`, `HIGAutocomplete` | **Done** |
@@ -110,7 +110,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Tree / sortable | `HIGTreeView`, `HIGReorderableList` | **Done** |
 | Lightbox / carousel | `HIGLightbox`, `HIGCarousel` | **Done** |
 | Top progress (nprogress) | `HIGNetworkProgressBar` | **Done** |
-| Button loading (ladda) | `HIGButton` loading | Extend |
+| Button loading (ladda) | `HIGButton` loading | **Done** (`isLoading`) |
 | Slide panel | `HIGDrawer` / `higDrawer` | **Done** |
 | Calendar | `HIGCalendar` | **Done** |
 | Charts (all JS libs) | Swift Charts family | **Done** (`HIGBarChart`, `HIGLineChart`, `HIGPieChart`, `HIGAreaChart`) |
@@ -143,12 +143,12 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 
 ## Program status
 
-**v1.5.0** closes the admin capability port: core components, shell, charts, Showcase recipes, and documentation. Remaining **Extend** rows (toast polish, button loading, navbar polish, …) are optional follow-ons — not blockers for the program DoD.
+**v1.5.0** closes the admin capability port: core components, shell, charts, Showcase recipes, and documentation. Core **Extend** rows closed in the post-1.5.0 parity pass. Further polish is opportunistic.
 
 ## Definition of done (program)
 
 
-- [x] Every row above is Done, Recipe, Extend, or Excluded (Extend rows are optional parity polish)
+- [x] Every row above is Done, Recipe, or Excluded
 - [x] `HIGAdminTheme` selectable in Showcase
 - [x] `HIGPanel` public with full component DoD
 - [x] Wave 1 wayfinding surfaces through status/empty state

@@ -465,7 +465,7 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 | HIG category | Platforms | States |
 |---|---|---|
-| [Labels](https://developer.apple.com/design/human-interface-guidelines/labels) | All 6 | compact count · status dot · text badge |
+| [Labels](https://developer.apple.com/design/human-interface-guidelines/labels) | All 6 | neutral · accent · success · warning · destructive · info |
 
 **Guidelines:**
 - For counts (unread messages, items in cart) or short status strings

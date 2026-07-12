@@ -40,7 +40,7 @@ public struct HIGFieldMessage: View {
         case .error:
             theme.colors.destructive
         case .success:
-            theme.colors.accent
+            theme.colors.success
         }
     }
 
