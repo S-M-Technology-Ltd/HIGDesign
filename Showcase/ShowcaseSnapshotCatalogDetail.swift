@@ -132,6 +132,8 @@ struct ShowcaseSnapshotCatalogDetailView: View {
             ShowcaseTreeViewView()
         case .reorderableList:
             ShowcaseReorderableListView()
+        case .calendar:
+            ShowcaseCalendarView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:

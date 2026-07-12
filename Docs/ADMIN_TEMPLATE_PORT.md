@@ -112,7 +112,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Top progress (nprogress) | `HIGNetworkProgressBar` | **Done** |
 | Button loading (ladda) | `HIGButton` loading | Extend |
 | Slide panel | `HIGDrawer` / `higDrawer` | **Done** |
-| Calendar | `HIGCalendar` | Planned |
+| Calendar | `HIGCalendar` | **Done** |
 | Charts (all JS libs) | Swift Charts family | **In progress** (`HIGBarChart`, `HIGLineChart`, `HIGPieChart`, `HIGAreaChart`) |
 | Maps | MapKit optional / recipe | Planned |
 | Dashboard grid | `HIGDashboardGrid` | Planned |

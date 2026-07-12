@@ -121,6 +121,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Tree View page plus token tests
 - `HIGReorderableList` / `HIGReorderableListItem` / `theme.reorderableList` — drag-to-reorder admin lists
 - Showcase Reorderable List page plus token tests
+- `HIGCalendar` / `theme.calendar` — month grid with selection, navigation, and event marks
+- Showcase Calendar page plus token tests
 
 ## 1.4.0 — 2026-07-10
 

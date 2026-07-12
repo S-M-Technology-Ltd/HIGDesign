@@ -96,7 +96,7 @@ extension ShowcaseComponent {
 
     var supportedSnapshotPlatforms: [ShowcaseSnapshotPlatform] {
         switch self {
-        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .panelGroup, .counter, .widget, .rating, .testimonial, .ribbon, .pricingCard, .chatBubble, .comment, .cover, .imageOverlay, .colorSelector, .socialButton, .imageFrame, .treeView, .reorderableList, .breadcrumb, .pageHeader,
+        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .panelGroup, .counter, .widget, .rating, .testimonial, .ribbon, .pricingCard, .chatBubble, .comment, .cover, .imageOverlay, .colorSelector, .socialButton, .imageFrame, .treeView, .reorderableList, .calendar, .breadcrumb, .pageHeader,
              .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .statusIndicator, .emptyState,
              .closeButton, .modal, .tooltip, .popover, .drawer, .confirmationDialog, .networkProgressBar,
              .buttonGroup, .menuToggle, .inputGroup, .fieldMessage, .datePicker, .timePicker, .select, .autocomplete, .tagInput, .dataTable, .toolbar,
