@@ -37,6 +37,7 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
     public let picker: any HIGPickerTokens
     public let card: any HIGCardTokens
     public let panel: any HIGPanelTokens
+    public let panelGroup: any HIGPanelGroupTokens
     public let counter: any HIGCounterTokens
     public let widget: any HIGWidgetTokens
     public let dataTable: any HIGDataTableTokens
@@ -159,6 +160,7 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
             titleFont: base.panel.titleFont,
             descriptionFont: base.panel.descriptionFont
         )
+        self.panelGroup = base.panelGroup
         self.counter = base.counter
         self.widget = base.widget
         self.dataTable = base.dataTable

@@ -93,6 +93,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Counter page plus token tests (Wave 8.1 widgets start)
 - `HIGWidget` / `theme.widget` — dashboard host surface for counters, charts, or custom body content
 - Showcase Widget page plus token tests (Wave 8.2)
+- `HIGPanelGroup` / `theme.panelGroup` — vertical stack of panels/widgets with optional group title
+- Showcase Panel Group page plus token tests (Wave 8.3)
 
 ## 1.4.0 — 2026-07-10
 

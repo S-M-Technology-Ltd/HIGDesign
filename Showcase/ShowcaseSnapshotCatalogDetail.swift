@@ -104,6 +104,8 @@ struct ShowcaseSnapshotCatalogDetailView: View {
             ShowcaseCounterView()
         case .widget:
             ShowcaseWidgetView()
+        case .panelGroup:
+            ShowcasePanelGroupView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:

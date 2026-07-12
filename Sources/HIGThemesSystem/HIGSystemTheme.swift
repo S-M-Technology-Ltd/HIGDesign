@@ -31,6 +31,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let picker: any HIGPickerTokens
     public let card: any HIGCardTokens
     public let panel: any HIGPanelTokens
+    public let panelGroup: any HIGPanelGroupTokens
     public let counter: any HIGCounterTokens
     public let widget: any HIGWidgetTokens
     public let dataTable: any HIGDataTableTokens
@@ -112,6 +113,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         picker: any HIGPickerTokens = HIGSystemPickerTokens(),
         card: any HIGCardTokens = HIGSystemCardTokens(),
         panel: any HIGPanelTokens = HIGSystemPanelTokens(),
+        panelGroup: any HIGPanelGroupTokens = HIGSystemPanelGroupTokens(),
         counter: any HIGCounterTokens = HIGSystemCounterTokens(),
         widget: any HIGWidgetTokens = HIGSystemWidgetTokens(),
         dataTable: any HIGDataTableTokens = HIGSystemDataTableTokens(),
@@ -192,6 +194,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.picker = picker
         self.card = card
         self.panel = panel
+        self.panelGroup = panelGroup
         self.counter = counter
         self.widget = widget
         self.dataTable = dataTable
