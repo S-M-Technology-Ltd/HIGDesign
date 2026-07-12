@@ -919,6 +919,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGVideoPlayer
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| Content | All 6 | AVKit player · title · caption · placeholder · themed chrome |
+
+**Guidelines:**
+- Use for product demos, training clips, and admin media embeds
+- Pass a `URL` for remote or local files; omit for empty placeholder chrome
+- watchOS shows a static placeholder (no AVKit surface)
+- Token-backed metrics via `theme.videoPlayer`
+
+---
+
 ### HIGCodeBlock
 
 | HIG category | Platforms | Features |

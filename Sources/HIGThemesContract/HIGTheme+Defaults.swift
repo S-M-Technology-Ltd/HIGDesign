@@ -50,6 +50,7 @@ extension HIGTheme {
     public var reorderableList: any HIGReorderableListTokens { HIGSystemReorderableListTokens() }
     public var calendar: any HIGCalendarTokens { HIGSystemCalendarTokens() }
     public var dashboardGrid: any HIGDashboardGridTokens { HIGSystemDashboardGridTokens() }
+    public var videoPlayer: any HIGVideoPlayerTokens { HIGSystemVideoPlayerTokens() }
     public var dataTable: any HIGDataTableTokens { HIGSystemDataTableTokens() }
     public var breadcrumb: any HIGBreadcrumbTokens { HIGSystemBreadcrumbTokens() }
     public var pageHeader: any HIGPageHeaderTokens { HIGSystemPageHeaderTokens() }

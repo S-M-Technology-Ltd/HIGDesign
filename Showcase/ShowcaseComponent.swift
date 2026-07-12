@@ -95,6 +95,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case reorderableList
     case calendar
     case dashboardGrid
+    case videoPlayer
 
     public var id: String { rawValue }
 
@@ -162,6 +163,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .reorderableList: "Reorderable List"
         case .calendar: "Calendar"
         case .dashboardGrid: "Dashboard Grid"
+        case .videoPlayer: "Video Player"
         case .breadcrumb: "Breadcrumb"
         case .pageHeader: "Page Header"
         case .pagination: "Pagination"
@@ -261,6 +263,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .reorderableList: "Layout"
         case .calendar: "Inputs"
         case .dashboardGrid: "Layout"
+        case .videoPlayer: "Content"
         case .breadcrumb: "Navigation"
         case .pageHeader: "Navigation"
         case .pagination: "Navigation"
@@ -399,12 +402,13 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .reorderableList: "Drag-to-reorder list for admin priority and section ordering."
         case .calendar: "Month grid calendar with day selection, navigation, and event marks."
         case .dashboardGrid: "Adaptive multi-column grid for dashboard widgets and counters."
+        case .videoPlayer: "Themed video surface with optional title, caption, and placeholder."
         }
     }
 
     var platforms: String {
         switch self {
-        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .panelGroup, .counter, .widget, .rating, .testimonial, .ribbon, .pricingCard, .chatBubble, .comment, .cover, .imageOverlay, .colorSelector, .socialButton, .imageFrame, .treeView, .reorderableList, .calendar, .dashboardGrid, .breadcrumb, .pageHeader,
+        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .panelGroup, .counter, .widget, .rating, .testimonial, .ribbon, .pricingCard, .chatBubble, .comment, .cover, .imageOverlay, .colorSelector, .socialButton, .imageFrame, .treeView, .reorderableList, .calendar, .dashboardGrid, .videoPlayer, .breadcrumb, .pageHeader,
              .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .statusIndicator, .emptyState,
              .closeButton, .modal, .tooltip, .popover, .drawer, .confirmationDialog, .networkProgressBar,
              .buttonGroup, .menuToggle, .inputGroup, .fieldMessage, .datePicker, .timePicker, .select, .autocomplete, .tagInput, .dataTable, .toolbar,
