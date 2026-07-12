@@ -113,6 +113,7 @@ First delivery slices:
 - `HIGComment` (discussion comment rows; chat/comment family complete)
 - `HIGCover` (cover/banner surface with scrim and solid or custom background)
 - `HIGImageOverlay` (media figure with caption/panel overlay; cover/overlay family complete)
+- `HIGColorSelector` (circular color swatch selector)
 - `HIGCodeBlock` (Wave 5.1 monospaced code surface)
 - `HIGCarousel` (Wave 5.2 paged carousel)
 - `HIGMediaRow` (Wave 5.3 media object row)

@@ -41,6 +41,7 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - `HIGCommentTokens` defines padding, spacing, separator width, and author/body/action fonts for ``HIGComment``.
 - `HIGCoverTokens` defines min height, padding, spacing, radius, scrim opacity, and title/subtitle fonts for ``HIGCover``.
 - `HIGImageOverlayTokens` defines panel padding, min height, radius, scrim opacity, and caption fonts for ``HIGImageOverlay``.
+- `HIGColorSelectorTokens` defines swatch size, spacing, selection ring, tap target, and checkmark metrics for ``HIGColorSelector``.
 - `HIGCounterTokens` defines padding, min height, icon size, and title/value/caption/trend fonts for ``HIGCounter``.
 - `HIGWidgetTokens` defines padding, header/stack spacing, min height, radius, and title/subtitle fonts for ``HIGWidget``.
 - `HIGBreadcrumbTokens` defines link/current fonts, item spacing, separator size, and minimum tap target for ``HIGBreadcrumb``.

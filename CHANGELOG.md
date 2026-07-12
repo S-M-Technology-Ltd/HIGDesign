@@ -111,6 +111,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Cover page plus token tests
 - `HIGImageOverlay` / `HIGImageOverlayEdge` / `theme.imageOverlay` — media figure overlays with caption or custom panel
 - Showcase Image Overlay page plus token tests
+- `HIGColorSelector` / `HIGColorOption` / `theme.colorSelector` — circular color swatch selector
+- Showcase Color Selector page plus token tests
 
 ## 1.4.0 — 2026-07-10
 

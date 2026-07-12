@@ -42,6 +42,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let comment: any HIGCommentTokens
     public let cover: any HIGCoverTokens
     public let imageOverlay: any HIGImageOverlayTokens
+    public let colorSelector: any HIGColorSelectorTokens
     public let dataTable: any HIGDataTableTokens
     public let breadcrumb: any HIGBreadcrumbTokens
     public let pageHeader: any HIGPageHeaderTokens
@@ -132,6 +133,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         comment: any HIGCommentTokens = HIGSystemCommentTokens(),
         cover: any HIGCoverTokens = HIGSystemCoverTokens(),
         imageOverlay: any HIGImageOverlayTokens = HIGSystemImageOverlayTokens(),
+        colorSelector: any HIGColorSelectorTokens = HIGSystemColorSelectorTokens(),
         dataTable: any HIGDataTableTokens = HIGSystemDataTableTokens(),
         breadcrumb: any HIGBreadcrumbTokens = HIGSystemBreadcrumbTokens(),
         pageHeader: any HIGPageHeaderTokens = HIGSystemPageHeaderTokens(),
@@ -221,6 +223,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.comment = comment
         self.cover = cover
         self.imageOverlay = imageOverlay
+        self.colorSelector = colorSelector
         self.dataTable = dataTable
         self.breadcrumb = breadcrumb
         self.pageHeader = pageHeader

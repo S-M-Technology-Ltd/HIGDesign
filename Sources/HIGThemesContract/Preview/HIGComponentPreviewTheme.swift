@@ -42,6 +42,7 @@ public struct HIGComponentPreviewTheme: HIGTheme {
     public let comment: any HIGCommentTokens = HIGSystemCommentTokens()
     public let cover: any HIGCoverTokens = HIGSystemCoverTokens()
     public let imageOverlay: any HIGImageOverlayTokens = HIGSystemImageOverlayTokens()
+    public let colorSelector: any HIGColorSelectorTokens = HIGSystemColorSelectorTokens()
     public let dataTable: any HIGDataTableTokens = HIGSystemDataTableTokens()
     public let breadcrumb: any HIGBreadcrumbTokens = HIGSystemBreadcrumbTokens()
     public let pageHeader: any HIGPageHeaderTokens = HIGSystemPageHeaderTokens()
