@@ -47,6 +47,7 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - `HIGTreeViewTokens` defines row height, indent, chevron size, fonts, and chrome for ``HIGTreeView``.
 - `HIGReorderableListTokens` defines row height, padding, icon metrics, caption font, and chrome for ``HIGReorderableList``.
 - `HIGCalendarTokens` defines padding, day size, grid spacing, mark size, fonts, and chrome for ``HIGCalendar``.
+- `HIGDashboardGridTokens` defines min column width, row/column spacing, and title font for ``HIGDashboardGrid``.
 - `HIGCounterTokens` defines padding, min height, icon size, and title/value/caption/trend fonts for ``HIGCounter``.
 - `HIGWidgetTokens` defines padding, header/stack spacing, min height, radius, and title/subtitle fonts for ``HIGWidget``.
 - `HIGBreadcrumbTokens` defines link/current fonts, item spacing, separator size, and minimum tap target for ``HIGBreadcrumb``.

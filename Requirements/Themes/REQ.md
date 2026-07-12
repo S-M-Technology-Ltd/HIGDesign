@@ -36,6 +36,7 @@ Theme contract, environment injection, and built-in system themes for HIGDesign.
 - `HIGTheme` includes `treeView` component tokens for ``HIGTreeView``.
 - `HIGTheme` includes `reorderableList` component tokens for ``HIGReorderableList``.
 - `HIGTheme` includes `calendar` component tokens for ``HIGCalendar``.
+- `HIGTheme` includes `dashboardGrid` component tokens for ``HIGDashboardGrid``.
 - `HIGTheme` includes `counter` component tokens for ``HIGCounter``.
 - `HIGTheme` includes `widget` component tokens for ``HIGWidget``.
 - `HIGTheme` includes `breadcrumb` and `pageHeader` component tokens for ``HIGBreadcrumb`` and ``HIGPageHeader``.

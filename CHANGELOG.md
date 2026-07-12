@@ -123,6 +123,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Reorderable List page plus token tests
 - `HIGCalendar` / `theme.calendar` — month grid with selection, navigation, and event marks
 - Showcase Calendar page plus token tests
+- `HIGDashboardGrid` / `theme.dashboardGrid` — adaptive multi-column dashboard layout
+- Showcase Dashboard Grid page plus token tests
 
 ## 1.4.0 — 2026-07-10
 
