@@ -100,6 +100,8 @@ struct ShowcaseSnapshotCatalogDetailView: View {
             ShowcaseAreaChartView()
         case .lightbox:
             ShowcaseLightboxView()
+        case .counter:
+            ShowcaseCounterView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:

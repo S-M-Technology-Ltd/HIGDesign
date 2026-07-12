@@ -32,6 +32,7 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - `HIGPhotoEditorTokens` defines crop canvas, overlay, toolbar, and zoom values for ``HIGPhotoEditor``.
 - `HIGMatrixLoaderTokens` defines grid count, diameters, gap fraction, opacity range, and cycle duration for ``HIGMatrixLoader``.
 - `HIGPanelTokens` defines corner radius, content padding, header spacing, border width, action icon size, minimum action target, and title/description fonts for ``HIGPanel``.
+- `HIGCounterTokens` defines padding, min height, icon size, and title/value/caption/trend fonts for ``HIGCounter``.
 - `HIGBreadcrumbTokens` defines link/current fonts, item spacing, separator size, and minimum tap target for ``HIGBreadcrumb``.
 - `HIGPageHeaderTokens` defines title/subtitle fonts and stack/breadcrumb spacing for ``HIGPageHeader``.
 - `HIGPaginationTokens` defines page button metrics for ``HIGPagination``.

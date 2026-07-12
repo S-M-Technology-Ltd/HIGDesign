@@ -102,6 +102,7 @@ First delivery slices:
 - `HIGAdminShellStyle.topIcon` (Wave 7.4 Remark topicon shell)
 - `HIGAdminShellStyle.centered` (Wave 7.5 Remark center shell)
 - `HIGAdminShellStyle.drawer` (Wave 7.6 Remark mmenu shell; shell styles complete)
+- `HIGCounter` / `HIGCounterTrend` (Wave 8.1 dashboard metric counters)
 - `HIGCodeBlock` (Wave 5.1 monospaced code surface)
 - `HIGCarousel` (Wave 5.2 paged carousel)
 - `HIGMediaRow` (Wave 5.3 media object row)

@@ -77,6 +77,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case pieChart
     case areaChart
     case lightbox
+    case counter
 
     public var id: String { rawValue }
 
@@ -126,6 +127,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .photoEditor: "Photo Editor"
         case .longTextEditor: "Long Text Editor"
         case .panel: "Panel"
+        case .counter: "Counter"
         case .breadcrumb: "Breadcrumb"
         case .pageHeader: "Page Header"
         case .pagination: "Pagination"
@@ -207,6 +209,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .photoEditor: "Photo Editing"
         case .longTextEditor: "Rich Text Editing"
         case .panel: "Layout"
+        case .counter: "Layout"
         case .breadcrumb: "Navigation"
         case .pageHeader: "Navigation"
         case .pagination: "Navigation"
@@ -327,12 +330,13 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .pieChart: "Pie or donut chart for part-to-whole admin metrics via Swift Charts."
         case .areaChart: "Filled area chart for ordered admin trend series via Swift Charts."
         case .lightbox: "Full-screen media gallery chrome with close, counter, and previous/next."
+        case .counter: "Dashboard KPI tile with value, caption, optional icon, and trend."
         }
     }
 
     var platforms: String {
         switch self {
-        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .breadcrumb, .pageHeader,
+        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .counter, .breadcrumb, .pageHeader,
              .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .statusIndicator, .emptyState,
              .closeButton, .modal, .tooltip, .popover, .drawer, .confirmationDialog, .networkProgressBar,
              .buttonGroup, .menuToggle, .inputGroup, .fieldMessage, .datePicker, .timePicker, .select, .autocomplete, .tagInput, .dataTable, .toolbar,

@@ -72,6 +72,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 
 - `HIGCard`
 - `HIGPanel` — admin content surface with optional title, description, refresh/collapse/close actions, body, and footer; tokens via `theme.panel`
+- `HIGCounter` / `HIGCounterTrend` — dashboard KPI tile with value, caption, optional icon and trend; tokens via `theme.counter`
 - `HIGDataTable` / `HIGDataTableColumn` — columnar admin table with header, striping, horizontal scroll, and empty state; tokens via `theme.dataTable`
 - `HIGBreadcrumb` / `HIGBreadcrumbItem` — hierarchical trail; last segment is current; optional `onSelect` for ancestors; tokens via `theme.breadcrumb`
 - `HIGPageHeader` — page title with optional subtitle, breadcrumb trail, and trailing actions; tokens via `theme.pageHeader`
@@ -95,7 +96,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 
 #### Admin catalog expansion (planned families)
 
-Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons: widgets (`HIGCounter`, `HIGWidget`, `HIGPanelGroup`) and Showcase app recipes.
+Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons: `HIGWidget`, `HIGPanelGroup`, and Showcase app recipes.
 
 #### Content
 

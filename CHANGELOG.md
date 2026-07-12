@@ -89,6 +89,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - `centeredMaxWidth` admin shell token; Showcase Centered option (Wave 7.5)
 - `HIGAdminShellStyle.drawer` — Remark mmenu: hamburger + sliding navigation drawer over full-width detail
 - Showcase Drawer option; reuses `HIGMenuToggle` and drawer scrim tokens (Wave 7.6; shell styles complete)
+- `HIGCounter` / `HIGCounterTrend` / `theme.counter` — dashboard KPI tiles with value, caption, icon, and trend
+- Showcase Counter page plus token tests (Wave 8.1 widgets start)
 
 ## 1.4.0 — 2026-07-10
 
