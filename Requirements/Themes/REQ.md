@@ -37,6 +37,7 @@ Theme contract, environment injection, and built-in system themes for HIGDesign.
 - `HIGTheme` includes `select` and `autocomplete` component tokens for form select and typeahead.
 - `HIGTheme` includes `tagInput` component tokens for freeform tag entry.
 - `HIGTheme` includes `dataTable` component tokens for columnar data tables.
+- `HIGTheme` includes `dropZone` component tokens for file browse and drop surfaces.
 
 ### Runtime behavior
 

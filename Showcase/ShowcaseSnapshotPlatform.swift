@@ -105,7 +105,7 @@ extension ShowcaseComponent {
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,
              .bulletList, .textEditor, .stepper, .menuButton, .tag:
             ShowcaseSnapshotPlatform.allCases
-        case .slider:
+        case .slider, .dropZone:
             [.macos, .ios, .ipados, .visionos]
         case .segmentedControl, .tabBar:
             [.macos, .ios, .ipados, .visionos, .tvos]

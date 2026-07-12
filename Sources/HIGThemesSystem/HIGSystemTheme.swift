@@ -22,6 +22,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let select: any HIGSelectTokens
     public let autocomplete: any HIGSelectTokens
     public let tagInput: any HIGSelectTokens
+    public let dropZone: any HIGDropZoneTokens
     public let toggle: any HIGToggleTokens
     public let checkbox: any HIGCheckboxTokens
     public let radio: any HIGRadioTokens
@@ -89,6 +90,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         select: any HIGSelectTokens = HIGSystemSelectTokens(),
         autocomplete: any HIGSelectTokens = HIGSystemSelectTokens(),
         tagInput: any HIGSelectTokens = HIGSystemSelectTokens(),
+        dropZone: any HIGDropZoneTokens = HIGSystemDropZoneTokens(),
         toggle: any HIGToggleTokens = HIGSystemToggleTokens(),
         checkbox: any HIGCheckboxTokens = HIGSystemCheckboxTokens(),
         radio: any HIGRadioTokens = HIGSystemRadioTokens(),
@@ -155,6 +157,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.select = select
         self.autocomplete = autocomplete
         self.tagInput = tagInput
+        self.dropZone = dropZone
         self.toggle = toggle
         self.checkbox = checkbox
         self.radio = radio

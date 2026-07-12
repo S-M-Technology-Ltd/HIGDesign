@@ -55,6 +55,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Tag Input page plus requirements updates (Wave 3 advanced forms complete)
 - `HIGDataTable` / `HIGDataTableColumn` / `theme.dataTable` — columnar admin table with striping and empty state
 - Showcase Data Table page plus token tests (Wave 4.1 data display)
+- `HIGDropZone` / `theme.dropZone` — browse and drop file surface with selected-file list
+- Showcase Drop Zone page plus token tests
 
 ## 1.4.0 — 2026-07-10
 

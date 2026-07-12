@@ -22,6 +22,7 @@ public struct HIGComponentPreviewTheme: HIGTheme {
     public let select: any HIGSelectTokens = HIGSystemSelectTokens()
     public let autocomplete: any HIGSelectTokens = HIGSystemSelectTokens()
     public let tagInput: any HIGSelectTokens = HIGSystemSelectTokens()
+    public let dropZone: any HIGDropZoneTokens = HIGSystemDropZoneTokens()
     public let toggle: any HIGToggleTokens = HIGSystemToggleTokens()
     public let checkbox: any HIGCheckboxTokens = HIGSystemCheckboxTokens()
     public let radio: any HIGRadioTokens = HIGSystemRadioTokens()
