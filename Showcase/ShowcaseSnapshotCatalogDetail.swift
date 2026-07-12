@@ -126,6 +126,8 @@ struct ShowcaseSnapshotCatalogDetailView: View {
             ShowcaseColorSelectorView()
         case .socialButton:
             ShowcaseSocialButtonView()
+        case .imageFrame:
+            ShowcaseImageFrameView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:

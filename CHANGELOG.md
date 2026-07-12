@@ -115,6 +115,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Color Selector page plus token tests
 - `HIGSocialButton` / `HIGSocialNetwork` / `HIGSocialButtonStyle` / `theme.socialButton` — social and account action buttons
 - Showcase Social Button page plus token tests
+- `HIGImageFrame` / `HIGImageFrameAspect` / `theme.imageFrame` — themed image container with aspect presets and placeholder
+- Showcase Image Frame page plus token tests
 
 ## 1.4.0 — 2026-07-10
 

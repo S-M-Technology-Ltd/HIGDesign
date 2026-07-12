@@ -849,6 +849,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGImageFrame
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| Content | All 6 | aspect presets · border · radius · placeholder · fill/fit |
+
+**Guidelines:**
+- Use for thumbnails, card media, and gallery tiles
+- Prefer `.photo` / `.widescreen` / `.square` for consistent grids
+- Pair with `HIGImageOverlay` when captions sit on the media
+- Token-backed chrome via `theme.imageFrame`
+
+---
+
 ### HIGCodeBlock
 
 | HIG category | Platforms | Features |
