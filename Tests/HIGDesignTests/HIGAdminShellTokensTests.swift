@@ -14,11 +14,15 @@ func adminShellTokensUseReadableMetrics() {
     #expect(tokens.iconRailWidth >= HIGSpacing.massive.rawValue)
     #expect(tokens.iconRailIconPointSize > 0)
     #expect(tokens.iconRailItemSpacing >= HIGSpacing.xxs.rawValue)
+    #expect(tokens.topBarMinHeight >= HIGSpacing.massive.rawValue)
+    #expect(tokens.topBarIconPointSize > 0)
+    #expect(tokens.topBarItemSpacing >= HIGSpacing.xxs.rawValue)
 }
 
 @Test
 func adminShellStyleCasesAreStable() {
-    #expect(HIGAdminShellStyle.allCases.count == 2)
+    #expect(HIGAdminShellStyle.allCases.count == 3)
     #expect(HIGAdminShellStyle.sidebar.rawValue == "sidebar")
     #expect(HIGAdminShellStyle.iconRail.rawValue == "iconRail")
+    #expect(HIGAdminShellStyle.topBar.rawValue == "topBar")
 }

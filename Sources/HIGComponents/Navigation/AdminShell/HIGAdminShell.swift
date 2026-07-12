@@ -9,6 +9,7 @@ import SwiftUI
 /// Inspired by Remark Admin layout shells. Supports:
 /// - ``HIGAdminShellStyle/sidebar`` — Remark **base** (labeled sidebar list)
 /// - ``HIGAdminShellStyle/iconRail`` — Remark **iconbar** (icon-only leading rail)
+/// - ``HIGAdminShellStyle/topBar`` — Remark **topbar** (horizontal nav strip)
 ///
 /// Prefer ``HIGSidebar`` when you only need a plain split view without brand chrome.
 public struct HIGAdminShell<Selection: Hashable & Sendable, Content: View>: View {
@@ -24,9 +25,9 @@ public struct HIGAdminShell<Selection: Hashable & Sendable, Content: View>: View
 
     /// Creates an admin shell.
     /// - Parameters:
-    ///   - style: Shell layout family (``.sidebar`` or ``.iconRail``).
-    ///   - brandTitle: Optional product name above the navigation column.
-    ///   - sidebarTitle: Navigation title for the leading column (sidebar style).
+    ///   - style: Shell layout family (``.sidebar``, ``.iconRail``, or ``.topBar``).
+    ///   - brandTitle: Optional product name in the navigation chrome.
+    ///   - sidebarTitle: Navigation title for the leading column (sidebar / icon rail).
     ///   - selection: Bound selected destination.
     ///   - items: Navigation destinations (reuse ``HIGSidebarItem``).
     ///   - content: Detail builder for the selected destination.
@@ -54,6 +55,8 @@ public struct HIGAdminShell<Selection: Hashable & Sendable, Content: View>: View
             sidebarShell(tokens: tokens)
         case .iconRail:
             iconRailShell(tokens: tokens)
+        case .topBar:
+            topBarShell(tokens: tokens)
         }
     }
 
@@ -190,6 +193,75 @@ public struct HIGAdminShell<Selection: Hashable & Sendable, Content: View>: View
         .background(theme.colors.backgroundPrimary)
     }
 
+    // MARK: - Top bar (Remark topbar)
+
+    @ViewBuilder
+    private func topBarShell(tokens: any HIGAdminShellTokens) -> some View {
+        VStack(spacing: 0) {
+            topBar(tokens: tokens)
+            HIGDivider()
+            detailColumn(tokens: tokens)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(theme.colors.backgroundPrimary)
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel(brandTitle ?? sidebarTitle)
+    }
+
+    @ViewBuilder
+    private func topBar(tokens: any HIGAdminShellTokens) -> some View {
+        let capabilities = HIGPlatformCapabilities.current
+        let minTarget = max(tokens.topBarMinHeight, capabilities.minimumTouchTarget)
+
+        HStack(spacing: tokens.topBarItemSpacing) {
+            if let brandTitle {
+                Text(brandTitle)
+                    .font(tokens.brandFont)
+                    .foregroundStyle(theme.colors.labelPrimary)
+                    .lineLimit(1)
+                    .accessibilityAddTraits(.isHeader)
+            }
+
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: tokens.topBarItemSpacing) {
+                    ForEach(items) { item in
+                        Button {
+                            selection = item.id
+                        } label: {
+                            Label {
+                                Text(item.title)
+                                    .font(theme.typography.callout)
+                                    .lineLimit(1)
+                            } icon: {
+                                Image(systemName: item.systemImage)
+                                    .font(.system(size: tokens.topBarIconPointSize, weight: .medium))
+                            }
+                            .labelStyle(.titleAndIcon)
+                            .foregroundStyle(item.id == selection ? theme.colors.accent : theme.colors.labelSecondary)
+                            .padding(.horizontal, tokens.brandPadding)
+                            .frame(minHeight: minTarget)
+                            .background(
+                                item.id == selection
+                                    ? theme.colors.accent.opacity(theme.opacity.subtleFill)
+                                    : Color.clear
+                            )
+                            .clipShape(RoundedRectangle(cornerRadius: theme.card.cornerRadius, style: .continuous))
+                            .contentShape(Rectangle())
+                        }
+                        .buttonStyle(.plain)
+                        .disabled(!isEnabled)
+                        .opacity(isEnabled ? theme.opacity.full : theme.opacity.disabled)
+                        .accessibilityLabel(item.title)
+                        .accessibilityAddTraits(item.id == selection ? [.isButton, .isSelected] : .isButton)
+                    }
+                }
+            }
+        }
+        .padding(.horizontal, tokens.brandPadding)
+        .frame(maxWidth: .infinity, minHeight: minTarget, alignment: .leading)
+        .background(theme.colors.backgroundSecondary)
+    }
+
     // MARK: - Detail
 
     @ViewBuilder
@@ -202,17 +274,29 @@ public struct HIGAdminShell<Selection: Hashable & Sendable, Content: View>: View
             } else {
                 ContentUnavailableView(
                     "Select a Section",
-                    systemImage: style == .iconRail ? "rectangle.leftthird.inset.filled" : "sidebar.left",
-                    description: Text(
-                        style == .iconRail
-                            ? "Choose an item from the icon rail."
-                            : "Choose an item from the sidebar."
-                    )
+                    systemImage: emptyStateSystemImage,
+                    description: Text(emptyStateDescription)
                 )
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(theme.colors.backgroundPrimary)
+    }
+
+    private var emptyStateSystemImage: String {
+        switch style {
+        case .sidebar: "sidebar.left"
+        case .iconRail: "rectangle.leftthird.inset.filled"
+        case .topBar: "menubar.rectangle"
+        }
+    }
+
+    private var emptyStateDescription: String {
+        switch style {
+        case .sidebar: "Choose an item from the sidebar."
+        case .iconRail: "Choose an item from the icon rail."
+        case .topBar: "Choose an item from the top bar."
+        }
     }
 }
 
@@ -266,6 +350,31 @@ private enum HIGAdminShellPreviewSection: String, Hashable, Sendable {
                 Text(section.rawValue.capitalized)
                     .font(.title2)
                 Text("Icon rail detail for \(section.rawValue).")
+                    .foregroundStyle(.secondary)
+            }
+        }
+    }
+}
+
+#Preview("HIGAdminShell — Top Bar") {
+    @Previewable @State var selection: HIGAdminShellPreviewSection? = .dashboard
+
+    HIGThemeableView(theme: HIGComponentPreviewTheme()) {
+        HIGAdminShell(
+            style: .topBar,
+            brandTitle: "HIG Admin",
+            sidebarTitle: "Menu",
+            selection: $selection,
+            items: [
+                HIGSidebarItem(id: HIGAdminShellPreviewSection.dashboard, title: "Dashboard", systemImage: "square.grid.2x2"),
+                HIGSidebarItem(id: HIGAdminShellPreviewSection.users, title: "Users", systemImage: "person.2"),
+                HIGSidebarItem(id: HIGAdminShellPreviewSection.settings, title: "Settings", systemImage: "gearshape"),
+            ]
+        ) { section in
+            VStack(alignment: .leading, spacing: HIGSpacing.sm.rawValue) {
+                Text(section.rawValue.capitalized)
+                    .font(.title2)
+                Text("Top bar detail for \(section.rawValue).")
                     .foregroundStyle(.secondary)
             }
         }

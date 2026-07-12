@@ -650,14 +650,15 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 | HIG category | Platforms | Styles |
 |---|---|---|
-| [Split Views](https://developer.apple.com/design/human-interface-guidelines/split-views) | iOS, iPadOS, macOS, visionOS | `.sidebar` (Remark base) · `.iconRail` (Remark iconbar) |
+| [Split Views](https://developer.apple.com/design/human-interface-guidelines/split-views) | iOS, iPadOS, macOS, visionOS | `.sidebar` · `.iconRail` · `.topBar` |
 
 **Guidelines:**
 - Prefer `HIGAdminShell` for multi-section admin apps with brand chrome
 - Reuse `HIGSidebarItem` destinations; compose detail with `HIGPageHeader`, panels, and tables
 - Use `.iconRail` when space is tight and titles live in accessibility labels / detail headers
+- Use `.topBar` for horizontal primary navigation above a full-width content region
 - Use `HIGSidebar` alone when brand header chrome is unnecessary
-- Future styles: top bar, top icon, centered, drawer (tracked in `ADMIN_TEMPLATE_PORT.md`)
+- Future styles: top icon, centered, drawer (tracked in `ADMIN_TEMPLATE_PORT.md`)
 
 ---
 

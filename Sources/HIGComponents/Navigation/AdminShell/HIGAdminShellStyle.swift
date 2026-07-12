@@ -8,4 +8,6 @@ public enum HIGAdminShellStyle: String, Sendable, CaseIterable {
     case sidebar
     /// Narrow icon-only leading rail with detail content (Remark **iconbar**).
     case iconRail
+    /// Top horizontal navigation strip with detail content below (Remark **topbar**).
+    case topBar
 }

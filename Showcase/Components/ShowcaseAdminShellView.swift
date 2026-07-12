@@ -31,8 +31,13 @@ struct ShowcaseAdminShellView: View {
                 Picker("Shell style", selection: $style) {
                     Text("Sidebar").tag(HIGAdminShellStyle.sidebar)
                     Text("Icon Rail").tag(HIGAdminShellStyle.iconRail)
+                    Text("Top Bar").tag(HIGAdminShellStyle.topBar)
                 }
+                #if os(watchOS)
+                .pickerStyle(.automatic)
+                #else
                 .pickerStyle(.segmented)
+                #endif
                 .accessibilityLabel("Shell style")
 
                 ShowcaseCodeSnippetView(code: """
@@ -61,7 +66,7 @@ struct ShowcaseAdminShellView: View {
                         title(for: section),
                         subtitle: "Admin shell detail for \(title(for: section).lowercased())."
                     )
-                    Text("Compose panels, tables, and forms in the detail column.")
+                    Text(detailBlurb)
                         .font(theme.typography.body)
                         .foregroundStyle(theme.colors.labelSecondary)
                 }
@@ -70,6 +75,15 @@ struct ShowcaseAdminShellView: View {
             .frame(minHeight: 360)
         }
         .navigationTitle("Admin Shell")
+    }
+
+    private var detailBlurb: String {
+        switch style {
+        case .sidebar, .iconRail:
+            "Compose panels, tables, and forms in the detail column."
+        case .topBar:
+            "Compose panels, tables, and forms below the top navigation bar."
+        }
     }
 
     private func title(for section: ShowcaseAdminShellSection) -> String {
