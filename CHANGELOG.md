@@ -77,6 +77,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Pie Chart page plus token tests (Wave 6.3 charts family)
 - `HIGAreaChart` / `theme.areaChart` — filled area chart with optional stroke via Apple Swift Charts
 - Showcase Area Chart page plus token tests (Wave 6.4 charts family)
+- `HIGLightbox` / `theme.lightbox` — full-screen media gallery chrome with counter and previous/next
+- Showcase Lightbox page plus token tests (Wave 5 content hybrids companion to carousel)
 
 ## 1.4.0 — 2026-07-10
 

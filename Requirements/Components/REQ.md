@@ -102,6 +102,7 @@ Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. P
 - `HIGLabel`
 - `HIGCodeBlock` — monospaced code surface with optional language label and share; tokens via `theme.codeBlock`
 - `HIGCarousel` — paged content carousel with themed indicators and optional auto-advance; tokens via `theme.carousel`
+- `HIGLightbox` — full-screen media gallery chrome with counter and previous/next; tokens via `theme.lightbox`
 - `HIGMediaRow` — media object row with leading media, title, subtitle, and trailing slot; tokens via `theme.mediaRow`
 - `HIGHero` / `HIGHeroStyle` — jumbotron-style hero with title, subtitle, and optional actions; tokens via `theme.hero`
 - `HIGIcon`

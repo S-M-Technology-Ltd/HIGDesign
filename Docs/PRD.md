@@ -106,6 +106,7 @@ First delivery slices:
 - `HIGLineChart` (Wave 6.2 Swift Charts line chart)
 - `HIGPieChart` / `HIGPieChartStyle` (Wave 6.3 Swift Charts pie and donut)
 - `HIGAreaChart` (Wave 6.4 Swift Charts area chart)
+- `HIGLightbox` (full-screen media gallery chrome; pairs with `HIGCarousel`)
 
 ## Previous Milestone: v1.4.0 (released)
 

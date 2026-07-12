@@ -688,6 +688,21 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGLightbox
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| Media | All 6 | dimmed chrome · close · page counter · previous/next · indicators · empty state |
+
+**Guidelines:**
+- Present with native `.fullScreenCover` or `.sheet`; `HIGLightbox` is the themed interior
+- Bind selection to the focused media identity for controlled navigation
+- Provide media content via the generic content builder (images, SF Symbols demos, custom views)
+- Pair with `HIGCarousel` for in-page paging; use lightbox for focused full-screen review
+- Keep previous/next targets at least the platform minimum touch size from tokens
+
+---
+
 ### HIGMediaRow
 
 | HIG category | Platforms | Features |

@@ -70,6 +70,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let adminShell: any HIGAdminShellTokens
     public let codeBlock: any HIGCodeBlockTokens
     public let carousel: any HIGCarouselTokens
+    public let lightbox: any HIGLightboxTokens
     public let mediaRow: any HIGMediaRowTokens
     public let hero: any HIGHeroTokens
     public let listGroup: any HIGListGroupTokens
@@ -148,6 +149,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         adminShell: any HIGAdminShellTokens = HIGSystemAdminShellTokens(),
         codeBlock: any HIGCodeBlockTokens = HIGSystemCodeBlockTokens(),
         carousel: any HIGCarouselTokens = HIGSystemCarouselTokens(),
+        lightbox: any HIGLightboxTokens = HIGSystemLightboxTokens(),
         mediaRow: any HIGMediaRowTokens = HIGSystemMediaRowTokens(),
         hero: any HIGHeroTokens = HIGSystemHeroTokens(),
         listGroup: any HIGListGroupTokens = HIGSystemListGroupTokens(),
@@ -225,6 +227,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.adminShell = adminShell
         self.codeBlock = codeBlock
         self.carousel = carousel
+        self.lightbox = lightbox
         self.mediaRow = mediaRow
         self.hero = hero
         self.listGroup = listGroup
