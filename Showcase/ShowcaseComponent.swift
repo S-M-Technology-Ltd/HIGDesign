@@ -70,6 +70,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case codeBlock
     case carousel
     case mediaRow
+    case hero
 
     public var id: String { rawValue }
 
@@ -151,6 +152,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .codeBlock: "Code Block"
         case .carousel: "Carousel"
         case .mediaRow: "Media Row"
+        case .hero: "Hero"
         }
     }
 
@@ -225,6 +227,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .codeBlock: "Typography"
         case .carousel: "Layout"
         case .mediaRow: "Layout"
+        case .hero: "Layout"
         }
     }
 
@@ -299,6 +302,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .codeBlock: "Monospaced code surface with optional language label and share."
         case .carousel: "Paged content carousel with themed indicators and optional auto-advance."
         case .mediaRow: "Media object row with leading media, title, subtitle, and trailing slot."
+        case .hero: "Jumbotron-style hero with title, subtitle, and optional actions."
         }
     }
 
@@ -311,7 +315,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
              .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .matrixLoader,
              .list, .form,
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,
-             .bulletList, .textEditor, .stepper, .menuButton, .tag, .codeBlock, .carousel, .mediaRow:
+             .bulletList, .textEditor, .stepper, .menuButton, .tag, .codeBlock, .carousel, .mediaRow, .hero:
             "iOS, iPadOS, macOS, visionOS, tvOS, watchOS"
         case .slider, .dropZone:
             "iOS, iPadOS, macOS, visionOS"

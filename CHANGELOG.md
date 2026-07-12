@@ -65,6 +65,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Carousel page plus token tests (Wave 5.2)
 - `HIGMediaRow` / `theme.mediaRow` — media object row with leading media, title, subtitle, and trailing slot
 - Showcase Media Row page plus token tests (Wave 5.3)
+- `HIGHero` / `HIGHeroStyle` / `theme.hero` — jumbotron-style hero with standard and accent emphasis
+- Showcase Hero page plus token tests (Wave 5.4)
 
 ## 1.4.0 — 2026-07-10
 

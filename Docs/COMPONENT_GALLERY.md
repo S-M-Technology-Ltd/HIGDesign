@@ -702,6 +702,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGHero
+
+| HIG category | Platforms | Styles |
+|---|---|---|
+| [Layout](https://developer.apple.com/design/human-interface-guidelines/layout) | All 6 | `.standard` · `.accent` |
+
+**Guidelines:**
+- Use for landing banners, empty-route callouts, and campaign blocks
+- Prefer `.standard` for informational heroes; `.accent` for primary marketing CTAs
+- Keep the headline short; put supporting detail in the subtitle
+- Place 1–2 actions in the actions slot (buttons or a button group)
+
+---
+
 ### HIGBreadcrumb
 
 | HIG category | Platforms | Features |

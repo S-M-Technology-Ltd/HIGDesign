@@ -103,7 +103,7 @@ extension ShowcaseComponent {
              .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .matrixLoader,
              .list, .form,
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,
-             .bulletList, .textEditor, .stepper, .menuButton, .tag, .codeBlock, .carousel, .mediaRow:
+             .bulletList, .textEditor, .stepper, .menuButton, .tag, .codeBlock, .carousel, .mediaRow, .hero:
             ShowcaseSnapshotPlatform.allCases
         case .slider, .dropZone:
             [.macos, .ios, .ipados, .visionos]

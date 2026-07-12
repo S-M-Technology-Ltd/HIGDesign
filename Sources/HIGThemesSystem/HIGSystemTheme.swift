@@ -71,6 +71,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let codeBlock: any HIGCodeBlockTokens
     public let carousel: any HIGCarouselTokens
     public let mediaRow: any HIGMediaRowTokens
+    public let hero: any HIGHeroTokens
     public let photoPicker: any HIGPhotoPickerTokens
     public let photoEditor: any HIGPhotoEditorTokens
     public let longTextEditor: any HIGLongTextEditorTokens
@@ -143,6 +144,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         codeBlock: any HIGCodeBlockTokens = HIGSystemCodeBlockTokens(),
         carousel: any HIGCarouselTokens = HIGSystemCarouselTokens(),
         mediaRow: any HIGMediaRowTokens = HIGSystemMediaRowTokens(),
+        hero: any HIGHeroTokens = HIGSystemHeroTokens(),
         photoPicker: any HIGPhotoPickerTokens = HIGSystemPhotoPickerTokens(),
         photoEditor: any HIGPhotoEditorTokens = HIGSystemPhotoEditorTokens(),
         longTextEditor: any HIGLongTextEditorTokens = HIGSystemLongTextEditorTokens()
@@ -214,6 +216,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.codeBlock = codeBlock
         self.carousel = carousel
         self.mediaRow = mediaRow
+        self.hero = hero
         self.photoPicker = photoPicker
         self.photoEditor = photoEditor
         self.longTextEditor = longTextEditor
