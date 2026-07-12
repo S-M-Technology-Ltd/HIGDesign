@@ -70,6 +70,7 @@ extension HIGTheme {
     public var sidebar: any HIGSidebarTokens { HIGSystemSidebarTokens() }
     public var adminShell: any HIGAdminShellTokens { HIGSystemAdminShellTokens() }
     public var codeBlock: any HIGCodeBlockTokens { HIGSystemCodeBlockTokens() }
+    public var carousel: any HIGCarouselTokens { HIGSystemCarouselTokens() }
     public var photoPicker: any HIGPhotoPickerTokens { HIGSystemPhotoPickerTokens() }
     public var photoEditor: any HIGPhotoEditorTokens { HIGSystemPhotoEditorTokens() }
     public var longTextEditor: any HIGLongTextEditorTokens { HIGSystemLongTextEditorTokens() }
