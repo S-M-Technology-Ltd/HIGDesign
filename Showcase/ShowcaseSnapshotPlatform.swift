@@ -115,6 +115,8 @@ extension ShowcaseComponent {
             [.ios]
         case .longTextEditor:
             [.macos, .ios, .ipados, .visionos]
+        case .map:
+            [.macos, .ios, .ipados, .visionos, .watchos]
         }
     }
 }

@@ -122,6 +122,7 @@ First delivery slices:
 - `HIGDashboardGrid` (adaptive multi-column dashboard layout)
 - `HIGVideoPlayer` (themed video surface with optional title and caption)
 - `HIGCoachMark` (onboarding coach marks with step progress and overlay helper)
+- Showcase Map recipe (`ShowcaseMapView` — MapKit composition; no library `HIGMap`)
 - `HIGCodeBlock` (Wave 5.1 monospaced code surface)
 - `HIGCarousel` (Wave 5.2 paged carousel)
 - `HIGMediaRow` (Wave 5.3 media object row)

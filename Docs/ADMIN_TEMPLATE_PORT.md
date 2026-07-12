@@ -114,7 +114,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Slide panel | `HIGDrawer` / `higDrawer` | **Done** |
 | Calendar | `HIGCalendar` | **Done** |
 | Charts (all JS libs) | Swift Charts family | **In progress** (`HIGBarChart`, `HIGLineChart`, `HIGPieChart`, `HIGAreaChart`) |
-| Maps | MapKit optional / recipe | Planned |
+| Maps | MapKit optional / recipe | **Recipe** (`ShowcaseMapView`) |
 | Dashboard grid | `HIGDashboardGrid` | **Done** |
 | Video | `HIGVideoPlayer` | **Done** |
 | Coach marks | `HIGCoachMark` | **Done** |

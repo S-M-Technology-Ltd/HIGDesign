@@ -115,7 +115,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 
 #### Admin catalog expansion (planned families)
 
-Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons: Showcase app/page recipes (Wave 9) and maps as MapKit recipe.
+Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons: Showcase app/page recipes (Wave 9). Maps are covered as a MapKit Showcase recipe (`ShowcaseMapView`), not a library `HIGMap` module.
 
 #### Content
 

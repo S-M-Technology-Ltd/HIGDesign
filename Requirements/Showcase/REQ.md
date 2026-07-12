@@ -9,6 +9,7 @@ Demonstration app for visually verifying HIGDesign components, themes, accessibi
 ### Purpose
 
 - Demonstrate every public component in realistic HIG contexts (including charts, widgets, ratings, testimonials, ribbons, pricing cards, chat bubbles, comments, covers, image overlays, color selectors, social buttons, image frames, tree views, reorderable lists, calendars, dashboard grids, video players, and coach marks).
+- Include composition recipes that are not library modules (for example the MapKit **Map** recipe using `HIGWidget`, `HIGPanel`, and `HIGListGroup`).
 - Provide theme switcher for light, dark, increased contrast, brand, and optional **Admin** (`HIGAdminTheme`).
 - Provide Dynamic Type and Reduce Motion demonstration states.
 - Provide an Icon playground in settings when the Icon component is selected (family, token, variant, size, style, and tint). Fixed size uses a slider from the theme small icon token through 512pt.
