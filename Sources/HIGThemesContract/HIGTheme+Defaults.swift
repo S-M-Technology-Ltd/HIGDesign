@@ -44,6 +44,7 @@ extension HIGTheme {
     public var cover: any HIGCoverTokens { HIGSystemCoverTokens() }
     public var imageOverlay: any HIGImageOverlayTokens { HIGSystemImageOverlayTokens() }
     public var colorSelector: any HIGColorSelectorTokens { HIGSystemColorSelectorTokens() }
+    public var socialButton: any HIGSocialButtonTokens { HIGSystemSocialButtonTokens() }
     public var dataTable: any HIGDataTableTokens { HIGSystemDataTableTokens() }
     public var breadcrumb: any HIGBreadcrumbTokens { HIGSystemBreadcrumbTokens() }
     public var pageHeader: any HIGPageHeaderTokens { HIGSystemPageHeaderTokens() }

@@ -49,6 +49,7 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
     public let cover: any HIGCoverTokens
     public let imageOverlay: any HIGImageOverlayTokens
     public let colorSelector: any HIGColorSelectorTokens
+    public let socialButton: any HIGSocialButtonTokens
     public let dataTable: any HIGDataTableTokens
     public let breadcrumb: any HIGBreadcrumbTokens
     public let pageHeader: any HIGPageHeaderTokens
@@ -181,6 +182,7 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
         self.cover = base.cover
         self.imageOverlay = base.imageOverlay
         self.colorSelector = base.colorSelector
+        self.socialButton = base.socialButton
         self.dataTable = base.dataTable
         self.breadcrumb = HIGSystemBreadcrumbTokens(
             font: base.breadcrumb.font,
