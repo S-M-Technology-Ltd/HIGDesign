@@ -136,6 +136,8 @@ struct ShowcaseSnapshotCatalogDetailView: View {
             ShowcaseCalendarView()
         case .dashboardGrid:
             ShowcaseDashboardGridView()
+        case .videoPlayer:
+            ShowcaseVideoPlayerView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:

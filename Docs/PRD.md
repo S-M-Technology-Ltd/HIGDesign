@@ -120,6 +120,7 @@ First delivery slices:
 - `HIGReorderableList` (drag-to-reorder lists; tree/sortable family complete)
 - `HIGCalendar` (month grid with day selection and event marks)
 - `HIGDashboardGrid` (adaptive multi-column dashboard layout)
+- `HIGVideoPlayer` (themed video surface with optional title and caption)
 - `HIGCodeBlock` (Wave 5.1 monospaced code surface)
 - `HIGCarousel` (Wave 5.2 paged carousel)
 - `HIGMediaRow` (Wave 5.3 media object row)

@@ -51,6 +51,7 @@ public struct HIGBrandTheme: HIGTheme, Sendable {
     public let reorderableList: any HIGReorderableListTokens
     public let calendar: any HIGCalendarTokens
     public let dashboardGrid: any HIGDashboardGridTokens
+    public let videoPlayer: any HIGVideoPlayerTokens
     public let dataTable: any HIGDataTableTokens
     public let breadcrumb: any HIGBreadcrumbTokens
     public let pageHeader: any HIGPageHeaderTokens
@@ -165,6 +166,7 @@ public struct HIGBrandTheme: HIGTheme, Sendable {
         self.reorderableList = base.reorderableList
         self.calendar = base.calendar
         self.dashboardGrid = base.dashboardGrid
+        self.videoPlayer = base.videoPlayer
         self.dataTable = base.dataTable
         self.breadcrumb = base.breadcrumb
         self.pageHeader = base.pageHeader
