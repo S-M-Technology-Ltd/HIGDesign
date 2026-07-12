@@ -42,6 +42,7 @@ public protocol HIGTheme: Sendable {
     var cover: any HIGCoverTokens { get }
     var imageOverlay: any HIGImageOverlayTokens { get }
     var colorSelector: any HIGColorSelectorTokens { get }
+    var socialButton: any HIGSocialButtonTokens { get }
     var dataTable: any HIGDataTableTokens { get }
     var breadcrumb: any HIGBreadcrumbTokens { get }
     var pageHeader: any HIGPageHeaderTokens { get }

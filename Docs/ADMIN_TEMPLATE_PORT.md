@@ -91,7 +91,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Divider | `HIGDivider` | Done |
 | Checkbox / radio | `HIGCheckbox`, `HIGRadio` | Done |
 | Color selector | `HIGColorSelector` | **Done** |
-| Social | `HIGSocialButton` | Planned |
+| Social | `HIGSocialButton` | **Done** |
 | Animation helpers | motion tokens / modifiers | Extend |
 | Example (docs SCSS) | — | Excluded |
 | Background / color helpers | Showcase swatches | Recipe |

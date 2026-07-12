@@ -835,6 +835,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGSocialButton
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| Buttons | All 6 | networks · filled/bordered/icon · SF Symbols · semantic colors |
+
+**Guidelines:**
+- Use for sign-in, share, and account-linking actions
+- Prefer SF Symbols and HIG semantic fills — do not hardcode third-party brand hex colors
+- Use `.iconOnly` for compact toolbars; filled for primary continue actions
+- Token-backed metrics via `theme.socialButton`
+
+---
+
 ### HIGCodeBlock
 
 | HIG category | Platforms | Features |

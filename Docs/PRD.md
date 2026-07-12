@@ -114,6 +114,7 @@ First delivery slices:
 - `HIGCover` (cover/banner surface with scrim and solid or custom background)
 - `HIGImageOverlay` (media figure with caption/panel overlay; cover/overlay family complete)
 - `HIGColorSelector` (circular color swatch selector)
+- `HIGSocialButton` (social/account action buttons with SF Symbols)
 - `HIGCodeBlock` (Wave 5.1 monospaced code surface)
 - `HIGCarousel` (Wave 5.2 paged carousel)
 - `HIGMediaRow` (Wave 5.3 media object row)
