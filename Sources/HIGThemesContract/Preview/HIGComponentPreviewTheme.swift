@@ -50,6 +50,7 @@ public struct HIGComponentPreviewTheme: HIGTheme {
     public let calendar: any HIGCalendarTokens = HIGSystemCalendarTokens()
     public let dashboardGrid: any HIGDashboardGridTokens = HIGSystemDashboardGridTokens()
     public let videoPlayer: any HIGVideoPlayerTokens = HIGSystemVideoPlayerTokens()
+    public let coachMark: any HIGCoachMarkTokens = HIGSystemCoachMarkTokens()
     public let dataTable: any HIGDataTableTokens = HIGSystemDataTableTokens()
     public let breadcrumb: any HIGBreadcrumbTokens = HIGSystemBreadcrumbTokens()
     public let pageHeader: any HIGPageHeaderTokens = HIGSystemPageHeaderTokens()

@@ -49,6 +49,7 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - `HIGCalendarTokens` defines padding, day size, grid spacing, mark size, fonts, and chrome for ``HIGCalendar``.
 - `HIGDashboardGridTokens` defines min column width, row/column spacing, and title font for ``HIGDashboardGrid``.
 - `HIGVideoPlayerTokens` defines min height, padding, radius, title/caption fonts, and placeholder icon size for ``HIGVideoPlayer``.
+- `HIGCoachMarkTokens` defines padding, spacing, max width, scrim opacity, and fonts for ``HIGCoachMark``.
 - `HIGCounterTokens` defines padding, min height, icon size, and title/value/caption/trend fonts for ``HIGCounter``.
 - `HIGWidgetTokens` defines padding, header/stack spacing, min height, radius, and title/subtitle fonts for ``HIGWidget``.
 - `HIGBreadcrumbTokens` defines link/current fonts, item spacing, separator size, and minimum tap target for ``HIGBreadcrumb``.
