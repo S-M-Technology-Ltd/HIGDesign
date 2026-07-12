@@ -85,6 +85,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Admin shell tokens for top bar height/spacing/icon size; Showcase Top Bar option (Wave 7.3)
 - `HIGAdminShellStyle.topIcon` — Remark topicon: horizontal icon-only nav strip above detail
 - Showcase Top Icon option; shared top-strip implementation with topBar (Wave 7.4)
+- `HIGAdminShellStyle.centered` — Remark center: top nav + max-width centered detail column
+- `centeredMaxWidth` admin shell token; Showcase Centered option (Wave 7.5)
 
 ## 1.4.0 — 2026-07-10
 

@@ -18,6 +18,8 @@ public protocol HIGAdminShellTokens: Sendable {
     var topBarMinHeight: CGFloat { get }
     var topBarItemSpacing: CGFloat { get }
     var topBarIconPointSize: CGFloat { get }
+    /// Maximum content width for ``HIGAdminShellStyle/centered`` detail column.
+    var centeredMaxWidth: CGFloat { get }
 }
 
 /// System defaults for admin application shells.
@@ -34,6 +36,7 @@ public struct HIGSystemAdminShellTokens: HIGAdminShellTokens, Sendable {
     public let topBarMinHeight: CGFloat
     public let topBarItemSpacing: CGFloat
     public let topBarIconPointSize: CGFloat
+    public let centeredMaxWidth: CGFloat
 
     public init(
         contentPadding: CGFloat = HIGSpacing.lg.rawValue,
@@ -47,7 +50,8 @@ public struct HIGSystemAdminShellTokens: HIGAdminShellTokens, Sendable {
         iconRailIconPointSize: CGFloat = 20,
         topBarMinHeight: CGFloat = 52,
         topBarItemSpacing: CGFloat = HIGSpacing.sm.rawValue,
-        topBarIconPointSize: CGFloat = 17
+        topBarIconPointSize: CGFloat = 17,
+        centeredMaxWidth: CGFloat = 960
     ) {
         self.contentPadding = contentPadding
         self.brandPadding = brandPadding
@@ -61,5 +65,6 @@ public struct HIGSystemAdminShellTokens: HIGAdminShellTokens, Sendable {
         self.topBarMinHeight = topBarMinHeight
         self.topBarItemSpacing = topBarItemSpacing
         self.topBarIconPointSize = topBarIconPointSize
+        self.centeredMaxWidth = centeredMaxWidth
     }
 }
