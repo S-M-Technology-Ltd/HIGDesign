@@ -96,6 +96,7 @@ First delivery slices:
 - `HIGTagInput` (Wave 3.4 freeform tags; Wave 3 advanced forms complete)
 - `HIGDataTable` / `HIGDataTableColumn` (Wave 4.1 data display start)
 - `HIGDropZone` (Wave 3/4 file browse and drop surface)
+- `HIGAdminShell` / `HIGAdminShellStyle.sidebar` (Wave 7.1 admin base shell)
 
 ## Previous Milestone: v1.4.0 (released)
 

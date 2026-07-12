@@ -68,6 +68,7 @@ extension HIGTheme {
     public var shimmer: any HIGShimmerTokens { HIGSystemShimmerTokens() }
     public var list: any HIGListTokens { HIGSystemListTokens() }
     public var sidebar: any HIGSidebarTokens { HIGSystemSidebarTokens() }
+    public var adminShell: any HIGAdminShellTokens { HIGSystemAdminShellTokens() }
     public var photoPicker: any HIGPhotoPickerTokens { HIGSystemPhotoPickerTokens() }
     public var photoEditor: any HIGPhotoEditorTokens { HIGSystemPhotoEditorTokens() }
     public var longTextEditor: any HIGLongTextEditorTokens { HIGSystemLongTextEditorTokens() }

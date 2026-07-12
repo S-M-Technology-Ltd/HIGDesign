@@ -24,7 +24,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | 4 | Data display | **In progress** (`HIGDataTable`) |
 | 5 | Content hybrids | Planned |
 | 6 | Swift Charts family | Planned |
-| 7 | Admin shell & layout | Planned |
+| 7 | Admin shell & layout | **In progress** (`HIGAdminShell` `.sidebar`) |
 | 8 | Parity extensions on existing components | Planned |
 | 9 | App/page Showcase recipes | Planned |
 | 10 | Gallery, DocC, release | Planned |
@@ -126,7 +126,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 
 | Remark shell | HIG target | Status |
 |--------------|------------|--------|
-| base | `HIGAdminShell` `.sidebar` | Planned |
+| base | `HIGAdminShell` `.sidebar` | **Done** |
 | iconbar | `.iconRail` | Planned |
 | topbar / topicon | `.topBar` / `.topIcon` | Planned |
 | center | `.centered` | Planned |

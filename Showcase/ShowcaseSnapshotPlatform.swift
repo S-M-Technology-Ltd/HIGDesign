@@ -109,7 +109,7 @@ extension ShowcaseComponent {
             [.macos, .ios, .ipados, .visionos]
         case .segmentedControl, .tabBar:
             [.macos, .ios, .ipados, .visionos, .tvos]
-        case .sidebar:
+        case .sidebar, .adminShell:
             [.macos, .ios, .ipados, .visionos]
         case .photoPicker, .photoEditor:
             [.ios]
