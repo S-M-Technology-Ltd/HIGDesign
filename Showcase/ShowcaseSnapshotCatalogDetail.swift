@@ -82,6 +82,8 @@ struct ShowcaseSnapshotCatalogDetailView: View {
             ShowcaseAdminShellView()
         case .codeBlock:
             ShowcaseCodeBlockView()
+        case .carousel:
+            ShowcaseCarouselView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:

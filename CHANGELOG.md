@@ -61,6 +61,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Admin Shell page plus token tests (Wave 7.1)
 - `HIGCodeBlock` / `theme.codeBlock` — monospaced code surface with optional language label and share
 - Showcase Code Block page plus token tests (Wave 5.1 content hybrids)
+- `HIGCarousel` / `theme.carousel` — paged content carousel with themed indicators and optional auto-advance
+- Showcase Carousel page plus token tests (Wave 5.2)
 
 ## 1.4.0 — 2026-07-10
 

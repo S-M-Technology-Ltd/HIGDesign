@@ -674,6 +674,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGCarousel
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| [Layout](https://developer.apple.com/design/human-interface-guidelines/layout) | All 6 | paging · indicators · optional auto-advance · Reduce Motion |
+
+**Guidelines:**
+- Use for hero banners, feature highlights, and media sequences
+- Bind selection to the page identity for controlled navigation
+- Auto-advance is disabled when Reduce Motion is enabled
+- Prefer custom themed indicators for cross-platform consistency
+
+---
+
 ### HIGBreadcrumb
 
 | HIG category | Platforms | Features |

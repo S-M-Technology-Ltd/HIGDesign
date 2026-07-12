@@ -98,6 +98,7 @@ First delivery slices:
 - `HIGDropZone` (Wave 3/4 file browse and drop surface)
 - `HIGAdminShell` / `HIGAdminShellStyle.sidebar` (Wave 7.1 admin base shell)
 - `HIGCodeBlock` (Wave 5.1 monospaced code surface)
+- `HIGCarousel` (Wave 5.2 paged carousel)
 
 ## Previous Milestone: v1.4.0 (released)
 
