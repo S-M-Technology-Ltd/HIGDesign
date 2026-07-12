@@ -46,6 +46,7 @@ Theme contract, environment injection, and built-in system themes for HIGDesign.
 - `HIGTheme` includes `listGroup` component tokens for bordered list-group surfaces.
 - `HIGTheme` includes `barChart` component tokens for Swift Charts bar plots.
 - `HIGTheme` includes `lineChart` component tokens for Swift Charts line plots.
+- `HIGTheme` includes `pieChart` component tokens for Swift Charts pie and donut plots.
 
 ### Runtime behavior
 

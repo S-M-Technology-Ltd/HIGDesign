@@ -76,6 +76,7 @@ extension HIGTheme {
     public var listGroup: any HIGListGroupTokens { HIGSystemListGroupTokens() }
     public var barChart: any HIGBarChartTokens { HIGSystemBarChartTokens() }
     public var lineChart: any HIGLineChartTokens { HIGSystemLineChartTokens() }
+    public var pieChart: any HIGPieChartTokens { HIGSystemPieChartTokens() }
     public var photoPicker: any HIGPhotoPickerTokens { HIGSystemPhotoPickerTokens() }
     public var photoEditor: any HIGPhotoEditorTokens { HIGSystemPhotoEditorTokens() }
     public var longTextEditor: any HIGLongTextEditorTokens { HIGSystemLongTextEditorTokens() }

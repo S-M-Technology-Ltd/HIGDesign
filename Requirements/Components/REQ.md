@@ -110,6 +110,7 @@ Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. P
 
 - `HIGBarChart` / `HIGChartPoint` — vertical bar chart via Apple Swift Charts; tokens via `theme.barChart`
 - `HIGLineChart` — line chart for ordered trend series via Apple Swift Charts; tokens via `theme.lineChart`
+- `HIGPieChart` / `HIGPieChartStyle` — pie or donut chart for part-to-whole series via Apple Swift Charts; tokens via `theme.pieChart`
 - `HIGAvatar`
 - `HIGBulletList`
 - `HIGLink`

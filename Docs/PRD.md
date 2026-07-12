@@ -104,6 +104,7 @@ First delivery slices:
 - `HIGListGroup` / `HIGListGroupRow` (Wave 5.5 bordered list groups)
 - `HIGBarChart` / `HIGChartPoint` (Wave 6.1 Swift Charts bar chart)
 - `HIGLineChart` (Wave 6.2 Swift Charts line chart)
+- `HIGPieChart` / `HIGPieChartStyle` (Wave 6.3 Swift Charts pie and donut)
 
 ## Previous Milestone: v1.4.0 (released)
 

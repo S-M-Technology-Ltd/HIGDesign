@@ -75,6 +75,7 @@ public struct HIGComponentPreviewTheme: HIGTheme {
     public let listGroup: any HIGListGroupTokens = HIGSystemListGroupTokens()
     public let barChart: any HIGBarChartTokens = HIGSystemBarChartTokens()
     public let lineChart: any HIGLineChartTokens = HIGSystemLineChartTokens()
+    public let pieChart: any HIGPieChartTokens = HIGSystemPieChartTokens()
     public let photoPicker: any HIGPhotoPickerTokens = HIGSystemPhotoPickerTokens()
     public let photoEditor: any HIGPhotoEditorTokens = HIGSystemPhotoEditorTokens()
     public let longTextEditor: any HIGLongTextEditorTokens = HIGSystemLongTextEditorTokens()
