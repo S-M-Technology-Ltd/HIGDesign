@@ -45,6 +45,7 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
     public let imageOverlay: any HIGImageOverlayTokens
     public let colorSelector: any HIGColorSelectorTokens
     public let socialButton: any HIGSocialButtonTokens
+    public let imageFrame: any HIGImageFrameTokens
     public let dataTable: any HIGDataTableTokens
     public let breadcrumb: any HIGBreadcrumbTokens
     public let pageHeader: any HIGPageHeaderTokens
@@ -149,6 +150,7 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
         self.imageOverlay = base.imageOverlay
         self.colorSelector = base.colorSelector
         self.socialButton = base.socialButton
+        self.imageFrame = base.imageFrame
         self.dataTable = base.dataTable
         self.breadcrumb = base.breadcrumb
         self.pageHeader = base.pageHeader

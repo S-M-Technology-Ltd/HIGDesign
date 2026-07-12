@@ -44,6 +44,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let imageOverlay: any HIGImageOverlayTokens
     public let colorSelector: any HIGColorSelectorTokens
     public let socialButton: any HIGSocialButtonTokens
+    public let imageFrame: any HIGImageFrameTokens
     public let dataTable: any HIGDataTableTokens
     public let breadcrumb: any HIGBreadcrumbTokens
     public let pageHeader: any HIGPageHeaderTokens
@@ -136,6 +137,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         imageOverlay: any HIGImageOverlayTokens = HIGSystemImageOverlayTokens(),
         colorSelector: any HIGColorSelectorTokens = HIGSystemColorSelectorTokens(),
         socialButton: any HIGSocialButtonTokens = HIGSystemSocialButtonTokens(),
+        imageFrame: any HIGImageFrameTokens = HIGSystemImageFrameTokens(),
         dataTable: any HIGDataTableTokens = HIGSystemDataTableTokens(),
         breadcrumb: any HIGBreadcrumbTokens = HIGSystemBreadcrumbTokens(),
         pageHeader: any HIGPageHeaderTokens = HIGSystemPageHeaderTokens(),
@@ -227,6 +229,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.imageOverlay = imageOverlay
         self.colorSelector = colorSelector
         self.socialButton = socialButton
+        self.imageFrame = imageFrame
         self.dataTable = dataTable
         self.breadcrumb = breadcrumb
         self.pageHeader = pageHeader

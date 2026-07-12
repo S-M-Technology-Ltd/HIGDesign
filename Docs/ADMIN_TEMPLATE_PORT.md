@@ -54,7 +54,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Dropdowns | `HIGMenuButton` + menu APIs | Extend |
 | Input groups | `HIGInputGroup` | **Done** |
 | Grid / utilities | modifiers + docs | Extend |
-| Images | `HIGImageFrame` | Planned |
+| Images | `HIGImageFrame` | **Done** |
 
 | Jumbotron | `HIGHero` | **Done** |
 | List group | `HIGList` / `HIGListGroup` | **Done** (`HIGListGroup` + row; `HIGList` remains native list) |
