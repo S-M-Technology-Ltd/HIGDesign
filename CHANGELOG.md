@@ -99,6 +99,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Rating page plus token tests
 - `HIGTestimonial` / `theme.testimonial` — quote card with author, role, avatar, and optional rating
 - Showcase Testimonial page plus token tests
+- `HIGRibbon` / `HIGRibbonStyle` / `HIGRibbonEdge` / `theme.ribbon` — corner promo ribbon with overlay helper
+- Showcase Ribbon page plus token tests
 
 ## 1.4.0 — 2026-07-10
 

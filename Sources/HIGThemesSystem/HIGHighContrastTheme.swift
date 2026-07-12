@@ -37,6 +37,7 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
     public let widget: any HIGWidgetTokens
     public let rating: any HIGRatingTokens
     public let testimonial: any HIGTestimonialTokens
+    public let ribbon: any HIGRibbonTokens
     public let dataTable: any HIGDataTableTokens
     public let breadcrumb: any HIGBreadcrumbTokens
     public let pageHeader: any HIGPageHeaderTokens
@@ -133,6 +134,7 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
         self.widget = base.widget
         self.rating = base.rating
         self.testimonial = base.testimonial
+        self.ribbon = base.ribbon
         self.dataTable = base.dataTable
         self.breadcrumb = base.breadcrumb
         self.pageHeader = base.pageHeader

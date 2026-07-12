@@ -82,6 +82,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case panelGroup
     case rating
     case testimonial
+    case ribbon
 
     public var id: String { rawValue }
 
@@ -136,6 +137,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .panelGroup: "Panel Group"
         case .rating: "Rating"
         case .testimonial: "Testimonial"
+        case .ribbon: "Ribbon"
         case .breadcrumb: "Breadcrumb"
         case .pageHeader: "Page Header"
         case .pagination: "Pagination"
@@ -222,6 +224,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .panelGroup: "Layout"
         case .rating: "Content"
         case .testimonial: "Content"
+        case .ribbon: "Content"
         case .breadcrumb: "Navigation"
         case .pageHeader: "Navigation"
         case .pagination: "Navigation"
@@ -347,12 +350,13 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .panelGroup: "Vertical stack of panels and widgets with shared group spacing."
         case .rating: "Star rating display and interactive selection for reviews."
         case .testimonial: "Customer quote card with author, optional role, avatar, and rating."
+        case .ribbon: "Corner promo ribbon for NEW, SALE, and similar card markers."
         }
     }
 
     var platforms: String {
         switch self {
-        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .panelGroup, .counter, .widget, .rating, .testimonial, .breadcrumb, .pageHeader,
+        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .panelGroup, .counter, .widget, .rating, .testimonial, .ribbon, .breadcrumb, .pageHeader,
              .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .statusIndicator, .emptyState,
              .closeButton, .modal, .tooltip, .popover, .drawer, .confirmationDialog, .networkProgressBar,
              .buttonGroup, .menuToggle, .inputGroup, .fieldMessage, .datePicker, .timePicker, .select, .autocomplete, .tagInput, .dataTable, .toolbar,

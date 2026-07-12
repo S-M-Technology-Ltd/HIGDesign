@@ -84,7 +84,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Chat / comment | `HIGChatBubble`, `HIGComment` | Planned |
 | Cover / overlay | `HIGCover`, `HIGImageOverlay` | Planned |
 | Pricing | `HIGPricingCard` | Planned |
-| Ribbon / rating / testimonial | `HIGRibbon`, `HIGRating`, `HIGTestimonial` | **Partial** (`HIGRating`, `HIGTestimonial` done; ribbon planned) |
+| Ribbon / rating / testimonial | `HIGRibbon`, `HIGRating`, `HIGTestimonial` | **Done** |
 | Icon / hamburger | `HIGIcon`, `HIGMenuToggle` | **Done** |
 | Loader | `HIGActivityIndicator`, `HIGMatrixLoader` | Done |
 | Counter / widget | `HIGCounter`, `HIGWidget` | **Done** |

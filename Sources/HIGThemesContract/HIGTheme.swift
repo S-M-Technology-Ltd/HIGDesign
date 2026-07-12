@@ -35,6 +35,7 @@ public protocol HIGTheme: Sendable {
     var widget: any HIGWidgetTokens { get }
     var rating: any HIGRatingTokens { get }
     var testimonial: any HIGTestimonialTokens { get }
+    var ribbon: any HIGRibbonTokens { get }
     var dataTable: any HIGDataTableTokens { get }
     var breadcrumb: any HIGBreadcrumbTokens { get }
     var pageHeader: any HIGPageHeaderTokens { get }
