@@ -140,6 +140,8 @@ struct ShowcaseSnapshotCatalogDetailView: View {
             ShowcaseVideoPlayerView()
         case .coachMark:
             ShowcaseCoachMarkView()
+        case .map:
+            ShowcaseMapView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:

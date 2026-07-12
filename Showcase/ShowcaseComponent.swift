@@ -97,6 +97,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case dashboardGrid
     case videoPlayer
     case coachMark
+    case map
 
     public var id: String { rawValue }
 
@@ -166,6 +167,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .dashboardGrid: "Dashboard Grid"
         case .videoPlayer: "Video Player"
         case .coachMark: "Coach Mark"
+        case .map: "Map"
         case .breadcrumb: "Breadcrumb"
         case .pageHeader: "Page Header"
         case .pagination: "Pagination"
@@ -267,6 +269,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .dashboardGrid: "Layout"
         case .videoPlayer: "Content"
         case .coachMark: "Tooltips"
+        case .map: "Maps"
         case .breadcrumb: "Navigation"
         case .pageHeader: "Navigation"
         case .pagination: "Navigation"
@@ -407,6 +410,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .dashboardGrid: "Adaptive multi-column grid for dashboard widgets and counters."
         case .videoPlayer: "Themed video surface with optional title, caption, and placeholder."
         case .coachMark: "Onboarding coach mark with step progress, actions, and overlay helper."
+        case .map: "MapKit admin map recipe composed with HIG widgets, panels, and list groups."
         }
     }
 
@@ -433,6 +437,8 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
             "iOS"
         case .longTextEditor:
             "iOS, iPadOS, macOS, visionOS"
+        case .map:
+            "iOS, iPadOS, macOS, visionOS, watchOS"
         }
     }
 

@@ -947,6 +947,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### Map (Showcase recipe)
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| Maps | iOS, iPadOS, macOS, visionOS, watchOS | MapKit `Map` · markers · camera · `HIGWidget` / `HIGPanel` / `HIGListGroup` chrome |
+
+**Guidelines:**
+- Recipe only — compose MapKit with public HIG surfaces; there is no `HIGMap` library component
+- Use deterministic coordinates and markers for demos; location permission is not required for static maps
+- On tvOS, Showcase shows an empty-state note (MapKit map views are unavailable)
+- Prefer host app MapKit configuration (style, clustering, user location) outside the design system
+
+---
+
 ### HIGCodeBlock
 
 | HIG category | Platforms | Features |
