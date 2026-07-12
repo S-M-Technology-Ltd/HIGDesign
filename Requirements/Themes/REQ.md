@@ -33,6 +33,7 @@ Theme contract, environment injection, and built-in system themes for HIGDesign.
 - `HIGTheme` includes `colorSelector` component tokens for ``HIGColorSelector``.
 - `HIGTheme` includes `socialButton` component tokens for ``HIGSocialButton``.
 - `HIGTheme` includes `imageFrame` component tokens for ``HIGImageFrame``.
+- `HIGTheme` includes `treeView` component tokens for ``HIGTreeView``.
 - `HIGTheme` includes `counter` component tokens for ``HIGCounter``.
 - `HIGTheme` includes `widget` component tokens for ``HIGWidget``.
 - `HIGTheme` includes `breadcrumb` and `pageHeader` component tokens for ``HIGBreadcrumb`` and ``HIGPageHeader``.

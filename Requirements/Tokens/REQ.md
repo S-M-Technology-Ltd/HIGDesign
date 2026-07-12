@@ -44,6 +44,7 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - `HIGColorSelectorTokens` defines swatch size, spacing, selection ring, tap target, and checkmark metrics for ``HIGColorSelector``.
 - `HIGSocialButtonTokens` defines height, padding, icon size, corner radius, and font for ``HIGSocialButton``.
 - `HIGImageFrameTokens` defines corner radius, border width, min height, and placeholder icon size for ``HIGImageFrame``.
+- `HIGTreeViewTokens` defines row height, indent, chevron size, fonts, and chrome for ``HIGTreeView``.
 - `HIGCounterTokens` defines padding, min height, icon size, and title/value/caption/trend fonts for ``HIGCounter``.
 - `HIGWidgetTokens` defines padding, header/stack spacing, min height, radius, and title/subtitle fonts for ``HIGWidget``.
 - `HIGBreadcrumbTokens` defines link/current fonts, item spacing, separator size, and minimum tap target for ``HIGBreadcrumb``.

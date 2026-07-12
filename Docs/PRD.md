@@ -116,6 +116,7 @@ First delivery slices:
 - `HIGColorSelector` (circular color swatch selector)
 - `HIGSocialButton` (social/account action buttons with SF Symbols)
 - `HIGImageFrame` (themed image container with aspect presets)
+- `HIGTreeView` (hierarchical expand/collapse tree with selection)
 - `HIGCodeBlock` (Wave 5.1 monospaced code surface)
 - `HIGCarousel` (Wave 5.2 paged carousel)
 - `HIGMediaRow` (Wave 5.3 media object row)

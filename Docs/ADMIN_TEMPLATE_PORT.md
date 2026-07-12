@@ -107,7 +107,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Tags input | `HIGTagInput` | **Done** |
 | File upload / drop | `HIGDropZone` | **Done** (browse + drop; security-scoped access owned by caller) |
 | Image crop | `HIGPhotoEditor` | Done |
-| Tree / sortable | `HIGTreeView`, `HIGReorderableList` | Planned |
+| Tree / sortable | `HIGTreeView`, `HIGReorderableList` | **Partial** (`HIGTreeView` done; reorderable list planned) |
 | Lightbox / carousel | `HIGLightbox`, `HIGCarousel` | **Done** |
 | Top progress (nprogress) | `HIGNetworkProgressBar` | **Done** |
 | Button loading (ladda) | `HIGButton` loading | Extend |
