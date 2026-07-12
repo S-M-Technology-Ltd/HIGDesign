@@ -45,6 +45,7 @@ public protocol HIGTheme: Sendable {
     var socialButton: any HIGSocialButtonTokens { get }
     var imageFrame: any HIGImageFrameTokens { get }
     var treeView: any HIGTreeViewTokens { get }
+    var reorderableList: any HIGReorderableListTokens { get }
     var dataTable: any HIGDataTableTokens { get }
     var breadcrumb: any HIGBreadcrumbTokens { get }
     var pageHeader: any HIGPageHeaderTokens { get }

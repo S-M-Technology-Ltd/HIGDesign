@@ -85,6 +85,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 - `HIGSocialButton` / `HIGSocialNetwork` / `HIGSocialButtonStyle` — social/account action buttons with SF Symbols and semantic chrome; tokens via `theme.socialButton`
 - `HIGImageFrame` / `HIGImageFrameAspect` — themed image container with aspect presets, border, and placeholder; tokens via `theme.imageFrame`
 - `HIGTreeView` / `HIGTreeNode` — hierarchical tree with expand/collapse and optional selection; tokens via `theme.treeView`
+- `HIGReorderableList` / `HIGReorderableListItem` — drag-to-reorder list with optional caption; tokens via `theme.reorderableList`
 - `HIGCounter` / `HIGCounterTrend` — dashboard KPI tile with value, caption, optional icon and trend; tokens via `theme.counter`
 - `HIGWidget` — dashboard host surface with optional title, subtitle, trailing slot, and body content; tokens via `theme.widget`
 - `HIGDataTable` / `HIGDataTableColumn` — columnar admin table with header, striping, horizontal scroll, and empty state; tokens via `theme.dataTable`
@@ -110,7 +111,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 
 #### Admin catalog expansion (planned families)
 
-Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons: Showcase app recipes and remaining planned components (`HIGReorderableList`, calendar, dashboard grid).
+Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons: Showcase app recipes and remaining planned components (calendar, dashboard grid, video, coach marks).
 
 #### Content
 
