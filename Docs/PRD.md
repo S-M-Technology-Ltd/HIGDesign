@@ -97,6 +97,7 @@ First delivery slices:
 - `HIGDataTable` / `HIGDataTableColumn` (Wave 4.1 data display start)
 - `HIGDropZone` (Wave 3/4 file browse and drop surface)
 - `HIGAdminShell` / `HIGAdminShellStyle.sidebar` (Wave 7.1 admin base shell)
+- `HIGCodeBlock` (Wave 5.1 monospaced code surface)
 
 ## Previous Milestone: v1.4.0 (released)
 

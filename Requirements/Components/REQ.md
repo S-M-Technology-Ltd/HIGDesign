@@ -94,11 +94,12 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 
 #### Admin catalog expansion (planned families)
 
-Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after admin shell (sidebar): additional shell styles, Swift Charts, and content hybrids.
+Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after code block: carousel, Swift Charts, and additional admin shell styles.
 
 #### Content
 
 - `HIGLabel`
+- `HIGCodeBlock` — monospaced code surface with optional language label and share; tokens via `theme.codeBlock`
 - `HIGIcon`
 - `HIGAvatar`
 - `HIGBulletList`

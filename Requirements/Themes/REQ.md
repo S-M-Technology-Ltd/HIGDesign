@@ -39,6 +39,7 @@ Theme contract, environment injection, and built-in system themes for HIGDesign.
 - `HIGTheme` includes `dataTable` component tokens for columnar data tables.
 - `HIGTheme` includes `dropZone` component tokens for file browse and drop surfaces.
 - `HIGTheme` includes `adminShell` component tokens for admin application shells.
+- `HIGTheme` includes `codeBlock` component tokens for monospaced code surfaces.
 
 ### Runtime behavior
 

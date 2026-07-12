@@ -660,6 +660,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGCodeBlock
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| Typography | All 6 | monospaced · language label · share · scroll |
+
+**Guidelines:**
+- Use for API samples, CLI snippets, and admin docs
+- No third-party syntax highlighting — plain monospaced text with selection where available
+- Optional language caption (for example `swift`, `bash`)
+- Share via system `ShareLink`; disable when the surface is decorative only
+
+---
+
 ### HIGBreadcrumb
 
 | HIG category | Platforms | Features |

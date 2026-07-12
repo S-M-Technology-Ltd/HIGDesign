@@ -57,6 +57,7 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - `HIGDataTableTokens` defines header/cell fonts, padding, row height, borders, and column metrics for ``HIGDataTable``.
 - `HIGDropZoneTokens` defines min height, dash border, padding, icon size, and fonts for ``HIGDropZone``.
 - `HIGAdminShellTokens` defines brand/content padding, brand font, and sidebar column widths for ``HIGAdminShell``.
+- `HIGCodeBlockTokens` defines monospaced font, padding, radius, and max height for ``HIGCodeBlock``.
 
 ### Naming and API
 

@@ -59,6 +59,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Drop Zone page plus token tests
 - `HIGAdminShell` / `HIGAdminShellStyle` / `theme.adminShell` — admin app shell with brand chrome and sidebar navigation (Remark base)
 - Showcase Admin Shell page plus token tests (Wave 7.1)
+- `HIGCodeBlock` / `theme.codeBlock` — monospaced code surface with optional language label and share
+- Showcase Code Block page plus token tests (Wave 5.1 content hybrids)
 
 ## 1.4.0 — 2026-07-10
 

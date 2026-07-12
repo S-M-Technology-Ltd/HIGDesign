@@ -80,6 +80,8 @@ struct ShowcaseSnapshotCatalogDetailView: View {
             ShowcaseDropZoneView()
         case .adminShell:
             ShowcaseAdminShellView()
+        case .codeBlock:
+            ShowcaseCodeBlockView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:

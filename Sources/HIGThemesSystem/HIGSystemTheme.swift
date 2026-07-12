@@ -68,6 +68,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let list: any HIGListTokens
     public let sidebar: any HIGSidebarTokens
     public let adminShell: any HIGAdminShellTokens
+    public let codeBlock: any HIGCodeBlockTokens
     public let photoPicker: any HIGPhotoPickerTokens
     public let photoEditor: any HIGPhotoEditorTokens
     public let longTextEditor: any HIGLongTextEditorTokens
@@ -137,6 +138,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         list: any HIGListTokens = HIGSystemListTokens(),
         sidebar: any HIGSidebarTokens = HIGSystemSidebarTokens(),
         adminShell: any HIGAdminShellTokens = HIGSystemAdminShellTokens(),
+        codeBlock: any HIGCodeBlockTokens = HIGSystemCodeBlockTokens(),
         photoPicker: any HIGPhotoPickerTokens = HIGSystemPhotoPickerTokens(),
         photoEditor: any HIGPhotoEditorTokens = HIGSystemPhotoEditorTokens(),
         longTextEditor: any HIGLongTextEditorTokens = HIGSystemLongTextEditorTokens()
@@ -205,6 +207,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.list = list
         self.sidebar = sidebar
         self.adminShell = adminShell
+        self.codeBlock = codeBlock
         self.photoPicker = photoPicker
         self.photoEditor = photoEditor
         self.longTextEditor = longTextEditor
