@@ -9,7 +9,8 @@ import SwiftUI
 /// Inspired by Remark Admin layout shells. Supports:
 /// - ``HIGAdminShellStyle/sidebar`` — Remark **base** (labeled sidebar list)
 /// - ``HIGAdminShellStyle/iconRail`` — Remark **iconbar** (icon-only leading rail)
-/// - ``HIGAdminShellStyle/topBar`` — Remark **topbar** (horizontal nav strip)
+/// - ``HIGAdminShellStyle/topBar`` — Remark **topbar** (horizontal labeled nav strip)
+/// - ``HIGAdminShellStyle/topIcon`` — Remark **topicon** (horizontal icon-only nav strip)
 ///
 /// Prefer ``HIGSidebar`` when you only need a plain split view without brand chrome.
 public struct HIGAdminShell<Selection: Hashable & Sendable, Content: View>: View {
@@ -25,7 +26,7 @@ public struct HIGAdminShell<Selection: Hashable & Sendable, Content: View>: View
 
     /// Creates an admin shell.
     /// - Parameters:
-    ///   - style: Shell layout family (``.sidebar``, ``.iconRail``, or ``.topBar``).
+    ///   - style: Shell layout family (``.sidebar``, ``.iconRail``, ``.topBar``, or ``.topIcon``).
     ///   - brandTitle: Optional product name in the navigation chrome.
     ///   - sidebarTitle: Navigation title for the leading column (sidebar / icon rail).
     ///   - selection: Bound selected destination.
@@ -56,7 +57,9 @@ public struct HIGAdminShell<Selection: Hashable & Sendable, Content: View>: View
         case .iconRail:
             iconRailShell(tokens: tokens)
         case .topBar:
-            topBarShell(tokens: tokens)
+            topStripShell(tokens: tokens, iconOnly: false)
+        case .topIcon:
+            topStripShell(tokens: tokens, iconOnly: true)
         }
     }
 
@@ -193,12 +196,12 @@ public struct HIGAdminShell<Selection: Hashable & Sendable, Content: View>: View
         .background(theme.colors.backgroundPrimary)
     }
 
-    // MARK: - Top bar (Remark topbar)
+    // MARK: - Top strip (Remark topbar / topicon)
 
     @ViewBuilder
-    private func topBarShell(tokens: any HIGAdminShellTokens) -> some View {
+    private func topStripShell(tokens: any HIGAdminShellTokens, iconOnly: Bool) -> some View {
         VStack(spacing: 0) {
-            topBar(tokens: tokens)
+            topStrip(tokens: tokens, iconOnly: iconOnly)
             HIGDivider()
             detailColumn(tokens: tokens)
         }
@@ -209,17 +212,29 @@ public struct HIGAdminShell<Selection: Hashable & Sendable, Content: View>: View
     }
 
     @ViewBuilder
-    private func topBar(tokens: any HIGAdminShellTokens) -> some View {
+    private func topStrip(tokens: any HIGAdminShellTokens, iconOnly: Bool) -> some View {
         let capabilities = HIGPlatformCapabilities.current
         let minTarget = max(tokens.topBarMinHeight, capabilities.minimumTouchTarget)
+        let iconSize = iconOnly ? tokens.iconRailIconPointSize : tokens.topBarIconPointSize
 
         HStack(spacing: tokens.topBarItemSpacing) {
             if let brandTitle {
-                Text(brandTitle)
-                    .font(tokens.brandFont)
-                    .foregroundStyle(theme.colors.labelPrimary)
-                    .lineLimit(1)
-                    .accessibilityAddTraits(.isHeader)
+                if iconOnly {
+                    Text(String(brandTitle.prefix(1)).uppercased())
+                        .font(tokens.brandFont)
+                        .foregroundStyle(theme.colors.labelPrimary)
+                        .frame(width: minTarget, height: minTarget)
+                        .background(theme.colors.backgroundPrimary)
+                        .clipShape(RoundedRectangle(cornerRadius: theme.card.cornerRadius, style: .continuous))
+                        .accessibilityLabel(brandTitle)
+                        .accessibilityAddTraits(.isHeader)
+                } else {
+                    Text(brandTitle)
+                        .font(tokens.brandFont)
+                        .foregroundStyle(theme.colors.labelPrimary)
+                        .lineLimit(1)
+                        .accessibilityAddTraits(.isHeader)
+                }
             }
 
             ScrollView(.horizontal, showsIndicators: false) {
@@ -228,18 +243,26 @@ public struct HIGAdminShell<Selection: Hashable & Sendable, Content: View>: View
                         Button {
                             selection = item.id
                         } label: {
-                            Label {
-                                Text(item.title)
-                                    .font(theme.typography.callout)
-                                    .lineLimit(1)
-                            } icon: {
-                                Image(systemName: item.systemImage)
-                                    .font(.system(size: tokens.topBarIconPointSize, weight: .medium))
+                            Group {
+                                if iconOnly {
+                                    Image(systemName: item.systemImage)
+                                        .font(.system(size: iconSize, weight: .medium))
+                                        .frame(width: minTarget, height: minTarget)
+                                } else {
+                                    Label {
+                                        Text(item.title)
+                                            .font(theme.typography.callout)
+                                            .lineLimit(1)
+                                    } icon: {
+                                        Image(systemName: item.systemImage)
+                                            .font(.system(size: iconSize, weight: .medium))
+                                    }
+                                    .labelStyle(.titleAndIcon)
+                                    .padding(.horizontal, tokens.brandPadding)
+                                    .frame(minHeight: minTarget)
+                                }
                             }
-                            .labelStyle(.titleAndIcon)
                             .foregroundStyle(item.id == selection ? theme.colors.accent : theme.colors.labelSecondary)
-                            .padding(.horizontal, tokens.brandPadding)
-                            .frame(minHeight: minTarget)
                             .background(
                                 item.id == selection
                                     ? theme.colors.accent.opacity(theme.opacity.subtleFill)
@@ -288,6 +311,7 @@ public struct HIGAdminShell<Selection: Hashable & Sendable, Content: View>: View
         case .sidebar: "sidebar.left"
         case .iconRail: "rectangle.leftthird.inset.filled"
         case .topBar: "menubar.rectangle"
+        case .topIcon: "rectangle.topthird.inset.filled"
         }
     }
 
@@ -296,6 +320,7 @@ public struct HIGAdminShell<Selection: Hashable & Sendable, Content: View>: View
         case .sidebar: "Choose an item from the sidebar."
         case .iconRail: "Choose an item from the icon rail."
         case .topBar: "Choose an item from the top bar."
+        case .topIcon: "Choose an item from the top icon bar."
         }
     }
 }
@@ -375,6 +400,31 @@ private enum HIGAdminShellPreviewSection: String, Hashable, Sendable {
                 Text(section.rawValue.capitalized)
                     .font(.title2)
                 Text("Top bar detail for \(section.rawValue).")
+                    .foregroundStyle(.secondary)
+            }
+        }
+    }
+}
+
+#Preview("HIGAdminShell — Top Icon") {
+    @Previewable @State var selection: HIGAdminShellPreviewSection? = .dashboard
+
+    HIGThemeableView(theme: HIGComponentPreviewTheme()) {
+        HIGAdminShell(
+            style: .topIcon,
+            brandTitle: "HIG Admin",
+            sidebarTitle: "Menu",
+            selection: $selection,
+            items: [
+                HIGSidebarItem(id: HIGAdminShellPreviewSection.dashboard, title: "Dashboard", systemImage: "square.grid.2x2"),
+                HIGSidebarItem(id: HIGAdminShellPreviewSection.users, title: "Users", systemImage: "person.2"),
+                HIGSidebarItem(id: HIGAdminShellPreviewSection.settings, title: "Settings", systemImage: "gearshape"),
+            ]
+        ) { section in
+            VStack(alignment: .leading, spacing: HIGSpacing.sm.rawValue) {
+                Text(section.rawValue.capitalized)
+                    .font(.title2)
+                Text("Top icon detail for \(section.rawValue).")
                     .foregroundStyle(.secondary)
             }
         }

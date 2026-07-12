@@ -32,11 +32,12 @@ struct ShowcaseAdminShellView: View {
                     Text("Sidebar").tag(HIGAdminShellStyle.sidebar)
                     Text("Icon Rail").tag(HIGAdminShellStyle.iconRail)
                     Text("Top Bar").tag(HIGAdminShellStyle.topBar)
+                    Text("Top Icon").tag(HIGAdminShellStyle.topIcon)
                 }
                 #if os(watchOS)
                 .pickerStyle(.automatic)
                 #else
-                .pickerStyle(.segmented)
+                .pickerStyle(.menu)
                 #endif
                 .accessibilityLabel("Shell style")
 
@@ -83,6 +84,8 @@ struct ShowcaseAdminShellView: View {
             "Compose panels, tables, and forms in the detail column."
         case .topBar:
             "Compose panels, tables, and forms below the top navigation bar."
+        case .topIcon:
+            "Compose panels, tables, and forms below the top icon bar."
         }
     }
 
