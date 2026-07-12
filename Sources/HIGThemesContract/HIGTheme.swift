@@ -30,6 +30,7 @@ public protocol HIGTheme: Sendable {
     var picker: any HIGPickerTokens { get }
     var card: any HIGCardTokens { get }
     var panel: any HIGPanelTokens { get }
+    var counter: any HIGCounterTokens { get }
     var dataTable: any HIGDataTableTokens { get }
     var breadcrumb: any HIGBreadcrumbTokens { get }
     var pageHeader: any HIGPageHeaderTokens { get }

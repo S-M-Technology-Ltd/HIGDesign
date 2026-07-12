@@ -25,7 +25,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | 5 | Content hybrids | **In progress** (`HIGCodeBlock`, `HIGCarousel`, `HIGLightbox`, `HIGMediaRow`, `HIGHero`, `HIGListGroup`) |
 | 6 | Swift Charts family | **In progress** (`HIGBarChart`, `HIGLineChart`, `HIGPieChart`, `HIGAreaChart`) |
 | 7 | Admin shell & layout | **Done** (`HIGAdminShell` styles: sidebar, iconRail, topBar, topIcon, centered, drawer) |
-| 8 | Parity extensions on existing components | Planned |
+| 8 | Widgets & parity extensions | **In progress** (`HIGCounter`) |
 | 9 | App/page Showcase recipes | Planned |
 | 10 | Gallery, DocC, release | Planned |
 
@@ -87,7 +87,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Ribbon / rating / testimonial | `HIGRibbon`, `HIGRating`, `HIGTestimonial` | Planned |
 | Icon / hamburger | `HIGIcon`, `HIGMenuToggle` | **Done** |
 | Loader | `HIGActivityIndicator`, `HIGMatrixLoader` | Done |
-| Counter / widget | `HIGCounter`, `HIGWidget` | Planned |
+| Counter / widget | `HIGCounter`, `HIGWidget` | **Partial** (`HIGCounter` done; widget planned) |
 | Divider | `HIGDivider` | Done |
 | Checkbox / radio | `HIGCheckbox`, `HIGRadio` | Done |
 | Color selector | `HIGColorSelector` | Planned |
@@ -137,7 +137,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 
 | Category | Approach | Status |
 |----------|----------|--------|
-| widgets/* | `HIGWidget` + charts/counters recipes | Planned |
+| widgets/* | `HIGWidget` + charts/counters recipes | **Partial** (`HIGCounter` done) |
 | apps/* (13) | Showcase recipes only | Planned |
 | pages/* (34) | Showcase recipes only | Planned |
 

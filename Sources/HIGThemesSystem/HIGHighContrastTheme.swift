@@ -32,6 +32,7 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
     public let picker: any HIGPickerTokens
     public let card: any HIGCardTokens
     public let panel: any HIGPanelTokens
+    public let counter: any HIGCounterTokens
     public let dataTable: any HIGDataTableTokens
     public let breadcrumb: any HIGBreadcrumbTokens
     public let pageHeader: any HIGPageHeaderTokens
@@ -123,6 +124,7 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
         self.picker = base.picker
         self.card = base.card
         self.panel = base.panel
+        self.counter = base.counter
         self.dataTable = base.dataTable
         self.breadcrumb = base.breadcrumb
         self.pageHeader = base.pageHeader

@@ -31,6 +31,7 @@ public struct HIGComponentPreviewTheme: HIGTheme {
     public let picker: any HIGPickerTokens = HIGSystemPickerTokens()
     public let card: any HIGCardTokens = HIGSystemCardTokens()
     public let panel: any HIGPanelTokens = HIGSystemPanelTokens()
+    public let counter: any HIGCounterTokens = HIGSystemCounterTokens()
     public let dataTable: any HIGDataTableTokens = HIGSystemDataTableTokens()
     public let breadcrumb: any HIGBreadcrumbTokens = HIGSystemBreadcrumbTokens()
     public let pageHeader: any HIGPageHeaderTokens = HIGSystemPageHeaderTokens()

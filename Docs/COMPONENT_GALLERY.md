@@ -664,6 +664,21 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGCounter
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| Layout | All 6 | value · title · caption · optional icon · trend chip |
+
+**Guidelines:**
+- Use for dashboard KPIs (users, revenue, tickets, conversion)
+- Pass a pre-formatted `value` string; keep titles short
+- Prefer `HIGCounterTrend.up` / `.down` with a concise `trendLabel` (for example `+12%`)
+- Pair with charts or panels for denser admin widgets
+- Token-backed chrome via `theme.counter`
+
+---
+
 ### HIGCodeBlock
 
 | HIG category | Platforms | Features |

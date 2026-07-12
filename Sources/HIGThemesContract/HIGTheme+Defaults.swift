@@ -32,6 +32,7 @@ extension HIGTheme {
     public var picker: any HIGPickerTokens { HIGSystemPickerTokens() }
     public var card: any HIGCardTokens { HIGSystemCardTokens() }
     public var panel: any HIGPanelTokens { HIGSystemPanelTokens() }
+    public var counter: any HIGCounterTokens { HIGSystemCounterTokens() }
     public var dataTable: any HIGDataTableTokens { HIGSystemDataTableTokens() }
     public var breadcrumb: any HIGBreadcrumbTokens { HIGSystemBreadcrumbTokens() }
     public var pageHeader: any HIGPageHeaderTokens { HIGSystemPageHeaderTokens() }
