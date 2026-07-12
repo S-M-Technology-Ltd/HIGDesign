@@ -73,6 +73,7 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
     public let carousel: any HIGCarouselTokens
     public let mediaRow: any HIGMediaRowTokens
     public let hero: any HIGHeroTokens
+    public let listGroup: any HIGListGroupTokens
     public let photoPicker: any HIGPhotoPickerTokens
     public let photoEditor: any HIGPhotoEditorTokens
     public let longTextEditor: any HIGLongTextEditorTokens
@@ -158,6 +159,7 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
         self.carousel = base.carousel
         self.mediaRow = base.mediaRow
         self.hero = base.hero
+        self.listGroup = base.listGroup
         self.photoPicker = base.photoPicker
         self.photoEditor = base.photoEditor
         self.longTextEditor = base.longTextEditor

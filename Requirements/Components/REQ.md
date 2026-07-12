@@ -86,6 +86,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 - `HIGEmptyState` — centered empty-content title/message/icon with optional actions; tokens via `theme.emptyState`
 - `HIGDivider`
 - `HIGList`
+- `HIGListGroup` / `HIGListGroupRow` — bordered list-group surface with optional header/footer and selectable rows; tokens via `theme.listGroup`
 - `HIGNavigationBar`
 - `HIGTabBar`
 - `HIGSidebar`
@@ -94,7 +95,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 
 #### Admin catalog expansion (planned families)
 
-Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after hero: lightbox, Swift Charts, and additional admin shell styles.
+Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after list group: lightbox, Swift Charts, and additional admin shell styles.
 
 #### Content
 

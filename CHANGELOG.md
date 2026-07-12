@@ -67,6 +67,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Media Row page plus token tests (Wave 5.3)
 - `HIGHero` / `HIGHeroStyle` / `theme.hero` — jumbotron-style hero with standard and accent emphasis
 - Showcase Hero page plus token tests (Wave 5.4)
+- `HIGListGroup` / `HIGListGroupRow` / `theme.listGroup` — bordered list-group surface with selectable rows
+- Showcase List Group page plus token tests (Wave 5.5)
 
 ## 1.4.0 — 2026-07-10
 
