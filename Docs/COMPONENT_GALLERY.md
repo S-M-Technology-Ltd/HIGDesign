@@ -961,6 +961,31 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+
+### App recipes (Wave 9.1)
+
+| Recipe | Primary HIG building blocks |
+|---|---|
+| Mailbox App | `HIGPageHeader`, `HIGSearchField`, `HIGMediaRow`, `HIGAvatar`, `HIGBadge` |
+| Calendar App | `HIGCalendar`, `HIGPanel` |
+| Contacts App | `HIGListGroup`, `HIGAvatar`, `HIGPanel`, `HIGButton` |
+| Documents App | `HIGDropZone`, `HIGDataTable` |
+| Forum App | `HIGComment`, `HIGBadge`, `HIGTimeline` |
+| Location App | `HIGListGroup` (+ Map catalog for MapKit) |
+| Media App | `HIGDashboardGrid`, `HIGImageFrame` |
+| Message App | `HIGChatBubble` |
+| Notebook App | `HIGListGroup`, `HIGTextEditor` |
+| Projects App | `HIGSteps`, `HIGCard`, `HIGProgressView` |
+| Taskboard App | `HIGPanel` columns, `HIGCard` |
+| Travel App | `HIGDashboardGrid`, `HIGCounter`, `HIGBarChart` |
+| Work App | `HIGDashboardGrid`, `HIGCounter`, `HIGLineChart` |
+
+**Guidelines:**
+- Recipes are Showcase compositions only — no library business modules, networking, or persistence
+- Prefer public `HIG*` APIs and token-backed chrome
+- Page recipes (login, profile, invoice, errors, …) follow in Wave 9.2
+
+---
 ### HIGCodeBlock
 
 | HIG category | Platforms | Features |

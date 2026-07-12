@@ -99,6 +99,20 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case coachMark
     case map
 
+    case appMailbox
+    case appCalendar
+    case appContacts
+    case appDocuments
+    case appForum
+    case appLocation
+    case appMedia
+    case appMessage
+    case appNotebook
+    case appProjects
+    case appTaskboard
+    case appTravel
+    case appWork
+
     public var id: String { rawValue }
 
     /// Components sorted A–Z by display title for the showcase catalog.
@@ -168,6 +182,19 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .videoPlayer: "Video Player"
         case .coachMark: "Coach Mark"
         case .map: "Map"
+        case .appMailbox: "Mailbox App"
+        case .appCalendar: "Calendar App"
+        case .appContacts: "Contacts App"
+        case .appDocuments: "Documents App"
+        case .appForum: "Forum App"
+        case .appLocation: "Location App"
+        case .appMedia: "Media App"
+        case .appMessage: "Message App"
+        case .appNotebook: "Notebook App"
+        case .appProjects: "Projects App"
+        case .appTaskboard: "Taskboard App"
+        case .appTravel: "Travel App"
+        case .appWork: "Work App"
         case .breadcrumb: "Breadcrumb"
         case .pageHeader: "Page Header"
         case .pagination: "Pagination"
@@ -270,6 +297,19 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .videoPlayer: "Content"
         case .coachMark: "Tooltips"
         case .map: "Maps"
+        case .appMailbox: "Lists and Tables"
+        case .appCalendar: "Inputs"
+        case .appContacts: "Lists and Tables"
+        case .appDocuments: "File Management"
+        case .appForum: "Content"
+        case .appLocation: "Maps"
+        case .appMedia: "Media"
+        case .appMessage: "Content"
+        case .appNotebook: "Text Fields"
+        case .appProjects: "Navigation"
+        case .appTaskboard: "Layout"
+        case .appTravel: "Charts"
+        case .appWork: "Charts"
         case .breadcrumb: "Navigation"
         case .pageHeader: "Navigation"
         case .pagination: "Navigation"
@@ -411,12 +451,25 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .videoPlayer: "Themed video surface with optional title, caption, and placeholder."
         case .coachMark: "Onboarding coach mark with step progress, actions, and overlay helper."
         case .map: "MapKit admin map recipe composed with HIG widgets, panels, and list groups."
+        case .appMailbox: "Mailbox app recipe: search, media rows, avatars, and badges."
+        case .appCalendar: "Calendar app recipe: month grid, agenda panel, and event marks."
+        case .appContacts: "Contacts app recipe: directory list, avatars, and profile panel."
+        case .appDocuments: "Documents app recipe: drop zone and file data table."
+        case .appForum: "Forum app recipe: comments, badges, and activity timeline."
+        case .appLocation: "Location app recipe: site list paired with the Map catalog entry."
+        case .appMedia: "Media library recipe: image frames in a dashboard grid."
+        case .appMessage: "Messaging app recipe: chat bubble thread composition."
+        case .appNotebook: "Notebook app recipe: note list and multi-line editor."
+        case .appProjects: "Projects app recipe: steps, cards, and progress."
+        case .appTaskboard: "Taskboard app recipe: kanban columns from HIGPanel stacks."
+        case .appTravel: "Travel ops recipe: counters, widgets, and bar charts."
+        case .appWork: "Work dashboard recipe: counters, widgets, and line charts."
         }
     }
 
     var platforms: String {
         switch self {
-        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .panelGroup, .counter, .widget, .rating, .testimonial, .ribbon, .pricingCard, .chatBubble, .comment, .cover, .imageOverlay, .colorSelector, .socialButton, .imageFrame, .treeView, .reorderableList, .calendar, .dashboardGrid, .videoPlayer, .coachMark, .breadcrumb, .pageHeader,
+        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .panelGroup, .counter, .widget, .rating, .testimonial, .ribbon, .pricingCard, .chatBubble, .comment, .cover, .imageOverlay, .colorSelector, .socialButton, .imageFrame, .treeView, .reorderableList, .calendar, .dashboardGrid, .videoPlayer, .coachMark, .appMailbox, .appCalendar, .appContacts, .appDocuments, .appForum, .appLocation, .appMedia, .appMessage, .appNotebook, .appProjects, .appTaskboard, .appTravel, .appWork, .breadcrumb, .pageHeader,
              .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .statusIndicator, .emptyState,
              .closeButton, .modal, .tooltip, .popover, .drawer, .confirmationDialog, .networkProgressBar,
              .buttonGroup, .menuToggle, .inputGroup, .fieldMessage, .datePicker, .timePicker, .select, .autocomplete, .tagInput, .dataTable, .toolbar,

@@ -6,6 +6,7 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 
 ### Added
 
+- Wave 9.1 Showcase **app recipes** (13): Mailbox, Calendar, Contacts, Documents, Forum, Location, Media, Message, Notebook, Projects, Taskboard, Travel, Work — composition only via public HIG APIs
 - Showcase **Map** recipe (`ShowcaseMapView`) — MapKit composition with `HIGWidget` / `HIGPanel` / `HIGListGroup` (no library `HIGMap` module; unavailable on tvOS)
 - `Docs/ADMIN_TEMPLATE_PORT.md` — full Remark Admin Template → HIGDesign capability tracker
 - `HIGAdminTheme` / `HIGAdminThemeHue` — optional admin-density theme (Remark-inspired primary hues and denser spacing)
