@@ -81,6 +81,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 - `HIGComment` — discussion comment row with author, body, optional timestamp, avatar, reply action, and separator; tokens via `theme.comment`
 - `HIGCover` / `HIGCoverStyle` — cover banner with title, optional subtitle, solid or custom background, optional scrim, and actions; tokens via `theme.cover`
 - `HIGImageOverlay` / `HIGImageOverlayEdge` — media figure with caption or custom panel overlay and optional scrim; tokens via `theme.imageOverlay`
+- `HIGColorSelector` / `HIGColorOption` — circular color swatch selector with bound selection and optional group label; tokens via `theme.colorSelector`
 - `HIGCounter` / `HIGCounterTrend` — dashboard KPI tile with value, caption, optional icon and trend; tokens via `theme.counter`
 - `HIGWidget` — dashboard host surface with optional title, subtitle, trailing slot, and body content; tokens via `theme.widget`
 - `HIGDataTable` / `HIGDataTableColumn` — columnar admin table with header, striping, horizontal scroll, and empty state; tokens via `theme.dataTable`
@@ -106,7 +107,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 
 #### Admin catalog expansion (planned families)
 
-Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons: Showcase app recipes and remaining custom components (`HIGColorSelector`, `HIGSocialButton`).
+Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons: Showcase app recipes and remaining custom components (`HIGSocialButton`).
 
 #### Content
 

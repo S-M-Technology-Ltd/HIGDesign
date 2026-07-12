@@ -821,6 +821,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGColorSelector
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| Inputs | All 6 | swatches · binding selection · optional label · wrap layout · a11y names |
+
+**Guidelines:**
+- Use for theme accent picks, tag colors, and admin appearance settings
+- Provide a human-readable `label` on each `HIGColorOption` for VoiceOver
+- Keep palettes small (typically 4–8 swatches) for scanability
+- Token-backed metrics via `theme.colorSelector`
+
+---
+
 ### HIGCodeBlock
 
 | HIG category | Platforms | Features |

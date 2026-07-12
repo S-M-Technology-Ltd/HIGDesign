@@ -44,6 +44,7 @@ public struct HIGBrandTheme: HIGTheme, Sendable {
     public let comment: any HIGCommentTokens
     public let cover: any HIGCoverTokens
     public let imageOverlay: any HIGImageOverlayTokens
+    public let colorSelector: any HIGColorSelectorTokens
     public let dataTable: any HIGDataTableTokens
     public let breadcrumb: any HIGBreadcrumbTokens
     public let pageHeader: any HIGPageHeaderTokens
@@ -151,6 +152,7 @@ public struct HIGBrandTheme: HIGTheme, Sendable {
         self.comment = base.comment
         self.cover = base.cover
         self.imageOverlay = base.imageOverlay
+        self.colorSelector = base.colorSelector
         self.dataTable = base.dataTable
         self.breadcrumb = base.breadcrumb
         self.pageHeader = base.pageHeader

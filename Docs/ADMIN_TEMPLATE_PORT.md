@@ -90,7 +90,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Counter / widget | `HIGCounter`, `HIGWidget` | **Done** |
 | Divider | `HIGDivider` | Done |
 | Checkbox / radio | `HIGCheckbox`, `HIGRadio` | Done |
-| Color selector | `HIGColorSelector` | Planned |
+| Color selector | `HIGColorSelector` | **Done** |
 | Social | `HIGSocialButton` | Planned |
 | Animation helpers | motion tokens / modifiers | Extend |
 | Example (docs SCSS) | — | Excluded |

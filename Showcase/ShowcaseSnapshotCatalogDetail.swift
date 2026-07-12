@@ -122,6 +122,8 @@ struct ShowcaseSnapshotCatalogDetailView: View {
             ShowcaseCoverView()
         case .imageOverlay:
             ShowcaseImageOverlayView()
+        case .colorSelector:
+            ShowcaseColorSelectorView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:
