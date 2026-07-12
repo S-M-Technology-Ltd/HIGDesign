@@ -40,6 +40,7 @@ extension HIGTheme {
     public var ribbon: any HIGRibbonTokens { HIGSystemRibbonTokens() }
     public var pricingCard: any HIGPricingCardTokens { HIGSystemPricingCardTokens() }
     public var chatBubble: any HIGChatBubbleTokens { HIGSystemChatBubbleTokens() }
+    public var comment: any HIGCommentTokens { HIGSystemCommentTokens() }
     public var dataTable: any HIGDataTableTokens { HIGSystemDataTableTokens() }
     public var breadcrumb: any HIGBreadcrumbTokens { HIGSystemBreadcrumbTokens() }
     public var pageHeader: any HIGPageHeaderTokens { HIGSystemPageHeaderTokens() }

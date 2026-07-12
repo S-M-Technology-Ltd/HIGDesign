@@ -81,7 +81,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Status | `HIGStatusIndicator` | **Done** |
 | Steps / pearls | `HIGSteps`, `HIGPearlSteps` | **Done** |
 | Timeline | `HIGTimeline` | **Done** |
-| Chat / comment | `HIGChatBubble`, `HIGComment` | **Partial** (`HIGChatBubble` done; comment planned) |
+| Chat / comment | `HIGChatBubble`, `HIGComment` | **Done** |
 | Cover / overlay | `HIGCover`, `HIGImageOverlay` | Planned |
 | Pricing | `HIGPricingCard` | **Done** |
 | Ribbon / rating / testimonial | `HIGRibbon`, `HIGRating`, `HIGTestimonial` | **Done** |

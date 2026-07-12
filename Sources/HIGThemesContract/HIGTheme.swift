@@ -38,6 +38,7 @@ public protocol HIGTheme: Sendable {
     var ribbon: any HIGRibbonTokens { get }
     var pricingCard: any HIGPricingCardTokens { get }
     var chatBubble: any HIGChatBubbleTokens { get }
+    var comment: any HIGCommentTokens { get }
     var dataTable: any HIGDataTableTokens { get }
     var breadcrumb: any HIGBreadcrumbTokens { get }
     var pageHeader: any HIGPageHeaderTokens { get }

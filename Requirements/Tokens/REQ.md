@@ -38,6 +38,7 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - `HIGRibbonTokens` defines padding, font, corner radius, and edge inset for ``HIGRibbon``.
 - `HIGPricingCardTokens` defines padding, spacing, radius, borders, and title/price/feature fonts for ``HIGPricingCard``.
 - `HIGChatBubbleTokens` defines padding, spacing, radius, side gutter, and message/meta fonts for ``HIGChatBubble``.
+- `HIGCommentTokens` defines padding, spacing, separator width, and author/body/action fonts for ``HIGComment``.
 - `HIGCounterTokens` defines padding, min height, icon size, and title/value/caption/trend fonts for ``HIGCounter``.
 - `HIGWidgetTokens` defines padding, header/stack spacing, min height, radius, and title/subtitle fonts for ``HIGWidget``.
 - `HIGBreadcrumbTokens` defines link/current fonts, item spacing, separator size, and minimum tap target for ``HIGBreadcrumb``.
