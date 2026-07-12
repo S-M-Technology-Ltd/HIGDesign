@@ -46,6 +46,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 - `HIGSelect` — form select with field chrome for single (`Value?`) or multi (`Set`) selection; tokens via `theme.select`
 - `HIGAutocomplete` — typeahead field that filters string suggestions; tokens via `theme.autocomplete`
 - `HIGTagInput` — freeform tag chips with type-to-add, optional suggestions, and max-tag cap; tokens via `theme.tagInput`
+- `HIGDropZone` — browse/drop file surface with selected-file list; tokens via `theme.dropZone` (iOS, iPadOS, macOS, visionOS)
 - `HIGPhotoPicker`
 - `HIGPhotoEditor`
 - `HIGLongTextEditor`
@@ -92,7 +93,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 
 #### Admin catalog expansion (planned families)
 
-Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after data table: Swift Charts, `HIGAdminShell`, and file upload.
+Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after data table and drop zone: Swift Charts and `HIGAdminShell`.
 
 #### Content
 

@@ -24,6 +24,7 @@ public struct HIGBrandTheme: HIGTheme, Sendable {
     public let select: any HIGSelectTokens
     public let autocomplete: any HIGSelectTokens
     public let tagInput: any HIGSelectTokens
+    public let dropZone: any HIGDropZoneTokens
     public let toggle: any HIGToggleTokens
     public let checkbox: any HIGCheckboxTokens
     public let radio: any HIGRadioTokens
@@ -108,6 +109,7 @@ public struct HIGBrandTheme: HIGTheme, Sendable {
         self.select = base.select
         self.autocomplete = base.autocomplete
         self.tagInput = base.tagInput
+        self.dropZone = base.dropZone
         self.toggle = base.toggle
         self.checkbox = base.checkbox
         self.radio = base.radio

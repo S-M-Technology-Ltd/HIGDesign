@@ -65,6 +65,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case autocomplete
     case tagInput
     case dataTable
+    case dropZone
 
     public var id: String { rawValue }
 
@@ -141,6 +142,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .autocomplete: "Autocomplete"
         case .tagInput: "Tag Input"
         case .dataTable: "Data Table"
+        case .dropZone: "Drop Zone"
         }
     }
 
@@ -210,6 +212,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .autocomplete: "Searching"
         case .tagInput: "Text Fields"
         case .dataTable: "Lists and Tables"
+        case .dropZone: "File Management"
         }
     }
 
@@ -279,6 +282,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .autocomplete: "Typeahead field that filters suggestions as you type."
         case .tagInput: "Freeform tag chips with type-to-add and optional suggestions."
         case .dataTable: "Columnar admin table with header, striping, and horizontal scroll."
+        case .dropZone: "Browse and drop files into a themed upload surface."
         }
     }
 
@@ -293,7 +297,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,
              .bulletList, .textEditor, .stepper, .menuButton, .tag:
             "iOS, iPadOS, macOS, visionOS, tvOS, watchOS"
-        case .slider:
+        case .slider, .dropZone:
             "iOS, iPadOS, macOS, visionOS"
         case .segmentedControl:
             "iOS, iPadOS, macOS, visionOS, tvOS"

@@ -20,7 +20,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | 0 | Inventory, `HIGAdminTheme`, requirements | **Done** |
 | 1 | Surfaces & wayfinding (`HIGPanel`, breadcrumbs, steps, …) | **Done** (Wave 1 core surfaces) |
 | 2 | Overlays & chrome | **Done** (core overlay kit) |
-| 3 | Advanced forms | **Done** (core form chrome; file upload still planned) |
+| 3 | Advanced forms | **Done** (including `HIGDropZone` file upload) |
 | 4 | Data display | **In progress** (`HIGDataTable`) |
 | 5 | Content hybrids | Planned |
 | 6 | Swift Charts family | Planned |
@@ -105,7 +105,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Date / time | `HIGDatePicker`, `HIGTimePicker` | **Done** |
 | Select / multi / typeahead | `HIGSelect`, `HIGAutocomplete` | **Done** |
 | Tags input | `HIGTagInput` | **Done** |
-| File upload / drop | `HIGDropZone`, file importer helpers | Planned |
+| File upload / drop | `HIGDropZone` | **Done** (browse + drop; security-scoped access owned by caller) |
 | Image crop | `HIGPhotoEditor` | Done |
 | Tree / sortable | `HIGTreeView`, `HIGReorderableList` | Planned |
 | Lightbox / carousel | `HIGLightbox`, `HIGCarousel` | Planned |

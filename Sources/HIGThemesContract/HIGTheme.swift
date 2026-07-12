@@ -21,6 +21,7 @@ public protocol HIGTheme: Sendable {
     var select: any HIGSelectTokens { get }
     var autocomplete: any HIGSelectTokens { get }
     var tagInput: any HIGSelectTokens { get }
+    var dropZone: any HIGDropZoneTokens { get }
     var toggle: any HIGToggleTokens { get }
     var checkbox: any HIGCheckboxTokens { get }
     var radio: any HIGRadioTokens { get }

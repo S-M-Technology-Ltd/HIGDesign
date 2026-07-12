@@ -23,6 +23,7 @@ extension HIGTheme {
     public var select: any HIGSelectTokens { HIGSystemSelectTokens() }
     public var autocomplete: any HIGSelectTokens { HIGSystemSelectTokens() }
     public var tagInput: any HIGSelectTokens { HIGSystemSelectTokens() }
+    public var dropZone: any HIGDropZoneTokens { HIGSystemDropZoneTokens() }
     public var toggle: any HIGToggleTokens { HIGSystemToggleTokens() }
     public var checkbox: any HIGCheckboxTokens { HIGSystemCheckboxTokens() }
     public var radio: any HIGRadioTokens { HIGSystemRadioTokens() }

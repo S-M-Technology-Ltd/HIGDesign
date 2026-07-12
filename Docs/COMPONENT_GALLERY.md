@@ -631,6 +631,21 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGDropZone
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| File Management | iOS, iPadOS, macOS, visionOS | browse · drop · multi-select · removable file rows |
+
+**Guidelines:**
+- Use for admin uploads (attachments, imports, documents)
+- Pass `allowedContentTypes` as UTTypes; keep the list intentional
+- Callers own security-scoped resource access after selection
+- Single-file mode replaces the selection; multi mode appends unique URLs
+- Highlight drop target with accent border while dragging
+
+---
+
 ### HIGBreadcrumb
 
 | HIG category | Platforms | Features |
