@@ -118,6 +118,7 @@ First delivery slices:
 - `HIGImageFrame` (themed image container with aspect presets)
 - `HIGTreeView` (hierarchical expand/collapse tree with selection)
 - `HIGReorderableList` (drag-to-reorder lists; tree/sortable family complete)
+- `HIGCalendar` (month grid with day selection and event marks)
 - `HIGCodeBlock` (Wave 5.1 monospaced code surface)
 - `HIGCarousel` (Wave 5.2 paged carousel)
 - `HIGMediaRow` (Wave 5.3 media object row)

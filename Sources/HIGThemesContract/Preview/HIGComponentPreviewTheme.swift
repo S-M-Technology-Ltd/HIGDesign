@@ -47,6 +47,7 @@ public struct HIGComponentPreviewTheme: HIGTheme {
     public let imageFrame: any HIGImageFrameTokens = HIGSystemImageFrameTokens()
     public let treeView: any HIGTreeViewTokens = HIGSystemTreeViewTokens()
     public let reorderableList: any HIGReorderableListTokens = HIGSystemReorderableListTokens()
+    public let calendar: any HIGCalendarTokens = HIGSystemCalendarTokens()
     public let dataTable: any HIGDataTableTokens = HIGSystemDataTableTokens()
     public let breadcrumb: any HIGBreadcrumbTokens = HIGSystemBreadcrumbTokens()
     public let pageHeader: any HIGPageHeaderTokens = HIGSystemPageHeaderTokens()

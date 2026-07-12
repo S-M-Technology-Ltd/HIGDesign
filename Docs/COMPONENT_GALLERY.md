@@ -891,6 +891,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGCalendar
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| Inputs | All 6 | month grid · selection · prev/next · today · event marks |
+
+**Guidelines:**
+- Use for admin scheduling, booking, and availability pickers
+- Prefer `HIGDatePicker` for compact single-field forms; `HIGCalendar` for visible month context
+- Pass `markedDates` as year/month/day components for event dots
+- Token-backed metrics via `theme.calendar`
+
+---
+
 ### HIGCodeBlock
 
 | HIG category | Platforms | Features |
