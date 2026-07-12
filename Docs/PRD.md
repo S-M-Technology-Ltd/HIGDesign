@@ -106,6 +106,7 @@ First delivery slices:
 - `HIGWidget` (Wave 8.2 dashboard widget host surface)
 - `HIGPanelGroup` (Wave 8.3 stacked panel/widget group)
 - `HIGRating` (star rating display and interactive selection)
+- `HIGTestimonial` (customer quote card with optional rating and avatar)
 - `HIGCodeBlock` (Wave 5.1 monospaced code surface)
 - `HIGCarousel` (Wave 5.2 paged carousel)
 - `HIGMediaRow` (Wave 5.3 media object row)
