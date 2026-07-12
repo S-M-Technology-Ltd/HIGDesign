@@ -73,6 +73,7 @@ public struct HIGBrandTheme: HIGTheme, Sendable {
     public let codeBlock: any HIGCodeBlockTokens
     public let carousel: any HIGCarouselTokens
     public let mediaRow: any HIGMediaRowTokens
+    public let hero: any HIGHeroTokens
     public let photoPicker: any HIGPhotoPickerTokens
     public let photoEditor: any HIGPhotoEditorTokens
     public let longTextEditor: any HIGLongTextEditorTokens
@@ -162,6 +163,7 @@ public struct HIGBrandTheme: HIGTheme, Sendable {
         self.codeBlock = base.codeBlock
         self.carousel = base.carousel
         self.mediaRow = base.mediaRow
+        self.hero = base.hero
         self.photoPicker = base.photoPicker
         self.photoEditor = base.photoEditor
         self.longTextEditor = base.longTextEditor

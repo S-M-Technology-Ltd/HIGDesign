@@ -100,6 +100,7 @@ First delivery slices:
 - `HIGCodeBlock` (Wave 5.1 monospaced code surface)
 - `HIGCarousel` (Wave 5.2 paged carousel)
 - `HIGMediaRow` (Wave 5.3 media object row)
+- `HIGHero` / `HIGHeroStyle` (Wave 5.4 jumbotron hero)
 
 ## Previous Milestone: v1.4.0 (released)
 

@@ -60,6 +60,7 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - `HIGCodeBlockTokens` defines monospaced font, padding, radius, and max height for ``HIGCodeBlock``.
 - `HIGCarouselTokens` defines min height, radius, indicator metrics, and content padding for ``HIGCarousel``.
 - `HIGMediaRowTokens` defines padding, spacing, fonts, and border metrics for ``HIGMediaRow``.
+- `HIGHeroTokens` defines min height, padding, spacing, radius, and fonts for ``HIGHero``.
 
 ### Naming and API
 
