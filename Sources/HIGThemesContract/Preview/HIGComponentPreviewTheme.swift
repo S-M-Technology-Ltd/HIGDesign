@@ -68,6 +68,7 @@ public struct HIGComponentPreviewTheme: HIGTheme {
     public let list: any HIGListTokens = HIGSystemListTokens()
     public let sidebar: any HIGSidebarTokens = HIGSystemSidebarTokens()
     public let adminShell: any HIGAdminShellTokens = HIGSystemAdminShellTokens()
+    public let codeBlock: any HIGCodeBlockTokens = HIGSystemCodeBlockTokens()
     public let photoPicker: any HIGPhotoPickerTokens = HIGSystemPhotoPickerTokens()
     public let photoEditor: any HIGPhotoEditorTokens = HIGSystemPhotoEditorTokens()
     public let longTextEditor: any HIGLongTextEditorTokens = HIGSystemLongTextEditorTokens()

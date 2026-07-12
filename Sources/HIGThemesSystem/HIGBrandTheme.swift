@@ -70,6 +70,7 @@ public struct HIGBrandTheme: HIGTheme, Sendable {
     public let list: any HIGListTokens
     public let sidebar: any HIGSidebarTokens
     public let adminShell: any HIGAdminShellTokens
+    public let codeBlock: any HIGCodeBlockTokens
     public let photoPicker: any HIGPhotoPickerTokens
     public let photoEditor: any HIGPhotoEditorTokens
     public let longTextEditor: any HIGLongTextEditorTokens
@@ -156,6 +157,7 @@ public struct HIGBrandTheme: HIGTheme, Sendable {
         self.list = base.list
         self.sidebar = base.sidebar
         self.adminShell = base.adminShell
+        self.codeBlock = base.codeBlock
         self.photoPicker = base.photoPicker
         self.photoEditor = base.photoEditor
         self.longTextEditor = base.longTextEditor

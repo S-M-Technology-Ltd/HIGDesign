@@ -67,6 +67,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case dataTable
     case dropZone
     case adminShell
+    case codeBlock
 
     public var id: String { rawValue }
 
@@ -145,6 +146,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .dataTable: "Data Table"
         case .dropZone: "Drop Zone"
         case .adminShell: "Admin Shell"
+        case .codeBlock: "Code Block"
         }
     }
 
@@ -216,6 +218,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .dataTable: "Lists and Tables"
         case .dropZone: "File Management"
         case .adminShell: "Split Views"
+        case .codeBlock: "Typography"
         }
     }
 
@@ -287,6 +290,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .dataTable: "Columnar admin table with header, striping, and horizontal scroll."
         case .dropZone: "Browse and drop files into a themed upload surface."
         case .adminShell: "Admin app shell with brand chrome and sidebar navigation."
+        case .codeBlock: "Monospaced code surface with optional language label and share."
         }
     }
 
@@ -299,7 +303,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
              .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .matrixLoader,
              .list, .form,
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,
-             .bulletList, .textEditor, .stepper, .menuButton, .tag:
+             .bulletList, .textEditor, .stepper, .menuButton, .tag, .codeBlock:
             "iOS, iPadOS, macOS, visionOS, tvOS, watchOS"
         case .slider, .dropZone:
             "iOS, iPadOS, macOS, visionOS"
