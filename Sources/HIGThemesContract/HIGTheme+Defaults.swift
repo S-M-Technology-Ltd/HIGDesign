@@ -71,6 +71,7 @@ extension HIGTheme {
     public var adminShell: any HIGAdminShellTokens { HIGSystemAdminShellTokens() }
     public var codeBlock: any HIGCodeBlockTokens { HIGSystemCodeBlockTokens() }
     public var carousel: any HIGCarouselTokens { HIGSystemCarouselTokens() }
+    public var lightbox: any HIGLightboxTokens { HIGSystemLightboxTokens() }
     public var mediaRow: any HIGMediaRowTokens { HIGSystemMediaRowTokens() }
     public var hero: any HIGHeroTokens { HIGSystemHeroTokens() }
     public var listGroup: any HIGListGroupTokens { HIGSystemListGroupTokens() }

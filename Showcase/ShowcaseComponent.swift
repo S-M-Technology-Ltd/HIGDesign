@@ -76,6 +76,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case lineChart
     case pieChart
     case areaChart
+    case lightbox
 
     public var id: String { rawValue }
 
@@ -163,6 +164,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .lineChart: "Line Chart"
         case .pieChart: "Pie Chart"
         case .areaChart: "Area Chart"
+        case .lightbox: "Lightbox"
         }
     }
 
@@ -236,6 +238,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .adminShell: "Split Views"
         case .codeBlock: "Typography"
         case .carousel: "Layout"
+        case .lightbox: "Media"
         case .mediaRow: "Layout"
         case .hero: "Layout"
         case .listGroup: "Lists and Tables"
@@ -323,6 +326,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .lineChart: "Line chart for ordered admin trend series via Swift Charts."
         case .pieChart: "Pie or donut chart for part-to-whole admin metrics via Swift Charts."
         case .areaChart: "Filled area chart for ordered admin trend series via Swift Charts."
+        case .lightbox: "Full-screen media gallery chrome with close, counter, and previous/next."
         }
     }
 
@@ -335,7 +339,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
              .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .matrixLoader,
              .list, .form,
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,
-             .bulletList, .textEditor, .stepper, .menuButton, .tag, .codeBlock, .carousel, .mediaRow, .hero, .listGroup, .barChart, .lineChart, .pieChart, .areaChart:
+             .bulletList, .textEditor, .stepper, .menuButton, .tag, .codeBlock, .carousel, .lightbox, .mediaRow, .hero, .listGroup, .barChart, .lineChart, .pieChart, .areaChart:
             "iOS, iPadOS, macOS, visionOS, tvOS, watchOS"
         case .slider, .dropZone:
             "iOS, iPadOS, macOS, visionOS"

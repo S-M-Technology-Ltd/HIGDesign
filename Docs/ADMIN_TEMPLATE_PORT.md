@@ -22,7 +22,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | 2 | Overlays & chrome | **Done** (core overlay kit) |
 | 3 | Advanced forms | **Done** (including `HIGDropZone` file upload) |
 | 4 | Data display | **In progress** (`HIGDataTable`) |
-| 5 | Content hybrids | **In progress** (`HIGCodeBlock`, `HIGCarousel`, `HIGMediaRow`, `HIGHero`, `HIGListGroup`) |
+| 5 | Content hybrids | **In progress** (`HIGCodeBlock`, `HIGCarousel`, `HIGLightbox`, `HIGMediaRow`, `HIGHero`, `HIGListGroup`) |
 | 6 | Swift Charts family | **In progress** (`HIGBarChart`, `HIGLineChart`, `HIGPieChart`, `HIGAreaChart`) |
 | 7 | Admin shell & layout | **In progress** (`HIGAdminShell` `.sidebar`) |
 | 8 | Parity extensions on existing components | Planned |
@@ -108,7 +108,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | File upload / drop | `HIGDropZone` | **Done** (browse + drop; security-scoped access owned by caller) |
 | Image crop | `HIGPhotoEditor` | Done |
 | Tree / sortable | `HIGTreeView`, `HIGReorderableList` | Planned |
-| Lightbox / carousel | `HIGLightbox`, `HIGCarousel` | **Partial** (`HIGCarousel` done; lightbox planned) |
+| Lightbox / carousel | `HIGLightbox`, `HIGCarousel` | **Done** |
 | Top progress (nprogress) | `HIGNetworkProgressBar` | **Done** |
 | Button loading (ladda) | `HIGButton` loading | Extend |
 | Slide panel | `HIGDrawer` / `higDrawer` | **Done** |

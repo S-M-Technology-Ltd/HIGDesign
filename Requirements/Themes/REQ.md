@@ -41,6 +41,7 @@ Theme contract, environment injection, and built-in system themes for HIGDesign.
 - `HIGTheme` includes `adminShell` component tokens for admin application shells.
 - `HIGTheme` includes `codeBlock` component tokens for monospaced code surfaces.
 - `HIGTheme` includes `carousel` component tokens for paged carousels.
+- `HIGTheme` includes `lightbox` component tokens for full-screen media gallery chrome.
 - `HIGTheme` includes `mediaRow` component tokens for media object rows.
 - `HIGTheme` includes `hero` component tokens for jumbotron-style hero surfaces.
 - `HIGTheme` includes `listGroup` component tokens for bordered list-group surfaces.

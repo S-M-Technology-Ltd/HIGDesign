@@ -69,6 +69,7 @@ public protocol HIGTheme: Sendable {
     var adminShell: any HIGAdminShellTokens { get }
     var codeBlock: any HIGCodeBlockTokens { get }
     var carousel: any HIGCarouselTokens { get }
+    var lightbox: any HIGLightboxTokens { get }
     var mediaRow: any HIGMediaRowTokens { get }
     var hero: any HIGHeroTokens { get }
     var listGroup: any HIGListGroupTokens { get }
