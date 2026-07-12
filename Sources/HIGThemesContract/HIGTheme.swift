@@ -40,6 +40,7 @@ public protocol HIGTheme: Sendable {
     var chatBubble: any HIGChatBubbleTokens { get }
     var comment: any HIGCommentTokens { get }
     var cover: any HIGCoverTokens { get }
+    var imageOverlay: any HIGImageOverlayTokens { get }
     var dataTable: any HIGDataTableTokens { get }
     var breadcrumb: any HIGBreadcrumbTokens { get }
     var pageHeader: any HIGPageHeaderTokens { get }

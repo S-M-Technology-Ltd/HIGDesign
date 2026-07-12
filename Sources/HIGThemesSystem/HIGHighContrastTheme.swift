@@ -42,6 +42,7 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
     public let chatBubble: any HIGChatBubbleTokens
     public let comment: any HIGCommentTokens
     public let cover: any HIGCoverTokens
+    public let imageOverlay: any HIGImageOverlayTokens
     public let dataTable: any HIGDataTableTokens
     public let breadcrumb: any HIGBreadcrumbTokens
     public let pageHeader: any HIGPageHeaderTokens
@@ -143,6 +144,7 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
         self.chatBubble = base.chatBubble
         self.comment = base.comment
         self.cover = base.cover
+        self.imageOverlay = base.imageOverlay
         self.dataTable = base.dataTable
         self.breadcrumb = base.breadcrumb
         self.pageHeader = base.pageHeader

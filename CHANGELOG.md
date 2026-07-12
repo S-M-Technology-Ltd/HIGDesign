@@ -109,6 +109,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Comment page plus token tests
 - `HIGCover` / `HIGCoverStyle` / `theme.cover` — cover banners with solid or custom backgrounds and optional scrim
 - Showcase Cover page plus token tests
+- `HIGImageOverlay` / `HIGImageOverlayEdge` / `theme.imageOverlay` — media figure overlays with caption or custom panel
+- Showcase Image Overlay page plus token tests
 
 ## 1.4.0 — 2026-07-10
 
