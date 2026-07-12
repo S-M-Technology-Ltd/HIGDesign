@@ -905,6 +905,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGDashboardGrid
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| Layout | All 6 | adaptive columns · optional title · widget host |
+
+**Guidelines:**
+- Use for KPI dashboards with counters, widgets, panels, and charts
+- Prefer `HIGPanelGroup` for a single-column stack; use the grid when cards should reflow
+- Column count follows available width via `minColumnWidth`
+- Token-backed spacing via `theme.dashboardGrid`
+
+---
+
 ### HIGCodeBlock
 
 | HIG category | Platforms | Features |

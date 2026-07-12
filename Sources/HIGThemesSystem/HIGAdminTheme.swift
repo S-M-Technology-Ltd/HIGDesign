@@ -54,6 +54,7 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
     public let treeView: any HIGTreeViewTokens
     public let reorderableList: any HIGReorderableListTokens
     public let calendar: any HIGCalendarTokens
+    public let dashboardGrid: any HIGDashboardGridTokens
     public let dataTable: any HIGDataTableTokens
     public let breadcrumb: any HIGBreadcrumbTokens
     public let pageHeader: any HIGPageHeaderTokens
@@ -191,6 +192,7 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
         self.treeView = base.treeView
         self.reorderableList = base.reorderableList
         self.calendar = base.calendar
+        self.dashboardGrid = base.dashboardGrid
         self.dataTable = base.dataTable
         self.breadcrumb = HIGSystemBreadcrumbTokens(
             font: base.breadcrumb.font,

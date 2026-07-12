@@ -94,6 +94,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case treeView
     case reorderableList
     case calendar
+    case dashboardGrid
 
     public var id: String { rawValue }
 
@@ -160,6 +161,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .treeView: "Tree View"
         case .reorderableList: "Reorderable List"
         case .calendar: "Calendar"
+        case .dashboardGrid: "Dashboard Grid"
         case .breadcrumb: "Breadcrumb"
         case .pageHeader: "Page Header"
         case .pagination: "Pagination"
@@ -258,6 +260,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .treeView: "Layout"
         case .reorderableList: "Layout"
         case .calendar: "Inputs"
+        case .dashboardGrid: "Layout"
         case .breadcrumb: "Navigation"
         case .pageHeader: "Navigation"
         case .pagination: "Navigation"
@@ -395,12 +398,13 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .treeView: "Hierarchical tree with expand, collapse, and optional selection."
         case .reorderableList: "Drag-to-reorder list for admin priority and section ordering."
         case .calendar: "Month grid calendar with day selection, navigation, and event marks."
+        case .dashboardGrid: "Adaptive multi-column grid for dashboard widgets and counters."
         }
     }
 
     var platforms: String {
         switch self {
-        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .panelGroup, .counter, .widget, .rating, .testimonial, .ribbon, .pricingCard, .chatBubble, .comment, .cover, .imageOverlay, .colorSelector, .socialButton, .imageFrame, .treeView, .reorderableList, .calendar, .breadcrumb, .pageHeader,
+        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .panelGroup, .counter, .widget, .rating, .testimonial, .ribbon, .pricingCard, .chatBubble, .comment, .cover, .imageOverlay, .colorSelector, .socialButton, .imageFrame, .treeView, .reorderableList, .calendar, .dashboardGrid, .breadcrumb, .pageHeader,
              .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .statusIndicator, .emptyState,
              .closeButton, .modal, .tooltip, .popover, .drawer, .confirmationDialog, .networkProgressBar,
              .buttonGroup, .menuToggle, .inputGroup, .fieldMessage, .datePicker, .timePicker, .select, .autocomplete, .tagInput, .dataTable, .toolbar,
