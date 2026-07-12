@@ -96,6 +96,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case calendar
     case dashboardGrid
     case videoPlayer
+    case coachMark
 
     public var id: String { rawValue }
 
@@ -164,6 +165,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .calendar: "Calendar"
         case .dashboardGrid: "Dashboard Grid"
         case .videoPlayer: "Video Player"
+        case .coachMark: "Coach Mark"
         case .breadcrumb: "Breadcrumb"
         case .pageHeader: "Page Header"
         case .pagination: "Pagination"
@@ -264,6 +266,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .calendar: "Inputs"
         case .dashboardGrid: "Layout"
         case .videoPlayer: "Content"
+        case .coachMark: "Tooltips"
         case .breadcrumb: "Navigation"
         case .pageHeader: "Navigation"
         case .pagination: "Navigation"
@@ -403,12 +406,13 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .calendar: "Month grid calendar with day selection, navigation, and event marks."
         case .dashboardGrid: "Adaptive multi-column grid for dashboard widgets and counters."
         case .videoPlayer: "Themed video surface with optional title, caption, and placeholder."
+        case .coachMark: "Onboarding coach mark with step progress, actions, and overlay helper."
         }
     }
 
     var platforms: String {
         switch self {
-        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .panelGroup, .counter, .widget, .rating, .testimonial, .ribbon, .pricingCard, .chatBubble, .comment, .cover, .imageOverlay, .colorSelector, .socialButton, .imageFrame, .treeView, .reorderableList, .calendar, .dashboardGrid, .videoPlayer, .breadcrumb, .pageHeader,
+        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .panelGroup, .counter, .widget, .rating, .testimonial, .ribbon, .pricingCard, .chatBubble, .comment, .cover, .imageOverlay, .colorSelector, .socialButton, .imageFrame, .treeView, .reorderableList, .calendar, .dashboardGrid, .videoPlayer, .coachMark, .breadcrumb, .pageHeader,
              .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .statusIndicator, .emptyState,
              .closeButton, .modal, .tooltip, .popover, .drawer, .confirmationDialog, .networkProgressBar,
              .buttonGroup, .menuToggle, .inputGroup, .fieldMessage, .datePicker, .timePicker, .select, .autocomplete, .tagInput, .dataTable, .toolbar,

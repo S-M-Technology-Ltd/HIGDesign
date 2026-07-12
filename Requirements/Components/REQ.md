@@ -89,6 +89,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 - `HIGCalendar` — month grid with day selection, month navigation, and optional event marks; tokens via `theme.calendar`
 - `HIGDashboardGrid` — adaptive multi-column grid for dashboard widgets and counters; tokens via `theme.dashboardGrid`
 - `HIGVideoPlayer` — themed video surface with optional title, caption, URL-backed AVKit player, and placeholder; tokens via `theme.videoPlayer`
+- `HIGCoachMark` / `higCoachMark(...)` — onboarding coach mark with step progress, next/back/skip actions, and optional scrim overlay; tokens via `theme.coachMark`
 - `HIGCounter` / `HIGCounterTrend` — dashboard KPI tile with value, caption, optional icon and trend; tokens via `theme.counter`
 - `HIGWidget` — dashboard host surface with optional title, subtitle, trailing slot, and body content; tokens via `theme.widget`
 - `HIGDataTable` / `HIGDataTableColumn` — columnar admin table with header, striping, horizontal scroll, and empty state; tokens via `theme.dataTable`
@@ -114,7 +115,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 
 #### Admin catalog expansion (planned families)
 
-Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons: Showcase app recipes and remaining planned components (`HIGCoachMark`).
+Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons: Showcase app/page recipes (Wave 9) and maps as MapKit recipe.
 
 #### Content
 

@@ -51,6 +51,7 @@ extension HIGTheme {
     public var calendar: any HIGCalendarTokens { HIGSystemCalendarTokens() }
     public var dashboardGrid: any HIGDashboardGridTokens { HIGSystemDashboardGridTokens() }
     public var videoPlayer: any HIGVideoPlayerTokens { HIGSystemVideoPlayerTokens() }
+    public var coachMark: any HIGCoachMarkTokens { HIGSystemCoachMarkTokens() }
     public var dataTable: any HIGDataTableTokens { HIGSystemDataTableTokens() }
     public var breadcrumb: any HIGBreadcrumbTokens { HIGSystemBreadcrumbTokens() }
     public var pageHeader: any HIGPageHeaderTokens { HIGSystemPageHeaderTokens() }

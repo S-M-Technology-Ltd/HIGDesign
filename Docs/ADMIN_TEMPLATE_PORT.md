@@ -117,7 +117,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Maps | MapKit optional / recipe | Planned |
 | Dashboard grid | `HIGDashboardGrid` | **Done** |
 | Video | `HIGVideoPlayer` | **Done** |
-| Coach marks | `HIGCoachMark` | Planned |
+| Coach marks | `HIGCoachMark` | **Done** |
 | Icon fonts (15+) | SF Symbols + Heroicons mapping | Excluded (fonts) |
 | Animsition | — | Excluded |
 | Chart.js / C3 / Flot / … | Swift Charts only | Excluded (vendors) |

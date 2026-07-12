@@ -38,6 +38,7 @@ Theme contract, environment injection, and built-in system themes for HIGDesign.
 - `HIGTheme` includes `calendar` component tokens for ``HIGCalendar``.
 - `HIGTheme` includes `dashboardGrid` component tokens for ``HIGDashboardGrid``.
 - `HIGTheme` includes `videoPlayer` component tokens for ``HIGVideoPlayer``.
+- `HIGTheme` includes `coachMark` component tokens for ``HIGCoachMark``.
 - `HIGTheme` includes `counter` component tokens for ``HIGCounter``.
 - `HIGTheme` includes `widget` component tokens for ``HIGWidget``.
 - `HIGTheme` includes `breadcrumb` and `pageHeader` component tokens for ``HIGBreadcrumb`` and ``HIGPageHeader``.

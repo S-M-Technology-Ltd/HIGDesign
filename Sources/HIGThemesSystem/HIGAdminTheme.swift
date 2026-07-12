@@ -56,6 +56,7 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
     public let calendar: any HIGCalendarTokens
     public let dashboardGrid: any HIGDashboardGridTokens
     public let videoPlayer: any HIGVideoPlayerTokens
+    public let coachMark: any HIGCoachMarkTokens
     public let dataTable: any HIGDataTableTokens
     public let breadcrumb: any HIGBreadcrumbTokens
     public let pageHeader: any HIGPageHeaderTokens
@@ -195,6 +196,7 @@ public struct HIGAdminTheme: HIGTheme, Sendable {
         self.calendar = base.calendar
         self.dashboardGrid = base.dashboardGrid
         self.videoPlayer = base.videoPlayer
+        self.coachMark = base.coachMark
         self.dataTable = base.dataTable
         self.breadcrumb = HIGSystemBreadcrumbTokens(
             font: base.breadcrumb.font,

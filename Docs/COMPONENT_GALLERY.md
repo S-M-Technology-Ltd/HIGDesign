@@ -933,6 +933,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGCoachMark
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| Tooltips | All 6 | step progress · title · message · next/back/skip · overlay helper |
+
+**Guidelines:**
+- Use for first-run admin tours and feature discovery
+- Drive multi-step tours with host state (`stepIndex` / `stepCount`)
+- Prefer `higCoachMark(...)` for scrim + card presentation over a host surface
+- Token-backed metrics via `theme.coachMark`
+
+---
+
 ### HIGCodeBlock
 
 | HIG category | Platforms | Features |

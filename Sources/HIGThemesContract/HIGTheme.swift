@@ -49,6 +49,7 @@ public protocol HIGTheme: Sendable {
     var calendar: any HIGCalendarTokens { get }
     var dashboardGrid: any HIGDashboardGridTokens { get }
     var videoPlayer: any HIGVideoPlayerTokens { get }
+    var coachMark: any HIGCoachMarkTokens { get }
     var dataTable: any HIGDataTableTokens { get }
     var breadcrumb: any HIGBreadcrumbTokens { get }
     var pageHeader: any HIGPageHeaderTokens { get }
