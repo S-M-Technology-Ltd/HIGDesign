@@ -91,6 +91,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Drawer option; reuses `HIGMenuToggle` and drawer scrim tokens (Wave 7.6; shell styles complete)
 - `HIGCounter` / `HIGCounterTrend` / `theme.counter` — dashboard KPI tiles with value, caption, icon, and trend
 - Showcase Counter page plus token tests (Wave 8.1 widgets start)
+- `HIGWidget` / `theme.widget` — dashboard host surface for counters, charts, or custom body content
+- Showcase Widget page plus token tests (Wave 8.2)
 
 ## 1.4.0 — 2026-07-10
 

@@ -679,6 +679,21 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGWidget
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| Layout | All 6 | title · subtitle · trailing · body host · themed chrome |
+
+**Guidelines:**
+- Host counters, charts, or custom views for dashboard grids
+- Prefer `HIGWidget` over `HIGPanel` when collapse/refresh chrome is unnecessary
+- Use the trailing slot for lightweight actions (export, menu)
+- Nested counters keep their own chrome; body-only widgets stay minimal
+- Token-backed chrome via `theme.widget`
+
+---
+
 ### HIGCodeBlock
 
 | HIG category | Platforms | Features |
