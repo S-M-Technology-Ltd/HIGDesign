@@ -169,6 +169,40 @@ struct ShowcaseSnapshotCatalogDetailView: View {
             ShowcaseAppTravelView()
         case .appWork:
             ShowcaseAppWorkView()
+        case .pageLogin:
+            ShowcasePageLoginView()
+        case .pageRegister:
+            ShowcasePageRegisterView()
+        case .pageForgotPassword:
+            ShowcasePageForgotPasswordView()
+        case .pageLockscreen:
+            ShowcasePageLockscreenView()
+        case .pageProfile:
+            ShowcasePageProfileView()
+        case .pageUser:
+            ShowcasePageUserView()
+        case .pageInvoice:
+            ShowcasePageInvoiceView()
+        case .pageFAQ:
+            ShowcasePageFAQView()
+        case .pageErrors:
+            ShowcasePageErrorsView()
+        case .pageMaintenance:
+            ShowcasePageMaintenanceView()
+        case .pageBlank:
+            ShowcasePageBlankView()
+        case .pageGallery:
+            ShowcasePageGalleryView()
+        case .pageSearchResult:
+            ShowcasePageSearchResultView()
+        case .pageSiteMap:
+            ShowcasePageSiteMapView()
+        case .pageProject:
+            ShowcasePageProjectView()
+        case .pageCodeEditor:
+            ShowcasePageCodeEditorView()
+        case .pageEmailTemplates:
+            ShowcasePageEmailTemplatesView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:

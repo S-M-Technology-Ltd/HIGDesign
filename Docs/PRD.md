@@ -124,6 +124,7 @@ First delivery slices:
 - `HIGCoachMark` (onboarding coach marks with step progress and overlay helper)
 - Showcase Map recipe (`ShowcaseMapView` — MapKit composition; no library `HIGMap`)
 - Wave 9.1 Showcase app recipes (13 Remark `html/apps/*` compositions)
+- Wave 9.2 Showcase page recipes (17 consolidated entries covering 34 Remark `html/pages/*`)
 - `HIGCodeBlock` (Wave 5.1 monospaced code surface)
 - `HIGCarousel` (Wave 5.2 paged carousel)
 - `HIGMediaRow` (Wave 5.3 media object row)

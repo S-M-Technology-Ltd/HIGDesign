@@ -11,6 +11,7 @@ Demonstration app for visually verifying HIGDesign components, themes, accessibi
 - Demonstrate every public component in realistic HIG contexts (including charts, widgets, ratings, testimonials, ribbons, pricing cards, chat bubbles, comments, covers, image overlays, color selectors, social buttons, image frames, tree views, reorderable lists, calendars, dashboard grids, video players, and coach marks).
 - Include composition recipes that are not library modules (for example the MapKit **Map** recipe using `HIGWidget`, `HIGPanel`, and `HIGListGroup`).
 - Include Wave 9 app recipes for Remark `html/apps/*` (Mailbox, Calendar, Contacts, Documents, Forum, Location, Media, Message, Notebook, Projects, Taskboard, Travel, Work) as Showcase catalog entries composed only from public HIG APIs.
+- Include Wave 9 page recipes for Remark `html/pages/*` as consolidated Showcase catalog entries (login/register/profile/error/email variants share a single recipe each; map pages redirect to the Map recipe).
 - Provide theme switcher for light, dark, increased contrast, brand, and optional **Admin** (`HIGAdminTheme`).
 - Provide Dynamic Type and Reduce Motion demonstration states.
 - Provide an Icon playground in settings when the Icon component is selected (family, token, variant, size, style, and tint). Fixed size uses a slider from the theme small icon token through 512pt.
