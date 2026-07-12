@@ -307,8 +307,8 @@ swift test --package-path .
 
 Current Milestone
 
-Current milestone: v1.4.0 released (2026-07-10).
+Current milestone: v1.5.0 released (2026-07-12).
 
-v1.4.0 delivered `HIGMatrixLoader` (112 clean-room animations), matrix loader tokens/showcase/tests, and multi-platform sample verification gates. See `Docs/PRD.md` and `CHANGELOG.md` for the full release notes.
+v1.5.0 delivered the admin catalog expansion: `HIGAdminTheme`, `HIGAdminShell`, panels/wayfinding, advanced forms, Swift Charts, content hybrids, coach marks, MapKit map recipe, and Wave 9 Showcase app/page recipes. See `Docs/PRD.md` and `CHANGELOG.md`.
 
-Next milestone: post-v1.4.0 component and platform expansion per `Docs/PRD.md`.
+Next milestone: optional Extend-row parity polish and platform polish per `Docs/PRD.md` / `Docs/ADMIN_TEMPLATE_PORT.md`.
