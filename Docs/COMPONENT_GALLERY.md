@@ -688,6 +688,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGMediaRow
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| [Layout](https://developer.apple.com/design/human-interface-guidelines/layout) | All 6 | leading media · title · subtitle · trailing · optional border |
+
+**Guidelines:**
+- Use for people lists, notifications, and content previews
+- Prefer `HIGAvatar` or SF Symbols in the leading slot
+- Keep titles concise; put secondary detail in the subtitle
+- Optional border for standalone surfaces; omit inside lists
+
+---
+
 ### HIGBreadcrumb
 
 | HIG category | Platforms | Features |

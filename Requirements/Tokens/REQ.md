@@ -59,6 +59,7 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - `HIGAdminShellTokens` defines brand/content padding, brand font, and sidebar column widths for ``HIGAdminShell``.
 - `HIGCodeBlockTokens` defines monospaced font, padding, radius, and max height for ``HIGCodeBlock``.
 - `HIGCarouselTokens` defines min height, radius, indicator metrics, and content padding for ``HIGCarousel``.
+- `HIGMediaRowTokens` defines padding, spacing, fonts, and border metrics for ``HIGMediaRow``.
 
 ### Naming and API
 
