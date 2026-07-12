@@ -35,6 +35,7 @@ extension HIGTheme {
     public var panelGroup: any HIGPanelGroupTokens { HIGSystemPanelGroupTokens() }
     public var counter: any HIGCounterTokens { HIGSystemCounterTokens() }
     public var widget: any HIGWidgetTokens { HIGSystemWidgetTokens() }
+    public var rating: any HIGRatingTokens { HIGSystemRatingTokens() }
     public var dataTable: any HIGDataTableTokens { HIGSystemDataTableTokens() }
     public var breadcrumb: any HIGBreadcrumbTokens { HIGSystemBreadcrumbTokens() }
     public var pageHeader: any HIGPageHeaderTokens { HIGSystemPageHeaderTokens() }

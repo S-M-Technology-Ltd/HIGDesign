@@ -708,6 +708,21 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGRating
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| Content | All 6 | stars · display or interactive · optional label · adjustable |
+
+**Guidelines:**
+- Use for product reviews, feedback forms, and admin quality scores
+- Prefer display-only (`value: Int`) for read surfaces; binding for editable forms
+- Keep `maxValue` small (typically 5) for scanability
+- Filled stars use semantic warning color; empty stars use separator
+- Token-backed metrics via `theme.rating`
+
+---
+
 ### HIGCodeBlock
 
 | HIG category | Platforms | Features |

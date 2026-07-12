@@ -33,6 +33,7 @@ public protocol HIGTheme: Sendable {
     var panelGroup: any HIGPanelGroupTokens { get }
     var counter: any HIGCounterTokens { get }
     var widget: any HIGWidgetTokens { get }
+    var rating: any HIGRatingTokens { get }
     var dataTable: any HIGDataTableTokens { get }
     var breadcrumb: any HIGBreadcrumbTokens { get }
     var pageHeader: any HIGPageHeaderTokens { get }
