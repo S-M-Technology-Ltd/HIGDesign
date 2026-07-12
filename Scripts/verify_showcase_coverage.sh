@@ -5,7 +5,7 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
 EXPECTED=(
-    button textField toggle divider progressView card panel breadcrumb pageHeader pagination tabs accordion steps pearlSteps timeline statusIndicator emptyState closeButton modal tooltip popover drawer confirmationDialog networkProgressBar buttonGroup menuToggle inputGroup fieldMessage datePicker timePicker select autocomplete tagInput dataTable dropZone adminShell codeBlock carousel mediaRow hero listGroup barChart tabBar toolbar
+    button textField toggle divider progressView card panel breadcrumb pageHeader pagination tabs accordion steps pearlSteps timeline statusIndicator emptyState closeButton modal tooltip popover drawer confirmationDialog networkProgressBar buttonGroup menuToggle inputGroup fieldMessage datePicker timePicker select autocomplete tagInput dataTable dropZone adminShell codeBlock carousel mediaRow hero listGroup barChart lineChart tabBar toolbar
     alert toast sidebar navigationBar label badge activityIndicator matrixLoader list form
     checkbox radio segmentedControl slider secureField searchField picker
     icon avatar link bulletList textEditor stepper menuButton tag photoPicker photoEditor longTextEditor
@@ -47,6 +47,7 @@ showcase_key_for() {
         HIGListGroup) echo listGroup ;;
         HIGListGroupRow) echo listGroup ;;
         HIGBarChart) echo barChart ;;
+        HIGLineChart) echo lineChart ;;
         HIGToggle) echo toggle ;;
         HIGCheckbox) echo checkbox ;;
         HIGRadio) echo radio ;;

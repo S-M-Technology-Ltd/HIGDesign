@@ -744,6 +744,21 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGLineChart
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| Charts | All 6 | trend line · optional symbols · title · empty state · themed axes |
+
+**Guidelines:**
+- Use for ordered series and trends over time (signups, revenue, traffic)
+- Reuse `HIGChartPoint`; keep labels short for readable axes
+- Built on Apple Swift Charts only — no Chart.js or other web vendors
+- Toggle `showsSymbols` when dense series need a cleaner line
+- Provide an empty message when data has not loaded
+
+---
+
 ### HIGBreadcrumb
 
 | HIG category | Platforms | Features |

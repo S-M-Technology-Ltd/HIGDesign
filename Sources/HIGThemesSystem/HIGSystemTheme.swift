@@ -74,6 +74,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let hero: any HIGHeroTokens
     public let listGroup: any HIGListGroupTokens
     public let barChart: any HIGBarChartTokens
+    public let lineChart: any HIGLineChartTokens
     public let photoPicker: any HIGPhotoPickerTokens
     public let photoEditor: any HIGPhotoEditorTokens
     public let longTextEditor: any HIGLongTextEditorTokens
@@ -149,6 +150,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         hero: any HIGHeroTokens = HIGSystemHeroTokens(),
         listGroup: any HIGListGroupTokens = HIGSystemListGroupTokens(),
         barChart: any HIGBarChartTokens = HIGSystemBarChartTokens(),
+        lineChart: any HIGLineChartTokens = HIGSystemLineChartTokens(),
         photoPicker: any HIGPhotoPickerTokens = HIGSystemPhotoPickerTokens(),
         photoEditor: any HIGPhotoEditorTokens = HIGSystemPhotoEditorTokens(),
         longTextEditor: any HIGLongTextEditorTokens = HIGSystemLongTextEditorTokens()
@@ -223,6 +225,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.hero = hero
         self.listGroup = listGroup
         self.barChart = barChart
+        self.lineChart = lineChart
         self.photoPicker = photoPicker
         self.photoEditor = photoEditor
         self.longTextEditor = longTextEditor

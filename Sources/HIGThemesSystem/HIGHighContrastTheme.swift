@@ -75,6 +75,7 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
     public let hero: any HIGHeroTokens
     public let listGroup: any HIGListGroupTokens
     public let barChart: any HIGBarChartTokens
+    public let lineChart: any HIGLineChartTokens
     public let photoPicker: any HIGPhotoPickerTokens
     public let photoEditor: any HIGPhotoEditorTokens
     public let longTextEditor: any HIGLongTextEditorTokens
@@ -162,6 +163,7 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
         self.hero = base.hero
         self.listGroup = base.listGroup
         self.barChart = base.barChart
+        self.lineChart = base.lineChart
         self.photoPicker = base.photoPicker
         self.photoEditor = base.photoEditor
         self.longTextEditor = base.longTextEditor

@@ -73,6 +73,7 @@ public protocol HIGTheme: Sendable {
     var hero: any HIGHeroTokens { get }
     var listGroup: any HIGListGroupTokens { get }
     var barChart: any HIGBarChartTokens { get }
+    var lineChart: any HIGLineChartTokens { get }
     var photoPicker: any HIGPhotoPickerTokens { get }
     var photoEditor: any HIGPhotoEditorTokens { get }
     var longTextEditor: any HIGLongTextEditorTokens { get }
