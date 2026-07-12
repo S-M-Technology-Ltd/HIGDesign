@@ -22,10 +22,11 @@ func adminShellTokensUseReadableMetrics() {
 
 @Test
 func adminShellStyleCasesAreStable() {
-    #expect(HIGAdminShellStyle.allCases.count == 5)
+    #expect(HIGAdminShellStyle.allCases.count == 6)
     #expect(HIGAdminShellStyle.sidebar.rawValue == "sidebar")
     #expect(HIGAdminShellStyle.iconRail.rawValue == "iconRail")
     #expect(HIGAdminShellStyle.topBar.rawValue == "topBar")
     #expect(HIGAdminShellStyle.topIcon.rawValue == "topIcon")
     #expect(HIGAdminShellStyle.centered.rawValue == "centered")
+    #expect(HIGAdminShellStyle.drawer.rawValue == "drawer")
 }

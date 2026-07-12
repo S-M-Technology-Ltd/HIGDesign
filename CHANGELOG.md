@@ -87,6 +87,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Top Icon option; shared top-strip implementation with topBar (Wave 7.4)
 - `HIGAdminShellStyle.centered` — Remark center: top nav + max-width centered detail column
 - `centeredMaxWidth` admin shell token; Showcase Centered option (Wave 7.5)
+- `HIGAdminShellStyle.drawer` — Remark mmenu: hamburger + sliding navigation drawer over full-width detail
+- Showcase Drawer option; reuses `HIGMenuToggle` and drawer scrim tokens (Wave 7.6; shell styles complete)
 
 ## 1.4.0 — 2026-07-10
 
