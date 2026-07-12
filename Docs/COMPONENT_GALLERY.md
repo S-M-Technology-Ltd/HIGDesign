@@ -737,6 +737,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGRibbon
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| Content | All 6 | corner label · accent/neutral/destructive · leading/trailing · overlay helper |
+
+**Guidelines:**
+- Use for short promo markers (`NEW`, `SALE`, `BETA`) on cards and product tiles
+- Prefer `higRibbon(_:style:edge:)` to pin the label to a host corner
+- Keep text short; clip the host when the ribbon should not spill outside rounded cards
+- Token-backed metrics via `theme.ribbon`
+
+---
+
 ### HIGCodeBlock
 
 | HIG category | Platforms | Features |
