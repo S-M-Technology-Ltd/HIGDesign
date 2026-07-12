@@ -4,7 +4,7 @@ import Testing
 @Test
 func showcaseCatalogIncludesLongTextEditor() {
     let titles = ShowcaseComponent.allCases.map(\.title)
-    #expect(ShowcaseComponent.allCases.count == 74)
+    #expect(ShowcaseComponent.allCases.count == 75)
     #expect(titles.contains("Photo Editor"))
     #expect(titles.contains("Long Text Editor"))
     #expect(titles.contains("Matrix Loader"))
@@ -46,5 +46,6 @@ func showcaseCatalogIncludesLongTextEditor() {
     #expect(titles.contains("Bar Chart"))
     #expect(titles.contains("Line Chart"))
     #expect(titles.contains("Pie Chart"))
-    #expect(ShowcaseComponent.allCases.last?.title == "Pie Chart")
+    #expect(titles.contains("Area Chart"))
+    #expect(ShowcaseComponent.allCases.last?.title == "Area Chart")
 }

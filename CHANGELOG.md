@@ -75,6 +75,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Line Chart page plus token tests (Wave 6.2 charts family)
 - `HIGPieChart` / `HIGPieChartStyle` / `theme.pieChart` — pie and donut charts via Apple Swift Charts
 - Showcase Pie Chart page plus token tests (Wave 6.3 charts family)
+- `HIGAreaChart` / `theme.areaChart` — filled area chart with optional stroke via Apple Swift Charts
+- Showcase Area Chart page plus token tests (Wave 6.4 charts family)
 
 ## 1.4.0 — 2026-07-10
 

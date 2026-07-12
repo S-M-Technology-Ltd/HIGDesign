@@ -65,6 +65,7 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - `HIGBarChartTokens` defines plot height, padding, radius, and fonts for ``HIGBarChart``.
 - `HIGLineChartTokens` defines plot height, padding, line width, symbol size, and fonts for ``HIGLineChart``.
 - `HIGPieChartTokens` defines plot height, padding, sector inset, donut radius, and fonts for ``HIGPieChart``.
+- `HIGAreaChartTokens` defines plot height, padding, line width, and fonts for ``HIGAreaChart``.
 
 ### Naming and API
 

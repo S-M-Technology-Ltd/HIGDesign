@@ -96,6 +96,8 @@ struct ShowcaseSnapshotCatalogDetailView: View {
             ShowcaseLineChartView()
         case .pieChart:
             ShowcasePieChartView()
+        case .areaChart:
+            ShowcaseAreaChartView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:
