@@ -716,6 +716,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGListGroup
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| [Lists and Tables](https://developer.apple.com/design/human-interface-guidelines/lists-and-tables) | All 6 | header · footer · bordered rows · selection · chevron |
+
+**Guidelines:**
+- Use for compact option lists and secondary navigation outside a full `List`
+- Compose with `HIGListGroupRow` and `HIGDivider` between items
+- Prefer `HIGList` when you need native scrolling list chrome and large data sets
+- Mark the active destination with `isSelected: true`
+
+---
+
 ### HIGBreadcrumb
 
 | HIG category | Platforms | Features |

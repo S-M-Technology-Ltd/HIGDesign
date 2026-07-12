@@ -71,6 +71,7 @@ public protocol HIGTheme: Sendable {
     var carousel: any HIGCarouselTokens { get }
     var mediaRow: any HIGMediaRowTokens { get }
     var hero: any HIGHeroTokens { get }
+    var listGroup: any HIGListGroupTokens { get }
     var photoPicker: any HIGPhotoPickerTokens { get }
     var photoEditor: any HIGPhotoEditorTokens { get }
     var longTextEditor: any HIGLongTextEditorTokens { get }

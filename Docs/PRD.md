@@ -101,6 +101,7 @@ First delivery slices:
 - `HIGCarousel` (Wave 5.2 paged carousel)
 - `HIGMediaRow` (Wave 5.3 media object row)
 - `HIGHero` / `HIGHeroStyle` (Wave 5.4 jumbotron hero)
+- `HIGListGroup` / `HIGListGroupRow` (Wave 5.5 bordered list groups)
 
 ## Previous Milestone: v1.4.0 (released)
 

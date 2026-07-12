@@ -73,6 +73,7 @@ extension HIGTheme {
     public var carousel: any HIGCarouselTokens { HIGSystemCarouselTokens() }
     public var mediaRow: any HIGMediaRowTokens { HIGSystemMediaRowTokens() }
     public var hero: any HIGHeroTokens { HIGSystemHeroTokens() }
+    public var listGroup: any HIGListGroupTokens { HIGSystemListGroupTokens() }
     public var photoPicker: any HIGPhotoPickerTokens { HIGSystemPhotoPickerTokens() }
     public var photoEditor: any HIGPhotoEditorTokens { HIGSystemPhotoEditorTokens() }
     public var longTextEditor: any HIGLongTextEditorTokens { HIGSystemLongTextEditorTokens() }
