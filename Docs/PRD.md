@@ -102,6 +102,7 @@ First delivery slices:
 - `HIGMediaRow` (Wave 5.3 media object row)
 - `HIGHero` / `HIGHeroStyle` (Wave 5.4 jumbotron hero)
 - `HIGListGroup` / `HIGListGroupRow` (Wave 5.5 bordered list groups)
+- `HIGBarChart` / `HIGChartPoint` (Wave 6.1 Swift Charts bar chart)
 
 ## Previous Milestone: v1.4.0 (released)
 

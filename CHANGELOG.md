@@ -69,6 +69,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Hero page plus token tests (Wave 5.4)
 - `HIGListGroup` / `HIGListGroupRow` / `theme.listGroup` — bordered list-group surface with selectable rows
 - Showcase List Group page plus token tests (Wave 5.5)
+- `HIGBarChart` / `HIGChartPoint` / `theme.barChart` — vertical bar chart via Apple Swift Charts
+- Showcase Bar Chart page plus token tests (Wave 6.1 charts family)
 
 ## 1.4.0 — 2026-07-10
 

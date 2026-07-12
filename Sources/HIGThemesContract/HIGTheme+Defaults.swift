@@ -74,6 +74,7 @@ extension HIGTheme {
     public var mediaRow: any HIGMediaRowTokens { HIGSystemMediaRowTokens() }
     public var hero: any HIGHeroTokens { HIGSystemHeroTokens() }
     public var listGroup: any HIGListGroupTokens { HIGSystemListGroupTokens() }
+    public var barChart: any HIGBarChartTokens { HIGSystemBarChartTokens() }
     public var photoPicker: any HIGPhotoPickerTokens { HIGSystemPhotoPickerTokens() }
     public var photoEditor: any HIGPhotoEditorTokens { HIGSystemPhotoEditorTokens() }
     public var longTextEditor: any HIGLongTextEditorTokens { HIGSystemLongTextEditorTokens() }

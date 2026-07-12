@@ -23,7 +23,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | 3 | Advanced forms | **Done** (including `HIGDropZone` file upload) |
 | 4 | Data display | **In progress** (`HIGDataTable`) |
 | 5 | Content hybrids | **In progress** (`HIGCodeBlock`, `HIGCarousel`, `HIGMediaRow`, `HIGHero`, `HIGListGroup`) |
-| 6 | Swift Charts family | Planned |
+| 6 | Swift Charts family | **In progress** (`HIGBarChart`) |
 | 7 | Admin shell & layout | **In progress** (`HIGAdminShell` `.sidebar`) |
 | 8 | Parity extensions on existing components | Planned |
 | 9 | App/page Showcase recipes | Planned |
@@ -113,7 +113,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | Button loading (ladda) | `HIGButton` loading | Extend |
 | Slide panel | `HIGDrawer` / `higDrawer` | **Done** |
 | Calendar | `HIGCalendar` | Planned |
-| Charts (all JS libs) | Swift Charts family | Planned |
+| Charts (all JS libs) | Swift Charts family | **In progress** (`HIGBarChart`) |
 | Maps | MapKit optional / recipe | Planned |
 | Dashboard grid | `HIGDashboardGrid` | Planned |
 | Video | `HIGVideoPlayer` | Planned |

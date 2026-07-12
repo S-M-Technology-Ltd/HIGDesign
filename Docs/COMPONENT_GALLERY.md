@@ -730,6 +730,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGBarChart
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| Charts | All 6 | categorical bars · title · empty state · themed axes |
+
+**Guidelines:**
+- Use for admin dashboards comparing categories (days, plans, regions)
+- Pass `HIGChartPoint` values; keep label sets short for readability
+- Built on Apple Swift Charts only — no Chart.js or other web vendors
+- Provide an empty message when data has not loaded
+
+---
+
 ### HIGBreadcrumb
 
 | HIG category | Platforms | Features |
