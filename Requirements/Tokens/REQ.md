@@ -62,6 +62,7 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - `HIGMediaRowTokens` defines padding, spacing, fonts, and border metrics for ``HIGMediaRow``.
 - `HIGHeroTokens` defines min height, padding, spacing, radius, and fonts for ``HIGHero``.
 - `HIGListGroupTokens` defines row metrics, fonts, and border chrome for ``HIGListGroup`` and ``HIGListGroupRow``.
+- `HIGBarChartTokens` defines plot height, padding, radius, and fonts for ``HIGBarChart``.
 
 ### Naming and API
 

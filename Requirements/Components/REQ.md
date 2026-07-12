@@ -95,7 +95,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 
 #### Admin catalog expansion (planned families)
 
-Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after list group: lightbox, Swift Charts, and additional admin shell styles.
+Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after bar chart: line/pie charts, lightbox, and additional admin shell styles.
 
 #### Content
 
@@ -105,6 +105,10 @@ Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. P
 - `HIGMediaRow` — media object row with leading media, title, subtitle, and trailing slot; tokens via `theme.mediaRow`
 - `HIGHero` / `HIGHeroStyle` — jumbotron-style hero with title, subtitle, and optional actions; tokens via `theme.hero`
 - `HIGIcon`
+
+#### Charts
+
+- `HIGBarChart` / `HIGChartPoint` — vertical bar chart via Apple Swift Charts; tokens via `theme.barChart`
 - `HIGAvatar`
 - `HIGBulletList`
 - `HIGLink`
