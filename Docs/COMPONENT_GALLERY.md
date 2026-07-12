@@ -765,6 +765,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGChatBubble
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| Content | All 6 | message · author · timestamp · avatar · leading/trailing |
+
+**Guidelines:**
+- Use for support threads, admin messaging, and conversational UIs
+- Prefer `.trailing` for the local user and `.leading` for peers
+- Outgoing bubbles use accent fill; incoming use fill primary
+- Token-backed metrics via `theme.chatBubble`
+
+---
+
 ### HIGCodeBlock
 
 | HIG category | Platforms | Features |

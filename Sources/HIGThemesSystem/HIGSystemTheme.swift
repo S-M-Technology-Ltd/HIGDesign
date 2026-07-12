@@ -38,6 +38,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let testimonial: any HIGTestimonialTokens
     public let ribbon: any HIGRibbonTokens
     public let pricingCard: any HIGPricingCardTokens
+    public let chatBubble: any HIGChatBubbleTokens
     public let dataTable: any HIGDataTableTokens
     public let breadcrumb: any HIGBreadcrumbTokens
     public let pageHeader: any HIGPageHeaderTokens
@@ -124,6 +125,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         testimonial: any HIGTestimonialTokens = HIGSystemTestimonialTokens(),
         ribbon: any HIGRibbonTokens = HIGSystemRibbonTokens(),
         pricingCard: any HIGPricingCardTokens = HIGSystemPricingCardTokens(),
+        chatBubble: any HIGChatBubbleTokens = HIGSystemChatBubbleTokens(),
         dataTable: any HIGDataTableTokens = HIGSystemDataTableTokens(),
         breadcrumb: any HIGBreadcrumbTokens = HIGSystemBreadcrumbTokens(),
         pageHeader: any HIGPageHeaderTokens = HIGSystemPageHeaderTokens(),
@@ -209,6 +211,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.testimonial = testimonial
         self.ribbon = ribbon
         self.pricingCard = pricingCard
+        self.chatBubble = chatBubble
         self.dataTable = dataTable
         self.breadcrumb = breadcrumb
         self.pageHeader = pageHeader
