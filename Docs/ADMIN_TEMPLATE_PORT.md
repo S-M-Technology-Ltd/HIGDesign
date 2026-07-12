@@ -26,7 +26,7 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 | 6 | Swift Charts family | **In progress** (`HIGBarChart`, `HIGLineChart`, `HIGPieChart`, `HIGAreaChart`) |
 | 7 | Admin shell & layout | **Done** (`HIGAdminShell` styles: sidebar, iconRail, topBar, topIcon, centered, drawer) |
 | 8 | Widgets & parity extensions | **In progress** (`HIGCounter`, `HIGWidget`, `HIGPanelGroup`) |
-| 9 | App/page Showcase recipes | Planned |
+| 9 | App/page Showcase recipes | **In progress** (13 app recipes) |
 | 10 | Gallery, DocC, release | Planned |
 
 ## Themes
@@ -137,8 +137,8 @@ Reference: `/Users/andy/github/admin-template/design-system/` · demos under `ad
 
 | Category | Approach | Status |
 |----------|----------|--------|
-| widgets/* | `HIGWidget` + charts/counters recipes | **Partial** (`HIGCounter`, `HIGWidget` done; page recipes planned) |
-| apps/* (13) | Showcase recipes only | Planned |
+| widgets/* | `HIGWidget` + charts/counters recipes | **Partial** (`HIGCounter`, `HIGWidget` done; app dashboards in Wave 9.1) |
+| apps/* (13) | Showcase recipes only | **Recipe** (catalog `* App` entries) |
 | pages/* (34) | Showcase recipes only | Planned |
 
 ## Definition of done (program)

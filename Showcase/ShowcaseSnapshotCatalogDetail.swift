@@ -142,6 +142,33 @@ struct ShowcaseSnapshotCatalogDetailView: View {
             ShowcaseCoachMarkView()
         case .map:
             ShowcaseMapView()
+
+        case .appMailbox:
+            ShowcaseAppMailboxView()
+        case .appCalendar:
+            ShowcaseAppCalendarView()
+        case .appContacts:
+            ShowcaseAppContactsView()
+        case .appDocuments:
+            ShowcaseAppDocumentsView()
+        case .appForum:
+            ShowcaseAppForumView()
+        case .appLocation:
+            ShowcaseAppLocationView()
+        case .appMedia:
+            ShowcaseAppMediaView()
+        case .appMessage:
+            ShowcaseAppMessageView()
+        case .appNotebook:
+            ShowcaseAppNotebookView()
+        case .appProjects:
+            ShowcaseAppProjectsView()
+        case .appTaskboard:
+            ShowcaseAppTaskboardView()
+        case .appTravel:
+            ShowcaseAppTravelView()
+        case .appWork:
+            ShowcaseAppWorkView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:
