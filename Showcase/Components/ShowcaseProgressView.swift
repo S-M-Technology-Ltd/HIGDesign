@@ -14,8 +14,8 @@ struct ShowcaseProgressView: View {
                     ShowcaseSampleView(code: "HIGProgressView(\"Preparing download\")") {
                         HIGProgressView("Preparing download")
                     }
-                    ShowcaseSampleView(code: "HIGProgressView(\"Installing update\", value: progress)") {
-                        HIGProgressView("Installing update", value: progress)
+                    ShowcaseSampleView(code: "HIGProgressView(\"Installing update\", value: progress, showsPercentage: true)") {
+                        HIGProgressView("Installing update", value: progress, showsPercentage: true)
                     }
                     ShowcaseSampleView(code: "HIGButton(\"Increase Progress\", role: .secondary) { ... }") {
                         HIGButton("Increase Progress", role: .secondary) {

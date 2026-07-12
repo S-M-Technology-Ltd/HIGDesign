@@ -2,9 +2,19 @@
 
 ### Added
 
+- Semantic `theme.colors.success` role on `HIGColorSemanticTokens`
+- `HIGBadgeStyle` success / warning / info roles
+- `HIGAlertBannerStyle.success` and optional `onDismiss` on `HIGAlertBanner`
+- `HIGToastStyle`, `HIGToastItem`, styled `higToast` / queue enqueue APIs
+- `HIGCard` optional subtitle; `HIGProgressView` optional `showsPercentage`
+
 ### Changed
 
+- `HIGFieldMessage` success kind uses `theme.colors.success`
+- Admin port tracker: core Extend rows closed (toast, badge, alerts, button loading, card, progress)
+
 ### Fixed
+
 
 ## 1.5.0 — 2026-07-12
 

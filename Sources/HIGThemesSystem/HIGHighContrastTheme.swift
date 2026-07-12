@@ -115,7 +115,8 @@ public struct HIGHighContrastTheme: HIGTheme, Sendable {
             separator: baseColors.separator,
             accent: baseColors.accent,
             destructive: Color.red,
-            warning: baseColors.warning
+            warning: baseColors.warning,
+            success: Color.green
         )
         self.typography = base.typography
         self.spacing = base.spacing

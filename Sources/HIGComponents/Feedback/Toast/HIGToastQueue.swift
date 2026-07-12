@@ -5,11 +5,16 @@ import Observation
 @MainActor
 @Observable
 public final class HIGToastQueue {
-    public private(set) var currentMessage: String?
+    /// Currently visible toast payload, if any.
+    public private(set) var current: HIGToastItem?
+
+    /// Message text of the current toast (compatibility accessor).
+    public var currentMessage: String? { current?.message }
+
     public let configuration: HIGToastQueueConfiguration
 
     private struct PendingToast: Sendable {
-        let message: String
+        let item: HIGToastItem
         let duration: Duration
     }
 
@@ -21,9 +26,18 @@ public final class HIGToastQueue {
     }
 
     /// Adds a toast to the queue. Toasts display sequentially.
-    public func enqueue(_ message: String, duration: Duration? = nil) {
+    public func enqueue(
+        _ message: String,
+        style: HIGToastStyle = .neutral,
+        duration: Duration? = nil
+    ) {
+        enqueue(HIGToastItem(message, style: style), duration: duration)
+    }
+
+    /// Adds a toast item to the queue.
+    public func enqueue(_ item: HIGToastItem, duration: Duration? = nil) {
         let resolvedDuration = duration ?? configuration.defaultDuration
-        pending.append(PendingToast(message: message, duration: resolvedDuration))
+        pending.append(PendingToast(item: item, duration: resolvedDuration))
 
         while pending.count > configuration.maximumQueuedMessages {
             pending.removeFirst()
@@ -36,19 +50,19 @@ public final class HIGToastQueue {
     public func dismissCurrent() {
         dismissTask?.cancel()
         dismissTask = nil
-        currentMessage = nil
+        current = nil
         presentNextIfIdle()
     }
 
     private func presentNextIfIdle() {
-        guard currentMessage == nil, let next = pending.first else { return }
+        guard current == nil, let next = pending.first else { return }
         pending.removeFirst()
-        currentMessage = next.message
+        current = next.item
 
         dismissTask?.cancel()
         dismissTask = Task { @MainActor in
             try? await Task.sleep(for: next.duration)
-            guard !Task.isCancelled, currentMessage == next.message else { return }
+            guard !Task.isCancelled, current == next.item else { return }
             dismissCurrent()
         }
     }

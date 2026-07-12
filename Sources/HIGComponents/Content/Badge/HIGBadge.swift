@@ -31,10 +31,10 @@ public struct HIGBadge: View {
         switch style {
         case .neutral:
             theme.colors.labelPrimary
-        case .accent:
+        case .accent, .info:
             theme.colors.labelOnAccent
-        case .destructive:
-            theme.colors.destructive
+        case .success, .warning, .destructive:
+            theme.colors.labelOnAccent
         }
     }
 
@@ -42,10 +42,14 @@ public struct HIGBadge: View {
         switch style {
         case .neutral:
             theme.colors.fillPrimary
-        case .accent:
+        case .accent, .info:
             theme.colors.accent
+        case .success:
+            theme.colors.success
+        case .warning:
+            theme.colors.warning
         case .destructive:
-            theme.colors.destructive.opacity(theme.opacity.subtleFill)
+            theme.colors.destructive
         }
     }
 }
@@ -56,7 +60,10 @@ public struct HIGBadge: View {
         HStack(spacing: HIGSpacing.md.rawValue) {
             HIGBadge("New")
             HIGBadge("3", style: .accent)
+            HIGBadge("OK", style: .success)
+            HIGBadge("Soon", style: .warning)
             HIGBadge("!", style: .destructive)
+            HIGBadge("Info", style: .info)
         }
         .padding()
     }

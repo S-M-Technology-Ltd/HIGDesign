@@ -11,6 +11,8 @@ public protocol HIGColorSemanticTokens: Sendable {
     var accent: Color { get }
     var destructive: Color { get }
     var warning: Color { get }
+    /// Positive / success emphasis (forms, badges, toasts, banners).
+    var success: Color { get }
 }
 
 public struct HIGSystemColorSemanticTokens: HIGColorSemanticTokens, Sendable {
@@ -24,6 +26,7 @@ public struct HIGSystemColorSemanticTokens: HIGColorSemanticTokens, Sendable {
     public let accent: Color
     public let destructive: Color
     public let warning: Color
+    public let success: Color
 
     public init(
         labelPrimary: Color? = nil,
@@ -35,7 +38,8 @@ public struct HIGSystemColorSemanticTokens: HIGColorSemanticTokens, Sendable {
         separator: Color? = nil,
         accent: Color? = nil,
         destructive: Color? = nil,
-        warning: Color? = nil
+        warning: Color? = nil,
+        success: Color? = nil
     ) {
         self.labelPrimary = labelPrimary ?? .primary
         self.labelSecondary = labelSecondary ?? .secondary
@@ -47,5 +51,6 @@ public struct HIGSystemColorSemanticTokens: HIGColorSemanticTokens, Sendable {
         self.accent = accent ?? .accentColor
         self.destructive = destructive ?? .red
         self.warning = warning ?? .orange
+        self.success = success ?? .green
     }
 }

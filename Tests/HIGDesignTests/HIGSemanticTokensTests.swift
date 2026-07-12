@@ -19,9 +19,10 @@ func borderSemanticTokensUseHairlineWidth() {
 }
 
 @Test
-func colorSemanticTokensExposeAccentAndWarningRoles() {
+func colorSemanticTokensExposeAccentWarningAndSuccessRoles() {
     let colors = HIGSystemColorSemanticTokens()
 
     #expect(colors.labelOnAccent == .white)
     #expect(colors.warning == .orange)
+    #expect(colors.success == .green)
 }

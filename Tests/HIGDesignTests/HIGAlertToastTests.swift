@@ -9,9 +9,22 @@ func alertTokensDefineModalWidth() {
 }
 
 @Test
+func alertBannerStylesIncludeSuccess() {
+    #expect(HIGAlertBannerStyle.allCases.contains(.success))
+    #expect(HIGAlertBannerStyle.allCases.count == 4)
+}
+
+@Test
 func toastTokensDefineDismissTarget() {
     let tokens = HIGSystemToastTokens()
     #expect(tokens.dismissButtonSize >= 20)
+}
+
+@Test
+func toastStylesCoverFeedbackRoles() {
+    #expect(HIGToastStyle.allCases.contains(.success))
+    #expect(HIGToastStyle.allCases.contains(.error))
+    #expect(HIGToastItem("Saved", style: .success).style == .success)
 }
 
 @Test

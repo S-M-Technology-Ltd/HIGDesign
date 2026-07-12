@@ -15,8 +15,17 @@ struct ShowcaseBadgeView: View {
                     ShowcaseSampleView(code: "HIGBadge(\"3\", style: .accent)") {
                         HIGBadge("3", style: .accent)
                     }
+                    ShowcaseSampleView(code: "HIGBadge(\"OK\", style: .success)") {
+                        HIGBadge("OK", style: .success)
+                    }
+                    ShowcaseSampleView(code: "HIGBadge(\"Soon\", style: .warning)") {
+                        HIGBadge("Soon", style: .warning)
+                    }
                     ShowcaseSampleView(code: "HIGBadge(\"!\", style: .destructive)") {
                         HIGBadge("!", style: .destructive)
+                    }
+                    ShowcaseSampleView(code: "HIGBadge(\"Info\", style: .info)") {
+                        HIGBadge("Info", style: .info)
                     }
                 }
             }

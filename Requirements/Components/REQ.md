@@ -175,3 +175,4 @@ Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. W
 - Data persistence inside components
 - Cloud sync, StoreKit, or moderation UI
 - Brand-specific visual treatments
+- Feedback parity: `HIGBadge` / `HIGAlertBanner` / `HIGToast` support semantic styles; buttons support `isLoading`; progress may show percentage.
