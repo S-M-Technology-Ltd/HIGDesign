@@ -751,6 +751,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGPricingCard
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| Content | All 6 | title · price · currency · period · features · CTA · featured · optional ribbon |
+
+**Guidelines:**
+- Use for plan comparison and admin marketing pricing surfaces
+- Mark the recommended plan with `isFeatured` and optional `ribbonText`
+- Keep feature lists short and scannable; pair with `HIGButton` CTA when purchase is available
+- Token-backed chrome via `theme.pricingCard`
+
+---
+
 ### HIGCodeBlock
 
 | HIG category | Platforms | Features |
