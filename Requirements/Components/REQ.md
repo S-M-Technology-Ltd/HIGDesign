@@ -90,12 +90,12 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 - `HIGNavigationBar`
 - `HIGTabBar`
 - `HIGSidebar`
-- `HIGAdminShell` / `HIGAdminShellStyle` — admin app shell with brand chrome and sidebar navigation (Remark base); tokens via `theme.adminShell`
+- `HIGAdminShell` / `HIGAdminShellStyle` — admin app shell with brand chrome; `.sidebar` (Remark base) and `.iconRail` (Remark iconbar); tokens via `theme.adminShell`
 - `HIGToolbar`
 
 #### Admin catalog expansion (planned families)
 
-Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons after bar chart: line/pie charts, lightbox, and additional admin shell styles.
+Full Remark Admin Template parity is tracked in `Docs/ADMIN_TEMPLATE_PORT.md`. Priority follow-ons: additional admin shell styles (`.topBar`, `.topIcon`, `.centered`, `.drawer`) and widgets.
 
 #### Content
 

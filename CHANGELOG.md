@@ -79,6 +79,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Area Chart page plus token tests (Wave 6.4 charts family)
 - `HIGLightbox` / `theme.lightbox` — full-screen media gallery chrome with counter and previous/next
 - Showcase Lightbox page plus token tests (Wave 5 content hybrids companion to carousel)
+- `HIGAdminShellStyle.iconRail` — Remark iconbar: narrow icon-only leading rail on `HIGAdminShell`
+- Admin shell tokens for icon rail width/spacing/icon size; Showcase style picker (Wave 7.2)
 
 ## 1.4.0 — 2026-07-10
 

@@ -56,7 +56,7 @@ Three-layer design token system for HIGDesign: Raw, Semantic, and Component toke
 - `HIGSelectTokens` defines field chrome, chevron, chip spacing, and suggestion metrics for ``HIGSelect``, ``HIGAutocomplete``, and ``HIGTagInput``.
 - `HIGDataTableTokens` defines header/cell fonts, padding, row height, borders, and column metrics for ``HIGDataTable``.
 - `HIGDropZoneTokens` defines min height, dash border, padding, icon size, and fonts for ``HIGDropZone``.
-- `HIGAdminShellTokens` defines brand/content padding, brand font, and sidebar column widths for ``HIGAdminShell``.
+- `HIGAdminShellTokens` defines brand/content padding, brand font, sidebar column widths, and icon-rail metrics for ``HIGAdminShell``.
 - `HIGCodeBlockTokens` defines monospaced font, padding, radius, and max height for ``HIGCodeBlock``.
 - `HIGCarouselTokens` defines min height, radius, indicator metrics, and content padding for ``HIGCarousel``.
 - `HIGLightboxTokens` defines chrome padding, media height, control size, indicators, and fonts for ``HIGLightbox``.

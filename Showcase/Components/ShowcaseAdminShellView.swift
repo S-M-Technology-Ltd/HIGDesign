@@ -11,6 +11,7 @@ private enum ShowcaseAdminShellSection: String, Hashable, Sendable {
 struct ShowcaseAdminShellView: View {
     @Environment(\.higTheme) private var theme
     @State private var selection: ShowcaseAdminShellSection? = .dashboard
+    @State private var style: HIGAdminShellStyle = .sidebar
 
     private var items: [HIGSidebarItem<ShowcaseAdminShellSection>] {
         [
@@ -26,19 +27,30 @@ struct ShowcaseAdminShellView: View {
             ShowcaseMetadataView(component: .adminShell)
                 .higPadding(.screenEdge)
 
-            ShowcaseCodeSnippetView(code: """
-            HIGAdminShell(
-                brandTitle: "HIG Admin",
-                sidebarTitle: "Menu",
-                selection: $selection,
-                items: items
-            ) { section in
-                // detail content
+            VStack(alignment: .leading, spacing: theme.spacing.item) {
+                Picker("Shell style", selection: $style) {
+                    Text("Sidebar").tag(HIGAdminShellStyle.sidebar)
+                    Text("Icon Rail").tag(HIGAdminShellStyle.iconRail)
+                }
+                .pickerStyle(.segmented)
+                .accessibilityLabel("Shell style")
+
+                ShowcaseCodeSnippetView(code: """
+                HIGAdminShell(
+                    style: .\(style.rawValue),
+                    brandTitle: "HIG Admin",
+                    sidebarTitle: "Menu",
+                    selection: $selection,
+                    items: items
+                ) { section in
+                    // detail content
+                }
+                """)
             }
-            """)
             .higPadding(.screenEdge)
 
             HIGAdminShell(
+                style: style,
                 brandTitle: "HIG Admin",
                 sidebarTitle: "Menu",
                 selection: $selection,
