@@ -759,6 +759,21 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGPieChart
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| Charts | All 6 | pie · donut · legend · title · empty state |
+
+**Guidelines:**
+- Use for part-to-whole comparisons (plan mix, region share)
+- Pass `HIGChartPoint` slice values; prefer a small number of categories
+- Choose `HIGPieChartStyle.donut` when a center hole improves scanability
+- Built on Apple Swift Charts only — no Chart.js or other web vendors
+- Provide an empty message when data has not loaded
+
+---
+
 ### HIGBreadcrumb
 
 | HIG category | Platforms | Features |
