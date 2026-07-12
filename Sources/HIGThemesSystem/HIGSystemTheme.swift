@@ -76,6 +76,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
     public let barChart: any HIGBarChartTokens
     public let lineChart: any HIGLineChartTokens
     public let pieChart: any HIGPieChartTokens
+    public let areaChart: any HIGAreaChartTokens
     public let photoPicker: any HIGPhotoPickerTokens
     public let photoEditor: any HIGPhotoEditorTokens
     public let longTextEditor: any HIGLongTextEditorTokens
@@ -153,6 +154,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         barChart: any HIGBarChartTokens = HIGSystemBarChartTokens(),
         lineChart: any HIGLineChartTokens = HIGSystemLineChartTokens(),
         pieChart: any HIGPieChartTokens = HIGSystemPieChartTokens(),
+        areaChart: any HIGAreaChartTokens = HIGSystemAreaChartTokens(),
         photoPicker: any HIGPhotoPickerTokens = HIGSystemPhotoPickerTokens(),
         photoEditor: any HIGPhotoEditorTokens = HIGSystemPhotoEditorTokens(),
         longTextEditor: any HIGLongTextEditorTokens = HIGSystemLongTextEditorTokens()
@@ -229,6 +231,7 @@ public struct HIGSystemTheme: HIGTheme, Sendable {
         self.barChart = barChart
         self.lineChart = lineChart
         self.pieChart = pieChart
+        self.areaChart = areaChart
         self.photoPicker = photoPicker
         self.photoEditor = photoEditor
         self.longTextEditor = longTextEditor

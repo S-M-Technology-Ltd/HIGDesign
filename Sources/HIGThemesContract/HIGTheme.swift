@@ -75,6 +75,7 @@ public protocol HIGTheme: Sendable {
     var barChart: any HIGBarChartTokens { get }
     var lineChart: any HIGLineChartTokens { get }
     var pieChart: any HIGPieChartTokens { get }
+    var areaChart: any HIGAreaChartTokens { get }
     var photoPicker: any HIGPhotoPickerTokens { get }
     var photoEditor: any HIGPhotoEditorTokens { get }
     var longTextEditor: any HIGLongTextEditorTokens { get }

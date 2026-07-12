@@ -774,6 +774,21 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGAreaChart
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| Charts | All 6 | filled area · optional stroke · title · empty state · themed axes |
+
+**Guidelines:**
+- Use for ordered series where volume under the curve matters (traffic, sessions)
+- Reuse `HIGChartPoint`; keep labels short for readable axes
+- Toggle `showsLine` when the fill alone is enough
+- Built on Apple Swift Charts only — no Chart.js or other web vendors
+- Provide an empty message when data has not loaded
+
+---
+
 ### HIGBreadcrumb
 
 | HIG category | Platforms | Features |
