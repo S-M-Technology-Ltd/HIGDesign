@@ -83,6 +83,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Admin shell tokens for icon rail width/spacing/icon size; Showcase style picker (Wave 7.2)
 - `HIGAdminShellStyle.topBar` — Remark topbar: horizontal brand + nav strip above detail
 - Admin shell tokens for top bar height/spacing/icon size; Showcase Top Bar option (Wave 7.3)
+- `HIGAdminShellStyle.topIcon` — Remark topicon: horizontal icon-only nav strip above detail
+- Showcase Top Icon option; shared top-strip implementation with topBar (Wave 7.4)
 
 ## 1.4.0 — 2026-07-10
 

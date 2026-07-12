@@ -99,6 +99,7 @@ First delivery slices:
 - `HIGAdminShell` / `HIGAdminShellStyle.sidebar` (Wave 7.1 admin base shell)
 - `HIGAdminShellStyle.iconRail` (Wave 7.2 Remark iconbar shell)
 - `HIGAdminShellStyle.topBar` (Wave 7.3 Remark topbar shell)
+- `HIGAdminShellStyle.topIcon` (Wave 7.4 Remark topicon shell)
 - `HIGCodeBlock` (Wave 5.1 monospaced code surface)
 - `HIGCarousel` (Wave 5.2 paged carousel)
 - `HIGMediaRow` (Wave 5.3 media object row)
