@@ -34,6 +34,7 @@ struct ShowcaseAdminShellView: View {
                     Text("Top Bar").tag(HIGAdminShellStyle.topBar)
                     Text("Top Icon").tag(HIGAdminShellStyle.topIcon)
                     Text("Centered").tag(HIGAdminShellStyle.centered)
+                    Text("Drawer").tag(HIGAdminShellStyle.drawer)
                 }
                 #if os(watchOS)
                 .pickerStyle(.automatic)
@@ -89,6 +90,8 @@ struct ShowcaseAdminShellView: View {
             "Compose panels, tables, and forms below the top icon bar."
         case .centered:
             "Compose panels, tables, and forms in the centered max-width content column."
+        case .drawer:
+            "Open the menu toggle to navigate; compose panels and tables in the main content area."
         }
     }
 

@@ -12,6 +12,7 @@ import SwiftUI
 /// - ``HIGAdminShellStyle/topBar`` — Remark **topbar** (horizontal labeled nav strip)
 /// - ``HIGAdminShellStyle/topIcon`` — Remark **topicon** (horizontal icon-only nav strip)
 /// - ``HIGAdminShellStyle/centered`` — Remark **center** (top nav + max-width centered detail)
+/// - ``HIGAdminShellStyle/drawer`` — Remark **mmenu** (hamburger + sliding navigation drawer)
 ///
 /// Prefer ``HIGSidebar`` when you only need a plain split view without brand chrome.
 public struct HIGAdminShell<Selection: Hashable & Sendable, Content: View>: View {
@@ -24,12 +25,15 @@ public struct HIGAdminShell<Selection: Hashable & Sendable, Content: View>: View
 
     @Environment(\.higTheme) private var theme
     @Environment(\.isEnabled) private var isEnabled
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    @State private var isDrawerMenuPresented = false
 
     /// Creates an admin shell.
     /// - Parameters:
-    ///   - style: Shell layout family (``.sidebar``, ``.iconRail``, ``.topBar``, ``.topIcon``, or ``.centered``).
+    ///   - style: Shell layout family (``.sidebar``, ``.iconRail``, ``.topBar``, ``.topIcon``, ``.centered``, or ``.drawer``).
     ///   - brandTitle: Optional product name in the navigation chrome.
-    ///   - sidebarTitle: Navigation title for the leading column (sidebar / icon rail).
+    ///   - sidebarTitle: Navigation title for the leading column (sidebar / icon rail / drawer menu).
     ///   - selection: Bound selected destination.
     ///   - items: Navigation destinations (reuse ``HIGSidebarItem``).
     ///   - content: Detail builder for the selected destination.
@@ -63,6 +67,8 @@ public struct HIGAdminShell<Selection: Hashable & Sendable, Content: View>: View
             topStripShell(tokens: tokens, iconOnly: true)
         case .centered:
             centeredShell(tokens: tokens)
+        case .drawer:
+            drawerShell(tokens: tokens)
         }
     }
 
@@ -310,6 +316,129 @@ public struct HIGAdminShell<Selection: Hashable & Sendable, Content: View>: View
         .accessibilityLabel(brandTitle ?? sidebarTitle)
     }
 
+    // MARK: - Drawer (Remark mmenu)
+
+    @ViewBuilder
+    private func drawerShell(tokens: any HIGAdminShellTokens) -> some View {
+        let drawerTokens = theme.drawer
+
+        ZStack(alignment: .leading) {
+            VStack(spacing: 0) {
+                drawerChromeBar(tokens: tokens)
+                HIGDivider()
+                detailColumn(tokens: tokens)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+
+            if isDrawerMenuPresented {
+                theme.colors.labelPrimary.opacity(drawerTokens.scrimOpacity)
+                    .ignoresSafeArea()
+                    .onTapGesture {
+                        isDrawerMenuPresented = false
+                    }
+                    .accessibilityLabel("Dismiss menu")
+                    .accessibilityAddTraits(.isButton)
+
+                drawerNavigationPanel(tokens: tokens, drawerTokens: drawerTokens)
+                    .transition(.move(edge: .leading).combined(with: .opacity))
+                    .zIndex(1)
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(theme.colors.backgroundPrimary)
+        .animation(reduceMotion ? nil : .easeInOut(duration: theme.motion.quick), value: isDrawerMenuPresented)
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel(brandTitle ?? sidebarTitle)
+    }
+
+    @ViewBuilder
+    private func drawerChromeBar(tokens: any HIGAdminShellTokens) -> some View {
+        let capabilities = HIGPlatformCapabilities.current
+        let minTarget = max(tokens.topBarMinHeight, capabilities.minimumTouchTarget)
+
+        HStack(spacing: tokens.topBarItemSpacing) {
+            HIGMenuToggle(isExpanded: $isDrawerMenuPresented)
+                .disabled(!isEnabled)
+
+            if let brandTitle {
+                Text(brandTitle)
+                    .font(tokens.brandFont)
+                    .foregroundStyle(theme.colors.labelPrimary)
+                    .lineLimit(1)
+                    .accessibilityAddTraits(.isHeader)
+            }
+
+            Spacer(minLength: 0)
+        }
+        .padding(.horizontal, tokens.brandPadding)
+        .frame(maxWidth: .infinity, minHeight: minTarget, alignment: .leading)
+        .background(theme.colors.backgroundSecondary)
+    }
+
+    @ViewBuilder
+    private func drawerNavigationPanel(
+        tokens: any HIGAdminShellTokens,
+        drawerTokens: any HIGDrawerTokens
+    ) -> some View {
+        let sidebarTokens = theme.sidebar
+        let panelWidth = min(max(drawerTokens.width, tokens.sidebarMinWidth), tokens.sidebarMaxWidth)
+
+        VStack(alignment: .leading, spacing: 0) {
+            Text(sidebarTitle)
+                .font(drawerTokens.titleFont)
+                .foregroundStyle(theme.colors.labelPrimary)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(tokens.brandPadding)
+                .accessibilityAddTraits(.isHeader)
+
+            HIGDivider()
+
+            #if os(iOS) || os(visionOS) || os(macOS)
+            List(items, selection: $selection) { item in
+                Button {
+                    selection = item.id
+                    isDrawerMenuPresented = false
+                } label: {
+                    Label(item.title, systemImage: item.systemImage)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .tag(Optional(item.id))
+                .padding(.vertical, sidebarTokens.rowPadding)
+                .listRowBackground(
+                    item.id == selection
+                        ? theme.colors.accent.opacity(theme.opacity.subtleFill)
+                        : theme.colors.backgroundSecondary
+                )
+            }
+            .listStyle(.plain)
+            .scrollContentBackground(.hidden)
+            #else
+            List(items, selection: $selection) { item in
+                Button {
+                    selection = item.id
+                    isDrawerMenuPresented = false
+                } label: {
+                    Label(item.title, systemImage: item.systemImage)
+                }
+                .buttonStyle(.plain)
+                .tag(Optional(item.id))
+            }
+            #endif
+        }
+        .frame(width: panelWidth, alignment: .topLeading)
+        .frame(maxHeight: .infinity, alignment: .topLeading)
+        .background(theme.colors.backgroundPrimary)
+        .overlay(alignment: .trailing) {
+            Rectangle()
+                .fill(theme.colors.separator)
+                .frame(width: drawerTokens.borderWidth)
+        }
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel(sidebarTitle)
+    }
+
     // MARK: - Detail
 
     @ViewBuilder
@@ -338,6 +467,7 @@ public struct HIGAdminShell<Selection: Hashable & Sendable, Content: View>: View
         case .topBar: "menubar.rectangle"
         case .topIcon: "rectangle.topthird.inset.filled"
         case .centered: "rectangle.center.inset.filled"
+        case .drawer: "sidebar.squares.leading"
         }
     }
 
@@ -348,6 +478,7 @@ public struct HIGAdminShell<Selection: Hashable & Sendable, Content: View>: View
         case .topBar: "Choose an item from the top bar."
         case .topIcon: "Choose an item from the top icon bar."
         case .centered: "Choose an item from the navigation bar."
+        case .drawer: "Open the menu and choose a section."
         }
     }
 }
@@ -477,6 +608,31 @@ private enum HIGAdminShellPreviewSection: String, Hashable, Sendable {
                 Text(section.rawValue.capitalized)
                     .font(.title2)
                 Text("Centered detail for \(section.rawValue).")
+                    .foregroundStyle(.secondary)
+            }
+        }
+    }
+}
+
+#Preview("HIGAdminShell — Drawer") {
+    @Previewable @State var selection: HIGAdminShellPreviewSection? = .dashboard
+
+    HIGThemeableView(theme: HIGComponentPreviewTheme()) {
+        HIGAdminShell(
+            style: .drawer,
+            brandTitle: "HIG Admin",
+            sidebarTitle: "Menu",
+            selection: $selection,
+            items: [
+                HIGSidebarItem(id: HIGAdminShellPreviewSection.dashboard, title: "Dashboard", systemImage: "square.grid.2x2"),
+                HIGSidebarItem(id: HIGAdminShellPreviewSection.users, title: "Users", systemImage: "person.2"),
+                HIGSidebarItem(id: HIGAdminShellPreviewSection.settings, title: "Settings", systemImage: "gearshape"),
+            ]
+        ) { section in
+            VStack(alignment: .leading, spacing: HIGSpacing.sm.rawValue) {
+                Text(section.rawValue.capitalized)
+                    .font(.title2)
+                Text("Drawer detail for \(section.rawValue).")
                     .foregroundStyle(.secondary)
             }
         }

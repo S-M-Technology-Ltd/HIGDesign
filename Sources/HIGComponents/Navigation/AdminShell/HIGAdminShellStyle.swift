@@ -14,4 +14,6 @@ public enum HIGAdminShellStyle: String, Sendable, CaseIterable {
     case topIcon
     /// Full-width top navigation with max-width centered detail (Remark **center**).
     case centered
+    /// Full-width detail with hamburger menu that slides navigation in (Remark **mmenu**).
+    case drawer
 }
