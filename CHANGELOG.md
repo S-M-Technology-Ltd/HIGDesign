@@ -71,6 +71,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase List Group page plus token tests (Wave 5.5)
 - `HIGBarChart` / `HIGChartPoint` / `theme.barChart` — vertical bar chart via Apple Swift Charts
 - Showcase Bar Chart page plus token tests (Wave 6.1 charts family)
+- `HIGLineChart` / `theme.lineChart` — line chart with optional point markers via Apple Swift Charts
+- Showcase Line Chart page plus token tests (Wave 6.2 charts family)
 
 ## 1.4.0 — 2026-07-10
 

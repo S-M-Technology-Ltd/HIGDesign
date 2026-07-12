@@ -103,6 +103,7 @@ First delivery slices:
 - `HIGHero` / `HIGHeroStyle` (Wave 5.4 jumbotron hero)
 - `HIGListGroup` / `HIGListGroupRow` (Wave 5.5 bordered list groups)
 - `HIGBarChart` / `HIGChartPoint` (Wave 6.1 Swift Charts bar chart)
+- `HIGLineChart` (Wave 6.2 Swift Charts line chart)
 
 ## Previous Milestone: v1.4.0 (released)
 

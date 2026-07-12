@@ -73,6 +73,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case hero
     case listGroup
     case barChart
+    case lineChart
 
     public var id: String { rawValue }
 
@@ -157,6 +158,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .hero: "Hero"
         case .listGroup: "List Group"
         case .barChart: "Bar Chart"
+        case .lineChart: "Line Chart"
         }
     }
 
@@ -234,6 +236,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .hero: "Layout"
         case .listGroup: "Lists and Tables"
         case .barChart: "Charts"
+        case .lineChart: "Charts"
         }
     }
 
@@ -311,6 +314,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .hero: "Jumbotron-style hero with title, subtitle, and optional actions."
         case .listGroup: "Bordered list-group surface with selectable rows and optional header."
         case .barChart: "Vertical bar chart for categorical admin metrics via Swift Charts."
+        case .lineChart: "Line chart for ordered admin trend series via Swift Charts."
         }
     }
 
@@ -323,7 +327,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
              .alert, .toast, .navigationBar, .label, .badge, .activityIndicator, .matrixLoader,
              .list, .form,
              .checkbox, .radio, .secureField, .searchField, .picker, .icon, .avatar, .link,
-             .bulletList, .textEditor, .stepper, .menuButton, .tag, .codeBlock, .carousel, .mediaRow, .hero, .listGroup, .barChart:
+             .bulletList, .textEditor, .stepper, .menuButton, .tag, .codeBlock, .carousel, .mediaRow, .hero, .listGroup, .barChart, .lineChart:
             "iOS, iPadOS, macOS, visionOS, tvOS, watchOS"
         case .slider, .dropZone:
             "iOS, iPadOS, macOS, visionOS"
