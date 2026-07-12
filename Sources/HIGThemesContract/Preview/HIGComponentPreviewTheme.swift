@@ -45,6 +45,7 @@ public struct HIGComponentPreviewTheme: HIGTheme {
     public let colorSelector: any HIGColorSelectorTokens = HIGSystemColorSelectorTokens()
     public let socialButton: any HIGSocialButtonTokens = HIGSystemSocialButtonTokens()
     public let imageFrame: any HIGImageFrameTokens = HIGSystemImageFrameTokens()
+    public let treeView: any HIGTreeViewTokens = HIGSystemTreeViewTokens()
     public let dataTable: any HIGDataTableTokens = HIGSystemDataTableTokens()
     public let breadcrumb: any HIGBreadcrumbTokens = HIGSystemBreadcrumbTokens()
     public let pageHeader: any HIGPageHeaderTokens = HIGSystemPageHeaderTokens()

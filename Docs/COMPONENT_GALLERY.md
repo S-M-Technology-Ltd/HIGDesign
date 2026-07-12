@@ -863,6 +863,20 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ---
 
+### HIGTreeView
+
+| HIG category | Platforms | Features |
+|---|---|---|
+| Layout | All 6 | hierarchy · expand/collapse · selection · icons · indent |
+
+**Guidelines:**
+- Use for file trees, nested nav, and admin outline browsers
+- Bind `expandedIDs` for controlled expand state; `selection` for the active leaf/branch
+- Prefer short titles and SF Symbols for scannable rows
+- Token-backed metrics via `theme.treeView`
+
+---
+
 ### HIGCodeBlock
 
 | HIG category | Platforms | Features |

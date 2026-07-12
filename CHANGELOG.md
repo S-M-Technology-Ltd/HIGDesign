@@ -117,6 +117,8 @@ All notable changes to HIGDesign are documented here. The project follows [Seman
 - Showcase Social Button page plus token tests
 - `HIGImageFrame` / `HIGImageFrameAspect` / `theme.imageFrame` — themed image container with aspect presets and placeholder
 - Showcase Image Frame page plus token tests
+- `HIGTreeView` / `HIGTreeNode` / `theme.treeView` — hierarchical expand/collapse tree with optional selection
+- Showcase Tree View page plus token tests
 
 ## 1.4.0 — 2026-07-10
 
