@@ -28,7 +28,7 @@ Demonstration app for visually verifying HIGDesign components, themes, accessibi
     * watchOS
 - Root navigation uses two tabs:
     * **Components** — library `HIG*` component demos (A–Z)
-    * **Pages** — full-screen app/page recipes (Map, 13 apps, 17 pages) composed from public APIs only
+    * **Pages** — full-screen recipes (Map, apps, simple pages, and complex multi-section application pages) composed from public APIs only
 - Each component screen documents:
     * HIG section reference
     * supported platforms
