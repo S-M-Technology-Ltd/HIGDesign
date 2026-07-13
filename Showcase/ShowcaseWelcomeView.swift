@@ -2,19 +2,27 @@ import HIGDesign
 import SwiftUI
 
 struct ShowcaseWelcomeView: View {
+    var section: ShowcaseComponent.CatalogSection = .components
+
     var body: some View {
         ContentUnavailableView(
-            "Select a Component",
-            systemImage: "square.grid.2x2",
-            description: Text("Browse the A–Z component list or search by name to inspect roles, tokens, and accessibility behavior.")
+            section.emptySelectionTitle,
+            systemImage: section.systemImage,
+            description: Text(section.emptySelectionMessage)
         )
     }
 }
 
 #if DEBUG
-#Preview("ShowcaseWelcomeView") {
+#Preview("ShowcaseWelcomeView — Components") {
     ShowcasePreviewContainer(includeNavigationStack: false) {
-        ShowcaseWelcomeView()
+        ShowcaseWelcomeView(section: .components)
+    }
+}
+
+#Preview("ShowcaseWelcomeView — Pages") {
+    ShowcasePreviewContainer(includeNavigationStack: false) {
+        ShowcaseWelcomeView(section: .pages)
     }
 }
 #endif

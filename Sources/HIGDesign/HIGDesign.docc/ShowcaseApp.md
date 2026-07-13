@@ -10,12 +10,13 @@ swift run HIGShowcaseApp
 
 The showcase provides:
 
-- Sidebar navigation across **127** catalog entries (components + app/page recipes)
+- **Two root tabs:**
+  - **Components** — library `HIG*` demos (A–Z)
+  - **Pages** — full-screen recipes (Map, 13 apps, 17 pages)
 - Theme picker: system, high contrast, brand, **admin**
 - Light / dark / system appearance
 - Dynamic Type size controls
 - Reduce Motion preview
-- Wave 9 recipes: 13 apps, 17 pages, MapKit map composition
 
 ## HIGDesignSample (Xcode)
 

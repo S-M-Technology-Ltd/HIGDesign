@@ -76,4 +76,15 @@ func showcaseCatalogIncludesLongTextEditor() {
     #expect(titles.contains("Error Pages"))
     #expect(titles.contains("Email Templates Page"))
     #expect(ShowcaseComponent.allCases.last?.title == "Email Templates Page")
+
+    let componentIDs = Set(ShowcaseComponent.catalogSorted(in: .components).map(\.id))
+    let pageIDs = Set(ShowcaseComponent.catalogSorted(in: .pages).map(\.id))
+    #expect(componentIDs.isDisjoint(with: pageIDs))
+    #expect(componentIDs.union(pageIDs).count == ShowcaseComponent.allCases.count)
+    #expect(pageIDs.contains("pageLogin"))
+    #expect(pageIDs.contains("appMailbox"))
+    #expect(pageIDs.contains("map"))
+    #expect(componentIDs.contains("button"))
+    #expect(componentIDs.contains("adminShell"))
+    #expect(!componentIDs.contains("pageLogin"))
 }
