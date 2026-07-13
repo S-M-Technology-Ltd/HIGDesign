@@ -15,7 +15,12 @@ open Sample/HIGDesignSample.xcodeproj
 | `HIGDesignSample` | iPhone / iPad Simulator | Touch-first component inspection |
 | `HIGDesignSampleMac` | My Mac | Desktop layout and sidebar navigation |
 
-Both schemes link the local `HIGShowcase` package product, which hosts the full 34-component catalog (`ShowcaseRootView`).
+Both schemes link the local `HIGShowcase` package product (`ShowcaseRootView`):
+
+- **Components** tab — library component demos (A–Z)
+- **Pages** tab — full-screen app and page recipes (login, mailbox, dashboard-style apps, …)
+
+Use the theme control (including **Admin**) in the sidebar settings footer.
 
 ## Package dependency
 

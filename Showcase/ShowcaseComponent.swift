@@ -132,11 +132,76 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
 
     public var id: String { rawValue }
 
+    /// Top-level Showcase sections: library components vs full-page recipes.
+    public enum CatalogSection: String, CaseIterable, Sendable, Identifiable {
+        case components
+        case pages
+
+        public var id: String { rawValue }
+
+        public var title: String {
+            switch self {
+            case .components: "Components"
+            case .pages: "Pages"
+            }
+        }
+
+        public var systemImage: String {
+            switch self {
+            case .components: "square.grid.2x2"
+            case .pages: "doc.text"
+            }
+        }
+
+        public var searchPrompt: String {
+            switch self {
+            case .components: "Search components"
+            case .pages: "Search pages and apps"
+            }
+        }
+
+        public var emptySelectionTitle: String {
+            switch self {
+            case .components: "Select a Component"
+            case .pages: "Select a Page"
+            }
+        }
+
+        public var emptySelectionMessage: String {
+            switch self {
+            case .components:
+                "Browse the A–Z component list or search by name to inspect roles, tokens, and accessibility behavior."
+            case .pages:
+                "Browse full-screen app and page recipes composed only from public HIGDesign APIs."
+            }
+        }
+    }
+
+    /// Whether this catalog entry is a library component demo or a full page/app recipe.
+    public var catalogSection: CatalogSection {
+        switch self {
+        case .map,
+             .appMailbox, .appCalendar, .appContacts, .appDocuments, .appForum, .appLocation,
+             .appMedia, .appMessage, .appNotebook, .appProjects, .appTaskboard, .appTravel, .appWork,
+             .pageLogin, .pageRegister, .pageForgotPassword, .pageLockscreen, .pageProfile, .pageUser,
+             .pageInvoice, .pageFAQ, .pageErrors, .pageMaintenance, .pageBlank, .pageGallery,
+             .pageSearchResult, .pageSiteMap, .pageProject, .pageCodeEditor, .pageEmailTemplates:
+            .pages
+        default:
+            .components
+        }
+    }
+
     /// Components sorted A–Z by display title for the showcase catalog.
     public static var catalogSorted: [ShowcaseComponent] {
         allCases.sorted { lhs, rhs in
             lhs.title.localizedCaseInsensitiveCompare(rhs.title) == .orderedAscending
         }
+    }
+
+    /// Catalog entries for one root tab, sorted A–Z.
+    public static func catalogSorted(in section: CatalogSection) -> [ShowcaseComponent] {
+        catalogSorted.filter { $0.catalogSection == section }
     }
 
     public var title: String {

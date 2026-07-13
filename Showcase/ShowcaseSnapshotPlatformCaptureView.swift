@@ -43,6 +43,7 @@ struct ShowcaseSnapshotPlatformCaptureView: View {
             }
 
             ShowcaseCatalogView(
+                section: component.catalogSection,
                 selection: $selection,
                 themeChoice: $themeChoice,
                 colorScheme: $colorScheme,

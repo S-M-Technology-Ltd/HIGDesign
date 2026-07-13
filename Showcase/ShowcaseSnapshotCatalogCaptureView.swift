@@ -21,6 +21,7 @@ struct ShowcaseSnapshotCatalogCaptureView: View {
 
     var body: some View {
         ShowcaseCatalogView(
+            section: .components,
             selection: $selection,
             themeChoice: $themeChoice,
             colorScheme: $colorScheme,

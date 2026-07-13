@@ -2,6 +2,7 @@
 
 ### Added
 
+- Showcase root **Components** / **Pages** tabs — library demos vs full app/page recipes
 - Semantic `theme.colors.success` role on `HIGColorSemanticTokens`
 - `HIGBadgeStyle` success / warning / info roles
 - `HIGAlertBannerStyle.success` and optional `onDismiss` on `HIGAlertBanner`

@@ -3,6 +3,7 @@ import SwiftUI
 
 struct ShowcaseCatalogView: View {
     @Environment(\.higTheme) private var theme
+    let section: ShowcaseComponent.CatalogSection
     @Binding var selection: ShowcaseComponent?
     @Binding var themeChoice: ShowcaseThemeChoice
     @Binding var colorScheme: ColorScheme?
@@ -13,7 +14,7 @@ struct ShowcaseCatalogView: View {
     @State private var sidebarScrollPosition: ShowcaseComponent.ID?
 
     private var filteredComponents: [ShowcaseComponent] {
-        let sorted = ShowcaseComponent.catalogSorted
+        let sorted = ShowcaseComponent.catalogSorted(in: section)
         let query = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !query.isEmpty else { return sorted }
         return sorted.filter { component in
@@ -60,8 +61,8 @@ struct ShowcaseCatalogView: View {
         .onAppear {
             sidebarScrollPosition = selection?.id
         }
-        .navigationTitle("Components")
-        .searchable(text: $searchText, prompt: "Search components")
+        .navigationTitle(section.title)
+        .searchable(text: $searchText, prompt: section.searchPrompt)
         .safeAreaInset(edge: .bottom) {
             ShowcaseSettingsView(
                 selection: selection,
@@ -80,18 +81,18 @@ struct ShowcaseCatalogView: View {
         if let selection {
             showcaseDetail(for: selection)
         } else {
-            ShowcaseWelcomeView()
+            ShowcaseWelcomeView(section: section)
         }
     }
 
     private var watchCatalog: some View {
         NavigationStack {
-            List(ShowcaseComponent.catalogSorted) { component in
+            List(ShowcaseComponent.catalogSorted(in: section)) { component in
                 NavigationLink(component.title) {
                     showcaseDetail(for: component)
                 }
             }
-            .navigationTitle("HIGDesign")
+            .navigationTitle(section.title)
         }
     }
 
@@ -102,11 +103,25 @@ struct ShowcaseCatalogView: View {
 }
 
 #if DEBUG
-#Preview("ShowcaseCatalogView") {
+#Preview("ShowcaseCatalogView — Components") {
     ShowcasePreviewContainer(includeNavigationStack: false) {
         ShowcaseCatalogView(
+            section: .components,
             selection: .constant(nil),
             themeChoice: .constant(.system),
+            colorScheme: .constant(nil),
+            dynamicTypeSizeChoice: .constant(.system),
+            iconSettings: .constant(ShowcaseIconSettings())
+        )
+    }
+}
+
+#Preview("ShowcaseCatalogView — Pages") {
+    ShowcasePreviewContainer(includeNavigationStack: false) {
+        ShowcaseCatalogView(
+            section: .pages,
+            selection: .constant(.pageLogin),
+            themeChoice: .constant(.admin),
             colorScheme: .constant(nil),
             dynamicTypeSizeChoice: .constant(.system),
             iconSettings: .constant(ShowcaseIconSettings())
