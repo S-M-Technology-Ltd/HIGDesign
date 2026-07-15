@@ -32,6 +32,21 @@ struct ShowcaseImageFrameView: View {
                     }
 
                     ShowcaseSampleView(code: """
+                    HIGImageFrame(aspect: .portrait, contentMode: .fill) {
+                        LinearGradient(…)
+                    }
+                    """) {
+                        HIGImageFrame(
+                            aspect: .portrait,
+                            contentMode: .fill,
+                            accessibilityLabel: "Portrait media"
+                        ) {
+                            mediaStandIn
+                        }
+                        .frame(maxWidth: 160)
+                    }
+
+                    ShowcaseSampleView(code: """
                     HIGImageFrame(aspect: .photo)
                     // placeholder when no media
                     """) {

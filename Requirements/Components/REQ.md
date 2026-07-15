@@ -83,7 +83,7 @@ Public `HIG*` SwiftUI components that implement Apple Human Interface Guidelines
 - `HIGImageOverlay` / `HIGImageOverlayEdge` — media figure with caption or custom panel overlay and optional scrim; tokens via `theme.imageOverlay`
 - `HIGColorSelector` / `HIGColorOption` — circular color swatch selector with bound selection and optional group label; tokens via `theme.colorSelector`
 - `HIGSocialButton` / `HIGSocialNetwork` / `HIGSocialButtonStyle` — social/account action buttons with SF Symbols and semantic chrome; tokens via `theme.socialButton`
-- `HIGImageFrame` / `HIGImageFrameAspect` — themed image container with aspect presets, border, and placeholder; tokens via `theme.imageFrame`
+- `HIGImageFrame` / `HIGImageFrameAspect` — themed image container with aspect presets (`square`, `photo` 4:3, `portrait` 3:4, `widescreen` 16:9, `custom`, `flexible`), default scale-to-fill + clip, optional `showsBorder` / `cornerRadius` overrides for parent-card composition, and placeholder; tokens via `theme.imageFrame`
 - `HIGTreeView` / `HIGTreeNode` — hierarchical tree with expand/collapse and optional selection; tokens via `theme.treeView`
 - `HIGReorderableList` / `HIGReorderableListItem` — drag-to-reorder list with optional caption; tokens via `theme.reorderableList`
 - `HIGCalendar` — month grid with day selection, month navigation, and optional event marks; tokens via `theme.calendar`
