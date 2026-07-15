@@ -20,7 +20,7 @@ Add HIGDesign to your `Package.swift` dependency list:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/promptdora/HIGDesign.git", from: "1.5.0"),
+    .package(url: "https://github.com/promptdora/HIGDesign.git", from: "1.6.0"),
 ],
 targets: [
     .target(
@@ -240,7 +240,7 @@ Browse **app and page recipes** (mailbox, login, invoice, …) in the Showcase c
 
 ## Components
 
-v1.5.0 ships **90+** public `HIG*` SwiftUI components (including admin shell, charts, advanced forms, and content hybrids) plus Showcase composition recipes. Each maps to an Apple HIG section and resolves styling from `theme.<component>`. Tracker: [`ADMIN_TEMPLATE_PORT.md`](ADMIN_TEMPLATE_PORT.md).
+v1.6.0 ships **90+** public `HIG*` SwiftUI components (including admin shell, charts, advanced forms, and content hybrids) plus Showcase composition recipes. Each maps to an Apple HIG section and resolves styling from `theme.<component>`. Tracker: [`ADMIN_TEMPLATE_PORT.md`](ADMIN_TEMPLATE_PORT.md).
 
 ### Actions
 

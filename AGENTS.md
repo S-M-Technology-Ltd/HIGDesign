@@ -307,8 +307,8 @@ swift test --package-path .
 
 Current Milestone
 
-Current milestone: v1.5.0 released (2026-07-12).
+Current milestone: v1.6.0 released (2026-07-15).
 
-v1.5.0 delivered the admin catalog expansion: `HIGAdminTheme`, `HIGAdminShell`, panels/wayfinding, advanced forms, Swift Charts, content hybrids, coach marks, MapKit map recipe, and Wave 9 Showcase app/page recipes. See `Docs/PRD.md` and `CHANGELOG.md`.
+v1.6.0 delivered Showcase Components/Pages tabs, complex application page recipes, feedback Extend parity, and HIGImageFrame layout fixes. See `Docs/PRD.md` and `CHANGELOG.md`.
 
 Next milestone: opportunistic platform polish and consumer app work; core Extend rows closed post-v1.5.0.

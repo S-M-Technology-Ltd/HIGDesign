@@ -93,7 +93,7 @@ Browse every component online → **[promptdora.github.io/HIGDesign](https://pro
 ```
 https://github.com/promptdora/HIGDesign.git
 ```
-(from `1.5.0`)
+(from `1.6.0`)
 
 **2. Wrap your app:**
 
@@ -129,7 +129,7 @@ Paste one of these into Cursor, Claude, Copilot Chat, Grok, or any coding agent 
 Integrate HIGDesign into this SwiftUI project.
 
 Package
-- Add SPM dependency: https://github.com/promptdora/HIGDesign.git (from 1.5.0)
+- Add SPM dependency: https://github.com/promptdora/HIGDesign.git (from 1.6.0)
 - Link the HIGDesign product to the app target
 - Prefer `import HIGDesign` (umbrella product)
 
@@ -167,7 +167,7 @@ References
 **Theme only**
 
 ```text
-Add HIGDesign (https://github.com/promptdora/HIGDesign.git, from 1.5.0) and wrap the app root in HIGThemeableView(theme: HIGSystemTheme()). Do not refactor screens yet.
+Add HIGDesign (https://github.com/promptdora/HIGDesign.git, from 1.6.0) and wrap the app root in HIGThemeableView(theme: HIGSystemTheme()). Do not refactor screens yet.
 ```
 
 **Replace controls on one screen**
