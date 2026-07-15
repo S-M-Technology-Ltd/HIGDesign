@@ -853,13 +853,16 @@ A visual reference for every public HIGDesign component — states, themes, plat
 
 ### HIGImageFrame
 
+Aspect presets: `square`, `photo` (4:3), `portrait` (3:4), `widescreen` (16:9), `custom(ratio)`, `flexible`. Default content mode is fill with clip. Use `showsBorder: false` and `cornerRadius: 0` when a parent card owns chrome.
+
 | HIG category | Platforms | Features |
 |---|---|---|
 | Content | All 6 | aspect presets · border · radius · placeholder · fill/fit |
 
 **Guidelines:**
 - Use for thumbnails, card media, and gallery tiles
-- Prefer `.photo` / `.widescreen` / `.square` for consistent grids
+- Prefer `.photo` / `.portrait` / `.widescreen` / `.square` for consistent grids
+- Default `contentMode: .fill` clips overflow; use `.fit` only when letterboxing is intentional
 - Pair with `HIGImageOverlay` when captions sit on the media
 - Token-backed chrome via `theme.imageFrame`
 

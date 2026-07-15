@@ -3,16 +3,20 @@
 ### Added
 
 - Showcase root **Components** / **Pages** tabs — library demos vs full app/page recipes
+- Complex application page recipes: Ops Dashboard, Analytics Report, Order Desk, Workspace Settings, Support Console, Billing Center, Onboarding Flow
 - Semantic `theme.colors.success` role on `HIGColorSemanticTokens`
 - `HIGBadgeStyle` success / warning / info roles
 - `HIGAlertBannerStyle.success` and optional `onDismiss` on `HIGAlertBanner`
 - `HIGToastStyle`, `HIGToastItem`, styled `higToast` / queue enqueue APIs
 - `HIGCard` optional subtitle; `HIGProgressView` optional `showsPercentage`
+- `HIGImageFrameAspect.portrait` (3:4) and `.custom(CGFloat)` for library tiles and non-preset ratios
+- `HIGImageFrame` `showsBorder` and `cornerRadius` overrides for embedding under parent card chrome
 
 ### Changed
 
 - `HIGFieldMessage` success kind uses `theme.colors.success`
 - Admin port tracker: core Extend rows closed (toast, badge, alerts, button loading, card, progress)
+- `HIGImageFrame` fixed-aspect path pins width, fill/fit + clip so intrinsic media size cannot stretch grids
 
 ### Fixed
 

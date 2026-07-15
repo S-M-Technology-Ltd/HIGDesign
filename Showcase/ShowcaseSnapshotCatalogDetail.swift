@@ -203,6 +203,20 @@ struct ShowcaseSnapshotCatalogDetailView: View {
             ShowcasePageCodeEditorView()
         case .pageEmailTemplates:
             ShowcasePageEmailTemplatesView()
+        case .pageOpsDashboard:
+            ShowcasePageOpsDashboardView()
+        case .pageAnalyticsReport:
+            ShowcasePageAnalyticsReportView()
+        case .pageOrderDesk:
+            ShowcasePageOrderDeskView()
+        case .pageWorkspaceSettings:
+            ShowcasePageWorkspaceSettingsView()
+        case .pageSupportConsole:
+            ShowcasePageSupportConsoleView()
+        case .pageBillingCenter:
+            ShowcasePageBillingCenterView()
+        case .pageOnboardingFlow:
+            ShowcasePageOnboardingFlowView()
         case .tabBar:
             ShowcaseTabBarView()
         case .toolbar:

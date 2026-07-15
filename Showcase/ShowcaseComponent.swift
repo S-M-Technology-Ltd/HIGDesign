@@ -129,6 +129,13 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
     case pageProject
     case pageCodeEditor
     case pageEmailTemplates
+    case pageOpsDashboard
+    case pageAnalyticsReport
+    case pageOrderDesk
+    case pageWorkspaceSettings
+    case pageSupportConsole
+    case pageBillingCenter
+    case pageOnboardingFlow
 
     public var id: String { rawValue }
 
@@ -185,7 +192,7 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
              .appMedia, .appMessage, .appNotebook, .appProjects, .appTaskboard, .appTravel, .appWork,
              .pageLogin, .pageRegister, .pageForgotPassword, .pageLockscreen, .pageProfile, .pageUser,
              .pageInvoice, .pageFAQ, .pageErrors, .pageMaintenance, .pageBlank, .pageGallery,
-             .pageSearchResult, .pageSiteMap, .pageProject, .pageCodeEditor, .pageEmailTemplates:
+             .pageSearchResult, .pageSiteMap, .pageProject, .pageCodeEditor, .pageEmailTemplates, .pageOpsDashboard, .pageAnalyticsReport, .pageOrderDesk, .pageWorkspaceSettings, .pageSupportConsole, .pageBillingCenter, .pageOnboardingFlow:
             .pages
         default:
             .components
@@ -294,6 +301,13 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .pageProject: "Project Page"
         case .pageCodeEditor: "Code Editor Page"
         case .pageEmailTemplates: "Email Templates Page"
+        case .pageOpsDashboard: "Ops Dashboard Page"
+        case .pageAnalyticsReport: "Analytics Report Page"
+        case .pageOrderDesk: "Order Desk Page"
+        case .pageWorkspaceSettings: "Workspace Settings Page"
+        case .pageSupportConsole: "Support Console Page"
+        case .pageBillingCenter: "Billing Center Page"
+        case .pageOnboardingFlow: "Onboarding Flow Page"
         case .breadcrumb: "Breadcrumb"
         case .pageHeader: "Page Header"
         case .pagination: "Pagination"
@@ -426,6 +440,13 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .pageProject: "Navigation"
         case .pageCodeEditor: "Typography"
         case .pageEmailTemplates: "Layout"
+        case .pageOpsDashboard: "Layout"
+        case .pageAnalyticsReport: "Charts"
+        case .pageOrderDesk: "Lists and Tables"
+        case .pageWorkspaceSettings: "Settings"
+        case .pageSupportConsole: "Content"
+        case .pageBillingCenter: "Content"
+        case .pageOnboardingFlow: "Navigation"
         case .breadcrumb: "Navigation"
         case .pageHeader: "Navigation"
         case .pagination: "Navigation"
@@ -597,12 +618,19 @@ public enum ShowcaseComponent: String, CaseIterable, Identifiable, Sendable {
         case .pageProject: "Single project detail page recipe."
         case .pageCodeEditor: "Code editor page with monospaced code block."
         case .pageEmailTemplates: "Email layout recipes (welcome, news, post, …)."
+        case .pageOpsDashboard: "Multi-widget operations dashboard with KPIs, charts, alerts, and activity."
+        case .pageAnalyticsReport: "Analytics workspace with tabs, filters, charts, and source table."
+        case .pageOrderDesk: "Order queue with status filters, table, and detail actions."
+        case .pageWorkspaceSettings: "Multi-tab workspace settings with security and notifications."
+        case .pageSupportConsole: "Support agent console with tickets and chat thread."
+        case .pageBillingCenter: "Billing plan, seats, payment method, and invoice history."
+        case .pageOnboardingFlow: "Multi-step onboarding wizard with forms and progress."
         }
     }
 
     var platforms: String {
         switch self {
-        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .panelGroup, .counter, .widget, .rating, .testimonial, .ribbon, .pricingCard, .chatBubble, .comment, .cover, .imageOverlay, .colorSelector, .socialButton, .imageFrame, .treeView, .reorderableList, .calendar, .dashboardGrid, .videoPlayer, .coachMark, .appMailbox, .appCalendar, .appContacts, .appDocuments, .appForum, .appLocation, .appMedia, .appMessage, .appNotebook, .appProjects, .appTaskboard, .appTravel, .appWork, .pageLogin, .pageRegister, .pageForgotPassword, .pageLockscreen, .pageProfile, .pageUser, .pageInvoice, .pageFAQ, .pageErrors, .pageMaintenance, .pageBlank, .pageGallery, .pageSearchResult, .pageSiteMap, .pageProject, .pageCodeEditor, .pageEmailTemplates, .breadcrumb, .pageHeader,
+        case .button, .textField, .toggle, .divider, .progressView, .card, .panel, .panelGroup, .counter, .widget, .rating, .testimonial, .ribbon, .pricingCard, .chatBubble, .comment, .cover, .imageOverlay, .colorSelector, .socialButton, .imageFrame, .treeView, .reorderableList, .calendar, .dashboardGrid, .videoPlayer, .coachMark, .appMailbox, .appCalendar, .appContacts, .appDocuments, .appForum, .appLocation, .appMedia, .appMessage, .appNotebook, .appProjects, .appTaskboard, .appTravel, .appWork, .pageLogin, .pageRegister, .pageForgotPassword, .pageLockscreen, .pageProfile, .pageUser, .pageInvoice, .pageFAQ, .pageErrors, .pageMaintenance, .pageBlank, .pageGallery, .pageSearchResult, .pageSiteMap, .pageProject, .pageCodeEditor, .pageEmailTemplates, .pageOpsDashboard, .pageAnalyticsReport, .pageOrderDesk, .pageWorkspaceSettings, .pageSupportConsole, .pageBillingCenter, .pageOnboardingFlow, .breadcrumb, .pageHeader,
              .pagination, .tabs, .accordion, .steps, .pearlSteps, .timeline, .statusIndicator, .emptyState,
              .closeButton, .modal, .tooltip, .popover, .drawer, .confirmationDialog, .networkProgressBar,
              .buttonGroup, .menuToggle, .inputGroup, .fieldMessage, .datePicker, .timePicker, .select, .autocomplete, .tagInput, .dataTable, .toolbar,
