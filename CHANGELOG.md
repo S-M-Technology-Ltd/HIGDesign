@@ -2,6 +2,16 @@
 
 ### Added
 
+### Changed
+
+### Fixed
+
+## 1.6.0 — 2026-07-15
+
+Minor release for Showcase **Components / Pages** navigation, complex application page recipes, feedback Extend parity, and `HIGImageFrame` layout hardening.
+
+### Added
+
 - Showcase root **Components** / **Pages** tabs — library demos vs full app/page recipes
 - Complex application page recipes: Ops Dashboard, Analytics Report, Order Desk, Workspace Settings, Support Console, Billing Center, Onboarding Flow
 - Semantic `theme.colors.success` role on `HIGColorSemanticTokens`
@@ -17,9 +27,6 @@
 - `HIGFieldMessage` success kind uses `theme.colors.success`
 - Admin port tracker: core Extend rows closed (toast, badge, alerts, button loading, card, progress)
 - `HIGImageFrame` fixed-aspect path pins width, fill/fit + clip so intrinsic media size cannot stretch grids
-
-### Fixed
-
 
 ## 1.5.0 — 2026-07-12
 

@@ -70,7 +70,11 @@ HIGDesign synthesizes architecture and patterns from:
 | `HIGDesignPlatform` | Idiom and capability adapters |
 | `HIGDesignBridging` | Optional Cocoa bridges |
 
-## Current Milestone: v1.5.0 (released)
+## Current Milestone: v1.6.0 (released)
+
+v1.6.0 (2026-07-15) adds Showcase Components/Pages tabs, seven complex application page recipes, feedback Extend parity (success colors, toast/badge/alert styles), and HIGImageFrame layout hardening.
+
+## Previous Milestone: v1.5.0 (released)
 
 v1.5.0 (2026-07-12) completes the **admin catalog expansion**: optional `HIGAdminTheme`, `HIGAdminShell`, panels/wayfinding, advanced forms, Swift Charts family, content hybrids, coach marks, MapKit map recipe, and Wave 9 Showcase app/page recipes. Tracker: [`Docs/ADMIN_TEMPLATE_PORT.md`](ADMIN_TEMPLATE_PORT.md).
 
